@@ -248,12 +248,12 @@ export const ControllerInputs: ControllerInputMap = {
     device: "gamepad",
     mapping: { button: "RTrackpad" }
   },
-  Gyro: {
-    label: "Gyro",
-    icon: QuestionMark,
-    device: "gamepad",
-    mapping: { axis: { name: "Gyro" } }
-  },
+  // Gyro: {
+  //   label: "Gyro",
+  //   icon: QuestionMark,
+  //   device: "gamepad",
+  //   mapping: { axis: { name: "Gyro" } }
+  // },
   MouseClickLeft: {
     label: "Left Click",
     icon: MouseLeftClick,
@@ -368,13 +368,13 @@ export const steamDeckLayout: ControlGroup[] = [
     name: "Trackpads",
     section: "trackpads",
     inputs: [ControllerInputs.LeftTrackpad, ControllerInputs.RightTrackpad]
-  },
-  {
-    id: "gyro",
-    name: "Gyro",
-    section: "gyro",
-    inputs: [ControllerInputs.Gyro]
   }
+  // {
+  //   id: "gyro",
+  //   name: "Gyro",
+  //   section: "gyro",
+  //   inputs: [ControllerInputs.Gyro]
+  // }
 ];
 
 export const ps4Layout: ControlGroup[] = [
@@ -492,13 +492,13 @@ export const ps5Layout: ControlGroup[] = [
     name: "Trackpads",
     section: "trackpads",
     inputs: [ControllerInputs.Trackpad]
-  },
-  {
-    id: "gyro",
-    name: "Gyro",
-    section: "gyro",
-    inputs: [ControllerInputs.Gyro]
   }
+  // {
+  //   id: "gyro",
+  //   name: "Gyro",
+  //   section: "gyro",
+  //   inputs: [ControllerInputs.Gyro]
+  // }
 ];
 
 export const xboxLayout: ControlGroup[] = [
