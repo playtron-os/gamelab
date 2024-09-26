@@ -76,7 +76,7 @@ msgstr "Are you sure you want to uninstall the selected apps?"
 msgid "Author"
 msgstr "Author"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:192
+#: src/components/launch-config-editor/launch-config-editor.tsx:194
 msgid "Base config"
 msgstr "Base config"
 
@@ -96,6 +96,7 @@ msgstr "Cancel"
 msgid "Change device"
 msgstr "Change device"
 
+#: src/components/launch-config-editor/launch-config-editor.tsx:251
 #: src/components/logs-modal/logs-modal.tsx:46
 msgid "Clear"
 msgstr "Clear"
@@ -117,11 +118,11 @@ msgid "Config"
 msgstr "Config"
 
 #: src/components/controller-edit/controller-edit.tsx:140
-#: src/components/launch-config-editor/launch-config-editor.tsx:161
+#: src/components/launch-config-editor/launch-config-editor.tsx:163
 msgid "CONFIG NAME"
 msgstr "CONFIG NAME"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:177
+#: src/components/launch-config-editor/launch-config-editor.tsx:179
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
@@ -186,6 +187,10 @@ msgstr "Duplicate"
 #~ msgid "Epic Games"
 #~ msgstr "Epic Games"
 
+#: src/components/notification/notification.tsx:13
+msgid "Error"
+msgstr "Error"
+
 #: src/hooks/app-library/use-app-download-actions.ts:28
 msgid "Error starting app download: {message}"
 msgstr "Error starting app download: {message}"
@@ -206,6 +211,10 @@ msgstr "Failed to uninstall app: {message}"
 #: src/components/submission-config/submissions-modal-header.tsx:49
 msgid "Filter:"
 msgstr "Filter:"
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:253
+msgid "Format"
+msgstr "Format"
 
 #: src/components/move-app-dialog/move-app-dialog.tsx:89
 msgid "From: {appDriveName}"
@@ -293,7 +302,7 @@ msgstr "Invalid SSH credentials"
 msgid "IP Address of the Playtron device"
 msgstr "IP Address of the Playtron device"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:244
+#: src/components/launch-config-editor/launch-config-editor.tsx:246
 msgid "JSON structure is invalid {err}"
 msgstr "JSON structure is invalid {err}"
 
@@ -312,6 +321,10 @@ msgstr "Launch"
 #: src/components/side-panel/side-panel.tsx:149
 msgid "Launch Config"
 msgstr "Launch Config"
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:148
+msgid "Launch Config for"
+msgstr "Launch Config for"
 
 #: src/components/launch-config/launch-config-modal.tsx:74
 msgid "Launch Config List"
@@ -365,6 +378,10 @@ msgstr "Name"
 #: src/components/side-panel/side-panel.tsx:120
 msgid "Never tested"
 msgstr "Never tested"
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:29
+msgid "New override"
+msgstr "New override"
 
 #: src/components/sidebar/sidebar.tsx:57
 msgid "No internet"
@@ -485,6 +502,7 @@ msgid "Running"
 msgstr "Running"
 
 #: src/components/controller-edit/controller-edit.tsx:175
+#: src/components/launch-config-editor/launch-config-editor.tsx:213
 msgid "Save"
 msgstr "Save"
 
@@ -597,6 +615,10 @@ msgstr "Update Required"
 #: src/screens/connect-device/connect-device.tsx:127
 msgid "Username"
 msgstr "Username"
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:240
+msgid "Validate JSON"
+msgstr "Validate JSON"
 
 #: src/context/app-library-context/components/table-cells/status-cell.tsx:17
 #: src/utils/app-info.ts:56

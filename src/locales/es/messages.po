@@ -76,7 +76,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:192
+#: src/components/launch-config-editor/launch-config-editor.tsx:194
 msgid "Base config"
 msgstr ""
 
@@ -96,6 +96,7 @@ msgstr ""
 msgid "Change device"
 msgstr ""
 
+#: src/components/launch-config-editor/launch-config-editor.tsx:251
 #: src/components/logs-modal/logs-modal.tsx:46
 msgid "Clear"
 msgstr ""
@@ -117,11 +118,11 @@ msgid "Config"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:140
-#: src/components/launch-config-editor/launch-config-editor.tsx:161
+#: src/components/launch-config-editor/launch-config-editor.tsx:163
 msgid "CONFIG NAME"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:177
+#: src/components/launch-config-editor/launch-config-editor.tsx:179
 msgid "CONFIGURATION"
 msgstr ""
 
@@ -186,6 +187,10 @@ msgstr ""
 #~ msgid "Epic Games"
 #~ msgstr ""
 
+#: src/components/notification/notification.tsx:13
+msgid "Error"
+msgstr ""
+
 #: src/hooks/app-library/use-app-download-actions.ts:28
 msgid "Error starting app download: {message}"
 msgstr ""
@@ -205,6 +210,10 @@ msgstr ""
 #: src/components/app-library/app-library.tsx:140
 #: src/components/submission-config/submissions-modal-header.tsx:49
 msgid "Filter:"
+msgstr ""
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:253
+msgid "Format"
 msgstr ""
 
 #: src/components/move-app-dialog/move-app-dialog.tsx:89
@@ -293,7 +302,7 @@ msgstr ""
 msgid "IP Address of the Playtron device"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:244
+#: src/components/launch-config-editor/launch-config-editor.tsx:246
 msgid "JSON structure is invalid {err}"
 msgstr ""
 
@@ -311,6 +320,10 @@ msgstr ""
 
 #: src/components/side-panel/side-panel.tsx:149
 msgid "Launch Config"
+msgstr ""
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:148
+msgid "Launch Config for"
 msgstr ""
 
 #: src/components/launch-config/launch-config-modal.tsx:74
@@ -364,6 +377,10 @@ msgstr ""
 
 #: src/components/side-panel/side-panel.tsx:120
 msgid "Never tested"
+msgstr ""
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:29
+msgid "New override"
 msgstr ""
 
 #: src/components/sidebar/sidebar.tsx:57
@@ -485,6 +502,7 @@ msgid "Running"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:175
+#: src/components/launch-config-editor/launch-config-editor.tsx:213
 msgid "Save"
 msgstr ""
 
@@ -596,6 +614,10 @@ msgstr ""
 #: src/screens/connect-device/connect-device.tsx:126
 #: src/screens/connect-device/connect-device.tsx:127
 msgid "Username"
+msgstr ""
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:240
+msgid "Validate JSON"
 msgstr ""
 
 #: src/context/app-library-context/components/table-cells/status-cell.tsx:17
