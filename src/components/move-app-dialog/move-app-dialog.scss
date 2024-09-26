@@ -1,0 +1,40 @@
+.move-app-dialog-rct-component {
+  &__main-modal {
+    z-index: 1001;
+
+    &__overlay {
+      min-width: 300px;
+      max-width: 300px;
+      min-height: fit-content;
+      overflow: visible;
+    }
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 1rem;
+      // padding-bottom: 3rem;
+      &__field {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  &__move-in-progress-modal {
+    z-index: 1002;
+
+    &__overlay {
+      width: 500px;
+      min-height: fit-content;
+    }
+    &__content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        text-align: center;
+      }
+    }
+  }
+}

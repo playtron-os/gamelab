@@ -1,0 +1,34 @@
+import React from 'react';
+{{#if takesClassNameAsProp}}
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
+{{/if}}
+
+import './{{kebabCase name}}.scss';
+
+export interface {{pascalCase name}}Props {
+  {{#if takesClassNameAsProp}}
+    className: string;
+  {{/if}}
+}
+
+export const {{ pascalCase name }}: React.FC<{{pascalCase name}}Props> = (props) => {
+  {{#if takesClassNameAsProp}}
+  const { className } = props;
+  {{/if}}
+  return (
+  {{#if takesClassNameAsProp}}
+    <div
+      className={classNames(
+        '{{ kebabCase name }}-rct-component',
+        className,
+      )}
+    >
+  {{else}}
+    <div className="{{ kebabCase name }}-rct-component">
+  {{/if}}
+      {{name}}
+    </div>
+  );
+};
+

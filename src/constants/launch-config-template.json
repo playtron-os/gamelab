@@ -1,0 +1,18 @@
+{
+  "wine_id": null,
+  "steam_client_arguments": [],
+  "app_arguments": [],
+  "app_executable": null,
+  "env": {
+    "PLAYTRON_OS": "1"
+  },
+  "extra_registry": {
+    "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Fonts": [
+      ["Marlett (TrueType)", "marlett.ttf"],
+      ["Symbol (TrueType)", "symbol.ttf"]
+    ]
+  },
+  "tricks_config": {
+    "winetricks": []
+  }
+}

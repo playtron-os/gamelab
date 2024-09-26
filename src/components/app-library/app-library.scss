@@ -1,0 +1,20 @@
+.app-library-rct-component {
+  &__loading-container {
+    position: relative;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  &__app {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  table.table-rct-component tr,
+  table.table-rct-component th {
+    height: 50px;
+  }
+}

@@ -1,0 +1,612 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2024-01-10 13:05-0500\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/components/side-panel/autotest-popup.tsx:53
+#~ msgid "-"
+#~ msgstr "-"
+
+#: src/components/sidebar/drive.tsx:25
+#~ msgid "{capacity}% Full"
+#~ msgstr "{capacity}% Full"
+
+#: src/components/provider-auth-modal/components/two-factor-auth-form/two-factor-auth-form.tsx:28
+#~ msgid "2FA Code"
+#~ msgstr "2FA Code"
+
+#: src/components/sidebar/profile-menu.tsx:49
+#~ msgid "Account"
+#~ msgstr "Account"
+
+#: src/components/account-connect-panel/account-connect-panel.tsx:19
+#~ msgid "Account Settings"
+#~ msgstr "Account Settings"
+
+#: src/components/side-panel/config-select.tsx:34
+msgid "Add Config"
+msgstr "Add Config"
+
+#: src/components/input-config-modal/input-config-modal.tsx:189
+#: src/components/launch-config/launch-config-modal.tsx:93
+#: src/components/submission-config/submissions-empty.tsx:38
+msgid "Add New Config"
+msgstr "Add New Config"
+
+#: src/components/sidebar/provider-section.tsx:79
+msgid "All"
+msgstr "All"
+
+#: src/components/app-library/app-library.tsx:113
+msgid "All Games"
+msgstr "All Games"
+
+#: src/components/app-library/app-library.tsx:149
+msgid "All Games ({totalGames})"
+msgstr "All Games ({totalGames})"
+
+#: src/hooks/app-library/use-app-download-actions.ts:85
+msgid "Are you sure you want to stop downloading {appName}?"
+msgstr "Are you sure you want to stop downloading {appName}?"
+
+#: src/hooks/app-library/use-app-terminate-actions.ts:36
+msgid "Are you sure you want to terminate {appName}?"
+msgstr "Are you sure you want to terminate {appName}?"
+
+#: src/hooks/app-library/use-app-uninstall-actions.ts:42
+msgid "Are you sure you want to uninstall {appName}?"
+msgstr "Are you sure you want to uninstall {appName}?"
+
+#: src/hooks/app-library/use-app-uninstall-actions.ts:39
+msgid "Are you sure you want to uninstall the selected apps?"
+msgstr "Are you sure you want to uninstall the selected apps?"
+
+#: src/components/submission-config/submissions-modal-header.tsx:42
+#: src/components/submission-config/submissions-table-config.tsx:26
+msgid "Author"
+msgstr "Author"
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:192
+msgid "Base config"
+msgstr "Base config"
+
+#: src/context/app-library-context/components/table-cells/bulk-action-button-cell.tsx:21
+msgid "Bulk Actions"
+msgstr "Bulk Actions"
+
+#: src/components/side-panel/side-panel.tsx:137
+msgid "Bypass App Update"
+msgstr "Bypass App Update"
+
+#: src/screens/connect-device/connect-device.tsx:144
+msgid "Cancel"
+msgstr "Cancel"
+
+#: src/components/sidebar/profile-menu.tsx:44
+msgid "Change device"
+msgstr "Change device"
+
+#: src/components/logs-modal/logs-modal.tsx:46
+msgid "Clear"
+msgstr "Clear"
+
+#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:81
+#: src/components/input-config-modal/input-config-modal.tsx:191
+#: src/components/launch-config/launch-config-modal.tsx:95
+#: src/components/move-app-dialog/move-app-dialog.tsx:113
+#: src/components/submission-config/submissions-empty.tsx:34
+msgid "Close"
+msgstr "Close"
+
+#: src/components/side-panel/side-panel.tsx:261
+msgid "Close Log Window"
+msgstr "Close Log Window"
+
+#: src/components/submission-config/submissions-modal-header.tsx:36
+msgid "Config"
+msgstr "Config"
+
+#: src/components/controller-edit/controller-edit.tsx:140
+#: src/components/launch-config-editor/launch-config-editor.tsx:161
+msgid "CONFIG NAME"
+msgstr "CONFIG NAME"
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:177
+msgid "CONFIGURATION"
+msgstr "CONFIGURATION"
+
+#: src/context/submissions-context/submissions-context.tsx:242
+msgid "Configuration has been submitted"
+msgstr "Configuration has been submitted"
+
+#: src/components/move-app-dialog/move-app-dialog.tsx:108
+msgid "Confirm"
+msgstr "Confirm"
+
+#: src/screens/connect-device/connect-device.tsx:101
+#: src/screens/connect-device/connect-device.tsx:138
+msgid "Connect"
+msgstr "Connect"
+
+#: src/components/logs-modal/logs-modal.tsx:39
+msgid "Copy"
+msgstr "Copy"
+
+#: src/components/side-panel/side-panel.tsx:107
+msgid "Date Added"
+msgstr "Date Added"
+
+#: src/components/submission-config/cells/submission-action-cell.tsx:43
+msgid "Delete"
+msgstr "Delete"
+
+#: src/context/submissions-context/submissions-context.tsx:286
+msgid "Delete this configuration?"
+msgstr "Delete this configuration?"
+
+#: src/components/sidebar/sidebar.tsx:21
+msgid "Disconnected from the internet"
+msgstr "Disconnected from the internet"
+
+#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:60
+#: src/utils/app-info.ts:125
+msgid "Download"
+msgstr "Download"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:19
+#: src/utils/app-info.ts:58
+msgid "Downloading"
+msgstr "Downloading"
+
+#: src/context/app-library-context/table-config.tsx:85
+#: src/utils/app-info.ts:227
+msgid "Drive"
+msgstr "Drive"
+
+#: src/components/sidebar/sidebar.tsx:36
+msgid "Drives"
+msgstr "Drives"
+
+#: src/components/submission-config/cells/submission-action-cell.tsx:32
+msgid "Duplicate"
+msgstr "Duplicate"
+
+#: src/components/app-library/app-library.tsx:191
+#: src/components/sidebar/provider-section.tsx:88
+#~ msgid "Epic Games"
+#~ msgstr "Epic Games"
+
+#: src/hooks/app-library/use-app-download-actions.ts:28
+msgid "Error starting app download: {message}"
+msgstr "Error starting app download: {message}"
+
+#: src/components/move-app-dialog/hooks/use-app-move.ts:32
+msgid "Failed to move app: {message}"
+msgstr "Failed to move app: {message}"
+
+#: src/hooks/app-library/use-app-terminate-actions.ts:25
+msgid "Failed to terminate app: {message}"
+msgstr "Failed to terminate app: {message}"
+
+#: src/hooks/app-library/use-app-uninstall-actions.ts:27
+msgid "Failed to uninstall app: {message}"
+msgstr "Failed to uninstall app: {message}"
+
+#: src/components/app-library/app-library.tsx:140
+#: src/components/submission-config/submissions-modal-header.tsx:49
+msgid "Filter:"
+msgstr "Filter:"
+
+#: src/components/move-app-dialog/move-app-dialog.tsx:89
+msgid "From: {appDriveName}"
+msgstr "From: {appDriveName}"
+
+#: src/components/controller-edit/controller-gamepad.tsx:82
+msgid "Front"
+msgstr "Front"
+
+#: src/components/sidebar/drive.tsx:26
+#~ msgid "Full"
+#~ msgstr "Full"
+
+#: src/types/playserve/api_errors.ts:142
+msgid "Game is not owned or provider is not authorized"
+msgstr "Game is not owned or provider is not authorized"
+
+#: src/components/controller-edit/map-to.tsx:24
+msgid "Gamepad"
+msgstr "Gamepad"
+
+#: src/components/controller-edit/controller-edit.tsx:198
+msgid "Gamepad Type"
+msgstr "Gamepad Type"
+
+#: src/components/app-library/app-library.tsx:193
+#: src/components/sidebar/provider-section.tsx:105
+#~ msgid "GOG"
+#~ msgstr "GOG"
+
+#: src/components/sidebar/sidebar.tsx:47
+msgid "Info"
+msgstr "Info"
+
+#: src/screens/connect-device/connect-device.tsx:80
+msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
+msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
+
+#: src/components/side-panel/side-panel.tsx:174
+msgid "Input Config"
+msgstr "Input Config"
+
+#: src/components/controller-edit/controller-edit.tsx:130
+msgid "Input Config for"
+msgstr "Input Config for"
+
+#: src/components/input-config-modal/input-config-modal.tsx:170
+msgid "Input Config List"
+msgstr "Input Config List"
+
+#: src/components/controller-edit/controller-edit.tsx:155
+msgid "INPUT DEVICES"
+msgstr "INPUT DEVICES"
+
+#: src/components/logs-modal/logs-modal.tsx:53
+msgid "Insert Delimiter"
+msgstr "Insert Delimiter"
+
+#: src/components/side-panel/side-panel.tsx:225
+msgid "Install folder"
+msgstr "Install folder"
+
+#: src/components/app-library/app-library.tsx:123
+msgid "Installed"
+msgstr "Installed"
+
+#: src/components/app-library/app-library.tsx:150
+msgid "Installed Games ({totalInstalled})"
+msgstr "Installed Games ({totalInstalled})"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:21
+#: src/utils/app-info.ts:60
+msgid "Installing"
+msgstr "Installing"
+
+#: src/components/controller-edit/controller-edit.tsx:55
+msgid "Invalid layout"
+msgstr "Invalid layout"
+
+#: src/screens/connect-device/connect-device.tsx:115
+msgid "Invalid SSH credentials"
+msgstr "Invalid SSH credentials"
+
+#: src/screens/connect-device/connect-device.tsx:88
+msgid "IP Address of the Playtron device"
+msgstr "IP Address of the Playtron device"
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:244
+msgid "JSON structure is invalid {err}"
+msgstr "JSON structure is invalid {err}"
+
+#: src/components/controller-edit/map-to.tsx:20
+msgid "Keyboard"
+msgstr "Keyboard"
+
+#: src/screens/connect-device/connect-device.tsx:118
+msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
+msgstr "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
+
+#: src/utils/app-info.ts:119
+msgid "Launch"
+msgstr "Launch"
+
+#: src/components/side-panel/side-panel.tsx:149
+msgid "Launch Config"
+msgstr "Launch Config"
+
+#: src/components/launch-config/launch-config-modal.tsx:74
+msgid "Launch Config List"
+msgstr "Launch Config List"
+
+#: src/components/logs-modal/logs-modal.tsx:31
+msgid "Logs"
+msgstr "Logs"
+
+#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:53
+msgid "Manage Selected"
+msgstr "Manage Selected"
+
+#: src/components/controller-edit/map-to.tsx:58
+msgid "Map to..."
+msgstr "Map to..."
+
+#: src/components/submission-config/submissions-table-config.tsx:21
+msgid "Modified"
+msgstr "Modified"
+
+#: src/components/controller-edit/map-to.tsx:22
+msgid "Mouse"
+msgstr "Mouse"
+
+#: src/utils/controllers.ts:244
+msgid "Mouse Move"
+msgstr "Mouse Move"
+
+#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:74
+#: src/context/app-library-context/components/table-cells/app-action-cell.tsx:37
+msgid "Move"
+msgstr "Move"
+
+#: src/components/move-app-dialog/move-app-dialog.tsx:75
+msgid "Move {appName}"
+msgstr "Move {appName}"
+
+#: src/components/move-app-dialog/move-app-dialog.tsx:124
+msgid "Move In Progress..."
+msgstr "Move In Progress..."
+
+#: src/components/move-app-dialog/move-app-dialog.tsx:75
+msgid "Move selected apps"
+msgstr "Move selected apps"
+
+#: src/components/submission-config/submissions-table-config.tsx:11
+msgid "Name"
+msgstr "Name"
+
+#: src/components/side-panel/side-panel.tsx:120
+msgid "Never tested"
+msgstr "Never tested"
+
+#: src/components/sidebar/sidebar.tsx:57
+msgid "No internet"
+msgstr "No internet"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:23
+#: src/utils/app-info.ts:62
+msgid "Not Downloaded"
+msgstr "Not Downloaded"
+
+#: src/components/side-panel/side-panel.tsx:111
+msgid "Not installed"
+msgstr "Not installed"
+
+#: src/components/submission-config/submissions-table-config.tsx:16
+msgid "Note"
+msgstr "Note"
+
+#: src/components/controller-edit/map-to.tsx:26
+msgid "Numpad"
+msgstr "Numpad"
+
+#: src/components/launch-dialog/launch-dialog.tsx:210
+#~ msgid "Official Launch Config"
+#~ msgstr "Official Launch Config"
+
+#: src/screens/not-found/index.tsx:19
+msgid "Oops!"
+msgstr "Oops!"
+
+#: src/components/side-panel/side-panel.tsx:261
+msgid "Open Log Window"
+msgstr "Open Log Window"
+
+#: src/screens/connect-device/connect-device.tsx:132
+#: src/screens/connect-device/connect-device.tsx:133
+msgid "Password"
+msgstr "Password"
+
+#: src/utils/app-info.ts:123
+msgid "Pause"
+msgstr "Pause"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:27
+#: src/utils/app-info.ts:66
+msgid "Paused"
+msgstr "Paused"
+
+#: src/components/side-panel/side-panel.tsx:200
+msgid "Playtron App ID"
+msgstr "Playtron App ID"
+
+#: src/components/sidebar/sidebar.tsx:32
+#: src/components/signin-layout/signin-layout.tsx:26
+msgid "Playtron Labs"
+msgstr "Playtron Labs"
+
+#: src/components/side-panel/side-panel.tsx:207
+msgid "Playtron Slug"
+msgstr "Playtron Slug"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:15
+#: src/utils/app-info.ts:54
+msgid "Pre-Allocating"
+msgstr "Pre-Allocating"
+
+#: src/utils/app-info.ts:131
+msgid "Prioritize"
+msgstr "Prioritize"
+
+#: src/components/side-panel/side-panel.tsx:65
+#: src/context/app-library-context/table-config.tsx:54
+msgid "Provider"
+msgstr "Provider"
+
+#: src/components/side-panel/side-panel.tsx:71
+msgid "Provider App ID"
+msgstr "Provider App ID"
+
+#: src/components/sidebar/sidebar.tsx:41
+msgid "Providers"
+msgstr "Providers"
+
+#: src/components/controller-edit/controller-edit.tsx:53
+msgid "PS5 controller"
+msgstr "PS5 controller"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:29
+#: src/utils/app-info.ts:68
+msgid "Queued"
+msgstr "Queued"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:13
+#: src/utils/app-info.ts:52
+msgid "Ready"
+msgstr "Ready"
+
+#: src/components/side-panel/side-panel.tsx:214
+msgid "Release Date"
+msgstr "Release Date"
+
+#: src/components/side-panel/side-panel.tsx:159
+#: src/components/side-panel/side-panel.tsx:184
+msgid "Reset"
+msgstr "Reset"
+
+#: src/components/side-panel/side-panel.tsx:127
+msgid "Reset Wine Prefix"
+msgstr "Reset Wine Prefix"
+
+#: src/utils/app-info.ts:129
+msgid "Resume"
+msgstr "Resume"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:31
+#: src/utils/app-info.ts:70
+msgid "Running"
+msgstr "Running"
+
+#: src/components/controller-edit/controller-edit.tsx:175
+msgid "Save"
+msgstr "Save"
+
+#: src/components/move-app-dialog/move-app-dialog.tsx:98
+msgid "Select drive"
+msgstr "Select drive"
+
+#: src/context/app-library-context/table-config.tsx:42
+msgid "Size"
+msgstr "Size"
+
+#: src/screens/not-found/index.tsx:22
+msgid "Sorry, an unexpected error has occurred."
+msgstr "Sorry, an unexpected error has occurred."
+
+#: src/context/app-library-context/table-config.tsx:68
+msgid "Status"
+msgstr "Status"
+
+#: src/components/app-library/app-library.tsx:192
+#: src/components/sidebar/provider-section.tsx:96
+#~ msgid "Steam"
+#~ msgstr "Steam"
+
+#: src/utils/app-info.ts:133
+msgid "Stop"
+msgstr "Stop"
+
+#: src/components/submission-config/cells/submission-action-cell.tsx:20
+msgid "Submit"
+msgstr "Submit"
+
+#: src/utils/app-info.ts:224
+msgid "System Drive"
+msgstr "System Drive"
+
+#: src/components/side-panel/side-panel.tsx:238
+msgid "Tags"
+msgstr "Tags"
+
+#: src/screens/connect-device/connect-device.tsx:77
+msgid "Test Games on Playtron Device via Local Network"
+msgstr "Test Games on Playtron Device via Local Network"
+
+#: src/components/side-panel/side-panel.tsx:116
+msgid "Tested on"
+msgstr "Tested on"
+
+#: src/screens/connect-device/connect-device.tsx:43
+msgid "The device did not respond in time"
+msgstr "The device did not respond in time"
+
+#: src/components/submission-config/submissions-empty.tsx:22
+msgid "There is no controller configuration created for"
+msgstr "There is no controller configuration created for"
+
+#: src/components/submission-config/submissions-empty.tsx:23
+msgid "There is no launch configuration created for"
+msgstr "There is no launch configuration created for"
+
+#: src/context/submissions-context/submissions-context.tsx:248
+msgid "There was an error with the submission {errorMessage}"
+msgstr "There was an error with the submission {errorMessage}"
+
+#: src/context/app-library-context/table-config.tsx:28
+msgid "Title"
+msgstr "Title"
+
+#: src/components/move-app-dialog/move-app-dialog.tsx:94
+msgid "To:"
+msgstr "To:"
+
+#: src/components/controller-edit/controller-gamepad.tsx:86
+msgid "Top"
+msgstr "Top"
+
+#: src/screens/connect-device/connect-device.tsx:62
+msgid "Unable to connect to playtron service on the device"
+msgstr "Unable to connect to playtron service on the device"
+
+#: src/screens/connect-device/connect-device.tsx:46
+msgid "Unable to connect with the device: {err}"
+msgstr "Unable to connect with the device: {err}"
+
+#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:67
+#: src/context/app-library-context/components/table-cells/app-action-cell.tsx:53
+msgid "Uninstall"
+msgstr "Uninstall"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:33
+#: src/utils/app-info.ts:72
+msgid "Unknown"
+msgstr "Unknown"
+
+#: src/utils/controllers.ts:164
+#: src/utils/controllers.ts:236
+msgid "Unset"
+msgstr "Unset"
+
+#: src/utils/app-info.ts:127
+msgid "Update"
+msgstr "Update"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:25
+#: src/utils/app-info.ts:64
+msgid "Update Required"
+msgstr "Update Required"
+
+#: src/screens/connect-device/connect-device.tsx:126
+#: src/screens/connect-device/connect-device.tsx:127
+msgid "Username"
+msgstr "Username"
+
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:17
+#: src/utils/app-info.ts:56
+msgid "Verifying"
+msgstr "Verifying"
+
+#: src/components/sidebar/sidebar.tsx:49
+msgid "Version: {version}"
+msgstr "Version: {version}"
+
+#: src/components/controller-edit/controller-edit.tsx:51
+msgid "XBox controller"
+msgstr "XBox controller"

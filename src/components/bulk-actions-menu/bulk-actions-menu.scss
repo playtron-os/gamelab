@@ -1,0 +1,16 @@
+.bulk-actions-menu-rct-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.bulk-actions-menu-modal {
+  &__overlay {
+    min-width: 216px;
+  }
+  h1 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+}
