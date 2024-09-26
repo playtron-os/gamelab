@@ -4,15 +4,6 @@ jest.mock("uuid", () => ({
   v4: jest.fn(() => "mocked-uuid")
 }));
 
-jest.mock("oauth-pkce", () => ({
-  __esModule: true,
-  default: jest.fn((length, callback) => {
-    const mockChallenge = "mocked-challenge";
-    const mockVerifier = "mocked-verifier";
-    callback(null, { challenge: mockChallenge, verifier: mockVerifier });
-  })
-}));
-
 jest.mock("@/utils/cookies", () => ({
   setCookie: jest.fn(),
   deleteCookie: jest.fn()

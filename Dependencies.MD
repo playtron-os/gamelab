@@ -12,7 +12,6 @@ This file contains all the third-party dependencies of this repository.
 [husky]: (https://github.com/typicode/husky)
 [jest]: (https://github.com/jestjs/jest)
 [mini-css-extract-plugin]: (https://github.com/webpack-contrib/mini-css-extract-plugin)
-[oauth-pkce]: (https://github.com/coolgk/utils/tree/master/oauth-pkce)
 [plop]: (https://github.com/plopjs/plop)
 [react-redux]: (https://github.com/reduxjs/react-redux)
 [react-router-dom]: (https://github.com/remix-run/react-router)
