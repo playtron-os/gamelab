@@ -18,17 +18,10 @@ The app has two processes, the UI which is compiled and served using vite, and t
 UI: `./src`
 Backend: `./src-tauri`
 
-### Installing deps
-
-To install dependencies you need to login into your npm account (`npm login`) in order to be able to access the @playtron/styleguide package, you'll need an account with access to the private package on npm.
-
-### Changing Environments
-
-https://playtron-one.atlassian.net/wiki/spaces/TA/pages/314146835/Changing+Labs+Environment
-
 #### Playtron OS rpm-ostree dev dependencies
+
 To compile this tauri app in a silverblue environment you'll need a couple dependencies that can be layered with rpm-ostree:
-`sudo rpm-ostree install libsoup-devel webkit2gtk4.0-devel javascriptcoregtk4.0-devel gcc --apply-live`
+`sudo rpm-ostree install libsoup-devel webkit2gtk4.1-devel javascriptcoregtk4.1-devel gcc --apply-live`
 
 ### Conventions and guidelines for contributors
 
@@ -44,6 +37,7 @@ With lingui we can use the `t` or `Trans` macros from `@lingui/macro` to generat
 When adding text to the app please wrap it in one of these macros to make it ready for i18n:
 
 ##### With `t`:
+
 ```
 import { t } from "@lingui/macro";
 
@@ -51,15 +45,17 @@ export default function TestComponent() {
   return <div>{t`My internationalized text`}</div>;
 }
 ```
+
 The `t` macro can also be used outside React components.
 
-With `Trans`: 
+With `Trans`:
+
 ```
 import { Trans } from "@lingui/macro"
 export default function TestComponent() {
   return (
     <div>
-      <Trans>`My internationalized text`</Trans> 
+      <Trans>`My internationalized text`</Trans>
     </div>;
   );
 }
