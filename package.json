@@ -14,7 +14,7 @@
     "lint": "eslint --cache .",
     "lint:fix": "eslint --fix .",
     "test": "jest",
-    "test:ci": "jest --maxWorkers=20%",
+    "test:ci": "jest --runInBand --silent",
     "test:snapshot": "jest --updateSnapshot",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
