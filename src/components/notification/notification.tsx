@@ -2,6 +2,7 @@ import React from "react";
 import { useAppSelector } from "@/redux/store";
 import { ErrorPopUp } from "@playtron/styleguide";
 import { getLatestMessage } from "redux-flash";
+import { t } from "@lingui/macro";
 
 export function Notification() {
   const flash = useAppSelector((state) => getLatestMessage(state));
@@ -9,7 +10,7 @@ export function Notification() {
     <>
       {flash && (
         <ErrorPopUp
-          title="Error"
+          title={t`Error`}
           message={flash.message}
           isOpen={flash}
           className="z-50"

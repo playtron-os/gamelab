@@ -26,7 +26,7 @@ export interface LaunchConfigEditorProps {
 
 const DEFAULT_OVERRIDE: Override = {
   condition: "",
-  name: "New override",
+  name: (() => t`New override`)(),
   actions: [{ type: "SET", env: {}, tricks_config: { winetricks: [] } }]
 };
 
@@ -144,7 +144,9 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
   return (
     <>
       <div className="bg-[--fill-subtle] flex flex-row items-center justify-center font-bold text-2xl h-[64px] py-3 px-6">
-        <div className="flex-grow">Launch Config for {appInfo.app.name}</div>
+        <div className="flex-grow">
+          <Trans>Launch Config for</Trans> {appInfo.app.name}
+        </div>
         <Button
           className="px-4"
           Icon={CloseFill}
@@ -208,7 +210,7 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
               }}
             ></textarea>
             <Button
-              label="Save"
+              label={t`Save`}
               primary
               disabled={!valid}
               className="w-64 mt-0 m-4"
@@ -235,7 +237,7 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
 
           <div className="flex-shrink flex gap-[12px]">
             <Button
-              label="Validate JSON"
+              label={t`Validate JSON`}
               onClick={() => {
                 try {
                   JSON.parse(content);
@@ -246,9 +248,9 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
                 }
               }}
             />
-            <Button label="Clear" onClick={() => setContent("{\n}")} />
+            <Button label={t`Clear`} onClick={() => setContent("{\n}")} />
             <Button
-              label="Format"
+              label={t`Format`}
               onClick={() =>
                 setContent(JSON.stringify(JSON.parse(content), null, 2))
               }
