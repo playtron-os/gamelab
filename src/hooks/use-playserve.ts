@@ -21,16 +21,12 @@ type ResponseHandler<T extends MessageType> = (
   message: PlayserveResponse<T>
 ) => void;
 
-const MAX_RETRIES = 3;
-const RETRY_DELAY = 300; // ms
-
-const MESSAGE_TIMEOUT_WHEN_NOT_CONNECTED = 3000;
+const MESSAGE_TIMEOUT_WHEN_NOT_CONNECTED = 300;
 
 const wsMap: Record<string, WS> = {};
 
 class WS {
   url: string;
-  retries: number;
   isReady = false;
 
   // Cache websocket so it can be used globally across hooks
@@ -81,7 +77,6 @@ class WS {
         this.isReady = false;
       }
     }, 1);
-    this.retries = 0;
     this.initializeWebsocket();
   }
 
@@ -93,22 +88,16 @@ class WS {
     this._websocket = new WebSocket(this.url);
 
     const reconnect = () => {
-      if (this.retries == MAX_RETRIES) {
-        if (this.onConnectionLost) {
-          this.onConnectionLost();
-        } else {
-          delete wsMap[this.url];
-        }
-        return;
+      if (this.onConnectionLost) {
+        this.onConnectionLost();
       }
-      this.retries++;
-      setTimeout(() => this.initializeWebsocket(), RETRY_DELAY);
+
+      delete wsMap[this.url];
     };
 
     this._websocket.onopen = () => {
       console.log("Connected to websocket");
       info("Connected to websocket");
-      this.retries = 0;
     };
 
     this._websocket.onclose = () => {
@@ -119,7 +108,7 @@ class WS {
 
     this._websocket.onerror = (err) => {
       console.error("Websocket error: ", err);
-      error("Websocket error occured");
+      error(`Websocket error: ${JSON.stringify(err)}`);
     };
 
     this._websocket.onmessage = (message) => {
@@ -162,8 +151,11 @@ class WS {
     if (this._websocket && this._websocket.readyState === WebSocket.OPEN) {
       this._websocket.send(stringMessage);
     } else {
-      warn("Websocket not ready, buffering message");
+      warn(
+        `Websocket not ready (${this._websocket.readyState}), buffering message`
+      );
       this.messagesBuffer.push(stringMessage);
+      this.initializeWebsocket();
 
       setTimeout(() => {
         const index = this.messagesBuffer.indexOf(stringMessage);
