@@ -28,7 +28,6 @@ export const ConnectDeviceScreen: React.FC = () => {
 
   const handleConnection = async () => {
     showLoadingSpinner();
-    setErrorText("");
     setInvalidCreds(false);
 
     const address = await invoke("initialize_device_connection", {
@@ -58,7 +57,7 @@ export const ConnectDeviceScreen: React.FC = () => {
     const response = await sendPlayserveMessage(address, message)();
     if (response.status !== 200 || !response.body) {
       hideLoadingSpinner();
-      console.error(`Unable to communicate with playserve at ${address}`);
+      console.error("Unable to communicate with playserve");
       error("Unable to communicate with playserve");
       setErrorText(t`Unable to connect to playtron service on the device`);
       return;

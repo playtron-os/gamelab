@@ -141,14 +141,12 @@ async fn message_loop(
                 match msg {
                     Some(ChannelMsg::ExtendedData { data, .. }) => {
                         if let Err(err) = socket.write_all(&data).await {
-                            log::error!("Failed to forward extended message to frontend {err:?}");
-                            break;
+                            log::error!("Failed to forward message to frontend {err:?}");
                         }
                     },
                     Some(ChannelMsg::Data { data }) => {
                         if let Err(err) = socket.write_all(&data).await {
                             log::error!("Failed to forward message to frontend {err:?}");
-                            break;
                         }
                     },
                     Some(ChannelMsg::Eof) => {
