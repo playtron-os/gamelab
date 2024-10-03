@@ -28,6 +28,7 @@ export const ConnectDeviceScreen: React.FC = () => {
 
   const handleConnection = async () => {
     showLoadingSpinner();
+    setErrorText("");
     setInvalidCreds(false);
 
     const address = await invoke("initialize_device_connection", {
