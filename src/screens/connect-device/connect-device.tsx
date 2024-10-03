@@ -28,6 +28,7 @@ export const ConnectDeviceScreen: React.FC = () => {
 
   const handleConnection = async () => {
     showLoadingSpinner();
+    setErrorText("");
     setInvalidCreds(false);
 
     const address = await invoke("initialize_device_connection", {
@@ -80,7 +81,8 @@ export const ConnectDeviceScreen: React.FC = () => {
           <Trans>
             Initiate direct testing on a Playtron device within your local
             network. Begin by enabling SSH connections: navigate to
-            &apos;Settings &gt; Developer&apos; on your device.
+            &apos;Settings &gt; Advanced &gt; Remote Access&apos; on your
+            device.
           </Trans>
         </p>
         <p className="py-4">

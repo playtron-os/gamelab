@@ -94,10 +94,9 @@ class WS {
 
     const reconnect = () => {
       if (this.retries == MAX_RETRIES) {
+        delete wsMap[this.url];
         if (this.onConnectionLost) {
           this.onConnectionLost();
-        } else {
-          delete wsMap[this.url];
         }
         return;
       }
@@ -114,6 +113,7 @@ class WS {
     this._websocket.onclose = () => {
       console.log("Disconnected from websocket");
       warn("Disconnected from websocket");
+      this.isReady = false;
       reconnect();
     };
 
