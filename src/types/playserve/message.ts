@@ -128,6 +128,8 @@ export enum MessageType {
   SubmissionDuplicate = "SubmissionDuplicate",
   SubmissionSubmit = "SubmissionSubmit",
   SubmissionRevert = "SubmissionRevert",
+  SubmissionGetDefault = "SubmissionGetDefault",
+  SubmissionSetDefault = "SubmissionSetDefault",
 
   // config
   EnvironmentSet = "EnvironmentSet",

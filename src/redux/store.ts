@@ -8,7 +8,7 @@ import appLibrary from "@/redux/modules/app-library/app-library-slice";
 import auth from "@/redux/modules/auth/auth-slice";
 import accounts from "@/redux/modules/accounts/accounts-slice";
 import moveAppDialog from "@/redux/modules/move-app-dialog/move-app-dialog-slice";
-import configs from "@/redux/modules/configs/configs-slice";
+
 import { createReduxHistoryContext } from "redux-first-history";
 import { createBrowserHistory } from "history";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
@@ -38,14 +38,13 @@ const combinedReducers = combineReducers({
   moveAppDialog,
   router: routerReducer,
   accounts,
-  configs,
   flash: flashReducer
 });
 
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["auth", "configs"]
+  whitelist: ["auth"]
 };
 
 const persistedReducer = persistReducer(persistConfig, combinedReducers);

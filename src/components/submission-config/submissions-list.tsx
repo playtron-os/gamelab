@@ -1,12 +1,14 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useAppDispatch } from "@/redux/store";
+import { usePlayserve } from "@/hooks";
+
 import { Table } from "@playtron/styleguide";
 import { columns } from "./submissions-table-config";
-import { Submission, SubmissionItemType, SubmissionType } from "@/types";
 import {
-  setSelectedInputConfig,
-  setSelectedLaunchConfig
-} from "@/redux/modules";
+  Submission,
+  SubmissionItemType,
+  getMessage,
+  MessageType
+} from "@/types";
 
 interface SubmissionsListProps {
   configFilter?: string;
@@ -25,8 +27,7 @@ export const SubmissionsList: React.FC<SubmissionsListProps> = ({
   setSelectedItemId,
   onClose
 }) => {
-  const dispatch = useAppDispatch();
-
+  const { sendMessage } = usePlayserve();
   const [selectedIndexes, setSelectedIndexes] = useState<string[]>([]);
   const onSelectedIdsChange = useCallback(
     (id: string) => {
@@ -34,21 +35,21 @@ export const SubmissionsList: React.FC<SubmissionsListProps> = ({
         const subId = parseInt(id);
         const selectedSubmission = submissions[subId] as Submission;
         setSelectedItemId(selectedSubmission.item_id);
-        if (submissionType === SubmissionType.LaunchConfig) {
-          dispatch(
-            setSelectedLaunchConfig({
-              appId: selectedSubmission.app_id,
-              launchConfigId: selectedSubmission.item_id
-            })
-          );
-        } else if (submissionType === SubmissionType.InputConfig) {
-          dispatch(
-            setSelectedInputConfig({
-              appId: selectedSubmission.app_id,
-              inputConfigId: selectedSubmission.item_id
-            })
-          );
-        }
+
+        const setSelectedSubmissionMessage = getMessage(
+          MessageType.SubmissionSetDefault,
+          {
+            app_id: selectedSubmission.app_id,
+            item_type: submissionType,
+            item_id: selectedSubmission.item_id
+          }
+        );
+        sendMessage(setSelectedSubmissionMessage)().then((res) => {
+          if (res.status == 200) {
+            //const data = res.body as Submission;
+            //setSelectedItemId(data?.item_id);
+          }
+        });
         onClose();
       } catch (err) {
         console.error("Failed to select a submission", err);
