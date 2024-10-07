@@ -45,9 +45,8 @@ export const SubmissionsList: React.FC<SubmissionsListProps> = ({
           }
         );
         sendMessage(setSelectedSubmissionMessage)().then((res) => {
-          if (res.status == 200) {
-            //const data = res.body as Submission;
-            //setSelectedItemId(data?.item_id);
+          if (res.status != 200) {
+            console.log("Error setting default submission: ", res);
           }
         });
         onClose();
