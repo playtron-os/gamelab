@@ -25,9 +25,9 @@ export interface LaunchConfigEditorProps {
 }
 
 const DEFAULT_OVERRIDE: Override = {
-  condition: "",
-  name: (() => t`New override`)(),
-  actions: [{ type: "SET", env: {}, tricks_config: { winetricks: [] } }]
+  conditions: { providers: [], architectures: [] },
+  name: "New override", // eslint-disable-line
+  actions: [{ op: "add", path: "/env/SOME_ENV", value: "1" }]
 };
 
 export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
@@ -44,6 +44,8 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
   const [editMode, setEditMode] = useState(-1);
   const [overrides, setOverrides] = useState<Override[]>([]);
 
+  const appName = appInfo.app.name;
+
   if (!selectedConfig) {
     // We assume selected config is always present when we are in editor
     return null;
@@ -51,7 +53,9 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
 
   const removeOverride = useCallback(
     (index: number) => {
-      setOverrides(overrides.filter((_, itemI) => index !== itemI));
+      const newOverrides = overrides.filter((_, itemI) => index !== itemI);
+      setOverrides(newOverrides);
+      setEditLaunchConfig({ ...selectedConfig, overrides: newOverrides });
       setEditMode(-1);
     },
     [overrides]
@@ -145,7 +149,7 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
     <>
       <div className="bg-[--fill-subtle] flex flex-row items-center justify-center font-bold text-2xl h-[64px] py-3 px-6">
         <div className="flex-grow">
-          <Trans>Launch Config for</Trans> {appInfo.app.name}
+          <Trans>Launch Config for {appName}</Trans>
         </div>
         <Button
           className="px-4"

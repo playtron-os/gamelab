@@ -4,6 +4,7 @@ export interface AppLaunchRequestBody {
   app_arguments?: string[];
   reset_wine_prefix?: boolean;
   launch_config_id?: string;
+  input_config_id?: string;
 }
 
 interface RegistryEntry {
@@ -15,12 +16,17 @@ interface Symlink {
   target: string;
 }
 
-interface OverrideAction extends AppLaunchConfig {
-  type: "SET" | "APPEND";
+interface OverrideAction {
+  op: string;
+  path: string;
+  value: string;
 }
 
 export interface Override {
-  condition: string;
+  conditions: {
+    providers?: string[];
+    architectures?: string[];
+  };
   name: string;
   actions: OverrideAction[];
 }
@@ -40,4 +46,5 @@ export interface LaunchParams {
   resetWinePrefix: boolean;
   bypassAppUpdate: boolean;
   launchConfigId?: string;
+  inputConfigId?: string;
 }
