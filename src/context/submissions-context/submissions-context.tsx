@@ -85,7 +85,11 @@ export const SubmissionsContextProvider = ({
 
   const currentApp = useMemo(() => {
     if (clickedApp) {
-      return clickedApp;
+      for (const app of apps) {
+        if (app.app.id === clickedApp.app.id) {
+          return app;
+        }
+      }
     } else if (apps && apps.length > 0) {
       return apps[0];
     }
