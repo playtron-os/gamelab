@@ -162,12 +162,15 @@ async fn message_loop(
             }
 
             len = socket.read(&mut buffer) => {
-                if let Ok(len) = len {
-                    if len > 0 {
-                        if let Err(err) = channel.data(&buffer[0..len]).await {
-                            log::error!("Error sending data through SSH {err:?}");
+                match len {
+                    Ok(len) => {
+                        if len > 0 {
+                            if let Err(err) = channel.data(&buffer[0..len]).await {
+                                log::error!("Error sending data through SSH {err:?}");
+                            }
                         }
-                    }
+                    },
+                    Err(err) => log::error!("Failed to read the socket {:?}", err)
                 }
             }
 

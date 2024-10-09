@@ -40,4 +40,5 @@ export interface LaunchParams {
   resetWinePrefix: boolean;
   bypassAppUpdate: boolean;
   launchConfigId?: string;
+  enhancedDebugging: boolean;
 }

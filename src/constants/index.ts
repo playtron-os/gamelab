@@ -39,7 +39,7 @@ export function getWebsocketUrl(
     warn("No device IP provided, this may result in an invalid websocket URL");
     deviceIp = DEFAULT_WEBSOCKET_IP;
   }
-  const url = new URL(`ws://${deviceIp}/ws`);
+  const url = new URL(`ws://${deviceIp}/ws?app_type=labs`);
   if (!url.port) {
     url.port = port.toString();
   }

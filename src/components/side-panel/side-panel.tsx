@@ -36,6 +36,7 @@ export const SidePanel: React.FC = () => {
 
   const [resetWinePrefix, setResetWinePrefix] = useState<boolean>(false);
   const [bypassAppUpdate, setBypassAppUpdate] = useState<boolean>(false);
+  const [enhancedDebugging, setEnhancedDebugging] = useState<boolean>(false);
   const [showTags, setShowTags] = useState<boolean>(false);
   const [isInputConfigOpen, setIsInputConfigOpen] = useState<boolean>(false);
   const [isLaunchConfigOpen, setIsLaunchConfigOpen] = useState<boolean>(false);
@@ -48,13 +49,15 @@ export const SidePanel: React.FC = () => {
       resetWinePrefix,
       bypassAppUpdate,
       launchConfigId: launchSubmissions.selectedItem?.item_id,
-      inputConfigId: inputSubmissions.selectedItem?.item_id
+      inputConfigId: inputSubmissions.selectedItem?.item_id,
+      enhancedDebugging
     }),
     [
       resetWinePrefix,
       bypassAppUpdate,
       inputSubmissions.selectedItem,
-      launchSubmissions.selectedItem
+      launchSubmissions.selectedItem,
+      enhancedDebugging
     ]
   );
 
@@ -123,9 +126,9 @@ export const SidePanel: React.FC = () => {
           </div>
           <Divider type="subtle" className="my-4" />
           <div className="flex py-2">
-            <span className="flex-grow">
+            <label htmlFor="resetWineToggle" className="flex-grow">
               <Trans>Reset Wine Prefix</Trans>
-            </span>
+            </label>
             <Toggle
               name="resetWineToggle"
               checked={resetWinePrefix}
@@ -133,13 +136,23 @@ export const SidePanel: React.FC = () => {
             />
           </div>
           <div className="flex py-2">
-            <span className="flex-grow">
+            <label htmlFor="bypassAppUpdateToggle" className="flex-grow">
               <Trans>Bypass App Update</Trans>
-            </span>
+            </label>
             <Toggle
               name="bypassAppUpdateToggle"
               checked={bypassAppUpdate}
               onChange={() => setBypassAppUpdate(!bypassAppUpdate)}
+            />
+          </div>
+          <div className="flex py-2">
+            <label htmlFor="enhancedDebuggingToggle" className="flex-grow">
+              <Trans>Enhanced Debugging</Trans>
+            </label>
+            <Toggle
+              name="enhancedDebuggingToggle"
+              checked={enhancedDebugging}
+              onChange={() => setEnhancedDebugging(!enhancedDebugging)}
             />
           </div>
 
@@ -251,7 +264,10 @@ export const SidePanel: React.FC = () => {
               label={getAppActionLabelByStatus(getAppStatus(currentApp))}
               Icon={getAppActionIconByStatus(getAppStatus(currentApp))}
               className="w-full"
-              onClick={() => handleAppDefaultAction(currentApp, launchParams)}
+              onClick={() => {
+                handleAppDefaultAction(currentApp, launchParams);
+                setIsLogsOpen(isLogsOpen || launchParams.enhancedDebugging);
+              }}
               primary={getAppStatus(currentApp) === AppStatus.READY}
             />
           </p>

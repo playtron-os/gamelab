@@ -29,6 +29,10 @@ export interface MessageResponseMapping extends MessageMapping {
   [MessageType.AppGetOwnedProgress]: app.AppGetOwnedProgressResponseBody;
   [MessageType.InputDevicesGet]: inputConfig.InputDeviceInfoResponseBody;
   [MessageType.InputDevicesUpdate]: inputConfig.InputDeviceInfoResponseBody;
+  [MessageType.AppLogUpdate]: {
+    owned_app_id: string;
+    content: string;
+  };
 }
 
 export type PlayserveResponseSuccess<MessageT extends MessageType> = {
