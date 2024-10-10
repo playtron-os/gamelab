@@ -127,6 +127,7 @@ export enum MessageType {
   SubmissionDelete = "SubmissionDelete",
   SubmissionDuplicate = "SubmissionDuplicate",
   SubmissionSubmit = "SubmissionSubmit",
+  SubmissionPromote = "SubmissionPromote",
   SubmissionRevert = "SubmissionRevert",
   SubmissionGetDefault = "SubmissionGetDefault",
   SubmissionSetDefault = "SubmissionSetDefault",

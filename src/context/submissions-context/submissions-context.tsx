@@ -45,6 +45,11 @@ export interface SubmissionsContextType {
     item_type: SubmissionItemType,
     app_id: string
   ) => void;
+  promoteSubmission: (
+    item_id: string,
+    item_type: SubmissionItemType,
+    app_id: string
+  ) => void;
   askDeleteSubmission: (
     item_id: string,
     item_type: SubmissionItemType,
@@ -232,6 +237,34 @@ export const SubmissionsContextProvider = ({
     [sendMessage, flashDispatch]
   );
 
+  const promoteSubmission = useCallback(
+    (item_id: string, item_type: SubmissionItemType, app_id: string) => {
+      const payload = {
+        item_type,
+        app_id,
+        item_id
+      };
+      console.log("😲 Promoting config", payload);
+      const promoteConfigMessage = getMessage(
+        MessageType.SubmissionPromote,
+        payload
+      );
+      sendMessage(promoteConfigMessage)().then((response) => {
+        if (response.status === 200) {
+          console.log("Successfully promoted submissions");
+          info("Successfully promoted submissions");
+        } else {
+          console.error("Error promoting config", response);
+          error(
+            `Error promoting config ${response.status} ${response.body.message}`
+          );
+          flashDispatch(flashMessage(response.body.message));
+        }
+      });
+    },
+    [sendMessage, flashDispatch]
+  );
+
   const submitSubmission = useCallback(
     (item_id: string, item_type: SubmissionItemType, app_id: string) => {
       console.log("Submitting submission to the server");
@@ -277,6 +310,7 @@ export const SubmissionsContextProvider = ({
         saveSubmission,
         createSubmission,
         copySubmission,
+        promoteSubmission,
         askDeleteSubmission,
         submitSubmission
       }}
