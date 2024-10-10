@@ -185,7 +185,10 @@ export enum MessageType {
   WirelessStateUpdate = "WirelessStateUpdate",
   DiskBenchmarkStarted = "DiskBenchmarkStarted",
   InputDevicesUpdate = "InputDevicesUpdate",
-  InputKeyboardsUpdated = "InputKeyboardsUpdated"
+  InputKeyboardsUpdated = "InputKeyboardsUpdated",
+  DisplayInfoUpdate = "DisplayInfoUpdate",
+  AppSaveSyncProgress = "AppSaveSyncProgress",
+  AppLogUpdate = "AppLogUpdate"
 }
 
 export type MessageMapping = {

@@ -47,4 +47,5 @@ export interface LaunchParams {
   bypassAppUpdate: boolean;
   launchConfigId?: string;
   inputConfigId?: string;
+  enhancedDebugging: boolean;
 }

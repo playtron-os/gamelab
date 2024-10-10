@@ -84,11 +84,11 @@ msgstr ""
 msgid "Bulk Actions"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:137
+#: src/components/side-panel/side-panel.tsx:140
 msgid "Bypass App Update"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:144
+#: src/screens/connect-device/connect-device.tsx:146
 msgid "Cancel"
 msgstr ""
 
@@ -97,7 +97,7 @@ msgid "Change device"
 msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:251
-#: src/components/logs-modal/logs-modal.tsx:46
+#: src/components/logs-modal/logs-modal.tsx:93
 msgid "Clear"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:261
+#: src/components/side-panel/side-panel.tsx:277
 msgid "Close Log Window"
 msgstr ""
 
@@ -134,16 +134,16 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:101
-#: src/screens/connect-device/connect-device.tsx:138
+#: src/screens/connect-device/connect-device.tsx:103
+#: src/screens/connect-device/connect-device.tsx:140
 msgid "Connect"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:39
+#: src/components/logs-modal/logs-modal.tsx:74
 msgid "Copy"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:107
+#: src/components/side-panel/side-panel.tsx:110
 msgid "Date Added"
 msgstr ""
 
@@ -180,6 +180,10 @@ msgstr ""
 
 #: src/components/submission-config/cells/submission-action-cell.tsx:32
 msgid "Duplicate"
+msgstr ""
+
+#: src/components/side-panel/side-panel.tsx:150
+msgid "Enhanced Debugging"
 msgstr ""
 
 #: src/components/app-library/app-library.tsx:191
@@ -232,6 +236,10 @@ msgstr ""
 msgid "Game is not owned or provider is not authorized"
 msgstr ""
 
+#: src/components/logs-modal/logs-modal.tsx:111
+msgid "Game logs will appear here..."
+msgstr ""
+
 #: src/components/controller-edit/map-to.tsx:24
 msgid "Gamepad"
 msgstr ""
@@ -249,11 +257,15 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:80
-msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
+#: src/screens/connect-device/connect-device.tsx:81
+msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Advanced > Remote Access' on your device."
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:174
+#: src/screens/connect-device/connect-device.tsx:80
+#~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
+#~ msgstr ""
+
+#: src/components/side-panel/side-panel.tsx:187
 msgid "Input Config"
 msgstr ""
 
@@ -269,11 +281,11 @@ msgstr ""
 msgid "INPUT DEVICES"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:53
+#: src/components/logs-modal/logs-modal.tsx:100
 msgid "Insert Delimiter"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:225
+#: src/components/side-panel/side-panel.tsx:238
 msgid "Install folder"
 msgstr ""
 
@@ -294,11 +306,11 @@ msgstr ""
 msgid "Invalid layout"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:115
+#: src/screens/connect-device/connect-device.tsx:117
 msgid "Invalid SSH credentials"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:88
+#: src/screens/connect-device/connect-device.tsx:90
 msgid "IP Address of the Playtron device"
 msgstr ""
 
@@ -310,7 +322,7 @@ msgstr ""
 msgid "Keyboard"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:118
+#: src/screens/connect-device/connect-device.tsx:120
 msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 msgstr ""
 
@@ -318,7 +330,7 @@ msgstr ""
 msgid "Launch"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:149
+#: src/components/side-panel/side-panel.tsx:162
 msgid "Launch Config"
 msgstr ""
 
@@ -330,7 +342,7 @@ msgstr ""
 msgid "Launch Config List"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:31
+#: src/components/logs-modal/logs-modal.tsx:66
 msgid "Logs"
 msgstr ""
 
@@ -375,7 +387,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:120
+#: src/components/side-panel/side-panel.tsx:123
 msgid "Never tested"
 msgstr ""
 
@@ -392,7 +404,7 @@ msgstr ""
 msgid "Not Downloaded"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:111
+#: src/components/side-panel/side-panel.tsx:114
 msgid "Not installed"
 msgstr ""
 
@@ -412,12 +424,16 @@ msgstr ""
 msgid "Oops!"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:261
+#: src/components/logs-modal/logs-modal.tsx:85
+msgid "Open Full Log"
+msgstr ""
+
+#: src/components/side-panel/side-panel.tsx:277
 msgid "Open Log Window"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:132
-#: src/screens/connect-device/connect-device.tsx:133
+#: src/screens/connect-device/connect-device.tsx:134
+#: src/screens/connect-device/connect-device.tsx:135
 msgid "Password"
 msgstr ""
 
@@ -430,7 +446,7 @@ msgstr ""
 msgid "Paused"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:200
+#: src/components/side-panel/side-panel.tsx:213
 msgid "Playtron App ID"
 msgstr ""
 
@@ -439,7 +455,7 @@ msgstr ""
 msgid "Playtron Labs"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:207
+#: src/components/side-panel/side-panel.tsx:220
 msgid "Playtron Slug"
 msgstr ""
 
@@ -452,12 +468,12 @@ msgstr ""
 msgid "Prioritize"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:65
+#: src/components/side-panel/side-panel.tsx:68
 #: src/context/app-library-context/table-config.tsx:54
 msgid "Provider"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:71
+#: src/components/side-panel/side-panel.tsx:74
 msgid "Provider App ID"
 msgstr ""
 
@@ -479,16 +495,16 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:214
+#: src/components/side-panel/side-panel.tsx:227
 msgid "Release Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:159
-#: src/components/side-panel/side-panel.tsx:184
+#: src/components/side-panel/side-panel.tsx:172
+#: src/components/side-panel/side-panel.tsx:197
 msgid "Reset"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:127
+#: src/components/side-panel/side-panel.tsx:130
 msgid "Reset Wine Prefix"
 msgstr ""
 
@@ -539,19 +555,19 @@ msgstr ""
 msgid "System Drive"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:238
+#: src/components/side-panel/side-panel.tsx:251
 msgid "Tags"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:77
+#: src/screens/connect-device/connect-device.tsx:78
 msgid "Test Games on Playtron Device via Local Network"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:116
+#: src/components/side-panel/side-panel.tsx:119
 msgid "Tested on"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:43
+#: src/screens/connect-device/connect-device.tsx:44
 msgid "The device did not respond in time"
 msgstr ""
 
@@ -579,11 +595,11 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:62
+#: src/screens/connect-device/connect-device.tsx:63
 msgid "Unable to connect to playtron service on the device"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:46
+#: src/screens/connect-device/connect-device.tsx:47
 msgid "Unable to connect with the device: {err}"
 msgstr ""
 
@@ -611,8 +627,8 @@ msgstr ""
 msgid "Update Required"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:126
-#: src/screens/connect-device/connect-device.tsx:127
+#: src/screens/connect-device/connect-device.tsx:128
+#: src/screens/connect-device/connect-device.tsx:129
 msgid "Username"
 msgstr ""
 

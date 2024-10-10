@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { t, Trans } from "@lingui/macro";
 import {
   Modal,
   Button,
   ClipboardLine,
   EraserLine,
-  PageSeparator
+  PageSeparator,
+  FileListLine
 } from "@playtron/styleguide";
 
-import { AppInformation } from "@/types";
+import { AppInformation, MessageType } from "@/types";
+import { usePlayserve } from "@/hooks";
+import { invoke } from "@tauri-apps/api/core";
 
 interface LogsModalProps {
   isOpen: boolean;
@@ -21,8 +24,40 @@ export const LogsModal: React.FC<LogsModalProps> = ({
   onClose,
   appInfo
 }) => {
-  const [logs, setLogs] = useState<string>(JSON.stringify(appInfo, null, 2));
-  // TODO : Connect to a playserve endoint to receive all messages of type game log for this app
+  const [logs, setLogs] = useState<string>("");
+  const scrollable = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setLogs("");
+  }, [appInfo.app.id]);
+
+  usePlayserve({
+    onMessage: (message) => {
+      if (
+        message.message_type == MessageType.AppLogUpdate &&
+        message.status == 200
+      ) {
+        invoke("app_log_stream", {
+          appId: message.body.owned_app_id,
+          content: message.body.content
+        });
+        if (appInfo.installed_app?.owned_app.id === message.body.owned_app_id) {
+          setLogs(
+            (logs + message.body.content).split("\n").slice(-3000).join("\n")
+          );
+          setTimeout(() => {
+            if (scrollable.current)
+              scrollable.current.scrollTo({
+                left: scrollable.current.scrollLeft,
+                top: scrollable.current.scrollHeight,
+                behavior: "smooth"
+              });
+          }, 400);
+        }
+      }
+    }
+  });
+
   return (
     <Modal isOpen={isOpen} onClose={onClose} noContentPadding rightMargin={384}>
       <div>
@@ -41,6 +76,18 @@ export const LogsModal: React.FC<LogsModalProps> = ({
               size="small"
             />
             <Button
+              onClick={() => {
+                invoke("app_log_show", {
+                  appId: appInfo.installed_app?.owned_app.id
+                });
+              }}
+              Icon={FileListLine}
+              label={t`Open Full Log`}
+              backgroundColor="bg-[--fill-subtle]"
+              size="small"
+            />
+
+            <Button
               onClick={() => setLogs("")}
               Icon={EraserLine}
               label={t`Clear`}
@@ -48,7 +95,7 @@ export const LogsModal: React.FC<LogsModalProps> = ({
               size="small"
             />
             <Button
-              onClick={() => console.log("Insert delimiter")}
+              onClick={() => setLogs(logs + "\n\n")}
               Icon={PageSeparator}
               label={t`Insert Delimiter`}
               backgroundColor="bg-[--fill-subtle]"
@@ -57,8 +104,11 @@ export const LogsModal: React.FC<LogsModalProps> = ({
           </div>
         </div>
         <div className="p-6">
-          <div className="h-[calc(95vh-100px)] w-[calc(95vw-384px)] overflow-y-scroll">
-            <pre>{logs}</pre>
+          <div
+            ref={scrollable}
+            className="h-[calc(95vh-100px)] w-[calc(95vw-384px)] overflow-y-scroll"
+          >
+            <pre>{logs || t`Game logs will appear here...`}</pre>
           </div>
         </div>
       </div>

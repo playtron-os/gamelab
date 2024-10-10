@@ -40,6 +40,16 @@ export interface MessageRequestMapping extends MessageMapping {
   [MessageType.AppGetOwned]: {
     force_refresh?: boolean;
   };
+  [MessageType.AppLaunch]: {
+    owned_app_id: string;
+    bypass_app_update?: boolean;
+    using_gamescope?: boolean;
+    reset_wine_prefix?: boolean;
+    skip_cloud_sync?: boolean;
+    enhanced_debugging?: boolean;
+    launch_config_id?: string;
+    input_config_id?: string;
+  };
   [MessageType.AppMove]: drive.AppMoveRequest;
   [MessageType.AppTerminate]: OwnedAppIdRequest;
   [MessageType.DriveInfo]: EmptyBody;

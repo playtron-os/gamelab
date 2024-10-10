@@ -3,10 +3,14 @@
 
 use regex::{Captures, Regex};
 use std::{env, fs};
+use tauri::Manager;
 use tauri_plugin_log::{Target, TargetKind};
+use tokio::sync::Mutex;
 
+mod app_logs;
 mod ssh;
-use ssh::initialize_device_connection;
+use app_logs::*;
+use ssh::*;
 
 // Regex to match ${...} pattern from the .env file to properly replace values
 lazy_static::lazy_static! {
@@ -63,11 +67,18 @@ fn main() {
             #[cfg(desktop)]
             app.handle()
                 .plugin(tauri_plugin_updater::Builder::new().build())?;
+            app.manage(Mutex::new(LogStreamState::default()));
             Ok(())
         })
         .plugin(tauri_plugin_log::Builder::new().build())
         .plugin(tauri_plugin_updater::Builder::new().build())
-        .invoke_handler(tauri::generate_handler![initialize_device_connection])
+        .invoke_handler(tauri::generate_handler![
+            initialize_device_connection,
+            app_log_init,
+            app_log_deinit,
+            app_log_stream,
+            app_log_show
+        ])
         .plugin(
             tauri_plugin_log::Builder::new()
                 .filter(|metadata| !metadata.target().starts_with("russh"))
