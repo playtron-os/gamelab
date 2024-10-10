@@ -10,8 +10,12 @@ export type SubmissionCellContext = CellContext<Submission, unknown>;
 export const SubmissionActionCell = (info: SubmissionCellContext) => {
   const submission = info.row.original;
 
-  const { askDeleteSubmission, copySubmission, submitSubmission } =
-    useSubmissionsContext();
+  const {
+    askDeleteSubmission,
+    copySubmission,
+    submitSubmission,
+    promoteSubmission
+  } = useSubmissionsContext();
 
   const appActions = [];
 
@@ -43,6 +47,18 @@ export const SubmissionActionCell = (info: SubmissionCellContext) => {
     label: t`Delete`,
     onClick: () => {
       askDeleteSubmission(
+        submission.item_id,
+        submission.submission_item_type,
+        submission.app_id
+      );
+    }
+  });
+
+  appActions.push({
+    id: 4,
+    label: t`Promote`,
+    onClick: () => {
+      promoteSubmission(
         submission.item_id,
         submission.submission_item_type,
         submission.app_id
