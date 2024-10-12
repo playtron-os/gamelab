@@ -33,6 +33,7 @@ export interface MessageResponseMapping extends MessageMapping {
     owned_app_id: string;
     content: string;
   };
+  [MessageType.AppEulasGet]: app.AppEulaResponseBody[];
 }
 
 export type PlayserveResponseSuccess<MessageT extends MessageType> = {

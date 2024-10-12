@@ -15,11 +15,17 @@ import { InputConfigModal } from "../input-config-modal/input-config-modal";
 import { LaunchConfigModal } from "../launch-config/launch-config-modal";
 import { LogsModal } from "../logs-modal/logs-modal";
 import { useSubmissionsContext } from "@/context/submissions-context";
+
 import { ConfigSelect } from "@/components/side-panel/config-select";
 import { TargetControllerType } from "@/types/input-config";
+import { EulaModal } from "@/components/eula-modal/eula-modal";
 
 export const SidePanel: React.FC = () => {
   const {
+    eula,
+    isEulaOpen,
+    acceptEula,
+    setIsEulaOpen,
     handlers: { handleAppDefaultAction }
   } = useAppLibraryContext();
   const {
@@ -295,6 +301,19 @@ export const SidePanel: React.FC = () => {
         isOpen={isLogsOpen}
         onClose={() => setIsLogsOpen(false)}
         appInfo={currentApp}
+      />
+      <EulaModal
+        appInfo={currentApp}
+        isOpen={isEulaOpen}
+        eula={eula}
+        onAccept={() => {
+          if (!eula) {
+            return;
+          }
+          acceptEula(eula, currentApp);
+          setIsEulaOpen(false);
+        }}
+        onClose={() => setIsEulaOpen(false)}
       />
     </>
   );

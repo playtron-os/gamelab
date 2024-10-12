@@ -56,7 +56,11 @@ const MOCK_LIBRARY_TABLE: AppLibraryContextProps = {
   onSelectedIdsChange: function (_selectedId: string): void {
     throw new Error("Function not implemented.");
   },
-  clickedApp: undefined
+  clickedApp: undefined,
+  eula: null,
+  isEulaOpen: false,
+  setIsEulaOpen: jest.fn(),
+  acceptEula: jest.fn()
 };
 
 const apps = [STEAM_APP_INFORMATION_MOCKS[0], STEAM_APP_INFORMATION_MOCKS[1]];
