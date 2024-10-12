@@ -48,7 +48,11 @@ const MOCK_LIBRARY_TABLE_DATA: context.AppLibraryContextProps = {
   setSelectedApps: jest.fn(),
   selectedIds: [],
   onSelectedIdsChange: jest.fn(),
-  clickedApp: undefined
+  clickedApp: undefined,
+  isEulaOpen: false,
+  setIsEulaOpen: jest.fn(),
+  eula: null,
+  acceptEula: jest.fn()
 };
 
 const getMockStore = ({

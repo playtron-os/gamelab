@@ -140,3 +140,12 @@ export interface AppGetOwnedProgressResponseBody {
   provider: AppProvider;
   progress: number;
 }
+
+export interface AppEulaResponseBody {
+  id: string;
+  name: string;
+  version: number;
+  url: string;
+  body: string | null;
+  owned_app_id: string;
+}

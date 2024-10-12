@@ -19,6 +19,7 @@ export interface FileInformation {
   match: string;
 }
 
+export const EULA_NOT_ACCEPTED = "EULA_NOT_ACCEPTED";
 export const DEFAULT_WEBSOCKET_IP = "127.0.0.1";
 export const DEFAULT_WEBSOCKET_PORT = 8080;
 /**

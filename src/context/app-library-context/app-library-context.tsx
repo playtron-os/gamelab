@@ -15,16 +15,19 @@ import { TableProps } from "@playtron/styleguide";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { useAppTerminate as useAppTerminateActions } from "../../hooks/app-library/use-app-terminate-actions";
 import { AppInformation } from "@/types/app-library";
+
 import { useAppLibraryActions } from "../../hooks/app-library/use-app-library-actions";
 import {
   useAppDownloadActions,
   useAppLaunch,
-  useAppUninstallActions
+  useAppUninstallActions,
+  useAppEula
 } from "@/hooks/app-library";
 import { getAppStatusWithQueue } from "@/utils/app-info";
 import { columnConfig } from "./table-config";
 import { LaunchParams } from "@/types/launch";
-
+import { AppEulaResponseBody } from "@/types/app";
+import { EULA_NOT_ACCEPTED } from "@/constants";
 export interface AppLibraryContextProps {
   columns: TableProps["columns"];
   selectedIds: string[];
@@ -46,6 +49,10 @@ export interface AppLibraryContextProps {
   setSelectedApps: React.Dispatch<React.SetStateAction<Set<string>>>;
   clickedApp?: AppInformation;
   bulkActionsMenuStateManager: ReturnType<typeof useBoolean>;
+  eula: AppEulaResponseBody | null;
+  isEulaOpen: boolean;
+  setIsEulaOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  acceptEula: (eula: AppEulaResponseBody, appInfo: AppInformation) => void;
 }
 
 export const AppLibraryContext = createContext<AppLibraryContextProps | null>(
@@ -62,7 +69,8 @@ export const AppLibraryContextProvider: React.FC<
 > = ({ children }) => {
   const bulkActionsMenuStateManager = useBoolean(false);
   const dispatch = useAppDispatch();
-
+  const [eula, setEula] = useState<AppEulaResponseBody | null>(null);
+  const [isEulaOpen, setIsEulaOpen] = useState(false);
   const { apps, queuePositionMap } = useAppSelector(selectAppLibraryState);
 
   const openMoveAppDialog = useCallback(
@@ -77,13 +85,15 @@ export const AppLibraryContextProvider: React.FC<
   const { uninstallApp } = useAppUninstallActions();
   const { terminateApp } = useAppTerminateActions();
   const { fetchLibraryApps } = useAppLibraryActions();
+  const { getAppEulas, acceptEula } = useAppEula();
 
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
   const [clickedApp, setClickedApp] = useState<AppInformation>();
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   const handleAppDefaultAction = useCallback(
-    (appInfo: AppInformation, params?: LaunchParams) => {
+    async (appInfo: AppInformation, params?: LaunchParams) => {
+      let result: string | undefined = undefined;
       switch (getAppStatusWithQueue(appInfo, queuePositionMap)) {
         case AppStatus.RUNNING:
           terminateApp(appInfo);
@@ -96,16 +106,26 @@ export const AppLibraryContextProvider: React.FC<
         case AppStatus.PAUSED:
         case AppStatus.UPDATE_REQUIRED:
         case AppStatus.NOT_DOWNLOADED:
-          downloadApp(appInfo);
+          result = await downloadApp(appInfo);
           break;
         case AppStatus.QUEUED:
-          downloadApp(appInfo, true);
+          result = await downloadApp(appInfo, true);
           break;
         case AppStatus.READY:
           launchApp(appInfo, params);
           break;
         default:
           break;
+      }
+
+      if (result === EULA_NOT_ACCEPTED) {
+        const response = await getAppEulas(appInfo);
+        if (response && Array.isArray(response)) {
+          setEula(response[0]);
+          setIsEulaOpen(true);
+        } else {
+          console.error("Unexpected response format from getAppEula");
+        }
       }
     },
     [terminateApp, pauseDownload, downloadApp, launchApp, queuePositionMap]
@@ -163,7 +183,11 @@ export const AppLibraryContextProvider: React.FC<
       selectedApps,
       setSelectedApps,
       clickedApp,
-      bulkActionsMenuStateManager
+      bulkActionsMenuStateManager,
+      eula,
+      isEulaOpen,
+      setIsEulaOpen,
+      acceptEula
     }),
     [
       selectedIds,
@@ -172,7 +196,11 @@ export const AppLibraryContextProvider: React.FC<
       selectedApps,
       setSelectedApps,
       clickedApp,
-      bulkActionsMenuStateManager
+      bulkActionsMenuStateManager,
+      eula,
+      isEulaOpen,
+      setIsEulaOpen,
+      acceptEula
     ]
   );
 
