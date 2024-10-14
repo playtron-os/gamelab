@@ -123,11 +123,11 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
       />
     );
   });
-
+  const gameName = appInfo.app.name;
   return (
     <>
       <SubmissionEditHeader
-        title={t`Input Config for ` + appInfo.app.name}
+        title={t`Input Config for ${gameName}`}
         onClose={() => {
           setEditLayout(null);
           onClose();
