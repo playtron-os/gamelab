@@ -154,25 +154,25 @@ export const ControllerInputs: ControllerInputMap = {
   },
   LeftTrigger: {
     label: "Left Trigger",
-    icon: L1RectangleRoundedbottomLine,
+    icon: L2RectangleRoundedtopLine,
     device: "gamepad",
     mapping: { trigger: { name: "LeftTrigger", deadzone: 0.2 } }
   },
   RightTrigger: {
     label: "Right Trigger",
-    icon: R1RectangleRoundedtopLine,
+    icon: R2RectangleRoundedtopLine,
     device: "gamepad",
     mapping: { trigger: { name: "RightTrigger", deadzone: 0.2 } }
   },
   LeftBumper: {
     label: "Left Bumper",
-    icon: L2RectangleRoundedtopLine,
+    icon: L1RectangleRoundedbottomLine,
     device: "gamepad",
     mapping: { button: "LeftBumper" }
   },
   RightBumper: {
     label: "Right Bumper",
-    icon: R2RectangleRoundedtopLine,
+    icon: R1RectangleRoundedtopLine,
     device: "gamepad",
     mapping: { button: "RightBumper" }
   },

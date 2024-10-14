@@ -67,12 +67,12 @@ export const Gamepad: React.FC<GamepadControllerProps> = ({
             className="mb-8"
           />
           <InputButton
-            input={ControllerInputs.LeftBumper}
+            input={ControllerInputs.LeftTrigger}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
           />
           <InputButton
-            input={ControllerInputs.LeftTrigger}
+            input={ControllerInputs.LeftBumper}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
           />
@@ -128,12 +128,12 @@ export const Gamepad: React.FC<GamepadControllerProps> = ({
             className="mb-8"
           />
           <InputButton
-            input={ControllerInputs.RightBumper}
+            input={ControllerInputs.RightTrigger}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
           />
           <InputButton
-            input={ControllerInputs.RightTrigger}
+            input={ControllerInputs.RightBumper}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
           />
