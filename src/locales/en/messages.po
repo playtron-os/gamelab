@@ -55,7 +55,7 @@ msgstr "All Games"
 msgid "All Games ({totalGames})"
 msgstr "All Games ({totalGames})"
 
-#: src/hooks/app-library/use-app-download-actions.ts:85
+#: src/hooks/app-library/use-app-download-actions.ts:95
 msgid "Are you sure you want to stop downloading {appName}?"
 msgstr "Are you sure you want to stop downloading {appName}?"
 
@@ -76,7 +76,7 @@ msgstr "Are you sure you want to uninstall the selected apps?"
 msgid "Author"
 msgstr "Author"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:194
+#: src/components/launch-config-editor/launch-config-editor.tsx:198
 msgid "Base config"
 msgstr "Base config"
 
@@ -84,7 +84,7 @@ msgstr "Base config"
 msgid "Bulk Actions"
 msgstr "Bulk Actions"
 
-#: src/components/side-panel/side-panel.tsx:140
+#: src/components/side-panel/side-panel.tsx:146
 msgid "Bypass App Update"
 msgstr "Bypass App Update"
 
@@ -96,7 +96,7 @@ msgstr "Cancel"
 msgid "Change device"
 msgstr "Change device"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:251
+#: src/components/launch-config-editor/launch-config-editor.tsx:255
 #: src/components/logs-modal/logs-modal.tsx:93
 msgid "Clear"
 msgstr "Clear"
@@ -109,7 +109,7 @@ msgstr "Clear"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/side-panel/side-panel.tsx:277
+#: src/components/side-panel/side-panel.tsx:283
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
@@ -118,15 +118,15 @@ msgid "Config"
 msgstr "Config"
 
 #: src/components/controller-edit/controller-edit.tsx:140
-#: src/components/launch-config-editor/launch-config-editor.tsx:163
+#: src/components/launch-config-editor/launch-config-editor.tsx:167
 msgid "CONFIG NAME"
 msgstr "CONFIG NAME"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:179
+#: src/components/launch-config-editor/launch-config-editor.tsx:183
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
-#: src/context/submissions-context/submissions-context.tsx:242
+#: src/context/submissions-context/submissions-context.tsx:245
 msgid "Configuration has been submitted"
 msgstr "Configuration has been submitted"
 
@@ -143,7 +143,7 @@ msgstr "Connect"
 msgid "Copy"
 msgstr "Copy"
 
-#: src/components/side-panel/side-panel.tsx:110
+#: src/components/side-panel/side-panel.tsx:116
 msgid "Date Added"
 msgstr "Date Added"
 
@@ -151,7 +151,7 @@ msgstr "Date Added"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/context/submissions-context/submissions-context.tsx:286
+#: src/context/submissions-context/submissions-context.tsx:289
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
@@ -182,7 +182,11 @@ msgstr "Drives"
 msgid "Duplicate"
 msgstr "Duplicate"
 
-#: src/components/side-panel/side-panel.tsx:150
+#: src/components/eula-modal/eula-modal.tsx:28
+msgid "End User License Agreements for"
+msgstr "End User License Agreements for"
+
+#: src/components/side-panel/side-panel.tsx:156
 msgid "Enhanced Debugging"
 msgstr "Enhanced Debugging"
 
@@ -195,7 +199,7 @@ msgstr "Enhanced Debugging"
 msgid "Error"
 msgstr "Error"
 
-#: src/hooks/app-library/use-app-download-actions.ts:28
+#: src/hooks/app-library/use-app-download-actions.ts:37
 msgid "Error starting app download: {message}"
 msgstr "Error starting app download: {message}"
 
@@ -216,7 +220,7 @@ msgstr "Failed to uninstall app: {message}"
 msgid "Filter:"
 msgstr "Filter:"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:253
+#: src/components/launch-config-editor/launch-config-editor.tsx:257
 msgid "Format"
 msgstr "Format"
 
@@ -253,6 +257,10 @@ msgstr "Gamepad Type"
 #~ msgid "GOG"
 #~ msgstr "GOG"
 
+#: src/components/eula-modal/eula-modal.tsx:55
+msgid "I agree to this EULA"
+msgstr "I agree to this EULA"
+
 #: src/components/sidebar/sidebar.tsx:47
 msgid "Info"
 msgstr "Info"
@@ -265,13 +273,17 @@ msgstr "Initiate direct testing on a Playtron device within your local network. 
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 
-#: src/components/side-panel/side-panel.tsx:187
+#: src/components/side-panel/side-panel.tsx:193
 msgid "Input Config"
 msgstr "Input Config"
 
 #: src/components/controller-edit/controller-edit.tsx:130
-msgid "Input Config for"
-msgstr "Input Config for"
+#~ msgid "Input Config for"
+#~ msgstr "Input Config for"
+
+#: src/components/controller-edit/controller-edit.tsx:130
+msgid "Input Config for {gameName}"
+msgstr "Input Config for {gameName}"
 
 #: src/components/input-config-modal/input-config-modal.tsx:170
 msgid "Input Config List"
@@ -285,7 +297,7 @@ msgstr "INPUT DEVICES"
 msgid "Insert Delimiter"
 msgstr "Insert Delimiter"
 
-#: src/components/side-panel/side-panel.tsx:238
+#: src/components/side-panel/side-panel.tsx:244
 msgid "Install folder"
 msgstr "Install folder"
 
@@ -314,7 +326,7 @@ msgstr "Invalid SSH credentials"
 msgid "IP Address of the Playtron device"
 msgstr "IP Address of the Playtron device"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:246
+#: src/components/launch-config-editor/launch-config-editor.tsx:250
 msgid "JSON structure is invalid {err}"
 msgstr "JSON structure is invalid {err}"
 
@@ -330,13 +342,17 @@ msgstr "Labs is unable to connect to the device using default credentials. Pleas
 msgid "Launch"
 msgstr "Launch"
 
-#: src/components/side-panel/side-panel.tsx:162
+#: src/components/side-panel/side-panel.tsx:168
 msgid "Launch Config"
 msgstr "Launch Config"
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:148
-msgid "Launch Config for"
-msgstr "Launch Config for"
+#~ msgid "Launch Config for"
+#~ msgstr "Launch Config for"
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:152
+msgid "Launch Config for {appName}"
+msgstr "Launch Config for {appName}"
 
 #: src/components/launch-config/launch-config-modal.tsx:74
 msgid "Launch Config List"
@@ -387,13 +403,13 @@ msgstr "Move selected apps"
 msgid "Name"
 msgstr "Name"
 
-#: src/components/side-panel/side-panel.tsx:123
+#: src/components/side-panel/side-panel.tsx:129
 msgid "Never tested"
 msgstr "Never tested"
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:29
-msgid "New override"
-msgstr "New override"
+#~ msgid "New override"
+#~ msgstr "New override"
 
 #: src/components/sidebar/sidebar.tsx:57
 msgid "No internet"
@@ -404,7 +420,7 @@ msgstr "No internet"
 msgid "Not Downloaded"
 msgstr "Not Downloaded"
 
-#: src/components/side-panel/side-panel.tsx:114
+#: src/components/side-panel/side-panel.tsx:120
 msgid "Not installed"
 msgstr "Not installed"
 
@@ -428,7 +444,7 @@ msgstr "Oops!"
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
-#: src/components/side-panel/side-panel.tsx:277
+#: src/components/side-panel/side-panel.tsx:283
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
@@ -446,7 +462,7 @@ msgstr "Pause"
 msgid "Paused"
 msgstr "Paused"
 
-#: src/components/side-panel/side-panel.tsx:213
+#: src/components/side-panel/side-panel.tsx:219
 msgid "Playtron App ID"
 msgstr "Playtron App ID"
 
@@ -455,7 +471,7 @@ msgstr "Playtron App ID"
 msgid "Playtron Labs"
 msgstr "Playtron Labs"
 
-#: src/components/side-panel/side-panel.tsx:220
+#: src/components/side-panel/side-panel.tsx:226
 msgid "Playtron Slug"
 msgstr "Playtron Slug"
 
@@ -468,12 +484,12 @@ msgstr "Pre-Allocating"
 msgid "Prioritize"
 msgstr "Prioritize"
 
-#: src/components/side-panel/side-panel.tsx:68
+#: src/components/side-panel/side-panel.tsx:74
 #: src/context/app-library-context/table-config.tsx:54
 msgid "Provider"
 msgstr "Provider"
 
-#: src/components/side-panel/side-panel.tsx:74
+#: src/components/side-panel/side-panel.tsx:80
 msgid "Provider App ID"
 msgstr "Provider App ID"
 
@@ -495,16 +511,16 @@ msgstr "Queued"
 msgid "Ready"
 msgstr "Ready"
 
-#: src/components/side-panel/side-panel.tsx:227
+#: src/components/side-panel/side-panel.tsx:233
 msgid "Release Date"
 msgstr "Release Date"
 
-#: src/components/side-panel/side-panel.tsx:172
-#: src/components/side-panel/side-panel.tsx:197
+#: src/components/side-panel/side-panel.tsx:178
+#: src/components/side-panel/side-panel.tsx:203
 msgid "Reset"
 msgstr "Reset"
 
-#: src/components/side-panel/side-panel.tsx:130
+#: src/components/side-panel/side-panel.tsx:136
 msgid "Reset Wine Prefix"
 msgstr "Reset Wine Prefix"
 
@@ -518,7 +534,7 @@ msgid "Running"
 msgstr "Running"
 
 #: src/components/controller-edit/controller-edit.tsx:175
-#: src/components/launch-config-editor/launch-config-editor.tsx:213
+#: src/components/launch-config-editor/launch-config-editor.tsx:217
 msgid "Save"
 msgstr "Save"
 
@@ -547,6 +563,7 @@ msgstr "Status"
 msgid "Stop"
 msgstr "Stop"
 
+#: src/components/eula-modal/eula-modal.tsx:69
 #: src/components/submission-config/cells/submission-action-cell.tsx:20
 msgid "Submit"
 msgstr "Submit"
@@ -555,7 +572,7 @@ msgstr "Submit"
 msgid "System Drive"
 msgstr "System Drive"
 
-#: src/components/side-panel/side-panel.tsx:251
+#: src/components/side-panel/side-panel.tsx:257
 msgid "Tags"
 msgstr "Tags"
 
@@ -563,7 +580,7 @@ msgstr "Tags"
 msgid "Test Games on Playtron Device via Local Network"
 msgstr "Test Games on Playtron Device via Local Network"
 
-#: src/components/side-panel/side-panel.tsx:119
+#: src/components/side-panel/side-panel.tsx:125
 msgid "Tested on"
 msgstr "Tested on"
 
@@ -579,7 +596,7 @@ msgstr "There is no controller configuration created for"
 msgid "There is no launch configuration created for"
 msgstr "There is no launch configuration created for"
 
-#: src/context/submissions-context/submissions-context.tsx:248
+#: src/context/submissions-context/submissions-context.tsx:251
 msgid "There was an error with the submission {errorMessage}"
 msgstr "There was an error with the submission {errorMessage}"
 
@@ -632,7 +649,7 @@ msgstr "Update Required"
 msgid "Username"
 msgstr "Username"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:240
+#: src/components/launch-config-editor/launch-config-editor.tsx:244
 msgid "Validate JSON"
 msgstr "Validate JSON"
 
