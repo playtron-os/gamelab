@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useMemo, useState } from "react";
-import { flashMessage } from "redux-flash";
+import { flashErrorMessage, flashMessage } from "redux-flash";
 import {
   AppInformation,
   getMessage,
@@ -145,7 +145,6 @@ export const SubmissionsContextProvider = ({
 
       sendMessage(configCreateMessage)().then((response) => {
         if (response.status === 200) {
-          console.log("Successfully created config");
           info("Successfully create config");
         } else {
           flashDispatch(flashMessage(response.body.message));
@@ -248,7 +247,7 @@ export const SubmissionsContextProvider = ({
           // TODO: Translate errrors properly
           const errorMessage = response.body.message;
           flashDispatch(
-            flashMessage(
+            flashErrorMessage(
               t`There was an error with the submission ${errorMessage}`
             )
           );

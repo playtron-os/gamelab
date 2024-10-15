@@ -10,7 +10,7 @@ export function Notification() {
     <>
       {flash && (
         <ErrorPopUp
-          title={t`Error`}
+          title={flash.isError ? t`Error` : ""}
           message={flash.message}
           isOpen={flash}
           className="z-50"
