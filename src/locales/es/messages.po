@@ -55,7 +55,7 @@ msgstr ""
 msgid "All Games ({totalGames})"
 msgstr ""
 
-#: src/hooks/app-library/use-app-download-actions.ts:85
+#: src/hooks/app-library/use-app-download-actions.ts:95
 msgid "Are you sure you want to stop downloading {appName}?"
 msgstr ""
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:194
+#: src/components/launch-config-editor/launch-config-editor.tsx:198
 msgid "Base config"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Bulk Actions"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:140
+#: src/components/side-panel/side-panel.tsx:146
 msgid "Bypass App Update"
 msgstr ""
 
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Change device"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:251
+#: src/components/launch-config-editor/launch-config-editor.tsx:255
 #: src/components/logs-modal/logs-modal.tsx:93
 msgid "Clear"
 msgstr ""
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:277
+#: src/components/side-panel/side-panel.tsx:283
 msgid "Close Log Window"
 msgstr ""
 
@@ -118,15 +118,15 @@ msgid "Config"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:140
-#: src/components/launch-config-editor/launch-config-editor.tsx:163
+#: src/components/launch-config-editor/launch-config-editor.tsx:167
 msgid "CONFIG NAME"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:179
+#: src/components/launch-config-editor/launch-config-editor.tsx:183
 msgid "CONFIGURATION"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:242
+#: src/context/submissions-context/submissions-context.tsx:245
 msgid "Configuration has been submitted"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:110
+#: src/components/side-panel/side-panel.tsx:116
 msgid "Date Added"
 msgstr ""
 
@@ -151,7 +151,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:286
+#: src/context/submissions-context/submissions-context.tsx:289
 msgid "Delete this configuration?"
 msgstr ""
 
@@ -182,7 +182,11 @@ msgstr ""
 msgid "Duplicate"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:150
+#: src/components/eula-modal/eula-modal.tsx:28
+msgid "End User License Agreements for"
+msgstr ""
+
+#: src/components/side-panel/side-panel.tsx:156
 msgid "Enhanced Debugging"
 msgstr ""
 
@@ -195,7 +199,7 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: src/hooks/app-library/use-app-download-actions.ts:28
+#: src/hooks/app-library/use-app-download-actions.ts:37
 msgid "Error starting app download: {message}"
 msgstr ""
 
@@ -216,7 +220,7 @@ msgstr ""
 msgid "Filter:"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:253
+#: src/components/launch-config-editor/launch-config-editor.tsx:257
 msgid "Format"
 msgstr ""
 
@@ -253,6 +257,10 @@ msgstr ""
 #~ msgid "GOG"
 #~ msgstr ""
 
+#: src/components/eula-modal/eula-modal.tsx:55
+msgid "I agree to this EULA"
+msgstr ""
+
 #: src/components/sidebar/sidebar.tsx:47
 msgid "Info"
 msgstr ""
@@ -265,12 +273,16 @@ msgstr ""
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:187
+#: src/components/side-panel/side-panel.tsx:193
 msgid "Input Config"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:130
-msgid "Input Config for"
+#~ msgid "Input Config for"
+#~ msgstr ""
+
+#: src/components/controller-edit/controller-edit.tsx:130
+msgid "Input Config for {gameName}"
 msgstr ""
 
 #: src/components/input-config-modal/input-config-modal.tsx:170
@@ -285,7 +297,7 @@ msgstr ""
 msgid "Insert Delimiter"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:238
+#: src/components/side-panel/side-panel.tsx:244
 msgid "Install folder"
 msgstr ""
 
@@ -314,7 +326,7 @@ msgstr ""
 msgid "IP Address of the Playtron device"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:246
+#: src/components/launch-config-editor/launch-config-editor.tsx:250
 msgid "JSON structure is invalid {err}"
 msgstr ""
 
@@ -330,12 +342,16 @@ msgstr ""
 msgid "Launch"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:162
+#: src/components/side-panel/side-panel.tsx:168
 msgid "Launch Config"
 msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:148
-msgid "Launch Config for"
+#~ msgid "Launch Config for"
+#~ msgstr ""
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:152
+msgid "Launch Config for {appName}"
 msgstr ""
 
 #: src/components/launch-config/launch-config-modal.tsx:74
@@ -387,13 +403,13 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:123
+#: src/components/side-panel/side-panel.tsx:129
 msgid "Never tested"
 msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:29
-msgid "New override"
-msgstr ""
+#~ msgid "New override"
+#~ msgstr ""
 
 #: src/components/sidebar/sidebar.tsx:57
 msgid "No internet"
@@ -404,7 +420,7 @@ msgstr ""
 msgid "Not Downloaded"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:114
+#: src/components/side-panel/side-panel.tsx:120
 msgid "Not installed"
 msgstr ""
 
@@ -428,7 +444,7 @@ msgstr ""
 msgid "Open Full Log"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:277
+#: src/components/side-panel/side-panel.tsx:283
 msgid "Open Log Window"
 msgstr ""
 
@@ -446,7 +462,7 @@ msgstr ""
 msgid "Paused"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:213
+#: src/components/side-panel/side-panel.tsx:219
 msgid "Playtron App ID"
 msgstr ""
 
@@ -455,7 +471,7 @@ msgstr ""
 msgid "Playtron Labs"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:220
+#: src/components/side-panel/side-panel.tsx:226
 msgid "Playtron Slug"
 msgstr ""
 
@@ -468,12 +484,12 @@ msgstr ""
 msgid "Prioritize"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:68
+#: src/components/side-panel/side-panel.tsx:74
 #: src/context/app-library-context/table-config.tsx:54
 msgid "Provider"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:74
+#: src/components/side-panel/side-panel.tsx:80
 msgid "Provider App ID"
 msgstr ""
 
@@ -495,16 +511,16 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:227
+#: src/components/side-panel/side-panel.tsx:233
 msgid "Release Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:172
-#: src/components/side-panel/side-panel.tsx:197
+#: src/components/side-panel/side-panel.tsx:178
+#: src/components/side-panel/side-panel.tsx:203
 msgid "Reset"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:130
+#: src/components/side-panel/side-panel.tsx:136
 msgid "Reset Wine Prefix"
 msgstr ""
 
@@ -518,7 +534,7 @@ msgid "Running"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:175
-#: src/components/launch-config-editor/launch-config-editor.tsx:213
+#: src/components/launch-config-editor/launch-config-editor.tsx:217
 msgid "Save"
 msgstr ""
 
@@ -547,6 +563,7 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
+#: src/components/eula-modal/eula-modal.tsx:69
 #: src/components/submission-config/cells/submission-action-cell.tsx:20
 msgid "Submit"
 msgstr ""
@@ -555,7 +572,7 @@ msgstr ""
 msgid "System Drive"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:251
+#: src/components/side-panel/side-panel.tsx:257
 msgid "Tags"
 msgstr ""
 
@@ -563,7 +580,7 @@ msgstr ""
 msgid "Test Games on Playtron Device via Local Network"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:119
+#: src/components/side-panel/side-panel.tsx:125
 msgid "Tested on"
 msgstr ""
 
@@ -579,7 +596,7 @@ msgstr ""
 msgid "There is no launch configuration created for"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:248
+#: src/context/submissions-context/submissions-context.tsx:251
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 
@@ -632,7 +649,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:240
+#: src/components/launch-config-editor/launch-config-editor.tsx:244
 msgid "Validate JSON"
 msgstr ""
 
