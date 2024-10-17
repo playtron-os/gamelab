@@ -1,7 +1,7 @@
 {
   "name": "playtron-labs",
   "productName": "Playtron Labs",
-  "version": "0.31.0",
+  "version": "0.31.0-test",
   "description": "Playtron Labs testing app for Playtron",
   "scripts": {
     "start": "tauri dev",
