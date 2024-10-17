@@ -58,11 +58,17 @@ jobs:
           security unlock-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
           security import certificate.p12 -k build.keychain -P "$APPLE_CERTIFICATE_PASSWORD" -T /usr/bin/codesign
           security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k "$KEYCHAIN_PASSWORD" build.keychain
-          security find-identity -v -p codesigning build.keychain
+
+          # TODO: Switch these lines when using apple certificate instead of self signed
+          # security find-identity -v -p codesigning build.keychain
+          security find-identity build.keychain
       - name: Verify Certificate
         if: matrix.platform == 'macos-latest' || 'aarch64-apple-darwin,x86_64-apple-darwin'
         run: |
-          CERT_INFO=$(security find-identity -v -p codesigning build.keychain | grep "Apple Development")
+          # TODO: Switch these lines when using apple certificate instead of self signed
+          # CERT_INFO=$(security find-identity -v -p codesigning build.keychain | grep "Apple Development")
+          CERT_INFO=$(security find-identity build.keychain | grep "Labs")
+
           CERT_ID=$(echo "$CERT_INFO" | awk -F'"' '{print $2}')
           echo "CERT_ID=$CERT_ID" >> $GITHUB_ENV
           echo "Certificate imported."
