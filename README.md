@@ -1,6 +1,34 @@
-# Playtron Labs App
+# Playtron Labs
 
-Playtron Labs
+Playtron Labs is part of the Playtron ecosystem and lets users configure games to get the best experience possible.
+Custom game configurations can then be shared with and benefit the whole Playtron community.
+
+## Installing Playtron Labs
+
+Packages for all major systems are available on our Github release page
+
+https://github.com/playtron-os/playtron-labs/releases/
+
+We provide installers for Linux, Mac and Windows in different formats. Download and install the appropriate package for your platform.
+
+## Setup
+
+Before you can use Labs, you'll need a device running Playtron OS.
+Make sure your Playtron device authorizes remote access and note its IP address.
+
+![Remote access](.github/pictures/enable-remote.png?raw=true)
+
+Then open the Labs application on your computer. You should see a greeting screen asking you
+to connect to a device. Enter the IP address of the Playtron device and click Connect.
+
+![Connect](.github/pictures/connect-device.png?raw=true)
+
+## Usage
+
+Once connected to a Playtron device, you'll have access to your game library where you can install and run games.
+Labs also lets you create and select custom launch and input configurations.
+
+# Development
 
 ## Technologies
 
@@ -18,10 +46,33 @@ The app has two processes, the UI which is compiled and served using vite, and t
 UI: `./src`
 Backend: `./src-tauri`
 
-#### Playtron OS rpm-ostree dev dependencies
+#### Dev dependencies
 
-To compile this tauri app in a silverblue environment you'll need a couple dependencies that can be layered with rpm-ostree:
-`sudo rpm-ostree install libsoup-devel webkit2gtk4.1-devel javascriptcoregtk4.1-devel gcc --apply-live`
+To compile this tauri app on Fedora you'll need to install the following packages:
+
+```
+sudo dnf check-update
+sudo dnf install webkit2gtk4.1-devel \
+openssl-devel \
+curl \
+wget \
+file \
+libappindicator-gtk3-devel \
+librsvg2-devel
+sudo dnf group install "C Development Tools and Libraries"
+```
+
+See [the Tauri documentation](https://v2.tauri.app/start/prerequisites/#linux) if you’re not using Fedora.
+
+Install the NPM dependencies as well:
+
+`pnpm install`
+
+### Run the app
+
+To start Labs from the development environment, run:
+
+`pnpm start`
 
 ### Conventions and guidelines for contributors
 
@@ -69,7 +120,7 @@ With the basic information above you should already be able to use this i18n lib
 
 ## Releases
 
-The pipeline in this repo will automatically build and upload the installers to the github releases once code is merged to the main branch.
+The pipeline in this repo will automatically build and upload the installers to the github releases once code is merged to the `release` branch.
 To change the version of the release, please update `package.json`
 
 ## Available Scripts
