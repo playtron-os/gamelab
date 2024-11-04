@@ -41,7 +41,7 @@ export const EulaModal: React.FC<EulaModalProps> = ({
                 <div dangerouslySetInnerHTML={{ __html: eula.body }}></div>
               ) : (
                 <iframe
-                  className="h-[calc(95vh-100px)] w-[calc(95vw-384px)]"
+                  className="h-[calc(100vh-180px)] w-[calc(95vw-384px)]"
                   src={eula.url}
                 />
               )}
