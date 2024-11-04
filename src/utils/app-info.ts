@@ -131,6 +131,8 @@ export const getAppActionLabelByStatus = (status: AppStatus) => {
       return t`Prioritize`;
     case AppStatus.RUNNING:
       return t`Stop`;
+    default:
+      return "...";
   }
 };
 

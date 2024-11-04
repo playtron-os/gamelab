@@ -59,7 +59,13 @@ export const LogsModal: React.FC<LogsModalProps> = ({
   });
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} noContentPadding rightMargin={384}>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      noContentPadding
+      rightMargin={384}
+      className="z-10"
+    >
       <div>
         <div className="bg-[--fill-subtle] flex align-middle font-bold text-2xl items-center ">
           <div className="flex-grow p-1 ps-5">
