@@ -104,7 +104,7 @@ msgstr ""
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:81
 #: src/components/input-config-modal/input-config-modal.tsx:191
 #: src/components/launch-config/launch-config-modal.tsx:95
-#: src/components/move-app-dialog/move-app-dialog.tsx:113
+#: src/components/move-app-dialog/move-app-dialog.tsx:114
 #: src/components/submission-config/submissions-empty.tsx:34
 msgid "Close"
 msgstr ""
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Configuration has been submitted"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:108
+#: src/components/move-app-dialog/move-app-dialog.tsx:107
 msgid "Confirm"
 msgstr ""
 
@@ -224,9 +224,13 @@ msgstr ""
 msgid "Format"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:89
-msgid "From: {appDriveName}"
+#: src/components/move-app-dialog/move-app-dialog.tsx:85
+msgid "From:"
 msgstr ""
+
+#: src/components/move-app-dialog/move-app-dialog.tsx:89
+#~ msgid "From: {appDriveName}"
+#~ msgstr ""
 
 #: src/components/controller-edit/controller-gamepad.tsx:82
 msgid "Front"
@@ -387,15 +391,15 @@ msgstr ""
 msgid "Move"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:75
+#: src/components/move-app-dialog/move-app-dialog.tsx:74
 msgid "Move {appName}"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:124
+#: src/components/move-app-dialog/move-app-dialog.tsx:123
 msgid "Move In Progress..."
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:75
+#: src/components/move-app-dialog/move-app-dialog.tsx:74
 msgid "Move selected apps"
 msgstr ""
 
@@ -538,7 +542,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:98
+#: src/components/move-app-dialog/move-app-dialog.tsx:95
 msgid "Select drive"
 msgstr ""
 
@@ -604,7 +608,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:94
+#: src/components/move-app-dialog/move-app-dialog.tsx:91
 msgid "To:"
 msgstr ""
 

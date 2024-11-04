@@ -1,5 +1,4 @@
 import React, { useCallback, useMemo, useState } from "react";
-import "./move-app-dialog.scss";
 import {
   Button,
   Modal,
@@ -76,26 +75,25 @@ export const MoveAppDialog: React.FC = () => {
   return (
     <div className="move-app-dialog-rct-component">
       <Modal
-        className="move-app-dialog-rct-component__main-modal"
+        className="-z-40 p-6"
         title={modalTitle}
         isOpen={isMoveAppDialogOpen && !isMovingApp}
       >
-        <div
-          className="move-app-dialog-rct-component__main-modal__content"
-          data-testid="move-app-dialog-modal-content"
-        >
+        <div className="py-2" data-testid="move-app-dialog-modal-content">
           {appInfoArray.length === 1 && (
-            <div className="move-app-dialog-rct-component__main-modal__content__field">
-              <span>{t`From: ${appDriveName}`}</span>
+            <div className="flex gap-4 items-center mb-2">
+              <span className="w-12">{t`From:`}</span>
+              <span>{appDriveName}</span>
             </div>
           )}
-          <div className="move-app-dialog-rct-component__main-modal__content__field">
-            <span>
+          <div className="flex gap-4 items-center">
+            <span className="w-12">
               <Trans>To: </Trans>
             </span>
             <SelectInput
               options={availableDriveOptions}
               placeholder={t`Select drive`}
+              className="w-64"
               onChange={(value) => {
                 setCurrentDrive(
                   drives.find((drive) => drive.path === value.value) ?? null
@@ -104,21 +102,22 @@ export const MoveAppDialog: React.FC = () => {
             />
           </div>
         </div>
-        <Button
-          label={t`Confirm`}
-          disabled={isMovingApp}
-          onClick={() => currentDrive && moveApps(appInfoArray, currentDrive)}
-        />
-        <Button
-          label={t`Close`}
-          disabled={isMovingApp}
-          onClick={onCloseMoveAppDialog}
-        />
+        <div>
+          <Button
+            label={t`Confirm`}
+            className="me-4"
+            primary
+            disabled={isMovingApp}
+            onClick={() => currentDrive && moveApps(appInfoArray, currentDrive)}
+          />
+          <Button
+            label={t`Close`}
+            disabled={isMovingApp}
+            onClick={onCloseMoveAppDialog}
+          />
+        </div>
       </Modal>
-      <Modal
-        className="move-app-dialog-rct-component__move-in-progress-modal"
-        isOpen={isMovingApp}
-      >
+      <Modal className="z-50 p-6" isOpen={isMovingApp}>
         <span data-testid="move-in-progress-text">
           {" "}
           <Trans> Move In Progress... </Trans>{" "}

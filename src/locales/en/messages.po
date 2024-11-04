@@ -104,7 +104,7 @@ msgstr "Clear"
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:81
 #: src/components/input-config-modal/input-config-modal.tsx:191
 #: src/components/launch-config/launch-config-modal.tsx:95
-#: src/components/move-app-dialog/move-app-dialog.tsx:113
+#: src/components/move-app-dialog/move-app-dialog.tsx:114
 #: src/components/submission-config/submissions-empty.tsx:34
 msgid "Close"
 msgstr "Close"
@@ -130,7 +130,7 @@ msgstr "CONFIGURATION"
 msgid "Configuration has been submitted"
 msgstr "Configuration has been submitted"
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:108
+#: src/components/move-app-dialog/move-app-dialog.tsx:107
 msgid "Confirm"
 msgstr "Confirm"
 
@@ -224,9 +224,13 @@ msgstr "Filter:"
 msgid "Format"
 msgstr "Format"
 
+#: src/components/move-app-dialog/move-app-dialog.tsx:85
+msgid "From:"
+msgstr "From:"
+
 #: src/components/move-app-dialog/move-app-dialog.tsx:89
-msgid "From: {appDriveName}"
-msgstr "From: {appDriveName}"
+#~ msgid "From: {appDriveName}"
+#~ msgstr "From: {appDriveName}"
 
 #: src/components/controller-edit/controller-gamepad.tsx:82
 msgid "Front"
@@ -387,15 +391,15 @@ msgstr "Mouse Move"
 msgid "Move"
 msgstr "Move"
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:75
+#: src/components/move-app-dialog/move-app-dialog.tsx:74
 msgid "Move {appName}"
 msgstr "Move {appName}"
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:124
+#: src/components/move-app-dialog/move-app-dialog.tsx:123
 msgid "Move In Progress..."
 msgstr "Move In Progress..."
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:75
+#: src/components/move-app-dialog/move-app-dialog.tsx:74
 msgid "Move selected apps"
 msgstr "Move selected apps"
 
@@ -538,7 +542,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:98
+#: src/components/move-app-dialog/move-app-dialog.tsx:95
 msgid "Select drive"
 msgstr "Select drive"
 
@@ -604,7 +608,7 @@ msgstr "There was an error with the submission {errorMessage}"
 msgid "Title"
 msgstr "Title"
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:94
+#: src/components/move-app-dialog/move-app-dialog.tsx:91
 msgid "To:"
 msgstr "To:"
 
