@@ -97,7 +97,7 @@ msgid "Change device"
 msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:255
-#: src/components/logs-modal/logs-modal.tsx:93
+#: src/components/logs-modal/logs-modal.tsx:99
 msgid "Clear"
 msgstr ""
 
@@ -139,7 +139,7 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:74
+#: src/components/logs-modal/logs-modal.tsx:80
 msgid "Copy"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgid "Downloading"
 msgstr ""
 
 #: src/context/app-library-context/table-config.tsx:85
-#: src/utils/app-info.ts:227
+#: src/utils/app-info.ts:229
 msgid "Drive"
 msgstr ""
 
@@ -240,7 +240,7 @@ msgstr ""
 msgid "Game is not owned or provider is not authorized"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:111
+#: src/components/logs-modal/logs-modal.tsx:117
 msgid "Game logs will appear here..."
 msgstr ""
 
@@ -293,7 +293,7 @@ msgstr ""
 msgid "INPUT DEVICES"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:100
+#: src/components/logs-modal/logs-modal.tsx:106
 msgid "Insert Delimiter"
 msgstr ""
 
@@ -358,7 +358,7 @@ msgstr ""
 msgid "Launch Config List"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:66
+#: src/components/logs-modal/logs-modal.tsx:72
 msgid "Logs"
 msgstr ""
 
@@ -440,7 +440,7 @@ msgstr ""
 msgid "Oops!"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:85
+#: src/components/logs-modal/logs-modal.tsx:91
 msgid "Open Full Log"
 msgstr ""
 
@@ -568,7 +568,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/utils/app-info.ts:224
+#: src/utils/app-info.ts:226
 msgid "System Drive"
 msgstr ""
 

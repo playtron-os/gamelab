@@ -97,7 +97,7 @@ msgid "Change device"
 msgstr "Change device"
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:255
-#: src/components/logs-modal/logs-modal.tsx:93
+#: src/components/logs-modal/logs-modal.tsx:99
 msgid "Clear"
 msgstr "Clear"
 
@@ -139,7 +139,7 @@ msgstr "Confirm"
 msgid "Connect"
 msgstr "Connect"
 
-#: src/components/logs-modal/logs-modal.tsx:74
+#: src/components/logs-modal/logs-modal.tsx:80
 msgid "Copy"
 msgstr "Copy"
 
@@ -170,7 +170,7 @@ msgid "Downloading"
 msgstr "Downloading"
 
 #: src/context/app-library-context/table-config.tsx:85
-#: src/utils/app-info.ts:227
+#: src/utils/app-info.ts:229
 msgid "Drive"
 msgstr "Drive"
 
@@ -240,7 +240,7 @@ msgstr "Front"
 msgid "Game is not owned or provider is not authorized"
 msgstr "Game is not owned or provider is not authorized"
 
-#: src/components/logs-modal/logs-modal.tsx:111
+#: src/components/logs-modal/logs-modal.tsx:117
 msgid "Game logs will appear here..."
 msgstr "Game logs will appear here..."
 
@@ -293,7 +293,7 @@ msgstr "Input Config List"
 msgid "INPUT DEVICES"
 msgstr "INPUT DEVICES"
 
-#: src/components/logs-modal/logs-modal.tsx:100
+#: src/components/logs-modal/logs-modal.tsx:106
 msgid "Insert Delimiter"
 msgstr "Insert Delimiter"
 
@@ -358,7 +358,7 @@ msgstr "Launch Config for {appName}"
 msgid "Launch Config List"
 msgstr "Launch Config List"
 
-#: src/components/logs-modal/logs-modal.tsx:66
+#: src/components/logs-modal/logs-modal.tsx:72
 msgid "Logs"
 msgstr "Logs"
 
@@ -440,7 +440,7 @@ msgstr "Numpad"
 msgid "Oops!"
 msgstr "Oops!"
 
-#: src/components/logs-modal/logs-modal.tsx:85
+#: src/components/logs-modal/logs-modal.tsx:91
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
@@ -568,7 +568,7 @@ msgstr "Stop"
 msgid "Submit"
 msgstr "Submit"
 
-#: src/utils/app-info.ts:224
+#: src/utils/app-info.ts:226
 msgid "System Drive"
 msgstr "System Drive"
 
