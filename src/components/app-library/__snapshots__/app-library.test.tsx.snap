@@ -178,7 +178,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     style="width: 100px;"
                   >
                     <div
-                      class="cursor-pointer select-none"
+                      class=""
                     >
                       <button
                         class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[14px] p-2"
