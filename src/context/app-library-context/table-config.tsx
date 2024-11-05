@@ -17,6 +17,7 @@ const columnHelper = createColumnHelper<AppInformation>();
 export const columnConfig = [
   columnHelper.accessor("app.images", {
     id: "image",
+    enableSorting: false,
     header: BulkActionButtonCell,
     size: 100,
     cell: ImageCell

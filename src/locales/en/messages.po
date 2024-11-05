@@ -169,7 +169,7 @@ msgstr "Download"
 msgid "Downloading"
 msgstr "Downloading"
 
-#: src/context/app-library-context/table-config.tsx:85
+#: src/context/app-library-context/table-config.tsx:86
 #: src/utils/app-info.ts:229
 msgid "Drive"
 msgstr "Drive"
@@ -489,7 +489,7 @@ msgid "Prioritize"
 msgstr "Prioritize"
 
 #: src/components/side-panel/side-panel.tsx:74
-#: src/context/app-library-context/table-config.tsx:54
+#: src/context/app-library-context/table-config.tsx:55
 msgid "Provider"
 msgstr "Provider"
 
@@ -546,7 +546,7 @@ msgstr "Save"
 msgid "Select drive"
 msgstr "Select drive"
 
-#: src/context/app-library-context/table-config.tsx:42
+#: src/context/app-library-context/table-config.tsx:43
 msgid "Size"
 msgstr "Size"
 
@@ -554,7 +554,7 @@ msgstr "Size"
 msgid "Sorry, an unexpected error has occurred."
 msgstr "Sorry, an unexpected error has occurred."
 
-#: src/context/app-library-context/table-config.tsx:68
+#: src/context/app-library-context/table-config.tsx:69
 msgid "Status"
 msgstr "Status"
 
@@ -604,7 +604,7 @@ msgstr "There is no launch configuration created for"
 msgid "There was an error with the submission {errorMessage}"
 msgstr "There was an error with the submission {errorMessage}"
 
-#: src/context/app-library-context/table-config.tsx:28
+#: src/context/app-library-context/table-config.tsx:29
 msgid "Title"
 msgstr "Title"
 

@@ -38,6 +38,7 @@ export const useAppEula = (): UseAppEulaReturn => {
 
   const acceptEula = useCallback(
     (eula: AppEulaResponseBody, appInfo: AppInformation) => {
+      console.log("Accepting EULA for ", eula.owned_app_id);
       const message = getMessage(MessageType.AppEulaAccept, {
         owned_app_id: eula.owned_app_id,
         entry: {
@@ -47,16 +48,15 @@ export const useAppEula = (): UseAppEulaReturn => {
       });
       sendMessage(message)().then((response) => {
         if (response.status !== 200) {
-          console.error("Error accepting EULA");
+          dispatch(flashMessage("Error accepting EULA"));
           return;
         }
         if (appInfo) {
           downloadApp(appInfo);
         }
       });
-      // ;
     },
-    []
+    [sendMessage, dispatch]
   );
 
   return {
