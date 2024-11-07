@@ -170,9 +170,9 @@ export const AppLibrary: React.FC = () => {
                 onSelectedIdsChange={onSelectedIdsChange}
               />
             </div>
-            <ConfirmationPopUp className="z-100" {...confirmationPopUpProps} />
-            <MoveAppDialog />
             {apps.length > 0 && <BulkActionsMenu />}
+            <ConfirmationPopUp className="z-50" {...confirmationPopUpProps} />
+            <MoveAppDialog />
           </>
         )}
       </div>

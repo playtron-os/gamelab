@@ -51,26 +51,35 @@ export const BulkActionsMenu: React.FC = () => {
       isOpen={isOpen}
       onClose={closeBulkActionsMenu}
       title={t`Manage Selected`}
-      className="bulk-actions-menu-modal"
+      className="-z-0 w-52 p-4"
     >
-      <div className="bulk-actions-menu-rct-component">
+      <div className="flex flex-col items-center gap-3">
         <Button
           data-testid="bulk-download"
-          onClick={() => handleDownloadSelectedApps(selectedApps)}
+          onClick={() => {
+            closeBulkActionsMenu();
+            handleDownloadSelectedApps(selectedApps);
+          }}
           label={t`Download`}
           size="small"
           width={BUTTON_WIDTH}
         />
         <Button
           data-testid="bulk-uninstall"
-          onClick={() => handlers.uninstallApp(selectedAppsData)}
+          onClick={() => {
+            closeBulkActionsMenu();
+            handlers.uninstallApp(selectedAppsData);
+          }}
           label={t`Uninstall`}
           size="small"
           width={BUTTON_WIDTH}
         />
         <Button
           data-testid="bulk-move-action"
-          onClick={() => openMoveAppDialog(selectedAppsData)}
+          onClick={() => {
+            closeBulkActionsMenu();
+            openMoveAppDialog(selectedAppsData);
+          }}
           label={t`Move`}
           size="small"
           width={BUTTON_WIDTH}

@@ -101,7 +101,7 @@ msgstr ""
 msgid "Clear"
 msgstr ""
 
-#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:81
+#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:90
 #: src/components/input-config-modal/input-config-modal.tsx:191
 #: src/components/launch-config/launch-config-modal.tsx:95
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
@@ -159,7 +159,7 @@ msgstr ""
 msgid "Disconnected from the internet"
 msgstr ""
 
-#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:60
+#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:63
 #: src/utils/app-info.ts:125
 msgid "Download"
 msgstr ""
@@ -386,7 +386,7 @@ msgstr ""
 msgid "Mouse Move"
 msgstr ""
 
-#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:74
+#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:83
 #: src/context/app-library-context/components/table-cells/app-action-cell.tsx:37
 msgid "Move"
 msgstr ""
@@ -624,7 +624,7 @@ msgstr ""
 msgid "Unable to connect with the device: {err}"
 msgstr ""
 
-#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:67
+#: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 #: src/context/app-library-context/components/table-cells/app-action-cell.tsx:53
 msgid "Uninstall"
 msgstr ""
