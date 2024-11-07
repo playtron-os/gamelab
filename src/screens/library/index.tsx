@@ -4,22 +4,26 @@ import { SidePanel } from "@/components/side-panel/side-panel";
 import { selectAppLibraryAppsState } from "@/redux/modules";
 import { useAppSelector } from "@/redux/store";
 import { SubmissionsContextProvider } from "@/context/submissions-context";
+import { Sidebar } from "@/components/sidebar/sidebar";
 
 export const LibraryScreen = () => {
   const apps = useAppSelector(selectAppLibraryAppsState);
 
   return (
-    <div className="flex">
-      <div className="flex-1 flex-col relative">
-        <AppLibrary />
+    <>
+      <div className="fixed left-0">
+        <Sidebar />
       </div>
-      <SubmissionsContextProvider>
-        {!!apps.length && (
-          <div className="flex-col w-96 h-screen bg-black  overflow-scroll border-l border-gray-800">
-            <SidePanel />
+      <div className="h-screen flex">
+        <div className="ml-[290px] mr-[360px] bg-[--fill-subtler]">
+          <AppLibrary />
+          <div>
+            <SubmissionsContextProvider>
+              {!!apps.length && <SidePanel />}
+            </SubmissionsContextProvider>
           </div>
-        )}
-      </SubmissionsContextProvider>
-    </div>
+        </div>
+      </div>
+    </>
   );
 };
