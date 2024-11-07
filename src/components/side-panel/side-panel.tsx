@@ -96,7 +96,7 @@ export const SidePanel: React.FC = () => {
 
   return (
     <>
-      <div className="relative h-screen">
+      <div className="fixed bg-black right-0 top-0 h-screen w-96 px-4 py-2 border-gray-800 border-l-2 overflow-scroll">
         <div className="pt-4 px-6">
           <h2 className="text-2xl font-bold justify-between flex pb-2">
             {currentApp.app.name}
@@ -264,7 +264,7 @@ export const SidePanel: React.FC = () => {
             )}
           </div>
         </div>
-        <footer className="absolute bottom-0 right-0 bg-black w-full overflow-hidden ">
+        <footer className="fixed bottom-0 right-0 max-w-96 w-full overflow-hidden bg-black border-gray-800 border-l-2">
           <p className="py-2 px-4">
             <Button
               label={getAppActionLabelByStatus(getAppStatus(currentApp))}
