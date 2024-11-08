@@ -183,7 +183,8 @@ export const appLibrarySlice = createSlice({
       action: PayloadAction<AppLibraryState["loadingProgress"]>
     ) => {
       state.loadingProgress = { ...state.loadingProgress, ...action.payload };
-    }
+    },
+    resetLibrary: () => APP_LIBRARY_INITIAL_STATE
   }
 });
 
@@ -199,7 +200,8 @@ export const {
   setError,
   setLoading,
   setLoadingProgress,
-  setAppDownloadProgress
+  setAppDownloadProgress,
+  resetLibrary
 } = appLibrarySlice.actions;
 export const selectAppLibraryState = (state: RootState) => state.appLibrary;
 export const selectAppLibraryAppsState = (state: RootState) =>

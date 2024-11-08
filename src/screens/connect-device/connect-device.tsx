@@ -4,7 +4,7 @@ import { SigninLayout } from "@/components/signin-layout/signin-layout";
 import { useNavigate } from "react-router-dom";
 import { useLoadingSpinner } from "@/context/loading-spinner-context";
 import { useAppDispatch } from "@/redux/store";
-import { setDeviceIp } from "@/redux/modules";
+import { setDeviceIp, resetLibrary } from "@/redux/modules";
 import { sendPlayserveMessage } from "@/hooks";
 import { getMessage, MessageType } from "@/types";
 import { handleUser } from "./hooks";
@@ -66,6 +66,7 @@ export const ConnectDeviceScreen: React.FC = () => {
 
     setInLocalStorage("last_ip", localDeviceIp);
     dispatch(setDeviceIp(address));
+    dispatch(resetLibrary());
     await handleUser(dispatch, address, response.body);
     hideLoadingSpinner();
     navigate("/");
