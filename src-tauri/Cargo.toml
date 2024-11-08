@@ -1,6 +1,6 @@
 [package]
 name = "playtron-labs"
-version = "0.31.0"
+version = "0.33.0"
 description = "Playtron Labs testing app for Playtron"
 authors = ["Playtron"]
 license = ""
@@ -10,20 +10,20 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-tauri-build = { version = "2.0.0-rc", features = [] }
+tauri-build = { version = "2.0.0", features = [] }
 
 [dependencies]
-tauri = { version = "2.0.0-rc", features = [] }
+tauri = { version = "2.0.0", features = [] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-tauri-plugin-log = { version = "2.0.0-rc", features = ["colored"] }
+tauri-plugin-log = { version = "2.0.0", features = ["colored"] }
 tokio = { version = "1.32.0", features = ["full"] }
 lazy_static = "1.4.0"
 regex = "1.10.2"
 parking_lot = "0.12.2"
-tauri-plugin-updater = "2.0.0-rc"
-tauri-plugin-dialog = "2.0.0-rc"
-tauri-plugin-process = "2.0.0-rc"
+tauri-plugin-updater = "2.0.0"
+tauri-plugin-dialog = "2.0.0"
+tauri-plugin-process = "2.0.0"
 russh = "0.45.0"
 async-trait = "0.1.82"
 tokio-util = "0.7.12"
