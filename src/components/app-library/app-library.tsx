@@ -152,8 +152,10 @@ export const AppLibrary: React.FC = () => {
         </div>
 
         {loading ? (
-          <div className="flex width-full justify-center align-middle">
-            <ProgressSpinner />
+          <div className="absolute top-0 bottom-0 right-0 left-0 h-screen w-screen bg-black/40 z-20">
+            <div className="flex width-full h-screen w-screen justify-center items-center">
+              <ProgressSpinner size={48} />
+            </div>
           </div>
         ) : (
           <>
