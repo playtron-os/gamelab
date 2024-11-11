@@ -210,13 +210,15 @@ export const SubmissionsContextProvider = ({
         app_id,
         item_id
       });
+      const submissions =
+        item_type === "LaunchConfig" ? launchSubmissions : inputSubmissions;
       sendMessage(copyConfigMessage)()
         .then((response) => {
           if (response.status === 200) {
-            console.log("Successfully copied submissions");
             info("Successfully copied submissions");
+            submissions.submissions.push(response.body as Submission);
+            submissions.setSubmissions(submissions.submissions);
           } else {
-            console.error("Error duplicating config", response);
             error(
               `Error duplicating config ${response.status} ${response.body.message}`
             );
