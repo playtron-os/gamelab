@@ -81,7 +81,7 @@ export const AppLibrary: React.FC = () => {
   }
 
   return (
-    <div className="w-full px-4 select-none cursor-default">
+    <div className="w-full px-4 select-none cursor-default text-sm xl:text-base">
       <div>
         <div className="flex">
           <div className="flex w-full flex-col">

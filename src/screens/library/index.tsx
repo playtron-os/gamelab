@@ -15,7 +15,7 @@ export const LibraryScreen = () => {
         <Sidebar />
       </div>
       <div className="h-screen flex">
-        <div className="ml-[275px] mr-[345px] w-full bg-[--fill-subtler]">
+        <div className="ml-[240px] mr-[265px] w-full bg-[--fill-subtler]">
           <AppLibrary />
           <div>
             <SubmissionsContextProvider>

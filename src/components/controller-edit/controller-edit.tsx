@@ -125,7 +125,7 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
   });
   const gameName = appInfo.app.name;
   return (
-    <>
+    <div className="select-none cursor-default">
       <SubmissionEditHeader
         title={t`Input Config for ${gameName}`}
         onClose={() => {
@@ -298,6 +298,6 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

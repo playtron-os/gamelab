@@ -43,7 +43,7 @@ export const LibraryCheckbox: React.FC<NullCellContext> = (info) => {
 
   if (appInfo && appInfo?.app?.appType != PlaytronAppType.Tool) {
     return (
-      <span className="flex justify-center mx-4">
+      <span className="flex justify-center mx-2 w-6">
         <Checkbox
           checked={selectedApps.has(appInfo.app.id)}
           onChange={handleAppChange}

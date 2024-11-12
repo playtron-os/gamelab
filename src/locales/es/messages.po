@@ -43,6 +43,10 @@ msgstr ""
 msgid "Add New Config"
 msgstr ""
 
+#: src/components/side-panel/side-panel.tsx:106
+msgid "Added"
+msgstr ""
+
 #: src/components/sidebar/provider-section.tsx:79
 msgid "All"
 msgstr ""
@@ -84,7 +88,7 @@ msgstr ""
 msgid "Bulk Actions"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:135
+#: src/components/side-panel/side-panel.tsx:139
 msgid "Bypass App Update"
 msgstr ""
 
@@ -109,7 +113,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:260
+#: src/components/side-panel/side-panel.tsx:264
 msgid "Close Log Window"
 msgstr ""
 
@@ -144,8 +148,8 @@ msgid "Copy"
 msgstr ""
 
 #: src/components/side-panel/side-panel.tsx:105
-msgid "Date Added"
-msgstr ""
+#~ msgid "Date Added"
+#~ msgstr ""
 
 #: src/components/submission-config/cells/submission-action-cell.tsx:47
 msgid "Delete"
@@ -169,8 +173,7 @@ msgstr ""
 msgid "Downloading"
 msgstr ""
 
-#: src/context/app-library-context/table-config.tsx:87
-#: src/utils/app-info.ts:229
+#: src/context/app-library-context/table-config.tsx:94
 msgid "Drive"
 msgstr ""
 
@@ -186,7 +189,7 @@ msgstr ""
 msgid "End User License Agreements for"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:145
+#: src/components/side-panel/side-panel.tsx:149
 msgid "Enhanced Debugging"
 msgstr ""
 
@@ -276,7 +279,7 @@ msgstr ""
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:182
+#: src/components/side-panel/side-panel.tsx:186
 msgid "Input Config"
 msgstr ""
 
@@ -300,7 +303,7 @@ msgstr ""
 msgid "Insert Delimiter"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:235
+#: src/components/side-panel/side-panel.tsx:239
 msgid "Install folder"
 msgstr ""
 
@@ -345,7 +348,7 @@ msgstr ""
 msgid "Launch"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:157
+#: src/components/side-panel/side-panel.tsx:161
 msgid "Launch Config"
 msgstr ""
 
@@ -406,7 +409,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:118
+#: src/components/side-panel/side-panel.tsx:122
 msgid "Never tested"
 msgstr ""
 
@@ -423,7 +426,7 @@ msgstr ""
 msgid "Not Downloaded"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:109
+#: src/components/side-panel/side-panel.tsx:111
 msgid "Not installed"
 msgstr ""
 
@@ -447,7 +450,7 @@ msgstr ""
 msgid "Open Full Log"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:260
+#: src/components/side-panel/side-panel.tsx:264
 msgid "Open Log Window"
 msgstr ""
 
@@ -465,7 +468,7 @@ msgstr ""
 msgid "Paused"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:208
+#: src/components/side-panel/side-panel.tsx:212
 msgid "Playtron App ID"
 msgstr ""
 
@@ -474,7 +477,7 @@ msgstr ""
 msgid "Playtron Labs"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:215
+#: src/components/side-panel/side-panel.tsx:219
 msgid "Playtron Slug"
 msgstr ""
 
@@ -492,7 +495,7 @@ msgid "Promote"
 msgstr ""
 
 #: src/components/side-panel/side-panel.tsx:72
-#: src/context/app-library-context/table-config.tsx:56
+#: src/context/app-library-context/table-config.tsx:63
 msgid "Provider"
 msgstr ""
 
@@ -518,16 +521,16 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:222
+#: src/components/side-panel/side-panel.tsx:226
 msgid "Release Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:167
-#: src/components/side-panel/side-panel.tsx:192
+#: src/components/side-panel/side-panel.tsx:171
+#: src/components/side-panel/side-panel.tsx:196
 msgid "Reset"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:125
+#: src/components/side-panel/side-panel.tsx:129
 msgid "Reset Wine Prefix"
 msgstr ""
 
@@ -553,7 +556,7 @@ msgstr ""
 msgid "Select drive"
 msgstr ""
 
-#: src/context/app-library-context/table-config.tsx:44
+#: src/context/app-library-context/table-config.tsx:51
 msgid "Size"
 msgstr ""
 
@@ -561,7 +564,7 @@ msgstr ""
 msgid "Sorry, an unexpected error has occurred."
 msgstr ""
 
-#: src/context/app-library-context/table-config.tsx:70
+#: src/context/app-library-context/table-config.tsx:77
 msgid "Status"
 msgstr ""
 
@@ -595,7 +598,7 @@ msgstr ""
 msgid "Test Games on Playtron Device via Local Network"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:114
+#: src/components/side-panel/side-panel.tsx:117
 msgid "Tested on"
 msgstr ""
 
@@ -615,7 +618,7 @@ msgstr ""
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 
-#: src/context/app-library-context/table-config.tsx:29
+#: src/context/app-library-context/table-config.tsx:36
 msgid "Title"
 msgstr ""
 

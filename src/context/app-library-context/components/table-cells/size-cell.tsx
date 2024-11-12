@@ -4,5 +4,7 @@ import { CellContext } from "@tanstack/react-table";
 import { getDiskSize } from "@/utils/app-info";
 
 export const SizeCell = (info: CellContext<AppInformation, number>) => (
-  <div className="px-3 py-3 text-nowrap">{getDiskSize(info.getValue())}</div>
+  <div className="px-3 py-3 text-nowrap text-sm">
+    {getDiskSize(info.getValue())}
+  </div>
 );

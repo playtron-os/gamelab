@@ -15,6 +15,13 @@ import { t } from "@lingui/macro";
 const columnHelper = createColumnHelper<AppInformation>();
 
 export const columnConfig = [
+  // Checkbox
+  columnHelper.display({
+    id: "checkbox-selection",
+    header: LibraryCheckbox,
+    cell: LibraryCheckbox,
+    size: 32
+  }),
   columnHelper.accessor("app.images", {
     id: "image",
     enableSorting: false,
@@ -27,7 +34,7 @@ export const columnConfig = [
   columnHelper.accessor("app.name", {
     id: "name",
     header: () => t`Title`,
-    size: 280,
+    size: 240,
     cell: NameCell
   }),
 
@@ -42,7 +49,7 @@ export const columnConfig = [
     {
       id: "size",
       header: () => t`Size`,
-      size: 80,
+      size: 50,
       cell: SizeCell
     }
   ),
@@ -54,7 +61,7 @@ export const columnConfig = [
     {
       id: "provider",
       header: () => t`Provider`,
-      size: 120,
+      size: 50,
       cell: ProviderCell,
       filterFn: "arrIncludesSome"
     }
@@ -68,7 +75,7 @@ export const columnConfig = [
     {
       id: "status",
       header: () => t`Status`,
-      size: 136,
+      size: 70,
       cell: StatusCell,
       filterFn: "arrIncludesSome"
     }
@@ -85,7 +92,7 @@ export const columnConfig = [
     {
       id: "drive",
       header: () => t`Drive`,
-      size: 80,
+      size: 50,
       cell: DriveCell,
       filterFn: "arrIncludesSome"
     }
@@ -97,13 +104,5 @@ export const columnConfig = [
     size: 32,
     header: "",
     cell: AppActionCell
-  }),
-
-  // Checkbox
-  columnHelper.display({
-    id: "checkbox-selection",
-    header: LibraryCheckbox,
-    cell: LibraryCheckbox,
-    size: 32
   })
 ];
