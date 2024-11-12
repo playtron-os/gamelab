@@ -43,7 +43,7 @@ msgstr "Add Config"
 msgid "Add New Config"
 msgstr "Add New Config"
 
-#: src/components/side-panel/side-panel.tsx:106
+#: src/components/side-panel/side-panel.tsx:134
 msgid "Added"
 msgstr "Added"
 
@@ -86,9 +86,9 @@ msgstr "Base config"
 
 #: src/context/app-library-context/components/table-cells/bulk-action-button-cell.tsx:22
 msgid "Bulk Actions"
-msgstr "Bulk Actions"
+msgstr "Bulk Actions<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:139
+#: src/components/side-panel/side-panel.tsx:167
 msgid "Bypass App Update"
 msgstr "Bypass App Update"
 
@@ -111,9 +111,9 @@ msgstr "Clear"
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
 #: src/components/submission-config/submissions-empty.tsx:34
 msgid "Close"
-msgstr "Close"
+msgstr "Close<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:264
+#: src/components/side-panel/side-panel.tsx:294
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
@@ -143,6 +143,10 @@ msgstr "Confirm"
 msgid "Connect"
 msgstr "Connect"
 
+#: src/components/sidebar/sidebar.tsx:51
+msgid "Connected to: {address}"
+msgstr "Connected to: {address}"
+
 #: src/components/logs-modal/logs-modal.tsx:80
 msgid "Copy"
 msgstr "Copy"
@@ -151,7 +155,7 @@ msgstr "Copy"
 #~ msgid "Date Added"
 #~ msgstr "Date Added"
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:49
+#: src/components/submission-config/cells/submission-action-cell.tsx:50
 msgid "Delete"
 msgstr "Delete"
 
@@ -159,7 +163,7 @@ msgstr "Delete"
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
-#: src/components/sidebar/sidebar.tsx:21
+#: src/components/sidebar/sidebar.tsx:22
 msgid "Disconnected from the internet"
 msgstr "Disconnected from the internet"
 
@@ -177,19 +181,19 @@ msgstr "Downloading"
 msgid "Drive"
 msgstr "Drive"
 
-#: src/components/sidebar/sidebar.tsx:36
+#: src/components/sidebar/sidebar.tsx:38
 msgid "Drives"
-msgstr "Drives"
+msgstr "Drives<<<<<<< HEAD"
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:38
+#: src/components/submission-config/cells/submission-action-cell.tsx:39
 msgid "Duplicate"
 msgstr "Duplicate"
 
 #: src/components/eula-modal/eula-modal.tsx:28
 msgid "End User License Agreements for"
-msgstr "End User License Agreements for"
+msgstr "End User License Agreements for<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:149
+#: src/components/side-panel/side-panel.tsx:177
 msgid "Enhanced Debugging"
 msgstr "Enhanced Debugging"
 
@@ -267,7 +271,7 @@ msgstr "Gamepad Type"
 msgid "I agree to this EULA"
 msgstr "I agree to this EULA"
 
-#: src/components/sidebar/sidebar.tsx:47
+#: src/components/sidebar/sidebar.tsx:49
 msgid "Info"
 msgstr "Info"
 
@@ -277,9 +281,9 @@ msgstr "Initiate direct testing on a Playtron device within your local network. 
 
 #: src/screens/connect-device/connect-device.tsx:80
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
-#~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
+#~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device.<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:186
+#: src/components/side-panel/side-panel.tsx:215
 msgid "Input Config"
 msgstr "Input Config"
 
@@ -301,9 +305,9 @@ msgstr "INPUT DEVICES"
 
 #: src/components/logs-modal/logs-modal.tsx:106
 msgid "Insert Delimiter"
-msgstr "Insert Delimiter"
+msgstr "Insert Delimiter<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:239
+#: src/components/side-panel/side-panel.tsx:269
 msgid "Install folder"
 msgstr "Install folder"
 
@@ -346,9 +350,9 @@ msgstr "Labs is unable to connect to the device using default credentials. Pleas
 
 #: src/utils/app-info.ts:119
 msgid "Launch"
-msgstr "Launch"
+msgstr "Launch<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:161
+#: src/components/side-panel/side-panel.tsx:189
 msgid "Launch Config"
 msgstr "Launch Config"
 
@@ -407,9 +411,9 @@ msgstr "Move selected apps"
 
 #: src/components/submission-config/submissions-table-config.tsx:11
 msgid "Name"
-msgstr "Name"
+msgstr "Name<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:122
+#: src/components/side-panel/side-panel.tsx:150
 msgid "Never tested"
 msgstr "Never tested"
 
@@ -417,16 +421,16 @@ msgstr "Never tested"
 #~ msgid "New override"
 #~ msgstr "New override"
 
-#: src/components/sidebar/sidebar.tsx:57
+#: src/components/sidebar/sidebar.tsx:61
 msgid "No internet"
 msgstr "No internet"
 
 #: src/context/app-library-context/components/table-cells/status-cell.tsx:23
 #: src/utils/app-info.ts:62
 msgid "Not Downloaded"
-msgstr "Not Downloaded"
+msgstr "Not Downloaded<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:111
+#: src/components/side-panel/side-panel.tsx:139
 msgid "Not installed"
 msgstr "Not installed"
 
@@ -448,9 +452,9 @@ msgstr "Oops!"
 
 #: src/components/logs-modal/logs-modal.tsx:91
 msgid "Open Full Log"
-msgstr "Open Full Log"
+msgstr "Open Full Log<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:264
+#: src/components/side-panel/side-panel.tsx:294
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
@@ -466,18 +470,18 @@ msgstr "Pause"
 #: src/context/app-library-context/components/table-cells/status-cell.tsx:27
 #: src/utils/app-info.ts:66
 msgid "Paused"
-msgstr "Paused"
+msgstr "Paused<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:212
+#: src/components/side-panel/side-panel.tsx:242
 msgid "Playtron App ID"
 msgstr "Playtron App ID"
 
-#: src/components/sidebar/sidebar.tsx:32
+#: src/components/sidebar/sidebar.tsx:34
 #: src/components/signin-layout/signin-layout.tsx:26
 msgid "Playtron Labs"
-msgstr "Playtron Labs"
+msgstr "Playtron Labs<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:219
+#: src/components/side-panel/side-panel.tsx:249
 msgid "Playtron Slug"
 msgstr "Playtron Slug"
 
@@ -488,22 +492,22 @@ msgstr "Pre-Allocating"
 
 #: src/utils/app-info.ts:131
 msgid "Prioritize"
-msgstr "Prioritize"
+msgstr "Prioritize<<<<<<< HEAD"
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:61
+#: src/components/submission-config/cells/submission-action-cell.tsx:63
 msgid "Promote"
 msgstr "Promote"
 
-#: src/components/side-panel/side-panel.tsx:72
+#: src/components/side-panel/side-panel.tsx:100
 #: src/context/app-library-context/table-config.tsx:63
 msgid "Provider"
-msgstr "Provider"
+msgstr "Provider<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:78
+#: src/components/side-panel/side-panel.tsx:106
 msgid "Provider App ID"
 msgstr "Provider App ID"
 
-#: src/components/sidebar/sidebar.tsx:41
+#: src/components/sidebar/sidebar.tsx:43
 msgid "Providers"
 msgstr "Providers"
 
@@ -519,18 +523,18 @@ msgstr "Queued"
 #: src/context/app-library-context/components/table-cells/status-cell.tsx:13
 #: src/utils/app-info.ts:52
 msgid "Ready"
-msgstr "Ready"
+msgstr "Ready<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:226
+#: src/components/side-panel/side-panel.tsx:256
 msgid "Release Date"
 msgstr "Release Date"
 
-#: src/components/side-panel/side-panel.tsx:171
-#: src/components/side-panel/side-panel.tsx:196
+#: src/components/side-panel/side-panel.tsx:200
+#: src/components/side-panel/side-panel.tsx:226
 msgid "Reset"
 msgstr "Reset"
 
-#: src/components/side-panel/side-panel.tsx:129
+#: src/components/side-panel/side-panel.tsx:157
 msgid "Reset Wine Prefix"
 msgstr "Reset Wine Prefix"
 
@@ -582,7 +586,7 @@ msgid "Submission promoted"
 msgstr "Submission promoted"
 
 #: src/components/eula-modal/eula-modal.tsx:69
-#: src/components/submission-config/cells/submission-action-cell.tsx:26
+#: src/components/submission-config/cells/submission-action-cell.tsx:27
 msgid "Submit"
 msgstr "Submit"
 
@@ -590,15 +594,14 @@ msgstr "Submit"
 msgid "System Drive"
 msgstr "System Drive"
 
-#: src/components/side-panel/side-panel.tsx:257
 #~ msgid "Tags"
 #~ msgstr "Tags"
 
 #: src/screens/connect-device/connect-device.tsx:79
 msgid "Test Games on Playtron Device via Local Network"
-msgstr "Test Games on Playtron Device via Local Network"
+msgstr "Test Games on Playtron Device via Local Network<<<<<<< HEAD"
 
-#: src/components/side-panel/side-panel.tsx:117
+#: src/components/side-panel/side-panel.tsx:145
 msgid "Tested on"
 msgstr "Tested on"
 
@@ -676,7 +679,7 @@ msgstr "Validate JSON"
 msgid "Verifying"
 msgstr "Verifying"
 
-#: src/components/sidebar/sidebar.tsx:49
+#: src/components/sidebar/sidebar.tsx:53
 msgid "Version: {version}"
 msgstr "Version: {version}"
 

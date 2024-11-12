@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 import { Divider, NoInternet, styles } from "@playtron/styleguide";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { version } from "../../../package.json";
 import LogoLabs from "../../assets/labs-sm.png";
@@ -9,14 +9,15 @@ import { useAppDispatch } from "@/redux/store";
 import { DriveSection } from "./drive-section";
 import { ProviderSection } from "./provider-section";
 import { ProfileMenu } from "./profile-menu";
-import { useMount } from "ahooks";
 import { t, Trans } from "@lingui/macro";
 import { flashMessage } from "redux-flash";
+import { getFromLocalStorage } from "@/utils/local-storage";
 
 export const Sidebar: React.FC = () => {
   const [showNoInternetIcon, setShowNoInternetIcon] = useState(false);
+  const [address, setAddress] = useState("-");
   const dispatch = useAppDispatch();
-  useMount(() => {
+  useEffect(() => {
     window.addEventListener("offline", () => {
       dispatch(flashMessage(t`Disconnected from the internet`));
       setShowNoInternetIcon(true);
@@ -25,7 +26,8 @@ export const Sidebar: React.FC = () => {
     window.addEventListener("online", () => {
       setShowNoInternetIcon(false);
     });
-  });
+    setAddress(getFromLocalStorage("last_ip"));
+  }, []);
   return (
     <>
       <div className="relative w-[250px] px-4 py-2 border-r-2 border-gray-800 bg-black h-screen overflow-scroll select-none cursor-default">
@@ -46,6 +48,8 @@ export const Sidebar: React.FC = () => {
           <h4 className="font-bold text-lg py-2">
             <Trans>Info</Trans>
           </h4>
+          <span className="p-3 text-gray-400 text-small">{t`Connected to: ${address}`}</span>
+          <br />
           <span className="p-3 text-gray-400 text-small">{t`Version: ${version}`}</span>
           <br />
           {showNoInternetIcon && (

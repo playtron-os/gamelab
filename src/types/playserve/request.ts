@@ -84,4 +84,10 @@ export interface MessageRequestMapping extends MessageMapping {
   [MessageType.SubmissionRevert]: SubmissionIdRequest;
   [MessageType.EnvironmentGet]: EmptyBody;
   [MessageType.AppProviderStatusGet]: EmptyBody;
+  [MessageType.SubmissionGetDefault]: {
+    app_id: string;
+    item_type: submission.SubmissionItemType;
+  };
+  [MessageType.SubmissionSetDefault]: SubmissionIdRequest;
+  [MessageType.SubmissionDeleteDefault]: SubmissionIdRequest;
 }

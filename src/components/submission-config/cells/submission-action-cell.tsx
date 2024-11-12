@@ -12,6 +12,7 @@ export type SubmissionCellContext = CellContext<Submission, unknown>;
 export const SubmissionActionCell = (info: SubmissionCellContext) => {
   const submission = info.row.original;
   const { email } = useAppSelector(selectAuthState) as AuthState;
+
   const {
     askDeleteSubmission,
     copySubmission,
@@ -55,6 +56,7 @@ export const SubmissionActionCell = (info: SubmissionCellContext) => {
       );
     }
   });
+
   if (email?.endsWith("@playtron.one")) {
     appActions.push({
       id: 4,
