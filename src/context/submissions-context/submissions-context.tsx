@@ -246,15 +246,14 @@ export const SubmissionsContextProvider = ({
         app_id,
         item_id
       };
-      console.log("😲 Promoting config", payload);
       const promoteConfigMessage = getMessage(
         MessageType.SubmissionPromote,
         payload
       );
       sendMessage(promoteConfigMessage)().then((response) => {
         if (response.status === 200) {
-          console.log("Successfully promoted submissions");
           info("Successfully promoted submissions");
+          flashDispatch(flashMessage(t`Submission promoted`));
         } else {
           console.error("Error promoting config", response);
           error(
