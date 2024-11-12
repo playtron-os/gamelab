@@ -1,4 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import {
+  setUsername,
+  setEmail,
+  selectAuthState,
+  AuthState
+} from "@/redux/modules/auth";
+import { useAppSelector, useAppDispatch } from "@/redux/store";
 import { usePlayserve } from "@/hooks/use-playserve";
 import { MessageType, getMessage } from "@/types/playserve/message";
 
@@ -13,16 +20,16 @@ import {
 } from "@playtron/styleguide";
 
 export const ProfileMenu: React.FC = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
+  const dispatch = useAppDispatch();
+  const { username, email } = useAppSelector(selectAuthState) as AuthState;
   const { sendMessage } = usePlayserve();
 
   useEffect(() => {
     const profileMessage = getMessage(MessageType.UserProfileGet, {});
     sendMessage(profileMessage)().then((response) => {
       if (response.status === 200) {
-        setUsername(response?.body.auth.userName);
-        setEmail(response?.body.auth.email);
+        dispatch(setUsername(response?.body.auth.userName));
+        dispatch(setEmail(response?.body.auth.email));
       }
     });
   }, []);

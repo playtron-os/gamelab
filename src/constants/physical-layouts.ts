@@ -192,13 +192,13 @@ export const ControllerInputs: ControllerInputMap = {
     label: "L3 Button",
     icon: LJoystickDownLine,
     device: "gamepad",
-    mapping: { button: "LStickPress" }
+    mapping: { button: "LeftStick" }
   },
   RightStickButton: {
     label: "R3 Button",
     icon: RJoystickDownLine,
     device: "gamepad",
-    mapping: { button: "RStickPress" }
+    mapping: { button: "RightStick" }
   },
   LeftStick: {
     label: "Left Stick",
