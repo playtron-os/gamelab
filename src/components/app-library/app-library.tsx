@@ -81,7 +81,7 @@ export const AppLibrary: React.FC = () => {
   }
 
   return (
-    <div className="w-full px-4">
+    <div className="w-full px-4 select-none cursor-default">
       <div>
         <div className="flex">
           <div className="flex w-full flex-col">
@@ -125,7 +125,7 @@ export const AppLibrary: React.FC = () => {
             </Tabs>
           </div>
 
-          <div className="flex-col w-[380px] pe-2">
+          <div className="flex-col w-[380px] pt-2 pe-2">
             <TextInput
               placeholder={t`Search`}
               value={nameFilter}
