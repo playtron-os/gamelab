@@ -1,5 +1,5 @@
 import { useAppLibraryContext } from "@/context";
-import { AppStatus, PlaytronTag } from "@/types";
+import { AppStatus } from "@/types";
 import {
   getAppActionIconByStatus,
   getAppActionLabelByStatus,
@@ -8,7 +8,6 @@ import {
   getImage
 } from "@/utils/app-info";
 import { Trans, t } from "@lingui/macro";
-import { Chip } from "@nextui-org/react";
 import { Button, Divider, Toggle } from "@playtron/styleguide";
 import React, { useMemo, useState } from "react";
 import { InputConfigModal } from "../input-config-modal/input-config-modal";
@@ -43,7 +42,6 @@ export const SidePanel: React.FC = () => {
   const [resetWinePrefix, setResetWinePrefix] = useState<boolean>(false);
   const [bypassAppUpdate, setBypassAppUpdate] = useState<boolean>(false);
   const [enhancedDebugging, setEnhancedDebugging] = useState<boolean>(false);
-  const [showTags, setShowTags] = useState<boolean>(false);
   const [isInputConfigOpen, setIsInputConfigOpen] = useState<boolean>(false);
   const [isLaunchConfigOpen, setIsLaunchConfigOpen] = useState<boolean>(false);
   const [isLogsOpen, setIsLogsOpen] = useState<boolean>(false);
@@ -74,35 +72,26 @@ export const SidePanel: React.FC = () => {
           <Trans>Provider</Trans>
         </span>
         <br />
-        <span>{owned_app.provider}</span>
+        <span className="select-all text-sm">{owned_app.provider}</span>
         <br />
         <span className="text-[--text-tertiary]">
           <Trans>Provider App ID</Trans>
         </span>
         <br />
-        <span>{owned_app.provider_id}</span>
+        <span className="select-all text-sm">{owned_app.provider_id}</span>
       </p>
     );
   });
-  const providerTags = currentApp.app.tags.map(
-    (tag: PlaytronTag, index: number) => {
-      return (
-        <Chip className="m-1" key={index}>
-          {tag.tag}
-        </Chip>
-      );
-    }
-  );
 
   return (
     <>
-      <div className="fixed bg-black right-0 top-0 h-screen w-96 px-4 py-2 border-gray-800 border-l-2 overflow-scroll">
-        <div className="pt-4 px-6">
+      <div className="fixed bg-black right-0 top-0 h-screen w-[360px] px-4 py-2 border-gray-800 border-l-2 overflow-scroll select-none cursor-default">
+        <div className="pt-4 px-2 mb-28">
           <h2 className="text-2xl font-bold justify-between flex pb-2">
             {currentApp.app.name}
           </h2>
           <div className="flex">
-            <div className="flex-1">
+            <div className="flex-shrink-0">
               <img
                 src={getImage(currentApp.app.images)}
                 alt=""
@@ -110,7 +99,7 @@ export const SidePanel: React.FC = () => {
                 height="48"
               />
             </div>
-            <div className="flex-1 px-4 text-nowrap">
+            <div className="flex-1 px-4 text-nowrap text-sm">
               {currentApp.installed_app?.created_at ? (
                 <>
                   <Trans>Date Added</Trans>:{" "}
@@ -219,14 +208,14 @@ export const SidePanel: React.FC = () => {
               <Trans>Playtron App ID</Trans>
             </span>
             <br />
-            <span>{currentApp.app.id}</span>
+            <span className="select-all text-sm">{currentApp.app.id}</span>
           </p>
           <p>
             <span className="text-[--text-tertiary]">
               <Trans>Playtron Slug</Trans>
             </span>
             <br />
-            <span>{currentApp.app.slug}</span>
+            <span className="select-all text-sm">{currentApp.app.slug}</span>
           </p>
           <p>
             <span className="text-[--text-tertiary]">
@@ -234,7 +223,9 @@ export const SidePanel: React.FC = () => {
             </span>
             <br />
             {currentApp.app.release_date && (
-              <span>{getDate(currentApp.app.release_date)}</span>
+              <span className="select-all text-sm">
+                {getDate(currentApp.app.release_date)}
+              </span>
             )}
           </p>
           {providerInfo}
@@ -244,27 +235,13 @@ export const SidePanel: React.FC = () => {
                 <Trans>Install folder</Trans>
               </span>
               <br />
-              <span>
+              <span className="select-all text-sm">
                 {currentApp.installed_app.install_config.install_folder}
               </span>
             </p>
           )}
-          <div>
-            <span
-              className="text-[--text-tertiary]"
-              onClick={() => setShowTags(!showTags)}
-            >
-              <Trans>Tags</Trans>
-            </span>
-            {showTags && (
-              <>
-                <br />
-                {providerTags}
-              </>
-            )}
-          </div>
         </div>
-        <footer className="fixed bottom-0 right-0 max-w-96 w-full overflow-hidden bg-black border-gray-800 border-l-2">
+        <footer className="fixed bottom-0 right-0 w-[360px] overflow-hidden bg-black border-gray-800 border-l-2">
           <p className="py-2 px-4">
             <Button
               label={getAppActionLabelByStatus(getAppStatus(currentApp))}
