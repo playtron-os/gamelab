@@ -86,7 +86,7 @@ msgstr "Base config"
 
 #: src/context/app-library-context/components/table-cells/bulk-action-button-cell.tsx:22
 msgid "Bulk Actions"
-msgstr "Bulk Actions<<<<<<< HEAD"
+msgstr "Bulk Actions"
 
 #: src/components/side-panel/side-panel.tsx:167
 msgid "Bypass App Update"
@@ -111,7 +111,7 @@ msgstr "Clear"
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
 #: src/components/submission-config/submissions-empty.tsx:34
 msgid "Close"
-msgstr "Close<<<<<<< HEAD"
+msgstr "Close"
 
 #: src/components/side-panel/side-panel.tsx:294
 msgid "Close Log Window"
@@ -183,7 +183,7 @@ msgstr "Drive"
 
 #: src/components/sidebar/sidebar.tsx:38
 msgid "Drives"
-msgstr "Drives<<<<<<< HEAD"
+msgstr "Drives"
 
 #: src/components/submission-config/cells/submission-action-cell.tsx:39
 msgid "Duplicate"
@@ -191,7 +191,7 @@ msgstr "Duplicate"
 
 #: src/components/eula-modal/eula-modal.tsx:28
 msgid "End User License Agreements for"
-msgstr "End User License Agreements for<<<<<<< HEAD"
+msgstr "End User License Agreements for"
 
 #: src/components/side-panel/side-panel.tsx:177
 msgid "Enhanced Debugging"
@@ -281,7 +281,7 @@ msgstr "Initiate direct testing on a Playtron device within your local network. 
 
 #: src/screens/connect-device/connect-device.tsx:80
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
-#~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device.<<<<<<< HEAD"
+#~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 
 #: src/components/side-panel/side-panel.tsx:215
 msgid "Input Config"
@@ -305,7 +305,7 @@ msgstr "INPUT DEVICES"
 
 #: src/components/logs-modal/logs-modal.tsx:106
 msgid "Insert Delimiter"
-msgstr "Insert Delimiter<<<<<<< HEAD"
+msgstr "Insert Delimiter"
 
 #: src/components/side-panel/side-panel.tsx:269
 msgid "Install folder"
@@ -350,7 +350,7 @@ msgstr "Labs is unable to connect to the device using default credentials. Pleas
 
 #: src/utils/app-info.ts:119
 msgid "Launch"
-msgstr "Launch<<<<<<< HEAD"
+msgstr "Launch"
 
 #: src/components/side-panel/side-panel.tsx:189
 msgid "Launch Config"
@@ -411,7 +411,7 @@ msgstr "Move selected apps"
 
 #: src/components/submission-config/submissions-table-config.tsx:11
 msgid "Name"
-msgstr "Name<<<<<<< HEAD"
+msgstr "Name"
 
 #: src/components/side-panel/side-panel.tsx:150
 msgid "Never tested"
@@ -428,7 +428,7 @@ msgstr "No internet"
 #: src/context/app-library-context/components/table-cells/status-cell.tsx:23
 #: src/utils/app-info.ts:62
 msgid "Not Downloaded"
-msgstr "Not Downloaded<<<<<<< HEAD"
+msgstr "Not Downloaded"
 
 #: src/components/side-panel/side-panel.tsx:139
 msgid "Not installed"
@@ -452,7 +452,7 @@ msgstr "Oops!"
 
 #: src/components/logs-modal/logs-modal.tsx:91
 msgid "Open Full Log"
-msgstr "Open Full Log<<<<<<< HEAD"
+msgstr "Open Full Log"
 
 #: src/components/side-panel/side-panel.tsx:294
 msgid "Open Log Window"
@@ -470,7 +470,7 @@ msgstr "Pause"
 #: src/context/app-library-context/components/table-cells/status-cell.tsx:27
 #: src/utils/app-info.ts:66
 msgid "Paused"
-msgstr "Paused<<<<<<< HEAD"
+msgstr "Paused"
 
 #: src/components/side-panel/side-panel.tsx:242
 msgid "Playtron App ID"
@@ -479,7 +479,7 @@ msgstr "Playtron App ID"
 #: src/components/sidebar/sidebar.tsx:34
 #: src/components/signin-layout/signin-layout.tsx:26
 msgid "Playtron Labs"
-msgstr "Playtron Labs<<<<<<< HEAD"
+msgstr "Playtron Labs"
 
 #: src/components/side-panel/side-panel.tsx:249
 msgid "Playtron Slug"
@@ -492,7 +492,7 @@ msgstr "Pre-Allocating"
 
 #: src/utils/app-info.ts:131
 msgid "Prioritize"
-msgstr "Prioritize<<<<<<< HEAD"
+msgstr "Prioritize"
 
 #: src/components/submission-config/cells/submission-action-cell.tsx:63
 msgid "Promote"
@@ -501,7 +501,7 @@ msgstr "Promote"
 #: src/components/side-panel/side-panel.tsx:100
 #: src/context/app-library-context/table-config.tsx:63
 msgid "Provider"
-msgstr "Provider<<<<<<< HEAD"
+msgstr "Provider"
 
 #: src/components/side-panel/side-panel.tsx:106
 msgid "Provider App ID"
@@ -523,7 +523,7 @@ msgstr "Queued"
 #: src/context/app-library-context/components/table-cells/status-cell.tsx:13
 #: src/utils/app-info.ts:52
 msgid "Ready"
-msgstr "Ready<<<<<<< HEAD"
+msgstr "Ready"
 
 #: src/components/side-panel/side-panel.tsx:256
 msgid "Release Date"
@@ -599,7 +599,7 @@ msgstr "System Drive"
 
 #: src/screens/connect-device/connect-device.tsx:79
 msgid "Test Games on Playtron Device via Local Network"
-msgstr "Test Games on Playtron Device via Local Network<<<<<<< HEAD"
+msgstr "Test Games on Playtron Device via Local Network"
 
 #: src/components/side-panel/side-panel.tsx:145
 msgid "Tested on"
