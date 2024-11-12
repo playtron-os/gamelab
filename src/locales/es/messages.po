@@ -96,7 +96,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: src/components/sidebar/profile-menu.tsx:44
+#: src/components/sidebar/profile-menu.tsx:51
 msgid "Change device"
 msgstr ""
 
@@ -151,7 +151,7 @@ msgstr ""
 #~ msgid "Date Added"
 #~ msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:47
+#: src/components/submission-config/cells/submission-action-cell.tsx:49
 msgid "Delete"
 msgstr ""
 
@@ -181,7 +181,7 @@ msgstr ""
 msgid "Drives"
 msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:36
+#: src/components/submission-config/cells/submission-action-cell.tsx:38
 msgid "Duplicate"
 msgstr ""
 
@@ -490,7 +490,7 @@ msgstr ""
 msgid "Prioritize"
 msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:59
+#: src/components/submission-config/cells/submission-action-cell.tsx:61
 msgid "Promote"
 msgstr ""
 
@@ -582,7 +582,7 @@ msgid "Submission promoted"
 msgstr ""
 
 #: src/components/eula-modal/eula-modal.tsx:69
-#: src/components/submission-config/cells/submission-action-cell.tsx:24
+#: src/components/submission-config/cells/submission-action-cell.tsx:26
 msgid "Submit"
 msgstr ""
 

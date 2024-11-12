@@ -96,7 +96,7 @@ msgstr "Bypass App Update"
 msgid "Cancel"
 msgstr "Cancel"
 
-#: src/components/sidebar/profile-menu.tsx:44
+#: src/components/sidebar/profile-menu.tsx:51
 msgid "Change device"
 msgstr "Change device"
 
@@ -151,7 +151,7 @@ msgstr "Copy"
 #~ msgid "Date Added"
 #~ msgstr "Date Added"
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:47
+#: src/components/submission-config/cells/submission-action-cell.tsx:49
 msgid "Delete"
 msgstr "Delete"
 
@@ -181,7 +181,7 @@ msgstr "Drive"
 msgid "Drives"
 msgstr "Drives"
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:36
+#: src/components/submission-config/cells/submission-action-cell.tsx:38
 msgid "Duplicate"
 msgstr "Duplicate"
 
@@ -490,7 +490,7 @@ msgstr "Pre-Allocating"
 msgid "Prioritize"
 msgstr "Prioritize"
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:59
+#: src/components/submission-config/cells/submission-action-cell.tsx:61
 msgid "Promote"
 msgstr "Promote"
 
@@ -582,7 +582,7 @@ msgid "Submission promoted"
 msgstr "Submission promoted"
 
 #: src/components/eula-modal/eula-modal.tsx:69
-#: src/components/submission-config/cells/submission-action-cell.tsx:24
+#: src/components/submission-config/cells/submission-action-cell.tsx:26
 msgid "Submit"
 msgstr "Submit"
 

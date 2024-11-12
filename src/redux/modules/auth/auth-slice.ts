@@ -4,6 +4,8 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 export interface AuthState {
   userId: string;
+  username?: string;
+  email?: string;
   isAuthenticated?: boolean;
   isEpicReady?: boolean;
   isGogReady?: boolean;
@@ -13,6 +15,8 @@ export interface AuthState {
 
 export const AUTH_SLICE_INITIAL_STATE: AuthState = {
   userId: "",
+  username: "",
+  email: "",
   isAuthenticated: false,
   isEpicReady: false,
   isSteamReady: false,
@@ -26,6 +30,12 @@ export const authSlice = createSlice({
   reducers: {
     setDeviceIp: (state, action: PayloadAction<string | undefined>) => {
       state.deviceIp = action.payload;
+    },
+    setUsername: (state, action: PayloadAction<string | undefined>) => {
+      state.username = action.payload;
+    },
+    setEmail: (state, action: PayloadAction<string | undefined>) => {
+      state.email = action.payload;
     },
     setAuthState: (state, action: PayloadAction<AuthState>) => {
       const { userId, isEpicReady, isSteamReady, isGogReady } = action.payload;
@@ -63,8 +73,17 @@ export const authSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setAuthState, resetAuthState, setDeviceIp } = authSlice.actions;
+export const {
+  setAuthState,
+  resetAuthState,
+  setDeviceIp,
+  setUsername,
+  setEmail
+} = authSlice.actions;
 export const selectAuthState = (state: { auth: AuthState }) => state.auth;
 export const selectAuthDeviceIp = (state: { auth: AuthState }) =>
   state.auth.deviceIp;
+export const selectAuthUsername = (state: { auth: AuthState }) =>
+  state.auth.username;
+export const selectAuthEmail = (state: { auth: AuthState }) => state.auth.email;
 export default authSlice.reducer;

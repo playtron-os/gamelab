@@ -1,5 +1,4 @@
 export { AppLibrary } from "./app-library";
-export { PageWrapper } from "./page-wrapper";
 export { MoveAppDialog } from "./move-app-dialog";
 export { BulkActionsMenu } from "./bulk-actions-menu";
 export { LibraryCheckbox } from "./library-checkbox";
