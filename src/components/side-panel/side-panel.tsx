@@ -87,7 +87,7 @@ export const SidePanel: React.FC = () => {
     <>
       <div className="fixed bg-black right-0 top-0 h-screen w-[360px] px-4 py-2 border-gray-800 border-l-2 overflow-scroll select-none cursor-default">
         <div className="pt-4 px-2 mb-28">
-          <h2 className="text-2xl font-bold justify-between flex pb-2">
+          <h2 className="text-2xl font-bold justify-between flex pb-2 select-all">
             {currentApp.app.name}
           </h2>
           <div className="flex">
