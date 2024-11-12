@@ -126,7 +126,7 @@ msgstr "CONFIG NAME"
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
-#: src/context/submissions-context/submissions-context.tsx:247
+#: src/context/submissions-context/submissions-context.tsx:280
 msgid "Configuration has been submitted"
 msgstr "Configuration has been submitted"
 
@@ -147,11 +147,11 @@ msgstr "Copy"
 msgid "Date Added"
 msgstr "Date Added"
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:43
+#: src/components/submission-config/cells/submission-action-cell.tsx:47
 msgid "Delete"
 msgstr "Delete"
 
-#: src/context/submissions-context/submissions-context.tsx:291
+#: src/context/submissions-context/submissions-context.tsx:325
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
@@ -169,7 +169,7 @@ msgstr "Download"
 msgid "Downloading"
 msgstr "Downloading"
 
-#: src/context/app-library-context/table-config.tsx:86
+#: src/context/app-library-context/table-config.tsx:87
 #: src/utils/app-info.ts:229
 msgid "Drive"
 msgstr "Drive"
@@ -178,7 +178,7 @@ msgstr "Drive"
 msgid "Drives"
 msgstr "Drives"
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:32
+#: src/components/submission-config/cells/submission-action-cell.tsx:36
 msgid "Duplicate"
 msgstr "Duplicate"
 
@@ -488,8 +488,12 @@ msgstr "Pre-Allocating"
 msgid "Prioritize"
 msgstr "Prioritize"
 
+#: src/components/submission-config/cells/submission-action-cell.tsx:59
+msgid "Promote"
+msgstr "Promote"
+
 #: src/components/side-panel/side-panel.tsx:74
-#: src/context/app-library-context/table-config.tsx:55
+#: src/context/app-library-context/table-config.tsx:56
 msgid "Provider"
 msgstr "Provider"
 
@@ -546,7 +550,7 @@ msgstr "Save"
 msgid "Select drive"
 msgstr "Select drive"
 
-#: src/context/app-library-context/table-config.tsx:43
+#: src/context/app-library-context/table-config.tsx:44
 msgid "Size"
 msgstr "Size"
 
@@ -554,7 +558,7 @@ msgstr "Size"
 msgid "Sorry, an unexpected error has occurred."
 msgstr "Sorry, an unexpected error has occurred."
 
-#: src/context/app-library-context/table-config.tsx:69
+#: src/context/app-library-context/table-config.tsx:70
 msgid "Status"
 msgstr "Status"
 
@@ -568,7 +572,7 @@ msgid "Stop"
 msgstr "Stop"
 
 #: src/components/eula-modal/eula-modal.tsx:69
-#: src/components/submission-config/cells/submission-action-cell.tsx:20
+#: src/components/submission-config/cells/submission-action-cell.tsx:24
 msgid "Submit"
 msgstr "Submit"
 
@@ -600,7 +604,7 @@ msgstr "There is no controller configuration created for"
 msgid "There is no launch configuration created for"
 msgstr "There is no launch configuration created for"
 
-#: src/context/submissions-context/submissions-context.tsx:253
+#: src/context/submissions-context/submissions-context.tsx:286
 msgid "There was an error with the submission {errorMessage}"
 msgstr "There was an error with the submission {errorMessage}"
 

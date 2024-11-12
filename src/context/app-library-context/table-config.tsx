@@ -27,6 +27,7 @@ export const columnConfig = [
   columnHelper.accessor("app.name", {
     id: "name",
     header: () => t`Title`,
+    size: 280,
     cell: NameCell
   }),
 
