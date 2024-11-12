@@ -28,7 +28,7 @@ export const Sidebar: React.FC = () => {
   });
   return (
     <>
-      <div className="relative w-72 px-4 py-2 border-r-2 border-gray-800 bg-black h-screen overflow-scroll">
+      <div className="relative w-72 px-4 py-2 border-r-2 border-gray-800 bg-black h-screen overflow-scroll select-none cursor-default">
         <img src={LogoLabs} alt={t`Playtron Labs`} className="p-2" />
 
         <Divider type="subtle" />

@@ -7,15 +7,12 @@ import {
   ConfirmationPopUp,
   Table,
   TextInput,
-  RefreshLine,
-  styles,
   ProgressSpinner
 } from "@playtron/styleguide";
 import { useConfirmationPopUp, useAppLibraryContext } from "@/context";
 import { MoveAppDialog } from "../move-app-dialog";
 import { BulkActionsMenu } from "../bulk-actions-menu/bulk-actions-menu";
 import { selectAppLibraryState } from "@/redux/modules";
-import { useAppLibraryActions } from "@/hooks/app-library";
 import { useAppSelector } from "@/redux/store";
 import { AppProvider, AppStatus } from "@/types";
 
@@ -28,7 +25,7 @@ export const AppLibrary: React.FC = () => {
   const { apps, error, loading, appFilters } = useAppSelector(
     selectAppLibraryState
   );
-  const { fetchLibraryApps } = useAppLibraryActions();
+
   const { columns, selectedIds, onSelectedIdsChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
   const [tabKey, setTabKey] = useState("all");
@@ -127,17 +124,10 @@ export const AppLibrary: React.FC = () => {
               />
             </Tabs>
           </div>
-          <div className="flex-col p-4">
-            <RefreshLine
-              fill={styles.variablesDark.fill.white}
-              onClick={() => {
-                fetchLibraryApps(true);
-              }}
-            />
-          </div>
-          <div className="flex-col w-[320px] pe-6">
+
+          <div className="flex-col w-[380px] pe-2">
             <TextInput
-              placeholder={t`Filter:`}
+              placeholder={t`Search`}
               value={nameFilter}
               onChange={setNameFilter}
             />

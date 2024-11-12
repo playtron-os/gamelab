@@ -18,6 +18,7 @@ export const BulkActionButtonCell = () => {
   return (
     <Button
       size="small"
+      className="text-xs"
       label={t`Bulk Actions`}
       onClick={openBulkActionsMenu}
     />
