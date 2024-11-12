@@ -27,6 +27,28 @@
       ]
     },
     {
+      "name": "Volume Up",
+      "source_event": {
+        "keyboard": "KeyVolumeUp"
+      },
+      "target_events": [
+        {
+          "dbus": "ui_volume_up"
+        }
+      ]
+    },
+    {
+      "name": "Volume Down",
+      "source_event": {
+        "keyboard": "KeyVolumeDown"
+      },
+      "target_events": [
+        {
+          "dbus": "ui_volume_down"
+        }
+      ]
+    },
+    {
       "name": "D-Up",
       "source_event": {
         "gamepad": {
