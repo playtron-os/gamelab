@@ -226,5 +226,5 @@ export const getDriveLabel = (drive: string): string => {
     return t`System Drive`;
   }
 
-  return drive.split("/").pop() || t`Drive`;
+  return drive.split("/").pop() || drive;
 };

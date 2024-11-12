@@ -29,7 +29,7 @@ export const ProfileMenu: React.FC = () => {
 
   return (
     <div className="flex gap-x-4 items-center">
-      <div className="flex-grow max-w-48 m-4">
+      <div className="flex-grow max-w-40 m-4">
         {username ? (
           <Avatar name={username} description={email} />
         ) : (

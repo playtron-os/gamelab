@@ -85,13 +85,13 @@ export const SidePanel: React.FC = () => {
 
   return (
     <>
-      <div className="fixed bg-black right-0 top-0 h-screen w-[360px] px-4 py-2 border-gray-800 border-l-2 overflow-scroll select-none cursor-default">
+      <div className="fixed bg-black right-0 top-0 h-screen w-[280px] px-2 py-2 border-gray-800 border-l-2 overflow-scroll select-none cursor-default">
         <div className="pt-4 px-2 mb-28">
-          <h2 className="text-2xl font-bold justify-between flex pb-2 select-all">
+          <h2 className="text-xl font-bold justify-between flex pb-2 select-all">
             {currentApp.app.name}
           </h2>
           <div className="flex">
-            <div className="flex-shrink-0">
+            <div className="flex-shrink">
               <img
                 src={getImage(currentApp.app.images)}
                 alt=""
@@ -99,10 +99,12 @@ export const SidePanel: React.FC = () => {
                 height="48"
               />
             </div>
-            <div className="flex-1 px-4 text-nowrap text-sm">
+            <div className="flex-grow px-1 text-nowrap text-xs">
               {currentApp.installed_app?.created_at ? (
                 <>
-                  <Trans>Date Added</Trans>:{" "}
+                  <strong>
+                    <Trans>Added</Trans>:
+                  </strong>{" "}
                   {getDate(currentApp.installed_app?.created_at)}
                 </>
               ) : (
@@ -111,7 +113,9 @@ export const SidePanel: React.FC = () => {
               <br />
               {currentApp.installed_app?.launched_at ? (
                 <>
-                  <Trans>Tested on</Trans>:{" "}
+                  <strong>
+                    <Trans>Tested on</Trans>:
+                  </strong>{" "}
                   {getDate(currentApp.installed_app?.launched_at)}
                 </>
               ) : (
@@ -208,7 +212,7 @@ export const SidePanel: React.FC = () => {
               <Trans>Playtron App ID</Trans>
             </span>
             <br />
-            <span className="select-all text-sm">{currentApp.app.id}</span>
+            <span className="select-all text-xs">{currentApp.app.id}</span>
           </p>
           <p>
             <span className="text-[--text-tertiary]">
@@ -235,13 +239,13 @@ export const SidePanel: React.FC = () => {
                 <Trans>Install folder</Trans>
               </span>
               <br />
-              <span className="select-all text-sm break-words">
+              <span className="select-all text-xs break-words">
                 {currentApp.installed_app.install_config.install_folder}
               </span>
             </p>
           )}
         </div>
-        <footer className="fixed bottom-0 right-0 w-[360px] overflow-hidden bg-black border-gray-800 border-l-2">
+        <footer className="fixed bottom-0 right-0 w-[280px] overflow-hidden bg-black border-gray-800 border-l-2">
           <p className="py-2 px-4">
             <Button
               label={getAppActionLabelByStatus(getAppStatus(currentApp))}

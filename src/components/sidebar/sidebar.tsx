@@ -28,7 +28,7 @@ export const Sidebar: React.FC = () => {
   });
   return (
     <>
-      <div className="relative w-72 px-4 py-2 border-r-2 border-gray-800 bg-black h-screen overflow-scroll select-none cursor-default">
+      <div className="relative w-[250px] px-4 py-2 border-r-2 border-gray-800 bg-black h-screen overflow-scroll select-none cursor-default">
         <img src={LogoLabs} alt={t`Playtron Labs`} className="p-2" />
 
         <Divider type="subtle" />
@@ -59,7 +59,7 @@ export const Sidebar: React.FC = () => {
             </>
           )}
         </div>
-        <footer className="fixed bottom-0 left-0 mr-4 p-1 w-72 overflow-hidden bg-black border-gray-800 border-r-2">
+        <footer className="fixed bottom-0 left-0 mr-4 p-1 w-[250px] overflow-hidden bg-black border-gray-800 border-r-2">
           <Divider type="subtle" />
           <ProfileMenu />
         </footer>

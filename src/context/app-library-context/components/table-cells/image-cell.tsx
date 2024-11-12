@@ -8,11 +8,13 @@ export const ImageCell = (
 ) => {
   const imageUrl = getImage(info.getValue());
   return imageUrl ? (
-    <img
-      src={imageUrl}
-      alt=""
-      loading="lazy"
-      className="rounded-l-lg h-full w-[100px] object-cover"
-    />
+    <div className="flex justify-center mx-2 w-[100px] h-[48px]">
+      <img
+        src={imageUrl}
+        alt=""
+        loading="lazy"
+        className="h-full w-full max-h-[48px] max-w-[100px] object-cover"
+      />
+    </div>
   ) : null;
 };

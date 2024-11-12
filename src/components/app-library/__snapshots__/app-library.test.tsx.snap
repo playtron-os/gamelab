@@ -13,7 +13,7 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
 exports[`<AppLibrary /> loaded state snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="w-full px-4 select-none cursor-default"
+    class="w-full px-4 select-none cursor-default text-sm xl:text-base"
   >
     <div>
       <div
@@ -160,6 +160,29 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
+                    style="width: 32px;"
+                  >
+                    <div
+                      class=""
+                    >
+                      <div
+                        class="flex-row inline-flex items-center justify-between gap-2"
+                      >
+                        <span
+                          aria-checked="false"
+                          class="border-2 border-[--state-unselected] outline-hover group block size-6 rounded-md bg-[--fill-default] data-[checked]:bg-[--state-selected]"
+                          data-headlessui-state=""
+                          data-testid="checkbox-input"
+                          id="headlessui-checkbox-:rk:"
+                          role="checkbox"
+                          tabindex="0"
+                        />
+                      </div>
+                    </div>
+                  </th>
+                  <th
+                    class="text-left border-b-2 p-2 border-[--state-focused]"
+                    colspan="1"
                     style="width: 100px;"
                   >
                     <div
@@ -201,7 +224,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
-                    style="width: 80px;"
+                    style="width: 60px;"
                   >
                     <div
                       class="cursor-pointer select-none"
@@ -212,7 +235,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
-                    style="width: 120px;"
+                    style="width: 100px;"
                   >
                     <div
                       class="cursor-pointer select-none"
@@ -223,7 +246,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
-                    style="width: 136px;"
+                    style="width: 116px;"
                   >
                     <div
                       class="cursor-pointer select-none"
@@ -234,45 +257,11 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
-                    style="width: 80px;"
-                  >
-                    <div
-                      class="cursor-pointer select-none"
-                    >
-                      Drive
-                    </div>
-                  </th>
-                  <th
-                    class="text-left border-b-2 p-2 border-[--state-focused]"
-                    colspan="1"
                     style="width: 32px;"
                   >
                     <div
                       class="cursor-pointer select-none"
                     />
-                  </th>
-                  <th
-                    class="text-left border-b-2 p-2 border-[--state-focused]"
-                    colspan="1"
-                    style="width: 32px;"
-                  >
-                    <div
-                      class=""
-                    >
-                      <div
-                        class="flex-row inline-flex items-center justify-between gap-2"
-                      >
-                        <span
-                          aria-checked="false"
-                          class="border-2 border-[--state-unselected] outline-hover group block size-6 rounded-md bg-[--fill-default] data-[checked]:bg-[--state-selected]"
-                          data-headlessui-state=""
-                          data-testid="checkbox-input"
-                          id="headlessui-checkbox-:rk:"
-                          role="checkbox"
-                          tabindex="0"
-                        />
-                      </div>
-                    </div>
                   </th>
                 </tr>
               </thead>
@@ -285,12 +274,38 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
                   >
-                    <img
-                      alt=""
-                      class="rounded-l-lg h-full w-[100px] object-cover"
-                      loading="lazy"
-                      src="0"
-                    />
+                    <span
+                      class="flex justify-center mx-2 w-6"
+                    >
+                      <div
+                        class="flex-row inline-flex items-center justify-between gap-2"
+                      >
+                        <span
+                          aria-checked="false"
+                          class="border-2 border-[--state-unselected] outline-hover group block size-6 rounded-md bg-[--fill-default] data-[checked]:bg-[--state-selected]"
+                          data-headlessui-state=""
+                          data-testid="checkbox-input"
+                          id="headlessui-checkbox-:rl:"
+                          role="checkbox"
+                          tabindex="0"
+                        />
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
+                    style="width: auto; min-width: unset; position: relative; height: 60px;"
+                  >
+                    <div
+                      class="flex justify-center mx-2 w-[100px] h-[48px]"
+                    >
+                      <img
+                        alt=""
+                        class="h-full w-full max-h-[48px] max-w-[100px] object-cover"
+                        loading="lazy"
+                        src="0"
+                      />
+                    </div>
                   </td>
                   <td
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
@@ -317,7 +332,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
                   >
                     <span
-                      class="px-3 my-3 text-nowrap overflow-ellipsis"
+                      class="px-3 my-3 text-nowrap text-sm overflow-ellipsis"
                     >
                       Steam, Epic Games
                     </span>
@@ -327,20 +342,10 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
                   >
                     <span
-                      class="p-3 text-nowrap"
+                      class="p-3 text-nowrap text-sm"
                     >
                       Ready
                     </span>
-                  </td>
-                  <td
-                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
-                    style="width: auto; min-width: unset; position: relative; height: 60px;"
-                  >
-                    <div
-                      class="p-3 text-nowrap"
-                    >
-                      C:
-                    </div>
                   </td>
                   <td
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
@@ -351,7 +356,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                       aria-haspopup="true"
                       class="z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased inline-block"
                       data-slot="trigger"
-                      id="react-aria-:rl:"
+                      id="react-aria-:rm:"
                       type="button"
                     >
                       <svg
@@ -375,28 +380,6 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                       </svg>
                     </div>
                   </td>
-                  <td
-                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
-                    style="width: auto; min-width: unset; position: relative; height: 60px;"
-                  >
-                    <span
-                      class="flex justify-center mx-4"
-                    >
-                      <div
-                        class="flex-row inline-flex items-center justify-between gap-2"
-                      >
-                        <span
-                          aria-checked="false"
-                          class="border-2 border-[--state-unselected] outline-hover group block size-6 rounded-md bg-[--fill-default] data-[checked]:bg-[--state-selected]"
-                          data-headlessui-state=""
-                          data-testid="checkbox-input"
-                          id="headlessui-checkbox-:ro:"
-                          role="checkbox"
-                          tabindex="0"
-                        />
-                      </div>
-                    </span>
-                  </td>
                 </tr>
                 <tr
                   class="bg-[--fill-subtle]"
@@ -406,12 +389,38 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
                   >
-                    <img
-                      alt=""
-                      class="rounded-l-lg h-full w-[100px] object-cover"
-                      loading="lazy"
-                      src="0"
-                    />
+                    <span
+                      class="flex justify-center mx-2 w-6"
+                    >
+                      <div
+                        class="flex-row inline-flex items-center justify-between gap-2"
+                      >
+                        <span
+                          aria-checked="false"
+                          class="border-2 border-[--state-unselected] outline-hover group block size-6 rounded-md bg-[--fill-default] data-[checked]:bg-[--state-selected]"
+                          data-headlessui-state=""
+                          data-testid="checkbox-input"
+                          id="headlessui-checkbox-:rp:"
+                          role="checkbox"
+                          tabindex="0"
+                        />
+                      </div>
+                    </span>
+                  </td>
+                  <td
+                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
+                    style="width: auto; min-width: unset; position: relative; height: 60px;"
+                  >
+                    <div
+                      class="flex justify-center mx-2 w-[100px] h-[48px]"
+                    >
+                      <img
+                        alt=""
+                        class="h-full w-full max-h-[48px] max-w-[100px] object-cover"
+                        loading="lazy"
+                        src="0"
+                      />
+                    </div>
                   </td>
                   <td
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
@@ -438,7 +447,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
                   >
                     <span
-                      class="px-3 my-3 text-nowrap overflow-ellipsis"
+                      class="px-3 my-3 text-nowrap text-sm overflow-ellipsis"
                     >
                       Steam, Epic Games
                     </span>
@@ -448,20 +457,10 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
                   >
                     <span
-                      class="p-3 text-nowrap"
+                      class="p-3 text-nowrap text-sm"
                     >
                       Ready
                     </span>
-                  </td>
-                  <td
-                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
-                    style="width: auto; min-width: unset; position: relative; height: 60px;"
-                  >
-                    <div
-                      class="p-3 text-nowrap"
-                    >
-                      C:
-                    </div>
                   </td>
                   <td
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
@@ -472,7 +471,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                       aria-haspopup="true"
                       class="z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased inline-block"
                       data-slot="trigger"
-                      id="react-aria-:rp:"
+                      id="react-aria-:rq:"
                       type="button"
                     >
                       <svg
@@ -496,33 +495,10 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                       </svg>
                     </div>
                   </td>
-                  <td
-                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
-                    style="width: auto; min-width: unset; position: relative; height: 60px;"
-                  >
-                    <span
-                      class="flex justify-center mx-4"
-                    >
-                      <div
-                        class="flex-row inline-flex items-center justify-between gap-2"
-                      >
-                        <span
-                          aria-checked="false"
-                          class="border-2 border-[--state-unselected] outline-hover group block size-6 rounded-md bg-[--fill-default] data-[checked]:bg-[--state-selected]"
-                          data-headlessui-state=""
-                          data-testid="checkbox-input"
-                          id="headlessui-checkbox-:rs:"
-                          role="checkbox"
-                          tabindex="0"
-                        />
-                      </div>
-                    </span>
-                  </td>
                 </tr>
               </tbody>
               <tfoot>
                 <tr>
-                  <th />
                   <th />
                   <th />
                   <th />
@@ -544,7 +520,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
 exports[`<AppLibrary /> loading state snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="w-full px-4 select-none cursor-default"
+    class="w-full px-4 select-none cursor-default text-sm xl:text-base"
   >
     <div>
       <div

@@ -54,5 +54,5 @@ export const StatusCell: React.FC<StatusCellContext> = (info) => {
   } else {
     label = getAppStatusLabel(status);
   }
-  return <span className="p-3 text-nowrap">{label}</span>;
+  return <span className="p-3 text-nowrap text-sm">{label}</span>;
 };
