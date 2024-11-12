@@ -235,7 +235,7 @@ export const SidePanel: React.FC = () => {
                 <Trans>Install folder</Trans>
               </span>
               <br />
-              <span className="select-all text-sm">
+              <span className="select-all text-sm break-words">
                 {currentApp.installed_app.install_config.install_folder}
               </span>
             </p>
