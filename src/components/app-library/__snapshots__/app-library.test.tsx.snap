@@ -213,7 +213,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
-                    style="width: 280px;"
+                    style="width: 240px;"
                   >
                     <div
                       class="cursor-pointer select-none"
@@ -224,7 +224,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
-                    style="width: 60px;"
+                    style="width: 50px;"
                   >
                     <div
                       class="cursor-pointer select-none"
@@ -235,7 +235,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
-                    style="width: 100px;"
+                    style="width: 50px;"
                   >
                     <div
                       class="cursor-pointer select-none"
@@ -246,12 +246,23 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
-                    style="width: 116px;"
+                    style="width: 70px;"
                   >
                     <div
                       class="cursor-pointer select-none"
                     >
                       Status
+                    </div>
+                  </th>
+                  <th
+                    class="text-left border-b-2 p-2 border-[--state-focused]"
+                    colspan="1"
+                    style="width: 50px;"
+                  >
+                    <div
+                      class="cursor-pointer select-none"
+                    >
+                      Drive
                     </div>
                   </th>
                   <th
@@ -322,7 +333,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
                   >
                     <div
-                      class="px-3 py-3 text-nowrap"
+                      class="px-3 py-3 text-nowrap text-sm"
                     >
                       100 B
                     </div>
@@ -346,6 +357,16 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     >
                       Ready
                     </span>
+                  </td>
+                  <td
+                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
+                    style="width: auto; min-width: unset; position: relative; height: 60px;"
+                  >
+                    <div
+                      class="p-3 text-nowrap text-sm"
+                    >
+                      C:
+                    </div>
                   </td>
                   <td
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
@@ -437,7 +458,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
                   >
                     <div
-                      class="px-3 py-3 text-nowrap"
+                      class="px-3 py-3 text-nowrap text-sm"
                     >
                       100 B
                     </div>
@@ -461,6 +482,16 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     >
                       Ready
                     </span>
+                  </td>
+                  <td
+                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
+                    style="width: auto; min-width: unset; position: relative; height: 60px;"
+                  >
+                    <div
+                      class="p-3 text-nowrap text-sm"
+                    >
+                      C:
+                    </div>
                   </td>
                   <td
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
@@ -499,6 +530,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
               </tbody>
               <tfoot>
                 <tr>
+                  <th />
                   <th />
                   <th />
                   <th />
