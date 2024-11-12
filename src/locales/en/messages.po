@@ -126,7 +126,7 @@ msgstr "CONFIG NAME"
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
-#: src/context/submissions-context/submissions-context.tsx:280
+#: src/context/submissions-context/submissions-context.tsx:279
 msgid "Configuration has been submitted"
 msgstr "Configuration has been submitted"
 
@@ -151,7 +151,7 @@ msgstr "Date Added"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/context/submissions-context/submissions-context.tsx:325
+#: src/context/submissions-context/submissions-context.tsx:324
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
@@ -574,6 +574,10 @@ msgstr "Status"
 msgid "Stop"
 msgstr "Stop"
 
+#: src/context/submissions-context/submissions-context.tsx:256
+msgid "Submission promoted"
+msgstr "Submission promoted"
+
 #: src/components/eula-modal/eula-modal.tsx:69
 #: src/components/submission-config/cells/submission-action-cell.tsx:24
 msgid "Submit"
@@ -607,7 +611,7 @@ msgstr "There is no controller configuration created for"
 msgid "There is no launch configuration created for"
 msgstr "There is no launch configuration created for"
 
-#: src/context/submissions-context/submissions-context.tsx:286
+#: src/context/submissions-context/submissions-context.tsx:285
 msgid "There was an error with the submission {errorMessage}"
 msgstr "There was an error with the submission {errorMessage}"
 

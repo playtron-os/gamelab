@@ -126,7 +126,7 @@ msgstr ""
 msgid "CONFIGURATION"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:280
+#: src/context/submissions-context/submissions-context.tsx:279
 msgid "Configuration has been submitted"
 msgstr ""
 
@@ -151,7 +151,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:325
+#: src/context/submissions-context/submissions-context.tsx:324
 msgid "Delete this configuration?"
 msgstr ""
 
@@ -574,6 +574,10 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
+#: src/context/submissions-context/submissions-context.tsx:256
+msgid "Submission promoted"
+msgstr ""
+
 #: src/components/eula-modal/eula-modal.tsx:69
 #: src/components/submission-config/cells/submission-action-cell.tsx:24
 msgid "Submit"
@@ -607,7 +611,7 @@ msgstr ""
 msgid "There is no launch configuration created for"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:286
+#: src/context/submissions-context/submissions-context.tsx:285
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 
