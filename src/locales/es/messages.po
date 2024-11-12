@@ -43,7 +43,7 @@ msgstr ""
 msgid "Add New Config"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:106
+#: src/components/side-panel/side-panel.tsx:133
 msgid "Added"
 msgstr ""
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Bulk Actions"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:139
+#: src/components/side-panel/side-panel.tsx:166
 msgid "Bypass App Update"
 msgstr ""
 
@@ -113,7 +113,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:264
+#: src/components/side-panel/side-panel.tsx:293
 msgid "Close Log Window"
 msgstr ""
 
@@ -143,6 +143,10 @@ msgstr ""
 msgid "Connect"
 msgstr ""
 
+#: src/components/sidebar/sidebar.tsx:51
+msgid "Connected to: {address}"
+msgstr ""
+
 #: src/components/logs-modal/logs-modal.tsx:80
 msgid "Copy"
 msgstr ""
@@ -159,7 +163,7 @@ msgstr ""
 msgid "Delete this configuration?"
 msgstr ""
 
-#: src/components/sidebar/sidebar.tsx:21
+#: src/components/sidebar/sidebar.tsx:22
 msgid "Disconnected from the internet"
 msgstr ""
 
@@ -177,7 +181,7 @@ msgstr ""
 msgid "Drive"
 msgstr ""
 
-#: src/components/sidebar/sidebar.tsx:36
+#: src/components/sidebar/sidebar.tsx:38
 msgid "Drives"
 msgstr ""
 
@@ -189,7 +193,7 @@ msgstr ""
 msgid "End User License Agreements for"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:149
+#: src/components/side-panel/side-panel.tsx:176
 msgid "Enhanced Debugging"
 msgstr ""
 
@@ -267,7 +271,7 @@ msgstr ""
 msgid "I agree to this EULA"
 msgstr ""
 
-#: src/components/sidebar/sidebar.tsx:47
+#: src/components/sidebar/sidebar.tsx:49
 msgid "Info"
 msgstr ""
 
@@ -279,7 +283,7 @@ msgstr ""
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:186
+#: src/components/side-panel/side-panel.tsx:214
 msgid "Input Config"
 msgstr ""
 
@@ -303,7 +307,7 @@ msgstr ""
 msgid "Insert Delimiter"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:239
+#: src/components/side-panel/side-panel.tsx:268
 msgid "Install folder"
 msgstr ""
 
@@ -348,7 +352,7 @@ msgstr ""
 msgid "Launch"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:161
+#: src/components/side-panel/side-panel.tsx:188
 msgid "Launch Config"
 msgstr ""
 
@@ -409,7 +413,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:122
+#: src/components/side-panel/side-panel.tsx:149
 msgid "Never tested"
 msgstr ""
 
@@ -417,7 +421,7 @@ msgstr ""
 #~ msgid "New override"
 #~ msgstr ""
 
-#: src/components/sidebar/sidebar.tsx:57
+#: src/components/sidebar/sidebar.tsx:61
 msgid "No internet"
 msgstr ""
 
@@ -426,7 +430,7 @@ msgstr ""
 msgid "Not Downloaded"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:111
+#: src/components/side-panel/side-panel.tsx:138
 msgid "Not installed"
 msgstr ""
 
@@ -450,7 +454,7 @@ msgstr ""
 msgid "Open Full Log"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:264
+#: src/components/side-panel/side-panel.tsx:293
 msgid "Open Log Window"
 msgstr ""
 
@@ -468,16 +472,16 @@ msgstr ""
 msgid "Paused"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:212
+#: src/components/side-panel/side-panel.tsx:241
 msgid "Playtron App ID"
 msgstr ""
 
-#: src/components/sidebar/sidebar.tsx:32
+#: src/components/sidebar/sidebar.tsx:34
 #: src/components/signin-layout/signin-layout.tsx:26
 msgid "Playtron Labs"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:219
+#: src/components/side-panel/side-panel.tsx:248
 msgid "Playtron Slug"
 msgstr ""
 
@@ -494,16 +498,16 @@ msgstr ""
 msgid "Promote"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:72
+#: src/components/side-panel/side-panel.tsx:99
 #: src/context/app-library-context/table-config.tsx:63
 msgid "Provider"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:78
+#: src/components/side-panel/side-panel.tsx:105
 msgid "Provider App ID"
 msgstr ""
 
-#: src/components/sidebar/sidebar.tsx:41
+#: src/components/sidebar/sidebar.tsx:43
 msgid "Providers"
 msgstr ""
 
@@ -521,16 +525,16 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:226
+#: src/components/side-panel/side-panel.tsx:255
 msgid "Release Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:171
-#: src/components/side-panel/side-panel.tsx:196
+#: src/components/side-panel/side-panel.tsx:199
+#: src/components/side-panel/side-panel.tsx:225
 msgid "Reset"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:129
+#: src/components/side-panel/side-panel.tsx:156
 msgid "Reset Wine Prefix"
 msgstr ""
 
@@ -598,7 +602,7 @@ msgstr ""
 msgid "Test Games on Playtron Device via Local Network"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:117
+#: src/components/side-panel/side-panel.tsx:144
 msgid "Tested on"
 msgstr ""
 
@@ -676,7 +680,7 @@ msgstr ""
 msgid "Verifying"
 msgstr ""
 
-#: src/components/sidebar/sidebar.tsx:49
+#: src/components/sidebar/sidebar.tsx:53
 msgid "Version: {version}"
 msgstr ""
 

@@ -43,7 +43,7 @@ msgstr "Add Config"
 msgid "Add New Config"
 msgstr "Add New Config"
 
-#: src/components/side-panel/side-panel.tsx:106
+#: src/components/side-panel/side-panel.tsx:133
 msgid "Added"
 msgstr "Added"
 
@@ -88,7 +88,7 @@ msgstr "Base config"
 msgid "Bulk Actions"
 msgstr "Bulk Actions"
 
-#: src/components/side-panel/side-panel.tsx:139
+#: src/components/side-panel/side-panel.tsx:166
 msgid "Bypass App Update"
 msgstr "Bypass App Update"
 
@@ -113,7 +113,7 @@ msgstr "Clear"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/side-panel/side-panel.tsx:264
+#: src/components/side-panel/side-panel.tsx:293
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
@@ -143,6 +143,10 @@ msgstr "Confirm"
 msgid "Connect"
 msgstr "Connect"
 
+#: src/components/sidebar/sidebar.tsx:51
+msgid "Connected to: {address}"
+msgstr "Connected to: {address}"
+
 #: src/components/logs-modal/logs-modal.tsx:80
 msgid "Copy"
 msgstr "Copy"
@@ -159,7 +163,7 @@ msgstr "Delete"
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
-#: src/components/sidebar/sidebar.tsx:21
+#: src/components/sidebar/sidebar.tsx:22
 msgid "Disconnected from the internet"
 msgstr "Disconnected from the internet"
 
@@ -177,7 +181,7 @@ msgstr "Downloading"
 msgid "Drive"
 msgstr "Drive"
 
-#: src/components/sidebar/sidebar.tsx:36
+#: src/components/sidebar/sidebar.tsx:38
 msgid "Drives"
 msgstr "Drives"
 
@@ -189,7 +193,7 @@ msgstr "Duplicate"
 msgid "End User License Agreements for"
 msgstr "End User License Agreements for"
 
-#: src/components/side-panel/side-panel.tsx:149
+#: src/components/side-panel/side-panel.tsx:176
 msgid "Enhanced Debugging"
 msgstr "Enhanced Debugging"
 
@@ -267,7 +271,7 @@ msgstr "Gamepad Type"
 msgid "I agree to this EULA"
 msgstr "I agree to this EULA"
 
-#: src/components/sidebar/sidebar.tsx:47
+#: src/components/sidebar/sidebar.tsx:49
 msgid "Info"
 msgstr "Info"
 
@@ -279,7 +283,7 @@ msgstr "Initiate direct testing on a Playtron device within your local network. 
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 
-#: src/components/side-panel/side-panel.tsx:186
+#: src/components/side-panel/side-panel.tsx:214
 msgid "Input Config"
 msgstr "Input Config"
 
@@ -303,7 +307,7 @@ msgstr "INPUT DEVICES"
 msgid "Insert Delimiter"
 msgstr "Insert Delimiter"
 
-#: src/components/side-panel/side-panel.tsx:239
+#: src/components/side-panel/side-panel.tsx:268
 msgid "Install folder"
 msgstr "Install folder"
 
@@ -348,7 +352,7 @@ msgstr "Labs is unable to connect to the device using default credentials. Pleas
 msgid "Launch"
 msgstr "Launch"
 
-#: src/components/side-panel/side-panel.tsx:161
+#: src/components/side-panel/side-panel.tsx:188
 msgid "Launch Config"
 msgstr "Launch Config"
 
@@ -409,7 +413,7 @@ msgstr "Move selected apps"
 msgid "Name"
 msgstr "Name"
 
-#: src/components/side-panel/side-panel.tsx:122
+#: src/components/side-panel/side-panel.tsx:149
 msgid "Never tested"
 msgstr "Never tested"
 
@@ -417,7 +421,7 @@ msgstr "Never tested"
 #~ msgid "New override"
 #~ msgstr "New override"
 
-#: src/components/sidebar/sidebar.tsx:57
+#: src/components/sidebar/sidebar.tsx:61
 msgid "No internet"
 msgstr "No internet"
 
@@ -426,7 +430,7 @@ msgstr "No internet"
 msgid "Not Downloaded"
 msgstr "Not Downloaded"
 
-#: src/components/side-panel/side-panel.tsx:111
+#: src/components/side-panel/side-panel.tsx:138
 msgid "Not installed"
 msgstr "Not installed"
 
@@ -450,7 +454,7 @@ msgstr "Oops!"
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
-#: src/components/side-panel/side-panel.tsx:264
+#: src/components/side-panel/side-panel.tsx:293
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
@@ -468,16 +472,16 @@ msgstr "Pause"
 msgid "Paused"
 msgstr "Paused"
 
-#: src/components/side-panel/side-panel.tsx:212
+#: src/components/side-panel/side-panel.tsx:241
 msgid "Playtron App ID"
 msgstr "Playtron App ID"
 
-#: src/components/sidebar/sidebar.tsx:32
+#: src/components/sidebar/sidebar.tsx:34
 #: src/components/signin-layout/signin-layout.tsx:26
 msgid "Playtron Labs"
 msgstr "Playtron Labs"
 
-#: src/components/side-panel/side-panel.tsx:219
+#: src/components/side-panel/side-panel.tsx:248
 msgid "Playtron Slug"
 msgstr "Playtron Slug"
 
@@ -494,16 +498,16 @@ msgstr "Prioritize"
 msgid "Promote"
 msgstr "Promote"
 
-#: src/components/side-panel/side-panel.tsx:72
+#: src/components/side-panel/side-panel.tsx:99
 #: src/context/app-library-context/table-config.tsx:63
 msgid "Provider"
 msgstr "Provider"
 
-#: src/components/side-panel/side-panel.tsx:78
+#: src/components/side-panel/side-panel.tsx:105
 msgid "Provider App ID"
 msgstr "Provider App ID"
 
-#: src/components/sidebar/sidebar.tsx:41
+#: src/components/sidebar/sidebar.tsx:43
 msgid "Providers"
 msgstr "Providers"
 
@@ -521,16 +525,16 @@ msgstr "Queued"
 msgid "Ready"
 msgstr "Ready"
 
-#: src/components/side-panel/side-panel.tsx:226
+#: src/components/side-panel/side-panel.tsx:255
 msgid "Release Date"
 msgstr "Release Date"
 
-#: src/components/side-panel/side-panel.tsx:171
-#: src/components/side-panel/side-panel.tsx:196
+#: src/components/side-panel/side-panel.tsx:199
+#: src/components/side-panel/side-panel.tsx:225
 msgid "Reset"
 msgstr "Reset"
 
-#: src/components/side-panel/side-panel.tsx:129
+#: src/components/side-panel/side-panel.tsx:156
 msgid "Reset Wine Prefix"
 msgstr "Reset Wine Prefix"
 
@@ -598,7 +602,7 @@ msgstr "System Drive"
 msgid "Test Games on Playtron Device via Local Network"
 msgstr "Test Games on Playtron Device via Local Network"
 
-#: src/components/side-panel/side-panel.tsx:117
+#: src/components/side-panel/side-panel.tsx:144
 msgid "Tested on"
 msgstr "Tested on"
 
@@ -676,7 +680,7 @@ msgstr "Validate JSON"
 msgid "Verifying"
 msgstr "Verifying"
 
-#: src/components/sidebar/sidebar.tsx:49
+#: src/components/sidebar/sidebar.tsx:53
 msgid "Version: {version}"
 msgstr "Version: {version}"
 

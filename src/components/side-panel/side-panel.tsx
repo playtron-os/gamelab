@@ -1,5 +1,5 @@
 import { useAppLibraryContext } from "@/context";
-import { AppStatus } from "@/types";
+import { AppStatus, getMessage, MessageType } from "@/types";
 import {
   getAppActionIconByStatus,
   getAppActionLabelByStatus,
@@ -9,15 +9,19 @@ import {
 } from "@/utils/app-info";
 import { Trans, t } from "@lingui/macro";
 import { Button, Divider, Toggle } from "@playtron/styleguide";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useCallback } from "react";
 import { InputConfigModal } from "../input-config-modal/input-config-modal";
 import { LaunchConfigModal } from "../launch-config/launch-config-modal";
 import { LogsModal } from "../logs-modal/logs-modal";
-import { useSubmissionsContext } from "@/context/submissions-context";
+import {
+  useSubmissionsContext,
+  useSubmissionsType
+} from "@/context/submissions-context";
 
 import { ConfigSelect } from "@/components/side-panel/config-select";
 import { TargetControllerType } from "@/types/input-config";
 import { EulaModal } from "@/components/eula-modal/eula-modal";
+import { usePlayserveSendMessage } from "@/hooks";
 
 export const SidePanel: React.FC = () => {
   const {
@@ -47,6 +51,29 @@ export const SidePanel: React.FC = () => {
   const [isLogsOpen, setIsLogsOpen] = useState<boolean>(false);
   const [targetLayout, setTargetLayout] =
     useState<TargetControllerType>("xbox");
+
+  const sendMessage = usePlayserveSendMessage();
+
+  const deleteDefaultConfig = useCallback(
+    (submissions: useSubmissionsType) => {
+      const item = submissions.selectedItem;
+      if (!item) return;
+      const setSelectedSubmissionMessage = getMessage(
+        MessageType.SubmissionDeleteDefault,
+        {
+          app_id: item.app_id,
+          item_type: item.submission_item_type,
+          item_id: item.item_id
+        }
+      );
+      sendMessage(setSelectedSubmissionMessage)().then((res) => {
+        if (res.status != 200) {
+          console.log("Error deleting default submission: ", res);
+        }
+      });
+    },
+    [sendMessage]
+  );
 
   const launchParams = useMemo(
     () => ({
@@ -166,6 +193,7 @@ export const SidePanel: React.FC = () => {
                   href="#"
                   onClick={() => {
                     launchSubmissions.setSelectedItemId(null);
+                    deleteDefaultConfig(launchSubmissions);
                   }}
                 >
                   <Trans>Reset</Trans>
@@ -191,6 +219,7 @@ export const SidePanel: React.FC = () => {
                     href="#"
                     onClick={() => {
                       inputSubmissions.setSelectedItemId(null);
+                      deleteDefaultConfig(inputSubmissions);
                     }}
                   >
                     <Trans>Reset</Trans>
