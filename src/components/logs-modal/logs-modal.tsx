@@ -63,7 +63,7 @@ export const LogsModal: React.FC<LogsModalProps> = ({
       isOpen={isOpen}
       onClose={onClose}
       noContentPadding
-      rightMargin={384}
+      rightMargin={280}
       className="z-10"
     >
       <div>
