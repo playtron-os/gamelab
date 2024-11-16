@@ -254,7 +254,7 @@ msgstr "Game is not owned or provider is not authorized"
 msgid "Game logs will appear here..."
 msgstr "Game logs will appear here..."
 
-#: src/components/controller-edit/map-to.tsx:24
+#: src/components/controller-edit/map-to.tsx:20
 msgid "Gamepad"
 msgstr "Gamepad"
 
@@ -340,7 +340,7 @@ msgstr "IP Address of the Playtron device"
 msgid "JSON structure is invalid {err}"
 msgstr "JSON structure is invalid {err}"
 
-#: src/components/controller-edit/map-to.tsx:20
+#: src/components/controller-edit/map-to.tsx:24
 msgid "Keyboard"
 msgstr "Keyboard"
 

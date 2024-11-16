@@ -11,10 +11,18 @@ import {
   DpadLeftFill,
   DpadRightFill,
   DpadUpFill,
-  LJoystickDownLine,
-  RJoystickDownLine,
+  LJoystickDownFill,
+  RJoystickDownFill,
   LJoystickLine,
   RJoystickLine,
+  JoystickLLeftLine,
+  JoystickLRightLine,
+  JoystickLUpLine,
+  JoystickLDownLine,
+  JoystickRLeftLine,
+  JoystickRRightLine,
+  JoystickRUpLine,
+  JoystickRDownLine,
   OptionLine,
   ViewLine,
   RectangleRoundedbottomLine,
@@ -188,29 +196,86 @@ export const ControllerInputs: ControllerInputMap = {
     device: "gamepad",
     mapping: { button: "Select" }
   },
-  LeftStickButton: {
-    label: "L3 Button",
-    icon: LJoystickDownLine,
-    device: "gamepad",
-    mapping: { button: "LeftStick" }
-  },
-  RightStickButton: {
-    label: "R3 Button",
-    icon: RJoystickDownLine,
-    device: "gamepad",
-    mapping: { button: "RightStick" }
-  },
+
   LeftStick: {
     label: "Left Stick",
     icon: LJoystickLine,
     device: "gamepad",
     mapping: { axis: { name: "LeftStick" } }
   },
+  LeftStickLeft: {
+    label: "Left Stick Left",
+    icon: JoystickLLeftLine,
+    device: "gamepad",
+    mapping: { axis: { name: "LeftStick", direction: "left", deadzone: 0.3 } }
+  },
+
+  LeftStickButton: {
+    label: "L3 Button",
+    icon: LJoystickDownFill,
+    device: "gamepad",
+    mapping: { button: "LeftStick" }
+  },
+
+  LeftStickRight: {
+    label: "Left Stick Right",
+    icon: JoystickLRightLine,
+    device: "gamepad",
+    mapping: { axis: { name: "LeftStick", direction: "right", deadzone: 0.3 } }
+  },
+  LeftStickUp: {
+    label: "Left Stick Up",
+    icon: JoystickLUpLine,
+    device: "gamepad",
+    mapping: {
+      axis: { name: "LeftStick", direction: "up", deadzone: 0.3 }
+    }
+  },
+  LeftStickDown: {
+    label: "Left Stick Down",
+    icon: JoystickLDownLine,
+    device: "gamepad",
+    mapping: {
+      axis: { name: "LeftStick", direction: "down", deadzone: 0.3 }
+    }
+  },
   RightStick: {
     label: "Right Stick",
     icon: RJoystickLine,
     device: "gamepad",
     mapping: { axis: { name: "RightStick" } }
+  },
+
+  RightStickButton: {
+    label: "R3 Button",
+    icon: RJoystickDownFill,
+    device: "gamepad",
+    mapping: { button: "RightStick" }
+  },
+
+  RightStickLeft: {
+    label: "Right Stick Left",
+    icon: JoystickRLeftLine,
+    device: "gamepad",
+    mapping: { axis: { name: "RightStick", direction: "left", deadzone: 0.3 } }
+  },
+  RightStickRight: {
+    label: "Right Stick Right",
+    icon: JoystickRRightLine,
+    device: "gamepad",
+    mapping: { axis: { name: "RightStick", direction: "right", deadzone: 0.3 } }
+  },
+  RightStickUp: {
+    label: "Right Stick Up",
+    icon: JoystickRUpLine,
+    device: "gamepad",
+    mapping: { axis: { name: "RightStick", direction: "up", deadzone: 0.3 } }
+  },
+  RightStickDown: {
+    label: "Right Stick Down",
+    icon: JoystickRDownLine,
+    device: "gamepad",
+    mapping: { axis: { name: "RightStick", direction: "down", deadzone: 0.3 } }
   },
   LeftPaddle1: {
     label: "Paddle 1",
@@ -533,8 +598,21 @@ export const xboxLayout: ControlGroup[] = [
     inputs: [
       ControllerInputs.LeftStick,
       ControllerInputs.RightStick,
+
       ControllerInputs.LeftStickButton,
-      ControllerInputs.RightStickButton
+      ControllerInputs.RightStickButton,
+
+      ControllerInputs.LeftStickUp,
+      ControllerInputs.RightStickUp,
+
+      ControllerInputs.LeftStickDown,
+      ControllerInputs.RightStickDown,
+
+      ControllerInputs.LeftStickLeft,
+      ControllerInputs.RightStickLeft,
+
+      ControllerInputs.LeftStickRight,
+      ControllerInputs.RightStickRight
     ]
   },
   {

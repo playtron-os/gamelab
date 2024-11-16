@@ -243,7 +243,11 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
                     className="button-group flex gap-2 items-center"
                   >
                     {key.icon && (
-                      <key.icon fill={styles.variablesDark.fill.white} />
+                      <key.icon
+                        fill={styles.variablesDark.fill.white}
+                        width={32}
+                        height={32}
+                      />
                     )}
                     <ArrowRightLine fill={styles.variablesDark.fill.subtle} />
                     <div className="border-2 w-[200px] bg-[--fill-default] rounded-lg border-[--stroke-subtle] flex">
