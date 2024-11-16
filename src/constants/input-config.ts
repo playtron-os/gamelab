@@ -274,8 +274,8 @@ export enum GamepadTrigger {
 }
 
 export enum inputTypes {
-  keyboard = "keyboard",
-  mouse = "mouse",
   gamepad = "gamepad",
+  mouse = "mouse",
+  keyboard = "keyboard",
   numpad = "numpad"
 }

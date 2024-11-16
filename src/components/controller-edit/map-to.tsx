@@ -16,12 +16,12 @@ import { SubmissionEditHeader } from "@/components/submission-config/submission-
 
 const getInputTypeLabel = (inputType: string): string => {
   switch (inputType) {
-    case inputTypes.keyboard:
-      return t`Keyboard`;
-    case inputTypes.mouse:
-      return t`Mouse`;
     case inputTypes.gamepad:
       return t`Gamepad`;
+    case inputTypes.mouse:
+      return t`Mouse`;
+    case inputTypes.keyboard:
+      return t`Keyboard`;
     case inputTypes.numpad:
       return t`Numpad`;
     default:
