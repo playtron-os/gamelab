@@ -401,8 +401,21 @@ export const steamDeckLayout: ControlGroup[] = [
     inputs: [
       ControllerInputs.LeftStick,
       ControllerInputs.RightStick,
+
       ControllerInputs.LeftStickButton,
-      ControllerInputs.RightStickButton
+      ControllerInputs.RightStickButton,
+
+      ControllerInputs.LeftStickUp,
+      ControllerInputs.RightStickUp,
+
+      ControllerInputs.LeftStickDown,
+      ControllerInputs.RightStickDown,
+
+      ControllerInputs.LeftStickLeft,
+      ControllerInputs.RightStickLeft,
+
+      ControllerInputs.LeftStickRight,
+      ControllerInputs.RightStickRight
     ]
   },
   {
@@ -474,8 +487,21 @@ export const ps4Layout: ControlGroup[] = [
     inputs: [
       ControllerInputs.LeftStick,
       ControllerInputs.RightStick,
+
       ControllerInputs.LeftStickButton,
-      ControllerInputs.RightStickButton
+      ControllerInputs.RightStickButton,
+
+      ControllerInputs.LeftStickUp,
+      ControllerInputs.RightStickUp,
+
+      ControllerInputs.LeftStickDown,
+      ControllerInputs.RightStickDown,
+
+      ControllerInputs.LeftStickLeft,
+      ControllerInputs.RightStickLeft,
+
+      ControllerInputs.LeftStickRight,
+      ControllerInputs.RightStickRight
     ]
   },
   {
@@ -536,8 +562,21 @@ export const ps5Layout: ControlGroup[] = [
     inputs: [
       ControllerInputs.LeftStick,
       ControllerInputs.RightStick,
+
       ControllerInputs.LeftStickButton,
-      ControllerInputs.RightStickButton
+      ControllerInputs.RightStickButton,
+
+      ControllerInputs.LeftStickUp,
+      ControllerInputs.RightStickUp,
+
+      ControllerInputs.LeftStickDown,
+      ControllerInputs.RightStickDown,
+
+      ControllerInputs.LeftStickLeft,
+      ControllerInputs.RightStickLeft,
+
+      ControllerInputs.LeftStickRight,
+      ControllerInputs.RightStickRight
     ]
   },
   {
