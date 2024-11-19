@@ -17,10 +17,10 @@ export const useAppLibraryActions = (): UseAppLibraryReturn => {
 
   const fetchLibraryApps = useCallback(
     (forceRefresh = false) => {
-      setLoadingDispatch(true);
       if (!sendMessage) {
         return;
       }
+      setLoadingDispatch(true);
       sendMessage(
         getMessage(MessageType.AppLibraryGet, {
           force_refresh: forceRefresh

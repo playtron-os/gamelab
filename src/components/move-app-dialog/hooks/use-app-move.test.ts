@@ -1,7 +1,7 @@
 import { act, waitFor } from "@testing-library/react";
 import { renderHookWithAppLibraryContext } from "@/utils";
 import { useAppMove } from "./use-app-move";
-import { UsePlayservReturn } from "@/hooks";
+import { UsePlayserveReturn } from "@/hooks";
 import { AppInformation, MessageType, PlayserveResponse } from "@/types";
 import { DriveInfo } from "@/types/drive";
 import { closeMoveAppDialog, setMovingApp } from "@/redux/modules";
@@ -36,13 +36,13 @@ const sendMessageMockFail = jest
   .mockReturnValue(() => Promise.resolve(APP_MOVE_MOCK_RESPONSE_FAIL));
 const mockDispatch = jest.fn();
 
-const mockPlayserveOk: UsePlayservReturn = {
+const mockPlayserveOk: UsePlayserveReturn = {
   sendMessage: sendMessageMockOk,
   // @ts-expect-error We don't use websocket in those tests
   websocket: null
 };
 
-const mockPlayserveFail: UsePlayservReturn = {
+const mockPlayserveFail: UsePlayserveReturn = {
   sendMessage: sendMessageMockFail,
   // @ts-expect-error We don't use websocket in those tests
   websocket: null

@@ -1,4 +1,4 @@
-import { UsePlayservReturn } from "@/hooks";
+import { UsePlayserveReturn } from "@/hooks";
 import { closeMoveAppDialog, setMovingApp } from "@/redux/modules";
 import { useAppDispatch } from "@/redux/store";
 import { AppInformation } from "@/types/app-library";
@@ -7,7 +7,7 @@ import { MessageType, getMessage } from "@/types/playserve/message";
 import { t } from "@lingui/macro";
 import { useCallback } from "react";
 import { flashMessage } from "redux-flash";
-export const useAppMove = (playserve: UsePlayservReturn) => {
+export const useAppMove = (playserve: UsePlayserveReturn) => {
   const { sendMessage } = playserve;
   const dispatch = useAppDispatch();
 
