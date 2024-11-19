@@ -150,13 +150,13 @@ export const ControllerInputs: ControllerInputMap = {
   },
   West: {
     label: "West",
-    icon: ABXYXLine,
+    icon: ABXYYLine,
     device: "gamepad",
     mapping: { button: "West" }
   },
   North: {
     label: "North",
-    icon: ABXYYLine,
+    icon: ABXYXLine,
     device: "gamepad",
     mapping: { button: "North" }
   },
@@ -388,10 +388,10 @@ export const steamDeckLayout: ControlGroup[] = [
     inputs: [
       ControllerInputs.South,
       ControllerInputs.East,
-      ControllerInputs.West,
       ControllerInputs.North,
-      ControllerInputs.Start,
-      ControllerInputs.Select
+      ControllerInputs.West,
+      ControllerInputs.Select,
+      ControllerInputs.Start
     ]
   },
   {
@@ -474,10 +474,10 @@ export const ps4Layout: ControlGroup[] = [
     inputs: [
       ControllerInputs.South,
       ControllerInputs.East,
-      ControllerInputs.West,
       ControllerInputs.North,
-      ControllerInputs.Start,
-      ControllerInputs.Select
+      ControllerInputs.West,
+      ControllerInputs.Select,
+      ControllerInputs.Start
     ]
   },
   {
@@ -549,10 +549,10 @@ export const ps5Layout: ControlGroup[] = [
     inputs: [
       ControllerInputs.South,
       ControllerInputs.East,
-      ControllerInputs.West,
       ControllerInputs.North,
-      ControllerInputs.Start,
-      ControllerInputs.Select
+      ControllerInputs.West,
+      ControllerInputs.Select,
+      ControllerInputs.Start
     ]
   },
   {
@@ -624,8 +624,8 @@ export const xboxLayout: ControlGroup[] = [
     inputs: [
       ControllerInputs.South,
       ControllerInputs.East,
-      ControllerInputs.West,
       ControllerInputs.North,
+      ControllerInputs.West,
       ControllerInputs.Select,
       ControllerInputs.Start
     ]
