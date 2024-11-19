@@ -54,6 +54,11 @@ export const ConnectDeviceScreen: React.FC = () => {
       return;
     }
     console.log(`Connnection address is ${address}`);
+    if (!address) {
+      hideLoadingSpinner();
+      setErrorText(t`Unable to connect to playtron service on the device`);
+      return;
+    }
     const message = getMessage(MessageType.GetCurrentUser, {});
     const response = await sendPlayserveMessage(address, message)();
     if (response.status !== 200 || !response.body) {
@@ -78,15 +83,15 @@ export const ConnectDeviceScreen: React.FC = () => {
         <h1 className="text-3xl font-bold text-white py-6">
           <Trans>Test Games on Playtron Device via Local Network</Trans>
         </h1>
-        <p>
+        <div>
           <Trans>
             Initiate direct testing on a Playtron device within your local
             network. Begin by enabling SSH connections: navigate to
             &apos;Settings &gt; Advanced &gt; Remote Access&apos; on your
             device.
           </Trans>
-        </p>
-        <p className="py-4">
+        </div>
+        <div className="py-4">
           <label>
             <Trans>IP Address of the Playtron device</Trans>
           </label>
@@ -98,15 +103,15 @@ export const ConnectDeviceScreen: React.FC = () => {
               setErrorText("");
             }}
           />
-        </p>
-        <p className="py-4">
+        </div>
+        <div className="py-4">
           <Button
             label={t`Connect`}
             className="w-full"
             primary
             onClick={handleConnection}
           />
-        </p>
+        </div>
       </div>
       <Modal
         id="ssh-creds"
@@ -117,12 +122,12 @@ export const ConnectDeviceScreen: React.FC = () => {
           <h2 className="text-3xl font-bold">
             <Trans>Invalid SSH credentials</Trans>
           </h2>
-          <p className="max-w-96 mb-2">
+          <div className="max-w-96 mb-2">
             <Trans>
               Labs is unable to connect to the device using default credentials.
               Please provide correct username and password.
             </Trans>
-          </p>
+          </div>
           <TextInput
             value={username || ""}
             onChange={(v) => setUsername(v)}
@@ -136,7 +141,7 @@ export const ConnectDeviceScreen: React.FC = () => {
             label={t`Password`}
             type="password"
           />
-          <p className="mt-3 flex flex-col gap-2">
+          <div className="mt-3 flex flex-col gap-2">
             <Button
               label={t`Connect`}
               className="w-full"
@@ -148,7 +153,7 @@ export const ConnectDeviceScreen: React.FC = () => {
               className="w-full"
               onClick={() => setInvalidCreds(false)}
             />
-          </p>
+          </div>
         </div>
       </Modal>
     </SigninLayout>

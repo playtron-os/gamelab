@@ -92,7 +92,7 @@ msgstr ""
 msgid "Bypass App Update"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:147
+#: src/screens/connect-device/connect-device.tsx:152
 msgid "Cancel"
 msgstr ""
 
@@ -138,8 +138,8 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:104
-#: src/screens/connect-device/connect-device.tsx:141
+#: src/screens/connect-device/connect-device.tsx:109
+#: src/screens/connect-device/connect-device.tsx:146
 msgid "Connect"
 msgstr ""
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "Info"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:82
+#: src/screens/connect-device/connect-device.tsx:87
 msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Advanced > Remote Access' on your device."
 msgstr ""
 
@@ -328,11 +328,11 @@ msgstr ""
 msgid "Invalid layout"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:118
+#: src/screens/connect-device/connect-device.tsx:123
 msgid "Invalid SSH credentials"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:91
+#: src/screens/connect-device/connect-device.tsx:96
 msgid "IP Address of the Playtron device"
 msgstr ""
 
@@ -344,7 +344,7 @@ msgstr ""
 msgid "Keyboard"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:121
+#: src/screens/connect-device/connect-device.tsx:126
 msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 msgstr ""
 
@@ -458,8 +458,8 @@ msgstr ""
 msgid "Open Log Window"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:135
-#: src/screens/connect-device/connect-device.tsx:136
+#: src/screens/connect-device/connect-device.tsx:140
+#: src/screens/connect-device/connect-device.tsx:141
 msgid "Password"
 msgstr ""
 
@@ -597,7 +597,7 @@ msgstr ""
 #~ msgid "Tags"
 #~ msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:79
+#: src/screens/connect-device/connect-device.tsx:84
 msgid "Test Games on Playtron Device via Local Network"
 msgstr ""
 
@@ -633,7 +633,8 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:63
+#: src/screens/connect-device/connect-device.tsx:59
+#: src/screens/connect-device/connect-device.tsx:68
 msgid "Unable to connect to playtron service on the device"
 msgstr ""
 
@@ -665,8 +666,8 @@ msgstr ""
 msgid "Update Required"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:129
-#: src/screens/connect-device/connect-device.tsx:130
+#: src/screens/connect-device/connect-device.tsx:134
+#: src/screens/connect-device/connect-device.tsx:135
 msgid "Username"
 msgstr ""
 

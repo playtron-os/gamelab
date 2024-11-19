@@ -1,5 +1,3 @@
-import { warn } from "@tauri-apps/plugin-log";
-
 export const SUPPORTED_ARCHITECUTRES = {
   LINUX_32: "ELF 32-bit",
   LINUX_64: "ELF 64-bit",
@@ -20,29 +18,4 @@ export interface FileInformation {
 }
 
 export const EULA_NOT_ACCEPTED = "EULA_NOT_ACCEPTED";
-export const DEFAULT_WEBSOCKET_IP = "127.0.0.1";
 export const DEFAULT_WEBSOCKET_PORT = 8080;
-/**
- * Allow customizing endpoint of the Playserve device.
- * Playserve needs to be started with:
- *
- * @returns string
- */
-export function getWebsocketUrl(
-  deviceIp?: string,
-  port = DEFAULT_WEBSOCKET_PORT
-): string {
-  if (!deviceIp) {
-    // In case deviceIp is not set, default to localhost
-    console.warn(
-      "No device IP provided, this may result in an invalid websocket URL"
-    );
-    warn("No device IP provided, this may result in an invalid websocket URL");
-    deviceIp = DEFAULT_WEBSOCKET_IP;
-  }
-  const url = new URL(`ws://${deviceIp}/ws?app_type=labs`);
-  if (!url.port) {
-    url.port = port.toString();
-  }
-  return url.toString();
-}

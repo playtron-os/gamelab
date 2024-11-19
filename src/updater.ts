@@ -3,7 +3,13 @@ import { check } from "@tauri-apps/plugin-updater";
 import { ask } from "@tauri-apps/plugin-dialog";
 
 export async function checkForAppUpdates() {
-  const update = await check();
+  let update = null;
+  try {
+    update = await check();
+  } catch (e) {
+    console.error(e);
+  }
+
   if (update === null) {
     console.log("No updates available");
   } else if (update?.available) {

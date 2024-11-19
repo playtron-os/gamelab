@@ -1,4 +1,4 @@
-import { getWebsocketUrl } from "@/constants";
+import { DEFAULT_WEBSOCKET_PORT } from "@/constants";
 import { selectAuthDeviceIp } from "@/redux/modules";
 import { useAppSelector } from "@/redux/store";
 import { Message, MessageType } from "@/types/playserve/message";
@@ -15,6 +15,25 @@ function isJsonString(str: string) {
     return false;
   }
   return true;
+}
+
+/**
+ * Allow customizing endpoint of the Playserve device.
+ *
+ * @returns string
+ */
+export function getWebsocketUrl(
+  deviceIp?: string,
+  port = DEFAULT_WEBSOCKET_PORT
+): string {
+  if (!deviceIp) {
+    return "";
+  }
+  const url = new URL(`ws://${deviceIp}/ws?app_type=labs`);
+  if (!url.port) {
+    url.port = port.toString();
+  }
+  return url.toString();
 }
 
 type ResponseHandler<T extends MessageType> = (
@@ -311,9 +330,7 @@ export const usePlayserveSendMessage = (): SendMessage => {
 
   // Function to send a message to the websocket
   // Returns a function that if called, will expect a response from the websocket and return the result once received
-  const sendMessage = useCallback(ws.sendMessage.bind(ws), [ws]);
-
-  return sendMessage;
+  return useCallback(ws.sendMessage.bind(ws), [ws]);
 };
 
 export function sendPlayserveMessage<MessageT extends MessageType>(
