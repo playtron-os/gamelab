@@ -18,6 +18,9 @@ export const useAppLibraryActions = (): UseAppLibraryReturn => {
   const fetchLibraryApps = useCallback(
     (forceRefresh = false) => {
       setLoadingDispatch(true);
+      if (!sendMessage) {
+        return;
+      }
       sendMessage(
         getMessage(MessageType.AppLibraryGet, {
           force_refresh: forceRefresh
@@ -28,6 +31,9 @@ export const useAppLibraryActions = (): UseAppLibraryReturn => {
   );
 
   const fetchQueue = useCallback(() => {
+    if (!sendMessage) {
+      return;
+    }
     sendMessage(getMessage(MessageType.QueueDownloadGet));
   }, [sendMessage]);
 
