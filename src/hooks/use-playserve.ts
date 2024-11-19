@@ -79,8 +79,11 @@ class WS {
   messagesBuffer: string[] = [];
 
   constructor(url: string) {
+    this.url = "";
+    this.retries = 0;
     if (!url) {
-      throw new Error("Websocket URL is required");
+      console.log("URL is required to initialize a websocket");
+      return;
     }
     wsMap[url] = this;
     this.url = url;
@@ -100,7 +103,6 @@ class WS {
         this.isReady = false;
       }
     }, 1);
-    this.retries = 0;
     this.initializeWebsocket();
   }
 
@@ -221,13 +223,13 @@ class WS {
     };
   }
 }
-export type UsePlayservProps = {
+export type UsePlayserveProps = {
   onMessage?: (message: PlayserveResponse<MessageType>) => void;
   onReady?: () => void;
   url?: string;
 };
 
-export type UsePlayservSendMessageProps = {
+export type UsePlayserveSendMessageProps = {
   url?: string;
 };
 
@@ -235,7 +237,7 @@ export type SendMessage = <MessageT extends MessageType>(
   message: Message<MessageT>
 ) => () => Promise<PlayserveResponse<MessageT>>;
 
-export type UsePlayservReturn = {
+export type UsePlayserveReturn = {
   sendMessage: SendMessage;
   websocket: WebSocket;
 };
@@ -247,7 +249,7 @@ export const usePlayserve = ({
   onMessage,
   onReady,
   url: wsUrl
-}: UsePlayservProps = {}): UsePlayservReturn => {
+}: UsePlayserveProps = {}): UsePlayserveReturn => {
   const deviceIp = useAppSelector(selectAuthDeviceIp);
 
   const url = useMemo(() => {

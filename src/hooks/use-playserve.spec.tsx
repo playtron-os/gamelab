@@ -1,7 +1,7 @@
 import WS from "jest-websocket-mock";
 import {
-  UsePlayservProps,
-  UsePlayservReturn,
+  UsePlayserveProps,
+  UsePlayserveReturn,
   usePlayserve
 } from "./use-playserve";
 import { MessageType, getMessage } from "@/types/playserve/message";
@@ -32,8 +32,10 @@ function setupServer(url: string) {
   return new WS(url);
 }
 
-function setup(props?: UsePlayservProps, useUndefinedProps = false) {
-  const returnVal = {} as UsePlayservReturn & { setUrl: (url: string) => void };
+function setup(props?: UsePlayserveProps, useUndefinedProps = false) {
+  const returnVal = {} as UsePlayserveReturn & {
+    setUrl: (url: string) => void;
+  };
   function TestComponent() {
     const [url, setUrl] = useState(props?.url); // eslint-disable-line
     Object.assign(

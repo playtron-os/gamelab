@@ -1,7 +1,7 @@
 import { waitFor } from "@testing-library/react";
 import { renderHookWithContext } from "@/utils";
 import { useDriveInfo } from "@/hooks/use-drive-info";
-import { UsePlayservReturn } from "@/hooks";
+import { UsePlayserveReturn } from "@/hooks";
 import { MessageType, PlayserveResponse } from "@/types";
 
 const DRIVE_INFO_MOCK_RESPONSE: PlayserveResponse<MessageType.DriveInfo> = {
@@ -21,7 +21,7 @@ const DRIVE_INFO_MOCK_RESPONSE: PlayserveResponse<MessageType.DriveInfo> = {
 const sendMessageMockOk = jest
   .fn()
   .mockReturnValue(() => Promise.resolve(DRIVE_INFO_MOCK_RESPONSE));
-const mockPlayserve: UsePlayservReturn = {
+const mockPlayserve: UsePlayserveReturn = {
   sendMessage: sendMessageMockOk,
   // @ts-expect-error For mock purposes we can have null here
   websocket: null

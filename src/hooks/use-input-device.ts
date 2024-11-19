@@ -1,9 +1,9 @@
-import { UsePlayservReturn } from "@/hooks";
+import { UsePlayserveReturn } from "@/hooks";
 import { MessageType, getMessage } from "@/types";
 import { useCallback, useState } from "react";
 import { ControllerInfo } from "@/types/input-config";
 
-export const useInputDevice = (playserve: UsePlayservReturn) => {
+export const useInputDevice = (playserve: UsePlayserveReturn) => {
   const { sendMessage } = playserve;
   const [inputDevices, setInputDevices] = useState<ControllerInfo[]>([]);
 
