@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { usePlayserve } from "@/hooks";
 import { MessageType } from "@/types/playserve/message";
 
@@ -18,7 +18,7 @@ import { SidePanel } from "@/components/side-panel/side-panel";
 
 import { SubmissionsContextProvider } from "@/context/submissions-context";
 import { Sidebar } from "@/components/sidebar/sidebar";
-import { useMount } from "ahooks";
+
 import { useAppLibraryActions } from "@/hooks/app-library/use-app-library-actions";
 
 export const LibraryScreen = () => {
@@ -40,10 +40,10 @@ export const LibraryScreen = () => {
     setAppDownloadProgress
   });
   const { fetchLibraryApps, fetchQueue } = useAppLibraryActions();
-  useMount(() => {
+  useEffect(() => {
     fetchLibraryApps(false);
     fetchQueue();
-  });
+  }, []);
 
   const apps = useAppSelector(selectAppLibraryAppsState);
 
