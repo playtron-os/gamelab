@@ -52,7 +52,7 @@ export type ControlGroup = {
   inputs: ControllerInput[];
 };
 
-export type TargetControllerType = "xbox" | "ps5";
+export type TargetControllerType = "default" | "xbox" | "ps5";
 
 export interface ControllerComponentProps {
   mappedKey?: InputEvent;

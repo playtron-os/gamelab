@@ -92,12 +92,22 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
       );
       return;
     }
+    let targetDevice = "gamepad";
+    switch (targetLayout) {
+      case "ps5":
+        targetDevice = "ds5";
+        break;
+      case "xbox":
+        targetDevice = "xb360";
+        break;
+    }
     const saveItem = {
       item_id: editLayout.item_id,
       app_id: editLayout.app_id,
       name: editLayout.name,
       description: editLayout.description,
       data: JSON.stringify({
+        target_devices: ["mouse", "keyboard", targetDevice],
         mapping: editLayout.mapping
       })
     };
@@ -105,7 +115,7 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
     saveSubmission(editLayout.app_id, submissionType, saveItem);
     setEditLayout(null);
     onClose();
-  }, [editLayout, saveSubmission, setEditLayout, onClose]);
+  }, [editLayout, targetLayout, saveSubmission, setEditLayout, onClose]);
   useEffect(() => {
     if (editLayout && !editLayout.mapping) {
       const InputConfig = JSON.parse(editLayout.data);
