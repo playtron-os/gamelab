@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { NotFoundScreen, ConnectDeviceScreen } from "./screens";
 import { LibraryScreen } from "./screens/library";
 import { ProtectedRouteElementWrapper } from "./components/protected-route-element-wrapper";
-import { useAppLibraryManager } from "./hooks/app-library";
 
 const router = createBrowserRouter([
   {
@@ -31,7 +30,5 @@ const router = createBrowserRouter([
 ]);
 
 export function Routes() {
-  useAppLibraryManager();
-
   return <RouterProvider router={router} />;
 }
