@@ -51,6 +51,8 @@ export const getControllerLayoutLabel = (layout: TargetControllerType) => {
       return t`XBox controller`;
     case "ps5":
       return t`PS5 controller`;
+    case "default":
+      return t`Current controller`;
     default:
       return t`Invalid layout`;
   }
@@ -103,6 +105,7 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
   }
 
   const targetLayouts = [
+    { value: "default", label: getControllerLayoutLabel("default") },
     { value: "ps5", label: getControllerLayoutLabel("ps5") },
     { value: "xbox", label: getControllerLayoutLabel("xbox") }
   ];

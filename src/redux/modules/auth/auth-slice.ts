@@ -6,6 +6,7 @@ export interface AuthState {
   userId: string;
   username?: string;
   email?: string;
+  avatar?: string;
   isAuthenticated?: boolean;
   isEpicReady?: boolean;
   isGogReady?: boolean;
@@ -17,6 +18,7 @@ export const AUTH_SLICE_INITIAL_STATE: AuthState = {
   userId: "",
   username: "",
   email: "",
+  avatar: undefined,
   isAuthenticated: false,
   isEpicReady: false,
   isSteamReady: false,
@@ -36,6 +38,9 @@ export const authSlice = createSlice({
     },
     setEmail: (state, action: PayloadAction<string | undefined>) => {
       state.email = action.payload;
+    },
+    setAvatarUrl: (state, action: PayloadAction<string | undefined>) => {
+      state.avatar = action.payload;
     },
     setAuthState: (state, action: PayloadAction<AuthState>) => {
       const { userId, isEpicReady, isSteamReady, isGogReady } = action.payload;
@@ -78,7 +83,8 @@ export const {
   resetAuthState,
   setDeviceIp,
   setUsername,
-  setEmail
+  setEmail,
+  setAvatarUrl
 } = authSlice.actions;
 export const selectAuthState = (state: { auth: AuthState }) => state.auth;
 export const selectAuthDeviceIp = (state: { auth: AuthState }) =>

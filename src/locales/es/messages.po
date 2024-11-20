@@ -37,7 +37,7 @@ msgstr ""
 msgid "Add Config"
 msgstr ""
 
-#: src/components/input-config-modal/input-config-modal.tsx:189
+#: src/components/input-config-modal/input-config-modal.tsx:199
 #: src/components/launch-config/launch-config-modal.tsx:93
 #: src/components/submission-config/submissions-empty.tsx:38
 msgid "Add New Config"
@@ -96,7 +96,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: src/components/sidebar/profile-menu.tsx:51
+#: src/components/sidebar/profile-menu.tsx:72
 msgid "Change device"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgid "Clear"
 msgstr ""
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:90
-#: src/components/input-config-modal/input-config-modal.tsx:191
+#: src/components/input-config-modal/input-config-modal.tsx:201
 #: src/components/launch-config/launch-config-modal.tsx:95
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
 #: src/components/submission-config/submissions-empty.tsx:34
@@ -121,7 +121,7 @@ msgstr ""
 msgid "Config"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:140
+#: src/components/controller-edit/controller-edit.tsx:143
 #: src/components/launch-config-editor/launch-config-editor.tsx:167
 msgid "CONFIG NAME"
 msgstr ""
@@ -149,6 +149,10 @@ msgstr ""
 
 #: src/components/logs-modal/logs-modal.tsx:80
 msgid "Copy"
+msgstr ""
+
+#: src/components/controller-edit/controller-edit.tsx:55
+msgid "Current controller"
 msgstr ""
 
 #: src/components/side-panel/side-panel.tsx:105
@@ -258,7 +262,7 @@ msgstr ""
 msgid "Gamepad"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:198
+#: src/components/controller-edit/controller-edit.tsx:201
 msgid "Gamepad Type"
 msgstr ""
 
@@ -291,15 +295,15 @@ msgstr ""
 #~ msgid "Input Config for"
 #~ msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:130
+#: src/components/controller-edit/controller-edit.tsx:133
 msgid "Input Config for {gameName}"
 msgstr ""
 
-#: src/components/input-config-modal/input-config-modal.tsx:170
+#: src/components/input-config-modal/input-config-modal.tsx:180
 msgid "Input Config List"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:155
+#: src/components/controller-edit/controller-edit.tsx:158
 msgid "INPUT DEVICES"
 msgstr ""
 
@@ -324,7 +328,7 @@ msgstr ""
 msgid "Installing"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:55
+#: src/components/controller-edit/controller-edit.tsx:57
 msgid "Invalid layout"
 msgstr ""
 
@@ -547,7 +551,7 @@ msgstr ""
 msgid "Running"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:175
+#: src/components/controller-edit/controller-edit.tsx:178
 #: src/components/launch-config-editor/launch-config-editor.tsx:217
 msgid "Save"
 msgstr ""
