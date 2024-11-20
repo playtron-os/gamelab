@@ -34,6 +34,7 @@ export interface MessageResponseMapping extends MessageMapping {
     content: string;
   };
   [MessageType.AppEulasGet]: app.AppEulaResponseBody[];
+  [MessageType.AvatarUpdate]: app.ProfileAvatarInformation;
 }
 
 export type PlayserveResponseSuccess<MessageT extends MessageType> = {

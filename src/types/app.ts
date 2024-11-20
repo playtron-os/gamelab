@@ -123,9 +123,18 @@ export interface ProfileAuthInformation {
   userName: string;
 }
 
+type AvatarProviders = {
+  [provider in AppProvider]?: { url: string };
+};
+
+export interface ProfileAvatarInformation extends AvatarProviders {
+  selectedProvider: AppProvider;
+}
+
 export interface ProfileInformation {
   id: number;
   userId: string;
+  avatar: ProfileAvatarInformation;
   acceptedEulaVersion: string;
   createdAt: string;
   updatedAt: string;

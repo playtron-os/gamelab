@@ -173,6 +173,7 @@ export enum MessageType {
   BluetoothDeviceFound = "BluetoothDeviceFound",
   QueueDownloadGetUpdate = "QueueDownloadGetUpdate",
   UserUpdate = "UserUpdate",
+  AvatarUpdate = "AvatarUpdate",
   ToolUpdate = "ToolUpdate",
   AppPostInstallStatusUpdate = "AppPostInstallStatusUpdate",
   SubmissionGetAllUpdate = "SubmissionGetAllUpdate",
