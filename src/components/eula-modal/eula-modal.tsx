@@ -66,8 +66,8 @@ export const EulaModal: React.FC<EulaModalProps> = ({
                   onClose();
                 }
               }}
-              label={t`Submit`}
-              primary
+              label={accepted ? t`Submit` : t`Close`}
+              primary={accepted}
             />
           </div>
         </div>
