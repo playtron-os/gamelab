@@ -660,6 +660,10 @@ msgstr ""
 msgid "Unset"
 msgstr ""
 
+#: src/components/input-config-modal/input-config-modal.tsx:107
+msgid "Untitled Layout"
+msgstr ""
+
 #: src/utils/app-info.ts:127
 msgid "Update"
 msgstr ""

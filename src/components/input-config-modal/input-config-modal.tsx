@@ -104,7 +104,7 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
     const saveItem = {
       item_id: editLayout.item_id,
       app_id: editLayout.app_id,
-      name: editLayout.name,
+      name: editLayout.name || t`Untitled Layout`,
       description: editLayout.description,
       data: JSON.stringify({
         target_devices: ["mouse", "keyboard", targetDevice],
