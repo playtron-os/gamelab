@@ -1,6 +1,6 @@
 [package]
 name = "playtron-labs"
-version = "0.33.0"
+version = "0.34.0"
 description = "Playtron Labs testing app for Playtron"
 authors = ["Playtron"]
 license = ""
