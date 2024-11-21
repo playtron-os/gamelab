@@ -106,6 +106,7 @@ msgid "Clear"
 msgstr "Clear"
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:90
+#: src/components/eula-modal/eula-modal.tsx:69
 #: src/components/input-config-modal/input-config-modal.tsx:201
 #: src/components/launch-config/launch-config-modal.tsx:95
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
