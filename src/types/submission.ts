@@ -22,6 +22,7 @@ export interface SubmissionSaveModel {
 export interface BaseSubmission {
   app_id: string;
   author_id: string;
+  author_name: string;
   createdDate: string;
   config_type: string;
   name: string;
@@ -31,6 +32,7 @@ export interface BaseSubmission {
   parent_id: string;
   parent_submission_category: string;
   promoter_id: string;
+  promoter_name: string;
   promotion_date: string;
   submission_category: string;
   submission_item_type: SubmissionItemType;

@@ -2,6 +2,7 @@ import { createColumnHelper } from "@tanstack/table-core";
 import { Submission } from "@/types";
 import { SubmissionActionCell } from "./cells/submission-action-cell";
 import { TextCell } from "./cells/text-cell";
+import { NameCell } from "./cells/name-cell";
 import { t } from "@lingui/macro";
 
 const columnHelper = createColumnHelper<Submission>();
@@ -9,7 +10,7 @@ export const columns = [
   columnHelper.accessor("name", {
     id: "name",
     header: () => t`Name`,
-    cell: TextCell
+    cell: NameCell
   }),
   columnHelper.accessor("description", {
     id: "note",
@@ -21,7 +22,7 @@ export const columns = [
     header: () => t`Modified`,
     cell: TextCell
   }),
-  columnHelper.accessor("author_id", {
+  columnHelper.accessor("author_name", {
     id: "author",
     header: () => t`Author`,
     cell: TextCell

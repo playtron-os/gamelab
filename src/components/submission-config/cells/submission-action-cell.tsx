@@ -57,7 +57,10 @@ export const SubmissionActionCell = (info: SubmissionCellContext) => {
     }
   });
 
-  if (email?.endsWith("@playtron.one")) {
+  if (
+    email?.endsWith("@playtron.one") &&
+    submission.submission_category !== "Official"
+  ) {
     appActions.push({
       id: 4,
       label: t`Promote`,

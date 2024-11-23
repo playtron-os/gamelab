@@ -76,7 +76,7 @@ msgid "Are you sure you want to uninstall the selected apps?"
 msgstr "Are you sure you want to uninstall the selected apps?"
 
 #: src/components/submission-config/submissions-modal-header.tsx:42
-#: src/components/submission-config/submissions-table-config.tsx:26
+#: src/components/submission-config/submissions-table-config.tsx:27
 msgid "Author"
 msgstr "Author"
 
@@ -385,7 +385,7 @@ msgstr "Manage Selected"
 msgid "Map to..."
 msgstr "Map to..."
 
-#: src/components/submission-config/submissions-table-config.tsx:21
+#: src/components/submission-config/submissions-table-config.tsx:22
 msgid "Modified"
 msgstr "Modified"
 
@@ -414,7 +414,7 @@ msgstr "Move In Progress..."
 msgid "Move selected apps"
 msgstr "Move selected apps"
 
-#: src/components/submission-config/submissions-table-config.tsx:11
+#: src/components/submission-config/submissions-table-config.tsx:12
 msgid "Name"
 msgstr "Name"
 
@@ -439,7 +439,7 @@ msgstr "Not Downloaded"
 msgid "Not installed"
 msgstr "Not installed"
 
-#: src/components/submission-config/submissions-table-config.tsx:16
+#: src/components/submission-config/submissions-table-config.tsx:17
 msgid "Note"
 msgstr "Note"
 
@@ -499,7 +499,7 @@ msgstr "Pre-Allocating"
 msgid "Prioritize"
 msgstr "Prioritize"
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:63
+#: src/components/submission-config/cells/submission-action-cell.tsx:66
 msgid "Promote"
 msgstr "Promote"
 
