@@ -106,7 +106,7 @@ msgid "Clear"
 msgstr "Clear"
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:90
-#: src/components/eula-modal/eula-modal.tsx:69
+#: src/components/eula-modal/eula-modal.tsx:85
 #: src/components/input-config-modal/input-config-modal.tsx:201
 #: src/components/launch-config/launch-config-modal.tsx:95
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
@@ -194,7 +194,7 @@ msgstr "Drives"
 msgid "Duplicate"
 msgstr "Duplicate"
 
-#: src/components/eula-modal/eula-modal.tsx:28
+#: src/components/eula-modal/eula-modal.tsx:51
 msgid "End User License Agreements for"
 msgstr "End User License Agreements for"
 
@@ -276,7 +276,7 @@ msgstr "Gamepad Type"
 #~ msgid "GOG"
 #~ msgstr "GOG"
 
-#: src/components/eula-modal/eula-modal.tsx:55
+#: src/components/eula-modal/eula-modal.tsx:71
 msgid "I agree to this EULA"
 msgstr "I agree to this EULA"
 
@@ -602,7 +602,7 @@ msgstr "Stop"
 msgid "Submission promoted"
 msgstr "Submission promoted"
 
-#: src/components/eula-modal/eula-modal.tsx:69
+#: src/components/eula-modal/eula-modal.tsx:85
 #: src/components/submission-config/cells/submission-action-cell.tsx:27
 msgid "Submit"
 msgstr "Submit"

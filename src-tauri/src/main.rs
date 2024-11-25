@@ -8,8 +8,10 @@ use tauri_plugin_log::{Target, TargetKind};
 use tokio::sync::Mutex;
 
 mod app_logs;
+mod eula;
 mod ssh;
 use app_logs::*;
+use eula::*;
 use ssh::*;
 
 // Regex to match ${...} pattern from the .env file to properly replace values
@@ -77,7 +79,8 @@ fn main() {
             app_log_init,
             app_log_deinit,
             app_log_stream,
-            app_log_show
+            app_log_show,
+            download_eula,
         ])
         .plugin(
             tauri_plugin_log::Builder::new()
