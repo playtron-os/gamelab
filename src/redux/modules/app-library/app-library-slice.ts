@@ -124,18 +124,18 @@ export const appLibrarySlice = createSlice({
           const appStatus = appStatusMap[appInfo.installed_app.owned_app.id];
 
           if (appStatus) {
-            appInfo.is_downloading = appStatus.is_downloading;
-            appInfo.is_installing = appStatus.is_installing;
-            appInfo.is_launched = appStatus.is_launched;
-            appInfo.is_paused = appStatus.is_paused;
-            appInfo.is_running = appStatus.is_running;
-            appInfo.installed_app.updated_at = appStatus.updated_at;
             // Close game logger
             if (appInfo.is_launched && !appStatus.is_launched) {
               invoke("app_log_deinit", {
                 appId: appInfo.installed_app.owned_app.id
               });
             }
+            appInfo.is_downloading = appStatus.is_downloading;
+            appInfo.is_installing = appStatus.is_installing;
+            appInfo.is_launched = appStatus.is_launched;
+            appInfo.is_paused = appStatus.is_paused;
+            appInfo.is_running = appStatus.is_running;
+            appInfo.installed_app.updated_at = appStatus.updated_at;
           }
         }
       }

@@ -10,7 +10,7 @@ import {
 } from "@/utils/app-info";
 import { Trans, t } from "@lingui/macro";
 import { Button, Divider, Toggle } from "@playtron/styleguide";
-import React, { useMemo, useState, useCallback } from "react";
+import React, { useMemo, useState, useCallback, useEffect } from "react";
 import { InputConfigModal } from "../input-config-modal/input-config-modal";
 import { LaunchConfigModal } from "../launch-config/launch-config-modal";
 import { LogsModal } from "../logs-modal/logs-modal";
@@ -47,12 +47,15 @@ export const SidePanel: React.FC = () => {
   const [resetWinePrefix, setResetWinePrefix] = useState<boolean>(false);
   const [bypassAppUpdate, setBypassAppUpdate] = useState<boolean>(false);
   const [enhancedDebugging, setEnhancedDebugging] = useState<boolean>(false);
+  const [primaryOff, setPrimaryOff] = useState<boolean>(false);
   const [isInputConfigOpen, setIsInputConfigOpen] = useState<boolean>(false);
   const [isLaunchConfigOpen, setIsLaunchConfigOpen] = useState<boolean>(false);
   const [isLogsOpen, setIsLogsOpen] = useState<boolean>(false);
   const [targetLayout, setTargetLayout] =
     useState<TargetControllerType>("xbox");
 
+  useEffect(() => setPrimaryOff(false), [currentApp]);
+  const appStatus = getAppStatus(currentApp);
   const sendMessage = usePlayserveSendMessage();
 
   const deleteDefaultConfig = useCallback(
@@ -278,14 +281,16 @@ export const SidePanel: React.FC = () => {
         <footer className="fixed bottom-0 right-0 w-[280px] overflow-hidden bg-black border-gray-800 border-l-2">
           <p className="py-2 px-4">
             <Button
-              label={getAppActionLabelByStatus(getAppStatus(currentApp))}
-              Icon={getAppActionIconByStatus(getAppStatus(currentApp))}
+              disabled={primaryOff || appStatus === AppStatus.LAUNCHING}
+              label={getAppActionLabelByStatus(appStatus)}
+              Icon={getAppActionIconByStatus(appStatus)}
               className="w-full"
               onClick={() => {
                 handleAppDefaultAction(currentApp, launchParams);
+                setPrimaryOff(appStatus === AppStatus.READY);
                 setIsLogsOpen(isLogsOpen || launchParams.enhancedDebugging);
               }}
-              primary={getAppStatus(currentApp) === AppStatus.READY}
+              primary={appStatus === AppStatus.READY}
             />
           </p>
           <p className="py-2 px-4">
@@ -312,6 +317,7 @@ export const SidePanel: React.FC = () => {
         isOpen={isLogsOpen}
         onClose={() => setIsLogsOpen(false)}
         appInfo={currentApp}
+        isEnhancedDebuggingEnabled={enhancedDebugging}
       />
       <EulaModal
         appInfo={currentApp}
