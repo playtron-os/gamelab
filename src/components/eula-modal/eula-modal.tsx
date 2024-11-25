@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import { Modal, Checkbox, Button } from "@playtron/styleguide";
 import { t, Trans } from "@lingui/macro";
 import { AppInformation } from "@/types";
+import { invoke } from "@tauri-apps/api/core";
 import { AppEulaResponseBody } from "@/types/app";
 
 interface EulaModalProps {
@@ -11,6 +12,20 @@ interface EulaModalProps {
   onAccept: () => void;
   onClose: () => void;
 }
+
+const getEulaBody = async (
+  eula: AppEulaResponseBody | null
+): Promise<string> => {
+  if (!eula) return "";
+  if (eula.body) {
+    return eula.body;
+  }
+  const eulaBody: string = await invoke("download_eula", {
+    eulaUrl: eula.url
+  });
+  return eulaBody;
+};
+
 export const EulaModal: React.FC<EulaModalProps> = ({
   appInfo,
   eula,
@@ -20,6 +35,14 @@ export const EulaModal: React.FC<EulaModalProps> = ({
 }) => {
   const scrollable = useRef<HTMLDivElement>(null);
   const [accepted, setAccepted] = useState(false);
+  const [eulaBody, setEulaBody] = useState("");
+  useMemo(async () => {
+    if (eula) {
+      const body = await getEulaBody(eula);
+      setEulaBody(body);
+    }
+  }, [eula]);
+
   return (
     <Modal isOpen={isOpen}>
       <div>
@@ -36,16 +59,9 @@ export const EulaModal: React.FC<EulaModalProps> = ({
           className="h-[calc(95vh-120px)] w-[calc(95vw-384px)] overflow-y-scroll"
         >
           {eula && (
-            <>
-              {eula.body ? (
-                <div dangerouslySetInnerHTML={{ __html: eula.body }}></div>
-              ) : (
-                <iframe
-                  className="h-[calc(100vh-180px)] w-[calc(95vw-384px)]"
-                  src={eula.url}
-                />
-              )}
-            </>
+            <div className="h-[calc(100vh-180px)] w-[calc(95vw-384px)]">
+              <div dangerouslySetInnerHTML={{ __html: eulaBody }}></div>
+            </div>
           )}
         </div>
         <div className="flex gap-4">

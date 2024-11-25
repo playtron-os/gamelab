@@ -28,6 +28,7 @@ russh = "0.45.0"
 async-trait = "0.1.82"
 tokio-util = "0.7.12"
 log = "0.4.22"
+reqwest = "0.12.9"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem
