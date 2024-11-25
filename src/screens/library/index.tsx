@@ -7,6 +7,7 @@ import {
   setApps,
   updateInstalledApps,
   updateAppStatus,
+  updateInstallStatus,
   setQueue,
   setError,
   setLoadingProgress,
@@ -29,7 +30,8 @@ export const LibraryScreen = () => {
     setQueue: setQueueDispatch,
     setError: setErrorDispatch,
     setLoadingProgress: setLoadingProgressDispatch,
-    setAppDownloadProgress: setAppDownloadProgressDispatch
+    setAppDownloadProgress: setAppDownloadProgressDispatch,
+    updateInstallStatus: updateInstallStatusDispatch
   } = useAppActions({
     setApps,
     updateInstalledApps,
@@ -37,7 +39,8 @@ export const LibraryScreen = () => {
     setQueue,
     setError,
     setLoadingProgress,
-    setAppDownloadProgress
+    setAppDownloadProgress,
+    updateInstallStatus
   });
   const { fetchLibraryApps, fetchQueue } = useAppLibraryActions();
   useEffect(() => {
@@ -86,6 +89,12 @@ export const LibraryScreen = () => {
       } else if (message.message_type === MessageType.AppStatusUpdate) {
         if (message.status === 200) {
           updateAppStatusDispatch(message.body);
+        }
+      } else if (
+        message.message_type === MessageType.AppPostInstallStatusUpdate
+      ) {
+        if (message.status === 200) {
+          updateInstallStatusDispatch(message.body);
         }
       }
     }

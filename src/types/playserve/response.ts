@@ -1,5 +1,5 @@
 import * as app from "../app";
-import { AppInformation } from "../app-library";
+import { AppInformation, AppPostInstallStatusResponse } from "../app-library";
 import * as ProviderStatus from "../provider-status";
 import { UserUnmapped } from "../user";
 import * as apiErrors from "./api_errors";
@@ -35,6 +35,7 @@ export interface MessageResponseMapping extends MessageMapping {
   };
   [MessageType.AppEulasGet]: app.AppEulaResponseBody[];
   [MessageType.AvatarUpdate]: app.ProfileAvatarInformation;
+  [MessageType.AppPostInstallStatusUpdate]: AppPostInstallStatusResponse;
 }
 
 export type PlayserveResponseSuccess<MessageT extends MessageType> = {

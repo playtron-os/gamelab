@@ -8,6 +8,7 @@ export enum AppDownloadStage {
   PRE_ALLOCATING = "pre-allocating",
   DOWNLOADING = "downloading",
   VERIFYING = "verifying",
+  INSTALLING = "installing",
   UPDATE_REQUIRED = "updatepending",
   DONE = "done"
 }

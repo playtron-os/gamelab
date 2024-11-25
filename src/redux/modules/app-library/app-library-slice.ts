@@ -4,6 +4,7 @@ import { RootState } from "@/redux/store";
 import {
   AppDownloadProgressResponse,
   AppInformation,
+  AppPostInstallStatusResponse,
   AppStatusUpdateResponse,
   InstalledApp,
   QueuedDownload
@@ -140,6 +141,30 @@ export const appLibrarySlice = createSlice({
         }
       }
     },
+    updateInstallStatus: (
+      state,
+      action: PayloadAction<AppPostInstallStatusResponse>
+    ) => {
+      const payload = action.payload;
+      for (let i = 0; i < state.apps.length; i++) {
+        const appInfo = state.apps[i];
+        if (
+          appInfo.installed_app?.owned_app.id ===
+          payload.installed_app.owned_app.id
+        ) {
+          const index = appInfo.installed_app.post_install.findIndex(
+            (pre) => pre.name === payload.status.name
+          );
+
+          if (index === -1) {
+            appInfo.installed_app.post_install.push(payload.status);
+          } else {
+            appInfo.installed_app.post_install[index] = payload.status;
+          }
+          break;
+        }
+      }
+    },
     setAppDownloadProgress: (
       state,
       action: PayloadAction<AppDownloadProgressResponse>
@@ -196,6 +221,7 @@ export const {
   setShowDrives,
   updateInstalledApps,
   updateAppStatus,
+  updateInstallStatus,
   setQueue,
   setError,
   setLoading,
