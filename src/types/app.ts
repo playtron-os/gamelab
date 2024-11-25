@@ -22,7 +22,8 @@ export enum AppStatus {
   UPDATE_REQUIRED,
   QUEUED,
   PAUSED,
-  RUNNING
+  RUNNING,
+  LAUNCHING
 }
 
 export enum AutotestStatus {

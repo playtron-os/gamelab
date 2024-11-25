@@ -17,12 +17,14 @@ interface LogsModalProps {
   isOpen: boolean;
   onClose: () => void;
   appInfo: AppInformation;
+  isEnhancedDebuggingEnabled: boolean;
 }
 
 export const LogsModal: React.FC<LogsModalProps> = ({
   isOpen,
   onClose,
-  appInfo
+  appInfo,
+  isEnhancedDebuggingEnabled
 }) => {
   const [logs, setLogs] = useState<string>("");
   const scrollable = useRef<HTMLDivElement>(null);
@@ -61,6 +63,7 @@ export const LogsModal: React.FC<LogsModalProps> = ({
   return (
     <Modal
       isOpen={isOpen}
+      id={"logs-modal"}
       onClose={onClose}
       noContentPadding
       rightMargin={280}
@@ -114,7 +117,12 @@ export const LogsModal: React.FC<LogsModalProps> = ({
             ref={scrollable}
             className="h-[calc(95vh-100px)] w-[calc(95vw-384px)] overflow-y-scroll"
           >
-            <pre>{logs || t`Game logs will appear here...`}</pre>
+            <pre>
+              {isEnhancedDebuggingEnabled
+                ? logs ||
+                  t`Game logs will appear here next time you launch the game`
+                : t`Turn on Enhanced Debugging to see the log`}
+            </pre>
           </div>
         </div>
       </div>

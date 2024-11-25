@@ -68,6 +68,8 @@ export const getAppStatusLabel = (status: AppStatus) => {
       return t`Queued`;
     case AppStatus.RUNNING:
       return t`Running`;
+    case AppStatus.LAUNCHING:
+      return t`Launching`;
     default:
       return t`Unknown`;
   }
@@ -131,6 +133,8 @@ export const getAppActionLabelByStatus = (status: AppStatus) => {
       return t`Prioritize`;
     case AppStatus.RUNNING:
       return t`Stop`;
+    case AppStatus.LAUNCHING:
+      return t`Launching...`;
     default:
       return "...";
   }
@@ -146,6 +150,8 @@ export const getAppActionLabelByStatus = (status: AppStatus) => {
 export const getAppStatus = (appInfo: AppInformation): AppStatus => {
   if (appInfo.is_running) {
     return AppStatus.RUNNING;
+  } else if (appInfo.is_launched) {
+    return AppStatus.LAUNCHING;
   }
 
   if (appInfo.is_installing) {

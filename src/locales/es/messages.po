@@ -43,7 +43,7 @@ msgstr ""
 msgid "Add New Config"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:134
+#: src/components/side-panel/side-panel.tsx:137
 msgid "Added"
 msgstr ""
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Bulk Actions"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:167
+#: src/components/side-panel/side-panel.tsx:170
 msgid "Bypass App Update"
 msgstr ""
 
@@ -101,7 +101,7 @@ msgid "Change device"
 msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:255
-#: src/components/logs-modal/logs-modal.tsx:99
+#: src/components/logs-modal/logs-modal.tsx:102
 msgid "Clear"
 msgstr ""
 
@@ -114,7 +114,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:294
+#: src/components/side-panel/side-panel.tsx:299
 msgid "Close Log Window"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Connected to: {address}"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:80
+#: src/components/logs-modal/logs-modal.tsx:83
 msgid "Copy"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgid "Disconnected from the internet"
 msgstr ""
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:63
-#: src/utils/app-info.ts:125
+#: src/utils/app-info.ts:127
 msgid "Download"
 msgstr ""
 
@@ -198,7 +198,7 @@ msgstr ""
 msgid "End User License Agreements for"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:177
+#: src/components/side-panel/side-panel.tsx:180
 msgid "Enhanced Debugging"
 msgstr ""
 
@@ -255,9 +255,13 @@ msgstr ""
 msgid "Game is not owned or provider is not authorized"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:117
-msgid "Game logs will appear here..."
+#: src/components/logs-modal/logs-modal.tsx:123
+msgid "Game logs will appear here next time you launch the game"
 msgstr ""
+
+#: src/components/logs-modal/logs-modal.tsx:117
+#~ msgid "Game logs will appear here..."
+#~ msgstr ""
 
 #: src/components/controller-edit/map-to.tsx:20
 msgid "Gamepad"
@@ -288,7 +292,7 @@ msgstr ""
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:215
+#: src/components/side-panel/side-panel.tsx:218
 msgid "Input Config"
 msgstr ""
 
@@ -308,11 +312,11 @@ msgstr ""
 msgid "INPUT DEVICES"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:106
+#: src/components/logs-modal/logs-modal.tsx:109
 msgid "Insert Delimiter"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:269
+#: src/components/side-panel/side-panel.tsx:272
 msgid "Install folder"
 msgstr ""
 
@@ -353,11 +357,11 @@ msgstr ""
 msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 msgstr ""
 
-#: src/utils/app-info.ts:119
+#: src/utils/app-info.ts:121
 msgid "Launch"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:189
+#: src/components/side-panel/side-panel.tsx:192
 msgid "Launch Config"
 msgstr ""
 
@@ -373,7 +377,15 @@ msgstr ""
 msgid "Launch Config List"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:72
+#: src/utils/app-info.ts:72
+msgid "Launching"
+msgstr ""
+
+#: src/utils/app-info.ts:137
+msgid "Launching..."
+msgstr ""
+
+#: src/components/logs-modal/logs-modal.tsx:75
 msgid "Logs"
 msgstr ""
 
@@ -418,7 +430,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:150
+#: src/components/side-panel/side-panel.tsx:153
 msgid "Never tested"
 msgstr ""
 
@@ -435,7 +447,7 @@ msgstr ""
 msgid "Not Downloaded"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:139
+#: src/components/side-panel/side-panel.tsx:142
 msgid "Not installed"
 msgstr ""
 
@@ -455,11 +467,11 @@ msgstr ""
 msgid "Oops!"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:91
+#: src/components/logs-modal/logs-modal.tsx:94
 msgid "Open Full Log"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:294
+#: src/components/side-panel/side-panel.tsx:299
 msgid "Open Log Window"
 msgstr ""
 
@@ -468,7 +480,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: src/utils/app-info.ts:123
+#: src/utils/app-info.ts:125
 msgid "Pause"
 msgstr ""
 
@@ -477,7 +489,7 @@ msgstr ""
 msgid "Paused"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:242
+#: src/components/side-panel/side-panel.tsx:245
 msgid "Playtron App ID"
 msgstr ""
 
@@ -486,7 +498,7 @@ msgstr ""
 msgid "Playtron Labs"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:249
+#: src/components/side-panel/side-panel.tsx:252
 msgid "Playtron Slug"
 msgstr ""
 
@@ -495,7 +507,7 @@ msgstr ""
 msgid "Pre-Allocating"
 msgstr ""
 
-#: src/utils/app-info.ts:131
+#: src/utils/app-info.ts:133
 msgid "Prioritize"
 msgstr ""
 
@@ -503,12 +515,12 @@ msgstr ""
 msgid "Promote"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:100
+#: src/components/side-panel/side-panel.tsx:103
 #: src/context/app-library-context/table-config.tsx:63
 msgid "Provider"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:106
+#: src/components/side-panel/side-panel.tsx:109
 msgid "Provider App ID"
 msgstr ""
 
@@ -530,20 +542,20 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:256
+#: src/components/side-panel/side-panel.tsx:259
 msgid "Release Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:200
-#: src/components/side-panel/side-panel.tsx:226
+#: src/components/side-panel/side-panel.tsx:203
+#: src/components/side-panel/side-panel.tsx:229
 msgid "Reset"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:157
+#: src/components/side-panel/side-panel.tsx:160
 msgid "Reset Wine Prefix"
 msgstr ""
 
-#: src/utils/app-info.ts:129
+#: src/utils/app-info.ts:131
 msgid "Resume"
 msgstr ""
 
@@ -582,7 +594,7 @@ msgstr ""
 #~ msgid "Steam"
 #~ msgstr ""
 
-#: src/utils/app-info.ts:133
+#: src/utils/app-info.ts:135
 msgid "Stop"
 msgstr ""
 
@@ -595,7 +607,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/utils/app-info.ts:226
+#: src/utils/app-info.ts:232
 msgid "System Drive"
 msgstr ""
 
@@ -606,7 +618,7 @@ msgstr ""
 msgid "Test Games on Playtron Device via Local Network"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:145
+#: src/components/side-panel/side-panel.tsx:148
 msgid "Tested on"
 msgstr ""
 
@@ -638,6 +650,10 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
+#: src/components/logs-modal/logs-modal.tsx:124
+msgid "Turn on Enhanced Debugging to see the log"
+msgstr ""
+
 #: src/screens/connect-device/connect-device.tsx:59
 #: src/screens/connect-device/connect-device.tsx:68
 msgid "Unable to connect to playtron service on the device"
@@ -653,7 +669,7 @@ msgid "Uninstall"
 msgstr ""
 
 #: src/context/app-library-context/components/table-cells/status-cell.tsx:33
-#: src/utils/app-info.ts:72
+#: src/utils/app-info.ts:74
 msgid "Unknown"
 msgstr ""
 
@@ -666,7 +682,7 @@ msgstr ""
 msgid "Untitled Layout"
 msgstr ""
 
-#: src/utils/app-info.ts:127
+#: src/utils/app-info.ts:129
 msgid "Update"
 msgstr ""
 
