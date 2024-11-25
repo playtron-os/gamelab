@@ -377,6 +377,7 @@ msgstr "Launch Config for {appName}"
 msgid "Launch Config List"
 msgstr "Launch Config List"
 
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:33
 #: src/utils/app-info.ts:72
 msgid "Launching"
 msgstr "Launching"
@@ -668,7 +669,7 @@ msgstr "Unable to connect with the device: {err}"
 msgid "Uninstall"
 msgstr "Uninstall"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:33
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:35
 #: src/utils/app-info.ts:74
 msgid "Unknown"
 msgstr "Unknown"

@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppStatus } from "@/hooks/app-library/use-app-status";
 import { AppStatus, AppDownloadStage } from "@/types";
-import { AppInformation } from "@/types/app-library";
+import { AppInformation, InstalledApp } from "@/types/app-library";
 import { t } from "@lingui/macro";
 import { CellContext } from "@tanstack/react-table";
 
@@ -29,27 +29,41 @@ const getAppStatusLabel = (status: AppStatus) => {
       return t`Queued`;
     case AppStatus.RUNNING:
       return t`Running`;
+    case AppStatus.LAUNCHING:
+      return t`Launching`;
     default:
       return t`Unknown`;
+  }
+};
+
+const getProgress = (installedApp?: InstalledApp): number => {
+  if (!installedApp) return 0;
+  switch (installedApp.download_status.stage) {
+    case AppDownloadStage.DOWNLOADING:
+    case AppDownloadStage.PRE_ALLOCATING:
+    case AppDownloadStage.VERIFYING:
+      return installedApp.download_status.progress || 0;
+    case AppDownloadStage.INSTALLING:
+      return (
+        (installedApp.post_install.reduce(
+          (prev, val) => prev + (val.is_success ? 1 : 0),
+          0
+        ) /
+          installedApp.post_install.length) *
+        100
+      );
+    default:
+      return 0;
   }
 };
 
 export const StatusCell: React.FC<StatusCellContext> = (info) => {
   const appInformation = info.row.original;
   const status = useAppStatus(appInformation);
-  const progress = Math.round(
-    appInformation.installed_app?.download_status.progress || 0
-  );
-  const showProgress =
-    appInformation.installed_app &&
-    [
-      AppDownloadStage.DOWNLOADING,
-      AppDownloadStage.PRE_ALLOCATING,
-      AppDownloadStage.VERIFYING
-    ].includes(appInformation.installed_app.download_status.stage);
+  const progress = Math.round(getProgress(appInformation.installed_app));
 
   let label: string;
-  if (progress && showProgress) {
+  if (progress) {
     label = `${getAppStatusLabel(status)} (${progress}%)`;
   } else {
     label = getAppStatusLabel(status);

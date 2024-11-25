@@ -377,6 +377,7 @@ msgstr ""
 msgid "Launch Config List"
 msgstr ""
 
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:33
 #: src/utils/app-info.ts:72
 msgid "Launching"
 msgstr ""
@@ -668,7 +669,7 @@ msgstr ""
 msgid "Uninstall"
 msgstr ""
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:33
+#: src/context/app-library-context/components/table-cells/status-cell.tsx:35
 #: src/utils/app-info.ts:74
 msgid "Unknown"
 msgstr ""
