@@ -1,7 +1,7 @@
 {
   "name": "playtron-labs",
   "productName": "Playtron Labs",
-  "version": "0.34.0",
+  "version": "0.35.0",
   "description": "Playtron Labs testing app for Playtron",
   "scripts": {
     "start": "tauri dev",
@@ -89,7 +89,7 @@
     "@lingui/macro": "^4.11.3",
     "@lingui/react": "^4.11.3",
     "@nextui-org/react": "^2.4.1",
-    "@playtron/styleguide": "^0.0.36",
+    "@playtron/styleguide": "^0.0.37",
     "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-table": "8.20.1",
     "@tanstack/table-core": "^8.17.3",

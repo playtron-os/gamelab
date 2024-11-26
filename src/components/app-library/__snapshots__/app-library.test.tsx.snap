@@ -119,7 +119,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   >
                     <input
                       aria-label="Search"
-                      class="w-full font-normal !outline-none placeholder:text-foreground-500 focus-visible:outline-none data-[has-start-content=true]:ps-1.5 data-[has-end-content=true]:pe-1.5 file:cursor-pointer file:bg-transparent file:border-0 autofill:bg-transparent bg-clip-text text-small group-data-[has-value=true]:text-default-foreground bg-transparent"
+                      class="w-full font-normal !outline-none placeholder:text-foreground-500 focus-visible:outline-none data-[has-start-content=true]:ps-1.5 data-[has-end-content=true]:pe-1.5 file:cursor-pointer file:bg-transparent file:border-0 autofill:bg-transparent bg-clip-text text-small peer pr-6 rtl:pr-0 rtl:pl-6 group-data-[has-value=true]:text-default-foreground bg-transparent"
                       data-slot="input"
                       data-testid="text-input"
                       id="react-aria-:rf:"
@@ -127,6 +127,27 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                       type="text"
                       value=""
                     />
+                    <span
+                      aria-label="clear input"
+                      class="p-2 -m-2 z-10 hidden absolute end-3 start-auto appearance-none select-none opacity-0 hover:!opacity-100 cursor-pointer active:!opacity-70 rounded-full outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-large peer-data-[filled=true]:opacity-70 peer-data-[filled=true]:block transition-opacity motion-reduce:transition-none"
+                      data-slot="clear-button"
+                      role="button"
+                      tabindex="0"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        height="1em"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="1em"
+                      >
+                        <path
+                          d="M12 2a10 10 0 1010 10A10.016 10.016 0 0012 2zm3.36 12.3a.754.754 0 010 1.06.748.748 0 01-1.06 0l-2.3-2.3-2.3 2.3a.748.748 0 01-1.06 0 .754.754 0 010-1.06l2.3-2.3-2.3-2.3A.75.75 0 019.7 8.64l2.3 2.3 2.3-2.3a.75.75 0 011.06 1.06l-2.3 2.3z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -658,7 +679,7 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
                   >
                     <input
                       aria-label="Search"
-                      class="w-full font-normal !outline-none placeholder:text-foreground-500 focus-visible:outline-none data-[has-start-content=true]:ps-1.5 data-[has-end-content=true]:pe-1.5 file:cursor-pointer file:bg-transparent file:border-0 autofill:bg-transparent bg-clip-text text-small group-data-[has-value=true]:text-default-foreground bg-transparent"
+                      class="w-full font-normal !outline-none placeholder:text-foreground-500 focus-visible:outline-none data-[has-start-content=true]:ps-1.5 data-[has-end-content=true]:pe-1.5 file:cursor-pointer file:bg-transparent file:border-0 autofill:bg-transparent bg-clip-text text-small peer pr-6 rtl:pr-0 rtl:pl-6 group-data-[has-value=true]:text-default-foreground bg-transparent"
                       data-slot="input"
                       data-testid="text-input"
                       id="react-aria-:r5:"
@@ -666,6 +687,27 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
                       type="text"
                       value=""
                     />
+                    <span
+                      aria-label="clear input"
+                      class="p-2 -m-2 z-10 hidden absolute end-3 start-auto appearance-none select-none opacity-0 hover:!opacity-100 cursor-pointer active:!opacity-70 rounded-full outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 text-large peer-data-[filled=true]:opacity-70 peer-data-[filled=true]:block transition-opacity motion-reduce:transition-none"
+                      data-slot="clear-button"
+                      role="button"
+                      tabindex="0"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        height="1em"
+                        role="presentation"
+                        viewBox="0 0 24 24"
+                        width="1em"
+                      >
+                        <path
+                          d="M12 2a10 10 0 1010 10A10.016 10.016 0 0012 2zm3.36 12.3a.754.754 0 010 1.06.748.748 0 01-1.06 0l-2.3-2.3-2.3 2.3a.748.748 0 01-1.06 0 .754.754 0 010-1.06l2.3-2.3-2.3-2.3A.75.75 0 019.7 8.64l2.3 2.3 2.3-2.3a.75.75 0 011.06 1.06l-2.3 2.3z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
