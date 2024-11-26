@@ -33,6 +33,8 @@
       {
         "title": "Playtron Labs",
         "label": "main",
+        "minWidth": 1250,
+        "minHeight": 720,
         "maximized": true,
         "center": true
       }
