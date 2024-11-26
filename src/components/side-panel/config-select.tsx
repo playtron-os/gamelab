@@ -28,7 +28,7 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
         onClick={() => !submissions.loading && setIsConfigOpen(true)}
         className="outline-hover border border-[--stroke-subtle] rounded-md flex flex-grow my-2"
       >
-        <span className="flex-none px-2 py-2">
+        <span className="flex-none px-2 py-2 max-w-40 overflow-clip">
           {submissions.selectedItem
             ? submissions.selectedItem.name
             : t`Add Config`}
