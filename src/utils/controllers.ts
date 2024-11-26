@@ -169,7 +169,7 @@ export const getKeyLabel = (key: string | null) => {
     case "KeySpace":
       return "Space";
     case "KeyBackspace":
-      return "🡰";
+      return "⇐";
     case "KeyEnter":
       return "⏎";
     case "KeyLeftShift":

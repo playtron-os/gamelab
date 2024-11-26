@@ -713,7 +713,7 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
   },
   Xbox: {
     id: "xbox-controller",
-    label: "Xbox Controller",
+    label: "XBox Controller",
     layout: xboxLayout,
     images: {
       dpad: xboxImageFrontDpad,
