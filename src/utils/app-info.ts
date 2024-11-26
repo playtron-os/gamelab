@@ -232,5 +232,6 @@ export const getDriveLabel = (drive: string): string => {
     return t`System Drive`;
   }
 
-  return drive.split("/").pop() || drive;
+  const label = drive.split("/").pop() || drive;
+  return label.replace(".ext4", "");
 };
