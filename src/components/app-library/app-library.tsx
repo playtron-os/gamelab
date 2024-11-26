@@ -130,6 +130,7 @@ export const AppLibrary: React.FC = () => {
               placeholder={t`Search`}
               value={nameFilter}
               onChange={setNameFilter}
+              isClearable={true}
             />
           </div>
         </div>

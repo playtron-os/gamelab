@@ -98,6 +98,8 @@ export const ConnectDeviceScreen: React.FC = () => {
           <TextInput
             value={localDeviceIp}
             errorText={errorText}
+            isFocused={true}
+            isClearable={true}
             onChange={(value) => {
               setLocalDeviceIp(value);
               setErrorText("");

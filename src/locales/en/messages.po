@@ -55,7 +55,7 @@ msgstr "All"
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:139
+#: src/components/app-library/app-library.tsx:140
 msgid "All Games ({totalGames})"
 msgstr "All Games ({totalGames})"
 
@@ -92,7 +92,7 @@ msgstr "Bulk Actions"
 msgid "Bypass App Update"
 msgstr "Bypass App Update"
 
-#: src/screens/connect-device/connect-device.tsx:152
+#: src/screens/connect-device/connect-device.tsx:154
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -139,8 +139,8 @@ msgstr "Configuration has been submitted"
 msgid "Confirm"
 msgstr "Confirm"
 
-#: src/screens/connect-device/connect-device.tsx:109
-#: src/screens/connect-device/connect-device.tsx:146
+#: src/screens/connect-device/connect-device.tsx:111
+#: src/screens/connect-device/connect-device.tsx:148
 msgid "Connect"
 msgstr "Connect"
 
@@ -324,7 +324,7 @@ msgstr "Install folder"
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:140
+#: src/components/app-library/app-library.tsx:141
 msgid "Installed Games ({totalInstalled})"
 msgstr "Installed Games ({totalInstalled})"
 
@@ -337,7 +337,7 @@ msgstr "Installing"
 msgid "Invalid layout"
 msgstr "Invalid layout"
 
-#: src/screens/connect-device/connect-device.tsx:123
+#: src/screens/connect-device/connect-device.tsx:125
 msgid "Invalid SSH credentials"
 msgstr "Invalid SSH credentials"
 
@@ -353,7 +353,7 @@ msgstr "JSON structure is invalid {err}"
 msgid "Keyboard"
 msgstr "Keyboard"
 
-#: src/screens/connect-device/connect-device.tsx:126
+#: src/screens/connect-device/connect-device.tsx:128
 msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 msgstr "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 
@@ -476,8 +476,8 @@ msgstr "Open Full Log"
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
-#: src/screens/connect-device/connect-device.tsx:140
-#: src/screens/connect-device/connect-device.tsx:141
+#: src/screens/connect-device/connect-device.tsx:142
+#: src/screens/connect-device/connect-device.tsx:143
 msgid "Password"
 msgstr "Password"
 
@@ -692,8 +692,8 @@ msgstr "Update"
 msgid "Update Required"
 msgstr "Update Required"
 
-#: src/screens/connect-device/connect-device.tsx:134
-#: src/screens/connect-device/connect-device.tsx:135
+#: src/screens/connect-device/connect-device.tsx:136
+#: src/screens/connect-device/connect-device.tsx:137
 msgid "Username"
 msgstr "Username"
 

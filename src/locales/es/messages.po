@@ -55,7 +55,7 @@ msgstr ""
 msgid "All Games"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:139
+#: src/components/app-library/app-library.tsx:140
 msgid "All Games ({totalGames})"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Bypass App Update"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:152
+#: src/screens/connect-device/connect-device.tsx:154
 msgid "Cancel"
 msgstr ""
 
@@ -139,8 +139,8 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:109
-#: src/screens/connect-device/connect-device.tsx:146
+#: src/screens/connect-device/connect-device.tsx:111
+#: src/screens/connect-device/connect-device.tsx:148
 msgid "Connect"
 msgstr ""
 
@@ -324,7 +324,7 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:140
+#: src/components/app-library/app-library.tsx:141
 msgid "Installed Games ({totalInstalled})"
 msgstr ""
 
@@ -337,7 +337,7 @@ msgstr ""
 msgid "Invalid layout"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:123
+#: src/screens/connect-device/connect-device.tsx:125
 msgid "Invalid SSH credentials"
 msgstr ""
 
@@ -353,7 +353,7 @@ msgstr ""
 msgid "Keyboard"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:126
+#: src/screens/connect-device/connect-device.tsx:128
 msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 msgstr ""
 
@@ -476,8 +476,8 @@ msgstr ""
 msgid "Open Log Window"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:140
-#: src/screens/connect-device/connect-device.tsx:141
+#: src/screens/connect-device/connect-device.tsx:142
+#: src/screens/connect-device/connect-device.tsx:143
 msgid "Password"
 msgstr ""
 
@@ -692,8 +692,8 @@ msgstr ""
 msgid "Update Required"
 msgstr ""
 
-#: src/screens/connect-device/connect-device.tsx:134
-#: src/screens/connect-device/connect-device.tsx:135
+#: src/screens/connect-device/connect-device.tsx:136
+#: src/screens/connect-device/connect-device.tsx:137
 msgid "Username"
 msgstr ""
 
