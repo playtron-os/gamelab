@@ -23,8 +23,8 @@ export const Drive: React.FC<DriveProps> = ({
     <>
       <div className="flex text-gray-400 w-full items-center space-x-1 ps-3 py-1">
         <span className="flex-col w-5 text-xl text-white">{icon}</span>
-        <span className="flex-grow text-sm ps-2">
-          <span className="text-sm pe-2">{label}</span>
+        <span className="flex-grow text-sm ps-2 max-w-36 overflow-hidden">
+          <span className="text-sm pe-2  ">{label}</span>
           <span className="text-xs text-gray-500">
             {getDiskSizeLabel(size)}
           </span>
