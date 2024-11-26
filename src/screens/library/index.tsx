@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { usePlayserve } from "@/hooks";
 import { MessageType } from "@/types/playserve/message";
 
-import { useAppActions, useAppSelector } from "@/redux/store";
+import { useAppActions, useAppSelector, useAppDispatch } from "@/redux/store";
 import {
   setApps,
   updateInstalledApps,
@@ -16,7 +16,7 @@ import {
 } from "@/redux/modules";
 import { AppLibrary } from "../../components";
 import { SidePanel } from "@/components/side-panel/side-panel";
-
+import { flashMessage } from "redux-flash";
 import { SubmissionsContextProvider } from "@/context/submissions-context";
 import { Sidebar } from "@/components/sidebar/sidebar";
 
@@ -49,6 +49,7 @@ export const LibraryScreen = () => {
   }, []);
 
   const apps = useAppSelector(selectAppLibraryAppsState);
+  const dispatch = useAppDispatch();
 
   usePlayserve({
     onMessage: (message) => {
@@ -95,6 +96,10 @@ export const LibraryScreen = () => {
       ) {
         if (message.status === 200) {
           updateInstallStatusDispatch(message.body);
+        }
+      } else if (message.message_type === MessageType.AppLaunch) {
+        if (message.status !== 200) {
+          dispatch(flashMessage(message.body.message));
         }
       }
     }
