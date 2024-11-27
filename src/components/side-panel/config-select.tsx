@@ -1,7 +1,12 @@
 import React from "react";
 import { t } from "@lingui/macro";
 import { useSubmissionsType } from "@/context/submissions-context";
-import { Button, EditBoxLine } from "@playtron/styleguide";
+import {
+  Button,
+  EditBoxLine,
+  ArrowDropRightFill,
+  styles
+} from "@playtron/styleguide";
 import { Submission } from "@/types";
 import classNames from "classnames";
 
@@ -28,13 +33,15 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
         onClick={() => !submissions.loading && setIsConfigOpen(true)}
         className="outline-hover border border-[--stroke-subtle] rounded-md flex flex-grow my-2"
       >
-        <span className="flex-none px-2 py-2 max-w-40 overflow-clip">
+        <span className="flex-none p-2 max-w-40 overflow-clip">
           {submissions.selectedItem
             ? submissions.selectedItem.name
             : t`Add Config`}
         </span>
         <span className="flex-grow"></span>
-        <span className="flex-none px-4 py-2 text-[--fill-normal]">🞂</span>
+        <span className="flex-none p-2 text-[--fill-normal]">
+          <ArrowDropRightFill fill={styles.variablesDark.fill.white} />
+        </span>
       </div>
       {submissions.selectedItem && (
         <div className="flex-shrink ps-2">
