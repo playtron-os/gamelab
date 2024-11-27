@@ -195,7 +195,7 @@ export enum GamepadButton {
   East = "East",
   /// North action, Sony Square □, Xbox X, Nintendo Y
   North = "North",
-  /// West action, Sony Triangle ∆, XBox Y, Nintendo X
+  /// West action, Sony Triangle ∆, Xbox Y, Nintendo X
   West = "West",
   /// Start, Xbox Menu, Nintendo +, Steam Deck Hamburger Menu (☰)
   Start = "Start",

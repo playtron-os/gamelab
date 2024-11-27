@@ -711,5 +711,9 @@ msgid "Version: {version}"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:51
-msgid "XBox controller"
+msgid "Xbox controller"
 msgstr ""
+
+#: src/components/controller-edit/controller-edit.tsx:51
+#~ msgid "XBox controller"
+#~ msgstr ""

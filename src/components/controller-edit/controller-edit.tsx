@@ -48,7 +48,7 @@ interface ControllerEditProps {
 export const getControllerLayoutLabel = (layout: TargetControllerType) => {
   switch (layout) {
     case "xbox":
-      return t`XBox controller`;
+      return t`Xbox controller`;
     case "ps5":
       return t`PS5 controller`;
     case "default":
