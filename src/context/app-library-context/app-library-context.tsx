@@ -1,6 +1,7 @@
 import {
   openMoveAppDialog as openMoveAppDialogAction,
-  selectAppLibraryState
+  selectAppLibraryState,
+  setCurrentApp
 } from "@/redux/modules";
 import { AppStatus } from "@/types";
 import { useBoolean } from "ahooks";
@@ -47,7 +48,6 @@ export interface AppLibraryContextProps {
   };
   selectedApps: Set<string>;
   setSelectedApps: React.Dispatch<React.SetStateAction<Set<string>>>;
-  clickedApp?: AppInformation;
   bulkActionsMenuStateManager: ReturnType<typeof useBoolean>;
   eula: AppEulaResponseBody | null;
   isEulaOpen: boolean;
@@ -88,7 +88,6 @@ export const AppLibraryContextProvider: React.FC<
   const { getAppEulas, acceptEula } = useAppEula();
 
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
-  const [clickedApp, setClickedApp] = useState<AppInformation>();
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   const handleAppDefaultAction = useCallback(
@@ -137,7 +136,7 @@ export const AppLibraryContextProvider: React.FC<
 
       try {
         const idToNum = parseInt(id, 10);
-        setClickedApp(apps[idToNum]);
+        dispatch(setCurrentApp(apps[idToNum]));
       } catch (error) {
         console.error("Error parsing row id: ", error);
       }
@@ -182,7 +181,6 @@ export const AppLibraryContextProvider: React.FC<
       handlers,
       selectedApps,
       setSelectedApps,
-      clickedApp,
       bulkActionsMenuStateManager,
       eula,
       isEulaOpen,
@@ -195,7 +193,6 @@ export const AppLibraryContextProvider: React.FC<
       handlers,
       selectedApps,
       setSelectedApps,
-      clickedApp,
       bulkActionsMenuStateManager,
       eula,
       isEulaOpen,

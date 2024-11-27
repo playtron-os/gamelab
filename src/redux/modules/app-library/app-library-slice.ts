@@ -13,6 +13,7 @@ import { invoke } from "@tauri-apps/api/core";
 
 export interface AppLibraryState {
   apps: AppInformation[];
+  currentApp?: AppInformation;
   appFilters: {
     providers: { [key in AppProvider]: boolean };
     drives: Array<string>;
@@ -26,6 +27,7 @@ export interface AppLibraryState {
 
 export const APP_LIBRARY_INITIAL_STATE: AppLibraryState = {
   apps: [],
+  currentApp: undefined,
   queue: [],
   appFilters: {
     providers: {
@@ -209,6 +211,9 @@ export const appLibrarySlice = createSlice({
     ) => {
       state.loadingProgress = { ...state.loadingProgress, ...action.payload };
     },
+    setCurrentApp: (state, action: PayloadAction<AppInformation>) => {
+      state.currentApp = action.payload;
+    },
     resetLibrary: () => APP_LIBRARY_INITIAL_STATE
   }
 });
@@ -227,11 +232,14 @@ export const {
   setLoading,
   setLoadingProgress,
   setAppDownloadProgress,
+  setCurrentApp,
   resetLibrary
 } = appLibrarySlice.actions;
 export const selectAppLibraryState = (state: RootState) => state.appLibrary;
 export const selectAppLibraryAppsState = (state: RootState) =>
   state.appLibrary.apps;
+export const selectCurrentAppState = (state: RootState) =>
+  state.appLibrary.currentApp;
 export const selectAppLibraryQueueState = (state: RootState) =>
   state.appLibrary.queue;
 export const selectAppLibraryQueuePositionMapState = (state: RootState) =>

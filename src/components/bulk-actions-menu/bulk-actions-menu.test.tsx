@@ -56,7 +56,6 @@ const MOCK_LIBRARY_TABLE: AppLibraryContextProps = {
   onSelectedIdsChange: function (_selectedId: string): void {
     throw new Error("Function not implemented.");
   },
-  clickedApp: undefined,
   eula: null,
   isEulaOpen: false,
   setIsEulaOpen: jest.fn(),
