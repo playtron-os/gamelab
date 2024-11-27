@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useMemo, useState } from "react";
+import React, { createContext, useCallback, useState } from "react";
 import { flashErrorMessage, flashMessage } from "redux-flash";
 import {
   AppInformation,
@@ -11,9 +11,13 @@ import {
   InputConfig,
   SubmissionSaveModel
 } from "@/types";
-import { useAppLibraryContext } from "@/context";
+
 import { useAppDispatch, useAppSelector } from "@/redux/store";
-import { selectAppLibraryAppsState } from "@/redux/modules";
+import {
+  selectCurrentAppState,
+  selectAppLibraryAppsState,
+  setCurrentApp
+} from "@/redux/modules";
 import { useSubmissions } from "./hooks/use-submissions";
 import { DEFAULT_INPUT_CONFIG } from "@/constants/input-config";
 import { DEFAULT_LAUNCH_CONFIG } from "@/constants/launch-config";
@@ -73,9 +77,7 @@ interface SubmissionsContextProviderProps {
 export const SubmissionsContextProvider = ({
   children
 }: SubmissionsContextProviderProps) => {
-  const { clickedApp } = useAppLibraryContext();
-  const apps = useAppSelector(selectAppLibraryAppsState);
-  const flashDispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
   const [itemToDelete, setItemToDelete] = useState<{
     item_id: string;
     app_id: string;
@@ -88,18 +90,8 @@ export const SubmissionsContextProvider = ({
     null
   );
 
-  const currentApp = useMemo(() => {
-    if (clickedApp) {
-      for (const app of apps) {
-        if (app.app.id === clickedApp.app.id) {
-          return app;
-        }
-      }
-    } else if (apps && apps.length > 0) {
-      return apps[0];
-    }
-  }, [clickedApp, apps]);
-
+  const currentApp = useAppSelector(selectCurrentAppState);
+  const apps = useAppSelector(selectAppLibraryAppsState);
   const inputSubmissions = useSubmissions(
     SubmissionType.InputConfig,
     currentApp?.app.id
@@ -108,7 +100,10 @@ export const SubmissionsContextProvider = ({
     SubmissionType.LaunchConfig,
     currentApp?.app.id
   );
-  //const testSubmissions = useSubmissions("TestScript", currentApp?.app.id);
+
+  if (!currentApp && apps.length > 0) {
+    dispatch(setCurrentApp(apps[0]));
+  }
 
   const { sendMessage } = usePlayserve({
     onMessage: (message) => {
@@ -152,11 +147,11 @@ export const SubmissionsContextProvider = ({
         if (response.status === 200) {
           info("Successfully create config");
         } else {
-          flashDispatch(flashMessage(response.body.message));
+          dispatch(flashMessage(response.body.message));
         }
       });
     },
-    [sendMessage, flashDispatch]
+    [sendMessage, dispatch]
   );
 
   const createSubmission = useCallback(
@@ -196,12 +191,12 @@ export const SubmissionsContextProvider = ({
         }
         submissions.setSubmissions(newSubmissions);
       } else if ("error_code" in response.body) {
-        flashDispatch(flashMessage(response.body.message));
+        dispatch(flashMessage(response.body.message));
       }
     });
   }, [
     sendMessage,
-    flashDispatch,
+    dispatch,
     itemToDelete,
     launchSubmissions,
     inputSubmissions
@@ -227,16 +222,16 @@ export const SubmissionsContextProvider = ({
             error(
               `Error duplicating config ${response.status} ${response.body.message}`
             );
-            flashDispatch(flashMessage(response.body.message));
+            dispatch(flashMessage(response.body.message));
           }
         })
 
         .catch((error: Error) => {
           console.error(error.message);
-          flashDispatch(flashMessage(error.message));
+          dispatch(flashMessage(error.message));
         });
     },
-    [sendMessage, flashDispatch]
+    [sendMessage, dispatch]
   );
 
   const promoteSubmission = useCallback(
@@ -253,17 +248,17 @@ export const SubmissionsContextProvider = ({
       sendMessage(promoteConfigMessage)().then((response) => {
         if (response.status === 200) {
           info("Successfully promoted submissions");
-          flashDispatch(flashMessage(t`Submission promoted`));
+          dispatch(flashMessage(t`Submission promoted`));
         } else {
           console.error("Error promoting config", response);
           error(
             `Error promoting config ${response.status} ${response.body.message}`
           );
-          flashDispatch(flashMessage(response.body.message));
+          dispatch(flashMessage(response.body.message));
         }
       });
     },
-    [sendMessage, flashDispatch]
+    [sendMessage, dispatch]
   );
 
   const submitSubmission = useCallback(
@@ -276,11 +271,11 @@ export const SubmissionsContextProvider = ({
       });
       sendMessage(submitMessage)().then((response) => {
         if (response.status === 200) {
-          flashDispatch(flashMessage(t`Configuration has been submitted`));
+          dispatch(flashMessage(t`Configuration has been submitted`));
         } else {
           // TODO: Translate errrors properly
           const errorMessage = response.body.message;
-          flashDispatch(
+          dispatch(
             flashErrorMessage(
               t`There was an error with the submission ${errorMessage}`
             )
@@ -288,7 +283,7 @@ export const SubmissionsContextProvider = ({
         }
       });
     },
-    [sendMessage, flashDispatch]
+    [sendMessage, dispatch]
   );
 
   const askDeleteSubmission = useCallback(
