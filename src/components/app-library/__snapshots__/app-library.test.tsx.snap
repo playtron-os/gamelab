@@ -181,55 +181,11 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
                     colspan="1"
-                    style="width: 32px;"
-                  >
-                    <div
-                      class=""
-                    >
-                      <div
-                        class="flex-row inline-flex items-center justify-between gap-2"
-                      >
-                        <span
-                          aria-checked="false"
-                          class="border-2 border-[--state-unselected] outline-hover group block size-6 rounded-md bg-[--fill-default] data-[checked]:bg-[--state-selected]"
-                          data-headlessui-state=""
-                          data-testid="checkbox-input"
-                          id="headlessui-checkbox-:rk:"
-                          role="checkbox"
-                          tabindex="0"
-                        />
-                      </div>
-                    </div>
-                  </th>
-                  <th
-                    class="text-left border-b-2 p-2 border-[--state-focused]"
-                    colspan="1"
                     style="width: 100px;"
                   >
                     <div
                       class=""
-                    >
-                      <button
-                        class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[14px] p-2 text-xs"
-                        type="button"
-                      >
-                        <div
-                          class="flex items-center gap-2"
-                        >
-                          <span
-                            class="flex-grow"
-                          />
-                          <span
-                            class="flex-shrink"
-                          >
-                            Bulk Actions
-                          </span>
-                          <span
-                            class="flex-grow"
-                          />
-                        </div>
-                      </button>
-                    </div>
+                    />
                   </th>
                   <th
                     class="text-left border-b-2 p-2 border-[--state-focused]"
@@ -306,28 +262,6 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
                   >
-                    <span
-                      class="flex justify-center mx-2 w-6"
-                    >
-                      <div
-                        class="flex-row inline-flex items-center justify-between gap-2"
-                      >
-                        <span
-                          aria-checked="false"
-                          class="border-2 border-[--state-unselected] outline-hover group block size-6 rounded-md bg-[--fill-default] data-[checked]:bg-[--state-selected]"
-                          data-headlessui-state=""
-                          data-testid="checkbox-input"
-                          id="headlessui-checkbox-:rl:"
-                          role="checkbox"
-                          tabindex="0"
-                        />
-                      </div>
-                    </span>
-                  </td>
-                  <td
-                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
-                    style="width: auto; min-width: unset; position: relative; height: 60px;"
-                  >
                     <div
                       class="flex justify-center mx-2 w-[100px] h-[48px]"
                     >
@@ -398,7 +332,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                       aria-haspopup="true"
                       class="z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased inline-block"
                       data-slot="trigger"
-                      id="react-aria-:rm:"
+                      id="react-aria-:rk:"
                       type="button"
                     >
                       <svg
@@ -427,28 +361,6 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                   class="bg-[--fill-subtle]"
                   style="height: 60px; transform: translateY(0px);"
                 >
-                  <td
-                    class="overflow-hidden border-b-8 border-[--fill-subtler]"
-                    style="width: auto; min-width: unset; position: relative; height: 60px;"
-                  >
-                    <span
-                      class="flex justify-center mx-2 w-6"
-                    >
-                      <div
-                        class="flex-row inline-flex items-center justify-between gap-2"
-                      >
-                        <span
-                          aria-checked="false"
-                          class="border-2 border-[--state-unselected] outline-hover group block size-6 rounded-md bg-[--fill-default] data-[checked]:bg-[--state-selected]"
-                          data-headlessui-state=""
-                          data-testid="checkbox-input"
-                          id="headlessui-checkbox-:rp:"
-                          role="checkbox"
-                          tabindex="0"
-                        />
-                      </div>
-                    </span>
-                  </td>
                   <td
                     class="overflow-hidden border-b-8 border-[--fill-subtler]"
                     style="width: auto; min-width: unset; position: relative; height: 60px;"
@@ -523,7 +435,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                       aria-haspopup="true"
                       class="z-10 aria-expanded:scale-[0.97] aria-expanded:opacity-70 subpixel-antialiased inline-block"
                       data-slot="trigger"
-                      id="react-aria-:rq:"
+                      id="react-aria-:rn:"
                       type="button"
                     >
                       <svg
@@ -551,7 +463,6 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
               </tbody>
               <tfoot>
                 <tr>
-                  <th />
                   <th />
                   <th />
                   <th />

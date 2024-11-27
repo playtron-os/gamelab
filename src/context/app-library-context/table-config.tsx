@@ -1,10 +1,10 @@
-import { LibraryCheckbox } from "@/components/library-checkbox/library-checkbox";
+// import { LibraryCheckbox } from "@/components/library-checkbox/library-checkbox";
 import { AppProvider, AppStatus } from "@/types";
 import { AppInformation, OwnedApp } from "@/types/app-library";
 import { getAppStatus } from "@/utils/app-info";
 import { createColumnHelper } from "@tanstack/table-core";
 import { AppActionCell } from "./components/table-cells/app-action-cell";
-import { BulkActionButtonCell } from "./components/table-cells/bulk-action-button-cell";
+// import { BulkActionButtonCell } from "./components/table-cells/bulk-action-button-cell";
 import { StatusCell } from "./components/table-cells/status-cell";
 import { ImageCell } from "./components/table-cells/image-cell";
 import { NameCell } from "./components/table-cells/name-cell";
@@ -16,16 +16,17 @@ const columnHelper = createColumnHelper<AppInformation>();
 
 export const columnConfig = [
   // Checkbox
-  columnHelper.display({
-    id: "checkbox-selection",
-    header: LibraryCheckbox,
-    cell: LibraryCheckbox,
-    size: 32
-  }),
+  // columnHelper.display({
+  //   id: "checkbox-selection",
+  //   header: LibraryCheckbox,
+  //   cell: LibraryCheckbox,
+  //   size: 32
+  // }),
   columnHelper.accessor("app.images", {
     id: "image",
     enableSorting: false,
-    header: BulkActionButtonCell,
+    // header: BulkActionButtonCell,
+    header: "",
     size: 100,
     cell: ImageCell
   }),

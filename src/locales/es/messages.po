@@ -182,7 +182,7 @@ msgstr ""
 msgid "Downloading"
 msgstr ""
 
-#: src/context/app-library-context/table-config.tsx:94
+#: src/context/app-library-context/table-config.tsx:95
 msgid "Drive"
 msgstr ""
 
@@ -517,7 +517,7 @@ msgid "Promote"
 msgstr ""
 
 #: src/components/side-panel/side-panel.tsx:103
-#: src/context/app-library-context/table-config.tsx:63
+#: src/context/app-library-context/table-config.tsx:64
 msgid "Provider"
 msgstr ""
 
@@ -578,7 +578,7 @@ msgstr ""
 msgid "Select drive"
 msgstr ""
 
-#: src/context/app-library-context/table-config.tsx:51
+#: src/context/app-library-context/table-config.tsx:52
 msgid "Size"
 msgstr ""
 
@@ -586,7 +586,7 @@ msgstr ""
 msgid "Sorry, an unexpected error has occurred."
 msgstr ""
 
-#: src/context/app-library-context/table-config.tsx:77
+#: src/context/app-library-context/table-config.tsx:78
 msgid "Status"
 msgstr ""
 
@@ -639,7 +639,7 @@ msgstr ""
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 
-#: src/context/app-library-context/table-config.tsx:36
+#: src/context/app-library-context/table-config.tsx:37
 msgid "Title"
 msgstr ""
 

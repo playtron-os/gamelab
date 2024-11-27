@@ -182,7 +182,7 @@ msgstr "Download"
 msgid "Downloading"
 msgstr "Downloading"
 
-#: src/context/app-library-context/table-config.tsx:94
+#: src/context/app-library-context/table-config.tsx:95
 msgid "Drive"
 msgstr "Drive"
 
@@ -517,7 +517,7 @@ msgid "Promote"
 msgstr "Promote"
 
 #: src/components/side-panel/side-panel.tsx:103
-#: src/context/app-library-context/table-config.tsx:63
+#: src/context/app-library-context/table-config.tsx:64
 msgid "Provider"
 msgstr "Provider"
 
@@ -578,7 +578,7 @@ msgstr "Search"
 msgid "Select drive"
 msgstr "Select drive"
 
-#: src/context/app-library-context/table-config.tsx:51
+#: src/context/app-library-context/table-config.tsx:52
 msgid "Size"
 msgstr "Size"
 
@@ -586,7 +586,7 @@ msgstr "Size"
 msgid "Sorry, an unexpected error has occurred."
 msgstr "Sorry, an unexpected error has occurred."
 
-#: src/context/app-library-context/table-config.tsx:77
+#: src/context/app-library-context/table-config.tsx:78
 msgid "Status"
 msgstr "Status"
 
@@ -639,7 +639,7 @@ msgstr "There is no launch configuration created for"
 msgid "There was an error with the submission {errorMessage}"
 msgstr "There was an error with the submission {errorMessage}"
 
-#: src/context/app-library-context/table-config.tsx:36
+#: src/context/app-library-context/table-config.tsx:37
 msgid "Title"
 msgstr "Title"
 
