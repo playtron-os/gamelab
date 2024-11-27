@@ -87,6 +87,7 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
   const { editLayout, setEditLayout } = useSubmissionsContext();
   const { inputDevices, setInputDevices, getInputDevices } =
     useInputDevice(playserve);
+
   useEffect(() => {
     getInputDevices();
   }, [getInputDevices]);
@@ -95,7 +96,15 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
     /* eslint-disable @typescript-eslint/no-explicit-any */
     onMessage: (message: any) => {
       if (message.message_type == MessageType.InputDevicesUpdate) {
-        setInputDevices(Object.values(message.body));
+        const inputDevices = Object.values(message.body) as ControllerInfo[];
+        setInputDevices(inputDevices);
+        if (inputDevices.length > 0) {
+          const layout = getPhysicalLayoutFromDevice(inputDevices[0]);
+          if (layout.id !== currentPhysicalLayout.id) {
+            setCurrentPhysicalLayout(layout);
+            setActiveTab(layout.layout[0]);
+          }
+        }
       }
     }
   });
