@@ -287,8 +287,10 @@ export const SidePanel: React.FC = () => {
               className="w-full"
               onClick={() => {
                 handleAppDefaultAction(currentApp, launchParams);
-                setPrimaryOff(appStatus === AppStatus.READY);
-                setIsLogsOpen(isLogsOpen || launchParams.enhancedDebugging);
+                if (appStatus === AppStatus.READY) {
+                  setPrimaryOff(true);
+                  setIsLogsOpen(isLogsOpen || launchParams.enhancedDebugging);
+                }
               }}
               primary={appStatus === AppStatus.READY}
             />
