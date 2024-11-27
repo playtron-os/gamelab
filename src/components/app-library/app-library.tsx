@@ -28,7 +28,7 @@ export const AppLibrary: React.FC = () => {
 
   const { columns, selectedIds, onSelectedIdsChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
-  const [tabKey, setTabKey] = useState("all");
+  const [tabKey, setTabKey] = useState("installed");
   const { props: confirmationPopUpProps } = useConfirmationPopUp();
 
   useEffect(() => {
