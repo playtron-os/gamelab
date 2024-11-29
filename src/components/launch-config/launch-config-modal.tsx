@@ -19,7 +19,7 @@ export const LaunchConfigModal: React.FC<InputConfigModalProps> = ({
 }) => {
   const [configFilter, setConfigFilter] = useState("");
   const {
-    currentApp,
+    clickedApp: currentApp,
     launchSubmissions,
     createSubmission,
     saveSubmission,
