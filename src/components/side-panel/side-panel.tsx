@@ -116,7 +116,7 @@ export const SidePanel: React.FC = () => {
 
   return (
     <>
-      <div className="fixed bg-black right-0 top-0 h-screen w-[280px] px-2 py-2 border-gray-800 border-l-2 overflow-scroll select-none cursor-default">
+      <div className="fixed bg-black right-0 top-0 h-screen w-[480px] px-2 py-2 border-gray-800 border-l-2 overflow-scroll select-none cursor-default">
         <div className="pt-4 px-2 mb-28">
           <h2 className="text-xl font-bold justify-between flex pb-2 select-all">
             {currentApp.app.name}
@@ -278,7 +278,7 @@ export const SidePanel: React.FC = () => {
             </p>
           )}
         </div>
-        <footer className="fixed bottom-0 right-0 w-[280px] overflow-hidden bg-black border-gray-800 border-l-2">
+        <footer className="fixed bottom-0 right-0 w-[480px] overflow-hidden bg-black border-gray-800 border-l-2">
           <p className="py-2 px-4">
             <Button
               disabled={primaryOff || appStatus === AppStatus.LAUNCHING}

@@ -66,11 +66,11 @@ export const LogsModal: React.FC<LogsModalProps> = ({
       id={"logs-modal"}
       onClose={onClose}
       noContentPadding
-      rightMargin={280}
-      className="z-10"
+      rightMargin={480}
+      className="z-10 m-4"
     >
       <div>
-        <div className="bg-[--fill-subtle] flex align-middle font-bold text-2xl items-center ">
+        <div className="bg-[--fill-subtle] flex align-middle font-bold text-2xl items-center">
           <div className="flex-grow p-1 ps-5">
             <Trans>Logs</Trans>
           </div>
@@ -115,7 +115,7 @@ export const LogsModal: React.FC<LogsModalProps> = ({
         <div className="p-6">
           <div
             ref={scrollable}
-            className="h-[calc(95vh-100px)] w-[calc(95vw-384px)] overflow-y-scroll"
+            className="h-[calc(95vh-100px)] w-[calc(95vw-484px)] overflow-y-scroll"
           >
             <pre>
               {isEnhancedDebuggingEnabled
