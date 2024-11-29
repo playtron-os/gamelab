@@ -5,6 +5,7 @@ import {
   Button,
   EditBoxLine,
   ArrowDropRightFill,
+  Plus,
   styles
 } from "@playtron/styleguide";
 import { Submission } from "@/types";
@@ -33,14 +34,18 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
         onClick={() => !submissions.loading && setIsConfigOpen(true)}
         className="outline-hover border border-[--stroke-subtle] rounded-md flex flex-grow my-2"
       >
-        <span className="flex-none p-2 max-w-40 overflow-clip">
+        <span className="flex-none p-2 max-w-40 overflow-clip whitespace-nowrap">
           {submissions.selectedItem
             ? submissions.selectedItem.name
             : t`Add Config`}
         </span>
         <span className="flex-grow"></span>
         <span className="flex-none p-2 text-[--fill-normal]">
-          <ArrowDropRightFill fill={styles.variablesDark.fill.white} />
+          {submissions.submissions.length > 0 ? (
+            <ArrowDropRightFill fill={styles.variablesDark.fill.white} />
+          ) : (
+            <Plus fill={styles.variablesDark.fill.white} />
+          )}
         </span>
       </div>
       {submissions.selectedItem && (
