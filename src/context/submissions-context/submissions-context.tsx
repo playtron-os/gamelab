@@ -19,6 +19,7 @@ import {
   setCurrentApp
 } from "@/redux/modules";
 import { useSubmissions } from "./hooks/use-submissions";
+import { SubmissionCategory } from "@/constants";
 import { DEFAULT_INPUT_CONFIG } from "@/constants/input-config";
 import { DEFAULT_LAUNCH_CONFIG } from "@/constants/launch-config";
 import { usePlayserve } from "@/hooks";
@@ -114,14 +115,14 @@ export const SubmissionsContextProvider = ({
           if (submissions[0].app_id !== currentApp?.app.id) {
             return;
           }
-          const array = submissions.map((sub) => ({
-            ...sub,
-            ...JSON.parse(sub.data)
+          const newSubmissions = submissions.map((submission) => ({
+            ...submission,
+            ...JSON.parse(submission.data)
           }));
           if (type === "InputConfig") {
-            inputSubmissions.setSubmissions(array);
+            inputSubmissions.setSubmissions(newSubmissions);
           } else if (type === "LaunchConfig") {
-            launchSubmissions.setSubmissions(array);
+            launchSubmissions.setSubmissions(newSubmissions);
           }
         }
       }
@@ -204,7 +205,6 @@ export const SubmissionsContextProvider = ({
 
   const copySubmission = useCallback(
     (item_id: string, item_type: SubmissionItemType, app_id: string) => {
-      console.log("Duplicating config", item_id);
       const copyConfigMessage = getMessage(MessageType.SubmissionDuplicate, {
         item_type,
         app_id,
@@ -258,19 +258,34 @@ export const SubmissionsContextProvider = ({
         }
       });
     },
-    [sendMessage, dispatch]
+    [sendMessage, dispatch, inputSubmissions, launchSubmissions]
   );
 
   const submitSubmission = useCallback(
     (item_id: string, item_type: SubmissionItemType, app_id: string) => {
-      console.log("Submitting submission to the server");
       const submitMessage = getMessage(MessageType.SubmissionSubmit, {
         item_id,
         item_type,
         app_id
       });
+      const submissions =
+        item_type === "LaunchConfig" ? launchSubmissions : inputSubmissions;
       sendMessage(submitMessage)().then((response) => {
         if (response.status === 200) {
+          const newSubmissions = submissions.submissions.map((submission) =>
+            submission.item_id === item_id
+              ? {
+                  ...submission,
+                  submission_category: SubmissionCategory.Official
+                }
+              : submission
+          );
+
+          if (item_type === "InputConfig") {
+            inputSubmissions.setSubmissions(newSubmissions);
+          } else if (item_type === "LaunchConfig") {
+            launchSubmissions.setSubmissions(newSubmissions);
+          }
           dispatch(flashMessage(t`Configuration has been submitted`));
         } else {
           // TODO: Translate errrors properly
@@ -283,7 +298,7 @@ export const SubmissionsContextProvider = ({
         }
       });
     },
-    [sendMessage, dispatch]
+    [sendMessage, dispatch, inputSubmissions, launchSubmissions]
   );
 
   const askDeleteSubmission = useCallback(

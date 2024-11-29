@@ -19,3 +19,8 @@ export interface FileInformation {
 
 export const EULA_NOT_ACCEPTED = "EULA_NOT_ACCEPTED";
 export const DEFAULT_WEBSOCKET_PORT = 8080;
+export enum SubmissionCategory {
+  Official = "Official",
+  Community = "Community",
+  Local = "Local"
+}

@@ -2,7 +2,7 @@ import React from "react";
 import { CellContext } from "@tanstack/react-table";
 import { Submission } from "@/types/submission";
 import classNames from "classnames";
-
+import { SubmissionCategory } from "@/constants";
 export const NameCell = (info: CellContext<Submission, string>) => {
   const row = info.row.original;
   return (
@@ -11,7 +11,7 @@ export const NameCell = (info: CellContext<Submission, string>) => {
       <span
         className={classNames(
           "rounded-sm px-2 py-1 ms-2 text-xs",
-          row.submission_category == "Official"
+          row.submission_category === SubmissionCategory.Official
             ? "bg-[--feedback-success-primary]"
             : "bg-[--feedback-success-tertiary]"
         )}

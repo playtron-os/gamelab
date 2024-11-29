@@ -131,7 +131,7 @@ msgstr ""
 msgid "CONFIGURATION"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:274
+#: src/context/submissions-context/submissions-context.tsx:289
 msgid "Configuration has been submitted"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:319
+#: src/context/submissions-context/submissions-context.tsx:334
 msgid "Delete this configuration?"
 msgstr ""
 
@@ -635,7 +635,7 @@ msgstr ""
 msgid "There is no launch configuration created for"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:280
+#: src/context/submissions-context/submissions-context.tsx:295
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 
