@@ -36,20 +36,15 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
               role="tablist"
             >
               <button
-                aria-selected="true"
+                aria-selected="false"
                 class="z-0 w-full py-1 flex group relative justify-center items-center cursor-pointer transition-opacity tap-highlight-transparent data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-30 data-[hover-unselected=true]:opacity-disabled outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 rounded-none max-w-fit px-3 h-12 text-lg"
                 data-key="all"
-                data-selected="true"
                 data-slot="tab"
                 id="react-aria-:ra:-tab-all"
                 role="tab"
-                tabindex="0"
+                tabindex="-1"
                 type="button"
               >
-                <span
-                  class="absolute z-0 h-[2px] bottom-0 shadow-[0_1px_0px_0_rgba(0,0,0,0.05)] rounded-none w-full bg-[--state-default]"
-                  data-slot="cursor"
-                />
                 <div
                   class="relative z-10 whitespace-nowrap transition-colors text-default-500 group-data-[selected=true]:text-white"
                   data-slot="tabContent"
@@ -64,15 +59,20 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                 </div>
               </button>
               <button
-                aria-selected="false"
+                aria-selected="true"
                 class="z-0 w-full py-1 flex group relative justify-center items-center cursor-pointer transition-opacity tap-highlight-transparent data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-30 data-[hover-unselected=true]:opacity-disabled outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 rounded-none max-w-fit px-3 h-12 text-lg"
                 data-key="installed"
+                data-selected="true"
                 data-slot="tab"
                 id="react-aria-:ra:-tab-installed"
                 role="tab"
-                tabindex="-1"
+                tabindex="0"
                 type="button"
               >
+                <span
+                  class="absolute z-0 h-[2px] bottom-0 shadow-[0_1px_0px_0_rgba(0,0,0,0.05)] rounded-none w-full bg-[--state-default]"
+                  data-slot="cursor"
+                />
                 <div
                   class="relative z-10 whitespace-nowrap transition-colors text-default-500 group-data-[selected=true]:text-white"
                   data-slot="tabContent"
@@ -159,7 +159,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
         <h2
           class="text-2xl my-3 px-2"
         >
-          All Games (
+          Installed Games (
         </h2>
       </div>
       <div
@@ -507,20 +507,15 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
               role="tablist"
             >
               <button
-                aria-selected="true"
+                aria-selected="false"
                 class="z-0 w-full py-1 flex group relative justify-center items-center cursor-pointer transition-opacity tap-highlight-transparent data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-30 data-[hover-unselected=true]:opacity-disabled outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 rounded-none max-w-fit px-3 h-12 text-lg"
                 data-key="all"
-                data-selected="true"
                 data-slot="tab"
                 id="react-aria-:r0:-tab-all"
                 role="tab"
-                tabindex="0"
+                tabindex="-1"
                 type="button"
               >
-                <span
-                  class="absolute z-0 h-[2px] bottom-0 shadow-[0_1px_0px_0_rgba(0,0,0,0.05)] rounded-none w-full bg-[--state-default]"
-                  data-slot="cursor"
-                />
                 <div
                   class="relative z-10 whitespace-nowrap transition-colors text-default-500 group-data-[selected=true]:text-white"
                   data-slot="tabContent"
@@ -535,15 +530,20 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
                 </div>
               </button>
               <button
-                aria-selected="false"
+                aria-selected="true"
                 class="z-0 w-full py-1 flex group relative justify-center items-center cursor-pointer transition-opacity tap-highlight-transparent data-[disabled=true]:cursor-not-allowed data-[disabled=true]:opacity-30 data-[hover-unselected=true]:opacity-disabled outline-none data-[focus-visible=true]:z-10 data-[focus-visible=true]:outline-2 data-[focus-visible=true]:outline-focus data-[focus-visible=true]:outline-offset-2 rounded-none max-w-fit px-3 h-12 text-lg"
                 data-key="installed"
+                data-selected="true"
                 data-slot="tab"
                 id="react-aria-:r0:-tab-installed"
                 role="tab"
-                tabindex="-1"
+                tabindex="0"
                 type="button"
               >
+                <span
+                  class="absolute z-0 h-[2px] bottom-0 shadow-[0_1px_0px_0_rgba(0,0,0,0.05)] rounded-none w-full bg-[--state-default]"
+                  data-slot="cursor"
+                />
                 <div
                   class="relative z-10 whitespace-nowrap transition-colors text-default-500 group-data-[selected=true]:text-white"
                   data-slot="tabContent"
@@ -630,7 +630,7 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
         <h2
           class="text-2xl my-3 px-2"
         >
-          All Games (
+          Installed Games (
         </h2>
       </div>
       <div

@@ -1,6 +1,8 @@
-import { useAppLibraryContext } from "@/context";
-import { AppStatus, getMessage, MessageType } from "@/types";
+import React, { useMemo, useState, useCallback, useEffect } from "react";
+import { Trans, t } from "@lingui/macro";
+import { Button, Divider, Toggle } from "@playtron/styleguide";
 
+import { AppStatus, getMessage, MessageType } from "@/types";
 import {
   getAppActionIconByStatus,
   getAppActionLabelByStatus,
@@ -8,18 +10,16 @@ import {
   getDate,
   getImage
 } from "@/utils/app-info";
-import { Trans, t } from "@lingui/macro";
-import { Button, Divider, Toggle } from "@playtron/styleguide";
-import React, { useMemo, useState, useCallback, useEffect } from "react";
-import { InputConfigModal } from "../input-config-modal/input-config-modal";
-import { LaunchConfigModal } from "../launch-config/launch-config-modal";
-import { LogsModal } from "../logs-modal/logs-modal";
+import { InputConfigModal } from "@/components/input-config-modal/input-config-modal";
+import { LaunchConfigModal } from "@/components/launch-config/launch-config-modal";
+import { LogsModal } from "@/components/logs-modal/logs-modal";
+import { ConfigSelect } from "@/components/side-panel/config-select";
+import { useAppLibraryContext } from "@/context";
 import {
   useSubmissionsContext,
   useSubmissionsType
 } from "@/context/submissions-context";
 
-import { ConfigSelect } from "@/components/side-panel/config-select";
 import { TargetControllerType } from "@/types/input-config";
 import { EulaModal } from "@/components/eula-modal/eula-modal";
 import { usePlayserveSendMessage } from "@/hooks";
@@ -27,22 +27,19 @@ import { usePlayserveSendMessage } from "@/hooks";
 export const SidePanel: React.FC = () => {
   const {
     eula,
+
     isEulaOpen,
     acceptEula,
     setIsEulaOpen,
     handlers: { handleAppDefaultAction }
   } = useAppLibraryContext();
   const {
-    currentApp,
+    clickedApp: currentApp,
     inputSubmissions,
     launchSubmissions,
     setEditLayout,
     setEditLaunchConfig
   } = useSubmissionsContext();
-
-  if (!currentApp) {
-    return null;
-  }
 
   const [resetWinePrefix, setResetWinePrefix] = useState<boolean>(false);
   const [bypassAppUpdate, setBypassAppUpdate] = useState<boolean>(false);
@@ -55,7 +52,11 @@ export const SidePanel: React.FC = () => {
     useState<TargetControllerType>("xbox");
 
   useEffect(() => setPrimaryOff(false), [currentApp]);
+  if (!currentApp) {
+    return null;
+  }
   const appStatus = getAppStatus(currentApp);
+
   const sendMessage = usePlayserveSendMessage();
 
   const deleteDefaultConfig = useCallback(

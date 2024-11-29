@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useState } from "react";
+import React, { createContext, useCallback, useMemo, useState } from "react";
 import { flashErrorMessage, flashMessage } from "redux-flash";
 import {
   AppInformation,
@@ -30,7 +30,7 @@ import { error, info, warn } from "@tauri-apps/plugin-log";
 export type useSubmissionsType = ReturnType<typeof useSubmissions>;
 
 export interface SubmissionsContextType {
-  currentApp?: AppInformation;
+  clickedApp?: AppInformation;
   isLoading: boolean;
   launchSubmissions: useSubmissionsType;
   inputSubmissions: useSubmissionsType;
@@ -90,9 +90,20 @@ export const SubmissionsContextProvider = ({
   const [editLaunchConfig, setEditLaunchConfig] = useState<LaunchConfig | null>(
     null
   );
-
-  const currentApp = useAppSelector(selectCurrentAppState);
   const apps = useAppSelector(selectAppLibraryAppsState);
+  const currentApp = useAppSelector(selectCurrentAppState);
+  const clickedApp = useMemo(() => {
+    if (currentApp) {
+      for (const app of apps) {
+        if (app.app.id === currentApp.app.id) {
+          return app;
+        }
+      }
+    } else if (apps && apps.length > 0) {
+      return apps[0];
+    }
+  }, [currentApp, apps]);
+
   const inputSubmissions = useSubmissions(
     SubmissionType.InputConfig,
     currentApp?.app.id
@@ -310,7 +321,7 @@ export const SubmissionsContextProvider = ({
   return (
     <SubmissionsContext.Provider
       value={{
-        currentApp,
+        clickedApp,
         isLoading,
         inputSubmissions,
         launchSubmissions,

@@ -38,7 +38,7 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
   const submissionType = SubmissionType.InputConfig;
   const [configFilter, setConfigFilter] = useState("");
   const {
-    currentApp,
+    clickedApp: currentApp,
     inputSubmissions,
     setEditLayout,
     createSubmission,
