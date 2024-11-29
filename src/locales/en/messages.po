@@ -33,7 +33,7 @@ msgstr ""
 #~ msgid "Account Settings"
 #~ msgstr "Account Settings"
 
-#: src/components/side-panel/config-select.tsx:39
+#: src/components/side-panel/config-select.tsx:40
 msgid "Add Config"
 msgstr "Add Config"
 
