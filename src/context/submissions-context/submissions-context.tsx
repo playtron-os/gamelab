@@ -158,6 +158,13 @@ export const SubmissionsContextProvider = ({
       sendMessage(configCreateMessage)().then((response) => {
         if (response.status === 200) {
           info("Successfully create config");
+          if (item_type === "InputConfig") {
+            const newSubmission = response.body as InputConfig;
+            setEditLayout(newSubmission);
+          } else if (item_type === "LaunchConfig") {
+            const newSubmission = response.body as LaunchConfig;
+            setEditLaunchConfig(newSubmission);
+          }
         } else {
           dispatch(flashMessage(response.body.message));
         }
