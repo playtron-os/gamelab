@@ -19,7 +19,7 @@ export const Keyboard: React.FC<ControllerComponentProps> = ({
             <button
               key={index}
               className={classNames(
-                "border-2 border-[--fill-subtle] rounded-md w-12 hover:border-[--fill-primary]",
+                "border-2 flex-grow border-[--fill-subtle] rounded-md w-12 hover:border-[--fill-primary]",
                 rowIndex == 0 ? "h-10" : "h-12",
                 getKeyWidth(key),
                 isSelected
