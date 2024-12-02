@@ -293,7 +293,10 @@ export const SidePanel: React.FC = () => {
                   setIsLogsOpen(isLogsOpen || launchParams.enhancedDebugging);
                 }
               }}
-              primary={appStatus === AppStatus.READY}
+              primary={
+                appStatus === AppStatus.READY ||
+                appStatus === AppStatus.NOT_DOWNLOADED
+              }
             />
           </p>
           <p className="py-2 px-4">
