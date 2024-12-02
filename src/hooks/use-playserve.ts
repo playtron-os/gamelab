@@ -285,8 +285,6 @@ export const usePlayserve = ({
         }
       };
     }
-    // Remove hook on no longer used web socket
-    return () => (ws.onConnectionLost = undefined);
   }, [ws]);
 
   // Add a message handler for this hook
