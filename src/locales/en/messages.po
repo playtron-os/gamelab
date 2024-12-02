@@ -114,7 +114,7 @@ msgstr "Clear"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/side-panel/side-panel.tsx:302
+#: src/components/side-panel/side-panel.tsx:305
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
@@ -472,7 +472,7 @@ msgstr "Oops!"
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
-#: src/components/side-panel/side-panel.tsx:302
+#: src/components/side-panel/side-panel.tsx:305
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
