@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   setUsername,
   setEmail,
@@ -13,18 +14,19 @@ import { MessageType, getMessage } from "@/types/playserve/message";
 import { t } from "@lingui/macro";
 import {
   Avatar,
-  Dropdown,
-  DotsVertical,
-  GamepadLine,
   ProgressSpinner,
+  LogoutBoxLine,
+  ConfirmationPopUp,
   styles
 } from "@playtron/styleguide";
 
 export const ProfileMenu: React.FC = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { username, email, avatar } = useAppSelector(
     selectAuthState
   ) as AuthState;
+  const [confirmDisconnect, setConfirmDisconnect] = useState(false);
   const { sendMessage } = usePlayserve({
     onMessage: (message) => {
       if (
@@ -64,22 +66,23 @@ export const ProfileMenu: React.FC = () => {
           <ProgressSpinner size={32} />
         )}
       </div>
+
       <div className="flex-shrink m-2">
-        <Dropdown
-          data={[
-            {
-              id: 2,
-              label: t`Change device`,
-              icon: <GamepadLine fill={styles.variablesDark.fill.white} />,
-              route: "/auth/connect"
-            }
-          ]}
-          triggerElem={
-            <DotsVertical
-              fill={styles.variablesDark.fill.white}
-              className="cursor-pointer"
-            />
-          }
+        <LogoutBoxLine
+          fill={styles.variablesDark.fill.white}
+          onClick={() => {
+            setConfirmDisconnect(true);
+          }}
+        />
+        <ConfirmationPopUp
+          isOpen={confirmDisconnect}
+          onClose={() => setConfirmDisconnect(false)}
+          title={t`Disconnect from device?`}
+          onConfirm={() => {
+            setConfirmDisconnect(false);
+            navigate("/auth/connect");
+          }}
+          className="z-[62]"
         />
       </div>
     </div>
