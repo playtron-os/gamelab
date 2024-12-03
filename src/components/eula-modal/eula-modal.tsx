@@ -48,8 +48,7 @@ export const EulaModal: React.FC<EulaModalProps> = ({
       <div>
         <div className="bg-[--fill-subtle] flex align-middle font-bold text-2xl items-center ">
           <div className="flex-grow p-1 ps-5">
-            <Trans>End User License Agreements for</Trans>
-            {appInfo?.app.name}
+            <Trans>End User License Agreements for</Trans> {appInfo?.app.name}
           </div>
         </div>
       </div>
