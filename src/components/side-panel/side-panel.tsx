@@ -1,4 +1,5 @@
 import React, { useMemo, useState, useCallback, useEffect } from "react";
+
 import { Trans, t } from "@lingui/macro";
 import { Button, Divider, Toggle } from "@playtron/styleguide";
 
