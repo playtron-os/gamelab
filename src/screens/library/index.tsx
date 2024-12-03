@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import classNames from "classnames";
 import { usePlayserve } from "@/hooks";
 import { MessageType } from "@/types/playserve/message";
 
@@ -12,7 +13,7 @@ import {
   setError,
   setLoadingProgress,
   setAppDownloadProgress,
-  selectAppLibraryAppsState
+  selectCurrentAppState
 } from "@/redux/modules";
 import { AppLibrary } from "../../components";
 import { SidePanel } from "@/components/side-panel/side-panel";
@@ -48,7 +49,7 @@ export const LibraryScreen = () => {
     fetchQueue();
   }, []);
 
-  const apps = useAppSelector(selectAppLibraryAppsState);
+  const currentApp = useAppSelector(selectCurrentAppState);
   const dispatch = useAppDispatch();
 
   usePlayserve({
@@ -111,11 +112,16 @@ export const LibraryScreen = () => {
         <Sidebar />
       </div>
       <div className="h-screen flex">
-        <div className="ml-[240px] mr-[465px] w-full bg-[--fill-subtler]">
+        <div
+          className={classNames(
+            "ml-[240px] w-full bg-[--fill-subtler]",
+            !!currentApp && "mr-[465px]"
+          )}
+        >
           <AppLibrary />
           <div>
             <SubmissionsContextProvider>
-              {!!apps.length && <SidePanel />}
+              {!!currentApp && <SidePanel key={currentApp.app.id} />}
             </SubmissionsContextProvider>
           </div>
         </div>

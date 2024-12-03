@@ -99,8 +99,6 @@ export const SubmissionsContextProvider = ({
           return app;
         }
       }
-    } else if (apps && apps.length > 0) {
-      return apps[0];
     }
   }, [currentApp, apps]);
 
