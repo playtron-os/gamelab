@@ -97,8 +97,8 @@ msgid "Cancel"
 msgstr ""
 
 #: src/components/sidebar/profile-menu.tsx:72
-msgid "Change device"
-msgstr ""
+#~ msgid "Change device"
+#~ msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:255
 #: src/components/logs-modal/logs-modal.tsx:102
@@ -166,6 +166,10 @@ msgstr ""
 
 #: src/context/submissions-context/submissions-context.tsx:352
 msgid "Delete this configuration?"
+msgstr ""
+
+#: src/components/sidebar/profile-menu.tsx:80
+msgid "Disconnect from device?"
 msgstr ""
 
 #: src/components/sidebar/sidebar.tsx:22
