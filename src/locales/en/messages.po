@@ -114,7 +114,7 @@ msgstr "Clear"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/side-panel/side-panel.tsx:306
+#: src/components/side-panel/side-panel.tsx:307
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
@@ -122,7 +122,7 @@ msgstr "Close Log Window"
 msgid "Config"
 msgstr "Config"
 
-#: src/components/controller-edit/controller-edit.tsx:152
+#: src/components/controller-edit/controller-edit.tsx:156
 #: src/components/launch-config-editor/launch-config-editor.tsx:167
 msgid "CONFIG NAME"
 msgstr "CONFIG NAME"
@@ -271,7 +271,7 @@ msgstr "Game logs will appear here next time you launch the game"
 msgid "Gamepad"
 msgstr "Gamepad"
 
-#: src/components/controller-edit/controller-edit.tsx:210
+#: src/components/controller-edit/controller-edit.tsx:214
 msgid "Gamepad Type"
 msgstr "Gamepad Type"
 
@@ -304,7 +304,7 @@ msgstr "Input Config"
 #~ msgid "Input Config for"
 #~ msgstr "Input Config for"
 
-#: src/components/controller-edit/controller-edit.tsx:142
+#: src/components/controller-edit/controller-edit.tsx:146
 msgid "Input Config for {gameName}"
 msgstr "Input Config for {gameName}"
 
@@ -312,7 +312,7 @@ msgstr "Input Config for {gameName}"
 msgid "Input Config List"
 msgstr "Input Config List"
 
-#: src/components/controller-edit/controller-edit.tsx:167
+#: src/components/controller-edit/controller-edit.tsx:171
 msgid "INPUT DEVICES"
 msgstr "INPUT DEVICES"
 
@@ -476,7 +476,7 @@ msgstr "Oops!"
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
-#: src/components/side-panel/side-panel.tsx:306
+#: src/components/side-panel/side-panel.tsx:307
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
@@ -569,7 +569,7 @@ msgstr "Resume"
 msgid "Running"
 msgstr "Running"
 
-#: src/components/controller-edit/controller-edit.tsx:187
+#: src/components/controller-edit/controller-edit.tsx:191
 #: src/components/launch-config-editor/launch-config-editor.tsx:217
 msgid "Save"
 msgstr "Save"
