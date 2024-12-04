@@ -7,12 +7,14 @@ export const useInputDevice = (playserve: UsePlayserveReturn) => {
   const { sendMessage } = playserve;
   const [inputDevices, setInputDevices] = useState<ControllerInfo[]>([]);
 
-  const getInputDevices = useCallback(() => {
+  const getInputDevices = useCallback(async () => {
     const message = getMessage(MessageType.InputDevicesGet, {});
-    sendMessage(message)()
+    return await sendMessage(message)()
       .then((res) => {
         if (res.status === 200) {
-          setInputDevices(Object.values(res.body));
+          const devices = Object.values(res.body);
+          setInputDevices(devices);
+          return devices;
         } else {
           console.error(res);
         }

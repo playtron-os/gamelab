@@ -89,7 +89,11 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
     useInputDevice(playserve);
 
   useEffect(() => {
-    getInputDevices();
+    getInputDevices().then((devices) => {
+      if (devices?.length) {
+        setCurrentPhysicalLayout(getPhysicalLayoutFromDevice(devices[0]));
+      }
+    });
   }, [getInputDevices]);
 
   usePlayserve({
