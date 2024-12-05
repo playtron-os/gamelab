@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Trans, t } from "@lingui/macro";
 import "./app-library.scss";
 import { Tabs, Tab } from "@nextui-org/react";
+import { useVirtualizer } from "@tanstack/react-virtual";
 
 import {
   ConfirmationPopUp,
@@ -21,6 +22,7 @@ export const AppLibrary: React.FC = () => {
   const { apps, error, loading, appFilters } = useAppSelector(
     selectAppLibraryState
   );
+  const parentRef = useRef<HTMLDivElement>(null);
   const { onSelectedIdsChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
   const [tabKey, setTabKey] = useState("installed");
@@ -73,9 +75,15 @@ export const AppLibrary: React.FC = () => {
       app.app.name.toLowerCase().includes(nameFilter.toLowerCase())
     );
   }
+  const virtualizer = useVirtualizer({
+    count: filteredGames.length,
+    getScrollElement: () => parentRef.current,
+    estimateSize: () => 62,
+    overscan: 10
+  });
 
   return (
-    <div className="w-full px-4 select-none cursor-default text-sm xl:text-base">
+    <div className="w-full px-4 select-none cursor-default text-base">
       <div>
         <div className="flex">
           <div className="flex w-full flex-col">
@@ -146,19 +154,40 @@ export const AppLibrary: React.FC = () => {
           <>
             <div
               data-testid="app-library-table"
-              className="h-[calc(100vh-125px)] w-full overflow-scroll p-2"
+              ref={parentRef}
+              className="h-[calc(100vh-125px)] w-full overflow-auto p-2"
             >
-              {filteredGames.map((game) => (
-                <GameCard
-                  key={game.app.id}
-                  game={game}
-                  selectedId={selectedGame?.app.id}
-                  onSelectGame={(game) => {
-                    setSelectedGame(game);
-                    onSelectedIdsChange(game.app.id);
-                  }}
-                />
-              ))}
+              <div
+                className="w-full relative"
+                style={{ height: `${virtualizer.getTotalSize()}px` }}
+              >
+                {virtualizer.getVirtualItems().map((virtualRow) => {
+                  const row = filteredGames[virtualRow.index];
+                  if (!row) return null;
+                  return (
+                    <div
+                      key={virtualRow.key}
+                      style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: `${virtualRow.size}px`,
+                        transform: `translateY(${virtualRow.start}px)`
+                      }}
+                    >
+                      <GameCard
+                        game={row}
+                        selectedId={selectedGame?.app.id}
+                        onSelectGame={(game) => {
+                          setSelectedGame(game);
+                          onSelectedIdsChange(game.app.id);
+                        }}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             {apps.length > 0 && <BulkActionsMenu />}
             <ConfirmationPopUp className="z-50" {...confirmationPopUpProps} />
