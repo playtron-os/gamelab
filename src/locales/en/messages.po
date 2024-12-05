@@ -51,11 +51,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:110
+#: src/components/app-library/app-library.tsx:104
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:140
+#: src/components/app-library/app-library.tsx:134
 msgid "All Games ({totalGames})"
 msgstr "All Games ({totalGames})"
 
@@ -323,13 +323,17 @@ msgstr "Insert Delimiter"
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:120
+#: src/components/app-library/app-library.tsx:114
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:141
+#: src/components/app-library/app-library.tsx:135
 msgid "Installed Games ({totalInstalled})"
 msgstr "Installed Games ({totalInstalled})"
+
+#: src/components/app-library/game-card.tsx:142
+msgid "Installed on drive:"
+msgstr "Installed on drive:"
 
 #: src/utils/app-info.ts:61
 msgid "Installing"
@@ -411,7 +415,7 @@ msgstr "Mouse"
 msgid "Mouse Move"
 msgstr "Mouse Move"
 
-#: src/components/app-library/game-card.tsx:58
+#: src/components/app-library/game-card.tsx:89
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:83
 #: src/context/app-library-context/components/table-cells/app-action-cell.tsx:37
 msgid "Move"
@@ -566,7 +570,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:130
+#: src/components/app-library/app-library.tsx:124
 msgid "Search"
 msgstr "Search"
 
@@ -577,6 +581,10 @@ msgstr "Select drive"
 #: src/context/app-library-context/table-config.tsx:52
 msgid "Size"
 msgstr "Size"
+
+#: src/components/app-library/game-card.tsx:148
+msgid "Size:"
+msgstr "Size:"
 
 #: src/screens/not-found/index.tsx:22
 msgid "Sorry, an unexpected error has occurred."
@@ -660,7 +668,7 @@ msgstr "Unable to connect to playtron service on the device"
 msgid "Unable to connect with the device: {err}"
 msgstr "Unable to connect with the device: {err}"
 
-#: src/components/app-library/game-card.tsx:74
+#: src/components/app-library/game-card.tsx:105
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 #: src/context/app-library-context/components/table-cells/app-action-cell.tsx:53
 msgid "Uninstall"

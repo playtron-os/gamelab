@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Trans, t } from "@lingui/macro";
 import "./app-library.scss";
 import { Tabs, Tab } from "@nextui-org/react";
 
 import {
   ConfirmationPopUp,
-  Table,
   TextInput,
   ProgressSpinner
 } from "@playtron/styleguide";
@@ -14,28 +13,21 @@ import { MoveAppDialog } from "../move-app-dialog";
 import { BulkActionsMenu } from "../bulk-actions-menu/bulk-actions-menu";
 import { selectAppLibraryState } from "@/redux/modules";
 import { useAppSelector } from "@/redux/store";
-import { AppProvider, AppStatus } from "@/types";
-
-interface ColumnFilterType {
-  id: string;
-  value: unknown;
-}
+import { AppInformation, AppProvider, AppStatus } from "@/types";
+import { GameCard } from "./game-card";
+import { getAppStatus } from "@/utils/app-info";
 
 export const AppLibrary: React.FC = () => {
   const { apps, error, loading, appFilters } = useAppSelector(
     selectAppLibraryState
   );
-
-  const { columns, selectedIds, onSelectedIdsChange } = useAppLibraryContext();
+  const { onSelectedIdsChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
   const [tabKey, setTabKey] = useState("installed");
   const { props: confirmationPopUpProps } = useConfirmationPopUp();
 
-  useEffect(() => {
-    if (apps.length && !selectedIds.length) {
-      onSelectedIdsChange("0");
-    }
-  }, [apps]);
+  const [selectedGame, setSelectedGame] = useState<AppInformation | null>(null);
+
   if (error) {
     return <span data-testid={"error-text"}>{error}</span>;
   }
@@ -50,34 +42,36 @@ export const AppLibrary: React.FC = () => {
     }
   }
   const totalGames = apps ? apps.length : 0;
+  let filteredGames = apps;
 
   const shownProviders = (
     Object.keys(appFilters.providers) as AppProvider[]
   ).filter((key) => appFilters.providers[key]);
-
-  const columnFilters: ColumnFilterType[] = [];
-
   if (shownProviders.length < Object.keys(appFilters.providers).length) {
-    columnFilters.push({
-      id: "provider",
-      value: shownProviders
-    });
-  }
-
-  if (appFilters.drives.length) {
-    columnFilters.push({
-      id: "drive",
-      value: appFilters.drives
+    filteredGames = filteredGames.filter((app) => {
+      return shownProviders.some((provider) =>
+        app.owned_apps.map((ownedApp) => ownedApp.provider).includes(provider)
+      );
     });
   }
 
   if (tabKey === "installed") {
-    columnFilters.push({
-      id: "status",
-      value: Object.values(AppStatus).filter(
-        (s) => s !== AppStatus.NOT_DOWNLOADED
-      )
-    });
+    if (appFilters.drives.length) {
+      filteredGames = filteredGames.filter((app) => {
+        return appFilters.drives.some(
+          (drive) => app.installed_app?.install_config.install_disk === drive
+        );
+      });
+    }
+    filteredGames = filteredGames.filter(
+      (app) => getAppStatus(app) !== AppStatus.NOT_DOWNLOADED
+    );
+  }
+
+  if (nameFilter) {
+    filteredGames = filteredGames.filter((app) =>
+      app.app.name.toLowerCase().includes(nameFilter.toLowerCase())
+    );
   }
 
   return (
@@ -154,14 +148,17 @@ export const AppLibrary: React.FC = () => {
               data-testid="app-library-table"
               className="h-[calc(100vh-125px)] w-full overflow-scroll p-2"
             >
-              <Table
-                data={apps}
-                columns={columns}
-                globalFilter={nameFilter}
-                columnFilters={columnFilters}
-                selectedIds={selectedIds}
-                onSelectedIdsChange={onSelectedIdsChange}
-              />
+              {filteredGames.map((game) => (
+                <GameCard
+                  key={game.app.id}
+                  game={game}
+                  selectedId={selectedGame?.app.id}
+                  onSelectGame={(game) => {
+                    setSelectedGame(game);
+                    onSelectedIdsChange(game.app.id);
+                  }}
+                />
+              ))}
             </div>
             {apps.length > 0 && <BulkActionsMenu />}
             <ConfirmationPopUp className="z-50" {...confirmationPopUpProps} />

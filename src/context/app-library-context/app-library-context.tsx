@@ -135,8 +135,7 @@ export const AppLibraryContextProvider: React.FC<
       const isSelected = selectedIds.includes(id);
 
       try {
-        const idToNum = parseInt(id, 10);
-        dispatch(setCurrentApp(apps[idToNum]));
+        dispatch(setCurrentApp(apps.filter((app) => app.app.id == id)[0]));
       } catch (error) {
         console.error("Error parsing row id: ", error);
       }

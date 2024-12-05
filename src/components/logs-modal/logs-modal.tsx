@@ -67,7 +67,7 @@ export const LogsModal: React.FC<LogsModalProps> = ({
       onClose={onClose}
       noContentPadding
       rightMargin={480}
-      className="z-10 m-4"
+      className="z-30 m-4"
     >
       <div>
         <div className="bg-[--fill-subtle] flex align-middle font-bold text-2xl items-center">
