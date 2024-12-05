@@ -51,11 +51,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:104
+#: src/components/app-library/app-library.tsx:112
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:134
+#: src/components/app-library/app-library.tsx:142
 msgid "All Games ({totalGames})"
 msgstr "All Games ({totalGames})"
 
@@ -323,11 +323,11 @@ msgstr "Insert Delimiter"
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:114
+#: src/components/app-library/app-library.tsx:122
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:135
+#: src/components/app-library/app-library.tsx:143
 msgid "Installed Games ({totalInstalled})"
 msgstr "Installed Games ({totalInstalled})"
 
@@ -570,7 +570,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:124
+#: src/components/app-library/app-library.tsx:132
 msgid "Search"
 msgstr "Search"
 

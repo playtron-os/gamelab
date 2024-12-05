@@ -110,7 +110,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   return (
     <div
       className={classNames(
-        "flex flex-col w-full border-2 h-[60px] rounded-lg cursor-pointer  mb-1",
+        "flex flex-col w-full border-2 h-[60px] rounded-lg cursor-pointer mb-1",
         selectedId === game.app.id
           ? "border-white bg-[--fill-default]"
           : "border-transparent bg-[--fill-subtle]"

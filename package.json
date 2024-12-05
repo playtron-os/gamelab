@@ -92,6 +92,7 @@
     "@playtron/styleguide": "^0.0.37",
     "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-table": "8.20.1",
+    "@tanstack/react-virtual": "^3.10.9",
     "@tanstack/table-core": "^8.17.3",
     "@tauri-apps/api": "2.0.0-rc.4",
     "@tauri-apps/plugin-dialog": "2.0.0-rc.1",
