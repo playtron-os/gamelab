@@ -24,6 +24,10 @@ import { attachConsole } from "@tauri-apps/plugin-log";
 const container = document.getElementById("root")!;
 const root = createRoot(container);
 
+if (!import.meta.env.DEV) {
+  document.addEventListener("contextmenu", (event) => event.preventDefault());
+}
+
 export const Main = () => {
   useEffect(() => {
     checkForAppUpdates();

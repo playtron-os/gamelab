@@ -177,12 +177,11 @@ msgid "Disconnected from the internet"
 msgstr "Disconnected from the internet"
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:63
-#: src/utils/app-info.ts:127
+#: src/utils/app-info.ts:149
 msgid "Download"
 msgstr "Download"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:19
-#: src/utils/app-info.ts:58
+#: src/utils/app-info.ts:59
 msgid "Downloading"
 msgstr "Downloading"
 
@@ -332,8 +331,7 @@ msgstr "Installed"
 msgid "Installed Games ({totalInstalled})"
 msgstr "Installed Games ({totalInstalled})"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:21
-#: src/utils/app-info.ts:60
+#: src/utils/app-info.ts:61
 msgid "Installing"
 msgstr "Installing"
 
@@ -361,7 +359,7 @@ msgstr "Keyboard"
 msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 msgstr "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 
-#: src/utils/app-info.ts:121
+#: src/utils/app-info.ts:143
 msgid "Launch"
 msgstr "Launch"
 
@@ -381,12 +379,11 @@ msgstr "Launch Config for {appName}"
 msgid "Launch Config List"
 msgstr "Launch Config List"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:33
-#: src/utils/app-info.ts:72
+#: src/utils/app-info.ts:73
 msgid "Launching"
 msgstr "Launching"
 
-#: src/utils/app-info.ts:137
+#: src/utils/app-info.ts:159
 msgid "Launching..."
 msgstr "Launching..."
 
@@ -414,6 +411,7 @@ msgstr "Mouse"
 msgid "Mouse Move"
 msgstr "Mouse Move"
 
+#: src/components/app-library/game-card.tsx:58
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:83
 #: src/context/app-library-context/components/table-cells/app-action-cell.tsx:37
 msgid "Move"
@@ -447,8 +445,7 @@ msgstr "Never tested"
 msgid "No internet"
 msgstr "No internet"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:23
-#: src/utils/app-info.ts:62
+#: src/utils/app-info.ts:63
 msgid "Not Downloaded"
 msgstr "Not Downloaded"
 
@@ -485,12 +482,11 @@ msgstr "Open Log Window"
 msgid "Password"
 msgstr "Password"
 
-#: src/utils/app-info.ts:125
+#: src/utils/app-info.ts:147
 msgid "Pause"
 msgstr "Pause"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:27
-#: src/utils/app-info.ts:66
+#: src/utils/app-info.ts:67
 msgid "Paused"
 msgstr "Paused"
 
@@ -507,12 +503,11 @@ msgstr "Playtron Labs"
 msgid "Playtron Slug"
 msgstr "Playtron Slug"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:15
-#: src/utils/app-info.ts:54
+#: src/utils/app-info.ts:55
 msgid "Pre-Allocating"
 msgstr "Pre-Allocating"
 
-#: src/utils/app-info.ts:133
+#: src/utils/app-info.ts:155
 msgid "Prioritize"
 msgstr "Prioritize"
 
@@ -537,13 +532,11 @@ msgstr "Providers"
 msgid "PS5 controller"
 msgstr "PS5 controller"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:29
-#: src/utils/app-info.ts:68
+#: src/utils/app-info.ts:69
 msgid "Queued"
 msgstr "Queued"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:13
-#: src/utils/app-info.ts:52
+#: src/utils/app-info.ts:53
 msgid "Ready"
 msgstr "Ready"
 
@@ -560,12 +553,11 @@ msgstr "Reset"
 msgid "Reset Wine Prefix"
 msgstr "Reset Wine Prefix"
 
-#: src/utils/app-info.ts:131
+#: src/utils/app-info.ts:153
 msgid "Resume"
 msgstr "Resume"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:31
-#: src/utils/app-info.ts:70
+#: src/utils/app-info.ts:71
 msgid "Running"
 msgstr "Running"
 
@@ -599,7 +591,7 @@ msgstr "Status"
 #~ msgid "Steam"
 #~ msgstr "Steam"
 
-#: src/utils/app-info.ts:135
+#: src/utils/app-info.ts:157
 msgid "Stop"
 msgstr "Stop"
 
@@ -612,7 +604,7 @@ msgstr "Submission promoted"
 msgid "Submit"
 msgstr "Submit"
 
-#: src/utils/app-info.ts:232
+#: src/utils/app-info.ts:257
 msgid "System Drive"
 msgstr "System Drive"
 
@@ -668,13 +660,13 @@ msgstr "Unable to connect to playtron service on the device"
 msgid "Unable to connect with the device: {err}"
 msgstr "Unable to connect with the device: {err}"
 
+#: src/components/app-library/game-card.tsx:74
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 #: src/context/app-library-context/components/table-cells/app-action-cell.tsx:53
 msgid "Uninstall"
 msgstr "Uninstall"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:35
-#: src/utils/app-info.ts:74
+#: src/utils/app-info.ts:75
 msgid "Unknown"
 msgstr "Unknown"
 
@@ -687,12 +679,11 @@ msgstr "Unset"
 msgid "Untitled Layout"
 msgstr "Untitled Layout"
 
-#: src/utils/app-info.ts:129
+#: src/utils/app-info.ts:151
 msgid "Update"
 msgstr "Update"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:25
-#: src/utils/app-info.ts:64
+#: src/utils/app-info.ts:65
 msgid "Update Required"
 msgstr "Update Required"
 
@@ -705,8 +696,7 @@ msgstr "Username"
 msgid "Validate JSON"
 msgstr "Validate JSON"
 
-#: src/context/app-library-context/components/table-cells/status-cell.tsx:17
-#: src/utils/app-info.ts:56
+#: src/utils/app-info.ts:57
 msgid "Verifying"
 msgstr "Verifying"
 
