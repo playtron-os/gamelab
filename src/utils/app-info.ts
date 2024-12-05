@@ -4,7 +4,8 @@ import {
   AppStatus,
   AppProvider
 } from "@/types";
-import { PlaytronImage } from "@/types/app-library";
+
+import { PlaytronImage, InstalledApp } from "@/types/app-library";
 import { t } from "@lingui/macro";
 import { RunFill } from "@playtron/styleguide";
 
@@ -16,8 +17,8 @@ export function getProviderName(provider: AppProvider): string {
   }[provider];
 }
 
-export function getDiskSize(size: number): string {
-  if (size === 0) {
+export function getDiskSize(size: number | undefined): string {
+  if (!size) {
     return "";
   }
   const units = ["B", "KB", "MB", "GB"];
@@ -26,7 +27,7 @@ export function getDiskSize(size: number): string {
     size /= 1024;
     ++unitIndex;
   }
-  return `${Math.round(size * 100) / 100} ${units[unitIndex]}`;
+  return `${Math.round(size * 10) / 10}${units[unitIndex]}`;
 }
 
 /**
@@ -72,6 +73,27 @@ export const getAppStatusLabel = (status: AppStatus) => {
       return t`Launching`;
     default:
       return t`Unknown`;
+  }
+};
+
+export const getProgress = (installedApp?: InstalledApp): number => {
+  if (!installedApp) return 0;
+  switch (installedApp.download_status.stage) {
+    case AppDownloadStage.DOWNLOADING:
+    case AppDownloadStage.PRE_ALLOCATING:
+    case AppDownloadStage.VERIFYING:
+      return installedApp.download_status.progress || 0;
+    case AppDownloadStage.INSTALLING:
+      return (
+        (installedApp.post_install.reduce(
+          (prev, val) => prev + (val.is_success ? 1 : 0),
+          0
+        ) /
+          installedApp.post_install.length) *
+        100
+      );
+    default:
+      return 0;
   }
 };
 
@@ -227,7 +249,10 @@ export const getAppActionIconByStatus = (status: AppStatus) => {
  * @param drive
  * @returns string
  */
-export const getDriveLabel = (drive: string): string => {
+export const getDriveLabel = (drive: string | undefined): string => {
+  if (!drive) {
+    return "";
+  }
   if (drive === "/") {
     return t`System Drive`;
   }

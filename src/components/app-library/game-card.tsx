@@ -1,0 +1,174 @@
+import React, { useState } from "react";
+import classNames from "classnames";
+import { t, Trans } from "@lingui/macro";
+import {
+  DotsVertical,
+  Dropdown,
+  styles,
+  EpicFill,
+  GogFill,
+  SteamFill,
+  ErrorWarningFill
+} from "@playtron/styleguide";
+
+import { AppDownloadStage, AppStatus, PlaytronAppType } from "@/types";
+
+import { useAppStatus } from "@/hooks/app-library/use-app-status";
+import { AppInformation, OwnedApp } from "@/types/app-library";
+import { AppProvider } from "@/types/platform-auth";
+import { useAppLibraryContext } from "@/context";
+import {
+  getImage,
+  getProgress,
+  getDiskSize,
+  getDriveLabel,
+  getAppStatusLabel,
+  getAppActionLabelByStatus
+} from "@/utils/app-info";
+export interface GameCardProps {
+  game: AppInformation;
+  selectedId: string | undefined;
+  onSelectGame: (game: AppInformation) => void;
+}
+
+export const getProviderIcon = (provider: AppProvider) => {
+  const iconSize = 20;
+  const iconColor = styles.variablesDark.fill.normal;
+  switch (provider) {
+    case AppProvider.EpicGames:
+      return <EpicFill fill={iconColor} width={iconSize} height={iconSize} />;
+    case AppProvider.Gog:
+      return <GogFill fill={iconColor} width={iconSize} height={iconSize} />;
+    case AppProvider.Steam:
+      return <SteamFill fill={iconColor} width={iconSize} height={iconSize} />;
+    default:
+      return (
+        <ErrorWarningFill fill={iconColor} width={iconSize} height={iconSize} />
+      );
+  }
+};
+
+export const GameCard: React.FC<GameCardProps> = ({
+  game,
+  selectedId,
+  onSelectGame
+}) => {
+  const [isSelected, setIsSelected] = useState(false);
+  const {
+    handlers: { openMoveAppDialog, uninstallApp, handleAppDefaultAction }
+  } = useAppLibraryContext();
+  const handleSelectGame = () => {
+    setIsSelected(!isSelected);
+    onSelectGame(game);
+  };
+  const status = useAppStatus(game);
+  const progress = Math.round(getProgress(game.installed_app));
+  let statusLabel: string;
+  if (progress) {
+    statusLabel = `${getAppStatusLabel(status)} (${progress}%)`;
+  } else {
+    statusLabel = getAppStatusLabel(status);
+  }
+
+  const appActions = [];
+  // Main action button
+  const buttonLabel = getAppActionLabelByStatus(status);
+
+  if (buttonLabel && game.app.appType !== PlaytronAppType.Tool) {
+    appActions.push({
+      id: 1,
+      label: buttonLabel,
+      onClick: () => handleAppDefaultAction(game)
+    });
+  }
+
+  // Move Button
+  if (game.installed_app?.download_status.stage == AppDownloadStage.DONE) {
+    appActions.push({
+      id: 2,
+      label: t`Move`,
+      onClick: () => openMoveAppDialog([game])
+    });
+  }
+
+  // Uninstall Button
+  const supportedStatuses = [
+    AppStatus.READY,
+    AppStatus.DOWNLOADING,
+    AppStatus.QUEUED,
+    AppStatus.PAUSED,
+    AppStatus.UPDATE_REQUIRED
+  ];
+  if (supportedStatuses.includes(status)) {
+    appActions.push({
+      id: 3,
+      label: t`Uninstall`,
+      onClick: () => uninstallApp([game])
+    });
+  }
+
+  return (
+    <div
+      className={classNames(
+        "flex flex-col w-full border-2 h-[60px] rounded-lg cursor-pointer  mb-1",
+        selectedId === game.app.id
+          ? "border-white bg-[--fill-default]"
+          : "border-transparent bg-[--fill-subtle]"
+      )}
+      onClick={handleSelectGame}
+    >
+      <div className="flex items-center">
+        <div className="w-[120px] h-[56px] block ">
+          <img
+            src={getImage(game.app.images)}
+            alt=""
+            loading="lazy"
+            className="w-full h-full max-h-[56px] max-w-[120px] object-cover rounded-s-lg"
+          />
+        </div>
+        <div className="flex-grow overflow-clip text-nowrap h-full items-center p-2">
+          <div className="flex items-center gap-1">
+            {game.owned_apps.map((ownedApp: OwnedApp) =>
+              getProviderIcon(ownedApp.provider)
+            )}
+            <span className="text-nowrap flex-shrink max-w-52 overflow-ellipsis">
+              {game.app.name}
+            </span>
+          </div>
+
+          <div className=" text-xs text-[--text-tertiary]">
+            {game.installed_app?.install_config.install_disk && (
+              <div>
+                <Trans>Installed on drive:</Trans>{" "}
+                <span className="font-bold">
+                  {getDriveLabel(
+                    game.installed_app?.install_config.install_disk
+                  )}{" "}
+                </span>
+                <Trans>Size:</Trans>{" "}
+                <span className="font-bold">
+                  {getDiskSize(game.installed_app?.install_config.disk_size)}
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="flex-shrink w-[160px] text-nowrap h-full items-center flex">
+          <span className="p-2 text-sm">{statusLabel}</span>
+        </div>
+
+        <div className="flex-shrink w-[50px] h-full items-center justify-center flex rounded-e-lg">
+          <Dropdown
+            data={appActions}
+            triggerElem={
+              <DotsVertical
+                fill={styles.variablesDark.fill.white}
+                className="cursor-pointer"
+              />
+            }
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
