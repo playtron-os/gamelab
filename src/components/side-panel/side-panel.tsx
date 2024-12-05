@@ -284,7 +284,7 @@ export const SidePanel: React.FC = () => {
           <p className="py-2 px-4">
             <Button
               disabled={primaryOff || appStatus === AppStatus.LAUNCHING}
-              // spinner={primaryOff || appStatus === AppStatus.LAUNCHING}
+              spinner={primaryOff || appStatus === AppStatus.LAUNCHING}
               label={getAppActionLabelByStatus(appStatus)}
               Icon={getAppActionIconByStatus(appStatus)}
               className="w-full"
