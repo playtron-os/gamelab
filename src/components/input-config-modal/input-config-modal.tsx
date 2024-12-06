@@ -137,7 +137,7 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
   );
 
   return (
-    <Modal onClose={onClose} isOpen={isOpen} className="z-30" noContentPadding>
+    <Modal onClose={onClose} isOpen={isOpen} className="z-50" noContentPadding>
       <div className="bg-[--fill-subtler] h-[90vh] w-[90vw] flex flex-col">
         <>
           {editLayout ? (
