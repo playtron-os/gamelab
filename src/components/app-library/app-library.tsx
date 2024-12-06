@@ -78,7 +78,8 @@ export const AppLibrary: React.FC = () => {
   const virtualizer = useVirtualizer({
     count: filteredGames.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 62,
+    estimateSize: () => 60,
+    gap: 6,
     overscan: 10
   });
 

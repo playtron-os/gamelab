@@ -110,51 +110,54 @@ export const GameCard: React.FC<GameCardProps> = ({
   return (
     <div
       className={classNames(
-        "flex flex-col w-full border-2 h-[60px] rounded-lg cursor-pointer mb-1",
+        "flex flex-col w-full h-[60px] rounded-lg cursor-pointer",
         selectedId === game.app.id
-          ? "border-white bg-[--fill-default]"
-          : "border-transparent bg-[--fill-subtle]"
+          ? " outline-2 outline-double bg-[--fill-default]"
+          : "bg-[--fill-subtle]"
       )}
       onClick={handleSelectGame}
     >
       <div className="flex items-center">
-        <div className="w-[120px] h-[56px] block ">
+        <div className="h-[60px] w-[120px]">
           <img
             src={getImage(game.app.images)}
             alt=""
             loading="lazy"
-            className="w-full h-full max-h-[56px] max-w-[120px] object-cover rounded-s-lg"
+            className="w-full h-full max-h-[60px] max-w-[120px] object-cover rounded-s-lg"
           />
         </div>
+
         <div className="flex-grow overflow-clip text-nowrap h-full items-center p-2">
+          <span className="text-nowrap flex-shrink max-w-52 overflow-ellipsis">
+            {game.app.name}
+          </span>
           <div className="flex items-center gap-1">
             {game.owned_apps.map((ownedApp: OwnedApp) =>
               getProviderIcon(ownedApp.provider)
             )}
-            <span className="text-nowrap flex-shrink max-w-52 overflow-ellipsis">
-              {game.app.name}
-            </span>
-          </div>
 
-          <div className=" text-xs text-[--text-tertiary]">
-            {game.installed_app?.install_config.install_disk && (
-              <div>
-                <Trans>Installed on drive:</Trans>{" "}
-                <span className="font-bold">
-                  {getDriveLabel(
-                    game.installed_app?.install_config.install_disk
-                  )}{" "}
-                </span>
-                <Trans>Size:</Trans>{" "}
-                <span className="font-bold">
-                  {getDiskSize(game.installed_app?.install_config.disk_size)}
-                </span>
-              </div>
-            )}
+            <div className=" text-sm text-[--text-tertiary]">
+              {game.installed_app?.install_config.install_disk && (
+                <div>
+                  <Trans>Installed on Drive</Trans>{" "}
+                  <span className="font-bold">
+                    {getDriveLabel(
+                      game.installed_app?.install_config.install_disk
+                    )}{" "}
+                  </span>
+                  <span className="font-bold">
+                    ({getDiskSize(game.installed_app?.install_config.disk_size)}
+                    )
+                  </span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <div className="flex-shrink w-[160px] text-nowrap h-full items-center flex">
-          <span className="p-2 text-sm">{statusLabel}</span>
+          <span className="p-2 text-sm text-[--text-tertiary]">
+            {statusLabel}
+          </span>
         </div>
 
         <div className="flex-shrink w-[50px] h-full items-center justify-center flex rounded-e-lg">

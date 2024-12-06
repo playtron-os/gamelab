@@ -51,11 +51,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:112
+#: src/components/app-library/app-library.tsx:113
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:142
+#: src/components/app-library/app-library.tsx:143
 msgid "All Games ({totalGames})"
 msgstr "All Games ({totalGames})"
 
@@ -323,17 +323,21 @@ msgstr "Insert Delimiter"
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:122
+#: src/components/app-library/app-library.tsx:123
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:143
+#: src/components/app-library/app-library.tsx:144
 msgid "Installed Games ({totalInstalled})"
 msgstr "Installed Games ({totalInstalled})"
 
 #: src/components/app-library/game-card.tsx:142
-msgid "Installed on drive:"
-msgstr "Installed on drive:"
+msgid "Installed on Drive"
+msgstr "Installed on Drive"
+
+#: src/components/app-library/game-card.tsx:142
+#~ msgid "Installed on drive:"
+#~ msgstr "Installed on drive:"
 
 #: src/utils/app-info.ts:61
 msgid "Installing"
@@ -570,7 +574,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:132
+#: src/components/app-library/app-library.tsx:133
 msgid "Search"
 msgstr "Search"
 
@@ -583,8 +587,8 @@ msgid "Size"
 msgstr "Size"
 
 #: src/components/app-library/game-card.tsx:148
-msgid "Size:"
-msgstr "Size:"
+#~ msgid "Size:"
+#~ msgstr "Size:"
 
 #: src/screens/not-found/index.tsx:22
 msgid "Sorry, an unexpected error has occurred."
