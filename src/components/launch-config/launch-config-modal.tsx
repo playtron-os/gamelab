@@ -1,4 +1,4 @@
-import { Modal, AirplaneMode, Button } from "@playtron/styleguide";
+import { Modal, RocketLine, Button } from "@playtron/styleguide";
 import React, { useCallback, useState } from "react";
 import { Trans, t } from "@lingui/macro";
 import { SubmissionType } from "@/types/submission";
@@ -71,7 +71,7 @@ export const LaunchConfigModal: React.FC<InputConfigModalProps> = ({
                 setConfigFilter={setConfigFilter}
               />
               <h2 className="flex text-2xl items-center gap-4 mb-4 px-8">
-                <AirplaneMode fill="white" /> <Trans>Launch Config List</Trans>
+                <RocketLine fill="white" /> <Trans>Launch Config List</Trans>
               </h2>
               {launchSubmissions.submissions.length ? (
                 <>
