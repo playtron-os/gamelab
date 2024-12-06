@@ -699,6 +699,10 @@ msgstr "Update"
 msgid "Update Required"
 msgstr "Update Required"
 
+#: src/components/sidebar/drive.tsx:31
+msgid "used of"
+msgstr "used of"
+
 #: src/screens/connect-device/connect-device.tsx:136
 #: src/screens/connect-device/connect-device.tsx:137
 msgid "Username"
