@@ -56,6 +56,15 @@ import LegionGoImageFrontTrackpads from "@/assets/Devices/Legion Go Front-touchp
 import LegionGoImageBackPaddles from "@/assets/Devices/Legion Go Back-paddles.svg";
 import LegionGoImageGyro from "@/assets/Devices/Legion Go Gyro.svg";
 
+import ROGAllyImageFrontDpad from "@/assets/Devices/ROG Ally Front-dpad.svg";
+import ROGAllyImageFrontButtons from "@/assets/Devices/ROG Ally Front-facebtn.svg";
+import ROGAllyImageFrontSticks from "@/assets/Devices/ROG Ally Front-stick.svg";
+import ROGAllyImageTopTrigger from "@/assets/Devices/ROG Ally Top-triggers.svg";
+import ROGAllyImageTopBumpers from "@/assets/Devices/ROG Ally Top-bumpers.svg";
+import ROGAllyImageFrontTrackpads from "@/assets/Devices/ROG Ally Front-touchpad.svg";
+import ROGAllyImageBackPaddles from "@/assets/Devices/ROG Ally Back-paddles.svg";
+import ROGAllyImageGyro from "@/assets/Devices/ROG Ally Gyro.svg";
+
 import xboxImageFrontButtons from "@/assets/Devices/Xbox Front-facebtn.svg";
 import xboxImageFrontDpad from "@/assets/Devices/Xbox Front-dpad.svg";
 import xboxImageFrontSticks from "@/assets/Devices/Xbox Front-stick.svg";
@@ -697,6 +706,21 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
       paddles: LegionGoImageBackPaddles,
       trackpads: LegionGoImageFrontTrackpads,
       gyro: LegionGoImageGyro
+    }
+  },
+  ROGAlly: {
+    id: "rog-ally",
+    label: "ROG Ally",
+    layout: steamDeckLayout,
+    images: {
+      dpad: ROGAllyImageFrontDpad,
+      buttons: ROGAllyImageFrontButtons,
+      triggers: ROGAllyImageTopTrigger,
+      sticks: ROGAllyImageFrontSticks,
+      bumpers: ROGAllyImageTopBumpers,
+      paddles: ROGAllyImageBackPaddles,
+      trackpads: ROGAllyImageFrontTrackpads,
+      gyro: ROGAllyImageGyro
     }
   },
   Generic: {
