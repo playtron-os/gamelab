@@ -127,8 +127,8 @@ export const GameCard: React.FC<GameCardProps> = ({
           />
         </div>
 
-        <div className="flex-grow overflow-clip text-nowrap h-full items-center p-2">
-          <span className="text-nowrap flex-shrink max-w-52 overflow-ellipsis">
+        <div className="flex-1 overflow-clip text-nowrap h-full items-center p-2">
+          <span className="text-nowrap flex-shrink max-w-32 overflow-clip">
             {game.app.name}
           </span>
           <div className="flex items-center gap-1">

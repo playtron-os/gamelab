@@ -1,4 +1,5 @@
 import React from "react";
+import { t } from "@lingui/macro";
 import { Checkbox, ProgressBar } from "@playtron/styleguide";
 import { getDiskSizeLabel } from "@/utils/app-info";
 
@@ -24,14 +25,15 @@ export const Drive: React.FC<DriveProps> = ({
       <div className="flex text-gray-400 w-full items-center space-x-1 ps-3 py-1">
         <span className="flex-col w-5 text-xl text-white">{icon}</span>
         <span className="flex-grow text-sm ps-2 max-w-36 overflow-hidden">
-          <span className="text-sm pe-2  ">{label}</span>
+          <span className="text-sm text-nowrap pe-2">{label}</span>
+          <br />
           <span className="text-xs text-gray-500">
-            {getDiskSizeLabel(size)}
+            {capacity}%&nbsp; {t`used of`} {getDiskSizeLabel(size)}
           </span>
         </span>
         <br />
 
-        <span className="flex-initial text-sm">{capacity}%&nbsp;</span>
+        <span className="flex-initial text-sm"></span>
         <span className="flex">
           <Checkbox checked={enabled} onChange={onClick} />
         </span>

@@ -21,8 +21,8 @@ importers:
         specifier: ^2.4.1
         version: 2.4.6(@types/react@18.3.4)(framer-motion@11.3.29(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.5.0)(typescript@5.5.4)))
       '@playtron/styleguide':
-        specifier: ^0.0.41
-        version: 0.0.41(@types/react@18.3.4)(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.26.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.5.0)(typescript@5.5.4)))
+        specifier: ^0.0.42
+        version: 0.0.42(@types/react@18.3.4)(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.26.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.5.0)(typescript@5.5.4)))
       '@reduxjs/toolkit':
         specifier: ^1.9.5
         version: 1.9.7(react-redux@8.1.3(@types/react-dom@18.3.0)(@types/react@18.3.4)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(redux@4.2.1))(react@18.3.1)
@@ -1964,8 +1964,8 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@playtron/styleguide@0.0.41':
-    resolution: {integrity: sha512-84QiPaSFK8a/m4V6LKd93cUjjSXPH1CjaWt7F2/AncoUc/fSz5FpUgtjCKvApI7iw8USIk67Zj2WslaZ3xB2CQ==}
+  '@playtron/styleguide@0.0.42':
+    resolution: {integrity: sha512-5FvApKLc4GMzdlXVQ5J9efel6NIox9EHwSSbiRkmJO9WFicej6zv1o8UTbQfzBlaJtOBUJg2uEmqn+kQ4ZQ6vw==}
     peerDependencies:
       react: '>= 18.0.0'
       react-dom: '>= 18.0.0'
@@ -9432,7 +9432,7 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@playtron/styleguide@0.0.41(@types/react@18.3.4)(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.26.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.5.0)(typescript@5.5.4)))':
+  '@playtron/styleguide@0.0.42(@types/react@18.3.4)(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.26.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.5.0)(typescript@5.5.4)))':
     dependencies:
       '@codeparticle/react-visible': 2.0.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@nextui-org/react': 2.4.8(@types/react@18.3.4)(framer-motion@11.5.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.10(ts-node@10.9.2(@types/node@22.5.0)(typescript@5.5.4)))
