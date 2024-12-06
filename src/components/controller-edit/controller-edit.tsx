@@ -62,6 +62,9 @@ export const getPhysicalLayoutFromDevice = (device: ControllerInfo) => {
   if (device.capabilities.length === 20) {
     return physicalLayouts.Xbox;
   }
+  if (device.capabilities.length === 33) {
+    return physicalLayouts.PS5;
+  }
   if (device.capabilities.length === 173) {
     return physicalLayouts.SteamDeck;
   }
