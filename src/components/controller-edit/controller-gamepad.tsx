@@ -33,48 +33,57 @@ export const Gamepad: React.FC<GamepadControllerProps> = ({
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
             className="mb-4"
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.DPadUp}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.DPadDown}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.DPadLeft}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.DPadRight}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
             className="mb-8"
           />
           <InputButton
             input={ControllerInputs.LeftStickButton}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.LeftStick}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
             className="mb-8"
           />
           <InputButton
             input={ControllerInputs.LeftTrigger}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.LeftBumper}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
         </div>
         <div className="ms-24 me-24">
@@ -94,47 +103,56 @@ export const Gamepad: React.FC<GamepadControllerProps> = ({
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
             className="mb-4"
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.South}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.East}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.North}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.West}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
             className="mb-8"
           />
           <InputButton
             input={ControllerInputs.RightStickButton}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
           />
           <InputButton
             input={ControllerInputs.RightStick}
             onSelectKey={onSelectKey}
             mappedKey={mappedKey}
+            layout={targetLayout}
             className="mb-8"
           />
           <InputButton
             input={ControllerInputs.RightTrigger}
             onSelectKey={onSelectKey}
+            layout={targetLayout}
             mappedKey={mappedKey}
           />
           <InputButton
             input={ControllerInputs.RightBumper}
             onSelectKey={onSelectKey}
+            layout={targetLayout}
             mappedKey={mappedKey}
           />
         </div>

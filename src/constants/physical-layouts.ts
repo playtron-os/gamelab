@@ -3,6 +3,10 @@ import {
   ABXYBLine,
   ABXYXLine,
   ABXYYLine,
+  TriangleCircleLine,
+  CircleCircleLine,
+  SquareCircleLine,
+  XmarkCircleLine,
   L1RectangleRoundedbottomLine,
   R1RectangleRoundedtopLine,
   L2RectangleRoundedtopLine,
@@ -148,24 +152,28 @@ export const ControllerInputs: ControllerInputMap = {
   South: {
     label: "South",
     icon: ABXYALine,
+    psIcon: XmarkCircleLine,
     device: "gamepad",
     mapping: { button: "South" }
   },
   East: {
     label: "East",
     icon: ABXYBLine,
+    psIcon: CircleCircleLine,
     device: "gamepad",
     mapping: { button: "East" }
   },
   West: {
     label: "West",
-    icon: ABXYYLine,
+    icon: ABXYYLine, // Mapping inverted in the kernel
+    psIcon: TriangleCircleLine, // Mapping inverted in the kernel
     device: "gamepad",
     mapping: { button: "West" }
   },
   North: {
     label: "North",
-    icon: ABXYXLine,
+    icon: ABXYXLine, // Mapping inverted in the kernel
+    psIcon: SquareCircleLine, // Mapping inverted in the kernel
     device: "gamepad",
     mapping: { button: "North" }
   },

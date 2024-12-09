@@ -257,6 +257,38 @@ export const getInputLabel = (input: InputEvent) => {
   return "-";
 };
 
+export const getInputButtonLabel = (label: string, layout?: string) => {
+  if (layout === "ps5") {
+    switch (label) {
+      case "North":
+        return "Square";
+      case "West":
+        return "Triangle";
+      case "East":
+        return "Circle";
+      case "South":
+        return "Cross";
+      default:
+        return label;
+    }
+  }
+  if (layout === "xbox") {
+    switch (label) {
+      case "North":
+        return "X";
+      case "West":
+        return "Y";
+      case "East":
+        return "B";
+      case "South":
+        return "A";
+      default:
+        return label;
+    }
+  }
+  return label;
+};
+
 export const mappingCmp = (mapping1?: InputEvent, mapping2?: InputEvent) => {
   if (!mapping1 || !mapping2) {
     return false;
