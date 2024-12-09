@@ -2,23 +2,36 @@ import React from "react";
 import classNames from "classnames";
 import { styles } from "@playtron/styleguide";
 import { ControllerInput, InputEvent } from "@/types/input-config";
-import { mappingCmp } from "@/utils/controllers";
+import { mappingCmp, getInputButtonLabel } from "@/utils/controllers";
+
 interface InputButtonProps {
   input: ControllerInput;
   Icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>> | null;
   onSelectKey: (input: ControllerInput) => void;
   mappedKey?: InputEvent;
   className?: string;
+  layout?: string;
   color?: string;
 }
 
 export const InputButton: React.FC<InputButtonProps> = ({
   input,
   onSelectKey,
-  className,
   mappedKey,
+  className,
+  layout,
   color = styles.variablesDark.fill.white
 }) => {
+  const getInputIcon = () => {
+    if (!input.icon) {
+      return null;
+    }
+    if (layout === "ps5" && input.psIcon) {
+      return <input.psIcon fill={color} />;
+    } else {
+      return <input.icon fill={color} />;
+    }
+  };
   return (
     <div
       className={classNames(
@@ -31,8 +44,8 @@ export const InputButton: React.FC<InputButtonProps> = ({
       )}
       onClick={() => onSelectKey(input)}
     >
-      {input.icon && <input.icon fill={color} />}
-      {input.label}
+      {getInputIcon()}
+      {getInputButtonLabel(input.label, layout)}
     </div>
   );
 };

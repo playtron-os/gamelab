@@ -246,7 +246,7 @@ msgstr ""
 #~ msgid "From: {appDriveName}"
 #~ msgstr ""
 
-#: src/components/controller-edit/controller-gamepad.tsx:82
+#: src/components/controller-edit/controller-gamepad.tsx:91
 msgid "Front"
 msgstr ""
 
@@ -655,7 +655,7 @@ msgstr ""
 msgid "To:"
 msgstr ""
 
-#: src/components/controller-edit/controller-gamepad.tsx:86
+#: src/components/controller-edit/controller-gamepad.tsx:95
 msgid "Top"
 msgstr ""
 

@@ -33,6 +33,7 @@ export interface ControllerInput {
   device: "keyboard" | "gamepad" | "mouse";
   mapping: string | GamepadEvent | MouseEvent;
   icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  psIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }
 
 export type ControllerSection =
