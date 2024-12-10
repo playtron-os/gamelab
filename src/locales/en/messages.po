@@ -17,6 +17,10 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr "-"
 
+#: src/components/app-library/app-library.tsx:121
+msgid "???"
+msgstr "???"
+
 #: src/components/sidebar/drive.tsx:25
 #~ msgid "{capacity}% Full"
 #~ msgstr "{capacity}% Full"
@@ -51,11 +55,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:113
+#: src/components/app-library/app-library.tsx:184
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:143
+#: src/components/app-library/app-library.tsx:215
 msgid "All Games ({totalGames})"
 msgstr "All Games ({totalGames})"
 
@@ -266,6 +270,14 @@ msgstr "Game logs will appear here next time you launch the game"
 #~ msgid "Game logs will appear here..."
 #~ msgstr "Game logs will appear here..."
 
+#: src/components/app-library/app-library.tsx:93
+msgid "Game Size"
+msgstr "Game Size"
+
+#: src/components/app-library/app-library.tsx:94
+msgid "Game Status"
+msgstr "Game Status"
+
 #: src/components/controller-edit/map-to.tsx:20
 msgid "Gamepad"
 msgstr "Gamepad"
@@ -319,15 +331,19 @@ msgstr "INPUT DEVICES"
 msgid "Insert Delimiter"
 msgstr "Insert Delimiter"
 
+#: src/components/app-library/app-library.tsx:97
+msgid "Install Date"
+msgstr "Install Date"
+
 #: src/components/side-panel/side-panel.tsx:274
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:123
+#: src/components/app-library/app-library.tsx:194
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:144
+#: src/components/app-library/app-library.tsx:216
 msgid "Installed Games ({totalInstalled})"
 msgstr "Installed Games ({totalInstalled})"
 
@@ -366,6 +382,10 @@ msgstr "Keyboard"
 #: src/screens/connect-device/connect-device.tsx:128
 msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 msgstr "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
+
+#: src/components/app-library/app-library.tsx:102
+msgid "Last Updated"
+msgstr "Last Updated"
 
 #: src/utils/app-info.ts:143
 msgid "Launch"
@@ -440,6 +460,14 @@ msgstr "Move selected apps"
 #: src/components/submission-config/submissions-table-config.tsx:12
 msgid "Name"
 msgstr "Name"
+
+#: src/components/app-library/app-library.tsx:91
+msgid "Name (A-Z)"
+msgstr "Name (A-Z)"
+
+#: src/components/app-library/app-library.tsx:92
+msgid "Name (Z-A)"
+msgstr "Name (Z-A)"
 
 #: src/components/side-panel/side-panel.tsx:155
 msgid "Never tested"
@@ -574,7 +602,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:133
+#: src/components/app-library/app-library.tsx:205
 msgid "Search"
 msgstr "Search"
 
@@ -593,6 +621,26 @@ msgstr "Size"
 #: src/screens/not-found/index.tsx:22
 msgid "Sorry, an unexpected error has occurred."
 msgstr "Sorry, an unexpected error has occurred."
+
+#: src/components/app-library/app-library.tsx:115
+msgid "Sort by: Game Size"
+msgstr "Sort by: Game Size"
+
+#: src/components/app-library/app-library.tsx:117
+msgid "Sort by: Game Status"
+msgstr "Sort by: Game Status"
+
+#: src/components/app-library/app-library.tsx:119
+msgid "Sort by: Last Updated"
+msgstr "Sort by: Last Updated"
+
+#: src/components/app-library/app-library.tsx:111
+msgid "Sort by: Name (A-Z)"
+msgstr "Sort by: Name (A-Z)"
+
+#: src/components/app-library/app-library.tsx:113
+msgid "Sort by: Name (Z-A)"
+msgstr "Sort by: Name (Z-A)"
 
 #: src/context/app-library-context/table-config.tsx:78
 msgid "Status"
