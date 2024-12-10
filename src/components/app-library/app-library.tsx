@@ -158,7 +158,7 @@ export const AppLibrary: React.FC = () => {
     <div className="w-full px-4 select-none cursor-default text-base">
       <div>
         <div className="flex">
-          <div className="flex w-full flex-col">
+          <div className="flex flex-grow flex-col">
             <Tabs
               aria-label="installedFilter"
               color="primary"
@@ -199,9 +199,9 @@ export const AppLibrary: React.FC = () => {
             </Tabs>
           </div>
 
-          <div className="flex-col w-72 pt-2 pe-2">
+          <div className="flex-col pt-2 pe-2 w-[210px]">
             <TextInput
-              className="w-72"
+              className="w-[202px]"
               placeholder={t`Search`}
               value={nameFilter}
               onChange={setNameFilter}
@@ -209,15 +209,15 @@ export const AppLibrary: React.FC = () => {
             />
           </div>
         </div>
-        <div className="flex  justify-between">
+        <div className="flex">
           <h2 className="text-2xl my-3 px-2 flex-grow">
             {tabKey == "all"
               ? t`All Games (${totalGames})`
               : t`Installed Games (${totalInstalled})`}
           </h2>
-          <div className="flex items-center pe-2">
+          <div className="flex items-center pe-2 w-[210px]">
             <Dropdown
-              triggerElem={<Button label={sortLabel} className="w-[210px]" />}
+              triggerElem={<Button label={sortLabel} className="w-[202px]" />}
               data={sortOptions}
             />
           </div>
