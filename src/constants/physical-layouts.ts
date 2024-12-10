@@ -370,7 +370,7 @@ export const ControllerInputs: ControllerInputMap = {
     label: "Mouse Move",
     icon: MouseMove,
     device: "mouse",
-    mapping: { axis: { name: "MouseMove" } }
+    mapping: { motion: { speed_pps: 800 } }
   },
   MouseWheelUp: {
     label: "Scroll Up",
