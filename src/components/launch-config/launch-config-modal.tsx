@@ -99,6 +99,7 @@ export const LaunchConfigModal: React.FC<InputConfigModalProps> = ({
                 <SubmissionsEmpty
                   appInfo={currentApp}
                   onClose={onClose}
+                  setEditLaunchConfig={setEditLaunchConfig}
                   submissionType={submissionType}
                   createSubmission={createSubmission}
                 />
