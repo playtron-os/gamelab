@@ -7,7 +7,7 @@ export const INITIAL_INPUT_LAYOUT: InputPlumberMappings =
 
 export const DEFAULT_INPUT_CONFIG = {
   data: JSON.stringify(INITIAL_INPUT_LAYOUT),
-  name: "Default profile",
+  name: "Untitled Layout",
   description: "Gamepad mapping to Mouse + WASD keyboard controls"
 };
 
