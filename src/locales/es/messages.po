@@ -17,6 +17,10 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr ""
 
+#: src/components/app-library/app-library.tsx:121
+msgid "???"
+msgstr ""
+
 #: src/components/sidebar/drive.tsx:25
 #~ msgid "{capacity}% Full"
 #~ msgstr ""
@@ -51,11 +55,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:113
+#: src/components/app-library/app-library.tsx:184
 msgid "All Games"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:143
+#: src/components/app-library/app-library.tsx:215
 msgid "All Games ({totalGames})"
 msgstr ""
 
@@ -266,6 +270,14 @@ msgstr ""
 #~ msgid "Game logs will appear here..."
 #~ msgstr ""
 
+#: src/components/app-library/app-library.tsx:93
+msgid "Game Size"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:94
+msgid "Game Status"
+msgstr ""
+
 #: src/components/controller-edit/map-to.tsx:20
 msgid "Gamepad"
 msgstr ""
@@ -319,15 +331,19 @@ msgstr ""
 msgid "Insert Delimiter"
 msgstr ""
 
+#: src/components/app-library/app-library.tsx:97
+msgid "Install Date"
+msgstr ""
+
 #: src/components/side-panel/side-panel.tsx:274
 msgid "Install folder"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:123
+#: src/components/app-library/app-library.tsx:194
 msgid "Installed"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:144
+#: src/components/app-library/app-library.tsx:216
 msgid "Installed Games ({totalInstalled})"
 msgstr ""
 
@@ -365,6 +381,10 @@ msgstr ""
 
 #: src/screens/connect-device/connect-device.tsx:128
 msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:102
+msgid "Last Updated"
 msgstr ""
 
 #: src/utils/app-info.ts:143
@@ -439,6 +459,14 @@ msgstr ""
 
 #: src/components/submission-config/submissions-table-config.tsx:12
 msgid "Name"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:91
+msgid "Name (A-Z)"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:92
+msgid "Name (Z-A)"
 msgstr ""
 
 #: src/components/side-panel/side-panel.tsx:155
@@ -574,7 +602,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:133
+#: src/components/app-library/app-library.tsx:205
 msgid "Search"
 msgstr ""
 
@@ -592,6 +620,26 @@ msgstr ""
 
 #: src/screens/not-found/index.tsx:22
 msgid "Sorry, an unexpected error has occurred."
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:115
+msgid "Sort by: Game Size"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:117
+msgid "Sort by: Game Status"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:119
+msgid "Sort by: Last Updated"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:111
+msgid "Sort by: Name (A-Z)"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:113
+msgid "Sort by: Name (Z-A)"
 msgstr ""
 
 #: src/context/app-library-context/table-config.tsx:78

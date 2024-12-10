@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo } from "react";
 import { Trans, t } from "@lingui/macro";
 import "./app-library.scss";
 import { Tabs, Tab } from "@nextui-org/react";
@@ -7,6 +7,8 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 import {
   ConfirmationPopUp,
   TextInput,
+  Button,
+  Dropdown,
   ProgressSpinner
 } from "@playtron/styleguide";
 import { useConfirmationPopUp, useAppLibraryContext } from "@/context";
@@ -26,6 +28,7 @@ export const AppLibrary: React.FC = () => {
   const { onSelectedIdsChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
   const [tabKey, setTabKey] = useState("installed");
+  const [sortKey, setSortKey] = useState("name");
   const { props: confirmationPopUpProps } = useConfirmationPopUp();
 
   const [selectedGame, setSelectedGame] = useState<AppInformation | null>(null);
@@ -83,6 +86,74 @@ export const AppLibrary: React.FC = () => {
     overscan: 10
   });
 
+  const sortOptions = useMemo(
+    () => [
+      { id: 1, label: t`Name (A-Z)`, onClick: () => setSortKey("name") },
+      { id: 2, label: t`Name (Z-A)`, onClick: () => setSortKey("-name") },
+      { id: 3, label: t`Game Size`, onClick: () => setSortKey("size") },
+      { id: 4, label: t`Game Status`, onClick: () => setSortKey("status") },
+      {
+        id: 6,
+        label: t`Install Date`,
+        onClick: () => setSortKey("install_date")
+      },
+      {
+        id: 7,
+        label: t`Last Updated`,
+        onClick: () => setSortKey("last_played")
+      }
+    ],
+    []
+  );
+  const sortLabel = useMemo(() => {
+    switch (sortKey) {
+      case "name":
+        return t`Sort by: Name (A-Z)`;
+      case "-name":
+        return t`Sort by: Name (Z-A)`;
+      case "size":
+        return t`Sort by: Game Size`;
+      case "status":
+        return t`Sort by: Game Status`;
+      case "last_played":
+        return t`Sort by: Last Updated`;
+      default:
+        return t`???`;
+    }
+  }, [sortKey]);
+
+  const sortedGames = useMemo(() => {
+    const sorted = [...filteredGames];
+    sorted.sort((a, b) => {
+      switch (sortKey) {
+        case "name":
+          return a.app.name.localeCompare(b.app.name);
+        case "-name":
+          return b.app.name.localeCompare(a.app.name);
+        case "size":
+          if (!a.installed_app?.install_config?.disk_size) {
+            return 1;
+          }
+          if (!b.installed_app?.install_config?.disk_size) {
+            return -1;
+          }
+          return (
+            b.installed_app?.install_config?.disk_size -
+            a.installed_app?.install_config?.disk_size
+          );
+        case "status":
+          return getAppStatus(b) - getAppStatus(a);
+        case "last_played":
+          return (
+            new Date(b.installed_app?.updated_at || "").getTime() -
+            new Date(a.installed_app?.updated_at || "").getTime()
+          );
+        default:
+          return 0;
+      }
+    });
+    return sorted;
+  }, [filteredGames, sortKey]);
   return (
     <div className="w-full px-4 select-none cursor-default text-base">
       <div>
@@ -128,8 +199,9 @@ export const AppLibrary: React.FC = () => {
             </Tabs>
           </div>
 
-          <div className="flex-col w-[380px] pt-2 pe-2">
+          <div className="flex-col w-72 pt-2 pe-2">
             <TextInput
+              className="w-72"
               placeholder={t`Search`}
               value={nameFilter}
               onChange={setNameFilter}
@@ -137,12 +209,18 @@ export const AppLibrary: React.FC = () => {
             />
           </div>
         </div>
-        <div>
-          <h2 className="text-2xl my-3 px-2">
+        <div className="flex  justify-between">
+          <h2 className="text-2xl my-3 px-2 flex-grow">
             {tabKey == "all"
               ? t`All Games (${totalGames})`
               : t`Installed Games (${totalInstalled})`}
           </h2>
+          <div className="flex items-center pe-2">
+            <Dropdown
+              triggerElem={<Button label={sortLabel} className="w-[210px]" />}
+              data={sortOptions}
+            />
+          </div>
         </div>
 
         {loading ? (
@@ -163,7 +241,7 @@ export const AppLibrary: React.FC = () => {
                 style={{ height: `${virtualizer.getTotalSize()}px` }}
               >
                 {virtualizer.getVirtualItems().map((virtualRow) => {
-                  const row = filteredGames[virtualRow.index];
+                  const row = sortedGames[virtualRow.index];
                   if (!row) return null;
                   return (
                     <div
