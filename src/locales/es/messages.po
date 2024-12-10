@@ -41,9 +41,9 @@ msgstr ""
 msgid "Add Config"
 msgstr ""
 
-#: src/components/input-config-modal/input-config-modal.tsx:199
+#: src/components/input-config-modal/input-config-modal.tsx:205
 #: src/components/launch-config/launch-config-modal.tsx:93
-#: src/components/submission-config/submissions-empty.tsx:38
+#: src/components/submission-config/submissions-empty.tsx:54
 msgid "Add New Config"
 msgstr ""
 
@@ -111,10 +111,10 @@ msgstr ""
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:90
 #: src/components/eula-modal/eula-modal.tsx:84
-#: src/components/input-config-modal/input-config-modal.tsx:201
+#: src/components/input-config-modal/input-config-modal.tsx:207
 #: src/components/launch-config/launch-config-modal.tsx:95
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
-#: src/components/submission-config/submissions-empty.tsx:34
+#: src/components/submission-config/submissions-empty.tsx:44
 msgid "Close"
 msgstr ""
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "CONFIGURATION"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:305
+#: src/context/submissions-context/submissions-context.tsx:311
 msgid "Configuration has been submitted"
 msgstr ""
 
@@ -164,11 +164,11 @@ msgstr ""
 #~ msgid "Date Added"
 #~ msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:50
+#: src/components/submission-config/cells/submission-action-cell.tsx:64
 msgid "Delete"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:350
+#: src/context/submissions-context/submissions-context.tsx:356
 msgid "Delete this configuration?"
 msgstr ""
 
@@ -197,8 +197,12 @@ msgstr ""
 msgid "Drives"
 msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:39
+#: src/components/submission-config/cells/submission-action-cell.tsx:53
 msgid "Duplicate"
+msgstr ""
+
+#: src/components/submission-config/cells/submission-action-cell.tsx:41
+msgid "Edit"
 msgstr ""
 
 #: src/components/eula-modal/eula-modal.tsx:51
@@ -319,7 +323,7 @@ msgstr ""
 msgid "Input Config for {gameName}"
 msgstr ""
 
-#: src/components/input-config-modal/input-config-modal.tsx:180
+#: src/components/input-config-modal/input-config-modal.tsx:182
 msgid "Input Config List"
 msgstr ""
 
@@ -547,7 +551,7 @@ msgstr ""
 msgid "Prioritize"
 msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:66
+#: src/components/submission-config/cells/submission-action-cell.tsx:80
 msgid "Promote"
 msgstr ""
 
@@ -655,12 +659,12 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:267
+#: src/context/submissions-context/submissions-context.tsx:273
 msgid "Submission promoted"
 msgstr ""
 
 #: src/components/eula-modal/eula-modal.tsx:84
-#: src/components/submission-config/cells/submission-action-cell.tsx:27
+#: src/components/submission-config/cells/submission-action-cell.tsx:29
 msgid "Submit"
 msgstr ""
 
@@ -683,15 +687,15 @@ msgstr ""
 msgid "The device did not respond in time"
 msgstr ""
 
-#: src/components/submission-config/submissions-empty.tsx:22
+#: src/components/submission-config/submissions-empty.tsx:32
 msgid "There is no controller configuration created for"
 msgstr ""
 
-#: src/components/submission-config/submissions-empty.tsx:23
+#: src/components/submission-config/submissions-empty.tsx:33
 msgid "There is no launch configuration created for"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:311
+#: src/context/submissions-context/submissions-context.tsx:317
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 
@@ -735,7 +739,7 @@ msgstr ""
 msgid "Unset"
 msgstr ""
 
-#: src/components/input-config-modal/input-config-modal.tsx:107
+#: src/components/input-config-modal/input-config-modal.tsx:108
 msgid "Untitled Layout"
 msgstr ""
 

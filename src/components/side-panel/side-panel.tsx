@@ -315,11 +315,17 @@ export const SidePanel: React.FC = () => {
         targetLayout={targetLayout}
         setTargetLayout={setTargetLayout}
         isOpen={isInputConfigOpen}
-        onClose={() => setIsInputConfigOpen(false)}
+        onClose={() => {
+          setEditLayout(null);
+          setIsInputConfigOpen(false);
+        }}
       />
       <LaunchConfigModal
         isOpen={isLaunchConfigOpen}
-        onClose={() => setIsLaunchConfigOpen(false)}
+        onClose={() => {
+          setEditLaunchConfig(null);
+          setIsLaunchConfigOpen(false);
+        }}
       />
       <LogsModal
         isOpen={isLogsOpen}

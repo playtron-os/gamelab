@@ -30,10 +30,10 @@ export const SubmissionsList: React.FC<SubmissionsListProps> = ({
   const { sendMessage } = usePlayserve();
   const [selectedIndexes, setSelectedIndexes] = useState<string[]>([]);
   const onSelectedIdsChange = useCallback(
-    (id: string) => {
+    (index: string) => {
       try {
-        const subId = parseInt(id);
-        const selectedSubmission = submissions[subId] as Submission;
+        const subIndex = parseInt(index);
+        const selectedSubmission = submissions[subIndex] as Submission;
         setSelectedItemId(selectedSubmission.item_id);
 
         const setSelectedSubmissionMessage = getMessage(
@@ -58,9 +58,9 @@ export const SubmissionsList: React.FC<SubmissionsListProps> = ({
   );
 
   useEffect(() => {
-    for (let i = 0; i < submissions.length; i++) {
-      if (submissions[i].item_id === selectedItemId) {
-        setSelectedIndexes([i.toString()]);
+    for (let index = 0; index < submissions.length; index++) {
+      if (submissions[index].item_id === selectedItemId) {
+        setSelectedIndexes([index.toString()]);
         return;
       }
     }
