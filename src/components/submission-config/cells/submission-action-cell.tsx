@@ -17,7 +17,9 @@ export const SubmissionActionCell = (info: SubmissionCellContext) => {
     askDeleteSubmission,
     copySubmission,
     submitSubmission,
-    promoteSubmission
+    promoteSubmission,
+    setEditLaunchConfig,
+    setEditLayout
   } = useSubmissionsContext();
 
   const appActions = [];
@@ -36,6 +38,18 @@ export const SubmissionActionCell = (info: SubmissionCellContext) => {
 
   appActions.push({
     id: 2,
+    label: t`Edit`,
+    onClick: () => {
+      if (submission.submission_item_type === "LaunchConfig") {
+        setEditLaunchConfig(submission);
+      } else {
+        setEditLayout(submission);
+      }
+    }
+  });
+
+  appActions.push({
+    id: 3,
     label: t`Duplicate`,
     onClick: () =>
       copySubmission(
@@ -46,7 +60,7 @@ export const SubmissionActionCell = (info: SubmissionCellContext) => {
   });
 
   appActions.push({
-    id: 3,
+    id: 4,
     label: t`Delete`,
     onClick: () => {
       askDeleteSubmission(
@@ -62,7 +76,7 @@ export const SubmissionActionCell = (info: SubmissionCellContext) => {
     submission.submission_category !== "Official"
   ) {
     appActions.push({
-      id: 4,
+      id: 5,
       label: t`Promote`,
       onClick: () => {
         promoteSubmission(

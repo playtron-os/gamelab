@@ -25,7 +25,7 @@ import { DEFAULT_LAUNCH_CONFIG } from "@/constants/launch-config";
 import { usePlayserve } from "@/hooks";
 import { ConfirmationPopUp } from "@playtron/styleguide";
 import { t } from "@lingui/macro";
-import { error, info, warn } from "@tauri-apps/plugin-log";
+import { error, warn } from "@tauri-apps/plugin-log";
 
 export type useSubmissionsType = ReturnType<typeof useSubmissions>;
 
@@ -44,7 +44,10 @@ export interface SubmissionsContextType {
     item_type: SubmissionItemType,
     item: SubmissionSaveModel
   ) => void;
-  createSubmission: (appId: string, item_type: SubmissionItemType) => void;
+  createSubmission: (
+    appId: string,
+    item_type: SubmissionItemType
+  ) => Promise<InputConfig | LaunchConfig | null>;
   copySubmission: (
     item_id: string,
     item_type: SubmissionItemType,
@@ -142,7 +145,7 @@ export const SubmissionsContextProvider = ({
 
   // Utilities
   const saveSubmission = useCallback(
-    (
+    async (
       appId: string,
       item_type: SubmissionItemType,
       item: SubmissionSaveModel
@@ -153,26 +156,31 @@ export const SubmissionsContextProvider = ({
         item
       });
 
-      sendMessage(configCreateMessage)().then((response) => {
-        if (response.status === 200) {
-          info("Successfully create config");
-          if (item_type === "InputConfig") {
-            const newSubmission = response.body as InputConfig;
-            setEditLayout(newSubmission);
-          } else if (item_type === "LaunchConfig") {
-            const newSubmission = response.body as LaunchConfig;
-            setEditLaunchConfig(newSubmission);
+      return await sendMessage(configCreateMessage)()
+        .then((response) => {
+          if (response.status === 200) {
+            let newSubmission = null;
+            if (item_type === "InputConfig") {
+              newSubmission = response.body as InputConfig;
+            } else if (item_type === "LaunchConfig") {
+              newSubmission = response.body as LaunchConfig;
+            }
+            return newSubmission;
+          } else {
+            dispatch(flashMessage(response.body.message));
+            return null;
           }
-        } else {
-          dispatch(flashMessage(response.body.message));
-        }
-      });
+        })
+        .catch((err) => {
+          error(err);
+          return null;
+        });
     },
     [sendMessage, dispatch]
   );
 
   const createSubmission = useCallback(
-    (appId: string, item_type: SubmissionItemType) => {
+    async (appId: string, item_type: SubmissionItemType) => {
       let item = null;
       if (item_type === "InputConfig") {
         item = DEFAULT_INPUT_CONFIG;
@@ -180,9 +188,9 @@ export const SubmissionsContextProvider = ({
         item = DEFAULT_LAUNCH_CONFIG;
       } else {
         warn("Attempt to created unimplemented submission type");
-        throw new Error("Invalid submission type");
+        return null;
       }
-      saveSubmission(appId, item_type, item);
+      return await saveSubmission(appId, item_type, item);
     },
     [saveSubmission]
   );
@@ -231,7 +239,6 @@ export const SubmissionsContextProvider = ({
       sendMessage(copyConfigMessage)()
         .then((response) => {
           if (response.status === 200) {
-            info("Successfully copied submissions");
             submissions.submissions.push(response.body as Submission);
             submissions.setSubmissions(submissions.submissions);
           } else {
@@ -263,7 +270,6 @@ export const SubmissionsContextProvider = ({
       );
       sendMessage(promoteConfigMessage)().then((response) => {
         if (response.status === 200) {
-          info("Successfully promoted submissions");
           dispatch(flashMessage(t`Submission promoted`));
         } else {
           console.error("Error promoting config", response);

@@ -10,7 +10,7 @@ import {
   InputEvent,
   TargetControllerType
 } from "@/types/input-config";
-import { SubmissionType } from "@/types/submission";
+import { InputConfig, SubmissionType } from "@/types/submission";
 import { MapTo } from "../controller-edit/map-to";
 import { SubmissionsEmpty } from "../submission-config/submissions-empty";
 import { useSubmissionsContext } from "@/context/submissions-context";
@@ -92,6 +92,7 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
       );
       return;
     }
+
     let targetDevice = "gamepad";
     switch (targetLayout) {
       case "ps5":
@@ -113,18 +114,19 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
     };
 
     saveSubmission(editLayout.app_id, submissionType, saveItem);
-    setEditLayout(null);
     onClose();
   }, [editLayout, targetLayout, saveSubmission, setEditLayout, onClose]);
+
   useEffect(() => {
-    if (editLayout && !editLayout.mapping) {
-      const InputConfig = JSON.parse(editLayout.data);
+    if (editLayout && editLayout.data && !editLayout.mapping) {
+      const inputConfig = JSON.parse(editLayout.data);
       setEditLayout({
         ...editLayout,
-        mapping: InputConfig.mapping
+        mapping: inputConfig.mapping
       });
     }
   }, [editLayout, setEditLayout]);
+
   const [currentPhysicalLayout, setCurrentPhysicalLayout] =
     useState<PhysicalLayoutType>(physicalLayouts.Xbox);
 
@@ -192,8 +194,12 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
 
                   <div className="flex flex-row-reverse bg-black gap-2 p-6 pr-8">
                     <Button
-                      onClick={() => {
-                        createSubmission(currentApp.app.id, submissionType);
+                      onClick={async () => {
+                        const newSubmission = (await createSubmission(
+                          currentApp.app.id,
+                          submissionType
+                        )) as InputConfig;
+                        setEditLayout(newSubmission);
                       }}
                       primary
                       label={t`Add New Config`}
@@ -206,6 +212,7 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
                   submissionType={submissionType}
                   appInfo={currentApp}
                   onClose={onClose}
+                  setEditLayout={setEditLayout}
                   createSubmission={createSubmission}
                 />
               )}

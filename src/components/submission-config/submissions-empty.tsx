@@ -2,19 +2,29 @@ import React from "react";
 import { Button } from "@playtron/styleguide";
 import { t } from "@lingui/macro";
 import SteamDeckImage from "@/assets/Devices/Steam Deck Front.svg";
-import { AppInformation, SubmissionItemType } from "@/types";
+import {
+  AppInformation,
+  SubmissionItemType,
+  LaunchConfig,
+  InputConfig
+} from "@/types";
 
 type ControllerLayoutEmptyProps = {
   appInfo: AppInformation;
   submissionType: SubmissionItemType;
   onClose: () => void;
-  createSubmission: (appId: string, config_type: SubmissionItemType) => void;
+  setEditLayout: (layout: InputConfig | null) => void;
+  createSubmission: (
+    appId: string,
+    config_type: SubmissionItemType
+  ) => Promise<InputConfig | LaunchConfig | null>;
 };
 
 export const SubmissionsEmpty: React.FC<ControllerLayoutEmptyProps> = ({
   appInfo,
   submissionType,
   onClose,
+  setEditLayout,
   createSubmission
 }) => {
   const message =
@@ -33,7 +43,13 @@ export const SubmissionsEmpty: React.FC<ControllerLayoutEmptyProps> = ({
       <div className="flex gap-2">
         <Button onClick={onClose} label={t`Close`} />
         <Button
-          onClick={() => createSubmission(appInfo.app.id, submissionType)}
+          onClick={async () => {
+            const newSubmission = (await createSubmission(
+              appInfo.app.id,
+              submissionType
+            )) as InputConfig;
+            setEditLayout(newSubmission);
+          }}
           primary
           label={t`Add New Config`}
         />
