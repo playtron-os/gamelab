@@ -43,7 +43,7 @@ msgstr "Add Config"
 
 #: src/components/input-config-modal/input-config-modal.tsx:205
 #: src/components/launch-config/launch-config-modal.tsx:93
-#: src/components/submission-config/submissions-empty.tsx:54
+#: src/components/submission-config/submissions-empty.tsx:67
 msgid "Add New Config"
 msgstr "Add New Config"
 
@@ -114,7 +114,7 @@ msgstr "Clear"
 #: src/components/input-config-modal/input-config-modal.tsx:207
 #: src/components/launch-config/launch-config-modal.tsx:95
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
-#: src/components/submission-config/submissions-empty.tsx:44
+#: src/components/submission-config/submissions-empty.tsx:46
 msgid "Close"
 msgstr "Close"
 
@@ -687,11 +687,11 @@ msgstr "Tested on"
 msgid "The device did not respond in time"
 msgstr "The device did not respond in time"
 
-#: src/components/submission-config/submissions-empty.tsx:32
+#: src/components/submission-config/submissions-empty.tsx:34
 msgid "There is no controller configuration created for"
 msgstr "There is no controller configuration created for"
 
-#: src/components/submission-config/submissions-empty.tsx:33
+#: src/components/submission-config/submissions-empty.tsx:35
 msgid "There is no launch configuration created for"
 msgstr "There is no launch configuration created for"
 

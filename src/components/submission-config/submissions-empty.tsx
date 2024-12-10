@@ -13,7 +13,8 @@ type ControllerLayoutEmptyProps = {
   appInfo: AppInformation;
   submissionType: SubmissionItemType;
   onClose: () => void;
-  setEditLayout: (layout: InputConfig | null) => void;
+  setEditLayout?: (layout: InputConfig | null) => void;
+  setEditLaunchConfig?: (launchConfig: LaunchConfig | null) => void;
   createSubmission: (
     appId: string,
     config_type: SubmissionItemType
@@ -24,6 +25,7 @@ export const SubmissionsEmpty: React.FC<ControllerLayoutEmptyProps> = ({
   appInfo,
   submissionType,
   onClose,
+  setEditLaunchConfig,
   setEditLayout,
   createSubmission
 }) => {
@@ -44,11 +46,22 @@ export const SubmissionsEmpty: React.FC<ControllerLayoutEmptyProps> = ({
         <Button onClick={onClose} label={t`Close`} />
         <Button
           onClick={async () => {
-            const newSubmission = (await createSubmission(
-              appInfo.app.id,
-              submissionType
-            )) as InputConfig;
-            setEditLayout(newSubmission);
+            if (submissionType === "InputConfig" && setEditLayout) {
+              const newSubmission = (await createSubmission(
+                appInfo.app.id,
+                submissionType
+              )) as InputConfig;
+              setEditLayout(newSubmission);
+            } else if (
+              submissionType === "LaunchConfig" &&
+              setEditLaunchConfig
+            ) {
+              const newSubmission = (await createSubmission(
+                appInfo.app.id,
+                submissionType
+              )) as LaunchConfig;
+              setEditLaunchConfig(newSubmission);
+            }
           }}
           primary
           label={t`Add New Config`}
