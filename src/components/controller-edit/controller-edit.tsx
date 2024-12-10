@@ -68,6 +68,9 @@ export const getPhysicalLayoutFromDevice = (device: ControllerInfo) => {
   if (device.capabilities.length === 173) {
     return physicalLayouts.SteamDeck;
   }
+  if (device.capabilities.length === 186) {
+    return physicalLayouts.ROGAlly;
+  }
   console.log("Unknown device", device);
   console.log("Device capabilities", device.capabilities);
   return physicalLayouts.Generic;
