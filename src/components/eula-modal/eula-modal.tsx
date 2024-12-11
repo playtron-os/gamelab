@@ -1,5 +1,5 @@
 import React, { useMemo, useRef, useState } from "react";
-import { Modal, Checkbox, Button } from "@playtron/styleguide";
+import { ProgressSpinner, Modal, Checkbox, Button } from "@playtron/styleguide";
 import { t, Trans } from "@lingui/macro";
 import { AppInformation } from "@/types";
 import { invoke } from "@tauri-apps/api/core";
@@ -35,11 +35,14 @@ export const EulaModal: React.FC<EulaModalProps> = ({
 }) => {
   const scrollable = useRef<HTMLDivElement>(null);
   const [accepted, setAccepted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [eulaBody, setEulaBody] = useState("");
   useMemo(async () => {
     if (eula) {
+      setIsLoading(true);
       const body = await getEulaBody(eula);
       setEulaBody(body);
+      setIsLoading(false);
     }
   }, [eula]);
 
@@ -53,16 +56,23 @@ export const EulaModal: React.FC<EulaModalProps> = ({
         </div>
       </div>
       <div className="p-6">
-        <div
-          ref={scrollable}
-          className="h-[calc(95vh-120px)] w-[calc(95vw-384px)] overflow-y-scroll"
-        >
-          {eula && (
-            <div className="h-[calc(100vh-180px)] w-[calc(95vw-384px)]">
-              <div dangerouslySetInnerHTML={{ __html: eulaBody }}></div>
-            </div>
-          )}
-        </div>
+        {isLoading ? (
+          <div className="flex justify-center items-center h-[calc(95vh-120px)] w-[calc(95vw-384px)]">
+            <ProgressSpinner size={64} />
+          </div>
+        ) : (
+          <div
+            ref={scrollable}
+            className="h-[calc(95vh-120px)] w-[calc(95vw-384px)] overflow-y-scroll"
+          >
+            {eula && (
+              <div className="h-[calc(100vh-180px)] w-[calc(95vw-384px)]">
+                <div dangerouslySetInnerHTML={{ __html: eulaBody }}></div>
+              </div>
+            )}
+          </div>
+        )}
+
         <div className="flex gap-4">
           <div className="flex-grow"></div>
           <div className="py-2">
