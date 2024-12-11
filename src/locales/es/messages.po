@@ -17,7 +17,7 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:121
+#: src/components/app-library/app-library.tsx:125
 msgid "???"
 msgstr ""
 
@@ -55,11 +55,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:184
+#: src/components/app-library/app-library.tsx:191
 msgid "All Games"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:215
+#: src/components/app-library/app-library.tsx:222
 msgid "All Games ({totalGames})"
 msgstr ""
 
@@ -278,11 +278,11 @@ msgstr ""
 #~ msgid "Game logs will appear here..."
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:93
+#: src/components/app-library/app-library.tsx:97
 msgid "Game Size"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:94
+#: src/components/app-library/app-library.tsx:98
 msgid "Game Status"
 msgstr ""
 
@@ -339,7 +339,7 @@ msgstr ""
 msgid "Insert Delimiter"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:97
+#: src/components/app-library/app-library.tsx:101
 msgid "Install Date"
 msgstr ""
 
@@ -347,11 +347,11 @@ msgstr ""
 msgid "Install folder"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:194
+#: src/components/app-library/app-library.tsx:201
 msgid "Installed"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:216
+#: src/components/app-library/app-library.tsx:223
 msgid "Installed Games ({totalInstalled})"
 msgstr ""
 
@@ -395,7 +395,7 @@ msgstr ""
 msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:102
+#: src/components/app-library/app-library.tsx:106
 msgid "Last Updated"
 msgstr ""
 
@@ -477,11 +477,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:91
+#: src/components/app-library/app-library.tsx:95
 msgid "Name (A-Z)"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:92
+#: src/components/app-library/app-library.tsx:96
 msgid "Name (Z-A)"
 msgstr ""
 
@@ -497,7 +497,7 @@ msgstr ""
 msgid "No internet"
 msgstr ""
 
-#: src/utils/app-info.ts:63
+#: src/utils/app-info.ts:69
 msgid "Not Downloaded"
 msgstr ""
 
@@ -538,7 +538,7 @@ msgstr ""
 msgid "Pause"
 msgstr ""
 
-#: src/utils/app-info.ts:67
+#: src/utils/app-info.ts:65
 msgid "Paused"
 msgstr ""
 
@@ -584,7 +584,7 @@ msgstr ""
 msgid "PS5 controller"
 msgstr ""
 
-#: src/utils/app-info.ts:69
+#: src/utils/app-info.ts:67
 msgid "Queued"
 msgstr ""
 
@@ -618,7 +618,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:205
+#: src/components/app-library/app-library.tsx:212
 msgid "Search"
 msgstr ""
 
@@ -638,23 +638,23 @@ msgstr ""
 msgid "Sorry, an unexpected error has occurred."
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:115
+#: src/components/app-library/app-library.tsx:119
 msgid "Sort by: Game Size"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:117
+#: src/components/app-library/app-library.tsx:121
 msgid "Sort by: Game Status"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:119
+#: src/components/app-library/app-library.tsx:123
 msgid "Sort by: Last Updated"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:111
+#: src/components/app-library/app-library.tsx:115
 msgid "Sort by: Name (A-Z)"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:113
+#: src/components/app-library/app-library.tsx:117
 msgid "Sort by: Name (Z-A)"
 msgstr ""
 
@@ -763,7 +763,7 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
-#: src/utils/app-info.ts:65
+#: src/utils/app-info.ts:63
 msgid "Update Required"
 msgstr ""
 

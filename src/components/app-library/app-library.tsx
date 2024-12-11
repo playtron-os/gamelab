@@ -14,15 +14,21 @@ import {
 import { useConfirmationPopUp, useAppLibraryContext } from "@/context";
 import { MoveAppDialog } from "../move-app-dialog";
 import { BulkActionsMenu } from "../bulk-actions-menu/bulk-actions-menu";
-import { selectAppLibraryState } from "@/redux/modules";
+import {
+  selectAppLibraryState,
+  selectAppLibraryQueuePositionMapState
+} from "@/redux/modules";
 import { useAppSelector } from "@/redux/store";
-import { AppInformation, AppProvider, AppStatus } from "@/types";
+import { AppInformation, AppProvider } from "@/types";
 import { GameCard } from "./game-card";
-import { getAppStatus } from "@/utils/app-info";
+import { getAppStatusWithQueue } from "@/utils/app-info";
 
 export const AppLibrary: React.FC = () => {
   const { apps, error, loading, appFilters } = useAppSelector(
     selectAppLibraryState
+  );
+  const queuePositionMapState = useAppSelector(
+    selectAppLibraryQueuePositionMapState
   );
   const parentRef = useRef<HTMLDivElement>(null);
   const { onSelectedIdsChange } = useAppLibraryContext();
@@ -68,9 +74,7 @@ export const AppLibrary: React.FC = () => {
         );
       });
     }
-    filteredGames = filteredGames.filter(
-      (app) => getAppStatus(app) !== AppStatus.NOT_DOWNLOADED
-    );
+    filteredGames = filteredGames.filter((app) => !!app.installed_app);
   }
 
   if (nameFilter) {
@@ -142,7 +146,10 @@ export const AppLibrary: React.FC = () => {
             a.installed_app?.install_config?.disk_size
           );
         case "status":
-          return getAppStatus(b) - getAppStatus(a);
+          return (
+            getAppStatusWithQueue(b, queuePositionMapState) -
+            getAppStatusWithQueue(a, queuePositionMapState)
+          );
         case "last_played":
           return (
             new Date(b.installed_app?.updated_at || "").getTime() -

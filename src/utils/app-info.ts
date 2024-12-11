@@ -59,14 +59,14 @@ export const getAppStatusLabel = (status: AppStatus) => {
       return t`Downloading`;
     case AppStatus.INSTALLING:
       return t`Installing`;
-    case AppStatus.NOT_DOWNLOADED:
-      return t`Not Downloaded`;
     case AppStatus.UPDATE_REQUIRED:
       return t`Update Required`;
     case AppStatus.PAUSED:
       return t`Paused`;
     case AppStatus.QUEUED:
       return t`Queued`;
+    case AppStatus.NOT_DOWNLOADED:
+      return t`Not Downloaded`;
     case AppStatus.RUNNING:
       return t`Running`;
     case AppStatus.LAUNCHING:
