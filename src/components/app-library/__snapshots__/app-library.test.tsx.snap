@@ -272,7 +272,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                         <span
                           class="font-bold"
                         >
-                          (100B)
+                          100B
                         </span>
                       </div>
                     </div>
@@ -388,7 +388,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                         <span
                           class="font-bold"
                         >
-                          (100B)
+                          100B
                         </span>
                       </div>
                     </div>
