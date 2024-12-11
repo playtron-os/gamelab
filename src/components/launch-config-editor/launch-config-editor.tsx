@@ -1,5 +1,6 @@
+import AjvDefault, { ErrorObject, JSONSchemaType } from "ajv";
 import { useSubmissionsContext } from "@/context/submissions-context";
-import { AppInformation, LaunchConfig } from "@/types";
+import { AppInformation, LaunchConfig, AppLaunchConfig } from "@/types";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { flashMessage } from "redux-flash";
 import {
@@ -17,6 +18,44 @@ import { useAppDispatch } from "@/redux/store";
 import { Trans, t } from "@lingui/macro";
 import { Override } from "@/types/launch";
 import { ConfigOverrideChip } from "../config-override-chip";
+
+export const launchConfigSchema: JSONSchemaType<AppLaunchConfig> = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    app_arguments: { type: "array", items: { type: "string" }, nullable: true },
+    app_executable: { type: "string", nullable: true },
+    wine_id: { type: "string", nullable: true },
+    extra_registry: {
+      type: "object",
+      additionalProperties: true,
+      required: [],
+      nullable: true
+    },
+    tricks_config: {
+      type: "object",
+      properties: { winetricks: { type: "array", items: { type: "string" } } },
+      required: ["winetricks"],
+      nullable: true
+    },
+    env: {
+      type: "object",
+      additionalProperties: true,
+      required: [],
+      nullable: true
+    },
+    symlinks: {
+      type: "array",
+      items: { type: "object", required: [] },
+      nullable: true
+    },
+    overrides: {
+      type: "array",
+      items: { type: "object", required: [] },
+      nullable: true
+    }
+  }
+};
 
 export interface LaunchConfigEditorProps {
   appInfo: AppInformation;
@@ -243,12 +282,32 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
             <Button
               label={t`Validate JSON`}
               onClick={() => {
+                const ajv = new AjvDefault();
+                const launchValidator = ajv.compile(launchConfigSchema);
                 try {
-                  JSON.parse(content);
-                } catch (err) {
-                  flashDispatch(
-                    flashMessage(t`JSON structure is invalid ${err}`)
-                  );
+                  const launchConfigObject = JSON.parse(content);
+                  if (
+                    !launchValidator(launchConfigObject) &&
+                    launchValidator.errors
+                  ) {
+                    const errors = launchValidator.errors
+                      .map(
+                        (e: ErrorObject) =>
+                          e.instancePath +
+                          ": " +
+                          e.message +
+                          "\n" +
+                          JSON.stringify(e.params)
+                      )
+                      .join(", ");
+                    flashDispatch(
+                      flashMessage(t`Errors in launch config: ${errors}`)
+                    );
+                  } else {
+                    flashDispatch(flashMessage(t`Launch config is valid`));
+                  }
+                } catch (e) {
+                  flashDispatch(flashMessage(t`JSON is invalid: ${e}`));
                 }
               }}
             />

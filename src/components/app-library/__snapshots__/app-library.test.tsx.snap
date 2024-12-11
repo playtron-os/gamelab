@@ -20,7 +20,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
         class="flex"
       >
         <div
-          class="flex w-full flex-col"
+          class="flex flex-grow flex-col"
         >
           <div
             aria-label="installedFilter"
@@ -90,7 +90,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
           </div>
         </div>
         <div
-          class="flex-col w-72 pt-2 pe-2"
+          class="flex-col pt-2 pe-2 w-[210px]"
         >
           <div
             class="flex flex-col"
@@ -156,7 +156,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
         </div>
       </div>
       <div
-        class="flex  justify-between"
+        class="flex"
       >
         <h2
           class="text-2xl my-3 px-2 flex-grow"
@@ -164,7 +164,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
           Installed Games (
         </h2>
         <div
-          class="flex items-center pe-2"
+          class="flex items-center pe-2 w-[210px]"
         >
           <div
             aria-expanded="false"
@@ -175,7 +175,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
             type="button"
           >
             <button
-              class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[16px] p-2 w-[210px]"
+              class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[16px] p-2 w-[202px]"
               type="button"
             >
               <div
@@ -454,7 +454,7 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
         class="flex"
       >
         <div
-          class="flex w-full flex-col"
+          class="flex flex-grow flex-col"
         >
           <div
             aria-label="installedFilter"
@@ -524,7 +524,7 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
           </div>
         </div>
         <div
-          class="flex-col w-72 pt-2 pe-2"
+          class="flex-col pt-2 pe-2 w-[210px]"
         >
           <div
             class="flex flex-col"
@@ -590,7 +590,7 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
         </div>
       </div>
       <div
-        class="flex  justify-between"
+        class="flex"
       >
         <h2
           class="text-2xl my-3 px-2 flex-grow"
@@ -598,7 +598,7 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
           Installed Games (
         </h2>
         <div
-          class="flex items-center pe-2"
+          class="flex items-center pe-2 w-[210px]"
         >
           <div
             aria-expanded="false"
@@ -609,7 +609,7 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
             type="button"
           >
             <button
-              class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[16px] p-2 w-[210px]"
+              class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[16px] p-2 w-[202px]"
               type="button"
             >
               <div
