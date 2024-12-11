@@ -10,9 +10,11 @@ use tokio::sync::Mutex;
 mod app_logs;
 mod eula;
 mod ssh;
+mod validators;
 use app_logs::*;
 use eula::*;
 use ssh::*;
+use validators::*;
 
 // Regex to match ${...} pattern from the .env file to properly replace values
 lazy_static::lazy_static! {
@@ -81,6 +83,7 @@ fn main() {
             app_log_stream,
             app_log_show,
             download_eula,
+            validate_json,
         ])
         .plugin(
             tauri_plugin_log::Builder::new()

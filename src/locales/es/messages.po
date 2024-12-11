@@ -84,7 +84,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:237
+#: src/components/launch-config-editor/launch-config-editor.tsx:242
 msgid "Base config"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr ""
 #~ msgid "Change device"
 #~ msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:314
+#: src/components/launch-config-editor/launch-config-editor.tsx:326
 #: src/components/logs-modal/logs-modal.tsx:102
 msgid "Clear"
 msgstr ""
@@ -127,11 +127,11 @@ msgid "Config"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:162
-#: src/components/launch-config-editor/launch-config-editor.tsx:206
+#: src/components/launch-config-editor/launch-config-editor.tsx:211
 msgid "CONFIG NAME"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:222
+#: src/components/launch-config-editor/launch-config-editor.tsx:227
 msgid "CONFIGURATION"
 msgstr ""
 
@@ -226,7 +226,7 @@ msgstr ""
 msgid "Error starting app download: {message}"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:304
+#: src/components/launch-config-editor/launch-config-editor.tsx:315
 msgid "Errors in launch config: {errors}"
 msgstr ""
 
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Filter:"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:316
+#: src/components/launch-config-editor/launch-config-editor.tsx:328
 msgid "Format"
 msgstr ""
 
@@ -380,8 +380,8 @@ msgid "IP Address of the Playtron device"
 msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:310
-msgid "JSON is invalid: {e}"
-msgstr ""
+#~ msgid "JSON is invalid: {e}"
+#~ msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:250
 #~ msgid "JSON structure is invalid {err}"
@@ -411,11 +411,11 @@ msgstr ""
 #~ msgid "Launch Config for"
 #~ msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:191
+#: src/components/launch-config-editor/launch-config-editor.tsx:196
 msgid "Launch Config for {appName}"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:307
+#: src/components/launch-config-editor/launch-config-editor.tsx:318
 msgid "Launch config is valid"
 msgstr ""
 
@@ -614,7 +614,7 @@ msgid "Running"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:197
-#: src/components/launch-config-editor/launch-config-editor.tsx:256
+#: src/components/launch-config-editor/launch-config-editor.tsx:261
 msgid "Save"
 msgstr ""
 
@@ -736,6 +736,10 @@ msgstr ""
 msgid "Unable to connect with the device: {err}"
 msgstr ""
 
+#: src/components/launch-config-editor/launch-config-editor.tsx:322
+msgid "Unhandled error: {e}"
+msgstr ""
+
 #: src/components/app-library/game-card.tsx:105
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 #: src/context/app-library-context/components/table-cells/app-action-cell.tsx:53
@@ -772,7 +776,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:283
+#: src/components/launch-config-editor/launch-config-editor.tsx:288
 msgid "Validate JSON"
 msgstr ""
 

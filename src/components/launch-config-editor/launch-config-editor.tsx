@@ -18,6 +18,7 @@ import { useAppDispatch } from "@/redux/store";
 import { Trans, t } from "@lingui/macro";
 import { Override } from "@/types/launch";
 import { ConfigOverrideChip } from "../config-override-chip";
+import { invoke } from "@tauri-apps/api/core";
 
 export const launchConfigSchema: JSONSchemaType<AppLaunchConfig> = {
   type: "object",
@@ -62,6 +63,10 @@ export interface LaunchConfigEditorProps {
   handleSave: () => void;
   onClose: () => void;
 }
+
+const validateJSON = async (data: string): Promise<string> => {
+  return await invoke("validate_json", { data: data });
+};
 
 const DEFAULT_OVERRIDE: Override = {
   conditions: { providers: [], architectures: [] },
@@ -281,9 +286,15 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
           <div className="flex-shrink flex gap-[12px]">
             <Button
               label={t`Validate JSON`}
-              onClick={() => {
+              onClick={async () => {
                 const ajv = new AjvDefault();
                 const launchValidator = ajv.compile(launchConfigSchema);
+                const validationErrors = await validateJSON(content);
+                if (validationErrors) {
+                  flashDispatch(flashMessage(validationErrors));
+                  return;
+                }
+
                 try {
                   const launchConfigObject = JSON.parse(content);
                   if (
@@ -307,7 +318,8 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
                     flashDispatch(flashMessage(t`Launch config is valid`));
                   }
                 } catch (e) {
-                  flashDispatch(flashMessage(t`JSON is invalid: ${e}`));
+                  console.error(e);
+                  flashDispatch(flashMessage(t`Unhandled error: ${e}`));
                 }
               }}
             />

@@ -84,7 +84,7 @@ msgstr "Are you sure you want to uninstall the selected apps?"
 msgid "Author"
 msgstr "Author"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:237
+#: src/components/launch-config-editor/launch-config-editor.tsx:242
 msgid "Base config"
 msgstr "Base config"
 
@@ -104,7 +104,7 @@ msgstr "Cancel"
 #~ msgid "Change device"
 #~ msgstr "Change device"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:314
+#: src/components/launch-config-editor/launch-config-editor.tsx:326
 #: src/components/logs-modal/logs-modal.tsx:102
 msgid "Clear"
 msgstr "Clear"
@@ -127,11 +127,11 @@ msgid "Config"
 msgstr "Config"
 
 #: src/components/controller-edit/controller-edit.tsx:162
-#: src/components/launch-config-editor/launch-config-editor.tsx:206
+#: src/components/launch-config-editor/launch-config-editor.tsx:211
 msgid "CONFIG NAME"
 msgstr "CONFIG NAME"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:222
+#: src/components/launch-config-editor/launch-config-editor.tsx:227
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
@@ -226,7 +226,7 @@ msgstr "Error"
 msgid "Error starting app download: {message}"
 msgstr "Error starting app download: {message}"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:304
+#: src/components/launch-config-editor/launch-config-editor.tsx:315
 msgid "Errors in launch config: {errors}"
 msgstr "Errors in launch config: {errors}"
 
@@ -246,7 +246,7 @@ msgstr "Failed to uninstall app: {message}"
 msgid "Filter:"
 msgstr "Filter:"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:316
+#: src/components/launch-config-editor/launch-config-editor.tsx:328
 msgid "Format"
 msgstr "Format"
 
@@ -380,8 +380,8 @@ msgid "IP Address of the Playtron device"
 msgstr "IP Address of the Playtron device"
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:310
-msgid "JSON is invalid: {e}"
-msgstr "JSON is invalid: {e}"
+#~ msgid "JSON is invalid: {e}"
+#~ msgstr "JSON is invalid: {e}"
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:250
 #~ msgid "JSON structure is invalid {err}"
@@ -411,11 +411,11 @@ msgstr "Launch Config"
 #~ msgid "Launch Config for"
 #~ msgstr "Launch Config for"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:191
+#: src/components/launch-config-editor/launch-config-editor.tsx:196
 msgid "Launch Config for {appName}"
 msgstr "Launch Config for {appName}"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:307
+#: src/components/launch-config-editor/launch-config-editor.tsx:318
 msgid "Launch config is valid"
 msgstr "Launch config is valid"
 
@@ -614,7 +614,7 @@ msgid "Running"
 msgstr "Running"
 
 #: src/components/controller-edit/controller-edit.tsx:197
-#: src/components/launch-config-editor/launch-config-editor.tsx:256
+#: src/components/launch-config-editor/launch-config-editor.tsx:261
 msgid "Save"
 msgstr "Save"
 
@@ -736,6 +736,10 @@ msgstr "Unable to connect to playtron service on the device"
 msgid "Unable to connect with the device: {err}"
 msgstr "Unable to connect with the device: {err}"
 
+#: src/components/launch-config-editor/launch-config-editor.tsx:322
+msgid "Unhandled error: {e}"
+msgstr "Unhandled error: {e}"
+
 #: src/components/app-library/game-card.tsx:105
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 #: src/context/app-library-context/components/table-cells/app-action-cell.tsx:53
@@ -772,7 +776,7 @@ msgstr "used of"
 msgid "Username"
 msgstr "Username"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:283
+#: src/components/launch-config-editor/launch-config-editor.tsx:288
 msgid "Validate JSON"
 msgstr "Validate JSON"
 
