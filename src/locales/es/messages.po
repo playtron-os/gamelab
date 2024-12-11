@@ -84,7 +84,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:198
+#: src/components/launch-config-editor/launch-config-editor.tsx:237
 msgid "Base config"
 msgstr ""
 
@@ -104,7 +104,7 @@ msgstr ""
 #~ msgid "Change device"
 #~ msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:255
+#: src/components/launch-config-editor/launch-config-editor.tsx:314
 #: src/components/logs-modal/logs-modal.tsx:102
 msgid "Clear"
 msgstr ""
@@ -127,11 +127,11 @@ msgid "Config"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:162
-#: src/components/launch-config-editor/launch-config-editor.tsx:167
+#: src/components/launch-config-editor/launch-config-editor.tsx:206
 msgid "CONFIG NAME"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:183
+#: src/components/launch-config-editor/launch-config-editor.tsx:222
 msgid "CONFIGURATION"
 msgstr ""
 
@@ -226,6 +226,10 @@ msgstr ""
 msgid "Error starting app download: {message}"
 msgstr ""
 
+#: src/components/launch-config-editor/launch-config-editor.tsx:304
+msgid "Errors in launch config: {errors}"
+msgstr ""
+
 #: src/components/move-app-dialog/hooks/use-app-move.ts:32
 msgid "Failed to move app: {message}"
 msgstr ""
@@ -242,7 +246,7 @@ msgstr ""
 msgid "Filter:"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:257
+#: src/components/launch-config-editor/launch-config-editor.tsx:316
 msgid "Format"
 msgstr ""
 
@@ -375,9 +379,13 @@ msgstr ""
 msgid "IP Address of the Playtron device"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:250
-msgid "JSON structure is invalid {err}"
+#: src/components/launch-config-editor/launch-config-editor.tsx:310
+msgid "JSON is invalid: {e}"
 msgstr ""
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:250
+#~ msgid "JSON structure is invalid {err}"
+#~ msgstr ""
 
 #: src/components/controller-edit/map-to.tsx:24
 msgid "Keyboard"
@@ -403,8 +411,12 @@ msgstr ""
 #~ msgid "Launch Config for"
 #~ msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:152
+#: src/components/launch-config-editor/launch-config-editor.tsx:191
 msgid "Launch Config for {appName}"
+msgstr ""
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:307
+msgid "Launch config is valid"
 msgstr ""
 
 #: src/components/launch-config/launch-config-modal.tsx:74
@@ -602,7 +614,7 @@ msgid "Running"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:197
-#: src/components/launch-config-editor/launch-config-editor.tsx:217
+#: src/components/launch-config-editor/launch-config-editor.tsx:256
 msgid "Save"
 msgstr ""
 
@@ -760,7 +772,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:244
+#: src/components/launch-config-editor/launch-config-editor.tsx:283
 msgid "Validate JSON"
 msgstr ""
 
