@@ -146,8 +146,7 @@ export const GameCard: React.FC<GameCardProps> = ({
                     )}{" "}
                   </span>
                   <span className="font-bold">
-                    ({getDiskSize(game.installed_app?.install_config.disk_size)}
-                    )
+                    {getDiskSize(game.installed_app?.install_config.disk_size)}
                   </span>
                 </div>
               )}
