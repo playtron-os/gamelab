@@ -59,7 +59,12 @@ export const getControllerLayoutLabel = (layout: TargetControllerType) => {
 };
 
 export const getPhysicalLayoutFromDevice = (device: ControllerInfo) => {
+  // Xbox360
   if (device.capabilities.length === 20) {
+    return physicalLayouts.Xbox;
+  }
+  // Xbox One
+  if (device.capabilities.length === 25) {
     return physicalLayouts.Xbox;
   }
   if (device.capabilities.length === 33) {
