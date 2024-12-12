@@ -15,8 +15,7 @@ import {
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import {
   selectCurrentAppState,
-  selectAppLibraryAppsState,
-  setCurrentApp
+  selectAppLibraryAppsState
 } from "@/redux/modules";
 import { useSubmissions } from "./hooks/use-submissions";
 import { SubmissionCategory } from "@/constants";
@@ -113,10 +112,6 @@ export const SubmissionsContextProvider = ({
     SubmissionType.LaunchConfig,
     currentApp?.app.id
   );
-
-  if (!currentApp && apps.length > 0) {
-    dispatch(setCurrentApp(apps[0]));
-  }
 
   const { sendMessage } = usePlayserve({
     onMessage: (message) => {

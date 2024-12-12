@@ -18,7 +18,7 @@ export const SubmissionEditHeader: React.FC<SubmissionEditHeaderProps> = ({
           onClick={() => onClose()}
           Icon={CloseFill}
           size="medium"
-          className="px-3"
+          className="px-2"
         />
       </div>
     </div>

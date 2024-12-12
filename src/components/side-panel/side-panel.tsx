@@ -1,7 +1,7 @@
 import React, { useMemo, useState, useCallback, useEffect } from "react";
 
 import { Trans, t } from "@lingui/macro";
-import { Button, Divider, Toggle } from "@playtron/styleguide";
+import { Button, Divider, Toggle, CloseFill } from "@playtron/styleguide";
 
 import { AppStatus, getMessage, MessageType } from "@/types";
 import {
@@ -20,15 +20,16 @@ import {
   useSubmissionsContext,
   useSubmissionsType
 } from "@/context/submissions-context";
+import { useAppDispatch } from "@/redux/store";
 
 import { TargetControllerType } from "@/types/input-config";
 import { EulaModal } from "@/components/eula-modal/eula-modal";
 import { usePlayserveSendMessage } from "@/hooks";
+import { setCurrentApp } from "@/redux/modules";
 
 export const SidePanel: React.FC = () => {
   const {
     eula,
-
     isEulaOpen,
     acceptEula,
     setIsEulaOpen,
@@ -57,7 +58,7 @@ export const SidePanel: React.FC = () => {
     return null;
   }
   const appStatus = getAppStatus(currentApp);
-
+  const dispatch = useAppDispatch();
   const sendMessage = usePlayserveSendMessage();
 
   const deleteDefaultConfig = useCallback(
@@ -120,9 +121,22 @@ export const SidePanel: React.FC = () => {
     <>
       <div className="fixed bg-black right-0 top-0 h-screen w-[480px] px-2 py-2 border-gray-800 border-l-2 overflow-scroll select-none cursor-default z-10">
         <div className="pt-4 px-2 mb-28">
-          <h2 className="text-xl font-bold justify-between flex pb-2 select-all">
-            {currentApp.app.name}
-          </h2>
+          <div className="flex">
+            <h2 className="flex-grow text-xl font-bold justify-between flex pb-2 select-all">
+              {currentApp.app.name}
+            </h2>
+            <div>
+              <Button
+                onClick={() => {
+                  dispatch(setCurrentApp(undefined));
+                }}
+                Icon={CloseFill}
+                size="medium"
+                className="px-2"
+              />
+            </div>
+          </div>
+
           <div className="flex">
             <div className="flex-shrink">
               <img
