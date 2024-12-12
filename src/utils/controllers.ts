@@ -247,12 +247,37 @@ export const getInputLabel = (input: InputEvent) => {
   }
   if (input.gamepad) {
     if (input.gamepad.axis) {
-      return input.gamepad.axis.name;
+      switch (input.gamepad.axis.name) {
+        case "LeftStick":
+          return "Left Stick";
+        case "RightStick":
+          return "Right Stick";
+        default:
+          return input.gamepad.axis.name;
+      }
     }
     if (input.gamepad.trigger) {
-      return input.gamepad.trigger.name;
+      switch (input.gamepad.trigger.name) {
+        case "LeftTrigger":
+          return "Left Trigger";
+        case "RightTrigger":
+          return "Right Trigger";
+        default:
+          return input.gamepad.trigger.name;
+      }
     }
-    return input.gamepad.button;
+    switch (input.gamepad.button) {
+      case "LeftStick":
+        return "L3 Button";
+      case "RightStick":
+        return "R3 Button";
+      case "LeftBumper":
+        return "Left Bumper";
+      case "RightBumper":
+        return "Right Bumper";
+      default:
+        return input.gamepad.button;
+    }
   }
   return "-";
 };
@@ -286,7 +311,6 @@ export const getInputButtonLabel = (label: string, layout?: string) => {
         return label;
     }
   }
-  return label;
 };
 
 export const mappingCmp = (mapping1?: InputEvent, mapping2?: InputEvent) => {
