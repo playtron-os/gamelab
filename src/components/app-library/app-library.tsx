@@ -43,16 +43,6 @@ export const AppLibrary: React.FC = () => {
     return <span data-testid={"error-text"}>{error}</span>;
   }
 
-  let totalInstalled = 0;
-
-  if (!loading && !error && apps) {
-    for (let i = 0; i < apps.length; i++) {
-      if (apps[i].installed_app) {
-        totalInstalled += 1;
-      }
-    }
-  }
-  const totalGames = apps ? apps.length : 0;
   let filteredGames = apps;
 
   const shownProviders = (
@@ -161,6 +151,10 @@ export const AppLibrary: React.FC = () => {
     });
     return sorted;
   }, [filteredGames, sortKey]);
+  const filteredGamesCount = useMemo(() => {
+    return filteredGames.length;
+  }, [filteredGames]);
+
   return (
     <div className="w-full px-4 select-none cursor-default text-base">
       <div>
@@ -219,8 +213,8 @@ export const AppLibrary: React.FC = () => {
         <div className="flex">
           <h2 className="text-2xl my-3 px-2 flex-grow">
             {tabKey == "all"
-              ? t`All Games (${totalGames})`
-              : t`Installed Games (${totalInstalled})`}
+              ? t`All Games (${filteredGamesCount})`
+              : t`Installed Games (${filteredGamesCount})`}
           </h2>
           <div className="flex items-center pe-2 w-[210px]">
             <Dropdown

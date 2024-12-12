@@ -39,7 +39,8 @@ import {
   MouseSideBtnFront,
   MouseMiddleScrollDown,
   MouseMiddleScrollUp,
-  QuestionMark
+  TrackpadLeft,
+  TrackpadRight
 } from "@playtron/styleguide";
 
 import steamDeckImageFrontDpad from "@/assets/Devices/Steam Deck Front-dpad.svg";
@@ -320,13 +321,13 @@ export const ControllerInputs: ControllerInputMap = {
   },
   LeftTrackpad: {
     label: "Left Trackpad",
-    icon: QuestionMark,
+    icon: TrackpadLeft,
     device: "gamepad",
     mapping: { button: "LTrackpad" }
   },
   RightTrackpad: {
     label: "Right Trackpad",
-    icon: QuestionMark,
+    icon: TrackpadRight,
     device: "gamepad",
     mapping: { button: "RTrackpad" }
   },
