@@ -1,8 +1,8 @@
+import { useCallback, useState, useEffect } from "react";
+
 import { UsePlayserveReturn } from "@/hooks";
 import { MessageType, getMessage } from "@/types";
 import { DriveInfoResponseBody } from "@/types/drive";
-import { useMount } from "ahooks";
-import { useCallback, useState } from "react";
 
 export const useDriveInfo = (playserve: UsePlayserveReturn) => {
   const { sendMessage } = playserve;
@@ -23,9 +23,9 @@ export const useDriveInfo = (playserve: UsePlayserveReturn) => {
       });
   }, [sendMessage]);
 
-  useMount(() => {
+  useEffect(() => {
     sendDriveInfoMessage();
-  });
+  }, []);
 
   return {
     drives,

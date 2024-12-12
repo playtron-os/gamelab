@@ -147,8 +147,8 @@ export const AppLibrary: React.FC = () => {
           );
         case "status":
           return (
-            getAppStatusWithQueue(b, queuePositionMapState) -
-            getAppStatusWithQueue(a, queuePositionMapState)
+            getAppStatusWithQueue(a, queuePositionMapState) -
+            getAppStatusWithQueue(b, queuePositionMapState)
           );
         case "last_played":
           return (

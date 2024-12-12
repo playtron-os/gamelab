@@ -47,7 +47,7 @@ msgstr ""
 msgid "Add New Config"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:139
+#: src/components/side-panel/side-panel.tsx:153
 msgid "Added"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Bulk Actions"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:172
+#: src/components/side-panel/side-panel.tsx:186
 msgid "Bypass App Update"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:307
+#: src/components/side-panel/side-panel.tsx:321
 msgid "Close Log Window"
 msgstr ""
 
@@ -135,7 +135,7 @@ msgstr ""
 msgid "CONFIGURATION"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:311
+#: src/context/submissions-context/submissions-context.tsx:306
 msgid "Configuration has been submitted"
 msgstr ""
 
@@ -168,7 +168,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:356
+#: src/context/submissions-context/submissions-context.tsx:351
 msgid "Delete this configuration?"
 msgstr ""
 
@@ -209,7 +209,7 @@ msgstr ""
 msgid "End User License Agreements for"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:182
+#: src/components/side-panel/side-panel.tsx:196
 msgid "Enhanced Debugging"
 msgstr ""
 
@@ -315,7 +315,7 @@ msgstr ""
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:220
+#: src/components/side-panel/side-panel.tsx:234
 msgid "Input Config"
 msgstr ""
 
@@ -343,7 +343,7 @@ msgstr ""
 msgid "Install Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:274
+#: src/components/side-panel/side-panel.tsx:288
 msgid "Install folder"
 msgstr ""
 
@@ -403,7 +403,7 @@ msgstr ""
 msgid "Launch"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:194
+#: src/components/side-panel/side-panel.tsx:208
 msgid "Launch Config"
 msgstr ""
 
@@ -485,7 +485,7 @@ msgstr ""
 msgid "Name (Z-A)"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:155
+#: src/components/side-panel/side-panel.tsx:169
 msgid "Never tested"
 msgstr ""
 
@@ -501,7 +501,7 @@ msgstr ""
 msgid "Not Downloaded"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:144
+#: src/components/side-panel/side-panel.tsx:158
 msgid "Not installed"
 msgstr ""
 
@@ -525,7 +525,7 @@ msgstr ""
 msgid "Open Full Log"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:307
+#: src/components/side-panel/side-panel.tsx:321
 msgid "Open Log Window"
 msgstr ""
 
@@ -542,7 +542,7 @@ msgstr ""
 msgid "Paused"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:247
+#: src/components/side-panel/side-panel.tsx:261
 msgid "Playtron App ID"
 msgstr ""
 
@@ -551,7 +551,7 @@ msgstr ""
 msgid "Playtron Labs"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:254
+#: src/components/side-panel/side-panel.tsx:268
 msgid "Playtron Slug"
 msgstr ""
 
@@ -567,12 +567,12 @@ msgstr ""
 msgid "Promote"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:105
+#: src/components/side-panel/side-panel.tsx:106
 #: src/context/app-library-context/table-config.tsx:64
 msgid "Provider"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:111
+#: src/components/side-panel/side-panel.tsx:112
 msgid "Provider App ID"
 msgstr ""
 
@@ -592,16 +592,16 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:261
+#: src/components/side-panel/side-panel.tsx:275
 msgid "Release Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:205
-#: src/components/side-panel/side-panel.tsx:231
+#: src/components/side-panel/side-panel.tsx:219
+#: src/components/side-panel/side-panel.tsx:245
 msgid "Reset"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:162
+#: src/components/side-panel/side-panel.tsx:176
 msgid "Reset Wine Prefix"
 msgstr ""
 
@@ -671,7 +671,7 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:273
+#: src/context/submissions-context/submissions-context.tsx:268
 msgid "Submission promoted"
 msgstr ""
 
@@ -691,7 +691,7 @@ msgstr ""
 msgid "Test Games on Playtron Device via Local Network"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:150
+#: src/components/side-panel/side-panel.tsx:164
 msgid "Tested on"
 msgstr ""
 
@@ -707,7 +707,7 @@ msgstr ""
 msgid "There is no launch configuration created for"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:317
+#: src/context/submissions-context/submissions-context.tsx:312
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 

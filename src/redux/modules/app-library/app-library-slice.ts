@@ -211,7 +211,10 @@ export const appLibrarySlice = createSlice({
     ) => {
       state.loadingProgress = { ...state.loadingProgress, ...action.payload };
     },
-    setCurrentApp: (state, action: PayloadAction<AppInformation>) => {
+    setCurrentApp: (
+      state,
+      action: PayloadAction<AppInformation | undefined>
+    ) => {
       state.currentApp = action.payload;
     },
     resetLibrary: () => APP_LIBRARY_INITIAL_STATE
