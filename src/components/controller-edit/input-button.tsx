@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { styles } from "@playtron/styleguide";
 import { ControllerInput, InputEvent } from "@/types/input-config";
-import { mappingCmp, getInputButtonLabel } from "@/utils/controllers";
+import { mappingCmp, convertOrientationToButton } from "@/utils/controllers";
 
 interface InputButtonProps {
   input: ControllerInput;
@@ -45,7 +45,7 @@ export const InputButton: React.FC<InputButtonProps> = ({
       onClick={() => onSelectKey(input)}
     >
       {getInputIcon()}
-      {getInputButtonLabel(input.label, layout)}
+      {convertOrientationToButton(input.label, layout)}
     </div>
   );
 };

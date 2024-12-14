@@ -231,7 +231,7 @@ export const getKeyLabel = (key: string | null) => {
   }
 };
 
-export const getInputLabel = (input: InputEvent) => {
+export const getInputLabel = (input: InputEvent, layout: string) => {
   if (!input) {
     return t`Unset`;
   }
@@ -266,6 +266,9 @@ export const getInputLabel = (input: InputEvent) => {
           return input.gamepad.trigger.name;
       }
     }
+    if (!input.gamepad.button) {
+      return "?";
+    }
     switch (input.gamepad.button) {
       case "LeftStick":
         return "L3 Button";
@@ -276,13 +279,16 @@ export const getInputLabel = (input: InputEvent) => {
       case "RightBumper":
         return "Right Bumper";
       default:
-        return input.gamepad.button;
+        return convertOrientationToButton(input.gamepad.button, layout);
     }
   }
   return "-";
 };
 
-export const getInputButtonLabel = (label: string, layout?: string) => {
+/**
+ * Given a button position, return the associated button label for a given controller.
+ */
+export const convertOrientationToButton = (label: string, layout?: string) => {
   if (layout === "ps5") {
     switch (label) {
       case "North":

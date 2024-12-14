@@ -17,7 +17,7 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr "-"
 
-#: src/components/app-library/app-library.tsx:115
+#: src/components/app-library/app-library.tsx:117
 msgid "???"
 msgstr "???"
 
@@ -55,11 +55,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:185
+#: src/components/app-library/app-library.tsx:188
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:216
+#: src/components/app-library/app-library.tsx:219
 msgid "All Games ({filteredGamesCount})"
 msgstr "All Games ({filteredGamesCount})"
 
@@ -351,11 +351,11 @@ msgstr "Install Date"
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:195
+#: src/components/app-library/app-library.tsx:198
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:217
+#: src/components/app-library/app-library.tsx:220
 msgid "Installed Games ({filteredGamesCount})"
 msgstr "Installed Games ({filteredGamesCount})"
 
@@ -626,7 +626,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:206
+#: src/components/app-library/app-library.tsx:209
 msgid "Search"
 msgstr "Search"
 
@@ -655,6 +655,10 @@ msgid "Sort by: Game Status"
 msgstr "Sort by: Game Status"
 
 #: src/components/app-library/app-library.tsx:113
+msgid "Sort by: Install Date"
+msgstr "Sort by: Install Date"
+
+#: src/components/app-library/app-library.tsx:115
 msgid "Sort by: Last Updated"
 msgstr "Sort by: Last Updated"
 

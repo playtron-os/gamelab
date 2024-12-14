@@ -11,6 +11,10 @@ import {
   R1RectangleRoundedtopLine,
   L2RectangleRoundedtopLine,
   R2RectangleRoundedtopLine,
+  L4RectangleRoundedtopLine,
+  R4RectangleRoundedtopLine,
+  L5RectangleRoundedtopLine,
+  R5RectangleRoundedtopLine,
   DpadDownFill,
   DpadLeftFill,
   DpadRightFill,
@@ -29,8 +33,6 @@ import {
   JoystickRDownLine,
   OptionLine,
   ViewLine,
-  RectangleRoundedbottomLine,
-  RectangleRoundedtopLine,
   MouseLeftClick,
   MouseRightClick,
   MouseMiddleClick,
@@ -40,7 +42,12 @@ import {
   MouseMiddleScrollDown,
   MouseMiddleScrollUp,
   TrackpadLeft,
-  TrackpadRight
+  TrackpadLeftClick,
+  TrackpadRight,
+  TrackpadRightClick,
+  Trackpad,
+  TrackpadClick,
+  Gyro
 } from "@playtron/styleguide";
 
 import steamDeckImageFrontDpad from "@/assets/Devices/Steam Deck Front-dpad.svg";
@@ -66,7 +73,6 @@ import ROGAllyImageFrontButtons from "@/assets/Devices/ROG Ally Front-facebtn.sv
 import ROGAllyImageFrontSticks from "@/assets/Devices/ROG Ally Front-stick.svg";
 import ROGAllyImageTopTrigger from "@/assets/Devices/ROG Ally Top-triggers.svg";
 import ROGAllyImageTopBumpers from "@/assets/Devices/ROG Ally Top-bumpers.svg";
-import ROGAllyImageFrontTrackpads from "@/assets/Devices/ROG Ally Front-touchpad.svg";
 import ROGAllyImageBackPaddles from "@/assets/Devices/ROG Ally Back-paddles.svg";
 import ROGAllyImageGyro from "@/assets/Devices/ROG Ally Gyro.svg";
 
@@ -204,13 +210,13 @@ export const ControllerInputs: ControllerInputMap = {
   },
   Start: {
     label: "Start",
-    icon: ViewLine,
+    icon: OptionLine,
     device: "gamepad",
     mapping: { button: "Start" }
   },
   Select: {
     label: "Select",
-    icon: OptionLine,
+    icon: ViewLine,
     device: "gamepad",
     mapping: { button: "Select" }
   },
@@ -296,32 +302,50 @@ export const ControllerInputs: ControllerInputMap = {
     mapping: { axis: { name: "RightStick", direction: "down", deadzone: 0.3 } }
   },
   LeftPaddle1: {
-    label: "Paddle 1",
-    icon: RectangleRoundedtopLine,
+    label: "Left Paddle 1",
+    icon: L4RectangleRoundedtopLine,
     device: "gamepad",
     mapping: { button: "LeftPaddle1" }
   },
   LeftPaddle2: {
-    label: "Paddle 2",
-    icon: RectangleRoundedtopLine,
+    label: "Left Paddle 2",
+    icon: L5RectangleRoundedtopLine,
     device: "gamepad",
     mapping: { button: "LeftPaddle2" }
   },
   RightPaddle1: {
-    label: "Paddle 3",
-    icon: RectangleRoundedbottomLine,
+    label: "Right Paddle 1",
+    icon: R4RectangleRoundedtopLine,
     device: "gamepad",
     mapping: { button: "RightPaddle1" }
   },
   RightPaddle2: {
-    label: "Paddle 4",
-    icon: RectangleRoundedbottomLine,
+    label: "Right Paddle 2",
+    icon: R5RectangleRoundedtopLine,
     device: "gamepad",
     mapping: { button: "RightPaddle2" }
+  },
+  Trackpad: {
+    label: "Trackpad",
+    icon: Trackpad,
+    device: "gamepad",
+    mapping: { axis: { name: "Trackpad" } }
+  },
+  TrackpadTap: {
+    label: "Trackpad Click",
+    icon: TrackpadClick,
+    device: "gamepad",
+    mapping: { button: "Trackpad" }
   },
   LeftTrackpad: {
     label: "Left Trackpad",
     icon: TrackpadLeft,
+    device: "gamepad",
+    mapping: { axis: { name: "LTrackpad" } }
+  },
+  LeftTrackpadTap: {
+    label: "Left Trackpad Click",
+    icon: TrackpadLeftClick,
     device: "gamepad",
     mapping: { button: "LTrackpad" }
   },
@@ -329,14 +353,20 @@ export const ControllerInputs: ControllerInputMap = {
     label: "Right Trackpad",
     icon: TrackpadRight,
     device: "gamepad",
+    mapping: { axis: { name: "Trackpad" } }
+  },
+  RightTrackpadTap: {
+    label: "Right Trackpad Click",
+    icon: TrackpadRightClick,
+    device: "gamepad",
     mapping: { button: "RTrackpad" }
   },
-  // Gyro: {
-  //   label: "Gyro",
-  //   icon: QuestionMark,
-  //   device: "gamepad",
-  //   mapping: { axis: { name: "Gyro" } }
-  // },
+  Gyro: {
+    label: "Gyro",
+    icon: Gyro,
+    device: "gamepad",
+    mapping: { axis: { name: "Gyro" } }
+  },
   MouseClickLeft: {
     label: "Left Click",
     icon: MouseLeftClick,
@@ -387,7 +417,7 @@ export const ControllerInputs: ControllerInputMap = {
   }
 };
 
-export const steamDeckLayout: ControlGroup[] = [
+export const baseLayout: ControlGroup[] = [
   {
     id: "dpad",
     name: "D-pad",
@@ -447,7 +477,10 @@ export const steamDeckLayout: ControlGroup[] = [
     name: "Bumpers",
     section: "bumpers",
     inputs: [ControllerInputs.LeftBumper, ControllerInputs.RightBumper]
-  },
+  }
+];
+
+export const steamDeckLayout: ControlGroup[] = baseLayout.concat([
   {
     id: "paddles",
     name: "Paddles",
@@ -463,82 +496,50 @@ export const steamDeckLayout: ControlGroup[] = [
     id: "trackpads",
     name: "Trackpads",
     section: "trackpads",
-    inputs: [ControllerInputs.LeftTrackpad, ControllerInputs.RightTrackpad]
+    inputs: [
+      ControllerInputs.LeftTrackpad,
+      ControllerInputs.LeftTrackpadTap,
+      ControllerInputs.RightTrackpad,
+      ControllerInputs.RightTrackpadTap
+    ]
   }
-  // {
-  //   id: "gyro",
-  //   name: "Gyro",
-  //   section: "gyro",
-  //   inputs: [ControllerInputs.Gyro]
-  // }
-];
+]);
 
-export const ps4Layout: ControlGroup[] = [
+export const legionGoLayout: ControlGroup[] = baseLayout.concat([
   {
-    id: "dpad",
-    name: "D-pad",
-    section: "dpad",
+    id: "paddles",
+    name: "Paddles",
+    section: "paddles",
     inputs: [
-      ControllerInputs.DPadUp,
-      ControllerInputs.DPadLeft,
-      ControllerInputs.DPadDown,
-      ControllerInputs.DPadRight
+      ControllerInputs.LeftPaddle1,
+      ControllerInputs.LeftPaddle2,
+      ControllerInputs.RightPaddle1,
+      ControllerInputs.RightPaddle2
     ]
-  },
-  {
-    id: "buttons",
-    name: "Face buttons",
-    section: "buttons",
-    inputs: [
-      ControllerInputs.South,
-      ControllerInputs.East,
-      ControllerInputs.North,
-      ControllerInputs.West,
-      ControllerInputs.Select,
-      ControllerInputs.Start
-    ]
-  },
-  {
-    id: "sticks",
-    name: "Analog sticks",
-    section: "sticks",
-    inputs: [
-      ControllerInputs.LeftStick,
-      ControllerInputs.RightStick,
-
-      ControllerInputs.LeftStickButton,
-      ControllerInputs.RightStickButton,
-
-      ControllerInputs.LeftStickUp,
-      ControllerInputs.RightStickUp,
-
-      ControllerInputs.LeftStickDown,
-      ControllerInputs.RightStickDown,
-
-      ControllerInputs.LeftStickLeft,
-      ControllerInputs.RightStickLeft,
-
-      ControllerInputs.LeftStickRight,
-      ControllerInputs.RightStickRight
-    ]
-  },
-  {
-    id: "triggers",
-    name: "Triggers",
-    section: "triggers",
-    inputs: [ControllerInputs.LeftTrigger, ControllerInputs.RightTrigger]
-  },
-  {
-    id: "bumpers",
-    name: "Bumpers",
-    section: "bumpers",
-    inputs: [ControllerInputs.LeftBumper, ControllerInputs.RightBumper]
   },
   {
     id: "trackpads",
     name: "Trackpads",
     section: "trackpads",
-    inputs: [ControllerInputs.LeftTrackpad]
+    inputs: [ControllerInputs.Trackpad, ControllerInputs.TrackpadTap]
+  }
+]);
+
+export const rogAllyLayout: ControlGroup[] = baseLayout.concat([
+  {
+    id: "paddles",
+    name: "Paddles",
+    section: "paddles",
+    inputs: [ControllerInputs.LeftPaddle1, ControllerInputs.RightPaddle1]
+  }
+]);
+
+export const ps4Layout: ControlGroup[] = baseLayout.concat([
+  {
+    id: "trackpads",
+    name: "Trackpads",
+    section: "trackpads",
+    inputs: [ControllerInputs.Trackpad]
   },
   {
     id: "gyro",
@@ -546,145 +547,24 @@ export const ps4Layout: ControlGroup[] = [
     section: "gyro",
     inputs: [ControllerInputs.Gyro]
   }
-];
+]);
 
-export const ps5Layout: ControlGroup[] = [
-  {
-    id: "dpad",
-    name: "D-pad",
-    section: "dpad",
-    inputs: [
-      ControllerInputs.DPadUp,
-      ControllerInputs.DPadLeft,
-      ControllerInputs.DPadDown,
-      ControllerInputs.DPadRight
-    ]
-  },
-  {
-    id: "buttons",
-    name: "Face buttons",
-    section: "buttons",
-    inputs: [
-      ControllerInputs.South,
-      ControllerInputs.East,
-      ControllerInputs.North,
-      ControllerInputs.West,
-      ControllerInputs.Select,
-      ControllerInputs.Start
-    ]
-  },
-  {
-    id: "sticks",
-    name: "Analog sticks",
-    section: "sticks",
-    inputs: [
-      ControllerInputs.LeftStick,
-      ControllerInputs.RightStick,
-
-      ControllerInputs.LeftStickButton,
-      ControllerInputs.RightStickButton,
-
-      ControllerInputs.LeftStickUp,
-      ControllerInputs.RightStickUp,
-
-      ControllerInputs.LeftStickDown,
-      ControllerInputs.RightStickDown,
-
-      ControllerInputs.LeftStickLeft,
-      ControllerInputs.RightStickLeft,
-
-      ControllerInputs.LeftStickRight,
-      ControllerInputs.RightStickRight
-    ]
-  },
-  {
-    id: "triggers",
-    name: "Triggers",
-    section: "triggers",
-    inputs: [ControllerInputs.LeftTrigger, ControllerInputs.RightTrigger]
-  },
-  {
-    id: "bumpers",
-    name: "Bumpers",
-    section: "bumpers",
-    inputs: [ControllerInputs.LeftBumper, ControllerInputs.RightBumper]
-  },
+export const ps5Layout: ControlGroup[] = baseLayout.concat([
   {
     id: "trackpads",
     name: "Trackpads",
     section: "trackpads",
-    inputs: [ControllerInputs.Trackpad]
+    inputs: [ControllerInputs.TrackpadTap, ControllerInputs.Trackpad]
+  },
+  {
+    id: "gyro",
+    name: "Gyro",
+    section: "gyro",
+    inputs: [ControllerInputs.Gyro]
   }
-  // {
-  //   id: "gyro",
-  //   name: "Gyro",
-  //   section: "gyro",
-  //   inputs: [ControllerInputs.Gyro]
-  // }
-];
+]);
 
-export const xboxLayout: ControlGroup[] = [
-  {
-    id: "dpad",
-    name: "D-pad",
-    section: "dpad",
-    inputs: [
-      ControllerInputs.DPadUp,
-      ControllerInputs.DPadLeft,
-      ControllerInputs.DPadDown,
-      ControllerInputs.DPadRight
-    ]
-  },
-  {
-    id: "buttons",
-    name: "Face buttons",
-    section: "buttons",
-    inputs: [
-      ControllerInputs.South,
-      ControllerInputs.East,
-      ControllerInputs.North,
-      ControllerInputs.West,
-      ControllerInputs.Select,
-      ControllerInputs.Start
-    ]
-  },
-  {
-    id: "sticks",
-    name: "Analog sticks",
-    section: "sticks",
-    inputs: [
-      ControllerInputs.LeftStick,
-      ControllerInputs.RightStick,
-
-      ControllerInputs.LeftStickButton,
-      ControllerInputs.RightStickButton,
-
-      ControllerInputs.LeftStickUp,
-      ControllerInputs.RightStickUp,
-
-      ControllerInputs.LeftStickDown,
-      ControllerInputs.RightStickDown,
-
-      ControllerInputs.LeftStickLeft,
-      ControllerInputs.RightStickLeft,
-
-      ControllerInputs.LeftStickRight,
-      ControllerInputs.RightStickRight
-    ]
-  },
-  {
-    id: "bumpers",
-    name: "Bumpers",
-    section: "bumpers",
-    inputs: [ControllerInputs.LeftBumper, ControllerInputs.RightBumper]
-  },
-  {
-    id: "triggers",
-    name: "Triggers",
-    section: "triggers",
-    inputs: [ControllerInputs.LeftTrigger, ControllerInputs.RightTrigger]
-  }
-];
+export const xboxLayout: ControlGroup[] = baseLayout;
 
 export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
   SteamDeck: {
@@ -705,7 +585,7 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
   LegionGo: {
     id: "legion-go",
     label: "Legion Go",
-    layout: steamDeckLayout,
+    layout: legionGoLayout,
     images: {
       dpad: LegionGoImageFrontDpad,
       buttons: LegionGoImageFrontButtons,
@@ -720,7 +600,7 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
   ROGAlly: {
     id: "rog-ally",
     label: "ROG Ally",
-    layout: steamDeckLayout,
+    layout: rogAllyLayout,
     images: {
       dpad: ROGAllyImageFrontDpad,
       buttons: ROGAllyImageFrontButtons,
@@ -728,14 +608,13 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
       sticks: ROGAllyImageFrontSticks,
       bumpers: ROGAllyImageTopBumpers,
       paddles: ROGAllyImageBackPaddles,
-      trackpads: ROGAllyImageFrontTrackpads,
       gyro: ROGAllyImageGyro
     }
   },
   Generic: {
     id: "generic-controller",
     label: "Generic Controller",
-    layout: xboxLayout, // No need for a specific layout, it's the same as the Xbox layout
+    layout: baseLayout,
     images: {
       dpad: GenericImageFrontDpad,
       buttons: GenericImageFrontButtons,

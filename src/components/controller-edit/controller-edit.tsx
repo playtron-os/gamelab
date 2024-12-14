@@ -288,7 +288,10 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
                       <Button
                         className="border-none flex-grow"
                         centerContents={false}
-                        label={getInputLabel(value?.target_events[0])}
+                        label={getInputLabel(
+                          value?.target_events[0],
+                          targetLayout
+                        )}
                         onClick={() => {
                           if (value) {
                             setInputMapping(value);
