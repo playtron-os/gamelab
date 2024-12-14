@@ -26,7 +26,7 @@ export const InputButton: React.FC<InputButtonProps> = ({
     if (!input.icon) {
       return null;
     }
-    if (layout === "ps5" && input.psIcon) {
+    if (layout?.startsWith("ps") && input.psIcon) {
       return <input.psIcon fill={color} />;
     } else {
       return <input.icon fill={color} />;
