@@ -8,8 +8,8 @@ describe("Test controller utilities", () => {
     expect(getKeyLabel(null)).toBe("Unset");
   });
   test("Get input device label", () => {
-    expect(getInputLabel({ mouse: { button: "Left" } })).toBe("Left");
-    expect(getInputLabel({ keyboard: "KeyA" })).toBe("A");
+    expect(getInputLabel({ mouse: { button: "Left" } }, "xbox")).toBe("Left");
+    expect(getInputLabel({ keyboard: "KeyA" }, "xbox")).toBe("A");
   });
   test("Compare mappings", () => {
     expect(

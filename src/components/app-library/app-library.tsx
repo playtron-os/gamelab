@@ -109,6 +109,8 @@ export const AppLibrary: React.FC = () => {
         return t`Sort by: Game Size`;
       case "status":
         return t`Sort by: Game Status`;
+      case "install_date":
+        return t`Sort by: Install Date`;
       case "last_played":
         return t`Sort by: Last Updated`;
       default:
@@ -151,6 +153,7 @@ export const AppLibrary: React.FC = () => {
     });
     return sorted;
   }, [filteredGames, sortKey]);
+
   const filteredGamesCount = useMemo(() => {
     return filteredGames.length;
   }, [filteredGames]);
