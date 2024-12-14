@@ -317,6 +317,7 @@ export const convertOrientationToButton = (label: string, layout?: string) => {
         return label;
     }
   }
+  return label;
 };
 
 export const mappingCmp = (mapping1?: InputEvent, mapping2?: InputEvent) => {

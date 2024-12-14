@@ -89,7 +89,7 @@
     "@lingui/macro": "^4.11.3",
     "@lingui/react": "^4.11.3",
     "@nextui-org/react": "^2.4.1",
-    "@playtron/styleguide": "^0.0.44",
+    "@playtron/styleguide": "^0.0.46",
     "@reduxjs/toolkit": "^1.9.5",
     "@tanstack/react-table": "8.20.1",
     "@tanstack/react-virtual": "^3.10.9",

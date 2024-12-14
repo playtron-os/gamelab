@@ -66,7 +66,7 @@ export const EulaModal: React.FC<EulaModalProps> = ({
             className="h-[calc(95vh-120px)] w-[calc(95vw-384px)] overflow-y-scroll"
           >
             {eula && (
-              <div className="h-[calc(100vh-180px)] w-[calc(95vw-384px)]">
+              <div className="h-[calc(100vh-180px)] w-[calc(95vw-404px)]">
                 <div dangerouslySetInnerHTML={{ __html: eulaBody }}></div>
               </div>
             )}
