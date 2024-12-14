@@ -1,6 +1,6 @@
-import AjvDefault, { ErrorObject, JSONSchemaType } from "ajv";
+import AjvDefault, { ErrorObject } from "ajv";
 import { useSubmissionsContext } from "@/context/submissions-context";
-import { AppInformation, LaunchConfig, AppLaunchConfig } from "@/types";
+import { AppInformation, LaunchConfig } from "@/types";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { flashMessage } from "redux-flash";
 import {
@@ -19,44 +19,7 @@ import { Trans, t } from "@lingui/macro";
 import { Override } from "@/types/launch";
 import { ConfigOverrideChip } from "../config-override-chip";
 import { invoke } from "@tauri-apps/api/core";
-
-export const launchConfigSchema: JSONSchemaType<AppLaunchConfig> = {
-  type: "object",
-  additionalProperties: false,
-  properties: {
-    app_arguments: { type: "array", items: { type: "string" }, nullable: true },
-    app_executable: { type: "string", nullable: true },
-    wine_id: { type: "string", nullable: true },
-    extra_registry: {
-      type: "object",
-      additionalProperties: true,
-      required: [],
-      nullable: true
-    },
-    tricks_config: {
-      type: "object",
-      properties: { winetricks: { type: "array", items: { type: "string" } } },
-      required: ["winetricks"],
-      nullable: true
-    },
-    env: {
-      type: "object",
-      additionalProperties: true,
-      required: [],
-      nullable: true
-    },
-    symlinks: {
-      type: "array",
-      items: { type: "object", required: [] },
-      nullable: true
-    },
-    overrides: {
-      type: "array",
-      items: { type: "object", required: [] },
-      nullable: true
-    }
-  }
-};
+import { launchConfigSchema, overrideSchema } from "./schemas";
 
 export interface LaunchConfigEditorProps {
   appInfo: AppInformation;
@@ -189,6 +152,35 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
     );
   });
 
+  const validateConfig = useCallback(
+    async (jsonString: string, schema: object, label: string) => {
+      const validationErrors = await validateJSON(jsonString);
+      if (validationErrors) {
+        flashDispatch(flashMessage(validationErrors));
+        return;
+      }
+
+      const ajv = new AjvDefault();
+      const validator = ajv.compile(schema);
+      try {
+        const jsonObject = JSON.parse(jsonString);
+        if (!validator(jsonObject) && validator.errors) {
+          const errors = validator.errors
+            .map((e: ErrorObject) => `${e.instancePath}: ${e.message}`)
+            .join(", ");
+          flashDispatch(flashMessage(t`${label} contains errors: ${errors}`));
+          return;
+        }
+      } catch (e) {
+        console.error(e);
+        flashDispatch(flashMessage(t`Unhandled error: ${e}`));
+        return;
+      }
+      flashDispatch(flashMessage(t`${label} is valid`));
+    },
+    []
+  );
+
   return (
     <>
       <div className="bg-[--fill-subtle] flex flex-row items-center justify-center font-bold text-2xl h-[64px] py-3 px-6">
@@ -286,42 +278,15 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
           <div className="flex-shrink flex gap-[12px]">
             <Button
               label={t`Validate JSON`}
-              onClick={async () => {
-                const ajv = new AjvDefault();
-                const launchValidator = ajv.compile(launchConfigSchema);
-                const validationErrors = await validateJSON(content);
-                if (validationErrors) {
-                  flashDispatch(flashMessage(validationErrors));
-                  return;
-                }
-
-                try {
-                  const launchConfigObject = JSON.parse(content);
-                  if (
-                    !launchValidator(launchConfigObject) &&
-                    launchValidator.errors
-                  ) {
-                    const errors = launchValidator.errors
-                      .map(
-                        (e: ErrorObject) =>
-                          e.instancePath +
-                          ": " +
-                          e.message +
-                          "\n" +
-                          JSON.stringify(e.params)
-                      )
-                      .join(", ");
-                    flashDispatch(
-                      flashMessage(t`Errors in launch config: ${errors}`)
-                    );
-                  } else {
-                    flashDispatch(flashMessage(t`Launch config is valid`));
-                  }
-                } catch (e) {
-                  console.error(e);
-                  flashDispatch(flashMessage(t`Unhandled error: ${e}`));
-                }
-              }}
+              onClick={() =>
+                editMode === -1
+                  ? validateConfig(
+                      content,
+                      launchConfigSchema,
+                      t`Launch config`
+                    )
+                  : validateConfig(content, overrideSchema, t`Override`)
+              }
             />
             <Button label={t`Clear`} onClick={() => setContent("{\n}")} />
             <Button

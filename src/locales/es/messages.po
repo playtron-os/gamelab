@@ -25,6 +25,14 @@ msgstr ""
 #~ msgid "{capacity}% Full"
 #~ msgstr ""
 
+#: src/components/launch-config-editor/launch-config-editor.tsx:171
+msgid "{label} contains errors: {errors}"
+msgstr ""
+
+#: src/components/launch-config-editor/launch-config-editor.tsx:179
+msgid "{label} is valid"
+msgstr ""
+
 #: src/components/provider-auth-modal/components/two-factor-auth-form/two-factor-auth-form.tsx:28
 #~ msgid "2FA Code"
 #~ msgstr ""
@@ -88,7 +96,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:242
+#: src/components/launch-config-editor/launch-config-editor.tsx:234
 msgid "Base config"
 msgstr ""
 
@@ -108,7 +116,7 @@ msgstr ""
 #~ msgid "Change device"
 #~ msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:326
+#: src/components/launch-config-editor/launch-config-editor.tsx:291
 #: src/components/logs-modal/logs-modal.tsx:102
 msgid "Clear"
 msgstr ""
@@ -131,11 +139,11 @@ msgid "Config"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:174
-#: src/components/launch-config-editor/launch-config-editor.tsx:211
+#: src/components/launch-config-editor/launch-config-editor.tsx:203
 msgid "CONFIG NAME"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:227
+#: src/components/launch-config-editor/launch-config-editor.tsx:219
 msgid "CONFIGURATION"
 msgstr ""
 
@@ -231,8 +239,8 @@ msgid "Error starting app download: {message}"
 msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:315
-msgid "Errors in launch config: {errors}"
-msgstr ""
+#~ msgid "Errors in launch config: {errors}"
+#~ msgstr ""
 
 #: src/components/move-app-dialog/hooks/use-app-move.ts:32
 msgid "Failed to move app: {message}"
@@ -250,7 +258,7 @@ msgstr ""
 msgid "Filter:"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:328
+#: src/components/launch-config-editor/launch-config-editor.tsx:293
 msgid "Format"
 msgstr ""
 
@@ -411,6 +419,10 @@ msgstr ""
 msgid "Launch"
 msgstr ""
 
+#: src/components/launch-config-editor/launch-config-editor.tsx:286
+msgid "Launch config"
+msgstr ""
+
 #: src/components/side-panel/side-panel.tsx:208
 msgid "Launch Config"
 msgstr ""
@@ -419,13 +431,13 @@ msgstr ""
 #~ msgid "Launch Config for"
 #~ msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:196
+#: src/components/launch-config-editor/launch-config-editor.tsx:188
 msgid "Launch Config for {appName}"
 msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:318
-msgid "Launch config is valid"
-msgstr ""
+#~ msgid "Launch config is valid"
+#~ msgstr ""
 
 #: src/components/launch-config/launch-config-modal.tsx:74
 msgid "Launch Config List"
@@ -537,6 +549,10 @@ msgstr ""
 msgid "Open Log Window"
 msgstr ""
 
+#: src/components/launch-config-editor/launch-config-editor.tsx:288
+msgid "Override"
+msgstr ""
+
 #: src/screens/connect-device/connect-device.tsx:142
 #: src/screens/connect-device/connect-device.tsx:143
 msgid "Password"
@@ -622,7 +638,7 @@ msgid "Running"
 msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:209
-#: src/components/launch-config-editor/launch-config-editor.tsx:261
+#: src/components/launch-config-editor/launch-config-editor.tsx:253
 msgid "Save"
 msgstr ""
 
@@ -752,7 +768,7 @@ msgstr ""
 msgid "Unable to connect with the device: {err}"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:322
+#: src/components/launch-config-editor/launch-config-editor.tsx:176
 msgid "Unhandled error: {e}"
 msgstr ""
 
@@ -792,7 +808,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:288
+#: src/components/launch-config-editor/launch-config-editor.tsx:280
 msgid "Validate JSON"
 msgstr ""
 
