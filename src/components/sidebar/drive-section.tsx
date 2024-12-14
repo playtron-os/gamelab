@@ -23,7 +23,7 @@ export const DriveSection: React.FC = () => {
   const { setShowDrives: setShowDrivesDispatch } = useAppActions({
     setShowDrives
   });
-  const showDrives = appFilters.drives;
+
   const playserve = usePlayserve();
   const { drives, fetchDrives } = useDriveInfo(playserve);
 
@@ -31,7 +31,10 @@ export const DriveSection: React.FC = () => {
     onMessage: (message) => {
       if (
         message.message_type !== MessageType.DiskConnectedEvent &&
-        message.message_type !== MessageType.DiskDisconnectedEvent
+        message.message_type !== MessageType.DiskDisconnectedEvent &&
+        message.message_type !== MessageType.AppUninstall &&
+        message.message_type !== MessageType.AppInstallingUpdate &&
+        message.message_type !== MessageType.AppPostInstallStatusUpdate
       ) {
         return;
       }
@@ -48,11 +51,11 @@ export const DriveSection: React.FC = () => {
         ((drive.max_size - drive.available_space) / drive.max_size) * 100
       )}
       size={drive.max_size}
-      enabled={showDrives.includes(drive.name)}
+      enabled={appFilters.drives.includes(drive.name)}
       onClick={() =>
         setShowDrivesDispatch({
           drive: drive.name,
-          enabled: !showDrives.includes(drive.name)
+          enabled: !appFilters.drives.includes(drive.name)
         })
       }
     />
