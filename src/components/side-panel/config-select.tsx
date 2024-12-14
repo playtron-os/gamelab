@@ -6,7 +6,8 @@ import {
   EditBoxLine,
   ArrowDropRightFill,
   Plus,
-  styles
+  styles,
+  ProgressSpinner
 } from "@playtron/styleguide";
 import { Submission } from "@/types";
 import classNames from "classnames";
@@ -32,21 +33,31 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
       <div
         tabIndex={0}
         onClick={() => !submissions.loading && setIsConfigOpen(true)}
-        className="outline-hover border border-[--stroke-subtle] rounded-md flex flex-grow my-2"
+        className="outline-hover border border-[--stroke-subtle] rounded-md flex flex-grow my-2 "
       >
-        <span className="flex-none p-2 max-w-80 overflow-clip whitespace-nowrap">
-          {submissions.selectedItem
-            ? submissions.selectedItem.name
-            : t`Add Config`}
-        </span>
-        <span className="flex-grow"></span>
-        <span className="flex-none p-2 text-[--fill-normal]">
-          {submissions.submissions.length > 0 ? (
-            <ArrowDropRightFill fill={styles.variablesDark.fill.white} />
-          ) : (
-            <Plus fill={styles.variablesDark.fill.white} />
-          )}
-        </span>
+        {submissions.loading ? (
+          <span className="p-2">
+            <ProgressSpinner size={24} />
+          </span>
+        ) : (
+          <>
+            <span className="flex-none p-2 max-w-80 overflow-clip whitespace-nowrap">
+              {submissions.selectedItem
+                ? submissions.selectedItem.name
+                : submissions.submissions.length === 0
+                  ? t`Add Config`
+                  : t`Select Config`}
+            </span>
+            <span className="flex-grow"></span>
+            <span className="flex-none p-2 text-[--fill-normal]">
+              {submissions.submissions.length > 0 ? (
+                <ArrowDropRightFill fill={styles.variablesDark.fill.white} />
+              ) : (
+                <Plus fill={styles.variablesDark.fill.white} />
+              )}
+            </span>
+          </>
+        )}
       </div>
       {submissions.selectedItem && (
         <div className="flex-shrink ps-2">

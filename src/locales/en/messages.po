@@ -37,7 +37,7 @@ msgstr "???"
 #~ msgid "Account Settings"
 #~ msgstr "Account Settings"
 
-#: src/components/side-panel/config-select.tsx:40
+#: src/components/side-panel/config-select.tsx:48
 msgid "Add Config"
 msgstr "Add Config"
 
@@ -629,6 +629,10 @@ msgstr "Save"
 #: src/components/app-library/app-library.tsx:209
 msgid "Search"
 msgstr "Search"
+
+#: src/components/side-panel/config-select.tsx:49
+msgid "Select Config"
+msgstr "Select Config"
 
 #: src/components/move-app-dialog/move-app-dialog.tsx:95
 msgid "Select drive"
