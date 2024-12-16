@@ -59,7 +59,7 @@ export const ProfileMenu: React.FC = () => {
 
   return (
     <div className="flex gap-x-4 items-center">
-      <div className="flex-grow max-w-40 m-4">
+      <div className="flex-grow max-w-36 m-4">
         {username ? (
           <Avatar name={username} description={email} src={avatar} />
         ) : (
@@ -67,24 +67,24 @@ export const ProfileMenu: React.FC = () => {
         )}
       </div>
 
-      <div className="flex-shrink m-2">
-        <LogoutBoxLine
-          fill={styles.variablesDark.fill.white}
-          onClick={() => {
-            setConfirmDisconnect(true);
-          }}
-        />
-        <ConfirmationPopUp
-          isOpen={confirmDisconnect}
-          onClose={() => setConfirmDisconnect(false)}
-          title={t`Disconnect from device?`}
-          onConfirm={() => {
-            setConfirmDisconnect(false);
-            navigate("/auth/connect");
-          }}
-          className="z-[62]"
-        />
+      <div
+        className="flex-shrink m-2 p-1 rounded-sm cursor-pointer hover:outline-2 hover:outline-white hover:outline-double"
+        onClick={() => {
+          setConfirmDisconnect(true);
+        }}
+      >
+        <LogoutBoxLine fill={styles.variablesDark.fill.white} />
       </div>
+      <ConfirmationPopUp
+        isOpen={confirmDisconnect}
+        onClose={() => setConfirmDisconnect(false)}
+        title={t`Disconnect from device?`}
+        onConfirm={() => {
+          setConfirmDisconnect(false);
+          navigate("/auth/connect");
+        }}
+        className="z-[62]"
+      />
     </div>
   );
 };
