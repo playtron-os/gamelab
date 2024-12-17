@@ -1,22 +1,22 @@
 import { error } from "@tauri-apps/plugin-log";
 
-const ONE_WEEK_MILLISECONDS = 1000 * 60 * 60 * 24 * 7;
+const ONE_YEAR_MILLISECONDS = 1000 * 60 * 60 * 24 * 7 * 52;
 
-type LocalStorageKey = "user_id" | "last_ip"; // | 'otherKey' | 'anotherKey';
+type LocalStorageKey = string;
 
 export const setInLocalStorage = <T>(key: LocalStorageKey, value: T) => {
   if (typeof window !== "undefined") {
     const item = {
       value,
-      expiresIn: Date.now() + ONE_WEEK_MILLISECONDS
+      expiresIn: Date.now() + ONE_YEAR_MILLISECONDS
     };
     localStorage.setItem(key, JSON.stringify(item));
   }
 };
 
-export const parseJson = (json: string) => {
+export const parseJson = (jsonString: string) => {
   try {
-    return JSON.parse(json);
+    return JSON.parse(jsonString);
   } catch (e) {
     console.log("error parsing json", { e });
     error("failed to parse local storage json value");
@@ -24,26 +24,17 @@ export const parseJson = (json: string) => {
   }
 };
 
-export const getFromLocalStorage = (key: LocalStorageKey, remove = true) => {
-  if (typeof window !== "undefined") {
-    const item = localStorage.getItem(key);
-    if (item) {
-      const parsedItem = parseJson(item);
+export const getFromLocalStorage = (key: LocalStorageKey) => {
+  const item = localStorage.getItem(key);
+  if (item) {
+    const parsedItem = parseJson(item);
 
-      if (Date.now() < parsedItem?.expiresIn) {
-        return parsedItem.value;
-      }
-
-      if (remove) {
-        localStorage.removeItem(key);
-      }
+    if (Date.now() < parsedItem?.expiresIn) {
+      return parsedItem.value;
     }
   }
-  return null;
 };
 
 export const removeFromLocalStorage = (key: LocalStorageKey) => {
-  if (typeof window !== "undefined") {
-    localStorage.removeItem(key);
-  }
+  localStorage.removeItem(key);
 };

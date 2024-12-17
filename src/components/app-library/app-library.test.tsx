@@ -51,7 +51,8 @@ const MOCK_LIBRARY_TABLE_DATA: context.AppLibraryContextProps = {
   isEulaOpen: false,
   setIsEulaOpen: jest.fn(),
   eula: null,
-  acceptEula: jest.fn()
+  acceptEula: jest.fn(),
+  rejectEula: jest.fn()
 };
 
 const getMockStore = ({
