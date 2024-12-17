@@ -138,7 +138,7 @@ msgstr ""
 msgid "Config"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:174
+#: src/components/controller-edit/controller-edit.tsx:177
 #: src/components/launch-config-editor/launch-config-editor.tsx:203
 msgid "CONFIG NAME"
 msgstr ""
@@ -302,7 +302,7 @@ msgstr ""
 msgid "Gamepad"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:232
+#: src/components/controller-edit/controller-edit.tsx:235
 msgid "Gamepad Type"
 msgstr ""
 
@@ -335,7 +335,7 @@ msgstr ""
 #~ msgid "Input Config for"
 #~ msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:164
+#: src/components/controller-edit/controller-edit.tsx:167
 msgid "Input Config for {gameName}"
 msgstr ""
 
@@ -343,7 +343,7 @@ msgstr ""
 msgid "Input Config List"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:189
+#: src/components/controller-edit/controller-edit.tsx:192
 msgid "INPUT DEVICES"
 msgstr ""
 
@@ -637,7 +637,7 @@ msgstr ""
 msgid "Running"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:209
+#: src/components/controller-edit/controller-edit.tsx:212
 #: src/components/launch-config-editor/launch-config-editor.tsx:253
 msgid "Save"
 msgstr ""

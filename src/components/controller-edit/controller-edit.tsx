@@ -109,6 +109,9 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
   useEffect(() => {
     getInputDevices().then((devices) => {
       if (devices?.length) {
+        if (currentPhysicalLayout) {
+          return;
+        }
         setCurrentPhysicalLayout(getPhysicalLayoutFromDevice(devices[0]));
       }
     });
