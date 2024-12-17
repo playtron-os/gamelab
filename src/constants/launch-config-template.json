@@ -1,5 +1,4 @@
 {
-  "wine_id": null,
   "app_arguments": [],
   "app_executable": null,
   "env": {
@@ -13,5 +12,6 @@
   },
   "tricks_config": {
     "winetricks": []
-  }
+  },
+  "wine_id": null
 }
