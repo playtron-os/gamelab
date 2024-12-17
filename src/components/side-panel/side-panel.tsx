@@ -27,6 +27,12 @@ import { EulaModal } from "@/components/eula-modal/eula-modal";
 import { usePlayserveSendMessage } from "@/hooks";
 import { setCurrentApp } from "@/redux/modules";
 
+interface LaunchPreferences {
+  reset_wine_prefix?: boolean;
+  bypass_app_update?: boolean;
+  enhanced_debugging?: boolean;
+}
+
 export const SidePanel: React.FC = () => {
   const {
     eula,
@@ -54,13 +60,62 @@ export const SidePanel: React.FC = () => {
   const [targetLayout, setTargetLayout] =
     useState<TargetControllerType>("xbox");
 
-  useEffect(() => setPrimaryOff(false), [currentApp]);
   if (!currentApp) {
     return null;
   }
+
+  useEffect(() => {
+    setPrimaryOff(false);
+    const launchPreferences = loadLaunchPreferences();
+    if (launchPreferences.reset_wine_prefix) {
+      setResetWinePrefix(launchPreferences.reset_wine_prefix);
+    }
+    if (launchPreferences.bypass_app_update) {
+      setBypassAppUpdate(launchPreferences.bypass_app_update);
+    }
+    if (launchPreferences.enhanced_debugging) {
+      setEnhancedDebugging(launchPreferences.enhanced_debugging);
+    }
+  }, [currentApp]);
+
   const appStatus = getAppStatus(currentApp);
   const dispatch = useAppDispatch();
   const sendMessage = usePlayserveSendMessage();
+
+  const loadLaunchPreferences = (): LaunchPreferences => {
+    const preferences = localStorage.getItem(
+      `${currentApp.app.id}.launchPreferences`
+    );
+    return preferences ? JSON.parse(preferences) : {};
+  };
+
+  const saveLaunchPreferences = (launchPreferences: LaunchPreferences) => {
+    localStorage.setItem(
+      `${currentApp.app.id}.launchPreferences`,
+      JSON.stringify(launchPreferences)
+    );
+  };
+
+  const toggleWinePrefix = () => {
+    const launchPreferences = loadLaunchPreferences();
+    launchPreferences.reset_wine_prefix = !resetWinePrefix;
+    setResetWinePrefix(!resetWinePrefix);
+    saveLaunchPreferences(launchPreferences);
+  };
+
+  const toggleBypassAppUpdate = () => {
+    const launchPreferences = loadLaunchPreferences();
+    launchPreferences.bypass_app_update = !bypassAppUpdate;
+    setBypassAppUpdate(!bypassAppUpdate);
+    saveLaunchPreferences(launchPreferences);
+  };
+
+  const toggleEnhancedDebugging = () => {
+    const launchPreferences = loadLaunchPreferences();
+    launchPreferences.enhanced_debugging = !enhancedDebugging;
+    setEnhancedDebugging(!enhancedDebugging);
+    saveLaunchPreferences(launchPreferences);
+  };
 
   const deleteDefaultConfig = useCallback(
     (submissions: useSubmissionsType) => {
@@ -179,7 +234,7 @@ export const SidePanel: React.FC = () => {
             <Toggle
               name="resetWineToggle"
               checked={resetWinePrefix}
-              onChange={() => setResetWinePrefix(!resetWinePrefix)}
+              onChange={() => toggleWinePrefix()}
             />
           </div>
           <div className="flex py-2">
@@ -189,7 +244,7 @@ export const SidePanel: React.FC = () => {
             <Toggle
               name="bypassAppUpdateToggle"
               checked={bypassAppUpdate}
-              onChange={() => setBypassAppUpdate(!bypassAppUpdate)}
+              onChange={() => toggleBypassAppUpdate()}
             />
           </div>
           <div className="flex py-2">
@@ -199,7 +254,7 @@ export const SidePanel: React.FC = () => {
             <Toggle
               name="enhancedDebuggingToggle"
               checked={enhancedDebugging}
-              onChange={() => setEnhancedDebugging(!enhancedDebugging)}
+              onChange={() => toggleEnhancedDebugging()}
             />
           </div>
 
