@@ -17,6 +17,14 @@ export function getProviderName(provider: AppProvider): string {
   }[provider];
 }
 
+export function nearestPowerOfTwo(n: number) {
+  const log = Math.round(Math.log(n) / Math.log(2));
+  const a = Math.round(Math.pow(2, log));
+  const b = Math.round(Math.pow(2, log + 1));
+
+  return n - a < b - n ? a : b;
+}
+
 export function getDiskSize(size: number | undefined): string {
   if (!size) {
     return "";
@@ -44,7 +52,13 @@ export function getDiskSizeLabel(size: number): string {
     size /= 1000;
     ++unitIndex;
   }
-  return `${Math.round(Math.round(size * 100) / 100)}${units[unitIndex]}`;
+  const diskSize = Math.round(Math.round(size * 100) / 100);
+  const nearestSize = nearestPowerOfTwo(diskSize);
+  const sizeRatio = diskSize / nearestSize;
+  if (sizeRatio >= 0.99 || sizeRatio <= 1.01) {
+    return `${nearestSize}${units[unitIndex]}`;
+  }
+  return `${diskSize}${units[unitIndex]}`;
 }
 
 export const getAppStatusLabel = (status: AppStatus) => {

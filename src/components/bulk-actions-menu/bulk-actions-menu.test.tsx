@@ -59,7 +59,8 @@ const MOCK_LIBRARY_TABLE: AppLibraryContextProps = {
   eula: null,
   isEulaOpen: false,
   setIsEulaOpen: jest.fn(),
-  acceptEula: jest.fn()
+  acceptEula: jest.fn(),
+  rejectEula: jest.fn()
 };
 
 const apps = [STEAM_APP_INFORMATION_MOCKS[0], STEAM_APP_INFORMATION_MOCKS[1]];
