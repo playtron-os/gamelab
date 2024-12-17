@@ -55,7 +55,7 @@ msgstr "Add Config"
 msgid "Add New Config"
 msgstr "Add New Config"
 
-#: src/components/side-panel/side-panel.tsx:154
+#: src/components/side-panel/side-panel.tsx:209
 msgid "Added"
 msgstr "Added"
 
@@ -104,7 +104,7 @@ msgstr "Base config"
 msgid "Bulk Actions"
 msgstr "Bulk Actions"
 
-#: src/components/side-panel/side-panel.tsx:187
+#: src/components/side-panel/side-panel.tsx:242
 msgid "Bypass App Update"
 msgstr "Bypass App Update"
 
@@ -130,7 +130,7 @@ msgstr "Clear"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/side-panel/side-panel.tsx:322
+#: src/components/side-panel/side-panel.tsx:377
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
@@ -221,7 +221,7 @@ msgstr "Edit"
 msgid "End User License Agreements for"
 msgstr "End User License Agreements for"
 
-#: src/components/side-panel/side-panel.tsx:197
+#: src/components/side-panel/side-panel.tsx:252
 msgid "Enhanced Debugging"
 msgstr "Enhanced Debugging"
 
@@ -327,7 +327,7 @@ msgstr "Initiate direct testing on a Playtron device within your local network. 
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 
-#: src/components/side-panel/side-panel.tsx:235
+#: src/components/side-panel/side-panel.tsx:290
 msgid "Input Config"
 msgstr "Input Config"
 
@@ -355,7 +355,7 @@ msgstr "Insert Delimiter"
 msgid "Install Date"
 msgstr "Install Date"
 
-#: src/components/side-panel/side-panel.tsx:289
+#: src/components/side-panel/side-panel.tsx:344
 msgid "Install folder"
 msgstr "Install folder"
 
@@ -423,7 +423,7 @@ msgstr "Launch"
 msgid "Launch config"
 msgstr "Launch config"
 
-#: src/components/side-panel/side-panel.tsx:209
+#: src/components/side-panel/side-panel.tsx:264
 msgid "Launch Config"
 msgstr "Launch Config"
 
@@ -505,7 +505,7 @@ msgstr "Name (A-Z)"
 msgid "Name (Z-A)"
 msgstr "Name (Z-A)"
 
-#: src/components/side-panel/side-panel.tsx:170
+#: src/components/side-panel/side-panel.tsx:225
 msgid "Never tested"
 msgstr "Never tested"
 
@@ -521,7 +521,7 @@ msgstr "No internet"
 msgid "Not Downloaded"
 msgstr "Not Downloaded"
 
-#: src/components/side-panel/side-panel.tsx:159
+#: src/components/side-panel/side-panel.tsx:214
 msgid "Not installed"
 msgstr "Not installed"
 
@@ -545,7 +545,7 @@ msgstr "Oops!"
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
-#: src/components/side-panel/side-panel.tsx:322
+#: src/components/side-panel/side-panel.tsx:377
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
@@ -566,7 +566,7 @@ msgstr "Pause"
 msgid "Paused"
 msgstr "Paused"
 
-#: src/components/side-panel/side-panel.tsx:262
+#: src/components/side-panel/side-panel.tsx:317
 msgid "Playtron App ID"
 msgstr "Playtron App ID"
 
@@ -575,7 +575,7 @@ msgstr "Playtron App ID"
 msgid "Playtron Labs"
 msgstr "Playtron Labs"
 
-#: src/components/side-panel/side-panel.tsx:269
+#: src/components/side-panel/side-panel.tsx:324
 msgid "Playtron Slug"
 msgstr "Playtron Slug"
 
@@ -591,12 +591,12 @@ msgstr "Prioritize"
 msgid "Promote"
 msgstr "Promote"
 
-#: src/components/side-panel/side-panel.tsx:107
+#: src/components/side-panel/side-panel.tsx:162
 #: src/context/app-library-context/table-config.tsx:64
 msgid "Provider"
 msgstr "Provider"
 
-#: src/components/side-panel/side-panel.tsx:113
+#: src/components/side-panel/side-panel.tsx:168
 msgid "Provider App ID"
 msgstr "Provider App ID"
 
@@ -616,16 +616,16 @@ msgstr "Queued"
 msgid "Ready"
 msgstr "Ready"
 
-#: src/components/side-panel/side-panel.tsx:276
+#: src/components/side-panel/side-panel.tsx:331
 msgid "Release Date"
 msgstr "Release Date"
 
-#: src/components/side-panel/side-panel.tsx:220
-#: src/components/side-panel/side-panel.tsx:246
+#: src/components/side-panel/side-panel.tsx:275
+#: src/components/side-panel/side-panel.tsx:301
 msgid "Reset"
 msgstr "Reset"
 
-#: src/components/side-panel/side-panel.tsx:177
+#: src/components/side-panel/side-panel.tsx:232
 msgid "Reset Wine Prefix"
 msgstr "Reset Wine Prefix"
 
@@ -723,7 +723,7 @@ msgstr "System Drive"
 msgid "Test Games on Playtron Device via Local Network"
 msgstr "Test Games on Playtron Device via Local Network"
 
-#: src/components/side-panel/side-panel.tsx:165
+#: src/components/side-panel/side-panel.tsx:220
 msgid "Tested on"
 msgstr "Tested on"
 
