@@ -53,6 +53,7 @@ export interface AppLibraryContextProps {
   isEulaOpen: boolean;
   setIsEulaOpen: React.Dispatch<React.SetStateAction<boolean>>;
   acceptEula: (eula: AppEulaResponseBody, appInfo: AppInformation) => void;
+  rejectEula: (appInfo: AppInformation) => void;
 }
 
 export const AppLibraryContext = createContext<AppLibraryContextProps | null>(
@@ -85,7 +86,7 @@ export const AppLibraryContextProvider: React.FC<
   const { uninstallApp } = useAppUninstallActions();
   const { terminateApp } = useAppTerminateActions();
   const { fetchLibraryApps } = useAppLibraryActions();
-  const { getAppEulas, acceptEula } = useAppEula();
+  const { getAppEulas, acceptEula, rejectEula } = useAppEula();
 
   const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
@@ -184,7 +185,8 @@ export const AppLibraryContextProvider: React.FC<
       eula,
       isEulaOpen,
       setIsEulaOpen,
-      acceptEula
+      acceptEula,
+      rejectEula
     }),
     [
       selectedIds,
@@ -196,7 +198,8 @@ export const AppLibraryContextProvider: React.FC<
       eula,
       isEulaOpen,
       setIsEulaOpen,
-      acceptEula
+      acceptEula,
+      rejectEula
     ]
   );
 

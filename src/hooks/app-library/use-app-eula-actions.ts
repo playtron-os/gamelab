@@ -9,6 +9,7 @@ import { AppEulaResponseBody } from "@/types/app";
 
 export interface UseAppEulaReturn {
   acceptEula: (eula: AppEulaResponseBody, appInfo: AppInformation) => void;
+  rejectEula: (appInfo: AppInformation) => void;
   getAppEulas: (
     appInfo: AppInformation
   ) => Promise<AppEulaResponseBody[] | undefined>;
@@ -59,8 +60,25 @@ export const useAppEula = (): UseAppEulaReturn => {
     [sendMessage, dispatch]
   );
 
+  const rejectEula = useCallback(
+    (appInfo: AppInformation) => {
+      console.log("Rejecting EULA for ", appInfo);
+      const message = getMessage(MessageType.AppDownloadCancel, {
+        owned_app_id: appInfo.owned_apps[0].id
+      });
+      sendMessage(message)().then((response) => {
+        if (response.status !== 200) {
+          dispatch(flashMessage("Error rejecting EULA"));
+          return;
+        }
+      });
+    },
+    [sendMessage, dispatch]
+  );
+
   return {
     acceptEula,
+    rejectEula,
     getAppEulas
   };
 };
