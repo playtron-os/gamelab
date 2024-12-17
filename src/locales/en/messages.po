@@ -184,7 +184,7 @@ msgstr "Delete"
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
-#: src/components/sidebar/profile-menu.tsx:81
+#: src/components/sidebar/profile-menu.tsx:82
 msgid "Disconnect from device?"
 msgstr "Disconnect from device?"
 
