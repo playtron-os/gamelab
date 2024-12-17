@@ -241,7 +241,6 @@ export const usePlayserve = ({
   url: wsUrl
 }: UsePlayserveProps = {}): UsePlayserveReturn => {
   const deviceIp = useAppSelector(selectAuthDeviceIp);
-
   const url = useMemo(() => {
     if (!wsUrl) {
       return getWebsocketUrl(deviceIp);
