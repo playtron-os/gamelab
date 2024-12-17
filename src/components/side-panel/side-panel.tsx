@@ -32,6 +32,7 @@ export const SidePanel: React.FC = () => {
     eula,
     isEulaOpen,
     acceptEula,
+    rejectEula,
     setIsEulaOpen,
     handlers: { handleAppDefaultAction }
   } = useAppLibraryContext();
@@ -358,7 +359,13 @@ export const SidePanel: React.FC = () => {
           acceptEula(eula, currentApp);
           setIsEulaOpen(false);
         }}
-        onClose={() => setIsEulaOpen(false)}
+        onReject={() => {
+          if (!eula) {
+            return;
+          }
+          rejectEula(currentApp);
+          setIsEulaOpen(false);
+        }}
       />
     </>
   );

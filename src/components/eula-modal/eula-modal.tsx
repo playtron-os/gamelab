@@ -10,7 +10,7 @@ interface EulaModalProps {
   eula: AppEulaResponseBody | null;
   isOpen: boolean;
   onAccept: () => void;
-  onClose: () => void;
+  onReject: () => void;
 }
 
 const getEulaBody = async (
@@ -31,7 +31,7 @@ export const EulaModal: React.FC<EulaModalProps> = ({
   eula,
   isOpen,
   onAccept,
-  onClose
+  onReject
 }) => {
   const scrollable = useRef<HTMLDivElement>(null);
   const [accepted, setAccepted] = useState(false);
@@ -88,7 +88,7 @@ export const EulaModal: React.FC<EulaModalProps> = ({
                 if (accepted) {
                   onAccept();
                 } else {
-                  onClose();
+                  onReject();
                 }
               }}
               label={accepted ? t`Submit` : t`Close`}
