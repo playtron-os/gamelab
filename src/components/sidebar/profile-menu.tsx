@@ -8,6 +8,7 @@ import {
   setAvatarUrl
 } from "@/redux/modules/auth";
 import { useAppSelector, useAppDispatch } from "@/redux/store";
+import { setDeviceIp } from "@/redux/modules";
 import { usePlayserve } from "@/hooks/use-playserve";
 import { MessageType, getMessage } from "@/types/playserve/message";
 
@@ -81,6 +82,7 @@ export const ProfileMenu: React.FC = () => {
         title={t`Disconnect from device?`}
         onConfirm={() => {
           setConfirmDisconnect(false);
+          dispatch(setDeviceIp(""));
           navigate("/auth/connect");
         }}
         className="z-[62]"

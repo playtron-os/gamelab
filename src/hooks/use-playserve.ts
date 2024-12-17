@@ -40,16 +40,13 @@ type ResponseHandler<T extends MessageType> = (
   message: PlayserveResponse<T>
 ) => void;
 
-const MAX_RETRIES = 3;
-const RETRY_DELAY = 300; // ms
-
 const MESSAGE_TIMEOUT_WHEN_NOT_CONNECTED = 3000;
 
 const wsMap: Record<string, WS> = {};
 
 class WS {
   url: string;
-  retries: number;
+
   isReady = false;
 
   // Cache websocket so it can be used globally across hooks
@@ -80,7 +77,6 @@ class WS {
 
   constructor(url: string) {
     this.url = "";
-    this.retries = 0;
     if (!url) {
       console.log("URL is required to initialize a websocket");
       return;
@@ -114,21 +110,15 @@ class WS {
     this._websocket = new WebSocket(this.url);
 
     const reconnect = () => {
-      if (this.retries == MAX_RETRIES) {
-        delete wsMap[this.url];
-        if (this.onConnectionLost) {
-          this.onConnectionLost();
-        }
-        return;
+      delete wsMap[this.url];
+      if (this.onConnectionLost) {
+        this.onConnectionLost();
       }
-      this.retries++;
-      setTimeout(() => this.initializeWebsocket(), RETRY_DELAY);
     };
 
     this._websocket.onopen = () => {
       console.log("Connected to websocket");
       info("Connected to websocket");
-      this.retries = 0;
     };
 
     this._websocket.onclose = () => {
