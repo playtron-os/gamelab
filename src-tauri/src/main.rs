@@ -60,7 +60,8 @@ pub fn initialize_default_env() {
 fn main() {
     initialize_default_env();
 
-    let log_level = if env::var("LABS_LOG_LEVEL").is_ok_and(|val| val.to_lowercase() == "debug") {
+    let log_level = if env::var("GAMELAB_LOG_LEVEL").is_ok_and(|val| val.to_lowercase() == "debug")
+    {
         log::LevelFilter::Trace
     } else {
         log::LevelFilter::Info

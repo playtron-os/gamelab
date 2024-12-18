@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 import bgImage from "../../assets/authbg.png";
-import LogoLabs from "../../assets/labs-lg.png";
+import LogoLAB from "../../assets/labs-lg.png";
 import { t } from "@lingui/macro";
 
 export const SigninLayout: React.FC<PropsWithChildren> = ({ children }) => {
@@ -23,7 +23,7 @@ export const SigninLayout: React.FC<PropsWithChildren> = ({ children }) => {
     >
       <div className="w-1/2">
         <div className="w-[340px]">
-          <img src={LogoLabs} alt={t`Playtron Labs`} />
+          <img src={LogoLAB} alt={t`Playtron GameLAB`} />
           {children}
         </div>
       </div>

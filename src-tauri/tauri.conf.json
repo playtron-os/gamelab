@@ -16,9 +16,9 @@
     ],
     "targets": "all"
   },
-  "productName": "Playtron Labs",
+  "productName": "GameLAB",
   "version": "../package.json",
-  "identifier": "one.playtron.labs",
+  "identifier": "one.playtron.gamelab",
   "plugins": {
     "updater": {
       "endpoints": [
@@ -31,7 +31,7 @@
     "withGlobalTauri": false,
     "windows": [
       {
-        "title": "Playtron Labs",
+        "title": "GameLAB",
         "label": "main",
         "minWidth": 1250,
         "minHeight": 720,
