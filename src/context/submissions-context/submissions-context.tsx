@@ -17,6 +17,7 @@ import {
   selectCurrentAppState,
   selectAppLibraryAppsState
 } from "@/redux/modules";
+import { selectAuthState, AuthState } from "@/redux/modules/auth";
 import { useSubmissions } from "./hooks/use-submissions";
 import { SubmissionCategory } from "@/constants";
 import { DEFAULT_INPUT_CONFIG } from "@/constants/input-config";
@@ -86,7 +87,7 @@ export const SubmissionsContextProvider = ({
     app_id: string;
     item_type: SubmissionItemType;
   } | null>(null);
-
+  const { email } = useAppSelector(selectAuthState) as AuthState;
   const [editLayout, setEditLayout] = useState<InputConfig | null>(null);
 
   const [editLaunchConfig, setEditLaunchConfig] = useState<LaunchConfig | null>(
@@ -289,11 +290,14 @@ export const SubmissionsContextProvider = ({
         item_type === "LaunchConfig" ? launchSubmissions : inputSubmissions;
       sendMessage(submitMessage)().then((response) => {
         if (response.status === 200) {
+          const newCategory = email?.endsWith("@playtron.one")
+            ? SubmissionCategory.Official
+            : SubmissionCategory.Community;
           const newSubmissions = submissions.submissions.map((submission) =>
             submission.item_id === item_id
               ? {
                   ...submission,
-                  submission_category: SubmissionCategory.Official
+                  submission_category: newCategory
                 }
               : submission
           );

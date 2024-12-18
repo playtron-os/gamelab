@@ -147,7 +147,7 @@ msgstr "CONFIG NAME"
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
-#: src/context/submissions-context/submissions-context.tsx:306
+#: src/context/submissions-context/submissions-context.tsx:310
 msgid "Configuration has been submitted"
 msgstr "Configuration has been submitted"
 
@@ -180,7 +180,7 @@ msgstr "Current controller"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/context/submissions-context/submissions-context.tsx:351
+#: src/context/submissions-context/submissions-context.tsx:355
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
@@ -712,7 +712,7 @@ msgstr "Status"
 msgid "Stop"
 msgstr "Stop"
 
-#: src/context/submissions-context/submissions-context.tsx:268
+#: src/context/submissions-context/submissions-context.tsx:269
 msgid "Submission promoted"
 msgstr "Submission promoted"
 
@@ -748,7 +748,7 @@ msgstr "There is no controller configuration created for"
 msgid "There is no launch configuration created for"
 msgstr "There is no launch configuration created for"
 
-#: src/context/submissions-context/submissions-context.tsx:312
+#: src/context/submissions-context/submissions-context.tsx:316
 msgid "There was an error with the submission {errorMessage}"
 msgstr "There was an error with the submission {errorMessage}"
 
