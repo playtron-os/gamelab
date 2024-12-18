@@ -298,6 +298,10 @@ msgstr ""
 msgid "Game Status"
 msgstr ""
 
+#: src/screens/connect-device/connect-device.tsx:128
+msgid "GameLAB is unable to connect to the device using default credentials. Please provide correct username and password."
+msgstr ""
+
 #: src/components/controller-edit/map-to.tsx:20
 msgid "Gamepad"
 msgstr ""
@@ -408,8 +412,8 @@ msgid "Keyboard"
 msgstr ""
 
 #: src/screens/connect-device/connect-device.tsx:128
-msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
-msgstr ""
+#~ msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
+#~ msgstr ""
 
 #: src/components/app-library/app-library.tsx:96
 msgid "Last Updated"
@@ -572,8 +576,13 @@ msgstr ""
 
 #: src/components/sidebar/sidebar.tsx:34
 #: src/components/signin-layout/signin-layout.tsx:26
-msgid "Playtron Labs"
+msgid "Playtron GameLAB"
 msgstr ""
+
+#: src/components/sidebar/sidebar.tsx:34
+#: src/components/signin-layout/signin-layout.tsx:26
+#~ msgid "Playtron Labs"
+#~ msgstr ""
 
 #: src/components/side-panel/side-panel.tsx:324
 msgid "Playtron Slug"

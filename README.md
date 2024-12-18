@@ -1,9 +1,9 @@
-# Playtron Labs
+# GameLAB
 
-Playtron Labs is part of the Playtron ecosystem and lets users configure games to get the best experience possible.
+GameLAB is part of the Playtron ecosystem and lets users configure games to get the best experience possible.
 Custom game configurations can then be shared with and benefit the whole Playtron community.
 
-## Installing Playtron Labs
+## Installing GameLAB
 
 Packages for all major systems are available on our Github release page
 
@@ -13,12 +13,12 @@ We provide installers for Linux, Mac and Windows in different formats. Download 
 
 ## Setup
 
-Before you can use Labs, you'll need a device running Playtron OS.
+Before you can use GameLAB, you'll need a device running Playtron OS.
 Make sure your Playtron device authorizes remote access and note its IP address.
 
 ![Remote access](.github/pictures/enable-remote.png?raw=true)
 
-Then open the Labs application on your computer. You should see a greeting screen asking you
+Then open the GameLAB application on your computer. You should see a greeting screen asking you
 to connect to a device. Enter the IP address of the Playtron device and click Connect.
 
 ![Connect](.github/pictures/connect-device.png?raw=true)
@@ -26,7 +26,7 @@ to connect to a device. Enter the IP address of the Playtron device and click Co
 ## Usage
 
 Once connected to a Playtron device, you'll have access to your game library where you can install and run games.
-Labs also lets you create and select custom launch and input configurations.
+GameLAB also lets you create and select custom launch and input configurations.
 
 # Development
 
@@ -70,7 +70,7 @@ Install the NPM dependencies as well:
 
 ### Run the app
 
-To start Labs from the development environment, run:
+To start GameLAB from the development environment, run:
 
 `pnpm start`
 

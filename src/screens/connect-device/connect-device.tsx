@@ -126,8 +126,8 @@ export const ConnectDeviceScreen: React.FC = () => {
           </h2>
           <div className="max-w-96 mb-2">
             <Trans>
-              Labs is unable to connect to the device using default credentials.
-              Please provide correct username and password.
+              GameLAB is unable to connect to the device using default
+              credentials. Please provide correct username and password.
             </Trans>
           </div>
           <TextInput

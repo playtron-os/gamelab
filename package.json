@@ -1,8 +1,8 @@
 {
-  "name": "playtron-labs",
-  "productName": "Playtron Labs",
-  "version": "0.36.0",
-  "description": "Playtron Labs testing app for Playtron",
+  "name": "gamelab",
+  "productName": "GameLAB",
+  "version": "0.37.0",
+  "description": "GameLAB testing app for Playtron",
   "scripts": {
     "start": "tauri dev",
     "start:nvidia": "WEBKIT_DISABLE_DMABUF_RENDERER=1 npm run start",
@@ -23,8 +23,8 @@
   },
   "keywords": [],
   "author": {
-    "name": "Ericky Dos Santos",
-    "email": "ericky@playtron.one"
+    "name": "Mathieu Comandon",
+    "email": "mathieu@playtron.one"
   },
   "license": "GPL-3.0-only",
   "devDependencies": {

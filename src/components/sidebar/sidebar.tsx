@@ -4,7 +4,7 @@ import { Divider, NoInternet, styles } from "@playtron/styleguide";
 import React, { useEffect, useState } from "react";
 
 import { version } from "../../../package.json";
-import LogoLabs from "../../assets/labs-sm.png";
+import LogoLAB from "../../assets/labs-sm.png";
 import { useAppDispatch } from "@/redux/store";
 import { DriveSection } from "./drive-section";
 import { ProviderSection } from "./provider-section";
@@ -31,7 +31,7 @@ export const Sidebar: React.FC = () => {
   return (
     <>
       <div className="relative w-[250px] px-4 py-2 border-r-2 border-gray-800 bg-black h-screen overflow-scroll select-none cursor-default">
-        <img src={LogoLabs} alt={t`Playtron Labs`} className="p-2" />
+        <img src={LogoLAB} alt={t`Playtron GameLAB`} className="p-2" />
 
         <Divider type="subtle" />
         <h4 className="font-bold text-lg mt-0 py-2">
