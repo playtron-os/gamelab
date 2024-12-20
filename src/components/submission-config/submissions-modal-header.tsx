@@ -46,7 +46,7 @@ export const ConfigModalHeader: React.FC<ConfigModalHeaderProps> = ({
       </div>
       <div>
         <TextInput
-          placeholder={t`Filter:`}
+          placeholder={t`Search:`}
           value={configFilter}
           onChange={setConfigFilter}
         />

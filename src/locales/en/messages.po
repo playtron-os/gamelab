@@ -17,7 +17,7 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr "-"
 
-#: src/components/app-library/app-library.tsx:117
+#: src/components/app-library/app-library.tsx:111
 msgid "???"
 msgstr "???"
 
@@ -55,7 +55,7 @@ msgstr "Add Config"
 msgid "Add New Config"
 msgstr "Add New Config"
 
-#: src/components/side-panel/side-panel.tsx:209
+#: src/components/side-panel/side-panel.tsx:143
 msgid "Added"
 msgstr "Added"
 
@@ -63,11 +63,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:188
+#: src/components/app-library/app-library.tsx:182
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:219
+#: src/components/app-library/app-library.tsx:213
 msgid "All Games ({filteredGamesCount})"
 msgstr "All Games ({filteredGamesCount})"
 
@@ -101,14 +101,14 @@ msgid "Base config"
 msgstr "Base config"
 
 #: src/context/app-library-context/components/table-cells/bulk-action-button-cell.tsx:22
-msgid "Bulk Actions"
-msgstr "Bulk Actions"
+#~ msgid "Bulk Actions"
+#~ msgstr "Bulk Actions"
 
-#: src/components/side-panel/side-panel.tsx:242
+#: src/components/side-panel/side-panel.tsx:176
 msgid "Bypass App Update"
 msgstr "Bypass App Update"
 
-#: src/screens/connect-device/connect-device.tsx:154
+#: src/screens/connect-device/connect-device.tsx:155
 msgid "Cancel"
 msgstr "Cancel"
 
@@ -130,7 +130,7 @@ msgstr "Clear"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/side-panel/side-panel.tsx:377
+#: src/components/side-panel/side-panel.tsx:311
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
@@ -147,7 +147,7 @@ msgstr "CONFIG NAME"
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
-#: src/context/submissions-context/submissions-context.tsx:310
+#: src/context/submissions-context/submissions-context.tsx:392
 msgid "Configuration has been submitted"
 msgstr "Configuration has been submitted"
 
@@ -156,7 +156,7 @@ msgid "Confirm"
 msgstr "Confirm"
 
 #: src/screens/connect-device/connect-device.tsx:111
-#: src/screens/connect-device/connect-device.tsx:148
+#: src/screens/connect-device/connect-device.tsx:149
 msgid "Connect"
 msgstr "Connect"
 
@@ -180,7 +180,7 @@ msgstr "Current controller"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/context/submissions-context/submissions-context.tsx:355
+#: src/context/submissions-context/submissions-context.tsx:441
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
@@ -202,8 +202,8 @@ msgid "Downloading"
 msgstr "Downloading"
 
 #: src/context/app-library-context/table-config.tsx:95
-msgid "Drive"
-msgstr "Drive"
+#~ msgid "Drive"
+#~ msgstr "Drive"
 
 #: src/components/sidebar/sidebar.tsx:38
 msgid "Drives"
@@ -221,7 +221,7 @@ msgstr "Edit"
 msgid "End User License Agreements for"
 msgstr "End User License Agreements for"
 
-#: src/components/side-panel/side-panel.tsx:252
+#: src/components/side-panel/side-panel.tsx:186
 msgid "Enhanced Debugging"
 msgstr "Enhanced Debugging"
 
@@ -255,8 +255,8 @@ msgid "Failed to uninstall app: {message}"
 msgstr "Failed to uninstall app: {message}"
 
 #: src/components/submission-config/submissions-modal-header.tsx:49
-msgid "Filter:"
-msgstr "Filter:"
+#~ msgid "Filter:"
+#~ msgstr "Filter:"
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:293
 msgid "Format"
@@ -290,15 +290,15 @@ msgstr "Game logs will appear here next time you launch the game"
 #~ msgid "Game logs will appear here..."
 #~ msgstr "Game logs will appear here..."
 
-#: src/components/app-library/app-library.tsx:87
+#: src/components/app-library/app-library.tsx:81
 msgid "Game Size"
 msgstr "Game Size"
 
-#: src/components/app-library/app-library.tsx:88
+#: src/components/app-library/app-library.tsx:82
 msgid "Game Status"
 msgstr "Game Status"
 
-#: src/screens/connect-device/connect-device.tsx:128
+#: src/screens/connect-device/connect-device.tsx:129
 msgid "GameLAB is unable to connect to the device using default credentials. Please provide correct username and password."
 msgstr "GameLAB is unable to connect to the device using default credentials. Please provide correct username and password."
 
@@ -331,7 +331,7 @@ msgstr "Initiate direct testing on a Playtron device within your local network. 
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 
-#: src/components/side-panel/side-panel.tsx:290
+#: src/components/side-panel/side-panel.tsx:224
 msgid "Input Config"
 msgstr "Input Config"
 
@@ -355,19 +355,19 @@ msgstr "INPUT DEVICES"
 msgid "Insert Delimiter"
 msgstr "Insert Delimiter"
 
-#: src/components/app-library/app-library.tsx:91
+#: src/components/app-library/app-library.tsx:85
 msgid "Install Date"
 msgstr "Install Date"
 
-#: src/components/side-panel/side-panel.tsx:344
+#: src/components/side-panel/side-panel.tsx:278
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:198
+#: src/components/app-library/app-library.tsx:192
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:220
+#: src/components/app-library/app-library.tsx:214
 msgid "Installed Games ({filteredGamesCount})"
 msgstr "Installed Games ({filteredGamesCount})"
 
@@ -375,7 +375,7 @@ msgstr "Installed Games ({filteredGamesCount})"
 #~ msgid "Installed Games ({totalInstalled})"
 #~ msgstr "Installed Games ({totalInstalled})"
 
-#: src/components/app-library/game-card.tsx:142
+#: src/components/app-library/game-card.tsx:149
 msgid "Installed on Drive"
 msgstr "Installed on Drive"
 
@@ -391,7 +391,7 @@ msgstr "Installing"
 msgid "Invalid layout"
 msgstr "Invalid layout"
 
-#: src/screens/connect-device/connect-device.tsx:125
+#: src/screens/connect-device/connect-device.tsx:126
 msgid "Invalid SSH credentials"
 msgstr "Invalid SSH credentials"
 
@@ -415,7 +415,7 @@ msgstr "Keyboard"
 #~ msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 #~ msgstr "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 
-#: src/components/app-library/app-library.tsx:96
+#: src/components/app-library/app-library.tsx:90
 msgid "Last Updated"
 msgstr "Last Updated"
 
@@ -427,7 +427,7 @@ msgstr "Launch"
 msgid "Launch config"
 msgstr "Launch config"
 
-#: src/components/side-panel/side-panel.tsx:264
+#: src/components/side-panel/side-panel.tsx:198
 msgid "Launch Config"
 msgstr "Launch Config"
 
@@ -479,9 +479,8 @@ msgstr "Mouse"
 msgid "Mouse Move"
 msgstr "Mouse Move"
 
-#: src/components/app-library/game-card.tsx:89
+#: src/components/app-library/game-card.tsx:96
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:83
-#: src/context/app-library-context/components/table-cells/app-action-cell.tsx:37
 msgid "Move"
 msgstr "Move"
 
@@ -501,15 +500,15 @@ msgstr "Move selected apps"
 msgid "Name"
 msgstr "Name"
 
-#: src/components/app-library/app-library.tsx:85
+#: src/components/app-library/app-library.tsx:79
 msgid "Name (A-Z)"
 msgstr "Name (A-Z)"
 
-#: src/components/app-library/app-library.tsx:86
+#: src/components/app-library/app-library.tsx:80
 msgid "Name (Z-A)"
 msgstr "Name (Z-A)"
 
-#: src/components/side-panel/side-panel.tsx:225
+#: src/components/side-panel/side-panel.tsx:159
 msgid "Never tested"
 msgstr "Never tested"
 
@@ -525,7 +524,7 @@ msgstr "No internet"
 msgid "Not Downloaded"
 msgstr "Not Downloaded"
 
-#: src/components/side-panel/side-panel.tsx:214
+#: src/components/side-panel/side-panel.tsx:148
 msgid "Not installed"
 msgstr "Not installed"
 
@@ -549,7 +548,7 @@ msgstr "Oops!"
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
-#: src/components/side-panel/side-panel.tsx:377
+#: src/components/side-panel/side-panel.tsx:311
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
@@ -557,8 +556,8 @@ msgstr "Open Log Window"
 msgid "Override"
 msgstr "Override"
 
-#: src/screens/connect-device/connect-device.tsx:142
 #: src/screens/connect-device/connect-device.tsx:143
+#: src/screens/connect-device/connect-device.tsx:144
 msgid "Password"
 msgstr "Password"
 
@@ -570,7 +569,7 @@ msgstr "Pause"
 msgid "Paused"
 msgstr "Paused"
 
-#: src/components/side-panel/side-panel.tsx:317
+#: src/components/side-panel/side-panel.tsx:251
 msgid "Playtron App ID"
 msgstr "Playtron App ID"
 
@@ -584,7 +583,7 @@ msgstr "Playtron GameLAB"
 #~ msgid "Playtron Labs"
 #~ msgstr "Playtron Labs"
 
-#: src/components/side-panel/side-panel.tsx:324
+#: src/components/side-panel/side-panel.tsx:258
 msgid "Playtron Slug"
 msgstr "Playtron Slug"
 
@@ -600,12 +599,11 @@ msgstr "Prioritize"
 msgid "Promote"
 msgstr "Promote"
 
-#: src/components/side-panel/side-panel.tsx:162
-#: src/context/app-library-context/table-config.tsx:64
+#: src/components/side-panel/side-panel.tsx:96
 msgid "Provider"
 msgstr "Provider"
 
-#: src/components/side-panel/side-panel.tsx:168
+#: src/components/side-panel/side-panel.tsx:102
 msgid "Provider App ID"
 msgstr "Provider App ID"
 
@@ -625,16 +623,16 @@ msgstr "Queued"
 msgid "Ready"
 msgstr "Ready"
 
-#: src/components/side-panel/side-panel.tsx:331
+#: src/components/side-panel/side-panel.tsx:265
 msgid "Release Date"
 msgstr "Release Date"
 
-#: src/components/side-panel/side-panel.tsx:275
-#: src/components/side-panel/side-panel.tsx:301
+#: src/components/side-panel/side-panel.tsx:209
+#: src/components/side-panel/side-panel.tsx:235
 msgid "Reset"
 msgstr "Reset"
 
-#: src/components/side-panel/side-panel.tsx:232
+#: src/components/side-panel/side-panel.tsx:166
 msgid "Reset Wine Prefix"
 msgstr "Reset Wine Prefix"
 
@@ -651,9 +649,13 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:209
+#: src/components/app-library/app-library.tsx:203
 msgid "Search"
 msgstr "Search"
+
+#: src/components/submission-config/submissions-modal-header.tsx:49
+msgid "Search:"
+msgstr "Search:"
 
 #: src/components/side-panel/config-select.tsx:49
 msgid "Select Config"
@@ -664,8 +666,8 @@ msgid "Select drive"
 msgstr "Select drive"
 
 #: src/context/app-library-context/table-config.tsx:52
-msgid "Size"
-msgstr "Size"
+#~ msgid "Size"
+#~ msgstr "Size"
 
 #: src/components/app-library/game-card.tsx:148
 #~ msgid "Size:"
@@ -675,33 +677,33 @@ msgstr "Size"
 msgid "Sorry, an unexpected error has occurred."
 msgstr "Sorry, an unexpected error has occurred."
 
-#: src/components/app-library/app-library.tsx:109
+#: src/components/app-library/app-library.tsx:103
 msgid "Sort by: Game Size"
 msgstr "Sort by: Game Size"
 
-#: src/components/app-library/app-library.tsx:111
+#: src/components/app-library/app-library.tsx:105
 msgid "Sort by: Game Status"
 msgstr "Sort by: Game Status"
 
-#: src/components/app-library/app-library.tsx:113
+#: src/components/app-library/app-library.tsx:107
 msgid "Sort by: Install Date"
 msgstr "Sort by: Install Date"
 
-#: src/components/app-library/app-library.tsx:115
+#: src/components/app-library/app-library.tsx:109
 msgid "Sort by: Last Updated"
 msgstr "Sort by: Last Updated"
 
-#: src/components/app-library/app-library.tsx:105
+#: src/components/app-library/app-library.tsx:99
 msgid "Sort by: Name (A-Z)"
 msgstr "Sort by: Name (A-Z)"
 
-#: src/components/app-library/app-library.tsx:107
+#: src/components/app-library/app-library.tsx:101
 msgid "Sort by: Name (Z-A)"
 msgstr "Sort by: Name (Z-A)"
 
 #: src/context/app-library-context/table-config.tsx:78
-msgid "Status"
-msgstr "Status"
+#~ msgid "Status"
+#~ msgstr "Status"
 
 #: src/components/app-library/app-library.tsx:192
 #: src/components/sidebar/provider-section.tsx:96
@@ -712,7 +714,7 @@ msgstr "Status"
 msgid "Stop"
 msgstr "Stop"
 
-#: src/context/submissions-context/submissions-context.tsx:269
+#: src/context/submissions-context/submissions-context.tsx:351
 msgid "Submission promoted"
 msgstr "Submission promoted"
 
@@ -732,7 +734,7 @@ msgstr "System Drive"
 msgid "Test Games on Playtron Device via Local Network"
 msgstr "Test Games on Playtron Device via Local Network"
 
-#: src/components/side-panel/side-panel.tsx:220
+#: src/components/side-panel/side-panel.tsx:154
 msgid "Tested on"
 msgstr "Tested on"
 
@@ -748,13 +750,13 @@ msgstr "There is no controller configuration created for"
 msgid "There is no launch configuration created for"
 msgstr "There is no launch configuration created for"
 
-#: src/context/submissions-context/submissions-context.tsx:316
+#: src/context/submissions-context/submissions-context.tsx:398
 msgid "There was an error with the submission {errorMessage}"
 msgstr "There was an error with the submission {errorMessage}"
 
 #: src/context/app-library-context/table-config.tsx:37
-msgid "Title"
-msgstr "Title"
+#~ msgid "Title"
+#~ msgstr "Title"
 
 #: src/components/move-app-dialog/move-app-dialog.tsx:91
 msgid "To:"
@@ -781,9 +783,8 @@ msgstr "Unable to connect with the device: {err}"
 msgid "Unhandled error: {e}"
 msgstr "Unhandled error: {e}"
 
-#: src/components/app-library/game-card.tsx:105
+#: src/components/app-library/game-card.tsx:112
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
-#: src/context/app-library-context/components/table-cells/app-action-cell.tsx:53
 msgid "Uninstall"
 msgstr "Uninstall"
 
@@ -812,8 +813,8 @@ msgstr "Update Required"
 msgid "used of"
 msgstr "used of"
 
-#: src/screens/connect-device/connect-device.tsx:136
 #: src/screens/connect-device/connect-device.tsx:137
+#: src/screens/connect-device/connect-device.tsx:138
 msgid "Username"
 msgstr "Username"
 

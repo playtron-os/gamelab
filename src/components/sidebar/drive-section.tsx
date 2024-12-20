@@ -12,7 +12,6 @@ const selector = (state: RootState) => {
   const appLibrary = selectAppLibraryState(state);
   return {
     apps: appLibrary.apps,
-    error: appLibrary.error,
     loading: appLibrary.loading,
     appFilters: appLibrary.appFilters
   };

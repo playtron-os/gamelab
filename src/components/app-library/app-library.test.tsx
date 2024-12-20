@@ -1,8 +1,7 @@
 import React from "react";
 import * as context from "@/context/app-library-context";
-import { useAppLibraryContext } from "@/context";
+
 import { AppLibrary } from ".";
-import { columnConfig } from "../../context/app-library-context/table-config";
 
 import { renderWithAppLibraryContext } from "@/utils";
 import { configureStore } from "@reduxjs/toolkit";
@@ -15,6 +14,7 @@ import {
 import { useBoolean } from "ahooks";
 import { STEAM_APP_INFORMATION_MOCKS } from "@/mocks/app";
 import { DEFAULT_STATE_MOCK } from "@/mocks/default-state";
+import { SubmissionsContextProvider } from "@/context/submissions-context";
 
 const MOCK_BOOLEAN_STATE_MANAGER = [
   false,
@@ -32,7 +32,6 @@ const TABLE_MOCK_DATA = [
 ];
 
 const MOCK_LIBRARY_TABLE_DATA: context.AppLibraryContextProps = {
-  columns: columnConfig,
   handlers: {
     refetchAllApps: jest.fn(),
     downloadApp: jest.fn(),
@@ -47,7 +46,7 @@ const MOCK_LIBRARY_TABLE_DATA: context.AppLibraryContextProps = {
   selectedApps: new Set([]),
   setSelectedApps: jest.fn(),
   selectedIds: [],
-  onSelectedIdsChange: jest.fn(),
+  onSelectedIdChange: jest.fn(),
   isEulaOpen: false,
   setIsEulaOpen: jest.fn(),
   eula: null,
@@ -76,8 +75,7 @@ const getMockStore = ({
         ...APP_LIBRARY_INITIAL_STATE,
         apps: TABLE_MOCK_DATA,
         loading: loading ?? false,
-        loadingProgress: loadingProgress ?? {},
-        error: error || ""
+        loadingProgress: loadingProgress ?? {}
       },
       moveAppDialog: {
         isMoveAppDialogOpen: false,
@@ -117,7 +115,9 @@ describe("<AppLibrary />", () => {
 
   it("loading state snapshot", () => {
     const { asFragment, findByTestId } = renderWithAppLibraryContext(
-      <AppLibrary />,
+      <SubmissionsContextProvider>
+        <AppLibrary />
+      </SubmissionsContextProvider>,
       undefined,
       getMockStore({ loading: true, loadingProgress: { steam: 30, gog: 56 } })
     );
@@ -128,7 +128,9 @@ describe("<AppLibrary />", () => {
 
   it("error state snapshot", () => {
     const { asFragment, findByTestId } = renderWithAppLibraryContext(
-      <AppLibrary />,
+      <SubmissionsContextProvider>
+        <AppLibrary />
+      </SubmissionsContextProvider>,
       undefined,
       getMockStore({ error: "Something went wrong" })
     );
@@ -140,7 +142,9 @@ describe("<AppLibrary />", () => {
   // TODO - fix tests
   it("loaded state snapshot", () => {
     const { asFragment } = renderWithAppLibraryContext(
-      <AppLibrary />,
+      <SubmissionsContextProvider>
+        <AppLibrary />
+      </SubmissionsContextProvider>,
       undefined,
       getMockStore()
     );
@@ -150,7 +154,9 @@ describe("<AppLibrary />", () => {
 
   it("renders app data correctly", () => {
     const { getByText } = renderWithAppLibraryContext(
-      <AppLibrary />,
+      <SubmissionsContextProvider>
+        <AppLibrary />
+      </SubmissionsContextProvider>,
       undefined,
       getMockStore()
     );

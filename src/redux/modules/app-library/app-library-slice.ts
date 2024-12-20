@@ -22,7 +22,6 @@ export interface AppLibraryState {
   queuePositionMap: { [key: string]: number };
   loading: boolean;
   loadingProgress: { [key in AppProvider]?: number };
-  error: string;
 }
 
 export const APP_LIBRARY_INITIAL_STATE: AppLibraryState = {
@@ -39,8 +38,7 @@ export const APP_LIBRARY_INITIAL_STATE: AppLibraryState = {
   },
   queuePositionMap: {},
   loading: false,
-  loadingProgress: {},
-  error: ""
+  loadingProgress: {}
 };
 
 export const appLibrarySlice = createSlice({
@@ -48,7 +46,6 @@ export const appLibrarySlice = createSlice({
   initialState: APP_LIBRARY_INITIAL_STATE,
   reducers: {
     setApps: (state, action: PayloadAction<AppInformation[]>) => {
-      state.error = "";
       state.loading = false;
       state.apps = action.payload;
       state.apps.sort((a, b) => a.app.name.localeCompare(b.app.name));
@@ -198,9 +195,6 @@ export const appLibrarySlice = createSlice({
         {} as AppLibraryState["queuePositionMap"]
       );
     },
-    setError: (state, action: PayloadAction<string>) => {
-      state.error = action.payload;
-    },
     setLoading: (state, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
       state.loadingProgress = {};
@@ -231,7 +225,6 @@ export const {
   updateAppStatus,
   updateInstallStatus,
   setQueue,
-  setError,
   setLoading,
   setLoadingProgress,
   setAppDownloadProgress,
@@ -251,6 +244,4 @@ export const selectAppLibraryLoadingState = (state: RootState) =>
   state.appLibrary.loading;
 export const selectAppLibraryLoadingProgressState = (state: RootState) =>
   state.appLibrary.loadingProgress;
-export const selectAppLibraryErrorState = (state: RootState) =>
-  state.appLibrary.error;
 export default appLibrarySlice.reducer;

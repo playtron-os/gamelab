@@ -12,7 +12,7 @@ import React, {
   useMemo,
   useState
 } from "react";
-import { TableProps } from "@playtron/styleguide";
+
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { useAppTerminate as useAppTerminateActions } from "../../hooks/app-library/use-app-terminate-actions";
 import { AppInformation } from "@/types/app-library";
@@ -25,14 +25,13 @@ import {
   useAppEula
 } from "@/hooks/app-library";
 import { getAppStatusWithQueue } from "@/utils/app-info";
-import { columnConfig } from "./table-config";
+
 import { LaunchParams } from "@/types/launch";
 import { AppEulaResponseBody } from "@/types/app";
 import { EULA_NOT_ACCEPTED } from "@/constants";
 export interface AppLibraryContextProps {
-  columns: TableProps["columns"];
   selectedIds: string[];
-  onSelectedIdsChange: (selectedId: string) => void;
+  onSelectedIdChange: (selectedId: string) => void;
   handlers: {
     downloadApp: (appData: AppInformation) => void;
     uninstallApp: (appData: AppInformation[]) => void;
@@ -131,7 +130,7 @@ export const AppLibraryContextProvider: React.FC<
     [terminateApp, pauseDownload, downloadApp, launchApp, queuePositionMap]
   );
 
-  const onSelectedIdsChange = useCallback(
+  const onSelectedIdChange = useCallback(
     (id: string) => {
       const isSelected = selectedIds.includes(id);
 
@@ -142,6 +141,7 @@ export const AppLibraryContextProvider: React.FC<
       }
 
       if (!isSelected) {
+        console.log("Selected ids: ", selectedIds);
         setSelectedIds([id]);
       }
     },
@@ -175,9 +175,8 @@ export const AppLibraryContextProvider: React.FC<
 
   const value = useMemo(
     () => ({
-      columns: columnConfig,
       selectedIds,
-      onSelectedIdsChange,
+      onSelectedIdChange,
       handlers,
       selectedApps,
       setSelectedApps,
@@ -190,7 +189,7 @@ export const AppLibraryContextProvider: React.FC<
     }),
     [
       selectedIds,
-      onSelectedIdsChange,
+      onSelectedIdChange,
       handlers,
       selectedApps,
       setSelectedApps,

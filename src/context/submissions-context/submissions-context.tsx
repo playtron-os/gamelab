@@ -1,4 +1,10 @@
-import React, { createContext, useCallback, useMemo, useState } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useMemo,
+  useState,
+  useEffect
+} from "react";
 import { flashErrorMessage, flashMessage } from "redux-flash";
 import {
   AppInformation,
@@ -9,7 +15,8 @@ import {
   SubmissionItemType,
   LaunchConfig,
   InputConfig,
-  SubmissionSaveModel
+  SubmissionSaveModel,
+  LaunchParams
 } from "@/types";
 
 import { useAppDispatch, useAppSelector } from "@/redux/store";
@@ -29,6 +36,12 @@ import { error, warn } from "@tauri-apps/plugin-log";
 
 export type useSubmissionsType = ReturnType<typeof useSubmissions>;
 
+interface LaunchPreferences {
+  resetWinePrefix?: boolean;
+  bypassAppUpdate?: boolean;
+  enhancedDebugging?: boolean;
+}
+
 export interface SubmissionsContextType {
   clickedApp?: AppInformation;
   isLoading: boolean;
@@ -36,6 +49,10 @@ export interface SubmissionsContextType {
   inputSubmissions: useSubmissionsType;
   editLayout: InputConfig | null;
   editLaunchConfig: LaunchConfig | null;
+  launchParams: LaunchParams;
+  toggleBypassAppUpdate: () => void;
+  toggleEnhancedDebugging: () => void;
+  toggleResetWinePrefix: () => void;
   setEditLayout: (sub: InputConfig | null) => void;
   setEditLaunchConfig: (sub: LaunchConfig | null) => void;
 
@@ -89,6 +106,9 @@ export const SubmissionsContextProvider = ({
   } | null>(null);
   const { email } = useAppSelector(selectAuthState) as AuthState;
   const [editLayout, setEditLayout] = useState<InputConfig | null>(null);
+  const [resetWinePrefix, setResetWinePrefix] = useState<boolean>(false);
+  const [bypassAppUpdate, setBypassAppUpdate] = useState<boolean>(false);
+  const [enhancedDebugging, setEnhancedDebugging] = useState<boolean>(false);
 
   const [editLaunchConfig, setEditLaunchConfig] = useState<LaunchConfig | null>(
     null
@@ -104,6 +124,52 @@ export const SubmissionsContextProvider = ({
       }
     }
   }, [currentApp, apps]);
+  const loadLaunchPreferences = (): LaunchPreferences => {
+    if (!currentApp) return {};
+    const preferences = localStorage.getItem(
+      `${currentApp.app.id}.launchPreferences`
+    );
+    return preferences ? JSON.parse(preferences) : {};
+  };
+  const saveLaunchPreferences = (launchPreferences: LaunchPreferences) => {
+    if (!currentApp) return;
+    localStorage.setItem(
+      `${currentApp.app.id}.launchPreferences`,
+      JSON.stringify(launchPreferences)
+    );
+  };
+
+  const toggleResetWinePrefix = () => {
+    const launchPreferences = loadLaunchPreferences();
+    launchPreferences.resetWinePrefix = !resetWinePrefix;
+    setResetWinePrefix(!resetWinePrefix);
+    saveLaunchPreferences(launchPreferences);
+  };
+  const toggleBypassAppUpdate = () => {
+    const launchPreferences = loadLaunchPreferences();
+    launchPreferences.bypassAppUpdate = !bypassAppUpdate;
+    setBypassAppUpdate(!bypassAppUpdate);
+    saveLaunchPreferences(launchPreferences);
+  };
+  const toggleEnhancedDebugging = () => {
+    const launchPreferences = loadLaunchPreferences();
+    launchPreferences.enhancedDebugging = !enhancedDebugging;
+    setEnhancedDebugging(!enhancedDebugging);
+    saveLaunchPreferences(launchPreferences);
+  };
+
+  useEffect(() => {
+    const launchPreferences = loadLaunchPreferences();
+    if (launchPreferences.resetWinePrefix) {
+      setResetWinePrefix(launchPreferences.resetWinePrefix);
+    }
+    if (launchPreferences.bypassAppUpdate) {
+      setBypassAppUpdate(launchPreferences.bypassAppUpdate);
+    }
+    if (launchPreferences.enhancedDebugging) {
+      setEnhancedDebugging(launchPreferences.enhancedDebugging);
+    }
+  });
 
   const inputSubmissions = useSubmissions(
     SubmissionType.InputConfig,
@@ -114,6 +180,22 @@ export const SubmissionsContextProvider = ({
     currentApp?.app.id
   );
 
+  const launchParams = useMemo(
+    () => ({
+      resetWinePrefix,
+      bypassAppUpdate,
+      launchConfigId: launchSubmissions.selectedItem?.item_id,
+      inputConfigId: inputSubmissions.selectedItem?.item_id,
+      enhancedDebugging
+    }),
+    [
+      resetWinePrefix,
+      bypassAppUpdate,
+      inputSubmissions.selectedItem,
+      launchSubmissions.selectedItem,
+      enhancedDebugging
+    ]
+  );
   const { sendMessage } = usePlayserve({
     onMessage: (message) => {
       if (message.message_type === MessageType.SubmissionGetAllUpdate) {
@@ -344,7 +426,11 @@ export const SubmissionsContextProvider = ({
         copySubmission,
         promoteSubmission,
         askDeleteSubmission,
-        submitSubmission
+        submitSubmission,
+        toggleBypassAppUpdate,
+        toggleEnhancedDebugging,
+        toggleResetWinePrefix,
+        launchParams
       }}
     >
       {children}

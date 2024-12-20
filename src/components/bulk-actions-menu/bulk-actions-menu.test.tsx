@@ -36,7 +36,6 @@ const getMockBooleanState = (open = false) =>
   ] as ReturnType<typeof useBoolean>;
 
 const MOCK_LIBRARY_TABLE: AppLibraryContextProps = {
-  columns: [],
   handlers: {
     refetchAllApps: jest.fn(),
     downloadApp: mockOnDownloadSelected,
@@ -53,7 +52,7 @@ const MOCK_LIBRARY_TABLE: AppLibraryContextProps = {
     throw new Error("Function not implemented.");
   },
   selectedIds: [],
-  onSelectedIdsChange: function (_selectedId: string): void {
+  onSelectedIdChange: function (_selectedId: string): void {
     throw new Error("Function not implemented.");
   },
   eula: null,
