@@ -10,7 +10,6 @@ import {
   updateAppStatus,
   updateInstallStatus,
   setQueue,
-  setError,
   setLoadingProgress,
   setAppDownloadProgress,
   selectCurrentAppState
@@ -29,7 +28,6 @@ export const LibraryScreen = () => {
     updateInstalledApps: updateInstalledAppsDispatch,
     updateAppStatus: updateAppStatusDispatch,
     setQueue: setQueueDispatch,
-    setError: setErrorDispatch,
     setLoadingProgress: setLoadingProgressDispatch,
     setAppDownloadProgress: setAppDownloadProgressDispatch,
     updateInstallStatus: updateInstallStatusDispatch
@@ -38,7 +36,6 @@ export const LibraryScreen = () => {
     updateInstalledApps,
     updateAppStatus,
     setQueue,
-    setError,
     setLoadingProgress,
     setAppDownloadProgress,
     updateInstallStatus
@@ -62,7 +59,7 @@ export const LibraryScreen = () => {
         if (message.status === 200) {
           setAppsDispatch(message.body);
         } else {
-          setErrorDispatch(message.body.message);
+          dispatch(flashMessage(message.body.message));
         }
       } else if (
         message.message_type === MessageType.AppGetInstalled ||
@@ -100,6 +97,13 @@ export const LibraryScreen = () => {
         }
       } else if (message.message_type === MessageType.AppLaunch) {
         if (message.status !== 200) {
+          updateAppStatusDispatch([
+            {
+              owned_app: currentApp?.installed_app?.owned_app,
+              is_launched: false,
+              is_running: false
+            }
+          ]);
           dispatch(flashMessage(message.body.message));
         }
       }
@@ -112,19 +116,17 @@ export const LibraryScreen = () => {
         <Sidebar />
       </div>
       <div className="h-screen flex">
-        <div
-          className={classNames(
-            "ml-[240px] w-full bg-[--fill-subtler]",
-            !!currentApp && "mr-[465px]"
-          )}
-        >
-          <AppLibrary />
-          <div>
-            <SubmissionsContextProvider>
-              {!!currentApp && <SidePanel key={currentApp.app.id} />}
-            </SubmissionsContextProvider>
+        <SubmissionsContextProvider>
+          <div
+            className={classNames(
+              "ml-[240px] w-full bg-[--fill-subtler]",
+              !!currentApp && "mr-[465px]"
+            )}
+          >
+            <AppLibrary />
+            <div>{!!currentApp && <SidePanel key={currentApp.app.id} />}</div>
           </div>
-        </div>
+        </SubmissionsContextProvider>
       </div>
     </>
   );

@@ -24,24 +24,18 @@ import { GameCard } from "./game-card";
 import { getAppStatusWithQueue } from "@/utils/app-info";
 
 export const AppLibrary: React.FC = () => {
-  const { apps, error, loading, appFilters } = useAppSelector(
-    selectAppLibraryState
-  );
+  const { apps, loading, appFilters } = useAppSelector(selectAppLibraryState);
   const queuePositionMapState = useAppSelector(
     selectAppLibraryQueuePositionMapState
   );
   const parentRef = useRef<HTMLDivElement>(null);
-  const { onSelectedIdsChange } = useAppLibraryContext();
+  const { onSelectedIdChange: onSelectedIdsChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
   const [tabKey, setTabKey] = useState("installed");
   const [sortKey, setSortKey] = useState("name");
   const { props: confirmationPopUpProps } = useConfirmationPopUp();
 
   const [selectedGame, setSelectedGame] = useState<AppInformation | null>(null);
-
-  if (error) {
-    return <span data-testid={"error-text"}>{error}</span>;
-  }
 
   let filteredGames = apps;
 

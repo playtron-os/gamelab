@@ -1,4 +1,4 @@
-import React, { StrictMode, useEffect } from "react";
+import React, { useEffect } from "react";
 import { createRoot } from "react-dom/client";
 import { Routes } from "./routes";
 
@@ -36,22 +36,20 @@ export const Main = () => {
   }, []);
 
   return (
-    <StrictMode>
-      <I18nProvider i18n={i18n}>
-        <Provider store={store}>
-          <PersistGate loading={null} persistor={persistor}>
-            <LoadingSpinnerContextProvider>
-              <ConfirmationPopUpContextProvider>
-                <AppLibraryContextProvider>
-                  <Routes />
-                  <Notification />
-                </AppLibraryContextProvider>
-              </ConfirmationPopUpContextProvider>
-            </LoadingSpinnerContextProvider>
-          </PersistGate>
-        </Provider>
-      </I18nProvider>
-    </StrictMode>
+    <I18nProvider i18n={i18n}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <LoadingSpinnerContextProvider>
+            <ConfirmationPopUpContextProvider>
+              <AppLibraryContextProvider>
+                <Routes />
+                <Notification />
+              </AppLibraryContextProvider>
+            </ConfirmationPopUpContextProvider>
+          </LoadingSpinnerContextProvider>
+        </PersistGate>
+      </Provider>
+    </I18nProvider>
   );
 };
 

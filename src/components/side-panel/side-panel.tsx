@@ -1,6 +1,6 @@
-import React, { useMemo, useState, useCallback, useEffect } from "react";
-
+import React, { useState, useCallback, useEffect } from "react";
 import { Trans, t } from "@lingui/macro";
+
 import { Button, Divider, Toggle, CloseFill } from "@playtron/styleguide";
 
 import { AppStatus, getMessage, MessageType } from "@/types";
@@ -27,12 +27,6 @@ import { EulaModal } from "@/components/eula-modal/eula-modal";
 import { usePlayserveSendMessage } from "@/hooks";
 import { setCurrentApp } from "@/redux/modules";
 
-interface LaunchPreferences {
-  reset_wine_prefix?: boolean;
-  bypass_app_update?: boolean;
-  enhanced_debugging?: boolean;
-}
-
 export const SidePanel: React.FC = () => {
   const {
     eula,
@@ -42,17 +36,19 @@ export const SidePanel: React.FC = () => {
     setIsEulaOpen,
     handlers: { handleAppDefaultAction }
   } = useAppLibraryContext();
+
   const {
     clickedApp: currentApp,
     inputSubmissions,
     launchSubmissions,
     setEditLayout,
-    setEditLaunchConfig
+    setEditLaunchConfig,
+    launchParams,
+    toggleBypassAppUpdate,
+    toggleEnhancedDebugging,
+    toggleResetWinePrefix
   } = useSubmissionsContext();
 
-  const [resetWinePrefix, setResetWinePrefix] = useState<boolean>(false);
-  const [bypassAppUpdate, setBypassAppUpdate] = useState<boolean>(false);
-  const [enhancedDebugging, setEnhancedDebugging] = useState<boolean>(false);
   const [primaryOff, setPrimaryOff] = useState<boolean>(false);
   const [isInputConfigOpen, setIsInputConfigOpen] = useState<boolean>(false);
   const [isLaunchConfigOpen, setIsLaunchConfigOpen] = useState<boolean>(false);
@@ -66,56 +62,11 @@ export const SidePanel: React.FC = () => {
 
   useEffect(() => {
     setPrimaryOff(false);
-    const launchPreferences = loadLaunchPreferences();
-    if (launchPreferences.reset_wine_prefix) {
-      setResetWinePrefix(launchPreferences.reset_wine_prefix);
-    }
-    if (launchPreferences.bypass_app_update) {
-      setBypassAppUpdate(launchPreferences.bypass_app_update);
-    }
-    if (launchPreferences.enhanced_debugging) {
-      setEnhancedDebugging(launchPreferences.enhanced_debugging);
-    }
   }, [currentApp]);
 
   const appStatus = getAppStatus(currentApp);
   const dispatch = useAppDispatch();
   const sendMessage = usePlayserveSendMessage();
-
-  const loadLaunchPreferences = (): LaunchPreferences => {
-    const preferences = localStorage.getItem(
-      `${currentApp.app.id}.launchPreferences`
-    );
-    return preferences ? JSON.parse(preferences) : {};
-  };
-
-  const saveLaunchPreferences = (launchPreferences: LaunchPreferences) => {
-    localStorage.setItem(
-      `${currentApp.app.id}.launchPreferences`,
-      JSON.stringify(launchPreferences)
-    );
-  };
-
-  const toggleWinePrefix = () => {
-    const launchPreferences = loadLaunchPreferences();
-    launchPreferences.reset_wine_prefix = !resetWinePrefix;
-    setResetWinePrefix(!resetWinePrefix);
-    saveLaunchPreferences(launchPreferences);
-  };
-
-  const toggleBypassAppUpdate = () => {
-    const launchPreferences = loadLaunchPreferences();
-    launchPreferences.bypass_app_update = !bypassAppUpdate;
-    setBypassAppUpdate(!bypassAppUpdate);
-    saveLaunchPreferences(launchPreferences);
-  };
-
-  const toggleEnhancedDebugging = () => {
-    const launchPreferences = loadLaunchPreferences();
-    launchPreferences.enhanced_debugging = !enhancedDebugging;
-    setEnhancedDebugging(!enhancedDebugging);
-    saveLaunchPreferences(launchPreferences);
-  };
 
   const deleteDefaultConfig = useCallback(
     (submissions: useSubmissionsType) => {
@@ -136,23 +87,6 @@ export const SidePanel: React.FC = () => {
       });
     },
     [sendMessage]
-  );
-
-  const launchParams = useMemo(
-    () => ({
-      resetWinePrefix,
-      bypassAppUpdate,
-      launchConfigId: launchSubmissions.selectedItem?.item_id,
-      inputConfigId: inputSubmissions.selectedItem?.item_id,
-      enhancedDebugging
-    }),
-    [
-      resetWinePrefix,
-      bypassAppUpdate,
-      inputSubmissions.selectedItem,
-      launchSubmissions.selectedItem,
-      enhancedDebugging
-    ]
   );
 
   const providerInfo = currentApp.owned_apps.map((owned_app, index) => {
@@ -233,8 +167,8 @@ export const SidePanel: React.FC = () => {
             </label>
             <Toggle
               name="resetWineToggle"
-              checked={resetWinePrefix}
-              onChange={() => toggleWinePrefix()}
+              checked={launchParams.resetWinePrefix}
+              onChange={() => toggleResetWinePrefix()}
             />
           </div>
           <div className="flex py-2">
@@ -243,7 +177,7 @@ export const SidePanel: React.FC = () => {
             </label>
             <Toggle
               name="bypassAppUpdateToggle"
-              checked={bypassAppUpdate}
+              checked={launchParams.bypassAppUpdate}
               onChange={() => toggleBypassAppUpdate()}
             />
           </div>
@@ -253,7 +187,7 @@ export const SidePanel: React.FC = () => {
             </label>
             <Toggle
               name="enhancedDebuggingToggle"
-              checked={enhancedDebugging}
+              checked={launchParams.enhancedDebugging}
               onChange={() => toggleEnhancedDebugging()}
             />
           </div>
@@ -401,7 +335,7 @@ export const SidePanel: React.FC = () => {
         isOpen={isLogsOpen}
         onClose={() => setIsLogsOpen(false)}
         appInfo={currentApp}
-        isEnhancedDebuggingEnabled={enhancedDebugging}
+        isEnhancedDebuggingEnabled={launchParams.enhancedDebugging}
       />
       <EulaModal
         appInfo={currentApp}

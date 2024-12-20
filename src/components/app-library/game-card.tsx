@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import classNames from "classnames";
 import { t, Trans } from "@lingui/macro";
 import {
@@ -17,6 +17,7 @@ import { useAppStatus } from "@/hooks/app-library/use-app-status";
 import { AppInformation, OwnedApp } from "@/types/app-library";
 import { AppProvider } from "@/types/platform-auth";
 import { useAppLibraryContext } from "@/context";
+import { useSubmissionsContext } from "@/context/submissions-context";
 import {
   getImage,
   getProgress,
@@ -61,6 +62,8 @@ export const GameCard: React.FC<GameCardProps> = ({
     setIsSelected(!isSelected);
     onSelectGame(game);
   };
+  const { onSelectedIdChange } = useAppLibraryContext();
+  const { launchParams } = useSubmissionsContext();
   const status = useAppStatus(game);
   const progress = Math.round(getProgress(game.installed_app));
   let statusLabel: string;
@@ -69,6 +72,10 @@ export const GameCard: React.FC<GameCardProps> = ({
   } else {
     statusLabel = getAppStatusLabel(status);
   }
+  const handleLaunchParams = useCallback(() => {
+    onSelectedIdChange(game.app.id);
+    handleAppDefaultAction(game, launchParams);
+  }, [launchParams, game]);
 
   const appActions = [];
   // Main action button
@@ -78,7 +85,7 @@ export const GameCard: React.FC<GameCardProps> = ({
     appActions.push({
       id: 1,
       label: buttonLabel,
-      onClick: () => handleAppDefaultAction(game)
+      onClick: () => handleLaunchParams()
     });
   }
 

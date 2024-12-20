@@ -17,7 +17,7 @@ const selector = (state: RootState) => {
   const appLibrary = selectAppLibraryState(state);
   return {
     apps: appLibrary.apps,
-    error: appLibrary.error,
+
     loading: appLibrary.loading,
     loadingProgress: appLibrary.loadingProgress,
     appFilters: appLibrary.appFilters
@@ -25,7 +25,7 @@ const selector = (state: RootState) => {
 };
 
 export const ProviderSection: React.FC = () => {
-  const { apps, error, loading, loadingProgress, appFilters } =
+  const { apps, loading, loadingProgress, appFilters } =
     useAppSelector(selector);
 
   const {
@@ -58,7 +58,7 @@ export const ProviderSection: React.FC = () => {
     [AppProvider.EpicGames]: 0
   };
 
-  if (!loading && !error && apps) {
+  if (!loading && apps) {
     for (let i = 0; i < apps.length; i++) {
       const installed_app = apps[i].installed_app;
       const owned_apps = apps[i].owned_apps;

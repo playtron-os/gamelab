@@ -109,6 +109,7 @@ export const ConnectDeviceScreen: React.FC = () => {
         <div className="py-4">
           <Button
             label={t`Connect`}
+            disabled={!localDeviceIp}
             className="w-full"
             primary
             onClick={handleConnection}
