@@ -50,6 +50,7 @@ export const DriveSection: React.FC = () => {
         ((drive.max_size - drive.available_space) / drive.max_size) * 100
       )}
       size={drive.max_size}
+      singleDrive={drives.length === 1}
       enabled={appFilters.drives.includes(drive.name)}
       onClick={() =>
         setShowDrivesDispatch({

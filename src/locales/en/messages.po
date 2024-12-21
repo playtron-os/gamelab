@@ -63,11 +63,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:182
+#: src/components/app-library/app-library.tsx:187
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:213
+#: src/components/app-library/app-library.tsx:218
 msgid "All Games ({filteredGamesCount})"
 msgstr "All Games ({filteredGamesCount})"
 
@@ -147,7 +147,7 @@ msgstr "CONFIG NAME"
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
-#: src/context/submissions-context/submissions-context.tsx:392
+#: src/context/submissions-context/submissions-context.tsx:389
 msgid "Configuration has been submitted"
 msgstr "Configuration has been submitted"
 
@@ -180,11 +180,11 @@ msgstr "Current controller"
 msgid "Delete"
 msgstr "Delete"
 
-#: src/context/submissions-context/submissions-context.tsx:441
+#: src/context/submissions-context/submissions-context.tsx:438
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
-#: src/components/sidebar/profile-menu.tsx:82
+#: src/components/sidebar/profile-menu.tsx:80
 msgid "Disconnect from device?"
 msgstr "Disconnect from device?"
 
@@ -363,11 +363,11 @@ msgstr "Install Date"
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:192
+#: src/components/app-library/app-library.tsx:197
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:214
+#: src/components/app-library/app-library.tsx:219
 msgid "Installed Games ({filteredGamesCount})"
 msgstr "Installed Games ({filteredGamesCount})"
 
@@ -649,7 +649,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:203
+#: src/components/app-library/app-library.tsx:208
 msgid "Search"
 msgstr "Search"
 
@@ -714,7 +714,7 @@ msgstr "Sort by: Name (Z-A)"
 msgid "Stop"
 msgstr "Stop"
 
-#: src/context/submissions-context/submissions-context.tsx:351
+#: src/context/submissions-context/submissions-context.tsx:348
 msgid "Submission promoted"
 msgstr "Submission promoted"
 
@@ -750,7 +750,7 @@ msgstr "There is no controller configuration created for"
 msgid "There is no launch configuration created for"
 msgstr "There is no launch configuration created for"
 
-#: src/context/submissions-context/submissions-context.tsx:398
+#: src/context/submissions-context/submissions-context.tsx:395
 msgid "There was an error with the submission {errorMessage}"
 msgstr "There was an error with the submission {errorMessage}"
 
@@ -809,7 +809,7 @@ msgstr "Update"
 msgid "Update Required"
 msgstr "Update Required"
 
-#: src/components/sidebar/drive.tsx:31
+#: src/components/sidebar/drive.tsx:33
 msgid "used of"
 msgstr "used of"
 

@@ -63,11 +63,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:182
+#: src/components/app-library/app-library.tsx:187
 msgid "All Games"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:213
+#: src/components/app-library/app-library.tsx:218
 msgid "All Games ({filteredGamesCount})"
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "CONFIGURATION"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:392
+#: src/context/submissions-context/submissions-context.tsx:389
 msgid "Configuration has been submitted"
 msgstr ""
 
@@ -180,11 +180,11 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:441
+#: src/context/submissions-context/submissions-context.tsx:438
 msgid "Delete this configuration?"
 msgstr ""
 
-#: src/components/sidebar/profile-menu.tsx:82
+#: src/components/sidebar/profile-menu.tsx:80
 msgid "Disconnect from device?"
 msgstr ""
 
@@ -363,11 +363,11 @@ msgstr ""
 msgid "Install folder"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:192
+#: src/components/app-library/app-library.tsx:197
 msgid "Installed"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:214
+#: src/components/app-library/app-library.tsx:219
 msgid "Installed Games ({filteredGamesCount})"
 msgstr ""
 
@@ -649,7 +649,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:203
+#: src/components/app-library/app-library.tsx:208
 msgid "Search"
 msgstr ""
 
@@ -714,7 +714,7 @@ msgstr ""
 msgid "Stop"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:351
+#: src/context/submissions-context/submissions-context.tsx:348
 msgid "Submission promoted"
 msgstr ""
 
@@ -750,7 +750,7 @@ msgstr ""
 msgid "There is no launch configuration created for"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:398
+#: src/context/submissions-context/submissions-context.tsx:395
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 
@@ -809,7 +809,7 @@ msgstr ""
 msgid "Update Required"
 msgstr ""
 
-#: src/components/sidebar/drive.tsx:31
+#: src/components/sidebar/drive.tsx:33
 msgid "used of"
 msgstr ""
 
