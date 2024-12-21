@@ -7,7 +7,6 @@ import { useVirtualizer } from "@tanstack/react-virtual";
 import {
   ConfirmationPopUp,
   TextInput,
-  Button,
   Dropdown,
   ProgressSpinner
 } from "@playtron/styleguide";
@@ -21,6 +20,7 @@ import {
 import { useAppSelector } from "@/redux/store";
 import { AppInformation, AppProvider } from "@/types";
 import { GameCard } from "./game-card";
+import { FilterButton } from "./filter-button";
 import { getAppStatusWithQueue } from "@/utils/app-info";
 
 export const AppLibrary: React.FC = () => {
@@ -136,6 +136,11 @@ export const AppLibrary: React.FC = () => {
             getAppStatusWithQueue(a, queuePositionMapState) -
             getAppStatusWithQueue(b, queuePositionMapState)
           );
+        case "install_date":
+          return (
+            new Date(b.installed_app?.created_at || "").getTime() -
+            new Date(a.installed_app?.created_at || "").getTime()
+          );
         case "last_played":
           return (
             new Date(b.installed_app?.updated_at || "").getTime() -
@@ -197,9 +202,9 @@ export const AppLibrary: React.FC = () => {
             </Tabs>
           </div>
 
-          <div className="flex-col pt-2 pe-2 w-[210px]">
+          <div className="flex-col pt-2 pe-2 w-[250px]">
             <TextInput
-              className="w-[202px]"
+              className="w-[240px]"
               placeholder={t`Search`}
               value={nameFilter}
               onChange={setNameFilter}
@@ -213,9 +218,9 @@ export const AppLibrary: React.FC = () => {
               ? t`All Games (${filteredGamesCount})`
               : t`Installed Games (${filteredGamesCount})`}
           </h2>
-          <div className="flex items-center pe-2 w-[210px]">
+          <div className="flex items-center pe-2 w-[250px]">
             <Dropdown
-              triggerElem={<Button label={sortLabel} className="w-[202px]" />}
+              triggerElem={<FilterButton label={sortLabel} />}
               data={sortOptions}
             />
           </div>

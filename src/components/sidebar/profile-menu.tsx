@@ -24,9 +24,7 @@ import {
 export const ProfileMenu: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { username, email, avatar } = useAppSelector(
-    selectAuthState
-  ) as AuthState;
+  const { username, avatar } = useAppSelector(selectAuthState) as AuthState;
   const [confirmDisconnect, setConfirmDisconnect] = useState(false);
   const { sendMessage } = usePlayserve({
     onMessage: (message) => {
@@ -62,7 +60,7 @@ export const ProfileMenu: React.FC = () => {
     <div className="flex gap-x-4 items-center">
       <div className="flex-grow max-w-36 m-4">
         {username ? (
-          <Avatar name={username} description={email} src={avatar} />
+          <Avatar name={username} src={avatar} />
         ) : (
           <ProgressSpinner size={32} />
         )}

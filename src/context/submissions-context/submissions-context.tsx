@@ -124,6 +124,7 @@ export const SubmissionsContextProvider = ({
       }
     }
   }, [currentApp, apps]);
+
   const loadLaunchPreferences = (): LaunchPreferences => {
     if (!currentApp) return {};
     const preferences = localStorage.getItem(
@@ -160,16 +161,11 @@ export const SubmissionsContextProvider = ({
 
   useEffect(() => {
     const launchPreferences = loadLaunchPreferences();
-    if (launchPreferences.resetWinePrefix) {
-      setResetWinePrefix(launchPreferences.resetWinePrefix);
-    }
-    if (launchPreferences.bypassAppUpdate) {
-      setBypassAppUpdate(launchPreferences.bypassAppUpdate);
-    }
-    if (launchPreferences.enhancedDebugging) {
-      setEnhancedDebugging(launchPreferences.enhancedDebugging);
-    }
-  });
+
+    setResetWinePrefix(launchPreferences.resetWinePrefix || false);
+    setBypassAppUpdate(launchPreferences.bypassAppUpdate || false);
+    setEnhancedDebugging(launchPreferences.enhancedDebugging || false);
+  }, [clickedApp]);
 
   const inputSubmissions = useSubmissions(
     SubmissionType.InputConfig,
@@ -189,6 +185,7 @@ export const SubmissionsContextProvider = ({
       enhancedDebugging
     }),
     [
+      clickedApp,
       resetWinePrefix,
       bypassAppUpdate,
       inputSubmissions.selectedItem,
