@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@playtron/styleguide";
 import { t } from "@lingui/macro";
 import SteamDeckImage from "@/assets/Devices/Steam Deck Front.svg";
@@ -8,6 +8,9 @@ import {
   LaunchConfig,
   InputConfig
 } from "@/types";
+import { usePlayserve } from "@/hooks";
+import { useInputDevice } from "@/hooks/use-input-device";
+import { getPhysicalLayoutFromDevice } from "@/utils/controllers";
 
 type ControllerLayoutEmptyProps = {
   appInfo: AppInformation;
@@ -29,6 +32,19 @@ export const SubmissionsEmpty: React.FC<ControllerLayoutEmptyProps> = ({
   setEditLayout,
   createSubmission
 }) => {
+  const playserve = usePlayserve();
+  const [image, setImage] = useState<string | undefined>(undefined);
+  const { getInputDevices } = useInputDevice(playserve);
+  useEffect(() => {
+    getInputDevices().then((devices) => {
+      if (devices && devices.length > 0) {
+        const layout = getPhysicalLayoutFromDevice(devices[0]);
+        setImage(layout.images.front);
+      }
+      return SteamDeckImage;
+    });
+  }, []);
+
   const message =
     submissionType === "InputConfig"
       ? t`There is no controller configuration created for`
@@ -36,7 +52,7 @@ export const SubmissionsEmpty: React.FC<ControllerLayoutEmptyProps> = ({
 
   return (
     <div className="flex flex-col justify-center items-center absolute inset-0 gap-6">
-      <img width={430} src={SteamDeckImage} />
+      <img width={430} src={image} />
       <p className="text-center max-w-44">
         {message}
         <br />

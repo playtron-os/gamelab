@@ -141,7 +141,6 @@ export const AppLibraryContextProvider: React.FC<
       }
 
       if (!isSelected) {
-        console.log("Selected ids: ", selectedIds);
         setSelectedIds([id]);
       }
     },

@@ -7,7 +7,7 @@ import {
 
 import { PlaytronImage, InstalledApp } from "@/types/app-library";
 import { t } from "@lingui/macro";
-import { RunFill } from "@playtron/styleguide";
+import { CloudFill, RunFill } from "@playtron/styleguide";
 
 export function getProviderName(provider: AppProvider): string {
   return {
@@ -254,6 +254,9 @@ export const getAppStatusWithQueue = (
 export const getAppActionIconByStatus = (status: AppStatus) => {
   if (status === AppStatus.READY) {
     return RunFill;
+  }
+  if (status === AppStatus.UPDATE_REQUIRED) {
+    return CloudFill;
   }
 };
 

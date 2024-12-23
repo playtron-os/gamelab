@@ -17,6 +17,7 @@ export interface AppLibraryState {
   appFilters: {
     providers: { [key in AppProvider]: boolean };
     drives: Array<string>;
+    status: "all" | "installed";
   };
   queue: QueuedDownload[];
   queuePositionMap: { [key: string]: number };
@@ -34,7 +35,8 @@ export const APP_LIBRARY_INITIAL_STATE: AppLibraryState = {
       [AppProvider.Gog]: true,
       [AppProvider.EpicGames]: true
     },
-    drives: []
+    drives: [],
+    status: "installed"
   },
   queuePositionMap: {},
   loading: false,
@@ -72,6 +74,9 @@ export const appLibrarySlice = createSlice({
       }
 
       state.appFilters.drives = drives;
+    },
+    setStatusFilter: (state, action: PayloadAction<"all" | "installed">) => {
+      state.appFilters.status = action.payload;
     },
     updateInstalledApps: (state, action: PayloadAction<InstalledApp[]>) => {
       if (!state.apps.length) {
@@ -221,6 +226,7 @@ export const {
   setShowGOG,
   setShowEpic,
   setShowDrives,
+  setStatusFilter,
   updateInstalledApps,
   updateAppStatus,
   updateInstallStatus,

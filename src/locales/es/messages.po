@@ -17,7 +17,7 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:111
+#: src/components/app-library/app-library.tsx:128
 msgid "???"
 msgstr ""
 
@@ -51,7 +51,7 @@ msgstr ""
 
 #: src/components/input-config-modal/input-config-modal.tsx:205
 #: src/components/launch-config/launch-config-modal.tsx:93
-#: src/components/submission-config/submissions-empty.tsx:67
+#: src/components/submission-config/submissions-empty.tsx:83
 msgid "Add New Config"
 msgstr ""
 
@@ -63,11 +63,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:187
+#: src/components/app-library/app-library.tsx:216
 msgid "All Games"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:218
+#: src/components/app-library/app-library.tsx:247
 msgid "All Games ({filteredGamesCount})"
 msgstr ""
 
@@ -126,11 +126,11 @@ msgstr ""
 #: src/components/input-config-modal/input-config-modal.tsx:207
 #: src/components/launch-config/launch-config-modal.tsx:95
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
-#: src/components/submission-config/submissions-empty.tsx:46
+#: src/components/submission-config/submissions-empty.tsx:62
 msgid "Close"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:311
+#: src/components/side-panel/side-panel.tsx:312
 msgid "Close Log Window"
 msgstr ""
 
@@ -138,7 +138,7 @@ msgstr ""
 msgid "Config"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:177
+#: src/components/controller-edit/controller-edit.tsx:152
 #: src/components/launch-config-editor/launch-config-editor.tsx:203
 msgid "CONFIG NAME"
 msgstr ""
@@ -168,7 +168,7 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:55
+#: src/components/controller-edit/controller-edit.tsx:60
 msgid "Current controller"
 msgstr ""
 
@@ -290,11 +290,11 @@ msgstr ""
 #~ msgid "Game logs will appear here..."
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:81
+#: src/components/app-library/app-library.tsx:84
 msgid "Game Size"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:82
+#: src/components/app-library/app-library.tsx:85
 msgid "Game Status"
 msgstr ""
 
@@ -306,7 +306,7 @@ msgstr ""
 msgid "Gamepad"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:235
+#: src/components/controller-edit/controller-edit.tsx:210
 msgid "Gamepad Type"
 msgstr ""
 
@@ -339,7 +339,7 @@ msgstr ""
 #~ msgid "Input Config for"
 #~ msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:167
+#: src/components/controller-edit/controller-edit.tsx:142
 msgid "Input Config for {gameName}"
 msgstr ""
 
@@ -347,7 +347,7 @@ msgstr ""
 msgid "Input Config List"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:192
+#: src/components/controller-edit/controller-edit.tsx:167
 msgid "INPUT DEVICES"
 msgstr ""
 
@@ -355,7 +355,7 @@ msgstr ""
 msgid "Insert Delimiter"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:85
+#: src/components/app-library/app-library.tsx:88
 msgid "Install Date"
 msgstr ""
 
@@ -363,11 +363,11 @@ msgstr ""
 msgid "Install folder"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:197
+#: src/components/app-library/app-library.tsx:226
 msgid "Installed"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:219
+#: src/components/app-library/app-library.tsx:248
 msgid "Installed Games ({filteredGamesCount})"
 msgstr ""
 
@@ -387,7 +387,7 @@ msgstr ""
 msgid "Installing"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:57
+#: src/components/controller-edit/controller-edit.tsx:62
 msgid "Invalid layout"
 msgstr ""
 
@@ -415,7 +415,15 @@ msgstr ""
 #~ msgid "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:90
+#: src/components/app-library/app-library.tsx:93
+msgid "Last Added"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:103
+msgid "Last Played"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:98
 msgid "Last Updated"
 msgstr ""
 
@@ -475,7 +483,7 @@ msgstr ""
 msgid "Mouse"
 msgstr ""
 
-#: src/utils/controllers.ts:244
+#: src/utils/controllers.ts:245
 msgid "Mouse Move"
 msgstr ""
 
@@ -500,11 +508,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:79
+#: src/components/app-library/app-library.tsx:82
 msgid "Name (A-Z)"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:80
+#: src/components/app-library/app-library.tsx:83
 msgid "Name (Z-A)"
 msgstr ""
 
@@ -548,7 +556,7 @@ msgstr ""
 msgid "Open Full Log"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:311
+#: src/components/side-panel/side-panel.tsx:312
 msgid "Open Log Window"
 msgstr ""
 
@@ -611,7 +619,7 @@ msgstr ""
 msgid "Providers"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:53
+#: src/components/controller-edit/controller-edit.tsx:58
 msgid "PS5 controller"
 msgstr ""
 
@@ -644,12 +652,12 @@ msgstr ""
 msgid "Running"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:212
+#: src/components/controller-edit/controller-edit.tsx:187
 #: src/components/launch-config-editor/launch-config-editor.tsx:253
 msgid "Save"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:208
+#: src/components/app-library/app-library.tsx:237
 msgid "Search"
 msgstr ""
 
@@ -677,27 +685,35 @@ msgstr ""
 msgid "Sorry, an unexpected error has occurred."
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:103
+#: src/components/app-library/app-library.tsx:116
 msgid "Sort by: Game Size"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:105
+#: src/components/app-library/app-library.tsx:118
 msgid "Sort by: Game Status"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:107
+#: src/components/app-library/app-library.tsx:120
 msgid "Sort by: Install Date"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:109
+#: src/components/app-library/app-library.tsx:122
+msgid "Sort by: Last Added"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:126
+msgid "Sort by: Last Played"
+msgstr ""
+
+#: src/components/app-library/app-library.tsx:124
 msgid "Sort by: Last Updated"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:99
+#: src/components/app-library/app-library.tsx:112
 msgid "Sort by: Name (A-Z)"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:101
+#: src/components/app-library/app-library.tsx:114
 msgid "Sort by: Name (Z-A)"
 msgstr ""
 
@@ -723,7 +739,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/utils/app-info.ts:271
+#: src/utils/app-info.ts:274
 msgid "System Drive"
 msgstr ""
 
@@ -742,11 +758,11 @@ msgstr ""
 msgid "The device did not respond in time"
 msgstr ""
 
-#: src/components/submission-config/submissions-empty.tsx:34
+#: src/components/submission-config/submissions-empty.tsx:50
 msgid "There is no controller configuration created for"
 msgstr ""
 
-#: src/components/submission-config/submissions-empty.tsx:35
+#: src/components/submission-config/submissions-empty.tsx:51
 msgid "There is no launch configuration created for"
 msgstr ""
 
@@ -792,8 +808,8 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-#: src/utils/controllers.ts:164
-#: src/utils/controllers.ts:236
+#: src/utils/controllers.ts:165
+#: src/utils/controllers.ts:237
 msgid "Unset"
 msgstr ""
 
@@ -809,7 +825,7 @@ msgstr ""
 msgid "Update Required"
 msgstr ""
 
-#: src/components/sidebar/drive.tsx:33
+#: src/components/sidebar/drive.tsx:35
 msgid "used of"
 msgstr ""
 
@@ -830,7 +846,7 @@ msgstr ""
 msgid "Version: {version}"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:51
+#: src/components/controller-edit/controller-edit.tsx:56
 msgid "Xbox controller"
 msgstr ""
 

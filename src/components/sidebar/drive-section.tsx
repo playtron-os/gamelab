@@ -51,6 +51,7 @@ export const DriveSection: React.FC = () => {
       )}
       size={drive.max_size}
       singleDrive={drives.length === 1}
+      disabled={appFilters.status === "all"}
       enabled={appFilters.drives.includes(drive.name)}
       onClick={() =>
         setShowDrivesDispatch({

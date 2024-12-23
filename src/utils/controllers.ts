@@ -1,5 +1,6 @@
-import { InputEvent } from "@/types/input-config";
+import { ControllerInfo, InputEvent } from "@/types/input-config";
 import { t } from "@lingui/macro";
+import { physicalLayouts } from "@/constants/physical-layouts";
 
 export const KEYBOARD_QWERTY_LAYOUT = [
   [
@@ -351,4 +352,34 @@ export const mappingCmp = (mapping1?: InputEvent, mapping2?: InputEvent) => {
     }
   }
   return false;
+};
+
+export const getPhysicalLayoutFromDevice = (device: ControllerInfo) => {
+  // Xbox360
+  if (device.capabilities.length === 20) {
+    return physicalLayouts.Xbox;
+  }
+  if (device.capabilities.length === 21) {
+    return physicalLayouts.Xbox;
+  }
+  // Xbox One
+  if (device.capabilities.length === 25) {
+    return physicalLayouts.Xbox;
+  }
+  if (device.capabilities.length === 33) {
+    return physicalLayouts.PS5;
+  }
+  // Aya Neo 2
+  // if (device.capabilities.length === 155) {
+  //   return physicalLayouts.SteamDeck;
+  // }
+  if (device.capabilities.length === 173) {
+    return physicalLayouts.SteamDeck;
+  }
+  if (device.capabilities.length === 186) {
+    return physicalLayouts.ROGAlly;
+  }
+  console.log("Unknown device", device);
+  console.log("Device capabilities", device.capabilities);
+  return physicalLayouts.Generic;
 };

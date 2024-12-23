@@ -128,7 +128,7 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
   }, [editLayout, setEditLayout]);
 
   const [currentPhysicalLayout, setCurrentPhysicalLayout] =
-    useState<PhysicalLayoutType>(physicalLayouts.Xbox);
+    useState<PhysicalLayoutType>(physicalLayouts.Dummy);
 
   const [activeTab, setActiveTab] = useState<ControlGroup>(
     physicalLayouts.Xbox.layout[0]
