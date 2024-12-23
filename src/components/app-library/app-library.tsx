@@ -15,9 +15,10 @@ import { MoveAppDialog } from "../move-app-dialog";
 import { BulkActionsMenu } from "../bulk-actions-menu/bulk-actions-menu";
 import {
   selectAppLibraryState,
-  selectAppLibraryQueuePositionMapState
+  selectAppLibraryQueuePositionMapState,
+  setStatusFilter
 } from "@/redux/modules";
-import { useAppSelector } from "@/redux/store";
+import { useAppActions, useAppSelector } from "@/redux/store";
 import { AppInformation, AppProvider } from "@/types";
 import { GameCard } from "./game-card";
 import { FilterButton } from "./filter-button";
@@ -25,13 +26,15 @@ import { getAppStatusWithQueue } from "@/utils/app-info";
 
 export const AppLibrary: React.FC = () => {
   const { apps, loading, appFilters } = useAppSelector(selectAppLibraryState);
+  const { setStatusFilter: setStatusFilterDispatch } = useAppActions({
+    setStatusFilter
+  });
   const queuePositionMapState = useAppSelector(
     selectAppLibraryQueuePositionMapState
   );
   const parentRef = useRef<HTMLDivElement>(null);
   const { onSelectedIdChange: onSelectedIdsChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
-  const [tabKey, setTabKey] = useState("installed");
   const [sortKey, setSortKey] = useState("name");
   const { props: confirmationPopUpProps } = useConfirmationPopUp();
 
@@ -50,7 +53,7 @@ export const AppLibrary: React.FC = () => {
     });
   }
 
-  if (tabKey === "installed") {
+  if (appFilters.status === "installed") {
     if (appFilters.drives.length) {
       filteredGames = filteredGames.filter((app) => {
         return appFilters.drives.some(
@@ -87,7 +90,17 @@ export const AppLibrary: React.FC = () => {
       },
       {
         id: 7,
+        label: t`Last Added`,
+        onClick: () => setSortKey("last_added")
+      },
+      {
+        id: 8,
         label: t`Last Updated`,
+        onClick: () => setSortKey("last_updated")
+      },
+      {
+        id: 9,
+        label: t`Last Played`,
         onClick: () => setSortKey("last_played")
       }
     ],
@@ -105,8 +118,12 @@ export const AppLibrary: React.FC = () => {
         return t`Sort by: Game Status`;
       case "install_date":
         return t`Sort by: Install Date`;
-      case "last_played":
+      case "last_added":
+        return t`Sort by: Last Added`;
+      case "last_updated":
         return t`Sort by: Last Updated`;
+      case "last_played":
+        return t`Sort by: Last Played`;
       default:
         return t`???`;
     }
@@ -141,10 +158,20 @@ export const AppLibrary: React.FC = () => {
             new Date(b.installed_app?.created_at || "").getTime() -
             new Date(a.installed_app?.created_at || "").getTime()
           );
-        case "last_played":
+        case "last_added":
+          return (
+            new Date(b.installed_app?.created_at || "").getTime() -
+            new Date(a.installed_app?.created_at || "").getTime()
+          );
+        case "last_updated":
           return (
             new Date(b.installed_app?.updated_at || "").getTime() -
             new Date(a.installed_app?.updated_at || "").getTime()
+          );
+        case "last_played":
+          return (
+            new Date(b.installed_app?.launched_at || "").getTime() -
+            new Date(a.installed_app?.launched_at || "").getTime()
           );
         default:
           return 0;
@@ -166,8 +193,10 @@ export const AppLibrary: React.FC = () => {
               aria-label="installedFilter"
               color="primary"
               variant="underlined"
-              selectedKey={tabKey}
-              onSelectionChange={(key: React.Key) => setTabKey(key.toString())}
+              selectedKey={appFilters.status}
+              onSelectionChange={(key: React.Key) => {
+                setStatusFilterDispatch(key.toString());
+              }}
               classNames={{
                 tabList:
                   // eslint-disable-next-line lingui/no-unlocalized-strings
@@ -214,7 +243,7 @@ export const AppLibrary: React.FC = () => {
         </div>
         <div className="flex">
           <h2 className="text-2xl my-3 px-2 flex-grow">
-            {tabKey == "all"
+            {appFilters.status == "all"
               ? t`All Games (${filteredGamesCount})`
               : t`Installed Games (${filteredGamesCount})`}
           </h2>

@@ -80,7 +80,7 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
           </div>
         </div>
         <div
-          class="flex-col pt-2 pe-2 w-[210px]"
+          class="flex-col pt-2 pe-2 w-[250px]"
         >
           <div
             class="flex flex-col"
@@ -154,7 +154,7 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
           Installed Games (
         </h2>
         <div
-          class="flex items-center pe-2 w-[210px]"
+          class="flex items-center pe-2 w-[250px]"
         >
           <div
             aria-expanded="false"
@@ -164,26 +164,30 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
             id="react-aria-:rn:"
             type="button"
           >
-            <button
-              class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[16px] p-2 w-[202px]"
-              type="button"
+            <div
+              class="flex items-center border border-[--stroke-subtle] rounded-md bg-[--fill-default] w-[240px] px-3 py-2"
             >
-              <div
-                class="flex items-center gap-2"
+              <span
+                class="flex-grow"
               >
-                <span
-                  class="flex-grow"
-                />
-                <span
-                  class="flex-shrink"
+                Sort by: Name (A-Z)
+              </span>
+              <span
+                class="flex-shrink"
+              >
+                <svg
+                  fill="#909090"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Sort by: Name (A-Z)
-                </span>
-                <span
-                  class="flex-grow"
-                />
-              </div>
-            </button>
+                  <path
+                    d="M18.2326 9C18.9149 9 19.2566 9.79492 18.7742 10.2598L13.0415 15.7838C12.7425 16.0721 12.2575 16.0721 11.9585 15.7838L6.22585 10.2598C5.74339 9.79491 6.08509 9 6.76739 9L18.2326 9Z"
+                  />
+                </svg>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -259,9 +263,7 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
                         >
                           C: 
                         </span>
-                        <span
-                          class="font-bold"
-                        >
+                        <span>
                           100B
                         </span>
                       </div>
@@ -375,9 +377,7 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
                         >
                           C: 
                         </span>
-                        <span
-                          class="font-bold"
-                        >
+                        <span>
                           100B
                         </span>
                       </div>
@@ -514,7 +514,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
           </div>
         </div>
         <div
-          class="flex-col pt-2 pe-2 w-[210px]"
+          class="flex-col pt-2 pe-2 w-[250px]"
         >
           <div
             class="flex flex-col"
@@ -588,7 +588,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
           Installed Games (
         </h2>
         <div
-          class="flex items-center pe-2 w-[210px]"
+          class="flex items-center pe-2 w-[250px]"
         >
           <div
             aria-expanded="false"
@@ -598,26 +598,30 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
             id="react-aria-:r1a:"
             type="button"
           >
-            <button
-              class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[16px] p-2 w-[202px]"
-              type="button"
+            <div
+              class="flex items-center border border-[--stroke-subtle] rounded-md bg-[--fill-default] w-[240px] px-3 py-2"
             >
-              <div
-                class="flex items-center gap-2"
+              <span
+                class="flex-grow"
               >
-                <span
-                  class="flex-grow"
-                />
-                <span
-                  class="flex-shrink"
+                Sort by: Name (A-Z)
+              </span>
+              <span
+                class="flex-shrink"
+              >
+                <svg
+                  fill="#909090"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Sort by: Name (A-Z)
-                </span>
-                <span
-                  class="flex-grow"
-                />
-              </div>
-            </button>
+                  <path
+                    d="M18.2326 9C18.9149 9 19.2566 9.79492 18.7742 10.2598L13.0415 15.7838C12.7425 16.0721 12.2575 16.0721 11.9585 15.7838L6.22585 10.2598C5.74339 9.79491 6.08509 9 6.76739 9L18.2326 9Z"
+                  />
+                </svg>
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -693,9 +697,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                         >
                           C: 
                         </span>
-                        <span
-                          class="font-bold"
-                        >
+                        <span>
                           100B
                         </span>
                       </div>
@@ -809,9 +811,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                         >
                           C: 
                         </span>
-                        <span
-                          class="font-bold"
-                        >
+                        <span>
                           100B
                         </span>
                       </div>
@@ -948,7 +948,7 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
           </div>
         </div>
         <div
-          class="flex-col pt-2 pe-2 w-[210px]"
+          class="flex-col pt-2 pe-2 w-[250px]"
         >
           <div
             class="flex flex-col"
@@ -1022,7 +1022,7 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
           Installed Games (
         </h2>
         <div
-          class="flex items-center pe-2 w-[210px]"
+          class="flex items-center pe-2 w-[250px]"
         >
           <div
             aria-expanded="false"
@@ -1032,26 +1032,30 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
             id="react-aria-:ra:"
             type="button"
           >
-            <button
-              class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[16px] p-2 w-[202px]"
-              type="button"
+            <div
+              class="flex items-center border border-[--stroke-subtle] rounded-md bg-[--fill-default] w-[240px] px-3 py-2"
             >
-              <div
-                class="flex items-center gap-2"
+              <span
+                class="flex-grow"
               >
-                <span
-                  class="flex-grow"
-                />
-                <span
-                  class="flex-shrink"
+                Sort by: Name (A-Z)
+              </span>
+              <span
+                class="flex-shrink"
+              >
+                <svg
+                  fill="#909090"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  Sort by: Name (A-Z)
-                </span>
-                <span
-                  class="flex-grow"
-                />
-              </div>
-            </button>
+                  <path
+                    d="M18.2326 9C18.9149 9 19.2566 9.79492 18.7742 10.2598L13.0415 15.7838C12.7425 16.0721 12.2575 16.0721 11.9585 15.7838L6.22585 10.2598C5.74339 9.79491 6.08509 9 6.76739 9L18.2326 9Z"
+                  />
+                </svg>
+              </span>
+            </div>
           </div>
         </div>
       </div>

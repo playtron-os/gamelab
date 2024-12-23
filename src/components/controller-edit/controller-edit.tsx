@@ -22,7 +22,12 @@ import {
 import { useSubmissionsContext } from "@/context/submissions-context";
 import { usePlayserve } from "@/hooks";
 import { useInputDevice } from "@/hooks/use-input-device";
-import { getInputLabel, mappingCmp } from "@/utils/controllers";
+import {
+  getInputLabel,
+  mappingCmp,
+  getPhysicalLayoutFromDevice
+} from "@/utils/controllers";
+
 import {
   physicalLayouts,
   PhysicalLayoutType
@@ -58,36 +63,6 @@ export const getControllerLayoutLabel = (layout: TargetControllerType) => {
   }
 };
 
-export const getPhysicalLayoutFromDevice = (device: ControllerInfo) => {
-  // Xbox360
-  if (device.capabilities.length === 20) {
-    return physicalLayouts.Xbox;
-  }
-  if (device.capabilities.length === 21) {
-    return physicalLayouts.Xbox;
-  }
-  // Xbox One
-  if (device.capabilities.length === 25) {
-    return physicalLayouts.Xbox;
-  }
-  if (device.capabilities.length === 33) {
-    return physicalLayouts.PS5;
-  }
-  // Aya Neo 2
-  // if (device.capabilities.length === 155) {
-  //   return physicalLayouts.SteamDeck;
-  // }
-  if (device.capabilities.length === 173) {
-    return physicalLayouts.SteamDeck;
-  }
-  if (device.capabilities.length === 186) {
-    return physicalLayouts.ROGAlly;
-  }
-  console.log("Unknown device", device);
-  console.log("Device capabilities", device.capabilities);
-  return physicalLayouts.Generic;
-};
-
 export const ControllerEdit: React.FC<ControllerEditProps> = ({
   appInfo,
   activeTab,
@@ -109,7 +84,7 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
   useEffect(() => {
     getInputDevices().then((devices) => {
       if (devices?.length) {
-        if (currentPhysicalLayout) {
+        if (currentPhysicalLayout !== physicalLayouts.Dummy) {
           return;
         }
         setCurrentPhysicalLayout(getPhysicalLayoutFromDevice(devices[0]));
@@ -125,7 +100,7 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
         setInputDevices(inputDevices);
         if (inputDevices.length > 0) {
           const layout = getPhysicalLayoutFromDevice(inputDevices[0]);
-          if (layout.id !== currentPhysicalLayout.id) {
+          if (currentPhysicalLayout && layout.id !== currentPhysicalLayout.id) {
             setCurrentPhysicalLayout(layout);
             setActiveTab(layout.layout[0]);
           }

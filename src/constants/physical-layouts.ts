@@ -50,6 +50,7 @@ import {
   Gyro
 } from "@playtron/styleguide";
 
+import steamDeckImageFront from "@/assets/Devices/Steam Deck Front.svg";
 import steamDeckImageFrontDpad from "@/assets/Devices/Steam Deck Front-dpad.svg";
 import steamDeckImageFrontButtons from "@/assets/Devices/Steam Deck Front-faceb.svg";
 import steamDeckImageFrontSticks from "@/assets/Devices/Steam Deck Front-stick.svg";
@@ -59,6 +60,7 @@ import steamDeckImageFrontTrackpads from "@/assets/Devices/Steam Deck Front-touc
 import steamDeckImageBackPaddles from "@/assets/Devices/Steam Deck Back-paddle.svg";
 import steamDeckImageGyro from "@/assets/Devices/Steam Deck Gyro.svg";
 
+import LegionGoImageFront from "@/assets/Devices/Legion Go Front.svg";
 import LegionGoImageFrontDpad from "@/assets/Devices/Legion Go Front-dpad.svg";
 import LegionGoImageFrontButtons from "@/assets/Devices/Legion Go Front-facebt.svg";
 import LegionGoImageFrontSticks from "@/assets/Devices/Legion Go Front-stick.svg";
@@ -68,6 +70,7 @@ import LegionGoImageFrontTrackpads from "@/assets/Devices/Legion Go Front-touchp
 import LegionGoImageBackPaddles from "@/assets/Devices/Legion Go Back-paddles.svg";
 import LegionGoImageGyro from "@/assets/Devices/Legion Go Gyro.svg";
 
+import ROGAllyImageFront from "@/assets/Devices/ROG Ally Front.svg";
 import ROGAllyImageFrontDpad from "@/assets/Devices/ROG Ally Front-dpad.svg";
 import ROGAllyImageFrontButtons from "@/assets/Devices/ROG Ally Front-facebtn.svg";
 import ROGAllyImageFrontSticks from "@/assets/Devices/ROG Ally Front-stick.svg";
@@ -76,18 +79,21 @@ import ROGAllyImageTopBumpers from "@/assets/Devices/ROG Ally Top-bumpers.svg";
 import ROGAllyImageBackPaddles from "@/assets/Devices/ROG Ally Back-paddles.svg";
 import ROGAllyImageGyro from "@/assets/Devices/ROG Ally Gyro.svg";
 
+import xboxImageFront from "@/assets/Devices/Xbox Front.svg";
 import xboxImageFrontButtons from "@/assets/Devices/Xbox Front-facebtn.svg";
 import xboxImageFrontDpad from "@/assets/Devices/Xbox Front-dpad.svg";
 import xboxImageFrontSticks from "@/assets/Devices/Xbox Front-stick.svg";
 import xboxImageTopTriggers from "@/assets/Devices/Xbox Top-triggers.svg";
 import xboxImageTopBumpers from "@/assets/Devices/Xbox Top-bumppers.svg";
 
+import GenericImageFront from "@/assets/Devices/Generic Front.svg";
 import GenericImageFrontButtons from "@/assets/Devices/Generic Front-facebtn.svg";
 import GenericImageFrontDpad from "@/assets/Devices/Generic Front-dpad.svg";
 import GenericImageFrontSticks from "@/assets/Devices/Generic Front-stick.svg";
 import GenericImageTopTriggers from "@/assets/Devices/Generic Top-triggers.svg";
 import GenericImageTopBumpers from "@/assets/Devices/Generic Top-bumppers.svg";
 
+import PS4ImageFront from "@/assets/Devices/PS4 Front.svg";
 import PS4ImageFrontDpad from "@/assets/Devices/PS4 Front-dpad.svg";
 import PS4ImageFrontButtons from "@/assets/Devices/PS4 Front-facebtn.svg";
 import PS4ImageFrontSticks from "@/assets/Devices/PS4 Front-stick.svg";
@@ -97,6 +103,7 @@ import PS4ImageBackPaddles from "@/assets/Devices/PS4 Back-paddles.svg";
 import PS4ImageTrackpad from "@/assets/Devices/PS4 Front-touchpad.svg";
 import PS4ImageGyro from "@/assets/Devices/PS4 Gyro.svg";
 
+import PS5ImageFront from "@/assets/Devices/PS5 Front.svg";
 import PS5ImageFrontDpad from "@/assets/Devices/PS5 Front-dpad.svg";
 import PS5ImageFrontButtons from "@/assets/Devices/PS5 Front-facebtn.svg";
 import PS5ImageFrontSticks from "@/assets/Devices/PS5 Front-stick.svg";
@@ -115,6 +122,7 @@ export interface PhysicalLayoutType {
   label: string;
   layout: ControlGroup[];
   images: {
+    front: string;
     dpad: string;
     buttons: string;
     sticks: string;
@@ -567,11 +575,25 @@ export const ps5Layout: ControlGroup[] = baseLayout.concat([
 export const xboxLayout: ControlGroup[] = baseLayout;
 
 export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
+  Dummy: {
+    id: "dummy",
+    label: "Dummy",
+    layout: [],
+    images: {
+      front: GenericImageFront,
+      dpad: GenericImageFrontDpad,
+      buttons: GenericImageFrontButtons,
+      sticks: GenericImageFrontSticks,
+      triggers: GenericImageTopTriggers,
+      bumpers: GenericImageTopBumpers
+    }
+  },
   SteamDeck: {
     id: "steam-deck",
     label: "Steam Deck",
     layout: steamDeckLayout,
     images: {
+      front: steamDeckImageFront,
       dpad: steamDeckImageFrontDpad,
       buttons: steamDeckImageFrontButtons,
       triggers: steamDeckImageTopTrigger,
@@ -587,6 +609,7 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
     label: "Legion Go",
     layout: legionGoLayout,
     images: {
+      front: LegionGoImageFront,
       dpad: LegionGoImageFrontDpad,
       buttons: LegionGoImageFrontButtons,
       triggers: LegionGoImageTopTrigger,
@@ -602,6 +625,7 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
     label: "ROG Ally",
     layout: rogAllyLayout,
     images: {
+      front: ROGAllyImageFront,
       dpad: ROGAllyImageFrontDpad,
       buttons: ROGAllyImageFrontButtons,
       triggers: ROGAllyImageTopTrigger,
@@ -616,6 +640,7 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
     label: "Generic Controller",
     layout: baseLayout,
     images: {
+      front: GenericImageFront,
       dpad: GenericImageFrontDpad,
       buttons: GenericImageFrontButtons,
       sticks: GenericImageFrontSticks,
@@ -628,6 +653,7 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
     label: "Xbox Controller",
     layout: xboxLayout,
     images: {
+      front: xboxImageFront,
       dpad: xboxImageFrontDpad,
       buttons: xboxImageFrontButtons,
       sticks: xboxImageFrontSticks,
@@ -640,6 +666,7 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
     label: "Playstation 4",
     layout: ps4Layout,
     images: {
+      front: PS4ImageFront,
       dpad: PS4ImageFrontDpad,
       buttons: PS4ImageFrontButtons,
       sticks: PS4ImageFrontSticks,
@@ -655,6 +682,7 @@ export const physicalLayouts: { [key: string]: PhysicalLayoutType } = {
     label: "Playstation 5",
     layout: ps5Layout,
     images: {
+      front: PS5ImageFront,
       dpad: PS5ImageFrontDpad,
       buttons: PS5ImageFrontButtons,
       sticks: PS5ImageFrontSticks,

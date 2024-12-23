@@ -39,7 +39,6 @@ export const useAppEula = (): UseAppEulaReturn => {
 
   const acceptEula = useCallback(
     (eula: AppEulaResponseBody, appInfo: AppInformation) => {
-      console.log("Accepting EULA for ", eula.owned_app_id);
       const message = getMessage(MessageType.AppEulaAccept, {
         owned_app_id: eula.owned_app_id,
         entry: {
@@ -62,7 +61,6 @@ export const useAppEula = (): UseAppEulaReturn => {
 
   const rejectEula = useCallback(
     (appInfo: AppInformation) => {
-      console.log("Rejecting EULA for ", appInfo);
       const message = getMessage(MessageType.AppDownloadCancel, {
         owned_app_id: appInfo.owned_apps[0].id
       });

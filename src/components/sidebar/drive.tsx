@@ -9,6 +9,7 @@ interface DriveProps {
   size: number;
   icon: React.ReactNode;
   enabled?: boolean;
+  disabled?: boolean;
   singleDrive?: boolean;
   onClick: () => void;
 }
@@ -19,6 +20,7 @@ export const Drive: React.FC<DriveProps> = ({
   size,
   icon,
   enabled = false,
+  disabled = false,
   singleDrive = false,
   onClick
 }) => {
@@ -38,7 +40,11 @@ export const Drive: React.FC<DriveProps> = ({
         <span className="flex-initial text-sm"></span>
         <span className="flex">
           {singleDrive === false && (
-            <Checkbox checked={enabled} onChange={onClick} />
+            <Checkbox
+              checked={enabled}
+              disabled={disabled}
+              onChange={onClick}
+            />
           )}
         </span>
       </div>

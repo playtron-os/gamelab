@@ -301,6 +301,7 @@ export const SidePanel: React.FC = () => {
               }}
               primary={
                 appStatus === AppStatus.READY ||
+                appStatus === AppStatus.UPDATE_REQUIRED ||
                 appStatus === AppStatus.NOT_DOWNLOADED
               }
             />
