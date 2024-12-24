@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useMemo } from "react";
 import { usePlayserve } from "@/hooks";
 import { SubmissionCard } from "./submission-card";
 import {
@@ -20,7 +20,7 @@ interface SubmissionsListProps {
 export const SubmissionsList: React.FC<SubmissionsListProps> = ({
   submissions,
   submissionType,
-  // configFilter,
+  configFilter,
   selectedItemId,
   setSelectedItemId,
   onClose
@@ -51,10 +51,20 @@ export const SubmissionsList: React.FC<SubmissionsListProps> = ({
     },
     [submissions, setSelectedItemId, onClose]
   );
+  const filteredSubmissions = useMemo(() => {
+    if (!configFilter) {
+      return submissions;
+    }
+    return submissions.filter((submission) => {
+      return submission.name
+        .toLocaleLowerCase()
+        .includes(configFilter.toLocaleLowerCase());
+    });
+  }, [submissions, configFilter]);
 
   return (
     <div className="flex-grow px-8 overflow-scroll">
-      {submissions.map((submission) => {
+      {filteredSubmissions.map((submission) => {
         return (
           <SubmissionCard
             key={submission.item_id}
@@ -66,8 +76,4 @@ export const SubmissionsList: React.FC<SubmissionsListProps> = ({
       })}
     </div>
   );
-
-  // globalFilter={configFilter}
-  // selectedIds={selectedIndexes}
-  // onSelectedIdsChange={onSelectedIdsChange}
 };
