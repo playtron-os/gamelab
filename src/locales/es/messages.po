@@ -92,7 +92,6 @@ msgid "Are you sure you want to uninstall the selected apps?"
 msgstr ""
 
 #: src/components/submission-config/submissions-modal-header.tsx:42
-#: src/components/submission-config/submissions-table-config.tsx:27
 msgid "Author"
 msgstr ""
 
@@ -176,7 +175,7 @@ msgstr ""
 #~ msgid "Date Added"
 #~ msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:64
+#: src/components/submission-config/submission-action-menu.tsx:67
 msgid "Delete"
 msgstr ""
 
@@ -209,11 +208,11 @@ msgstr ""
 msgid "Drives"
 msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:53
+#: src/components/submission-config/submission-action-menu.tsx:56
 msgid "Duplicate"
 msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:41
+#: src/components/submission-config/submission-action-menu.tsx:44
 msgid "Edit"
 msgstr ""
 
@@ -476,8 +475,8 @@ msgid "Map to..."
 msgstr ""
 
 #: src/components/submission-config/submissions-table-config.tsx:22
-msgid "Modified"
-msgstr ""
+#~ msgid "Modified"
+#~ msgstr ""
 
 #: src/components/controller-edit/map-to.tsx:22
 msgid "Mouse"
@@ -505,8 +504,8 @@ msgid "Move selected apps"
 msgstr ""
 
 #: src/components/submission-config/submissions-table-config.tsx:12
-msgid "Name"
-msgstr ""
+#~ msgid "Name"
+#~ msgstr ""
 
 #: src/components/app-library/app-library.tsx:82
 msgid "Name (A-Z)"
@@ -537,8 +536,8 @@ msgid "Not installed"
 msgstr ""
 
 #: src/components/submission-config/submissions-table-config.tsx:17
-msgid "Note"
-msgstr ""
+#~ msgid "Note"
+#~ msgstr ""
 
 #: src/components/controller-edit/map-to.tsx:26
 msgid "Numpad"
@@ -603,7 +602,7 @@ msgstr ""
 msgid "Prioritize"
 msgstr ""
 
-#: src/components/submission-config/cells/submission-action-cell.tsx:80
+#: src/components/submission-config/submission-action-menu.tsx:83
 msgid "Promote"
 msgstr ""
 
@@ -735,7 +734,7 @@ msgid "Submission promoted"
 msgstr ""
 
 #: src/components/eula-modal/eula-modal.tsx:94
-#: src/components/submission-config/cells/submission-action-cell.tsx:29
+#: src/components/submission-config/submission-action-menu.tsx:32
 msgid "Submit"
 msgstr ""
 

@@ -3,14 +3,17 @@ import { t } from "@lingui/macro";
 import { useAppSelector } from "@/redux/store";
 import { selectAuthState, AuthState } from "@/redux/modules/auth";
 import { Dropdown, DotsVertical, styles } from "@playtron/styleguide";
-import { CellContext } from "@tanstack/react-table";
+
 import { useSubmissionsContext } from "@/context/submissions-context";
 import { Submission } from "@/types";
 
-export type SubmissionCellContext = CellContext<Submission, unknown>;
+interface SubmissionMenuProps {
+  submission: Submission;
+}
 
-export const SubmissionActionCell = (info: SubmissionCellContext) => {
-  const submission = info.row.original;
+export const SubmissionActionMenu: React.FC<SubmissionMenuProps> = ({
+  submission
+}) => {
   const { email } = useAppSelector(selectAuthState) as AuthState;
 
   const {
@@ -93,7 +96,7 @@ export const SubmissionActionCell = (info: SubmissionCellContext) => {
       data={appActions}
       triggerElem={
         <DotsVertical
-          data-testid={`app-action-cell-${info.row.index}`}
+          data-testid={`app-action-cell-${submission.item_id}`}
           fill={styles.variablesDark.fill.white}
           className="cursor-pointer"
         />
