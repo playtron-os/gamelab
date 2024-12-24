@@ -7,6 +7,7 @@ import { SubmissionsList } from "@/components/submission-config/submissions-list
 import { useSubmissionsContext } from "@/context/submissions-context";
 import { ConfigModalHeader } from "@/components/submission-config/submissions-modal-header";
 import { LaunchConfigEditor } from "@/components/launch-config-editor";
+import { LaunchConfig } from "@/types";
 
 interface InputConfigModalProps {
   isOpen: boolean;
@@ -86,8 +87,12 @@ export const LaunchConfigModal: React.FC<InputConfigModalProps> = ({
 
                   <div className="flex flex-row-reverse bg-black gap-2 p-6 pr-8">
                     <Button
-                      onClick={() => {
-                        createSubmission(currentApp.app.id, submissionType);
+                      onClick={async () => {
+                        const newSubmission = (await createSubmission(
+                          currentApp.app.id,
+                          submissionType
+                        )) as LaunchConfig;
+                        setEditLaunchConfig(newSubmission);
                       }}
                       primary
                       label={t`Add New Config`}
