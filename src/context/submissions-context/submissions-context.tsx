@@ -314,8 +314,10 @@ export const SubmissionsContextProvider = ({
       sendMessage(copyConfigMessage)()
         .then((response) => {
           if (response.status === 200) {
-            submissions.submissions.push(response.body as Submission);
-            submissions.setSubmissions(submissions.submissions);
+            const newSubmissions = submissions.submissions.concat(
+              response.body as Submission
+            );
+            submissions.setSubmissions(newSubmissions);
           } else {
             error(
               `Error duplicating config ${response.status} ${response.body.message}`

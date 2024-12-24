@@ -21,7 +21,7 @@ export const SubmissionCard: React.FC<{
       onClick={() => setSelectedItemId(submission.item_id)}
     >
       <div className="flex items-center">
-        <div className="flex-grow my-3 px-2 overflow-ellipsis text-nowrap font-bold">
+        <div className="flex-grow my-2 px-2 overflow-ellipsis text-nowrap font-bold">
           <span>{submission.name}</span>
           <span
             className={classNames(
