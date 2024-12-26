@@ -244,7 +244,20 @@ export const getInputLabel = (input: InputEvent, layout: string) => {
     if (input.mouse.motion) {
       return t`Mouse Move`;
     }
-    return input.mouse.button;
+    switch (input.mouse.button) {
+      case "Left":
+        return "Left Click";
+      case "Right":
+        return "Right Click";
+      case "Middle":
+        return "Middle Click";
+      case "Extra1":
+        return "Mouse Button 4";
+      case "Extra 2":
+        return "Mouse button 5";
+      default:
+        return input.mouse.button;
+    }
   }
   if (input.gamepad) {
     if (input.gamepad.axis) {
