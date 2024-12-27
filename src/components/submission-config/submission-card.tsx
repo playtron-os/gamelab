@@ -34,11 +34,12 @@ export const SubmissionCard: React.FC<{
             {submission.submission_category}
           </span>
           <br />
-          <span className="text-xs">{submission.description}</span>
+          <span className="text-xs">{submission.description || " "}</span>
         </div>
 
         <div className="flex-shrink">
-          <span className="text-sm">{submission.author_name}</span> <br />
+          <span className="text-sm">{submission.author_name || " "}</span>{" "}
+          <br />
           <span className="text-xs">{submission.updated_date}</span>
         </div>
         <div className="flex-shrink-0">

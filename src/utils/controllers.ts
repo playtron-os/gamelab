@@ -233,6 +233,10 @@ export const getKeyLabel = (key: string | null) => {
 };
 
 export const getInputLabel = (input: InputEvent, layout: string) => {
+  const fixName = (name: string) => {
+    return name.replace("Pad", " Pad");
+  };
+
   if (!input) {
     return t`Unset`;
   }
@@ -257,6 +261,19 @@ export const getInputLabel = (input: InputEvent, layout: string) => {
         return "Mouse button 5";
       default:
         return input.mouse.button;
+    }
+  }
+  if (input.touchpad) {
+    if (input.touchpad.touch.button) {
+      switch (input.touchpad.touch.button) {
+        case "Press":
+          return fixName(input.touchpad.name) + " Press";
+        case "Touch":
+          return fixName(input.touchpad.name) + " Touch";
+      }
+    }
+    if (input.touchpad.touch.motion) {
+      return fixName(input.touchpad.name) + " Move";
     }
   }
   if (input.gamepad) {
@@ -347,6 +364,26 @@ export const mappingCmp = (mapping1?: InputEvent, mapping2?: InputEvent) => {
       return mapping1.mouse.button === mapping2.mouse.button;
     }
     if ("motion" in mapping1.mouse && "motion" in mapping2.mouse) {
+      return true;
+    }
+  }
+  if (mapping1.touchpad && mapping2.touchpad) {
+    if (mapping1.touchpad.name !== mapping2.touchpad.name) {
+      return false;
+    }
+    if (
+      "button" in mapping1.touchpad.touch &&
+      "button" in mapping2.touchpad.touch
+    ) {
+      return (
+        mapping1.touchpad.touch.button === mapping2.touchpad.touch.button &&
+        mapping1.touchpad.name === mapping2.touchpad.name
+      );
+    }
+    if (
+      "motion" in mapping1.touchpad.touch &&
+      "motion" in mapping2.touchpad.touch
+    ) {
       return true;
     }
   }

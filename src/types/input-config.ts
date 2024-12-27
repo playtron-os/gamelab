@@ -16,6 +16,29 @@ export interface InputEvent {
   gamepad?: GamepadEvent;
   keyboard?: string;
   mouse?: MouseEvent;
+  touchpad?: TouchpadEvent;
+  touchscreen?: TouchEvent;
+}
+
+export interface TouchpadEvent {
+  name: "LeftPad" | "RightPad" | "CenterPad";
+  touch: TouchEvent;
+}
+
+export interface TouchEvent {
+  button?: "Touch" | "Press";
+  motion?: {
+    region?:
+      | "left"
+      | "right"
+      | "top"
+      | "bottom"
+      | "top-left"
+      | "top-right"
+      | "bottom-left"
+      | "bottom-right";
+    speed_pps?: number;
+  };
 }
 
 export interface InputMapping {
@@ -30,8 +53,8 @@ export interface InputPlumberMappings {
 
 export interface ControllerInput {
   label: string;
-  device: "keyboard" | "gamepad" | "mouse";
-  mapping: string | GamepadEvent | MouseEvent;
+  device: "keyboard" | "gamepad" | "mouse" | "touchpad" | "touchscreen";
+  mapping: string | GamepadEvent | MouseEvent | TouchpadEvent | TouchEvent;
   icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   psIcon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
 }

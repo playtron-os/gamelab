@@ -12,6 +12,12 @@ describe("Test controller utilities", () => {
       "Left Click"
     );
     expect(getInputLabel({ keyboard: "KeyA" }, "xbox")).toBe("A");
+    expect(
+      getInputLabel(
+        { touchpad: { name: "LeftPad", touch: { button: "Touch" } } },
+        "xbox"
+      )
+    ).toBe("Left Pad Touch");
   });
   test("Compare mappings", () => {
     expect(

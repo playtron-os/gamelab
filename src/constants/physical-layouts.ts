@@ -336,43 +336,43 @@ export const ControllerInputs: ControllerInputMap = {
   Trackpad: {
     label: "Trackpad",
     icon: Trackpad,
-    device: "gamepad",
-    mapping: { axis: { name: "Trackpad" } }
+    device: "touchpad",
+    mapping: { name: "CenterPad", touch: { motion: { speed_pps: 800 } } }
   },
-  TrackpadTap: {
-    label: "Trackpad Click",
+  TrackpadTouch: {
+    label: "Trackpad Touch",
     icon: TrackpadClick,
-    device: "gamepad",
-    mapping: { button: "Trackpad" }
+    device: "touchpad",
+    mapping: { name: "CenterPad", touch: { button: "Touch" } }
   },
   LeftTrackpad: {
     label: "Left Trackpad",
     icon: TrackpadLeft,
-    device: "gamepad",
-    mapping: { axis: { name: "LTrackpad" } }
+    device: "touchpad",
+    mapping: { name: "LeftPad", touch: { motion: { speed_pps: 800 } } }
   },
-  LeftTrackpadTap: {
-    label: "Left Trackpad Click",
+  LeftTrackpadTouch: {
+    label: "Left Trackpad Touch",
     icon: TrackpadLeftClick,
-    device: "gamepad",
-    mapping: { button: "LTrackpad" }
+    device: "touchpad",
+    mapping: { name: "LeftPad", touch: { button: "Touch" } }
   },
   RightTrackpad: {
     label: "Right Trackpad",
     icon: TrackpadRight,
-    device: "gamepad",
-    mapping: { axis: { name: "Trackpad" } }
+    device: "touchpad",
+    mapping: { name: "RightPad", touch: { motion: { speed_pps: 800 } } }
   },
-  RightTrackpadTap: {
-    label: "Right Trackpad Click",
+  RightTrackpadTouch: {
+    label: "Right Trackpad Touch",
     icon: TrackpadRightClick,
-    device: "gamepad",
-    mapping: { button: "RTrackpad" }
+    device: "touchpad",
+    mapping: { name: "RightPad", touch: { button: "Touch" } }
   },
   Gyro: {
     label: "Gyro",
     icon: Gyro,
-    device: "gamepad",
+    device: "mouse",
     mapping: { axis: { name: "Gyro" } }
   },
   MouseClickLeft: {
@@ -506,9 +506,9 @@ export const steamDeckLayout: ControlGroup[] = baseLayout.concat([
     section: "trackpads",
     inputs: [
       ControllerInputs.LeftTrackpad,
-      ControllerInputs.LeftTrackpadTap,
       ControllerInputs.RightTrackpad,
-      ControllerInputs.RightTrackpadTap
+      ControllerInputs.LeftTrackpadTouch,
+      ControllerInputs.RightTrackpadTouch
     ]
   }
 ]);
@@ -529,7 +529,7 @@ export const legionGoLayout: ControlGroup[] = baseLayout.concat([
     id: "trackpads",
     name: "Trackpads",
     section: "trackpads",
-    inputs: [ControllerInputs.Trackpad, ControllerInputs.TrackpadTap]
+    inputs: [ControllerInputs.Trackpad, ControllerInputs.TrackpadTouch]
   }
 ]);
 
@@ -562,7 +562,7 @@ export const ps5Layout: ControlGroup[] = baseLayout.concat([
     id: "trackpads",
     name: "Trackpads",
     section: "trackpads",
-    inputs: [ControllerInputs.TrackpadTap, ControllerInputs.Trackpad]
+    inputs: [ControllerInputs.TrackpadTouch, ControllerInputs.Trackpad]
   },
   {
     id: "gyro",
