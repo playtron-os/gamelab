@@ -21,7 +21,7 @@ export const SubmissionCard: React.FC<{
       onClick={() => setSelectedItemId(submission.item_id)}
     >
       <div className="flex items-center">
-        <div className="flex-grow my-2 px-2 overflow-ellipsis text-nowrap font-bold">
+        <div className="flex-grow my-1 px-2 overflow-ellipsis text-nowrap font-bold w-[600px] overflow-hidden">
           <span>{submission.name}</span>
           <span
             className={classNames(
@@ -34,7 +34,9 @@ export const SubmissionCard: React.FC<{
             {submission.submission_category}
           </span>
           <br />
-          <span className="text-xs">{submission.description || " "}</span>
+          <span className="text-xs text-ellipsis overflow-hidden ">
+            {submission.description || " "}
+          </span>
         </div>
 
         <div className="flex-shrink">
@@ -43,9 +45,9 @@ export const SubmissionCard: React.FC<{
           <span className="text-xs">{submission.updated_date}</span>
         </div>
         <div className="flex-shrink-0">
-          <span className="px-5 py-0">
+          <div className="px-5 h-10 p-2">
             <SubmissionActionMenu submission={submission} />
-          </span>
+          </div>
         </div>
       </div>
     </div>
