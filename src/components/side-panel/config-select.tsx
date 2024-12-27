@@ -41,7 +41,7 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
           </span>
         ) : (
           <>
-            <span className="flex-none p-2 max-w-80 overflow-clip whitespace-nowrap">
+            <span className="flex-none p-2 max-w-[350px] overflow-clip whitespace-nowrap overflow-ellipsis">
               {submissions.selectedItem
                 ? submissions.selectedItem.name
                 : submissions.submissions.length === 0
