@@ -482,7 +482,7 @@ msgstr ""
 msgid "Mouse"
 msgstr ""
 
-#: src/utils/controllers.ts:245
+#: src/utils/controllers.ts:249
 msgid "Mouse Move"
 msgstr ""
 
@@ -808,7 +808,7 @@ msgid "Unknown"
 msgstr ""
 
 #: src/utils/controllers.ts:165
-#: src/utils/controllers.ts:237
+#: src/utils/controllers.ts:241
 msgid "Unset"
 msgstr ""
 
