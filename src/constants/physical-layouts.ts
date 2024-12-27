@@ -334,37 +334,37 @@ export const ControllerInputs: ControllerInputMap = {
     mapping: { button: "RightPaddle2" }
   },
   Trackpad: {
-    label: "Trackpad",
+    label: "CenterPad",
     icon: Trackpad,
     device: "touchpad",
     mapping: { name: "CenterPad", touch: { motion: { speed_pps: 800 } } }
   },
   TrackpadTouch: {
-    label: "Trackpad Touch",
+    label: "CenterPadTouch",
     icon: TrackpadClick,
     device: "touchpad",
     mapping: { name: "CenterPad", touch: { button: "Touch" } }
   },
   LeftTrackpad: {
-    label: "Left Trackpad",
+    label: "LeftPad",
     icon: TrackpadLeft,
     device: "touchpad",
     mapping: { name: "LeftPad", touch: { motion: { speed_pps: 800 } } }
   },
   LeftTrackpadTouch: {
-    label: "Left Trackpad Touch",
+    label: "LeftPadTouch",
     icon: TrackpadLeftClick,
     device: "touchpad",
     mapping: { name: "LeftPad", touch: { button: "Touch" } }
   },
   RightTrackpad: {
-    label: "Right Trackpad",
+    label: "RightPad",
     icon: TrackpadRight,
     device: "touchpad",
     mapping: { name: "RightPad", touch: { motion: { speed_pps: 800 } } }
   },
   RightTrackpadTouch: {
-    label: "Right Trackpad Touch",
+    label: "RightPadTouch",
     icon: TrackpadRightClick,
     device: "touchpad",
     mapping: { name: "RightPad", touch: { button: "Touch" } }
