@@ -305,7 +305,7 @@ msgstr ""
 msgid "Gamepad"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:210
+#: src/components/controller-edit/controller-edit.tsx:211
 msgid "Gamepad Type"
 msgstr ""
 
@@ -651,7 +651,7 @@ msgstr ""
 msgid "Running"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:187
+#: src/components/controller-edit/controller-edit.tsx:188
 #: src/components/launch-config-editor/launch-config-editor.tsx:253
 msgid "Save"
 msgstr ""

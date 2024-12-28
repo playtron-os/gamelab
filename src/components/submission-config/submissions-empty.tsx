@@ -51,7 +51,7 @@ export const SubmissionsEmpty: React.FC<ControllerLayoutEmptyProps> = ({
       : t`There is no launch configuration created for`;
 
   return (
-    <div className="flex flex-col justify-center items-center absolute inset-0 gap-6">
+    <div className="flex flex-col items-center gap-6">
       <img width={430} src={image} />
       <p className="text-center max-w-44">
         {message}
