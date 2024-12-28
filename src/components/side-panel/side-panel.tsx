@@ -49,7 +49,7 @@ export const SidePanel: React.FC = () => {
     toggleResetWinePrefix
   } = useSubmissionsContext();
 
-  const [primaryOff, setPrimaryOff] = useState<boolean>(false);
+  const [isLaunching, setIsLaunching] = useState<boolean>(false);
   const [isInputConfigOpen, setIsInputConfigOpen] = useState<boolean>(false);
   const [isLaunchConfigOpen, setIsLaunchConfigOpen] = useState<boolean>(false);
   const [isLogsOpen, setIsLogsOpen] = useState<boolean>(false);
@@ -61,7 +61,7 @@ export const SidePanel: React.FC = () => {
   }
 
   useEffect(() => {
-    setPrimaryOff(false);
+    setIsLaunching(false);
   }, [currentApp]);
 
   const appStatus = getAppStatus(currentApp);
@@ -287,23 +287,19 @@ export const SidePanel: React.FC = () => {
         <footer className="fixed bottom-0 right-0 w-[480px] overflow-hidden bg-black border-gray-800 border-l-2">
           <p className="py-2 px-4">
             <Button
-              disabled={primaryOff || appStatus === AppStatus.LAUNCHING}
-              spinner={primaryOff || appStatus === AppStatus.LAUNCHING}
+              spinner={isLaunching || appStatus === AppStatus.LAUNCHING}
               label={getAppActionLabelByStatus(appStatus)}
               Icon={getAppActionIconByStatus(appStatus)}
               className="w-full"
               onClick={() => {
+                if (isLaunching) return;
                 handleAppDefaultAction(currentApp, launchParams);
                 if (appStatus === AppStatus.READY) {
-                  setPrimaryOff(true);
+                  setIsLaunching(true);
                   setIsLogsOpen(isLogsOpen || launchParams.enhancedDebugging);
                 }
               }}
-              primary={
-                appStatus === AppStatus.READY ||
-                appStatus === AppStatus.UPDATE_REQUIRED ||
-                appStatus === AppStatus.NOT_DOWNLOADED
-              }
+              primary={true}
             />
           </p>
           <p className="py-2 px-4">
