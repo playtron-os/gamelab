@@ -209,6 +209,7 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
           <div className="px-4">
             <TextInput
               value={selectedConfig.name}
+              maxLength={128}
               onChange={(name) =>
                 setEditLaunchConfig({ ...selectedConfig, name })
               }
@@ -242,6 +243,7 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
             <textarea
               className="m-4 border border-[--stroke-normal] rounded-lg p-4 w-64 h-24 mb-2"
               value={selectedConfig.description}
+              maxLength={140}
               onChange={(e) => {
                 setEditLaunchConfig({
                   ...selectedConfig,

@@ -95,7 +95,7 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:234
+#: src/components/launch-config-editor/launch-config-editor.tsx:235
 msgid "Base config"
 msgstr ""
 
@@ -115,7 +115,7 @@ msgstr ""
 #~ msgid "Change device"
 #~ msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:291
+#: src/components/launch-config-editor/launch-config-editor.tsx:293
 #: src/components/logs-modal/logs-modal.tsx:102
 msgid "Clear"
 msgstr ""
@@ -142,7 +142,7 @@ msgstr ""
 msgid "CONFIG NAME"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:219
+#: src/components/launch-config-editor/launch-config-editor.tsx:220
 msgid "CONFIGURATION"
 msgstr ""
 
@@ -257,7 +257,7 @@ msgstr ""
 #~ msgid "Filter:"
 #~ msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:293
+#: src/components/launch-config-editor/launch-config-editor.tsx:295
 msgid "Format"
 msgstr ""
 
@@ -305,7 +305,7 @@ msgstr ""
 msgid "Gamepad"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:211
+#: src/components/controller-edit/controller-edit.tsx:212
 msgid "Gamepad Type"
 msgstr ""
 
@@ -346,7 +346,7 @@ msgstr ""
 msgid "Input Config List"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:167
+#: src/components/controller-edit/controller-edit.tsx:168
 msgid "INPUT DEVICES"
 msgstr ""
 
@@ -430,7 +430,7 @@ msgstr ""
 msgid "Launch"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:286
+#: src/components/launch-config-editor/launch-config-editor.tsx:288
 msgid "Launch config"
 msgstr ""
 
@@ -559,7 +559,7 @@ msgstr ""
 msgid "Open Log Window"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:288
+#: src/components/launch-config-editor/launch-config-editor.tsx:290
 msgid "Override"
 msgstr ""
 
@@ -651,8 +651,8 @@ msgstr ""
 msgid "Running"
 msgstr ""
 
-#: src/components/controller-edit/controller-edit.tsx:188
-#: src/components/launch-config-editor/launch-config-editor.tsx:253
+#: src/components/controller-edit/controller-edit.tsx:189
+#: src/components/launch-config-editor/launch-config-editor.tsx:255
 msgid "Save"
 msgstr ""
 
@@ -833,7 +833,7 @@ msgstr ""
 msgid "Username"
 msgstr ""
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:280
+#: src/components/launch-config-editor/launch-config-editor.tsx:282
 msgid "Validate JSON"
 msgstr ""
 

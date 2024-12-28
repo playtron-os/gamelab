@@ -158,6 +158,7 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
           <div className="px-4">
             <TextInput
               value={editLayout.name}
+              maxLength={128}
               onChange={(name) => setEditLayout({ ...editLayout, name })}
             />
           </div>

@@ -95,7 +95,7 @@ msgstr "Are you sure you want to uninstall the selected apps?"
 msgid "Author"
 msgstr "Author"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:234
+#: src/components/launch-config-editor/launch-config-editor.tsx:235
 msgid "Base config"
 msgstr "Base config"
 
@@ -115,7 +115,7 @@ msgstr "Cancel"
 #~ msgid "Change device"
 #~ msgstr "Change device"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:291
+#: src/components/launch-config-editor/launch-config-editor.tsx:293
 #: src/components/logs-modal/logs-modal.tsx:102
 msgid "Clear"
 msgstr "Clear"
@@ -142,7 +142,7 @@ msgstr "Config"
 msgid "CONFIG NAME"
 msgstr "CONFIG NAME"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:219
+#: src/components/launch-config-editor/launch-config-editor.tsx:220
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
@@ -257,7 +257,7 @@ msgstr "Failed to uninstall app: {message}"
 #~ msgid "Filter:"
 #~ msgstr "Filter:"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:293
+#: src/components/launch-config-editor/launch-config-editor.tsx:295
 msgid "Format"
 msgstr "Format"
 
@@ -305,7 +305,7 @@ msgstr "GameLAB is unable to connect to the device using default credentials. Pl
 msgid "Gamepad"
 msgstr "Gamepad"
 
-#: src/components/controller-edit/controller-edit.tsx:211
+#: src/components/controller-edit/controller-edit.tsx:212
 msgid "Gamepad Type"
 msgstr "Gamepad Type"
 
@@ -346,7 +346,7 @@ msgstr "Input Config for {gameName}"
 msgid "Input Config List"
 msgstr "Input Config List"
 
-#: src/components/controller-edit/controller-edit.tsx:167
+#: src/components/controller-edit/controller-edit.tsx:168
 msgid "INPUT DEVICES"
 msgstr "INPUT DEVICES"
 
@@ -430,7 +430,7 @@ msgstr "Last Updated"
 msgid "Launch"
 msgstr "Launch"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:286
+#: src/components/launch-config-editor/launch-config-editor.tsx:288
 msgid "Launch config"
 msgstr "Launch config"
 
@@ -559,7 +559,7 @@ msgstr "Open Full Log"
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:288
+#: src/components/launch-config-editor/launch-config-editor.tsx:290
 msgid "Override"
 msgstr "Override"
 
@@ -651,8 +651,8 @@ msgstr "Resume"
 msgid "Running"
 msgstr "Running"
 
-#: src/components/controller-edit/controller-edit.tsx:188
-#: src/components/launch-config-editor/launch-config-editor.tsx:253
+#: src/components/controller-edit/controller-edit.tsx:189
+#: src/components/launch-config-editor/launch-config-editor.tsx:255
 msgid "Save"
 msgstr "Save"
 
@@ -833,7 +833,7 @@ msgstr "used of"
 msgid "Username"
 msgstr "Username"
 
-#: src/components/launch-config-editor/launch-config-editor.tsx:280
+#: src/components/launch-config-editor/launch-config-editor.tsx:282
 msgid "Validate JSON"
 msgstr "Validate JSON"
 
