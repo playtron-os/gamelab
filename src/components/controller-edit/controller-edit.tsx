@@ -176,6 +176,7 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
             <textarea
               className="m-4 border border-[--stroke-normal] rounded-lg p-4 w-64 h-24 mb-2"
               value={editLayout.description}
+              maxLength={140}
               onChange={(e) => {
                 setEditLayout({
                   ...editLayout,

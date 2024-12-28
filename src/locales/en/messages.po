@@ -305,7 +305,7 @@ msgstr "GameLAB is unable to connect to the device using default credentials. Pl
 msgid "Gamepad"
 msgstr "Gamepad"
 
-#: src/components/controller-edit/controller-edit.tsx:210
+#: src/components/controller-edit/controller-edit.tsx:211
 msgid "Gamepad Type"
 msgstr "Gamepad Type"
 
@@ -651,7 +651,7 @@ msgstr "Resume"
 msgid "Running"
 msgstr "Running"
 
-#: src/components/controller-edit/controller-edit.tsx:187
+#: src/components/controller-edit/controller-edit.tsx:188
 #: src/components/launch-config-editor/launch-config-editor.tsx:253
 msgid "Save"
 msgstr "Save"
