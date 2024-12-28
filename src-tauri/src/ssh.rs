@@ -80,7 +80,7 @@ pub async fn initialize_device_connection(
     log::info!("Handling connection to {address}");
     let address: IpAddr = address
         .parse()
-        .map_err(|_err| "IP: address is invalid".to_string())?;
+        .map_err(|_err| "IP address is invalid".to_string())?;
     if address.is_loopback() {
         println!("Address is loopback, connect to playserve directly");
         // Any localhost connections should be done directly to playserve
