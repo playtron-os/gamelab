@@ -33,7 +33,7 @@ export const AppLibrary: React.FC = () => {
     selectAppLibraryQueuePositionMapState
   );
   const parentRef = useRef<HTMLDivElement>(null);
-  const { onSelectedIdChange: onSelectedIdsChange } = useAppLibraryContext();
+  const { onSelectedIdChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
   const [sortKey, setSortKey] = useState("name");
   const { props: confirmationPopUpProps } = useConfirmationPopUp();
@@ -292,7 +292,7 @@ export const AppLibrary: React.FC = () => {
                         selectedId={selectedGame?.app.id}
                         onSelectGame={(game) => {
                           setSelectedGame(game);
-                          onSelectedIdsChange(game.app.id);
+                          onSelectedIdChange(game.app.id);
                         }}
                       />
                     </div>
