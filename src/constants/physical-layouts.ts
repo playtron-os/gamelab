@@ -32,7 +32,9 @@ import {
   JoystickRUpLine,
   JoystickRDownLine,
   OptionLine,
+  OptionsOnly,
   ViewLine,
+  CreateOnly,
   MouseLeftClick,
   MouseRightClick,
   MouseMiddleClick,
@@ -219,12 +221,14 @@ export const ControllerInputs: ControllerInputMap = {
   Start: {
     label: "Start",
     icon: OptionLine,
+    psIcon: OptionsOnly,
     device: "gamepad",
     mapping: { button: "Start" }
   },
   Select: {
     label: "Select",
     icon: ViewLine,
+    psIcon: CreateOnly,
     device: "gamepad",
     mapping: { button: "Select" }
   },
