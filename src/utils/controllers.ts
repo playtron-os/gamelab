@@ -322,6 +322,10 @@ export const getInputLabel = (input: InputEvent, layout: string) => {
 export const convertOrientationToButton = (label: string, layout?: string) => {
   if (layout === "ps5") {
     switch (label) {
+      case "Start":
+        return "Options";
+      case "Select":
+        return "Create";
       case "North":
         return "Square";
       case "West":
