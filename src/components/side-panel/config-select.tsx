@@ -33,7 +33,7 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
       <div
         tabIndex={0}
         onClick={() => !submissions.loading && setIsConfigOpen(true)}
-        className="outline-hover border border-[--stroke-subtle] rounded-md flex flex-grow my-2 "
+        className="bg-[--state-default-neutral] hover:bg-[--state-pressed-neutral] hover:outline-hover hover:outline-double hover:outline-2 border border-[--stroke-subtle] rounded-md flex flex-grow my-2 "
       >
         {submissions.loading ? (
           <span className="p-2">
@@ -63,6 +63,7 @@ export const ConfigSelect: React.FC<ConfigSelectProps> = ({
         <div className="flex-shrink ps-2">
           <Button
             Icon={EditBoxLine}
+            className="hover:outline-hover hover:outline-double hover:outline-2 hover:bg-[--fill-selected]"
             onClick={() => {
               setEditItem(submissions.selectedItem);
               setIsConfigOpen(true);
