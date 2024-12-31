@@ -49,6 +49,7 @@ export const ConfigModalHeader: React.FC<ConfigModalHeaderProps> = ({
           placeholder={t`Search:`}
           value={configFilter}
           onChange={setConfigFilter}
+          isClearable={true}
         />
       </div>
     </div>

@@ -108,7 +108,13 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
       name: editLayout.name || t`Untitled Layout`,
       description: editLayout.description,
       data: JSON.stringify({
-        target_devices: ["mouse", "keyboard", targetDevice],
+        target_devices: [
+          "mouse",
+          "keyboard",
+          "touchscreen",
+          "touchpad",
+          targetDevice
+        ],
         mapping: editLayout.mapping
       })
     };

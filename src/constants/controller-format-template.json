@@ -330,15 +330,6 @@
           }
         }
       ]
-    },
-    {
-      "name": "Touchscreen",
-      "source_event": {
-        "touchscreen": {
-          "motion": {}
-        }
-      },
-      "target_events": [{ "dbus": "ui_touch" }]
     }
   ]
 }
