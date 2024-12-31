@@ -175,7 +175,7 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
           <div className="flex-grow "></div>
           <div className="flex-shrink bg-[--fill-subtle]">
             <textarea
-              className="m-4 border border-[--stroke-normal] rounded-lg p-4 w-64 h-24 mb-2"
+              className="m-4 border border-[--stroke-normal] hover:border-[--state-selected] hover:bg-[--fill-selected] rounded-lg p-4 w-64 h-24 mb-2 resize-none"
               value={editLayout.description}
               maxLength={140}
               onChange={(e) => {
