@@ -146,7 +146,7 @@ export const ControllerEdit: React.FC<ControllerEditProps> = ({
         }}
       />
       <div className="flex">
-        <div className="w-[288px] bg-black flex flex-col h-[calc(90vh-64px)]">
+        <div className="w-[288px] bg-black flex flex-col h-[calc(90vh-66px)]">
           <header className="flex align-baseline gap-2 p-4">
             <span className="font-bold">
               <Trans>CONFIG NAME</Trans>
