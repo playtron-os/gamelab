@@ -503,18 +503,18 @@ export const steamDeckLayout: ControlGroup[] = baseLayout.concat([
       ControllerInputs.RightPaddle1,
       ControllerInputs.RightPaddle2
     ]
-  },
-  {
-    id: "trackpads",
-    name: "Trackpads",
-    section: "trackpads",
-    inputs: [
-      ControllerInputs.LeftTrackpad,
-      ControllerInputs.RightTrackpad,
-      ControllerInputs.LeftTrackpadTouch,
-      ControllerInputs.RightTrackpadTouch
-    ]
   }
+  // {
+  //   id: "trackpads",
+  //   name: "Trackpads",
+  //   section: "trackpads",
+  //   inputs: [
+  //     ControllerInputs.LeftTrackpad,
+  //     ControllerInputs.RightTrackpad,
+  //     ControllerInputs.LeftTrackpadTouch,
+  //     ControllerInputs.RightTrackpadTouch
+  //   ]
+  // }
 ]);
 
 export const legionGoLayout: ControlGroup[] = baseLayout.concat([
@@ -528,13 +528,13 @@ export const legionGoLayout: ControlGroup[] = baseLayout.concat([
       ControllerInputs.RightPaddle1,
       ControllerInputs.RightPaddle2
     ]
-  },
-  {
-    id: "trackpads",
-    name: "Trackpads",
-    section: "trackpads",
-    inputs: [ControllerInputs.Trackpad, ControllerInputs.TrackpadTouch]
   }
+  // {
+  //   id: "trackpads",
+  //   name: "Trackpads",
+  //   section: "trackpads",
+  //   inputs: [ControllerInputs.Trackpad, ControllerInputs.TrackpadTouch]
+  // }
 ]);
 
 export const rogAllyLayout: ControlGroup[] = baseLayout.concat([
@@ -547,12 +547,12 @@ export const rogAllyLayout: ControlGroup[] = baseLayout.concat([
 ]);
 
 export const ps4Layout: ControlGroup[] = baseLayout.concat([
-  {
-    id: "trackpads",
-    name: "Trackpads",
-    section: "trackpads",
-    inputs: [ControllerInputs.Trackpad]
-  },
+  // {
+  //   id: "trackpads",
+  //   name: "Trackpads",
+  //   section: "trackpads",
+  //   inputs: [ControllerInputs.Trackpad]
+  // },
   {
     id: "gyro",
     name: "Gyro",
@@ -562,12 +562,12 @@ export const ps4Layout: ControlGroup[] = baseLayout.concat([
 ]);
 
 export const ps5Layout: ControlGroup[] = baseLayout.concat([
-  {
-    id: "trackpads",
-    name: "Trackpads",
-    section: "trackpads",
-    inputs: [ControllerInputs.TrackpadTouch, ControllerInputs.Trackpad]
-  },
+  // {
+  //   id: "trackpads",
+  //   name: "Trackpads",
+  //   section: "trackpads",
+  //   inputs: [ControllerInputs.TrackpadTouch, ControllerInputs.Trackpad]
+  // },
   {
     id: "gyro",
     name: "Gyro",
