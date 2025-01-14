@@ -34,7 +34,7 @@ export const ProfileMenu: React.FC = () => {
       ) {
         const selectedAvatar = message.body.selectedProvider;
         if (selectedAvatar) {
-          dispatch(setAvatarUrl(message.body[selectedAvatar]?.url));
+          dispatch(setAvatarUrl(message.body.providers[selectedAvatar]?.url));
         }
       }
     }
@@ -49,7 +49,9 @@ export const ProfileMenu: React.FC = () => {
         const selectedAvatar = response?.body.profile.avatar.selectedProvider;
         if (selectedAvatar) {
           dispatch(
-            setAvatarUrl(response.body.profile.avatar[selectedAvatar]?.url)
+            setAvatarUrl(
+              response.body.profile.avatar.providers[selectedAvatar]?.url
+            )
           );
         }
       }
