@@ -499,8 +499,8 @@ export const steamDeckLayout: ControlGroup[] = baseLayout.concat([
     section: "paddles",
     inputs: [
       ControllerInputs.LeftPaddle1,
-      ControllerInputs.LeftPaddle2,
       ControllerInputs.RightPaddle1,
+      ControllerInputs.LeftPaddle2,
       ControllerInputs.RightPaddle2
     ]
   }
@@ -524,8 +524,8 @@ export const legionGoLayout: ControlGroup[] = baseLayout.concat([
     section: "paddles",
     inputs: [
       ControllerInputs.LeftPaddle1,
-      ControllerInputs.LeftPaddle2,
       ControllerInputs.RightPaddle1,
+      ControllerInputs.LeftPaddle2,
       ControllerInputs.RightPaddle2
     ]
   }
