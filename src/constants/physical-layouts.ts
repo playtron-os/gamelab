@@ -553,12 +553,12 @@ export const ps4Layout: ControlGroup[] = baseLayout.concat([
   //   section: "trackpads",
   //   inputs: [ControllerInputs.Trackpad]
   // },
-  {
-    id: "gyro",
-    name: "Gyro",
-    section: "gyro",
-    inputs: [ControllerInputs.Gyro]
-  }
+  // {
+  //   id: "gyro",
+  //   name: "Gyro",
+  //   section: "gyro",
+  //   inputs: [ControllerInputs.Gyro]
+  // }
 ]);
 
 export const ps5Layout: ControlGroup[] = baseLayout.concat([
@@ -568,12 +568,12 @@ export const ps5Layout: ControlGroup[] = baseLayout.concat([
   //   section: "trackpads",
   //   inputs: [ControllerInputs.TrackpadTouch, ControllerInputs.Trackpad]
   // },
-  {
-    id: "gyro",
-    name: "Gyro",
-    section: "gyro",
-    inputs: [ControllerInputs.Gyro]
-  }
+  // {
+  //   id: "gyro",
+  //   name: "Gyro",
+  //   section: "gyro",
+  //   inputs: [ControllerInputs.Gyro]
+  // }
 ]);
 
 export const xboxLayout: ControlGroup[] = baseLayout;
