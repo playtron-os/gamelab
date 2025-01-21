@@ -63,11 +63,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:216
+#: src/components/app-library/app-library.tsx:224
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:247
+#: src/components/app-library/app-library.tsx:255
 msgid "All Games ({filteredGamesCount})"
 msgstr "All Games ({filteredGamesCount})"
 
@@ -75,13 +75,17 @@ msgstr "All Games ({filteredGamesCount})"
 #~ msgid "All Games ({totalGames})"
 #~ msgstr "All Games ({totalGames})"
 
-#: src/hooks/app-library/use-app-download-actions.ts:95
+#: src/hooks/app-library/use-app-download-actions.ts:82
 msgid "Are you sure you want to stop downloading {appName}?"
 msgstr "Are you sure you want to stop downloading {appName}?"
 
 #: src/hooks/app-library/use-app-terminate-actions.ts:36
-msgid "Are you sure you want to terminate {appName}?"
-msgstr "Are you sure you want to terminate {appName}?"
+#~ msgid "Are you sure you want to terminate {appName}?"
+#~ msgstr "Are you sure you want to terminate {appName}?"
+
+#: src/hooks/app-library/use-app-terminate-actions.ts:34
+msgid "Are you sure you want to terminate this game?"
+msgstr "Are you sure you want to terminate this game?"
 
 #: src/hooks/app-library/use-app-uninstall-actions.ts:42
 msgid "Are you sure you want to uninstall {appName}?"
@@ -129,7 +133,7 @@ msgstr "Clear"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/side-panel/side-panel.tsx:308
+#: src/components/side-panel/side-panel.tsx:312
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
@@ -233,7 +237,7 @@ msgstr "Enhanced Debugging"
 msgid "Error"
 msgstr "Error"
 
-#: src/hooks/app-library/use-app-download-actions.ts:37
+#: src/hooks/app-library/use-app-download-actions.ts:36
 msgid "Error starting app download: {message}"
 msgstr "Error starting app download: {message}"
 
@@ -245,7 +249,7 @@ msgstr "Error starting app download: {message}"
 msgid "Failed to move app: {message}"
 msgstr "Failed to move app: {message}"
 
-#: src/hooks/app-library/use-app-terminate-actions.ts:25
+#: src/hooks/app-library/use-app-terminate-actions.ts:24
 msgid "Failed to terminate app: {message}"
 msgstr "Failed to terminate app: {message}"
 
@@ -362,11 +366,11 @@ msgstr "Install Date"
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:226
+#: src/components/app-library/app-library.tsx:234
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:248
+#: src/components/app-library/app-library.tsx:256
 msgid "Installed Games ({filteredGamesCount})"
 msgstr "Installed Games ({filteredGamesCount})"
 
@@ -374,7 +378,7 @@ msgstr "Installed Games ({filteredGamesCount})"
 #~ msgid "Installed Games ({totalInstalled})"
 #~ msgstr "Installed Games ({totalInstalled})"
 
-#: src/components/app-library/game-card.tsx:149
+#: src/components/app-library/game-card.tsx:153
 msgid "Installed on Drive"
 msgstr "Installed on Drive"
 
@@ -486,7 +490,7 @@ msgstr "Mouse"
 msgid "Mouse Move"
 msgstr "Mouse Move"
 
-#: src/components/app-library/game-card.tsx:96
+#: src/components/app-library/game-card.tsx:100
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:83
 msgid "Move"
 msgstr "Move"
@@ -555,7 +559,7 @@ msgstr "Oops!"
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
-#: src/components/side-panel/side-panel.tsx:308
+#: src/components/side-panel/side-panel.tsx:312
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
@@ -656,7 +660,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:237
+#: src/components/app-library/app-library.tsx:245
 msgid "Search"
 msgstr "Search"
 
@@ -798,7 +802,7 @@ msgstr "Unable to connect with the device: {err}"
 msgid "Unhandled error: {e}"
 msgstr "Unhandled error: {e}"
 
-#: src/components/app-library/game-card.tsx:112
+#: src/components/app-library/game-card.tsx:116
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 msgid "Uninstall"
 msgstr "Uninstall"

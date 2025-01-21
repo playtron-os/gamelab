@@ -39,8 +39,7 @@ const MOCK_LIBRARY_TABLE_DATA: context.AppLibraryContextProps = {
     pauseDownload: jest.fn(),
     cancelDownload: jest.fn(),
     handleAppDefaultAction: jest.fn(),
-    openMoveAppDialog: jest.fn(),
-    openBulkActionsMenu: jest.fn()
+    openMoveAppDialog: jest.fn()
   },
   bulkActionsMenuStateManager: MOCK_BOOLEAN_STATE_MANAGER,
   selectedApps: new Set([]),

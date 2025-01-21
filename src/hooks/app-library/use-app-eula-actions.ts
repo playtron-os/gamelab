@@ -11,7 +11,7 @@ export interface UseAppEulaReturn {
   acceptEula: (eula: AppEulaResponseBody, appInfo: AppInformation) => void;
   rejectEula: (appInfo: AppInformation) => void;
   getAppEulas: (
-    appInfo: AppInformation
+    ownedAppId: string
   ) => Promise<AppEulaResponseBody[] | undefined>;
 }
 
@@ -21,9 +21,9 @@ export const useAppEula = (): UseAppEulaReturn => {
   const { downloadApp } = useAppDownloadActions();
 
   const getAppEulas = useCallback(
-    async (appInfo: AppInformation) => {
+    async (ownedAppId: string) => {
       const message = getMessage(MessageType.AppEulasGet, {
-        owned_app_id: appInfo.owned_apps[0].id
+        owned_app_id: ownedAppId
       });
 
       return await sendMessage(message)().then((response) => {
@@ -38,7 +38,7 @@ export const useAppEula = (): UseAppEulaReturn => {
   );
 
   const acceptEula = useCallback(
-    (eula: AppEulaResponseBody, appInfo: AppInformation) => {
+    (eula: AppEulaResponseBody) => {
       const message = getMessage(MessageType.AppEulaAccept, {
         owned_app_id: eula.owned_app_id,
         entry: {
@@ -50,9 +50,8 @@ export const useAppEula = (): UseAppEulaReturn => {
         if (response.status !== 200) {
           dispatch(flashMessage("Error accepting EULA"));
           return;
-        }
-        if (appInfo) {
-          downloadApp(appInfo);
+        } else {
+          downloadApp(eula.owned_app_id);
         }
       });
     },

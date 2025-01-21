@@ -64,7 +64,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   };
   const { onSelectedIdChange } = useAppLibraryContext();
   const { launchParams } = useSubmissionsContext();
-  const status = useAppStatus(game);
+  const status = useAppStatus(game, game.installed_app?.owned_app.id);
   const progress = Math.round(getProgress(game.installed_app));
   let statusLabel: string;
   if (progress) {
@@ -74,7 +74,11 @@ export const GameCard: React.FC<GameCardProps> = ({
   }
   const handleLaunchParams = useCallback(() => {
     onSelectedIdChange(game.app.id);
-    handleAppDefaultAction(game, launchParams);
+    handleAppDefaultAction(
+      game,
+      game.installed_app?.owned_app.id,
+      launchParams
+    );
   }, [launchParams, game]);
 
   const appActions = [];

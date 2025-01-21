@@ -293,7 +293,11 @@ export const SidePanel: React.FC = () => {
               className="w-full"
               onClick={() => {
                 if (isLaunching) return;
-                handleAppDefaultAction(currentApp, launchParams);
+                handleAppDefaultAction(
+                  currentApp,
+                  currentApp.installed_app?.owned_app.id,
+                  launchParams
+                );
                 if (appStatus === AppStatus.READY) {
                   setIsLaunching(true);
                   setIsLogsOpen(isLogsOpen || launchParams.enhancedDebugging);

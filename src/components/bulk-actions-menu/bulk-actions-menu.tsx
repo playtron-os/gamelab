@@ -32,7 +32,7 @@ export const BulkActionsMenu: React.FC = () => {
         selectedAppIds.has(appInfo.app.id)
       );
       selectedAppsData.forEach((appInfo: AppInformation) =>
-        handlers.downloadApp(appInfo)
+        console.log(`Downloading app: ${appInfo.app.name}`)
       );
     },
     [closeBulkActionsMenu, apps, handlers]

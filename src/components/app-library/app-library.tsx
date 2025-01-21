@@ -150,8 +150,16 @@ export const AppLibrary: React.FC = () => {
           );
         case "status":
           return (
-            getAppStatusWithQueue(a, queuePositionMapState) -
-            getAppStatusWithQueue(b, queuePositionMapState)
+            getAppStatusWithQueue(
+              a,
+              a.installed_app?.owned_app.id,
+              queuePositionMapState
+            ) -
+            getAppStatusWithQueue(
+              b,
+              b.installed_app?.owned_app.id,
+              queuePositionMapState
+            )
           );
         case "install_date":
           return (
