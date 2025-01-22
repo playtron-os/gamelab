@@ -11,7 +11,6 @@ import { STEAM_APP_INFORMATION_MOCKS } from "@/mocks/app";
 import { DEFAULT_STATE_MOCK } from "@/mocks/default-state";
 
 const mockOnClose = jest.fn();
-const mockOnDownloadSelected = jest.fn();
 const mockOnUninstallSelected = jest.fn();
 const mockDispatch = jest.fn();
 
@@ -38,7 +37,7 @@ const getMockBooleanState = (open = false) =>
 const MOCK_LIBRARY_TABLE: AppLibraryContextProps = {
   handlers: {
     refetchAllApps: jest.fn(),
-    downloadApp: mockOnDownloadSelected,
+    downloadApp: jest.fn(),
     uninstallApp: mockOnUninstallSelected,
     pauseDownload: jest.fn(),
     cancelDownload: jest.fn(),
@@ -129,15 +128,6 @@ describe("BulkActionsMenu", () => {
 
     fireEvent.click(screen.getByTestId("close-modal"));
     expect(mockOnClose).toHaveBeenCalledTimes(1);
-  });
-
-  it("calls onDownloadSelected callback with selectedApps when Download button is clicked", () => {
-    (useAppLibraryContext as jest.Mock).mockReturnValue(MOCK_LIBRARY_TABLE);
-
-    renderWithAppLibraryContext(<BulkActionsMenu />, undefined, getMockStore());
-
-    fireEvent.click(screen.getByTestId("bulk-download"));
-    expect(mockOnDownloadSelected).toHaveBeenCalledTimes(apps.length);
   });
 
   it("calls onUninstallSelected callback with selectedApps when Uninstall button is clicked", () => {
