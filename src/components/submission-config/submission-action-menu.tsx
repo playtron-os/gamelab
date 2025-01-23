@@ -54,12 +54,7 @@ export const SubmissionActionMenu: React.FC<SubmissionMenuProps> = ({
   appActions.push({
     id: 3,
     label: t`Duplicate`,
-    onClick: () =>
-      copySubmission(
-        submission.item_id,
-        submission.submission_item_type,
-        submission.app_id
-      )
+    onClick: () => copySubmission(submission, submission.submission_item_type)
   });
 
   appActions.push({

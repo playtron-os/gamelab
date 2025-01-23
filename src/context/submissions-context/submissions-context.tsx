@@ -65,11 +65,7 @@ export interface SubmissionsContextType {
     appId: string,
     item_type: SubmissionItemType
   ) => Promise<InputConfig | LaunchConfig | null>;
-  copySubmission: (
-    item_id: string,
-    item_type: SubmissionItemType,
-    app_id: string
-  ) => void;
+  copySubmission: (item: Submission, item_type: SubmissionItemType) => void;
   promoteSubmission: (
     item_id: string,
     item_type: SubmissionItemType,
@@ -303,33 +299,24 @@ export const SubmissionsContextProvider = ({
   ]);
 
   const copySubmission = useCallback(
-    (item_id: string, item_type: SubmissionItemType, app_id: string) => {
-      const copyConfigMessage = getMessage(MessageType.SubmissionDuplicate, {
-        item_type,
-        app_id,
-        item_id
-      });
-      const submissions =
-        item_type === "LaunchConfig" ? launchSubmissions : inputSubmissions;
-      sendMessage(copyConfigMessage)()
-        .then((response) => {
-          if (response.status === 200) {
-            const newSubmissions = submissions.submissions.concat(
-              response.body as Submission
-            );
-            submissions.setSubmissions(newSubmissions);
-          } else {
-            error(
-              `Error duplicating config ${response.status} ${response.body.message}`
-            );
-            dispatch(flashMessage(response.body.message));
-          }
-        })
+    async (submission: Submission, item_type: SubmissionItemType) => {
+      const updatedSubmission = {
+        app_id: submission.app_id,
+        author_id: "",
+        author_name: "",
+        name: submission.name + " (copy)",
+        data: submission.data,
+        description: submission.description,
+        submission_category: SubmissionCategory.Local,
+        submission_item_type: submission.submission_item_type
+      };
 
-        .catch((error: Error) => {
-          console.error(error.message);
-          dispatch(flashMessage(error.message));
-        });
+      const item = {
+        data: JSON.stringify(updatedSubmission),
+        name: updatedSubmission.name,
+        description: updatedSubmission.description
+      };
+      await saveSubmission(updatedSubmission.app_id, item_type, item);
     },
     [sendMessage, dispatch]
   );

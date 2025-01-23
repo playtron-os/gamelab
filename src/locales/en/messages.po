@@ -55,7 +55,7 @@ msgstr "Add Config"
 msgid "Add New Config"
 msgstr "Add New Config"
 
-#: src/components/side-panel/side-panel.tsx:143
+#: src/components/side-panel/side-panel.tsx:146
 msgid "Added"
 msgstr "Added"
 
@@ -107,7 +107,7 @@ msgstr "Base config"
 #~ msgid "Bulk Actions"
 #~ msgstr "Bulk Actions"
 
-#: src/components/side-panel/side-panel.tsx:176
+#: src/components/side-panel/side-panel.tsx:179
 msgid "Bypass App Update"
 msgstr "Bypass App Update"
 
@@ -133,7 +133,7 @@ msgstr "Clear"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/side-panel/side-panel.tsx:312
+#: src/components/side-panel/side-panel.tsx:321
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
@@ -150,7 +150,7 @@ msgstr "CONFIG NAME"
 msgid "CONFIGURATION"
 msgstr "CONFIGURATION"
 
-#: src/context/submissions-context/submissions-context.tsx:391
+#: src/context/submissions-context/submissions-context.tsx:378
 msgid "Configuration has been submitted"
 msgstr "Configuration has been submitted"
 
@@ -179,11 +179,11 @@ msgstr "Current controller"
 #~ msgid "Date Added"
 #~ msgstr "Date Added"
 
-#: src/components/submission-config/submission-action-menu.tsx:67
+#: src/components/submission-config/submission-action-menu.tsx:62
 msgid "Delete"
 msgstr "Delete"
 
-#: src/context/submissions-context/submissions-context.tsx:440
+#: src/context/submissions-context/submissions-context.tsx:427
 msgid "Delete this configuration?"
 msgstr "Delete this configuration?"
 
@@ -224,7 +224,7 @@ msgstr "Edit"
 msgid "End User License Agreements for"
 msgstr "End User License Agreements for"
 
-#: src/components/side-panel/side-panel.tsx:186
+#: src/components/side-panel/side-panel.tsx:189
 msgid "Enhanced Debugging"
 msgstr "Enhanced Debugging"
 
@@ -334,7 +334,7 @@ msgstr "Initiate direct testing on a Playtron device within your local network. 
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 
-#: src/components/side-panel/side-panel.tsx:224
+#: src/components/side-panel/side-panel.tsx:227
 msgid "Input Config"
 msgstr "Input Config"
 
@@ -362,7 +362,7 @@ msgstr "Insert Delimiter"
 msgid "Install Date"
 msgstr "Install Date"
 
-#: src/components/side-panel/side-panel.tsx:278
+#: src/components/side-panel/side-panel.tsx:281
 msgid "Install folder"
 msgstr "Install folder"
 
@@ -438,7 +438,7 @@ msgstr "Launch"
 msgid "Launch config"
 msgstr "Launch config"
 
-#: src/components/side-panel/side-panel.tsx:198
+#: src/components/side-panel/side-panel.tsx:201
 msgid "Launch Config"
 msgstr "Launch Config"
 
@@ -519,7 +519,7 @@ msgstr "Name (A-Z)"
 msgid "Name (Z-A)"
 msgstr "Name (Z-A)"
 
-#: src/components/side-panel/side-panel.tsx:159
+#: src/components/side-panel/side-panel.tsx:162
 msgid "Never tested"
 msgstr "Never tested"
 
@@ -535,7 +535,7 @@ msgstr "No internet"
 msgid "Not Downloaded"
 msgstr "Not Downloaded"
 
-#: src/components/side-panel/side-panel.tsx:148
+#: src/components/side-panel/side-panel.tsx:151
 msgid "Not installed"
 msgstr "Not installed"
 
@@ -559,7 +559,7 @@ msgstr "Oops!"
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
-#: src/components/side-panel/side-panel.tsx:312
+#: src/components/side-panel/side-panel.tsx:321
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
@@ -580,7 +580,7 @@ msgstr "Pause"
 msgid "Paused"
 msgstr "Paused"
 
-#: src/components/side-panel/side-panel.tsx:251
+#: src/components/side-panel/side-panel.tsx:254
 msgid "Playtron App ID"
 msgstr "Playtron App ID"
 
@@ -594,7 +594,7 @@ msgstr "Playtron GameLAB"
 #~ msgid "Playtron Labs"
 #~ msgstr "Playtron Labs"
 
-#: src/components/side-panel/side-panel.tsx:258
+#: src/components/side-panel/side-panel.tsx:261
 msgid "Playtron Slug"
 msgstr "Playtron Slug"
 
@@ -606,15 +606,15 @@ msgstr "Pre-Allocating"
 msgid "Prioritize"
 msgstr "Prioritize"
 
-#: src/components/submission-config/submission-action-menu.tsx:83
+#: src/components/submission-config/submission-action-menu.tsx:78
 msgid "Promote"
 msgstr "Promote"
 
-#: src/components/side-panel/side-panel.tsx:96
+#: src/components/side-panel/side-panel.tsx:99
 msgid "Provider"
 msgstr "Provider"
 
-#: src/components/side-panel/side-panel.tsx:102
+#: src/components/side-panel/side-panel.tsx:105
 msgid "Provider App ID"
 msgstr "Provider App ID"
 
@@ -634,16 +634,16 @@ msgstr "Queued"
 msgid "Ready"
 msgstr "Ready"
 
-#: src/components/side-panel/side-panel.tsx:265
+#: src/components/side-panel/side-panel.tsx:268
 msgid "Release Date"
 msgstr "Release Date"
 
-#: src/components/side-panel/side-panel.tsx:209
-#: src/components/side-panel/side-panel.tsx:235
+#: src/components/side-panel/side-panel.tsx:212
+#: src/components/side-panel/side-panel.tsx:238
 msgid "Reset"
 msgstr "Reset"
 
-#: src/components/side-panel/side-panel.tsx:166
+#: src/components/side-panel/side-panel.tsx:169
 msgid "Reset Wine Prefix"
 msgstr "Reset Wine Prefix"
 
@@ -667,6 +667,10 @@ msgstr "Search"
 #: src/components/submission-config/submissions-modal-header.tsx:49
 msgid "Search:"
 msgstr "Search:"
+
+#: src/components/provider-selection-modal/provider-selection-modal.tsx:25
+msgid "Select a provider"
+msgstr "Select a provider"
 
 #: src/components/side-panel/config-select.tsx:49
 msgid "Select Config"
@@ -733,7 +737,7 @@ msgstr "Sort by: Name (Z-A)"
 msgid "Stop"
 msgstr "Stop"
 
-#: src/context/submissions-context/submissions-context.tsx:350
+#: src/context/submissions-context/submissions-context.tsx:337
 msgid "Submission promoted"
 msgstr "Submission promoted"
 
@@ -753,7 +757,7 @@ msgstr "System Drive"
 msgid "Test Games on Playtron Device via Local Network"
 msgstr "Test Games on Playtron Device via Local Network"
 
-#: src/components/side-panel/side-panel.tsx:154
+#: src/components/side-panel/side-panel.tsx:157
 msgid "Tested on"
 msgstr "Tested on"
 
@@ -769,7 +773,7 @@ msgstr "There is no controller configuration created for"
 msgid "There is no launch configuration created for"
 msgstr "There is no launch configuration created for"
 
-#: src/context/submissions-context/submissions-context.tsx:397
+#: src/context/submissions-context/submissions-context.tsx:384
 msgid "There was an error with the submission {errorMessage}"
 msgstr "There was an error with the submission {errorMessage}"
 
