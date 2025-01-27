@@ -76,6 +76,7 @@ export interface AppGetRunningResponseBody {
 
 export interface AppDownloadRequestBody {
   owned_app_id: string;
+  install_disk?: string;
   force_download?: boolean;
 }
 

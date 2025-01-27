@@ -1,24 +1,15 @@
 import React from "react";
 import { setShowDrives, selectAppLibraryState } from "@/redux/modules";
 import { Drive } from "./drive";
-import { RootState, useAppActions, useAppSelector } from "@/redux/store";
+import { useAppActions, useAppSelector } from "@/redux/store";
 import { usePlayserve } from "@/hooks";
 import { useDriveInfo } from "@/hooks/use-drive-info";
 import { HardDrive2Line, styles } from "@playtron/styleguide";
 import { getDriveLabel } from "@/utils/app-info";
 import { MessageType } from "@/types";
 
-const selector = (state: RootState) => {
-  const appLibrary = selectAppLibraryState(state);
-  return {
-    apps: appLibrary.apps,
-    loading: appLibrary.loading,
-    appFilters: appLibrary.appFilters
-  };
-};
-
 export const DriveSection: React.FC = () => {
-  const { appFilters } = useAppSelector(selector);
+  const { appFilters } = useAppSelector(selectAppLibraryState);
   const { setShowDrives: setShowDrivesDispatch } = useAppActions({
     setShowDrives
   });
@@ -51,7 +42,6 @@ export const DriveSection: React.FC = () => {
       )}
       size={drive.max_size}
       singleDrive={drives.length === 1}
-      disabled={appFilters.status === "all"}
       enabled={appFilters.drives.includes(drive.name)}
       onClick={() =>
         setShowDrivesDispatch({

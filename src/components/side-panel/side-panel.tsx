@@ -364,7 +364,7 @@ export const SidePanel: React.FC = () => {
           if (!eula) {
             return;
           }
-          acceptEula(eula, currentApp);
+          acceptEula(eula);
           setIsEulaOpen(false);
         }}
         onReject={() => {

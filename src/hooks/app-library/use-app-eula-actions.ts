@@ -8,7 +8,7 @@ import { flashMessage } from "redux-flash";
 import { AppEulaResponseBody } from "@/types/app";
 
 export interface UseAppEulaReturn {
-  acceptEula: (eula: AppEulaResponseBody, appInfo: AppInformation) => void;
+  acceptEula: (eula: AppEulaResponseBody) => void;
   rejectEula: (appInfo: AppInformation) => void;
   getAppEulas: (
     ownedAppId: string

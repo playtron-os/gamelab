@@ -118,6 +118,7 @@ export const ConnectDeviceScreen: React.FC = () => {
       </div>
       <Modal
         id="ssh-creds"
+        className="p-6"
         isOpen={isInvalidCreds}
         onClose={() => setInvalidCreds(false)}
       >

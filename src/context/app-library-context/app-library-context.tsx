@@ -33,7 +33,7 @@ export interface AppLibraryContextProps {
   selectedIds: string[];
   onSelectedIdChange: (selectedId: string) => void;
   handlers: {
-    downloadApp: (ownedAppId: string) => void;
+    downloadApp: (ownedAppId: string, force: boolean) => void;
     uninstallApp: (appData: AppInformation[]) => void;
     refetchAllApps: (forceRefresh: boolean) => void;
     pauseDownload: (ownedAppId: string) => void;
@@ -51,7 +51,7 @@ export interface AppLibraryContextProps {
   eula: AppEulaResponseBody | null;
   isEulaOpen: boolean;
   setIsEulaOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  acceptEula: (eula: AppEulaResponseBody, appInfo: AppInformation) => void;
+  acceptEula: (eula: AppEulaResponseBody) => void;
   rejectEula: (appInfo: AppInformation) => void;
 }
 

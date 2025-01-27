@@ -1,13 +1,14 @@
-import { useConfirmationPopUp } from "@/context";
-
-import { usePlayserve } from "@/hooks";
-import { useAppDispatch } from "@/redux/store";
-import { Message, MessageType, getMessage } from "@/types/playserve/message";
-import { t } from "@lingui/macro";
 import { useCallback } from "react";
+import { t } from "@lingui/macro";
 import { flashMessage } from "redux-flash";
-import { EULA_NOT_ACCEPTED } from "@/constants";
 
+import { selectAppLibraryState } from "@/redux/modules";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
+import { Message, MessageType, getMessage } from "@/types/playserve/message";
+import { useConfirmationPopUp } from "@/context";
+import { EULA_NOT_ACCEPTED } from "@/constants";
+import { usePlayserve } from "@/hooks";
+import { useDriveInfo } from "@/hooks/use-drive-info";
 export interface UseAppDownloadReturn {
   downloadApp: (
     ownedAppId: string,
@@ -23,7 +24,10 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
   const { openConfirmationPopUp, closeConfirmationPopUp } =
     useConfirmationPopUp();
 
-  const { sendMessage } = usePlayserve();
+  const playserve = usePlayserve();
+  const { sendMessage } = playserve;
+  const { appFilters } = useAppSelector(selectAppLibraryState);
+  const { drives } = useDriveInfo(playserve);
 
   const sendAppDownloadMessage = useCallback(
     async (message: Message<MessageType.AppDownload>) => {
@@ -43,14 +47,30 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
 
   const downloadApp = useCallback(
     async (ownedAppId: string, force = false) => {
+      const selectedDrives = drives
+        .filter((drive) => {
+          return appFilters.drives.includes(drive.name);
+        })
+        .sort((a, b) => {
+          if (a.available_space > b.available_space) return -1;
+          else return 1;
+        });
+      if (!selectedDrives.length) {
+        dispatch(flashMessage(t`Select at least one drive in the side bar.`));
+        return;
+      }
+
+      const installDisk = selectedDrives[0].name;
+
       const messageAppDownload = getMessage(MessageType.AppDownload, {
         owned_app_id: ownedAppId,
+        install_disk: installDisk,
         force_download: force
       });
 
       return await sendAppDownloadMessage(messageAppDownload);
     },
-    [sendAppDownloadMessage]
+    [sendAppDownloadMessage, dispatch, drives, appFilters]
   );
 
   const sendAppDownloadCancelMessage = useCallback(
