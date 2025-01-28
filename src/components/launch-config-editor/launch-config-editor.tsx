@@ -47,7 +47,7 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
   const flashDispatch = useAppDispatch();
 
   const [valid, setValid] = useState(true);
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState<string | null>(null);
   const [editMode, setEditMode] = useState(-1);
   const [overrides, setOverrides] = useState<Override[]>([]);
 
@@ -105,7 +105,7 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
         return;
       }
       try {
-        const data: LaunchConfig | Override = JSON.parse(content);
+        const data: LaunchConfig | Override = JSON.parse(content || "");
         if (editMode === -1) {
           setEditLaunchConfig({
             ...selectedConfig,
@@ -260,45 +260,46 @@ export const LaunchConfigEditor: React.FC<LaunchConfigEditorProps> = ({
             />
           </div>
         </div>
+        {content != null && (
+          <div className="flex-grow flex flex-col bg-[--fill-subtler] p-6 max-h-[calc(90vh-64px)] text-base gap-[24px]">
+            <div className="flex-grow overflow-auto border border-[--stroke-subtle] p-4 rounded-lg relative pb-6">
+              <span
+                dangerouslySetInnerHTML={{ __html: lineNumbers }}
+                className="text-[--text-weak] text-right w-8 select-none absolute"
+              ></span>
+              <Editor
+                className="ml-10 resize-none min-h-full"
+                value={content}
+                onValueChange={setContent}
+                highlight={(code) =>
+                  highlight(code || "", languages.json, "json")
+                }
+              />
+            </div>
 
-        <div className="flex-grow flex flex-col bg-[--fill-subtler] p-6 max-h-[calc(90vh-64px)] text-base gap-[24px]">
-          <div className="flex-grow overflow-auto border border-[--stroke-subtle] p-4 rounded-lg relative pb-6">
-            <span
-              dangerouslySetInnerHTML={{ __html: lineNumbers }}
-              className="text-[--text-weak] text-right w-8 select-none absolute"
-            ></span>
-            <Editor
-              className="ml-10 resize-none min-h-full"
-              value={content}
-              onValueChange={setContent}
-              highlight={(code) =>
-                highlight(code || "", languages.json, "json")
-              }
-            />
+            <div className="flex-shrink flex gap-[12px]">
+              <Button
+                label={t`Validate JSON`}
+                onClick={() =>
+                  editMode === -1
+                    ? validateConfig(
+                        content,
+                        launchConfigSchema,
+                        t`Launch config`
+                      )
+                    : validateConfig(content, overrideSchema, t`Override`)
+                }
+              />
+              <Button label={t`Clear`} onClick={() => setContent("{\n}")} />
+              <Button
+                label={t`Format`}
+                onClick={() =>
+                  setContent(JSON.stringify(JSON.parse(content), null, 2))
+                }
+              />
+            </div>
           </div>
-
-          <div className="flex-shrink flex gap-[12px]">
-            <Button
-              label={t`Validate JSON`}
-              onClick={() =>
-                editMode === -1
-                  ? validateConfig(
-                      content,
-                      launchConfigSchema,
-                      t`Launch config`
-                    )
-                  : validateConfig(content, overrideSchema, t`Override`)
-              }
-            />
-            <Button label={t`Clear`} onClick={() => setContent("{\n}")} />
-            <Button
-              label={t`Format`}
-              onClick={() =>
-                setContent(JSON.stringify(JSON.parse(content), null, 2))
-              }
-            />
-          </div>
-        </div>
+        )}
       </div>
     </>
   );
