@@ -179,7 +179,7 @@ msgstr "Current controller"
 #~ msgid "Date Added"
 #~ msgstr "Date Added"
 
-#: src/components/submission-config/submission-action-menu.tsx:62
+#: src/components/submission-config/submission-action-menu.tsx:63
 msgid "Delete"
 msgstr "Delete"
 
@@ -212,11 +212,11 @@ msgstr "Downloading"
 msgid "Drives"
 msgstr "Drives"
 
-#: src/components/submission-config/submission-action-menu.tsx:56
+#: src/components/submission-config/submission-action-menu.tsx:57
 msgid "Duplicate"
 msgstr "Duplicate"
 
-#: src/components/submission-config/submission-action-menu.tsx:44
+#: src/components/submission-config/submission-action-menu.tsx:45
 msgid "Edit"
 msgstr "Edit"
 
@@ -606,7 +606,7 @@ msgstr "Pre-Allocating"
 msgid "Prioritize"
 msgstr "Prioritize"
 
-#: src/components/submission-config/submission-action-menu.tsx:78
+#: src/components/submission-config/submission-action-menu.tsx:79
 msgid "Promote"
 msgstr "Promote"
 

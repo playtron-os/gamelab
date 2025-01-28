@@ -179,7 +179,7 @@ msgstr ""
 #~ msgid "Date Added"
 #~ msgstr ""
 
-#: src/components/submission-config/submission-action-menu.tsx:62
+#: src/components/submission-config/submission-action-menu.tsx:63
 msgid "Delete"
 msgstr ""
 
@@ -212,11 +212,11 @@ msgstr ""
 msgid "Drives"
 msgstr ""
 
-#: src/components/submission-config/submission-action-menu.tsx:56
+#: src/components/submission-config/submission-action-menu.tsx:57
 msgid "Duplicate"
 msgstr ""
 
-#: src/components/submission-config/submission-action-menu.tsx:44
+#: src/components/submission-config/submission-action-menu.tsx:45
 msgid "Edit"
 msgstr ""
 
@@ -606,7 +606,7 @@ msgstr ""
 msgid "Prioritize"
 msgstr ""
 
-#: src/components/submission-config/submission-action-menu.tsx:78
+#: src/components/submission-config/submission-action-menu.tsx:79
 msgid "Promote"
 msgstr ""
 

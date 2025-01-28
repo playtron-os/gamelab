@@ -26,18 +26,19 @@ export const SubmissionActionMenu: React.FC<SubmissionMenuProps> = ({
   } = useSubmissionsContext();
 
   const appActions = [];
-
-  appActions.push({
-    id: 1,
-    label: t`Submit`,
-    onClick: () => {
-      submitSubmission(
-        submission.item_id,
-        submission.submission_item_type,
-        submission.app_id
-      );
-    }
-  });
+  if (submission.submission_category === "Local") {
+    appActions.push({
+      id: 1,
+      label: t`Submit`,
+      onClick: () => {
+        submitSubmission(
+          submission.item_id,
+          submission.submission_item_type,
+          submission.app_id
+        );
+      }
+    });
+  }
 
   appActions.push({
     id: 2,
