@@ -40,7 +40,7 @@ export const AppLibrary: React.FC = () => {
 
   const [selectedGame, setSelectedGame] = useState<AppInformation | null>(null);
 
-  let filteredGames = apps;
+  let filteredGames = apps.filter((app) => app.is_owned);
 
   const shownProviders = (
     Object.keys(appFilters.providers) as AppProvider[]

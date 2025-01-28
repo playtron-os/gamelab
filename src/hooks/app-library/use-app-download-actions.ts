@@ -47,20 +47,24 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
 
   const downloadApp = useCallback(
     async (ownedAppId: string, force = false) => {
-      const selectedDrives = drives
-        .filter((drive) => {
-          return appFilters.drives.includes(drive.name);
-        })
-        .sort((a, b) => {
-          if (a.available_space > b.available_space) return -1;
-          else return 1;
-        });
-      if (!selectedDrives.length) {
-        dispatch(flashMessage(t`Select at least one drive in the side bar.`));
-        return;
+      let installDisk = null;
+      if (drives.length === 1) {
+        installDisk = drives[0].name;
+      } else {
+        const selectedDrives = drives
+          .filter((drive) => {
+            return appFilters.drives.includes(drive.name);
+          })
+          .sort((a, b) => {
+            if (a.available_space > b.available_space) return -1;
+            else return 1;
+          });
+        if (!selectedDrives.length) {
+          dispatch(flashMessage(t`Select at least one drive in the side bar.`));
+          return;
+        }
+        installDisk = selectedDrives[0].name;
       }
-
-      const installDisk = selectedDrives[0].name;
 
       const messageAppDownload = getMessage(MessageType.AppDownload, {
         owned_app_id: ownedAppId,

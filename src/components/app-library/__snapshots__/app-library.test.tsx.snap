@@ -231,7 +231,7 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
                     class="flex items-center gap-1"
                   >
                     <svg
-                      fill="#909090"
+                      fill="#E2e2e2"
                       height="20"
                       viewBox="0 0 24 24"
                       width="20"
@@ -345,7 +345,7 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
                     class="flex items-center gap-1"
                   >
                     <svg
-                      fill="#909090"
+                      fill="#E2e2e2"
                       height="20"
                       viewBox="0 0 24 24"
                       width="20"
@@ -666,7 +666,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     class="flex items-center gap-1"
                   >
                     <svg
-                      fill="#909090"
+                      fill="#E2e2e2"
                       height="20"
                       viewBox="0 0 24 24"
                       width="20"
@@ -780,7 +780,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                     class="flex items-center gap-1"
                   >
                     <svg
-                      fill="#909090"
+                      fill="#E2e2e2"
                       height="20"
                       viewBox="0 0 24 24"
                       width="20"

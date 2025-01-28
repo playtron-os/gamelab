@@ -75,7 +75,7 @@ msgstr "All Games ({filteredGamesCount})"
 #~ msgid "All Games ({totalGames})"
 #~ msgstr "All Games ({totalGames})"
 
-#: src/hooks/app-library/use-app-download-actions.ts:102
+#: src/hooks/app-library/use-app-download-actions.ts:106
 msgid "Are you sure you want to stop downloading {appName}?"
 msgstr "Are you sure you want to stop downloading {appName}?"
 
@@ -378,7 +378,7 @@ msgstr "Installed Games ({filteredGamesCount})"
 #~ msgid "Installed Games ({totalInstalled})"
 #~ msgstr "Installed Games ({totalInstalled})"
 
-#: src/components/app-library/game-card.tsx:153
+#: src/components/app-library/game-card.tsx:158
 msgid "Installed on Drive"
 msgstr "Installed on Drive"
 
@@ -672,7 +672,7 @@ msgstr "Search:"
 msgid "Select a provider"
 msgstr "Select a provider"
 
-#: src/hooks/app-library/use-app-download-actions.ts:59
+#: src/hooks/app-library/use-app-download-actions.ts:63
 msgid "Select at least one drive in the side bar."
 msgstr "Select at least one drive in the side bar."
 
