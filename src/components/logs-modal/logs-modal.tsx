@@ -13,6 +13,8 @@ import { AppInformation, MessageType } from "@/types";
 import { usePlayserve } from "@/hooks";
 import { invoke } from "@tauri-apps/api/core";
 
+const MAX_LOG_LINES = 5000;
+
 interface LogsModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -45,7 +47,10 @@ export const LogsModal: React.FC<LogsModalProps> = ({
         });
         if (appInfo.installed_app?.owned_app.id === message.body.owned_app_id) {
           setLogs(
-            (logs + message.body.content).split("\n").slice(-3000).join("\n")
+            (logs + message.body.content)
+              .split("\n")
+              .slice(-1 * MAX_LOG_LINES)
+              .join("\n")
           );
           setTimeout(() => {
             if (scrollable.current)

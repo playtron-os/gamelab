@@ -120,7 +120,7 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:293
-#: src/components/logs-modal/logs-modal.tsx:102
+#: src/components/logs-modal/logs-modal.tsx:107
 msgid "Clear"
 msgstr ""
 
@@ -167,7 +167,7 @@ msgstr ""
 msgid "Connected to: {address}"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:83
+#: src/components/logs-modal/logs-modal.tsx:88
 msgid "Copy"
 msgstr ""
 
@@ -285,7 +285,7 @@ msgstr ""
 msgid "Game is not owned or provider is not authorized"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:123
+#: src/components/logs-modal/logs-modal.tsx:128
 msgid "Game logs will appear here next time you launch the game"
 msgstr ""
 
@@ -354,7 +354,7 @@ msgstr ""
 msgid "INPUT DEVICES"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:109
+#: src/components/logs-modal/logs-modal.tsx:114
 msgid "Insert Delimiter"
 msgstr ""
 
@@ -466,7 +466,7 @@ msgstr ""
 msgid "Launching..."
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:75
+#: src/components/logs-modal/logs-modal.tsx:80
 msgid "Logs"
 msgstr ""
 
@@ -555,7 +555,7 @@ msgstr ""
 msgid "Oops!"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:94
+#: src/components/logs-modal/logs-modal.tsx:99
 msgid "Open Full Log"
 msgstr ""
 
@@ -793,7 +793,7 @@ msgstr ""
 msgid "Top"
 msgstr ""
 
-#: src/components/logs-modal/logs-modal.tsx:124
+#: src/components/logs-modal/logs-modal.tsx:129
 msgid "Turn on Enhanced Debugging to see the log"
 msgstr ""
 

@@ -120,7 +120,7 @@ msgstr "Cancel"
 #~ msgstr "Change device"
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:293
-#: src/components/logs-modal/logs-modal.tsx:102
+#: src/components/logs-modal/logs-modal.tsx:107
 msgid "Clear"
 msgstr "Clear"
 
@@ -167,7 +167,7 @@ msgstr "Connect"
 msgid "Connected to: {address}"
 msgstr "Connected to: {address}"
 
-#: src/components/logs-modal/logs-modal.tsx:83
+#: src/components/logs-modal/logs-modal.tsx:88
 msgid "Copy"
 msgstr "Copy"
 
@@ -285,7 +285,7 @@ msgstr "Front"
 msgid "Game is not owned or provider is not authorized"
 msgstr "Game is not owned or provider is not authorized"
 
-#: src/components/logs-modal/logs-modal.tsx:123
+#: src/components/logs-modal/logs-modal.tsx:128
 msgid "Game logs will appear here next time you launch the game"
 msgstr "Game logs will appear here next time you launch the game"
 
@@ -354,7 +354,7 @@ msgstr "Input Config List"
 msgid "INPUT DEVICES"
 msgstr "INPUT DEVICES"
 
-#: src/components/logs-modal/logs-modal.tsx:109
+#: src/components/logs-modal/logs-modal.tsx:114
 msgid "Insert Delimiter"
 msgstr "Insert Delimiter"
 
@@ -466,7 +466,7 @@ msgstr "Launching"
 msgid "Launching..."
 msgstr "Launching..."
 
-#: src/components/logs-modal/logs-modal.tsx:75
+#: src/components/logs-modal/logs-modal.tsx:80
 msgid "Logs"
 msgstr "Logs"
 
@@ -555,7 +555,7 @@ msgstr "Numpad"
 msgid "Oops!"
 msgstr "Oops!"
 
-#: src/components/logs-modal/logs-modal.tsx:94
+#: src/components/logs-modal/logs-modal.tsx:99
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
@@ -793,7 +793,7 @@ msgstr "To:"
 msgid "Top"
 msgstr "Top"
 
-#: src/components/logs-modal/logs-modal.tsx:124
+#: src/components/logs-modal/logs-modal.tsx:129
 msgid "Turn on Enhanced Debugging to see the log"
 msgstr "Turn on Enhanced Debugging to see the log"
 
