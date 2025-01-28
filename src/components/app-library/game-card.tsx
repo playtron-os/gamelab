@@ -121,7 +121,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   return (
     <div
       className={classNames(
-        "flex flex-col w-full h-[60px] rounded-lg cursor-pointer",
+        "flex flex-col w-full h-[60px] rounded-lg cursor-pointer hover:outline-1 hover:outline",
         selectedId === game.app.id
           ? " outline-2 outline-double bg-[--fill-default]"
           : "bg-[--fill-subtle]"
