@@ -89,7 +89,7 @@ pub async fn app_log_show(app: AppHandle, app_id: String) -> Result<(), String> 
     let file_name = dir.join(file_name);
 
     #[cfg(target_os = "windows")]
-    let command: &[&str] = &["start", file_name.to_str().unwrap()];
+    let command: &[&str] = &["notepad", file_name.to_str().unwrap()];
     #[cfg(target_os = "macos")]
     let command: &[&str] = &["open", file_name.to_str().unwrap()];
     #[cfg(target_os = "linux")]
