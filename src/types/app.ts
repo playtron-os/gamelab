@@ -126,12 +126,11 @@ export interface ProfileAuthInformation {
   userName: string;
 }
 
-type AvatarProviders = {
-  [provider in AppProvider]?: { url: string };
-};
-
-export interface ProfileAvatarInformation extends AvatarProviders {
-  selectedProvider: AppProvider;
+export interface ProfileAvatarInformation {
+  selectedProvider: string;
+  providers: {
+    [provider: string]: { url: string };
+  };
 }
 
 export interface ProfileInformation {

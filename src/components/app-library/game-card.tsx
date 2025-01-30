@@ -33,7 +33,7 @@ export interface GameCardProps {
 }
 
 export const getProviderIcon = (
-  provider: AppProvider,
+  provider: string,
   color: string = styles.variablesDark.fill.normal,
   size: number = 20
 ) => {

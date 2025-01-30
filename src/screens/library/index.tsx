@@ -12,7 +12,8 @@ import {
   setQueue,
   setLoadingProgress,
   setAppDownloadProgress,
-  selectCurrentAppState
+  selectCurrentAppState,
+  setAvailableProviders
 } from "@/redux/modules";
 import { AppLibrary } from "../../components";
 import { SidePanel } from "@/components/side-panel/side-panel";
@@ -30,7 +31,8 @@ export const LibraryScreen = () => {
     setQueue: setQueueDispatch,
     setLoadingProgress: setLoadingProgressDispatch,
     setAppDownloadProgress: setAppDownloadProgressDispatch,
-    updateInstallStatus: updateInstallStatusDispatch
+    updateInstallStatus: updateInstallStatusDispatch,
+    setAvailableProviders: setAvailableProvidersDispatch
   } = useAppActions({
     setApps,
     updateInstalledApps,
@@ -38,12 +40,15 @@ export const LibraryScreen = () => {
     setQueue,
     setLoadingProgress,
     setAppDownloadProgress,
-    updateInstallStatus
+    updateInstallStatus,
+    setAvailableProviders
   });
-  const { fetchLibraryApps, fetchQueue } = useAppLibraryActions();
+  const { fetchLibraryApps, fetchQueue, fetchProviders } =
+    useAppLibraryActions();
   useEffect(() => {
     fetchLibraryApps(false);
     fetchQueue();
+    fetchProviders();
   }, []);
 
   const currentApp = useAppSelector(selectCurrentAppState);
@@ -105,6 +110,13 @@ export const LibraryScreen = () => {
             }
           ]);
           dispatch(flashMessage(message.body.message));
+        }
+      } else if (
+        message.message_type === MessageType.ProviderAuthOptionsGet ||
+        message.message_type === MessageType.ProviderAuthOptionsUpdate
+      ) {
+        if (message.status === 200) {
+          setAvailableProvidersDispatch(message.body);
         }
       }
     }

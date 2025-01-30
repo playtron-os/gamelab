@@ -36,6 +36,8 @@ export interface MessageResponseMapping extends MessageMapping {
   [MessageType.AppEulasGet]: app.AppEulaResponseBody[];
   [MessageType.AvatarUpdate]: app.ProfileAvatarInformation;
   [MessageType.AppPostInstallStatusUpdate]: AppPostInstallStatusResponse;
+  [MessageType.ProviderAuthOptionsGet]: string[];
+  [MessageType.ProviderAuthOptionsUpdate]: string[];
 }
 
 export type PlayserveResponseSuccess<MessageT extends MessageType> = {

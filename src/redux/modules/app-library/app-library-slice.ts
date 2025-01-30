@@ -15,14 +15,15 @@ export interface AppLibraryState {
   apps: AppInformation[];
   currentApp?: AppInformation;
   appFilters: {
-    providers: { [key in AppProvider]: boolean };
+    providers: { [key: string]: boolean };
     drives: Array<string>;
     status: "all" | "installed";
   };
+  availableProviders: string[];
   queue: QueuedDownload[];
   queuePositionMap: { [key: string]: number };
   loading: boolean;
-  loadingProgress: { [key in AppProvider]?: number };
+  loadingProgress: { [key: string]: number };
 }
 
 export const APP_LIBRARY_INITIAL_STATE: AppLibraryState = {
@@ -38,6 +39,7 @@ export const APP_LIBRARY_INITIAL_STATE: AppLibraryState = {
     drives: [],
     status: "installed"
   },
+  availableProviders: [],
   queuePositionMap: {},
   loading: false,
   loadingProgress: {}
@@ -52,14 +54,14 @@ export const appLibrarySlice = createSlice({
       state.apps = action.payload;
       state.apps.sort((a, b) => a.app.name.localeCompare(b.app.name));
     },
-    setShowSteam: (state, action: PayloadAction<boolean>) => {
-      state.appFilters.providers[AppProvider.Steam] = action.payload;
+    setShowProvider: (
+      state,
+      action: PayloadAction<{ provider: string; show: boolean }>
+    ) => {
+      state.appFilters.providers[action.payload.provider] = action.payload.show;
     },
-    setShowGOG: (state, action: PayloadAction<boolean>) => {
-      state.appFilters.providers[AppProvider.Gog] = action.payload;
-    },
-    setShowEpic: (state, action: PayloadAction<boolean>) => {
-      state.appFilters.providers[AppProvider.EpicGames] = action.payload;
+    setAvailableProviders: (state, action: PayloadAction<string[]>) => {
+      state.availableProviders = action.payload;
     },
     setShowDrives: (
       state,
@@ -222,11 +224,10 @@ export const appLibrarySlice = createSlice({
 
 export const {
   setApps,
-  setShowSteam,
-  setShowGOG,
-  setShowEpic,
+  setShowProvider,
   setShowDrives,
   setStatusFilter,
+  setAvailableProviders,
   updateInstalledApps,
   updateAppStatus,
   updateInstallStatus,

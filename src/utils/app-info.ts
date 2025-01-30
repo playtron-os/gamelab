@@ -9,12 +9,14 @@ import { PlaytronImage, InstalledApp } from "@/types/app-library";
 import { t } from "@lingui/macro";
 import { CloudFill, RunFill } from "@playtron/styleguide";
 
-export function getProviderName(provider: AppProvider): string {
-  return {
-    [AppProvider.Steam]: "Steam",
-    [AppProvider.Gog]: "GOG",
-    [AppProvider.EpicGames]: "Epic Games"
-  }[provider];
+export function getProviderName(provider: string): string {
+  return (
+    {
+      [AppProvider.Steam]: "Steam",
+      [AppProvider.Gog]: "GOG",
+      [AppProvider.EpicGames]: "Epic Games"
+    }[provider] || provider[0].toUpperCase() + provider.substring(1)
+  );
 }
 
 export function nearestPowerOfTwo(n: number) {
