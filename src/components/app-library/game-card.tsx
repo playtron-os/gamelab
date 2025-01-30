@@ -32,7 +32,7 @@ export interface GameCardProps {
   onSelectGame: (game: AppInformation) => void;
 }
 
-export const getProviderIcon = (provider: AppProvider) => {
+export const getProviderIcon = (provider: string) => {
   const iconSize = 20;
   const iconColor = styles.variablesDark.fill.normal;
   switch (provider) {

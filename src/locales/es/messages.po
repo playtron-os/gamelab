@@ -59,7 +59,7 @@ msgstr ""
 msgid "Added"
 msgstr ""
 
-#: src/components/sidebar/provider-section.tsx:79
+#: src/components/sidebar/provider-section.tsx:66
 msgid "All"
 msgstr ""
 
@@ -192,11 +192,11 @@ msgid "Disconnected from the internet"
 msgstr ""
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:63
-#: src/utils/app-info.ts:163
+#: src/utils/app-info.ts:165
 msgid "Download"
 msgstr ""
 
-#: src/utils/app-info.ts:73
+#: src/utils/app-info.ts:75
 msgid "Downloading"
 msgstr ""
 
@@ -382,7 +382,7 @@ msgstr ""
 #~ msgid "Installed on drive:"
 #~ msgstr ""
 
-#: src/utils/app-info.ts:75
+#: src/utils/app-info.ts:77
 msgid "Installing"
 msgstr ""
 
@@ -426,7 +426,7 @@ msgstr ""
 msgid "Last Updated"
 msgstr ""
 
-#: src/utils/app-info.ts:157
+#: src/utils/app-info.ts:159
 msgid "Launch"
 msgstr ""
 
@@ -454,11 +454,11 @@ msgstr ""
 msgid "Launch Config List"
 msgstr ""
 
-#: src/utils/app-info.ts:87
+#: src/utils/app-info.ts:89
 msgid "Launching"
 msgstr ""
 
-#: src/utils/app-info.ts:173
+#: src/utils/app-info.ts:175
 msgid "Launching..."
 msgstr ""
 
@@ -527,7 +527,7 @@ msgstr ""
 msgid "No internet"
 msgstr ""
 
-#: src/utils/app-info.ts:83
+#: src/utils/app-info.ts:85
 msgid "Not Downloaded"
 msgstr ""
 
@@ -568,11 +568,11 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: src/utils/app-info.ts:161
+#: src/utils/app-info.ts:163
 msgid "Pause"
 msgstr ""
 
-#: src/utils/app-info.ts:79
+#: src/utils/app-info.ts:81
 msgid "Paused"
 msgstr ""
 
@@ -594,11 +594,11 @@ msgstr ""
 msgid "Playtron Slug"
 msgstr ""
 
-#: src/utils/app-info.ts:69
+#: src/utils/app-info.ts:71
 msgid "Pre-Allocating"
 msgstr ""
 
-#: src/utils/app-info.ts:169
+#: src/utils/app-info.ts:171
 msgid "Prioritize"
 msgstr ""
 
@@ -622,11 +622,11 @@ msgstr ""
 msgid "PS5 controller"
 msgstr ""
 
-#: src/utils/app-info.ts:81
+#: src/utils/app-info.ts:83
 msgid "Queued"
 msgstr ""
 
-#: src/utils/app-info.ts:67
+#: src/utils/app-info.ts:69
 msgid "Ready"
 msgstr ""
 
@@ -643,11 +643,11 @@ msgstr ""
 msgid "Reset Wine Prefix"
 msgstr ""
 
-#: src/utils/app-info.ts:167
+#: src/utils/app-info.ts:169
 msgid "Resume"
 msgstr ""
 
-#: src/utils/app-info.ts:85
+#: src/utils/app-info.ts:87
 msgid "Running"
 msgstr ""
 
@@ -725,7 +725,7 @@ msgstr ""
 #~ msgid "Steam"
 #~ msgstr ""
 
-#: src/utils/app-info.ts:171
+#: src/utils/app-info.ts:173
 msgid "Stop"
 msgstr ""
 
@@ -738,7 +738,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/utils/app-info.ts:274
+#: src/utils/app-info.ts:276
 msgid "System Drive"
 msgstr ""
 
@@ -803,7 +803,7 @@ msgstr ""
 msgid "Uninstall"
 msgstr ""
 
-#: src/utils/app-info.ts:89
+#: src/utils/app-info.ts:91
 msgid "Unknown"
 msgstr ""
 
@@ -816,11 +816,11 @@ msgstr ""
 msgid "Untitled Layout"
 msgstr ""
 
-#: src/utils/app-info.ts:165
+#: src/utils/app-info.ts:167
 msgid "Update"
 msgstr ""
 
-#: src/utils/app-info.ts:77
+#: src/utils/app-info.ts:79
 msgid "Update Required"
 msgstr ""
 
@@ -837,7 +837,7 @@ msgstr ""
 msgid "Validate JSON"
 msgstr ""
 
-#: src/utils/app-info.ts:71
+#: src/utils/app-info.ts:73
 msgid "Verifying"
 msgstr ""
 

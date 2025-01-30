@@ -1,10 +1,9 @@
 import React from "react";
 import { Checkbox, styles, ProgressBar } from "@playtron/styleguide";
 import { getProviderName } from "@/utils/app-info";
-import { AppProvider } from "@/types";
 
 interface ProviderProps {
-  provider?: AppProvider;
+  provider?: string;
   name?: string;
   installed: number;
   total: number;
