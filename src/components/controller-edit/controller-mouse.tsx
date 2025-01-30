@@ -1,6 +1,6 @@
 import React from "react";
 import { ControllerComponentProps } from "@/types/input-config";
-import MouseImage from "@/assets/Devices/mouse Top.png";
+import MouseImage from "@/assets/Devices/mouse Top.svg";
 import { InputButton } from "./input-button";
 import { ControllerInputs } from "@/constants/physical-layouts";
 
@@ -36,7 +36,7 @@ export const Mouse: React.FC<ControllerComponentProps> = ({
           />
         </div>
         <div className="ms-24 me-24">
-          <img src={MouseImage} />
+          <img width={180} height={313} src={MouseImage} />
         </div>
 
         <div className="w-[148px] mt-3">

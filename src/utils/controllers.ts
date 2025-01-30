@@ -409,28 +409,42 @@ export const mappingCmp = (mapping1?: InputEvent, mapping2?: InputEvent) => {
 };
 
 export const getPhysicalLayoutFromDevice = (device: ControllerInfo) => {
-  // Xbox360
-  if (device.capabilities.length === 20) {
+  if (
+    device.name === "Microsoft X-Box 360 pad" ||
+    device.name === "Microsoft X-Box One pad" ||
+    device.name.includes("AYANEO") ||
+    device.capabilities.length === 20 ||
+    device.capabilities.length === 21 ||
+    device.capabilities.length === 25
+  ) {
     return physicalLayouts.Xbox;
   }
-  if (device.capabilities.length === 21) {
-    return physicalLayouts.Xbox;
+
+  if (device.name === "Lenovo Legion Go") {
+    return physicalLayouts.LegionGo;
   }
-  // Xbox One
-  if (device.capabilities.length === 25) {
-    return physicalLayouts.Xbox;
+
+  if (device.name === "Sony Computer Entertainment Wireless Controller") {
+    return physicalLayouts.PS4;
   }
-  if (device.capabilities.length === 33) {
+
+  if (
+    device.name ===
+      "Sony Interactive Entertainment DualSense Wireless Controller" ||
+    device.capabilities.length === 33
+  ) {
     return physicalLayouts.PS5;
   }
-  // Aya Neo 2
-  // if (device.capabilities.length === 155) {
-  //   return physicalLayouts.SteamDeck;
-  // }
-  if (device.capabilities.length === 173) {
+
+  if (device.name === "Steam Deck") {
     return physicalLayouts.SteamDeck;
   }
-  if (device.capabilities.length === 186) {
+  if (
+    device.name.includes("ASUS ROG Ally") ||
+    device.name.includes("MSI Claw") ||
+    device.capabilities.length === 27 ||
+    device.capabilities.length === 186
+  ) {
     return physicalLayouts.ROGAlly;
   }
   console.log("Unknown device", device);

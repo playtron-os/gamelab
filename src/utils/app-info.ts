@@ -229,6 +229,7 @@ export const getAppStatus = (appInfo: AppInformation): AppStatus => {
  */
 export const getAppStatusWithQueue = (
   appInfo: AppInformation,
+  ownedAppId: string | undefined,
   queuePositionMapState: { [key: string]: number }
 ): AppStatus => {
   const status = getAppStatus(appInfo);
@@ -244,9 +245,8 @@ export const getAppStatusWithQueue = (
     return status;
   }
   if (
-    appInfo.installed_app &&
-    typeof queuePositionMapState[appInfo.installed_app.owned_app.id] ===
-      "number"
+    ownedAppId != undefined &&
+    typeof queuePositionMapState[ownedAppId] === "number"
   ) {
     return AppStatus.QUEUED;
   }

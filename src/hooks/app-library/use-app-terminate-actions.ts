@@ -1,6 +1,5 @@
 import { useConfirmationPopUp } from "@/context";
 import { usePlayserve } from "@/hooks";
-import { AppInformation } from "@/types/app-library";
 import { MessageType, getMessage } from "@/types/playserve/message";
 import { t } from "@lingui/macro";
 import { flashMessage } from "redux-flash";
@@ -14,9 +13,9 @@ export const useAppTerminate = () => {
     useConfirmationPopUp();
 
   const sendTerminateAppMessage = useCallback(
-    (appInfo: AppInformation) => {
+    (ownedAppId: string) => {
       const message = getMessage(MessageType.AppTerminate, {
-        owned_app_id: appInfo.installed_app!.owned_app.id
+        owned_app_id: ownedAppId
       });
 
       sendMessage(message)().then((response) => {
@@ -30,12 +29,11 @@ export const useAppTerminate = () => {
   );
 
   const terminateApp = useCallback(
-    (appInfo: AppInformation) => {
-      const appName = appInfo.app.name;
+    (ownedAppId: string) => {
       openConfirmationPopUp({
-        title: t`Are you sure you want to terminate ${appName}?`,
+        title: t`Are you sure you want to terminate this game?`,
         onConfirm: () => {
-          sendTerminateAppMessage(appInfo);
+          sendTerminateAppMessage(ownedAppId);
           closeConfirmationPopUp();
         },
         onClose: () => {

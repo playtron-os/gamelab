@@ -32,20 +32,20 @@ export interface GameCardProps {
   onSelectGame: (game: AppInformation) => void;
 }
 
-export const getProviderIcon = (provider: string) => {
-  const iconSize = 20;
-  const iconColor = styles.variablesDark.fill.normal;
+export const getProviderIcon = (
+  provider: string,
+  color: string = styles.variablesDark.fill.normal,
+  size: number = 20
+) => {
   switch (provider) {
     case AppProvider.EpicGames:
-      return <EpicFill fill={iconColor} width={iconSize} height={iconSize} />;
+      return <EpicFill fill={color} width={size} height={size} />;
     case AppProvider.Gog:
-      return <GogFill fill={iconColor} width={iconSize} height={iconSize} />;
+      return <GogFill fill={color} width={size} height={size} />;
     case AppProvider.Steam:
-      return <SteamFill fill={iconColor} width={iconSize} height={iconSize} />;
+      return <SteamFill fill={color} width={size} height={size} />;
     default:
-      return (
-        <ErrorWarningFill fill={iconColor} width={iconSize} height={iconSize} />
-      );
+      return <ErrorWarningFill fill={color} width={size} height={size} />;
   }
 };
 
@@ -64,7 +64,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   };
   const { onSelectedIdChange } = useAppLibraryContext();
   const { launchParams } = useSubmissionsContext();
-  const status = useAppStatus(game);
+  const status = useAppStatus(game, game.installed_app?.owned_app.id);
   const progress = Math.round(getProgress(game.installed_app));
   let statusLabel: string;
   if (progress) {
@@ -74,7 +74,11 @@ export const GameCard: React.FC<GameCardProps> = ({
   }
   const handleLaunchParams = useCallback(() => {
     onSelectedIdChange(game.app.id);
-    handleAppDefaultAction(game, launchParams);
+    handleAppDefaultAction(
+      game,
+      game.installed_app?.owned_app.id,
+      launchParams
+    );
   }, [launchParams, game]);
 
   const appActions = [];
@@ -117,7 +121,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   return (
     <div
       className={classNames(
-        "flex flex-col w-full h-[60px] rounded-lg cursor-pointer",
+        "flex flex-col w-full h-[60px] rounded-lg cursor-pointer hover:outline-1 hover:outline",
         selectedId === game.app.id
           ? " outline-2 outline-double bg-[--fill-default]"
           : "bg-[--fill-subtle]"
@@ -140,7 +144,12 @@ export const GameCard: React.FC<GameCardProps> = ({
           </span>
           <div className="flex items-center gap-1">
             {game.owned_apps.map((ownedApp: OwnedApp) =>
-              getProviderIcon(ownedApp.provider)
+              getProviderIcon(
+                ownedApp.provider,
+                ownedApp.provider == game.installed_app?.owned_app.provider
+                  ? styles.variablesDark.fill.strong
+                  : styles.variablesDark.fill.normal
+              )
             )}
 
             <div className=" text-sm text-[--text-tertiary]">

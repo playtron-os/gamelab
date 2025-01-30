@@ -40,7 +40,7 @@ export const AppLibrary: React.FC = () => {
 
   const [selectedGame, setSelectedGame] = useState<AppInformation | null>(null);
 
-  let filteredGames = apps;
+  let filteredGames = apps.filter((app) => app.is_owned);
 
   const shownProviders = (Object.keys(appFilters.providers) as string[]).filter(
     (key) => appFilters.providers[key]
@@ -150,8 +150,16 @@ export const AppLibrary: React.FC = () => {
           );
         case "status":
           return (
-            getAppStatusWithQueue(a, queuePositionMapState) -
-            getAppStatusWithQueue(b, queuePositionMapState)
+            getAppStatusWithQueue(
+              a,
+              a.installed_app?.owned_app.id,
+              queuePositionMapState
+            ) -
+            getAppStatusWithQueue(
+              b,
+              b.installed_app?.owned_app.id,
+              queuePositionMapState
+            )
           );
         case "install_date":
           return (

@@ -499,8 +499,8 @@ export const steamDeckLayout: ControlGroup[] = baseLayout.concat([
     section: "paddles",
     inputs: [
       ControllerInputs.LeftPaddle1,
-      ControllerInputs.LeftPaddle2,
       ControllerInputs.RightPaddle1,
+      ControllerInputs.LeftPaddle2,
       ControllerInputs.RightPaddle2
     ]
   }
@@ -524,8 +524,8 @@ export const legionGoLayout: ControlGroup[] = baseLayout.concat([
     section: "paddles",
     inputs: [
       ControllerInputs.LeftPaddle1,
-      ControllerInputs.LeftPaddle2,
       ControllerInputs.RightPaddle1,
+      ControllerInputs.LeftPaddle2,
       ControllerInputs.RightPaddle2
     ]
   }
@@ -553,12 +553,12 @@ export const ps4Layout: ControlGroup[] = baseLayout.concat([
   //   section: "trackpads",
   //   inputs: [ControllerInputs.Trackpad]
   // },
-  {
-    id: "gyro",
-    name: "Gyro",
-    section: "gyro",
-    inputs: [ControllerInputs.Gyro]
-  }
+  // {
+  //   id: "gyro",
+  //   name: "Gyro",
+  //   section: "gyro",
+  //   inputs: [ControllerInputs.Gyro]
+  // }
 ]);
 
 export const ps5Layout: ControlGroup[] = baseLayout.concat([
@@ -568,12 +568,12 @@ export const ps5Layout: ControlGroup[] = baseLayout.concat([
   //   section: "trackpads",
   //   inputs: [ControllerInputs.TrackpadTouch, ControllerInputs.Trackpad]
   // },
-  {
-    id: "gyro",
-    name: "Gyro",
-    section: "gyro",
-    inputs: [ControllerInputs.Gyro]
-  }
+  // {
+  //   id: "gyro",
+  //   name: "Gyro",
+  //   section: "gyro",
+  //   inputs: [ControllerInputs.Gyro]
+  // }
 ]);
 
 export const xboxLayout: ControlGroup[] = baseLayout;

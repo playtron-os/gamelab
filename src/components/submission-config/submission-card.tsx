@@ -13,7 +13,7 @@ export const SubmissionCard: React.FC<{
     <div
       key={submission.item_id}
       className={classNames(
-        "flex flex-col w-full h-[60px] rounded-lg cursor-pointer my-2",
+        "flex flex-col w-full h-[60px] rounded-lg cursor-pointer my-2  hover:outline-1 hover:outline",
         selectedItemId === submission.item_id
           ? " outline-2 outline-double bg-[--fill-default]"
           : "bg-[--fill-subtle]"

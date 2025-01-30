@@ -33,17 +33,17 @@ export interface AppLibraryContextProps {
   selectedIds: string[];
   onSelectedIdChange: (selectedId: string) => void;
   handlers: {
-    downloadApp: (appData: AppInformation) => void;
+    downloadApp: (ownedAppId: string, force: boolean) => void;
     uninstallApp: (appData: AppInformation[]) => void;
     refetchAllApps: (forceRefresh: boolean) => void;
-    pauseDownload: (appData: AppInformation) => void;
-    cancelDownload: (appData: AppInformation) => void;
+    pauseDownload: (ownedAppId: string) => void;
+    cancelDownload: (ownedAppId: string, appName: string) => void;
     handleAppDefaultAction: (
       appInfo: AppInformation,
+      ownedAppId: string | undefined,
       params?: LaunchParams
     ) => void;
     openMoveAppDialog: (appInfos: AppInformation[]) => void;
-    openBulkActionsMenu: () => void;
   };
   selectedApps: Set<string>;
   setSelectedApps: React.Dispatch<React.SetStateAction<Set<string>>>;
@@ -51,7 +51,7 @@ export interface AppLibraryContextProps {
   eula: AppEulaResponseBody | null;
   isEulaOpen: boolean;
   setIsEulaOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  acceptEula: (eula: AppEulaResponseBody, appInfo: AppInformation) => void;
+  acceptEula: (eula: AppEulaResponseBody) => void;
   rejectEula: (appInfo: AppInformation) => void;
 }
 
@@ -91,34 +91,39 @@ export const AppLibraryContextProvider: React.FC<
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   const handleAppDefaultAction = useCallback(
-    async (appInfo: AppInformation, params?: LaunchParams) => {
+    async (
+      appInfo: AppInformation,
+      ownedAppId: string | undefined,
+      params?: LaunchParams
+    ) => {
       let result: string | undefined = undefined;
-      switch (getAppStatusWithQueue(appInfo, queuePositionMap)) {
+      switch (getAppStatusWithQueue(appInfo, ownedAppId, queuePositionMap)) {
         case AppStatus.RUNNING:
-          terminateApp(appInfo);
+          if (ownedAppId) terminateApp(ownedAppId);
           break;
         case AppStatus.VERIFIYING:
         case AppStatus.PRE_ALLOCATING:
         case AppStatus.DOWNLOADING:
-          pauseDownload(appInfo);
+          if (ownedAppId) pauseDownload(ownedAppId);
           break;
         case AppStatus.PAUSED:
         case AppStatus.UPDATE_REQUIRED:
         case AppStatus.NOT_DOWNLOADED:
-          result = await downloadApp(appInfo);
+          if (ownedAppId) result = await downloadApp(ownedAppId);
           break;
         case AppStatus.QUEUED:
-          result = await downloadApp(appInfo, true);
+          if (ownedAppId) result = await downloadApp(ownedAppId, true);
           break;
         case AppStatus.READY:
-          launchApp(appInfo, params);
+          if (ownedAppId) launchApp(ownedAppId, params);
           break;
         default:
           break;
       }
 
       if (result === EULA_NOT_ACCEPTED) {
-        const response = await getAppEulas(appInfo);
+        if (!ownedAppId) return;
+        const response = await getAppEulas(ownedAppId);
         if (response && Array.isArray(response)) {
           setEula(response[0]);
           setIsEulaOpen(true);
@@ -147,8 +152,6 @@ export const AppLibraryContextProvider: React.FC<
     [apps, selectedIds]
   );
 
-  const openBulkActionsMenu = bulkActionsMenuStateManager[1].setTrue;
-
   const handlers = useMemo(
     () => ({
       downloadApp,
@@ -157,8 +160,7 @@ export const AppLibraryContextProvider: React.FC<
       pauseDownload,
       cancelDownload,
       handleAppDefaultAction,
-      openMoveAppDialog,
-      openBulkActionsMenu
+      openMoveAppDialog
     }),
     [
       downloadApp,
@@ -167,8 +169,7 @@ export const AppLibraryContextProvider: React.FC<
       pauseDownload,
       cancelDownload,
       handleAppDefaultAction,
-      openMoveAppDialog,
-      openBulkActionsMenu
+      openMoveAppDialog
     ]
   );
 

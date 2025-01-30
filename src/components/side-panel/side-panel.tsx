@@ -13,6 +13,7 @@ import {
 } from "@/utils/app-info";
 import { InputConfigModal } from "@/components/input-config-modal/input-config-modal";
 import { LaunchConfigModal } from "@/components/launch-config/launch-config-modal";
+import { ProviderSelectionModal } from "@/components/provider-selection-modal/provider-selection-modal";
 import { LogsModal } from "@/components/logs-modal/logs-modal";
 import { ConfigSelect } from "@/components/side-panel/config-select";
 import { useAppLibraryContext } from "@/context";
@@ -52,6 +53,8 @@ export const SidePanel: React.FC = () => {
   const [isLaunching, setIsLaunching] = useState<boolean>(false);
   const [isInputConfigOpen, setIsInputConfigOpen] = useState<boolean>(false);
   const [isLaunchConfigOpen, setIsLaunchConfigOpen] = useState<boolean>(false);
+  const [isProviderSelectionOpen, setIsProviderSelectionOpen] =
+    useState<boolean>(false);
   const [isLogsOpen, setIsLogsOpen] = useState<boolean>(false);
   const [targetLayout, setTargetLayout] =
     useState<TargetControllerType>("xbox");
@@ -293,7 +296,17 @@ export const SidePanel: React.FC = () => {
               className="w-full"
               onClick={() => {
                 if (isLaunching) return;
-                handleAppDefaultAction(currentApp, launchParams);
+                let ownedAppId = currentApp.installed_app?.owned_app.id;
+                if (!ownedAppId) {
+                  if (currentApp.owned_apps.length === 1) {
+                    ownedAppId = currentApp.owned_apps[0].id;
+                  } else {
+                    setIsProviderSelectionOpen(true);
+                  }
+                }
+
+                handleAppDefaultAction(currentApp, ownedAppId, launchParams);
+
                 if (appStatus === AppStatus.READY) {
                   setIsLaunching(true);
                   setIsLogsOpen(isLogsOpen || launchParams.enhancedDebugging);
@@ -334,6 +347,15 @@ export const SidePanel: React.FC = () => {
         appInfo={currentApp}
         isEnhancedDebuggingEnabled={launchParams.enhancedDebugging}
       />
+      <ProviderSelectionModal
+        isOpen={isProviderSelectionOpen}
+        appInfo={currentApp}
+        onProviderSelect={(ownedAppId) => {
+          handleAppDefaultAction(currentApp, ownedAppId, launchParams);
+          setIsProviderSelectionOpen(false);
+        }}
+        onClose={() => setIsProviderSelectionOpen(false)}
+      />
       <EulaModal
         appInfo={currentApp}
         isOpen={isEulaOpen}
@@ -342,7 +364,7 @@ export const SidePanel: React.FC = () => {
           if (!eula) {
             return;
           }
-          acceptEula(eula, currentApp);
+          acceptEula(eula);
           setIsEulaOpen(false);
         }}
         onReject={() => {

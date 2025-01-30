@@ -1,21 +1,21 @@
-import { useConfirmationPopUp } from "@/context";
-
-import { usePlayserve } from "@/hooks";
-import { useAppDispatch } from "@/redux/store";
-import { AppInformation } from "@/types/app-library";
-import { Message, MessageType, getMessage } from "@/types/playserve/message";
-import { t } from "@lingui/macro";
 import { useCallback } from "react";
+import { t } from "@lingui/macro";
 import { flashMessage } from "redux-flash";
-import { EULA_NOT_ACCEPTED } from "@/constants";
 
+import { selectAppLibraryState } from "@/redux/modules";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
+import { Message, MessageType, getMessage } from "@/types/playserve/message";
+import { useConfirmationPopUp } from "@/context";
+import { EULA_NOT_ACCEPTED } from "@/constants";
+import { usePlayserve } from "@/hooks";
+import { useDriveInfo } from "@/hooks/use-drive-info";
 export interface UseAppDownloadReturn {
   downloadApp: (
-    app: AppInformation,
+    ownedAppId: string,
     force?: boolean
   ) => Promise<string | undefined>;
-  pauseDownload: (app: AppInformation) => void;
-  cancelDownload: (app: AppInformation) => void;
+  pauseDownload: (ownedAppId: string) => void;
+  cancelDownload: (ownedAppId: string, appName: string) => void;
 }
 
 // Hook that handles app download (s)
@@ -24,7 +24,10 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
   const { openConfirmationPopUp, closeConfirmationPopUp } =
     useConfirmationPopUp();
 
-  const { sendMessage } = usePlayserve();
+  const playserve = usePlayserve();
+  const { sendMessage } = playserve;
+  const { appFilters } = useAppSelector(selectAppLibraryState);
+  const { drives } = useDriveInfo(playserve);
 
   const sendAppDownloadMessage = useCallback(
     async (message: Message<MessageType.AppDownload>) => {
@@ -43,27 +46,43 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
   );
 
   const downloadApp = useCallback(
-    async (appInfo: AppInformation, force = false) => {
+    async (ownedAppId: string, force = false) => {
+      let installDisk = null;
+      if (drives.length === 1) {
+        installDisk = drives[0].name;
+      } else {
+        const selectedDrives = drives
+          .filter((drive) => {
+            return appFilters.drives.includes(drive.name);
+          })
+          .sort((a, b) => {
+            if (a.available_space > b.available_space) return -1;
+            else return 1;
+          });
+        if (!selectedDrives.length) {
+          dispatch(flashMessage(t`Select at least one drive in the side bar.`));
+          return;
+        }
+        installDisk = selectedDrives[0].name;
+      }
+
       const messageAppDownload = getMessage(MessageType.AppDownload, {
-        owned_app_id: appInfo.owned_apps[0].id,
+        owned_app_id: ownedAppId,
+        install_disk: installDisk,
         force_download: force
       });
 
       return await sendAppDownloadMessage(messageAppDownload);
     },
-    [sendAppDownloadMessage]
+    [sendAppDownloadMessage, dispatch, drives, appFilters]
   );
 
   const sendAppDownloadCancelMessage = useCallback(
-    async (appInfo: AppInformation) => {
-      if (!appInfo.installed_app) {
-        console.error("Unable to cancel download, installed_app doesn't exist");
-        return;
-      }
+    async (ownedAppId: string) => {
       const messageAppDownloadCancel = getMessage(
         MessageType.AppDownloadCancel,
         {
-          owned_app_id: appInfo.installed_app.owned_app.id
+          owned_app_id: ownedAppId
         }
       );
       await sendMessage(messageAppDownloadCancel)();
@@ -72,16 +91,9 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
   );
 
   const sendAppDownloadPauseMessage = useCallback(
-    async (appInfo: AppInformation) => {
-      if (!appInfo.installed_app?.owned_app.id) {
-        console.error(
-          "No installed owned app found for app when trying to pause download",
-          appInfo
-        );
-        return;
-      }
+    async (ownedAppId: string) => {
       const messageAppDownloadPause = getMessage(MessageType.AppDownloadPause, {
-        owned_app_id: appInfo.installed_app?.owned_app.id
+        owned_app_id: ownedAppId
       });
       await sendMessage(messageAppDownloadPause)();
     },
@@ -89,12 +101,11 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
   );
 
   const cancelDownload = useCallback(
-    (appInfo: AppInformation) => {
-      const appName = appInfo.app.name;
+    (ownedAppId: string, appName: string) => {
       openConfirmationPopUp({
         title: t`Are you sure you want to stop downloading ${appName}?`,
         onConfirm: () => {
-          sendAppDownloadCancelMessage(appInfo);
+          sendAppDownloadCancelMessage(ownedAppId);
           closeConfirmationPopUp();
         },
         onClose: () => {
