@@ -19,7 +19,7 @@ import {
   setStatusFilter
 } from "@/redux/modules";
 import { useAppActions, useAppSelector } from "@/redux/store";
-import { AppInformation, AppProvider } from "@/types";
+import { AppInformation } from "@/types";
 import { GameCard } from "./game-card";
 import { FilterButton } from "./filter-button";
 import { getAppStatusWithQueue } from "@/utils/app-info";
@@ -42,9 +42,9 @@ export const AppLibrary: React.FC = () => {
 
   let filteredGames = apps;
 
-  const shownProviders = (
-    Object.keys(appFilters.providers) as AppProvider[]
-  ).filter((key) => appFilters.providers[key]);
+  const shownProviders = (Object.keys(appFilters.providers) as string[]).filter(
+    (key) => appFilters.providers[key]
+  );
   if (shownProviders.length < Object.keys(appFilters.providers).length) {
     filteredGames = filteredGames.filter((app) => {
       return shownProviders.some((provider) =>

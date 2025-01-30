@@ -154,6 +154,9 @@ export enum MessageType {
   EulaGet = "EulaGet",
   EulaAccept = "EulaAccept",
 
+  ProviderAuthOptionsGet = "ProviderAuthOptionsGet",
+  ProviderAuthOptionsUpdate = "ProviderAuthOptionsUpdate",
+
   // Below are messages sent from the server to the client
   AccessPointGetUpdate = "AccessPointGetUpdate",
   BatteryStatusUpdate = "BatteryStatusUpdate",

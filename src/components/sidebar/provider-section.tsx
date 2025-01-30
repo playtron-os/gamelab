@@ -1,15 +1,16 @@
 /// <reference types="vite-plugin-svgr/client" />
-import {
-  selectAppLibraryState,
-  setShowSteam,
-  setShowGOG,
-  setShowEpic
-} from "@/redux/modules";
+import { selectAppLibraryState, setShowProvider } from "@/redux/modules";
 import { RootState, useAppActions, useAppSelector } from "@/redux/store";
 import { t } from "@lingui/macro";
 import { AppProvider } from "@/types/platform-auth";
 import React from "react";
-import { AppsFill, EpicFill, GogFill, SteamFill } from "@playtron/styleguide";
+import {
+  AppsFill,
+  EpicFill,
+  ErrorWarningFill,
+  GogFill,
+  SteamFill
+} from "@playtron/styleguide";
 
 import { Provider } from "./provider";
 
@@ -17,7 +18,7 @@ const selector = (state: RootState) => {
   const appLibrary = selectAppLibraryState(state);
   return {
     apps: appLibrary.apps,
-
+    availableProviders: appLibrary.availableProviders,
     loading: appLibrary.loading,
     loadingProgress: appLibrary.loadingProgress,
     appFilters: appLibrary.appFilters
@@ -25,48 +26,34 @@ const selector = (state: RootState) => {
 };
 
 export const ProviderSection: React.FC = () => {
-  const { apps, loading, loadingProgress, appFilters } =
+  const { apps, loading, loadingProgress, appFilters, availableProviders } =
     useAppSelector(selector);
 
-  const {
-    setShowSteam: setShowSteamDispatch,
-    setShowGOG: setShowGOGDispatch,
-    setShowEpic: setShowEpicDispatch
-  } = useAppActions({
-    setShowSteam,
-    setShowGOG,
-    setShowEpic
+  const { setShowProvider: setShowProviderDispatch } = useAppActions({
+    setShowProvider
   });
-  const showSteam = appFilters.providers[AppProvider.Steam];
-  const showEpic = appFilters.providers[AppProvider.EpicGames];
-  const showGOG = appFilters.providers[AppProvider.Gog];
   let totalInstalled = 0;
 
-  const showAll =
-    appFilters.providers[AppProvider.Steam] &&
-    appFilters.providers[AppProvider.Gog] &&
-    appFilters.providers[AppProvider.EpicGames];
+  const showAll = availableProviders.every(
+    (provider) => appFilters.providers[provider]
+  );
 
-  const totalProviderGames: { [key: string]: number } = {
-    [AppProvider.Steam]: 0,
-    [AppProvider.Gog]: 0,
-    [AppProvider.EpicGames]: 0
-  };
-  const installedGames: { [key: string]: number } = {
-    [AppProvider.Steam]: 0,
-    [AppProvider.Gog]: 0,
-    [AppProvider.EpicGames]: 0
-  };
+  const totalProviderGames: { [key: string]: number } = {};
+  const installedGames: { [key: string]: number } = {};
 
   if (!loading && apps) {
     for (let i = 0; i < apps.length; i++) {
       const installed_app = apps[i].installed_app;
       const owned_apps = apps[i].owned_apps;
       if (installed_app) {
+        if (!installedGames[installed_app.owned_app.provider])
+          installedGames[installed_app.owned_app.provider] = 0;
         installedGames[installed_app.owned_app.provider] += 1;
         totalInstalled += 1;
       }
       for (let j = 0; j < owned_apps.length; j++) {
+        if (!totalProviderGames[owned_apps[j].provider])
+          totalProviderGames[owned_apps[j].provider] = 0;
         totalProviderGames[owned_apps[j].provider] += 1;
       }
     }
@@ -83,43 +70,45 @@ export const ProviderSection: React.FC = () => {
         enabled={showAll}
         loadingProgress={0}
         onClick={() => {
-          setShowEpicDispatch(!showAll);
-          setShowGOGDispatch(!showAll);
-          setShowSteamDispatch(!showAll);
+          availableProviders.forEach((provider) =>
+            setShowProvider({ provider, show: !showAll })
+          );
         }}
       />
-      <Provider
-        provider={AppProvider.EpicGames}
-        Icon={EpicFill}
-        installed={installedGames.epicgames}
-        total={totalProviderGames.epicgames}
-        enabled={showEpic}
-        loadingProgress={
-          loading ? (loadingProgress[AppProvider.EpicGames] ?? 0) : 0
+      {availableProviders.map((provider) => {
+        let icon;
+        switch (provider) {
+          case AppProvider.Steam:
+            icon = SteamFill;
+            break;
+          case AppProvider.EpicGames:
+            icon = EpicFill;
+            break;
+          case AppProvider.Gog:
+            icon = GogFill;
+            break;
+          default:
+            icon = ErrorWarningFill;
+            break;
         }
-        onClick={() => setShowEpicDispatch(!showEpic)}
-      />
-      <Provider
-        provider={AppProvider.Steam}
-        Icon={SteamFill}
-        installed={installedGames.steam}
-        total={totalProviderGames.steam}
-        enabled={showSteam}
-        loadingProgress={
-          loading ? (loadingProgress[AppProvider.Steam] ?? 0) : 0
-        }
-        onClick={() => setShowSteamDispatch(!showSteam)}
-      />
-
-      <Provider
-        provider={AppProvider.Gog}
-        Icon={GogFill}
-        installed={installedGames.gog}
-        total={totalProviderGames.gog}
-        enabled={showGOG}
-        loadingProgress={loading ? (loadingProgress[AppProvider.Gog] ?? 0) : 0}
-        onClick={() => setShowGOGDispatch(!showGOG)}
-      />
+        return (
+          <Provider
+            key={provider}
+            provider={provider}
+            Icon={icon}
+            installed={installedGames[provider] || 0}
+            total={totalProviderGames[provider] || 0}
+            enabled={appFilters.providers[provider]}
+            loadingProgress={loading ? (loadingProgress[provider] ?? 0) : 0}
+            onClick={() =>
+              setShowProviderDispatch({
+                provider,
+                show: !appFilters.providers[provider]
+              })
+            }
+          />
+        );
+      })}
     </section>
   );
 };

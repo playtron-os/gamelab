@@ -7,6 +7,7 @@ import { useCallback } from "react";
 export interface UseAppLibraryReturn {
   fetchLibraryApps: (forceRefresh: boolean) => void;
   fetchQueue: () => void;
+  fetchProviders: () => void;
 }
 
 export const useAppLibraryActions = (): UseAppLibraryReturn => {
@@ -37,8 +38,16 @@ export const useAppLibraryActions = (): UseAppLibraryReturn => {
     sendMessage(getMessage(MessageType.QueueDownloadGet));
   }, [sendMessage]);
 
+  const fetchProviders = useCallback(() => {
+    if (!sendMessage) {
+      return;
+    }
+    sendMessage(getMessage(MessageType.ProviderAuthOptionsGet));
+  }, [sendMessage]);
+
   return {
     fetchLibraryApps,
-    fetchQueue
+    fetchQueue,
+    fetchProviders
   };
 };
