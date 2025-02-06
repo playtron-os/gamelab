@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 import { setShowDrives, setDrives, selectDrives } from "@/redux/modules";
 import { UsePlayserveReturn } from "@/hooks";
 import { useAppActions, useAppSelector } from "@/redux/store";
-import { MessageType, getMessage } from "@/types";
+import { DriveInfoResponseBody, MessageType, getMessage } from "@/types";
 
 export const useDriveInfo = (playserve: UsePlayserveReturn) => {
   const { sendMessage } = playserve;
@@ -12,7 +12,7 @@ export const useDriveInfo = (playserve: UsePlayserveReturn) => {
       setShowDrives,
       setDrives
     });
-  const drives = useAppSelector(selectDrives);
+  const drives: DriveInfoResponseBody = useAppSelector(selectDrives);
 
   const fetchDrives = useCallback(() => {
     const message = getMessage(MessageType.DriveInfo, {});
