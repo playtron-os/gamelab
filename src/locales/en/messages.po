@@ -75,7 +75,7 @@ msgstr "All Games ({filteredGamesCount})"
 #~ msgid "All Games ({totalGames})"
 #~ msgstr "All Games ({totalGames})"
 
-#: src/hooks/app-library/use-app-download-actions.ts:114
+#: src/hooks/app-library/use-app-download-actions.ts:106
 msgid "Are you sure you want to stop downloading {appName}?"
 msgstr "Are you sure you want to stop downloading {appName}?"
 
@@ -213,8 +213,8 @@ msgid "Drives"
 msgstr "Drives"
 
 #: src/hooks/app-library/use-app-download-actions.ts:56
-msgid "Drives not loaded."
-msgstr "Drives not loaded."
+#~ msgid "Drives not loaded."
+#~ msgstr "Drives not loaded."
 
 #: src/components/submission-config/submission-action-menu.tsx:57
 msgid "Duplicate"
@@ -676,7 +676,7 @@ msgstr "Search:"
 msgid "Select a provider"
 msgstr "Select a provider"
 
-#: src/hooks/app-library/use-app-download-actions.ts:71
+#: src/hooks/app-library/use-app-download-actions.ts:63
 msgid "Select at least one drive in the side bar."
 msgstr "Select at least one drive in the side bar."
 
