@@ -13,7 +13,7 @@ export const useDriveInfo = (playserve: UsePlayserveReturn) => {
   });
   const [drives, setDrives] = useState<DriveInfoResponseBody>([]);
 
-  const sendDriveInfoMessage = useCallback(() => {
+  const fetchDrives = useCallback(() => {
     const message = getMessage(MessageType.DriveInfo, {});
     sendMessage(message)()
       .then((res) => {
@@ -35,14 +35,14 @@ export const useDriveInfo = (playserve: UsePlayserveReturn) => {
       .catch((err) => {
         console.error(err);
       });
-  }, [sendMessage]);
+  }, [sendMessage, setShowDrivesDispatch]);
 
   useEffect(() => {
-    sendDriveInfoMessage();
+    fetchDrives();
   }, []);
 
   return {
     drives,
-    fetchDrives: sendDriveInfoMessage
+    fetchDrives
   };
 };

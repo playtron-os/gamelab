@@ -90,7 +90,7 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
     [sendMessage]
   );
 
-  const sendAppDownloadPauseMessage = useCallback(
+  const pauseDownload = useCallback(
     async (ownedAppId: string) => {
       const messageAppDownloadPause = getMessage(MessageType.AppDownloadPause, {
         owned_app_id: ownedAppId
@@ -122,7 +122,7 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
 
   return {
     downloadApp,
-    pauseDownload: sendAppDownloadPauseMessage,
+    pauseDownload,
     cancelDownload
   };
 };
