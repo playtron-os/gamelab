@@ -75,7 +75,7 @@ msgstr ""
 #~ msgid "All Games ({totalGames})"
 #~ msgstr ""
 
-#: src/hooks/app-library/use-app-download-actions.ts:106
+#: src/hooks/app-library/use-app-download-actions.ts:116
 msgid "Are you sure you want to stop downloading {appName}?"
 msgstr ""
 
@@ -241,7 +241,7 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: src/hooks/app-library/use-app-download-actions.ts:40
+#: src/hooks/app-library/use-app-download-actions.ts:46
 msgid "Error starting app download: {message}"
 msgstr ""
 
@@ -531,6 +531,10 @@ msgstr ""
 #~ msgid "New override"
 #~ msgstr ""
 
+#: src/hooks/app-library/use-app-download-actions.ts:58
+msgid "No drives found."
+msgstr ""
+
 #: src/components/sidebar/sidebar.tsx:61
 msgid "No internet"
 msgstr ""
@@ -676,7 +680,7 @@ msgstr ""
 msgid "Select a provider"
 msgstr ""
 
-#: src/hooks/app-library/use-app-download-actions.ts:63
+#: src/hooks/app-library/use-app-download-actions.ts:73
 msgid "Select at least one drive in the side bar."
 msgstr ""
 

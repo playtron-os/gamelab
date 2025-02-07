@@ -1,12 +1,13 @@
 import { useCallback, useEffect } from "react";
 import { setShowDrives, setDrives, selectDrives } from "@/redux/modules";
 import { UsePlayserveReturn } from "@/hooks";
-import { useAppActions, useAppSelector } from "@/redux/store";
+import { useAppActions, useAppSelector, useAppDispatch } from "@/redux/store";
 
 import { DriveInfoResponseBody, MessageType, getMessage } from "@/types";
 
 export const useDriveInfo = (playserve: UsePlayserveReturn) => {
   const { sendMessage } = playserve;
+  const dispatch = useAppDispatch();
 
   const { setShowDrives: setShowDrivesDispatch, setDrives: setDrivesDispatch } =
     useAppActions({
@@ -21,13 +22,15 @@ export const useDriveInfo = (playserve: UsePlayserveReturn) => {
       .then((res) => {
         if (res.status === 200 && Array.isArray(res.body)) {
           const driveNames = drives.map((drive) => drive.name);
-          setDrivesDispatch(res.body);
+          dispatch(setDrivesDispatch(res.body));
           res.body.forEach((drive) => {
             if (!driveNames.includes(drive.name)) {
-              setShowDrivesDispatch({
-                drive: drive.name,
-                enabled: true
-              });
+              dispatch(
+                setShowDrivesDispatch({
+                  drive: drive.name,
+                  enabled: true
+                })
+              );
             }
           });
         } else {
@@ -37,7 +40,7 @@ export const useDriveInfo = (playserve: UsePlayserveReturn) => {
       .catch((err) => {
         console.error(err);
       });
-  }, [sendMessage, setShowDrivesDispatch]);
+  }, [sendMessage, setShowDrivesDispatch, setDrivesDispatch, dispatch, drives]);
 
   useEffect(() => {
     fetchDrives();

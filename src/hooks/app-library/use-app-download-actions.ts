@@ -2,13 +2,18 @@ import { useCallback } from "react";
 import { t } from "@lingui/macro";
 import { flashMessage } from "redux-flash";
 
-import { selectAppLibraryState } from "@/redux/modules";
+import { selectAppLibraryState, selectDrives } from "@/redux/modules";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
-import { Message, MessageType, getMessage } from "@/types/playserve/message";
 import { useConfirmationPopUp } from "@/context";
 import { EULA_NOT_ACCEPTED } from "@/constants";
 import { usePlayserve } from "@/hooks";
-import { useDriveInfo } from "@/hooks/use-drive-info";
+import {
+  DriveInfoResponseBody,
+  Message,
+  MessageType,
+  getMessage
+} from "@/types";
+
 export interface UseAppDownloadReturn {
   downloadApp: (
     ownedAppId: string,
@@ -27,13 +32,14 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
   const playserve = usePlayserve();
   const { sendMessage } = playserve;
   const { appFilters } = useAppSelector(selectAppLibraryState);
-  const { drives } = useDriveInfo(playserve);
+  const drives: DriveInfoResponseBody = useAppSelector(selectDrives);
 
   const sendAppDownloadMessage = useCallback(
     async (message: Message<MessageType.AppDownload>) => {
       return await sendMessage(message)().then((response) => {
+        const message = response.body.message;
+        console.log(message);
         if (response.status !== 200) {
-          const message = response.body.message;
           if (message.includes("EULA not accepted")) {
             return EULA_NOT_ACCEPTED;
           } else {
@@ -48,6 +54,10 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
   const downloadApp = useCallback(
     async (ownedAppId: string, force = false) => {
       let installDisk = null;
+      if (drives.length === 0) {
+        dispatch(flashMessage(t`No drives found.`));
+        return;
+      }
       if (drives.length === 1) {
         installDisk = drives[0].name;
       } else {

@@ -75,7 +75,7 @@ msgstr "All Games ({filteredGamesCount})"
 #~ msgid "All Games ({totalGames})"
 #~ msgstr "All Games ({totalGames})"
 
-#: src/hooks/app-library/use-app-download-actions.ts:106
+#: src/hooks/app-library/use-app-download-actions.ts:116
 msgid "Are you sure you want to stop downloading {appName}?"
 msgstr "Are you sure you want to stop downloading {appName}?"
 
@@ -241,7 +241,7 @@ msgstr "Enhanced Debugging"
 msgid "Error"
 msgstr "Error"
 
-#: src/hooks/app-library/use-app-download-actions.ts:40
+#: src/hooks/app-library/use-app-download-actions.ts:46
 msgid "Error starting app download: {message}"
 msgstr "Error starting app download: {message}"
 
@@ -531,6 +531,10 @@ msgstr "Never tested"
 #~ msgid "New override"
 #~ msgstr "New override"
 
+#: src/hooks/app-library/use-app-download-actions.ts:58
+msgid "No drives found."
+msgstr "No drives found."
+
 #: src/components/sidebar/sidebar.tsx:61
 msgid "No internet"
 msgstr "No internet"
@@ -676,7 +680,7 @@ msgstr "Search:"
 msgid "Select a provider"
 msgstr "Select a provider"
 
-#: src/hooks/app-library/use-app-download-actions.ts:63
+#: src/hooks/app-library/use-app-download-actions.ts:73
 msgid "Select at least one drive in the side bar."
 msgstr "Select at least one drive in the side bar."
 
