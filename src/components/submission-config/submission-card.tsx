@@ -3,12 +3,15 @@ import classNames from "classnames";
 import { SubmissionCategory } from "@/constants";
 import { Submission } from "@/types";
 import { SubmissionActionMenu } from "./submission-action-menu";
+import { useAppSelector } from "@/redux/store";
+import { selectAuthState, AuthState } from "@/redux/modules/auth";
 
 export const SubmissionCard: React.FC<{
   submission: Submission;
   selectedItemId: string | null;
   setSelectedItemId: (itemId: string) => void;
 }> = ({ submission, selectedItemId, setSelectedItemId }) => {
+  const { username } = useAppSelector(selectAuthState) as AuthState;
   return (
     <div
       key={submission.item_id}
@@ -40,7 +43,7 @@ export const SubmissionCard: React.FC<{
         </div>
 
         <div className="flex-shrink">
-          <span className="text-sm">{submission.author_name || " "}</span>{" "}
+          <span className="text-sm">{submission.author_name || username}</span>{" "}
           <br />
           <span className="text-xs">{submission.updated_date}</span>
         </div>

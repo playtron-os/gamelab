@@ -100,7 +100,9 @@ export const SubmissionsContextProvider = ({
     app_id: string;
     item_type: SubmissionItemType;
   } | null>(null);
-  const { email } = useAppSelector(selectAuthState) as AuthState;
+  const { email, username, userId } = useAppSelector(
+    selectAuthState
+  ) as AuthState;
   const [editLayout, setEditLayout] = useState<InputConfig | null>(null);
   const [resetWinePrefix, setResetWinePrefix] = useState<boolean>(false);
   const [bypassAppUpdate, setBypassAppUpdate] = useState<boolean>(false);
@@ -302,8 +304,8 @@ export const SubmissionsContextProvider = ({
     async (submission: Submission, item_type: SubmissionItemType) => {
       const updatedSubmission = {
         app_id: submission.app_id,
-        author_id: "",
-        author_name: "",
+        author_id: userId,
+        author_name: username,
         name: submission.name + " (copy)",
         data: submission.data,
         description: submission.description,
