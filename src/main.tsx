@@ -15,6 +15,7 @@ import {
   AppLibraryContextProvider,
   LoadingSpinnerContextProvider
 } from "./context";
+import { SubmissionsContextProvider } from "@/context/submissions-context";
 import { PersistGate } from "redux-persist/integration/react";
 import { Notification } from "./components/notification";
 import { defaultLocale, dynamicActivate } from "./i18n";
@@ -42,8 +43,10 @@ export const Main = () => {
           <LoadingSpinnerContextProvider>
             <ConfirmationPopUpContextProvider>
               <AppLibraryContextProvider>
-                <Routes />
-                <Notification />
+                <SubmissionsContextProvider>
+                  <Routes />
+                  <Notification />
+                </SubmissionsContextProvider>
               </AppLibraryContextProvider>
             </ConfirmationPopUpContextProvider>
           </LoadingSpinnerContextProvider>

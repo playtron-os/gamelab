@@ -55,7 +55,7 @@ msgstr ""
 msgid "Add New Config"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:146
+#: src/components/side-panel/side-panel.tsx:145
 msgid "Added"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 #~ msgid "Bulk Actions"
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:179
+#: src/components/side-panel/side-panel.tsx:178
 msgid "Bypass App Update"
 msgstr ""
 
@@ -228,7 +228,7 @@ msgstr ""
 msgid "End User License Agreements for"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:189
+#: src/components/side-panel/side-panel.tsx:188
 msgid "Enhanced Debugging"
 msgstr ""
 
@@ -338,7 +338,7 @@ msgstr ""
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:227
+#: src/components/side-panel/side-panel.tsx:226
 msgid "Input Config"
 msgstr ""
 
@@ -366,7 +366,7 @@ msgstr ""
 msgid "Install Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:281
+#: src/components/side-panel/side-panel.tsx:280
 msgid "Install folder"
 msgstr ""
 
@@ -382,7 +382,7 @@ msgstr ""
 #~ msgid "Installed Games ({totalInstalled})"
 #~ msgstr ""
 
-#: src/components/app-library/game-card.tsx:158
+#: src/components/app-library/game-card.tsx:166
 msgid "Installed on Drive"
 msgstr ""
 
@@ -442,7 +442,7 @@ msgstr ""
 msgid "Launch config"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:201
+#: src/components/side-panel/side-panel.tsx:200
 msgid "Launch Config"
 msgstr ""
 
@@ -494,7 +494,7 @@ msgstr ""
 msgid "Mouse Move"
 msgstr ""
 
-#: src/components/app-library/game-card.tsx:100
+#: src/components/app-library/game-card.tsx:108
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:83
 msgid "Move"
 msgstr ""
@@ -523,7 +523,7 @@ msgstr ""
 msgid "Name (Z-A)"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:162
+#: src/components/side-panel/side-panel.tsx:161
 msgid "Never tested"
 msgstr ""
 
@@ -539,7 +539,7 @@ msgstr ""
 msgid "Not Downloaded"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:151
+#: src/components/side-panel/side-panel.tsx:150
 msgid "Not installed"
 msgstr ""
 
@@ -584,7 +584,7 @@ msgstr ""
 msgid "Paused"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:254
+#: src/components/side-panel/side-panel.tsx:253
 msgid "Playtron App ID"
 msgstr ""
 
@@ -598,7 +598,7 @@ msgstr ""
 #~ msgid "Playtron Labs"
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:261
+#: src/components/side-panel/side-panel.tsx:260
 msgid "Playtron Slug"
 msgstr ""
 
@@ -614,11 +614,11 @@ msgstr ""
 msgid "Promote"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:99
+#: src/components/side-panel/side-panel.tsx:98
 msgid "Provider"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:105
+#: src/components/side-panel/side-panel.tsx:104
 msgid "Provider App ID"
 msgstr ""
 
@@ -638,16 +638,16 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:268
+#: src/components/side-panel/side-panel.tsx:267
 msgid "Release Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:212
-#: src/components/side-panel/side-panel.tsx:238
+#: src/components/side-panel/side-panel.tsx:211
+#: src/components/side-panel/side-panel.tsx:237
 msgid "Reset"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:169
+#: src/components/side-panel/side-panel.tsx:168
 msgid "Reset Wine Prefix"
 msgstr ""
 
@@ -672,7 +672,7 @@ msgstr ""
 msgid "Search:"
 msgstr ""
 
-#: src/components/provider-selection-modal/provider-selection-modal.tsx:25
+#: src/components/provider-selection-modal/provider-selection-modal.tsx:34
 msgid "Select a provider"
 msgstr ""
 
@@ -765,7 +765,7 @@ msgstr ""
 msgid "Test Games on Playtron Device via Local Network"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:157
+#: src/components/side-panel/side-panel.tsx:156
 msgid "Tested on"
 msgstr ""
 
@@ -814,7 +814,7 @@ msgstr ""
 msgid "Unhandled error: {e}"
 msgstr ""
 
-#: src/components/app-library/game-card.tsx:116
+#: src/components/app-library/game-card.tsx:124
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 msgid "Uninstall"
 msgstr ""

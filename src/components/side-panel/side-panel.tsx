@@ -13,9 +13,10 @@ import {
 } from "@/utils/app-info";
 import { InputConfigModal } from "@/components/input-config-modal/input-config-modal";
 import { LaunchConfigModal } from "@/components/launch-config/launch-config-modal";
-import { ProviderSelectionModal } from "@/components/provider-selection-modal/provider-selection-modal";
 import { LogsModal } from "@/components/logs-modal/logs-modal";
 import { ConfigSelect } from "@/components/side-panel/config-select";
+import { EulaModal } from "@/components/eula-modal/eula-modal";
+
 import { useAppLibraryContext } from "@/context";
 import {
   useSubmissionsContext,
@@ -24,9 +25,9 @@ import {
 import { useAppDispatch } from "@/redux/store";
 
 import { TargetControllerType } from "@/types/input-config";
-import { EulaModal } from "@/components/eula-modal/eula-modal";
+
 import { usePlayserveSendMessage } from "@/hooks";
-import { setCurrentApp } from "@/redux/modules";
+import { setCurrentApp, openProviderSelectionDialog } from "@/redux/modules";
 
 export const SidePanel: React.FC = () => {
   const {
@@ -53,8 +54,6 @@ export const SidePanel: React.FC = () => {
   const [isLaunching, setIsLaunching] = useState<boolean>(false);
   const [isInputConfigOpen, setIsInputConfigOpen] = useState<boolean>(false);
   const [isLaunchConfigOpen, setIsLaunchConfigOpen] = useState<boolean>(false);
-  const [isProviderSelectionOpen, setIsProviderSelectionOpen] =
-    useState<boolean>(false);
   const [isLogsOpen, setIsLogsOpen] = useState<boolean>(false);
   const [targetLayout, setTargetLayout] =
     useState<TargetControllerType>("xbox");
@@ -301,7 +300,8 @@ export const SidePanel: React.FC = () => {
                   if (currentApp.owned_apps.length === 1) {
                     ownedAppId = currentApp.owned_apps[0].id;
                   } else {
-                    setIsProviderSelectionOpen(true);
+                    dispatch(openProviderSelectionDialog());
+                    return;
                   }
                 }
 
@@ -347,15 +347,7 @@ export const SidePanel: React.FC = () => {
         appInfo={currentApp}
         isEnhancedDebuggingEnabled={launchParams.enhancedDebugging}
       />
-      <ProviderSelectionModal
-        isOpen={isProviderSelectionOpen}
-        appInfo={currentApp}
-        onProviderSelect={(ownedAppId) => {
-          handleAppDefaultAction(currentApp, ownedAppId, launchParams);
-          setIsProviderSelectionOpen(false);
-        }}
-        onClose={() => setIsProviderSelectionOpen(false)}
-      />
+
       <EulaModal
         appInfo={currentApp}
         isOpen={isEulaOpen}

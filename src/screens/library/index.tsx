@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import classNames from "classnames";
 import { usePlayserve } from "@/hooks";
 import { MessageType } from "@/types/playserve/message";
-
-import { useAppActions, useAppSelector, useAppDispatch } from "@/redux/store";
+import { ProviderSelectionModal } from "@/components/provider-selection-modal/provider-selection-modal";
+import { useAppActions, useAppDispatch } from "@/redux/store";
 import {
   setApps,
   updateInstalledApps,
@@ -12,13 +12,14 @@ import {
   setQueue,
   setLoadingProgress,
   setAppDownloadProgress,
-  selectCurrentAppState,
   setAvailableProviders
 } from "@/redux/modules";
+
 import { AppLibrary } from "../../components";
 import { SidePanel } from "@/components/side-panel/side-panel";
 import { flashMessage } from "redux-flash";
-import { SubmissionsContextProvider } from "@/context/submissions-context";
+import { useSubmissionsContext } from "@/context/submissions-context";
+import { useAppLibraryContext } from "@/context";
 import { Sidebar } from "@/components/sidebar/sidebar";
 
 import { useAppLibraryActions } from "@/hooks/app-library/use-app-library-actions";
@@ -45,13 +46,16 @@ export const LibraryScreen = () => {
   });
   const { fetchLibraryApps, fetchQueue, fetchProviders } =
     useAppLibraryActions();
+  const {
+    handlers: { handleAppDefaultAction }
+  } = useAppLibraryContext();
+  const { clickedApp: currentApp, launchParams } = useSubmissionsContext();
   useEffect(() => {
     fetchLibraryApps(false);
     fetchQueue();
     fetchProviders();
   }, []);
 
-  const currentApp = useAppSelector(selectCurrentAppState);
   const dispatch = useAppDispatch();
 
   usePlayserve({
@@ -128,17 +132,23 @@ export const LibraryScreen = () => {
         <Sidebar />
       </div>
       <div className="h-screen flex">
-        <SubmissionsContextProvider>
-          <div
-            className={classNames(
-              "ml-[240px] w-full bg-[--fill-subtler]",
-              !!currentApp && "mr-[465px]"
-            )}
-          >
-            <AppLibrary />
-            <div>{!!currentApp && <SidePanel key={currentApp.app.id} />}</div>
-          </div>
-        </SubmissionsContextProvider>
+        <div
+          className={classNames(
+            "ml-[240px] w-full bg-[--fill-subtler]",
+            !!currentApp && "mr-[465px]"
+          )}
+        >
+          <AppLibrary />
+          <div>{!!currentApp && <SidePanel key={currentApp.app.id} />}</div>
+        </div>
+        {currentApp && (
+          <ProviderSelectionModal
+            appInfo={currentApp}
+            onProviderSelect={(ownedAppId) => {
+              handleAppDefaultAction(currentApp, ownedAppId, launchParams);
+            }}
+          />
+        )}
       </div>
     </>
   );
