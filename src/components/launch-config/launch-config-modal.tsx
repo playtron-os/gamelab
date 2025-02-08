@@ -39,6 +39,8 @@ export const LaunchConfigModal: React.FC<InputConfigModalProps> = ({
       name: editLaunchConfig.name,
       description: editLaunchConfig.description,
       data: JSON.stringify({
+        name: editLaunchConfig.name,
+        description: editLaunchConfig.description,
         ...(editLaunchConfig.configuration || {}),
         overrides: editLaunchConfig.overrides
       })

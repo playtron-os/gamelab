@@ -49,8 +49,8 @@ msgstr "{label} is valid"
 msgid "Add Config"
 msgstr "Add Config"
 
-#: src/components/input-config-modal/input-config-modal.tsx:211
-#: src/components/launch-config/launch-config-modal.tsx:98
+#: src/components/input-config-modal/input-config-modal.tsx:213
+#: src/components/launch-config/launch-config-modal.tsx:100
 #: src/components/submission-config/submissions-empty.tsx:83
 msgid "Add New Config"
 msgstr "Add New Config"
@@ -75,7 +75,7 @@ msgstr "All Games ({filteredGamesCount})"
 #~ msgid "All Games ({totalGames})"
 #~ msgstr "All Games ({totalGames})"
 
-#: src/hooks/app-library/use-app-download-actions.ts:116
+#: src/hooks/app-library/use-app-download-actions.ts:115
 msgid "Are you sure you want to stop downloading {appName}?"
 msgstr "Are you sure you want to stop downloading {appName}?"
 
@@ -126,8 +126,8 @@ msgstr "Clear"
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:90
 #: src/components/eula-modal/eula-modal.tsx:94
-#: src/components/input-config-modal/input-config-modal.tsx:213
-#: src/components/launch-config/launch-config-modal.tsx:100
+#: src/components/input-config-modal/input-config-modal.tsx:215
+#: src/components/launch-config/launch-config-modal.tsx:102
 #: src/components/move-app-dialog/move-app-dialog.tsx:114
 #: src/components/submission-config/submissions-empty.tsx:62
 msgid "Close"
@@ -241,7 +241,7 @@ msgstr "Enhanced Debugging"
 msgid "Error"
 msgstr "Error"
 
-#: src/hooks/app-library/use-app-download-actions.ts:46
+#: src/hooks/app-library/use-app-download-actions.ts:45
 msgid "Error starting app download: {message}"
 msgstr "Error starting app download: {message}"
 
@@ -350,7 +350,7 @@ msgstr "Input Config"
 msgid "Input Config for {gameName}"
 msgstr "Input Config for {gameName}"
 
-#: src/components/input-config-modal/input-config-modal.tsx:188
+#: src/components/input-config-modal/input-config-modal.tsx:190
 msgid "Input Config List"
 msgstr "Input Config List"
 
@@ -458,7 +458,7 @@ msgstr "Launch Config for {appName}"
 #~ msgid "Launch config is valid"
 #~ msgstr "Launch config is valid"
 
-#: src/components/launch-config/launch-config-modal.tsx:75
+#: src/components/launch-config/launch-config-modal.tsx:77
 msgid "Launch Config List"
 msgstr "Launch Config List"
 
@@ -531,7 +531,7 @@ msgstr "Never tested"
 #~ msgid "New override"
 #~ msgstr "New override"
 
-#: src/hooks/app-library/use-app-download-actions.ts:58
+#: src/hooks/app-library/use-app-download-actions.ts:57
 msgid "No drives found."
 msgstr "No drives found."
 
@@ -680,7 +680,7 @@ msgstr "Search:"
 msgid "Select a provider"
 msgstr "Select a provider"
 
-#: src/hooks/app-library/use-app-download-actions.ts:73
+#: src/hooks/app-library/use-app-download-actions.ts:72
 msgid "Select at least one drive in the side bar."
 msgstr "Select at least one drive in the side bar."
 

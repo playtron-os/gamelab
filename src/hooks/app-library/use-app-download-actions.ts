@@ -37,9 +37,8 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
   const sendAppDownloadMessage = useCallback(
     async (message: Message<MessageType.AppDownload>) => {
       return await sendMessage(message)().then((response) => {
-        const message = response.body.message;
-        console.log(message);
         if (response.status !== 200) {
+          const message = response.body.message;
           if (message.includes("EULA not accepted")) {
             return EULA_NOT_ACCEPTED;
           } else {

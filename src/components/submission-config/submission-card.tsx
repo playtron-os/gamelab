@@ -31,7 +31,7 @@ export const SubmissionCard: React.FC<{
               "rounded-sm px-2 py-1 ms-2 text-xs",
               submission.submission_category === SubmissionCategory.Official
                 ? "bg-[--feedback-success-primary]"
-                : "bg-[--feedback-success-tertiary]"
+                : "bg-[--feedback-success-secondary]"
             )}
           >
             {submission.submission_category}
@@ -42,13 +42,13 @@ export const SubmissionCard: React.FC<{
           </span>
         </div>
 
-        <div className="flex-shrink">
+        <div className="flex-shrink py-1">
           <span className="text-sm">{submission.author_name || username}</span>{" "}
           <br />
           <span className="text-xs">{submission.updated_date}</span>
         </div>
         <div className="flex-shrink-0">
-          <div className="px-5 h-10 p-2">
+          <div className="px-5 h-10 py-2">
             <SubmissionActionMenu submission={submission} />
           </div>
         </div>
