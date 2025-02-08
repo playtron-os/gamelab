@@ -27,7 +27,7 @@ export function nearestPowerOfTwo(n: number) {
   return n - a < b - n ? a : b;
 }
 
-export function getDiskSize(size: number | undefined): string {
+export function getDiskSize(size: number | undefined, precision = 1): string {
   if (!size) {
     return "";
   }
@@ -37,7 +37,12 @@ export function getDiskSize(size: number | undefined): string {
     size /= 1024;
     ++unitIndex;
   }
-  return `${Math.round(size * 10) / 10}${units[unitIndex]}`;
+  const displaySize =
+    precision == 0
+      ? Math.round(size)
+      : Math.round(size * Math.pow(10, precision)) / Math.pow(10, precision);
+
+  return `${displaySize}${units[unitIndex]}`;
 }
 
 /**

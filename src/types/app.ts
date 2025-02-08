@@ -112,6 +112,12 @@ export interface QueueDownloadGetResponseBody {
   user_id: string;
 }
 
+export interface AppMoveProgressResponseBody {
+  owned_app: OwnedApp;
+  progress: number;
+  user_id: string;
+}
+
 export interface BulkActionsProps {
   selectedApps: Set<string>;
   data: AppInformation[];

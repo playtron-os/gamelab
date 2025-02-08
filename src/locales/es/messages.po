@@ -128,7 +128,7 @@ msgstr ""
 #: src/components/eula-modal/eula-modal.tsx:94
 #: src/components/input-config-modal/input-config-modal.tsx:215
 #: src/components/launch-config/launch-config-modal.tsx:102
-#: src/components/move-app-dialog/move-app-dialog.tsx:114
+#: src/components/move-app-dialog/move-app-dialog.tsx:136
 #: src/components/submission-config/submissions-empty.tsx:62
 msgid "Close"
 msgstr ""
@@ -155,8 +155,8 @@ msgid "Configuration has been submitted"
 msgstr ""
 
 #: src/components/move-app-dialog/move-app-dialog.tsx:107
-msgid "Confirm"
-msgstr ""
+#~ msgid "Confirm"
+#~ msgstr ""
 
 #: src/screens/connect-device/connect-device.tsx:111
 #: src/screens/connect-device/connect-device.tsx:150
@@ -196,11 +196,11 @@ msgid "Disconnected from the internet"
 msgstr ""
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:63
-#: src/utils/app-info.ts:165
+#: src/utils/app-info.ts:170
 msgid "Download"
 msgstr ""
 
-#: src/utils/app-info.ts:75
+#: src/utils/app-info.ts:80
 msgid "Downloading"
 msgstr ""
 
@@ -390,7 +390,7 @@ msgstr ""
 #~ msgid "Installed on drive:"
 #~ msgstr ""
 
-#: src/utils/app-info.ts:77
+#: src/utils/app-info.ts:82
 msgid "Installing"
 msgstr ""
 
@@ -434,7 +434,7 @@ msgstr ""
 msgid "Last Updated"
 msgstr ""
 
-#: src/utils/app-info.ts:159
+#: src/utils/app-info.ts:164
 msgid "Launch"
 msgstr ""
 
@@ -462,11 +462,11 @@ msgstr ""
 msgid "Launch Config List"
 msgstr ""
 
-#: src/utils/app-info.ts:89
+#: src/utils/app-info.ts:94
 msgid "Launching"
 msgstr ""
 
-#: src/utils/app-info.ts:175
+#: src/utils/app-info.ts:180
 msgid "Launching..."
 msgstr ""
 
@@ -499,15 +499,15 @@ msgstr ""
 msgid "Move"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:74
+#: src/components/move-app-dialog/move-app-dialog.tsx:72
 msgid "Move {appName}"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:123
+#: src/components/move-app-dialog/move-app-dialog.tsx:149
 msgid "Move In Progress..."
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:74
+#: src/components/move-app-dialog/move-app-dialog.tsx:72
 msgid "Move selected apps"
 msgstr ""
 
@@ -539,7 +539,7 @@ msgstr ""
 msgid "No internet"
 msgstr ""
 
-#: src/utils/app-info.ts:85
+#: src/utils/app-info.ts:90
 msgid "Not Downloaded"
 msgstr ""
 
@@ -580,11 +580,11 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: src/utils/app-info.ts:163
+#: src/utils/app-info.ts:168
 msgid "Pause"
 msgstr ""
 
-#: src/utils/app-info.ts:81
+#: src/utils/app-info.ts:86
 msgid "Paused"
 msgstr ""
 
@@ -606,11 +606,11 @@ msgstr ""
 msgid "Playtron Slug"
 msgstr ""
 
-#: src/utils/app-info.ts:71
+#: src/utils/app-info.ts:76
 msgid "Pre-Allocating"
 msgstr ""
 
-#: src/utils/app-info.ts:171
+#: src/utils/app-info.ts:176
 msgid "Prioritize"
 msgstr ""
 
@@ -634,11 +634,11 @@ msgstr ""
 msgid "PS5 controller"
 msgstr ""
 
-#: src/utils/app-info.ts:83
+#: src/utils/app-info.ts:88
 msgid "Queued"
 msgstr ""
 
-#: src/utils/app-info.ts:69
+#: src/utils/app-info.ts:74
 msgid "Ready"
 msgstr ""
 
@@ -655,11 +655,11 @@ msgstr ""
 msgid "Reset Wine Prefix"
 msgstr ""
 
-#: src/utils/app-info.ts:169
+#: src/utils/app-info.ts:174
 msgid "Resume"
 msgstr ""
 
-#: src/utils/app-info.ts:87
+#: src/utils/app-info.ts:92
 msgid "Running"
 msgstr ""
 
@@ -689,8 +689,8 @@ msgid "Select Config"
 msgstr ""
 
 #: src/components/move-app-dialog/move-app-dialog.tsx:95
-msgid "Select drive"
-msgstr ""
+#~ msgid "Select drive"
+#~ msgstr ""
 
 #: src/context/app-library-context/table-config.tsx:52
 #~ msgid "Size"
@@ -745,7 +745,7 @@ msgstr ""
 #~ msgid "Steam"
 #~ msgstr ""
 
-#: src/utils/app-info.ts:173
+#: src/utils/app-info.ts:178
 msgid "Stop"
 msgstr ""
 
@@ -758,7 +758,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/utils/app-info.ts:276
+#: src/utils/app-info.ts:281
 msgid "System Drive"
 msgstr ""
 
@@ -793,7 +793,7 @@ msgstr ""
 #~ msgid "Title"
 #~ msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:91
+#: src/components/move-app-dialog/move-app-dialog.tsx:97
 msgid "To:"
 msgstr ""
 
@@ -823,7 +823,7 @@ msgstr ""
 msgid "Uninstall"
 msgstr ""
 
-#: src/utils/app-info.ts:91
+#: src/utils/app-info.ts:96
 msgid "Unknown"
 msgstr ""
 
@@ -836,11 +836,11 @@ msgstr ""
 msgid "Untitled Layout"
 msgstr ""
 
-#: src/utils/app-info.ts:167
+#: src/utils/app-info.ts:172
 msgid "Update"
 msgstr ""
 
-#: src/utils/app-info.ts:79
+#: src/utils/app-info.ts:84
 msgid "Update Required"
 msgstr ""
 
@@ -857,7 +857,7 @@ msgstr ""
 msgid "Validate JSON"
 msgstr ""
 
-#: src/utils/app-info.ts:73
+#: src/utils/app-info.ts:78
 msgid "Verifying"
 msgstr ""
 

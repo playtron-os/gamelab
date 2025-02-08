@@ -1,8 +1,12 @@
 export interface DriveInfo {
   name: string;
   path: string;
+  file_system: string;
   max_size: number;
   available_space: number;
+  model: string;
+  needs_formatting: boolean;
+  vendor: string | null;
 }
 
 export type DriveInfoResponseBody = DriveInfo[];
