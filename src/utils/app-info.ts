@@ -38,9 +38,7 @@ export function getDiskSize(size: number | undefined, precision = 1): string {
     ++unitIndex;
   }
   const displaySize =
-    precision == 0
-      ? Math.round(size)
-      : Math.round(size * Math.pow(10, precision)) / Math.pow(10, precision);
+    Math.round(size * Math.pow(10, precision)) / Math.pow(10, precision);
 
   return `${displaySize}${units[unitIndex]}`;
 }
