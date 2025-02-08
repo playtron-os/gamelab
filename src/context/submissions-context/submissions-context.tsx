@@ -379,7 +379,7 @@ export const SubmissionsContextProvider = ({
           }
           dispatch(flashMessage(t`Configuration has been submitted`));
         } else {
-          // TODO: Translate errrors properly
+          // TODO: Translate errors properly
           const errorMessage = response.body.message;
           dispatch(
             flashErrorMessage(
