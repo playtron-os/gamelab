@@ -9,11 +9,13 @@ import {
   InstalledApp,
   QueuedDownload
 } from "@/types";
+import { DriveInfoResponseBody } from "@/types/drive";
 import { invoke } from "@tauri-apps/api/core";
 
 export interface AppLibraryState {
   apps: AppInformation[];
   currentApp?: AppInformation;
+  drives: DriveInfoResponseBody;
   appFilters: {
     providers: { [key: string]: boolean };
     drives: Array<string>;
@@ -30,6 +32,7 @@ export const APP_LIBRARY_INITIAL_STATE: AppLibraryState = {
   apps: [],
   currentApp: undefined,
   queue: [],
+  drives: [],
   appFilters: {
     providers: {
       [AppProvider.Steam]: true,
@@ -53,6 +56,9 @@ export const appLibrarySlice = createSlice({
       state.loading = false;
       state.apps = action.payload;
       state.apps.sort((a, b) => a.app.name.localeCompare(b.app.name));
+    },
+    setDrives: (state, action) => {
+      state.drives = action.payload;
     },
     setShowProvider: (
       state,
@@ -224,6 +230,7 @@ export const appLibrarySlice = createSlice({
 
 export const {
   setApps,
+  setDrives,
   setShowProvider,
   setShowDrives,
   setStatusFilter,
@@ -247,8 +254,7 @@ export const selectAppLibraryQueueState = (state: RootState) =>
   state.appLibrary.queue;
 export const selectAppLibraryQueuePositionMapState = (state: RootState) =>
   state.appLibrary.queuePositionMap;
-export const selectAppLibraryLoadingState = (state: RootState) =>
-  state.appLibrary.loading;
 export const selectAppLibraryLoadingProgressState = (state: RootState) =>
   state.appLibrary.loadingProgress;
+export const selectDrives = (state: RootState) => state.appLibrary.drives;
 export default appLibrarySlice.reducer;

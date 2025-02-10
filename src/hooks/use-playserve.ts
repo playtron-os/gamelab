@@ -29,7 +29,7 @@ export function getWebsocketUrl(
   if (!deviceIp) {
     return "";
   }
-  const url = new URL(`ws://${deviceIp}/ws?app_type=labs`);
+  const url = new URL(`ws://${deviceIp}/ws?app_type=labs&client_type=labs`); // app_type param was renamed to client_type
   if (!url.port) {
     url.port = port.toString();
   }

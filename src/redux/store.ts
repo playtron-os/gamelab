@@ -8,6 +8,7 @@ import appLibrary from "@/redux/modules/app-library/app-library-slice";
 import auth from "@/redux/modules/auth/auth-slice";
 import accounts from "@/redux/modules/accounts/accounts-slice";
 import moveAppDialog from "@/redux/modules/move-app-dialog/move-app-dialog-slice";
+import providerSelectionDialog from "@/redux/modules/provider-selection-dialog/provider-selection-dialog-slice";
 
 import { createReduxHistoryContext } from "redux-first-history";
 import { createBrowserHistory } from "history";
@@ -36,6 +37,7 @@ const combinedReducers = combineReducers({
   appLibrary,
   auth,
   moveAppDialog,
+  providerSelectionDialog,
   router: routerReducer,
   accounts,
   flash: flashReducer

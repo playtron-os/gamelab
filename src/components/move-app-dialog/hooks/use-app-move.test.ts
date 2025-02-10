@@ -59,7 +59,11 @@ const MOCK_DRIVE_INFO: DriveInfo = {
   name: "/test/drive/",
   path: "run/test/drive/",
   available_space: 100,
-  max_size: 100
+  max_size: 100,
+  model: "WD 50TB",
+  needs_formatting: false,
+  vendor: "WD",
+  file_system: "ext4"
 };
 
 jest.mock("@/context", () => ({

@@ -71,7 +71,7 @@ export const ProviderSection: React.FC = () => {
         loadingProgress={0}
         onClick={() => {
           availableProviders.forEach((provider) =>
-            setShowProvider({ provider, show: !showAll })
+            setShowProviderDispatch({ provider, show: !showAll })
           );
         }}
       />

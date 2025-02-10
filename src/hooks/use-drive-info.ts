@@ -1,31 +1,36 @@
-import { useCallback, useState, useEffect } from "react";
-import { setShowDrives } from "@/redux/modules";
+import { useCallback, useEffect } from "react";
+import { setShowDrives, setDrives, selectDrives } from "@/redux/modules";
 import { UsePlayserveReturn } from "@/hooks";
-import { useAppActions } from "@/redux/store";
-import { MessageType, getMessage } from "@/types";
-import { DriveInfoResponseBody } from "@/types/drive";
+import { useAppActions, useAppSelector, useAppDispatch } from "@/redux/store";
+
+import { DriveInfoResponseBody, MessageType, getMessage } from "@/types";
 
 export const useDriveInfo = (playserve: UsePlayserveReturn) => {
   const { sendMessage } = playserve;
+  const dispatch = useAppDispatch();
 
-  const { setShowDrives: setShowDrivesDispatch } = useAppActions({
-    setShowDrives
-  });
-  const [drives, setDrives] = useState<DriveInfoResponseBody>([]);
+  const { setShowDrives: setShowDrivesDispatch, setDrives: setDrivesDispatch } =
+    useAppActions({
+      setShowDrives,
+      setDrives
+    });
+  const drives: DriveInfoResponseBody = useAppSelector(selectDrives);
 
-  const sendDriveInfoMessage = useCallback(() => {
+  const fetchDrives = useCallback(() => {
     const message = getMessage(MessageType.DriveInfo, {});
     sendMessage(message)()
       .then((res) => {
         if (res.status === 200 && Array.isArray(res.body)) {
           const driveNames = drives.map((drive) => drive.name);
-          setDrives(res.body);
+          dispatch(setDrivesDispatch(res.body));
           res.body.forEach((drive) => {
             if (!driveNames.includes(drive.name)) {
-              setShowDrivesDispatch({
-                drive: drive.name,
-                enabled: true
-              });
+              dispatch(
+                setShowDrivesDispatch({
+                  drive: drive.name,
+                  enabled: true
+                })
+              );
             }
           });
         } else {
@@ -35,14 +40,14 @@ export const useDriveInfo = (playserve: UsePlayserveReturn) => {
       .catch((err) => {
         console.error(err);
       });
-  }, [sendMessage]);
+  }, [sendMessage, setShowDrivesDispatch, setDrivesDispatch, dispatch, drives]);
 
   useEffect(() => {
-    sendDriveInfoMessage();
+    fetchDrives();
   }, []);
 
   return {
     drives,
-    fetchDrives: sendDriveInfoMessage
+    fetchDrives
   };
 };

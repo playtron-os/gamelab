@@ -5,6 +5,7 @@ export interface AppLaunchRequestBody {
   reset_wine_prefix?: boolean;
   launch_config_id?: string;
   input_config_id?: string;
+  is_test?: boolean;
 }
 
 interface RegistryEntry {
@@ -48,4 +49,5 @@ export interface LaunchParams {
   launchConfigId?: string;
   inputConfigId?: string;
   enhancedDebugging: boolean;
+  isTest?: boolean;
 }

@@ -33,6 +33,7 @@ export interface MessageResponseMapping extends MessageMapping {
     owned_app_id: string;
     content: string;
   };
+  [MessageType.AppMoveProgress]: app.AppMoveProgressResponseBody;
   [MessageType.AppEulasGet]: app.AppEulaResponseBody[];
   [MessageType.AvatarUpdate]: app.ProfileAvatarInformation;
   [MessageType.AppPostInstallStatusUpdate]: AppPostInstallStatusResponse;

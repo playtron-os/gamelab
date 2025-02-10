@@ -15,8 +15,8 @@ export type SubmissionItemType =
 export interface SubmissionSaveModel {
   item_id?: string;
   data: string;
-  name?: string;
-  description?: string;
+  name: string;
+  description: string;
 }
 
 export interface BaseSubmission {

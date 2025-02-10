@@ -12,7 +12,8 @@ import {
 } from "@playtron/styleguide";
 
 import { AppDownloadStage, AppStatus, PlaytronAppType } from "@/types";
-
+import { useAppDispatch } from "@/redux/store";
+import { setCurrentApp, openProviderSelectionDialog } from "@/redux/modules";
 import { useAppStatus } from "@/hooks/app-library/use-app-status";
 import { AppInformation, OwnedApp } from "@/types/app-library";
 import { AppProvider } from "@/types/platform-auth";
@@ -54,6 +55,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   selectedId,
   onSelectGame
 }) => {
+  const dispatch = useAppDispatch();
   const [isSelected, setIsSelected] = useState(false);
   const {
     handlers: { openMoveAppDialog, uninstallApp, handleAppDefaultAction }
@@ -74,11 +76,17 @@ export const GameCard: React.FC<GameCardProps> = ({
   }
   const handleLaunchParams = useCallback(() => {
     onSelectedIdChange(game.app.id);
-    handleAppDefaultAction(
-      game,
-      game.installed_app?.owned_app.id,
-      launchParams
-    );
+    setCurrentApp(game);
+    let ownedAppId = game.installed_app?.owned_app.id;
+    if (!ownedAppId) {
+      if (game.owned_apps.length === 1) {
+        ownedAppId = game.owned_apps[0].id;
+      } else {
+        dispatch(openProviderSelectionDialog());
+        return;
+      }
+    }
+    handleAppDefaultAction(game, ownedAppId, launchParams);
   }, [launchParams, game]);
 
   const appActions = [];

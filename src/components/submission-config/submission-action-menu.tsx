@@ -57,18 +57,22 @@ export const SubmissionActionMenu: React.FC<SubmissionMenuProps> = ({
     label: t`Duplicate`,
     onClick: () => copySubmission(submission, submission.submission_item_type)
   });
-
-  appActions.push({
-    id: 4,
-    label: t`Delete`,
-    onClick: () => {
-      askDeleteSubmission(
-        submission.item_id,
-        submission.submission_item_type,
-        submission.app_id
-      );
-    }
-  });
+  if (
+    email?.endsWith("@playtron.one") ||
+    submission.submission_category !== "Official"
+  ) {
+    appActions.push({
+      id: 4,
+      label: t`Delete`,
+      onClick: () => {
+        askDeleteSubmission(
+          submission.item_id,
+          submission.submission_item_type,
+          submission.app_id
+        );
+      }
+    });
+  }
 
   if (
     email?.endsWith("@playtron.one") &&

@@ -49,6 +49,7 @@ export interface MessageRequestMapping extends MessageMapping {
     enhanced_debugging?: boolean;
     launch_config_id?: string;
     input_config_id?: string;
+    is_test?: boolean;
   };
   [MessageType.AppMove]: drive.AppMoveRequest;
   [MessageType.AppTerminate]: OwnedAppIdRequest;
