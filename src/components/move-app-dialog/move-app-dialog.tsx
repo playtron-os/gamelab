@@ -116,12 +116,16 @@ export const MoveAppDialog: React.FC = () => {
                       <span className="font-sm text-gray-400"></span>
                       <br />
                       <div className="text-xs font-bold text-gray-400">
-                        {drive.name}: {getDiskSize(drive.available_space, 0)}/
-                        {getDiskSize(drive.max_size, 0)}
+                        {drive.name}: {getDiskSize(drive.available_space, 1)}{" "}
+                        {t`available of`} {getDiskSize(drive.max_size, 1)}
                       </div>
                       <div className="w-[400px]">
                         <ProgressBar
-                          value={(drive.available_space / drive.max_size) * 100}
+                          value={
+                            ((drive.max_size - drive.available_space) /
+                              drive.max_size) *
+                            100
+                          }
                           size="sm"
                         />
                       </div>

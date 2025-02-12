@@ -99,6 +99,10 @@ msgstr ""
 msgid "Author"
 msgstr ""
 
+#: src/components/move-app-dialog/move-app-dialog.tsx:120
+msgid "available of"
+msgstr ""
+
 #: src/components/launch-config-editor/launch-config-editor.tsx:235
 msgid "Base config"
 msgstr ""
@@ -128,7 +132,7 @@ msgstr ""
 #: src/components/eula-modal/eula-modal.tsx:94
 #: src/components/input-config-modal/input-config-modal.tsx:215
 #: src/components/launch-config/launch-config-modal.tsx:102
-#: src/components/move-app-dialog/move-app-dialog.tsx:136
+#: src/components/move-app-dialog/move-app-dialog.tsx:140
 #: src/components/submission-config/submissions-empty.tsx:62
 msgid "Close"
 msgstr ""
@@ -503,7 +507,7 @@ msgstr ""
 msgid "Move {appName}"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:149
+#: src/components/move-app-dialog/move-app-dialog.tsx:153
 msgid "Move In Progress..."
 msgstr ""
 
