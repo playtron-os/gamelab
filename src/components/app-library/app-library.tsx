@@ -149,6 +149,8 @@ export const AppLibrary: React.FC = () => {
             a.installed_app?.install_config?.disk_size
           );
         case "status":
+          if (!a.installed_app) return 1;
+          if (!b.installed_app) return -1;
           return (
             getAppStatusWithQueue(
               a,
@@ -162,21 +164,29 @@ export const AppLibrary: React.FC = () => {
             )
           );
         case "install_date":
+          if (!a.installed_app) return 1;
+          if (!b.installed_app) return -1;
           return (
             new Date(b.installed_app?.created_at || "").getTime() -
             new Date(a.installed_app?.created_at || "").getTime()
           );
         case "last_added":
+          if (!a.installed_app) return 1;
+          if (!b.installed_app) return -1;
           return (
             new Date(b.installed_app?.created_at || "").getTime() -
             new Date(a.installed_app?.created_at || "").getTime()
           );
         case "last_updated":
+          if (!a.installed_app) return 1;
+          if (!b.installed_app) return -1;
           return (
             new Date(b.installed_app?.updated_at || "").getTime() -
             new Date(a.installed_app?.updated_at || "").getTime()
           );
         case "last_played":
+          if (!a.installed_app) return 1;
+          if (!b.installed_app) return -1;
           return (
             new Date(b.installed_app?.launched_at || "").getTime() -
             new Date(a.installed_app?.launched_at || "").getTime()

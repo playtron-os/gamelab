@@ -63,11 +63,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:224
+#: src/components/app-library/app-library.tsx:234
 msgid "All Games"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:255
+#: src/components/app-library/app-library.tsx:265
 msgid "All Games ({filteredGamesCount})"
 msgstr ""
 
@@ -374,11 +374,11 @@ msgstr ""
 msgid "Install folder"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:234
+#: src/components/app-library/app-library.tsx:244
 msgid "Installed"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:256
+#: src/components/app-library/app-library.tsx:266
 msgid "Installed Games ({filteredGamesCount})"
 msgstr ""
 
@@ -672,7 +672,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:245
+#: src/components/app-library/app-library.tsx:255
 msgid "Search"
 msgstr ""
 
