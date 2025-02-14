@@ -50,7 +50,7 @@ msgid "Add Config"
 msgstr ""
 
 #: src/components/input-config-modal/input-config-modal.tsx:213
-#: src/components/launch-config/launch-config-modal.tsx:100
+#: src/components/launch-config/launch-config-modal.tsx:99
 #: src/components/submission-config/submissions-empty.tsx:83
 msgid "Add New Config"
 msgstr ""
@@ -131,7 +131,7 @@ msgstr ""
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:90
 #: src/components/eula-modal/eula-modal.tsx:94
 #: src/components/input-config-modal/input-config-modal.tsx:215
-#: src/components/launch-config/launch-config-modal.tsx:102
+#: src/components/launch-config/launch-config-modal.tsx:101
 #: src/components/move-app-dialog/move-app-dialog.tsx:140
 #: src/components/submission-config/submissions-empty.tsx:62
 msgid "Close"
@@ -154,7 +154,7 @@ msgstr ""
 msgid "CONFIGURATION"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:380
+#: src/context/submissions-context/submissions-context.tsx:386
 msgid "Configuration has been submitted"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:429
+#: src/context/submissions-context/submissions-context.tsx:435
 msgid "Delete this configuration?"
 msgstr ""
 
@@ -462,7 +462,7 @@ msgstr ""
 #~ msgid "Launch config is valid"
 #~ msgstr ""
 
-#: src/components/launch-config/launch-config-modal.tsx:77
+#: src/components/launch-config/launch-config-modal.tsx:76
 msgid "Launch Config List"
 msgstr ""
 
@@ -789,7 +789,7 @@ msgstr ""
 msgid "There is no launch configuration created for"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:386
+#: src/context/submissions-context/submissions-context.tsx:392
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 
