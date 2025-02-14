@@ -149,17 +149,17 @@ export const AppLibrary: React.FC = () => {
             a.installed_app?.install_config?.disk_size
           );
         case "status":
-          if (!a.installed_app) return 1;
-          if (!b.installed_app) return -1;
+          if (!a.installed_app) return -1;
+          if (!b.installed_app) return 1;
           return (
-            getAppStatusWithQueue(
-              a,
-              a.installed_app?.owned_app.id,
-              queuePositionMapState
-            ) -
             getAppStatusWithQueue(
               b,
               b.installed_app?.owned_app.id,
+              queuePositionMapState
+            ) -
+            getAppStatusWithQueue(
+              a,
+              a.installed_app?.owned_app.id,
               queuePositionMapState
             )
           );
