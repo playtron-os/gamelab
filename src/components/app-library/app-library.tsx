@@ -35,7 +35,7 @@ export const AppLibrary: React.FC = () => {
   const parentRef = useRef<HTMLDivElement>(null);
   const { onSelectedIdChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
-  const [sortKey, setSortKey] = useState("name");
+  const [sortKey, setSortKey] = useState("install_date");
   const { props: confirmationPopUpProps } = useConfirmationPopUp();
 
   const [selectedGame, setSelectedGame] = useState<AppInformation | null>(null);
