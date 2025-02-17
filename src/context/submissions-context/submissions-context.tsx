@@ -338,7 +338,7 @@ export const SubmissionsContextProvider = ({
         if (response.status === 200) {
           dispatch(flashMessage(t`Submission promoted`));
           sendMessage(
-            getMessage(MessageType.SubmissionGetAllUpdate, {
+            getMessage(MessageType.SubmissionGetAll, {
               app_id: app_id,
               item_type: item_type
             })

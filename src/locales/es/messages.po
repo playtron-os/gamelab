@@ -21,6 +21,14 @@ msgstr ""
 msgid "???"
 msgstr ""
 
+#: src/components/submission-config/submissions-modal-header.tsx:43
+msgid "{0, plural, one {Config} other {Configs}}"
+msgstr ""
+
+#: src/components/submission-config/submissions-modal-header.tsx:46
+msgid "{authors, plural, one {Author} other {Authors}}"
+msgstr ""
+
 #: src/components/sidebar/drive.tsx:25
 #~ msgid "{capacity}% Full"
 #~ msgstr ""
@@ -95,9 +103,9 @@ msgstr ""
 msgid "Are you sure you want to uninstall the selected apps?"
 msgstr ""
 
-#: src/components/submission-config/submissions-modal-header.tsx:42
-msgid "Author"
-msgstr ""
+#: src/components/submission-config/submissions-modal-header.tsx:49
+#~ msgid "Author"
+#~ msgstr ""
 
 #: src/components/move-app-dialog/move-app-dialog.tsx:120
 msgid "available of"
@@ -141,9 +149,9 @@ msgstr ""
 msgid "Close Log Window"
 msgstr ""
 
-#: src/components/submission-config/submissions-modal-header.tsx:36
-msgid "Config"
-msgstr ""
+#: src/components/submission-config/submissions-modal-header.tsx:43
+#~ msgid "Config"
+#~ msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:152
 #: src/components/launch-config-editor/launch-config-editor.tsx:203
@@ -676,7 +684,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: src/components/submission-config/submissions-modal-header.tsx:49
+#: src/components/submission-config/submissions-modal-header.tsx:51
 msgid "Search:"
 msgstr ""
 
