@@ -47,7 +47,6 @@ export const LaunchConfigModal: React.FC<InputConfigModalProps> = ({
     };
 
     saveSubmission(editLaunchConfig.app_id, submissionType, saveItem);
-    setEditLaunchConfig(null);
     onClose();
   }, [editLaunchConfig, saveSubmission, setEditLaunchConfig, onClose]);
 

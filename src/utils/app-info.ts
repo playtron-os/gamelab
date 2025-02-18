@@ -31,7 +31,7 @@ export function getDiskSize(size: number | undefined, precision = 1): string {
   if (!size) {
     return "";
   }
-  const units = ["B", "KB", "MB", "GB"];
+  const units = ["B", "KB", "MB", "GB", "TB"];
   let unitIndex = 0;
   while (size > 1024 && unitIndex < units.length - 1) {
     size /= 1024;

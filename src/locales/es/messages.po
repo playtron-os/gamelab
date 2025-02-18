@@ -21,6 +21,14 @@ msgstr ""
 msgid "???"
 msgstr ""
 
+#: src/components/submission-config/submissions-modal-header.tsx:43
+msgid "{0, plural, one {Config} other {Configs}}"
+msgstr ""
+
+#: src/components/submission-config/submissions-modal-header.tsx:46
+msgid "{authors, plural, one {Author} other {Authors}}"
+msgstr ""
+
 #: src/components/sidebar/drive.tsx:25
 #~ msgid "{capacity}% Full"
 #~ msgstr ""
@@ -50,7 +58,7 @@ msgid "Add Config"
 msgstr ""
 
 #: src/components/input-config-modal/input-config-modal.tsx:213
-#: src/components/launch-config/launch-config-modal.tsx:100
+#: src/components/launch-config/launch-config-modal.tsx:99
 #: src/components/submission-config/submissions-empty.tsx:83
 msgid "Add New Config"
 msgstr ""
@@ -63,11 +71,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:224
+#: src/components/app-library/app-library.tsx:234
 msgid "All Games"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:255
+#: src/components/app-library/app-library.tsx:265
 msgid "All Games ({filteredGamesCount})"
 msgstr ""
 
@@ -95,8 +103,12 @@ msgstr ""
 msgid "Are you sure you want to uninstall the selected apps?"
 msgstr ""
 
-#: src/components/submission-config/submissions-modal-header.tsx:42
-msgid "Author"
+#: src/components/submission-config/submissions-modal-header.tsx:49
+#~ msgid "Author"
+#~ msgstr ""
+
+#: src/components/move-app-dialog/move-app-dialog.tsx:120
+msgid "available of"
 msgstr ""
 
 #: src/components/launch-config-editor/launch-config-editor.tsx:235
@@ -127,8 +139,8 @@ msgstr ""
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:90
 #: src/components/eula-modal/eula-modal.tsx:94
 #: src/components/input-config-modal/input-config-modal.tsx:215
-#: src/components/launch-config/launch-config-modal.tsx:102
-#: src/components/move-app-dialog/move-app-dialog.tsx:136
+#: src/components/launch-config/launch-config-modal.tsx:101
+#: src/components/move-app-dialog/move-app-dialog.tsx:140
 #: src/components/submission-config/submissions-empty.tsx:62
 msgid "Close"
 msgstr ""
@@ -137,9 +149,9 @@ msgstr ""
 msgid "Close Log Window"
 msgstr ""
 
-#: src/components/submission-config/submissions-modal-header.tsx:36
-msgid "Config"
-msgstr ""
+#: src/components/submission-config/submissions-modal-header.tsx:43
+#~ msgid "Config"
+#~ msgstr ""
 
 #: src/components/controller-edit/controller-edit.tsx:152
 #: src/components/launch-config-editor/launch-config-editor.tsx:203
@@ -150,7 +162,7 @@ msgstr ""
 msgid "CONFIGURATION"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:380
+#: src/context/submissions-context/submissions-context.tsx:386
 msgid "Configuration has been submitted"
 msgstr ""
 
@@ -183,7 +195,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:429
+#: src/context/submissions-context/submissions-context.tsx:435
 msgid "Delete this configuration?"
 msgstr ""
 
@@ -370,11 +382,11 @@ msgstr ""
 msgid "Install folder"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:234
+#: src/components/app-library/app-library.tsx:244
 msgid "Installed"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:256
+#: src/components/app-library/app-library.tsx:266
 msgid "Installed Games ({filteredGamesCount})"
 msgstr ""
 
@@ -458,7 +470,7 @@ msgstr ""
 #~ msgid "Launch config is valid"
 #~ msgstr ""
 
-#: src/components/launch-config/launch-config-modal.tsx:77
+#: src/components/launch-config/launch-config-modal.tsx:76
 msgid "Launch Config List"
 msgstr ""
 
@@ -503,7 +515,7 @@ msgstr ""
 msgid "Move {appName}"
 msgstr ""
 
-#: src/components/move-app-dialog/move-app-dialog.tsx:149
+#: src/components/move-app-dialog/move-app-dialog.tsx:153
 msgid "Move In Progress..."
 msgstr ""
 
@@ -532,8 +544,8 @@ msgstr ""
 #~ msgstr ""
 
 #: src/hooks/app-library/use-app-download-actions.ts:57
-msgid "No drives found."
-msgstr ""
+#~ msgid "No drives found."
+#~ msgstr ""
 
 #: src/components/sidebar/sidebar.tsx:61
 msgid "No internet"
@@ -668,11 +680,11 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:245
+#: src/components/app-library/app-library.tsx:255
 msgid "Search"
 msgstr ""
 
-#: src/components/submission-config/submissions-modal-header.tsx:49
+#: src/components/submission-config/submissions-modal-header.tsx:51
 msgid "Search:"
 msgstr ""
 
@@ -785,7 +797,7 @@ msgstr ""
 msgid "There is no launch configuration created for"
 msgstr ""
 
-#: src/context/submissions-context/submissions-context.tsx:386
+#: src/context/submissions-context/submissions-context.tsx:392
 msgid "There was an error with the submission {errorMessage}"
 msgstr ""
 

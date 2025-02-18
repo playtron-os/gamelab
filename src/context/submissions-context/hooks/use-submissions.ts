@@ -35,7 +35,7 @@ export const useSubmissions = (
           const data = res.body as Submission[];
           setSubmissions(data);
         } else {
-          console.error(res);
+          console.error("Failed to get all submissions: ", res);
           setSubmissions([]);
         }
         setLoading(false);
@@ -53,6 +53,9 @@ export const useSubmissions = (
       if (res.status == 200) {
         const data = res.body as Submission;
         setSelectedItemId(data?.item_id);
+      } else {
+        console.error("Failed to get selected submission: ", res);
+        setSelectedItemId(null);
       }
     });
 

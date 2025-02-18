@@ -54,7 +54,7 @@ export const useAppDownloadActions = (): UseAppDownloadReturn => {
     async (ownedAppId: string, force = false) => {
       let installDisk = null;
       if (drives.length === 0) {
-        dispatch(flashMessage(t`No drives found.`));
+        console.error(`No drives found.`);
         return;
       }
       if (drives.length === 1) {

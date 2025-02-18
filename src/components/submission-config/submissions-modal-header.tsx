@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Trans, t } from "@lingui/macro";
+import React, { useMemo } from "react";
+import { t, plural } from "@lingui/macro";
 import { TextInput } from "@playtron/styleguide";
 import { getImage } from "@/utils/app-info";
 import { AppInformation, Submission } from "@/types";
@@ -17,7 +17,14 @@ export const ConfigModalHeader: React.FC<ConfigModalHeaderProps> = ({
   configFilter,
   setConfigFilter
 }) => {
-  const [authors] = useState([1]);
+  const authors = useMemo(() => {
+    if (!submissions) return 0;
+    const authorSet = new Set();
+    submissions.forEach((submission) => {
+      authorSet.add(submission.author_id);
+    });
+    return authorSet.size;
+  }, [submissions, currentApp]);
   return (
     <div className="flex gap-4 mb-4 p-8 ">
       <img
@@ -33,15 +40,10 @@ export const ConfigModalHeader: React.FC<ConfigModalHeaderProps> = ({
           <strong>{submissions.length}</strong>
           <span className="pe-2">
             {" "}
-            <Trans>Config</Trans>
-            {submissions.length > 1 ? "s" : ""}
+            {plural(submissions.length, { one: "Config", other: "Configs" })}
           </span>
-          <strong>{authors.length}</strong>
-          <span>
-            {" "}
-            <Trans>Author</Trans>
-            {authors.length > 1 ? "s" : ""}
-          </span>
+          <strong>{authors}</strong>
+          <span> {plural(authors, { one: "Author", other: "Authors" })}</span>
         </p>
       </div>
       <div>

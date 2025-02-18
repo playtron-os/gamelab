@@ -35,7 +35,7 @@ export const AppLibrary: React.FC = () => {
   const parentRef = useRef<HTMLDivElement>(null);
   const { onSelectedIdChange } = useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
-  const [sortKey, setSortKey] = useState("name");
+  const [sortKey, setSortKey] = useState("install_date");
   const { props: confirmationPopUpProps } = useConfirmationPopUp();
 
   const [selectedGame, setSelectedGame] = useState<AppInformation | null>(null);
@@ -149,34 +149,44 @@ export const AppLibrary: React.FC = () => {
             a.installed_app?.install_config?.disk_size
           );
         case "status":
+          if (!a.installed_app) return -1;
+          if (!b.installed_app) return 1;
           return (
-            getAppStatusWithQueue(
-              a,
-              a.installed_app?.owned_app.id,
-              queuePositionMapState
-            ) -
             getAppStatusWithQueue(
               b,
               b.installed_app?.owned_app.id,
               queuePositionMapState
+            ) -
+            getAppStatusWithQueue(
+              a,
+              a.installed_app?.owned_app.id,
+              queuePositionMapState
             )
           );
         case "install_date":
+          if (!a.installed_app) return 1;
+          if (!b.installed_app) return -1;
           return (
             new Date(b.installed_app?.created_at || "").getTime() -
             new Date(a.installed_app?.created_at || "").getTime()
           );
         case "last_added":
+          if (!a.installed_app) return 1;
+          if (!b.installed_app) return -1;
           return (
             new Date(b.installed_app?.created_at || "").getTime() -
             new Date(a.installed_app?.created_at || "").getTime()
           );
         case "last_updated":
+          if (!a.installed_app) return 1;
+          if (!b.installed_app) return -1;
           return (
             new Date(b.installed_app?.updated_at || "").getTime() -
             new Date(a.installed_app?.updated_at || "").getTime()
           );
         case "last_played":
+          if (!a.installed_app) return 1;
+          if (!b.installed_app) return -1;
           return (
             new Date(b.installed_app?.launched_at || "").getTime() -
             new Date(a.installed_app?.launched_at || "").getTime()
