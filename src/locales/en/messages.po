@@ -544,8 +544,8 @@ msgstr "Never tested"
 #~ msgstr "New override"
 
 #: src/hooks/app-library/use-app-download-actions.ts:57
-msgid "No drives found."
-msgstr "No drives found."
+#~ msgid "No drives found."
+#~ msgstr "No drives found."
 
 #: src/components/sidebar/sidebar.tsx:61
 msgid "No internet"

@@ -544,8 +544,8 @@ msgstr ""
 #~ msgstr ""
 
 #: src/hooks/app-library/use-app-download-actions.ts:57
-msgid "No drives found."
-msgstr ""
+#~ msgid "No drives found."
+#~ msgstr ""
 
 #: src/components/sidebar/sidebar.tsx:61
 msgid "No internet"
