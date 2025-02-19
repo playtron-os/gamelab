@@ -12,9 +12,16 @@ import {
 } from "@playtron/styleguide";
 
 import { AppDownloadStage, AppStatus, PlaytronAppType } from "@/types";
-import { useAppDispatch } from "@/redux/store";
-import { setCurrentApp, openProviderSelectionDialog } from "@/redux/modules";
+import { DriveInfoResponseBody } from "@/types/drive";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
+import {
+  setCurrentApp,
+  openProviderSelectionDialog,
+  selectDrives
+} from "@/redux/modules";
+
 import { useAppStatus } from "@/hooks/app-library/use-app-status";
+
 import { AppInformation, OwnedApp } from "@/types/app-library";
 import { AppProvider } from "@/types/platform-auth";
 import { useAppLibraryContext } from "@/context";
@@ -67,6 +74,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   const { onSelectedIdChange } = useAppLibraryContext();
   const { launchParams } = useSubmissionsContext();
   const status = useAppStatus(game, game.installed_app?.owned_app.id);
+  const drives: DriveInfoResponseBody = useAppSelector(selectDrives);
   const progress = Math.round(getProgress(game.installed_app));
   let statusLabel: string;
   if (progress) {
@@ -102,7 +110,10 @@ export const GameCard: React.FC<GameCardProps> = ({
   }
 
   // Move Button
-  if (game.installed_app?.download_status.stage == AppDownloadStage.DONE) {
+  if (
+    game.installed_app?.download_status.stage == AppDownloadStage.DONE &&
+    drives.length > 1
+  ) {
     appActions.push({
       id: 2,
       label: t`Move`,
