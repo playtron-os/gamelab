@@ -57,8 +57,8 @@ msgstr ""
 msgid "Add Config"
 msgstr ""
 
-#: src/components/input-config-modal/input-config-modal.tsx:213
-#: src/components/launch-config/launch-config-modal.tsx:99
+#: src/components/input-config-modal/input-config-modal.tsx:211
+#: src/components/launch-config/launch-config-modal.tsx:97
 #: src/components/submission-config/submissions-empty.tsx:83
 msgid "Add New Config"
 msgstr ""
@@ -138,8 +138,8 @@ msgstr ""
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:90
 #: src/components/eula-modal/eula-modal.tsx:94
-#: src/components/input-config-modal/input-config-modal.tsx:215
-#: src/components/launch-config/launch-config-modal.tsx:101
+#: src/components/input-config-modal/input-config-modal.tsx:213
+#: src/components/launch-config/launch-config-modal.tsx:99
 #: src/components/move-app-dialog/move-app-dialog.tsx:140
 #: src/components/submission-config/submissions-empty.tsx:62
 msgid "Close"
@@ -362,7 +362,7 @@ msgstr ""
 msgid "Input Config for {gameName}"
 msgstr ""
 
-#: src/components/input-config-modal/input-config-modal.tsx:190
+#: src/components/input-config-modal/input-config-modal.tsx:188
 msgid "Input Config List"
 msgstr ""
 
@@ -470,7 +470,7 @@ msgstr ""
 #~ msgid "Launch config is valid"
 #~ msgstr ""
 
-#: src/components/launch-config/launch-config-modal.tsx:76
+#: src/components/launch-config/launch-config-modal.tsx:74
 msgid "Launch Config List"
 msgstr ""
 
