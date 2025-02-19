@@ -17,7 +17,7 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:128
+#: src/components/app-library/app-library.tsx:121
 msgid "???"
 msgstr ""
 
@@ -71,11 +71,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:234
+#: src/components/app-library/app-library.tsx:220
 msgid "All Games"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:265
+#: src/components/app-library/app-library.tsx:251
 msgid "All Games ({filteredGamesCount})"
 msgstr ""
 
@@ -382,11 +382,11 @@ msgstr ""
 msgid "Install folder"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:244
+#: src/components/app-library/app-library.tsx:230
 msgid "Installed"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:266
+#: src/components/app-library/app-library.tsx:252
 msgid "Installed Games ({filteredGamesCount})"
 msgstr ""
 
@@ -435,14 +435,14 @@ msgstr ""
 #~ msgstr ""
 
 #: src/components/app-library/app-library.tsx:93
-msgid "Last Added"
-msgstr ""
+#~ msgid "Last Added"
+#~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:103
+#: src/components/app-library/app-library.tsx:98
 msgid "Last Played"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:98
+#: src/components/app-library/app-library.tsx:93
 msgid "Last Updated"
 msgstr ""
 
@@ -680,7 +680,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:255
+#: src/components/app-library/app-library.tsx:241
 msgid "Search"
 msgstr ""
 
@@ -716,35 +716,35 @@ msgstr ""
 msgid "Sorry, an unexpected error has occurred."
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:116
+#: src/components/app-library/app-library.tsx:111
 msgid "Sort by: Game Size"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:118
+#: src/components/app-library/app-library.tsx:113
 msgid "Sort by: Game Status"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:120
+#: src/components/app-library/app-library.tsx:115
 msgid "Sort by: Install Date"
 msgstr ""
 
 #: src/components/app-library/app-library.tsx:122
-msgid "Sort by: Last Added"
-msgstr ""
+#~ msgid "Sort by: Last Added"
+#~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:126
+#: src/components/app-library/app-library.tsx:119
 msgid "Sort by: Last Played"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:124
+#: src/components/app-library/app-library.tsx:117
 msgid "Sort by: Last Updated"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:112
+#: src/components/app-library/app-library.tsx:107
 msgid "Sort by: Name (A-Z)"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:114
+#: src/components/app-library/app-library.tsx:109
 msgid "Sort by: Name (Z-A)"
 msgstr ""
 
