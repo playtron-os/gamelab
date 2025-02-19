@@ -17,7 +17,7 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr "-"
 
-#: src/components/app-library/app-library.tsx:128
+#: src/components/app-library/app-library.tsx:121
 msgid "???"
 msgstr "???"
 
@@ -71,11 +71,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:234
+#: src/components/app-library/app-library.tsx:220
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:265
+#: src/components/app-library/app-library.tsx:251
 msgid "All Games ({filteredGamesCount})"
 msgstr "All Games ({filteredGamesCount})"
 
@@ -382,11 +382,11 @@ msgstr "Install Date"
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:244
+#: src/components/app-library/app-library.tsx:230
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:266
+#: src/components/app-library/app-library.tsx:252
 msgid "Installed Games ({filteredGamesCount})"
 msgstr "Installed Games ({filteredGamesCount})"
 
@@ -435,14 +435,14 @@ msgstr "Keyboard"
 #~ msgstr "Labs is unable to connect to the device using default credentials. Please provide correct username and password."
 
 #: src/components/app-library/app-library.tsx:93
-msgid "Last Added"
-msgstr "Last Added"
+#~ msgid "Last Added"
+#~ msgstr "Last Added"
 
-#: src/components/app-library/app-library.tsx:103
+#: src/components/app-library/app-library.tsx:98
 msgid "Last Played"
 msgstr "Last Played"
 
-#: src/components/app-library/app-library.tsx:98
+#: src/components/app-library/app-library.tsx:93
 msgid "Last Updated"
 msgstr "Last Updated"
 
@@ -680,7 +680,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:255
+#: src/components/app-library/app-library.tsx:241
 msgid "Search"
 msgstr "Search"
 
@@ -716,35 +716,35 @@ msgstr "Select Config"
 msgid "Sorry, an unexpected error has occurred."
 msgstr "Sorry, an unexpected error has occurred."
 
-#: src/components/app-library/app-library.tsx:116
+#: src/components/app-library/app-library.tsx:111
 msgid "Sort by: Game Size"
 msgstr "Sort by: Game Size"
 
-#: src/components/app-library/app-library.tsx:118
+#: src/components/app-library/app-library.tsx:113
 msgid "Sort by: Game Status"
 msgstr "Sort by: Game Status"
 
-#: src/components/app-library/app-library.tsx:120
+#: src/components/app-library/app-library.tsx:115
 msgid "Sort by: Install Date"
 msgstr "Sort by: Install Date"
 
 #: src/components/app-library/app-library.tsx:122
-msgid "Sort by: Last Added"
-msgstr "Sort by: Last Added"
+#~ msgid "Sort by: Last Added"
+#~ msgstr "Sort by: Last Added"
 
-#: src/components/app-library/app-library.tsx:126
+#: src/components/app-library/app-library.tsx:119
 msgid "Sort by: Last Played"
 msgstr "Sort by: Last Played"
 
-#: src/components/app-library/app-library.tsx:124
+#: src/components/app-library/app-library.tsx:117
 msgid "Sort by: Last Updated"
 msgstr "Sort by: Last Updated"
 
-#: src/components/app-library/app-library.tsx:112
+#: src/components/app-library/app-library.tsx:107
 msgid "Sort by: Name (A-Z)"
 msgstr "Sort by: Name (A-Z)"
 
-#: src/components/app-library/app-library.tsx:114
+#: src/components/app-library/app-library.tsx:109
 msgid "Sort by: Name (Z-A)"
 msgstr "Sort by: Name (Z-A)"
 
