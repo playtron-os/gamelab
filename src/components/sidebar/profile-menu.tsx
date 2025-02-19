@@ -83,6 +83,8 @@ export const ProfileMenu: React.FC = () => {
         onConfirm={() => {
           setConfirmDisconnect(false);
           dispatch(setDeviceIp(""));
+          dispatch(setUsername(""));
+          dispatch(setEmail(""));
           navigate("/auth/connect");
         }}
         className="z-[62]"
