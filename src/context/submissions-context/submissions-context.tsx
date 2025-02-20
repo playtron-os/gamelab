@@ -337,12 +337,19 @@ export const SubmissionsContextProvider = ({
       sendMessage(promoteConfigMessage)().then((response) => {
         if (response.status === 200) {
           dispatch(flashMessage(t`Submission promoted`));
+          const submissions =
+            item_type === "LaunchConfig" ? launchSubmissions : inputSubmissions;
           sendMessage(
             getMessage(MessageType.SubmissionGetAll, {
-              app_id: app_id,
-              item_type: item_type
+              app_id,
+              item_type
             })
-          )();
+          )().then((res) => {
+            if (res.status === 200) {
+              const data = res.body as Submission[];
+              submissions.setSubmissions(data);
+            }
+          });
         } else {
           console.error("Error promoting config", response);
           error(
