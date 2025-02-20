@@ -14,22 +14,21 @@ import { usePlayserve } from "@/hooks";
 import { useAppMove } from "./hooks/use-app-move";
 import { DriveInfo, MessageType, AppInformation } from "@/types";
 import { getDiskSize } from "@/utils/app-info";
-const getAppDrive = (appInfo: AppInformation, drives: DriveInfo[]) => {
+const getAppDriveInfo = (appInfo: AppInformation, drives: DriveInfo[]) => {
   if (!appInfo?.installed_app || !drives.length) {
     return null;
   }
-  const currentPath = appInfo.installed_app.install_config.install_root;
+  const currentDrive = appInfo.installed_app.install_config.install_disk;
   let biggestPathDrive = null;
 
   for (const drive of drives) {
     if (
-      currentPath.startsWith(drive.path) &&
+      currentDrive.startsWith(drive.path) &&
       (!biggestPathDrive || drive.path.length > biggestPathDrive.path.length)
     ) {
       biggestPathDrive = drive;
     }
   }
-
   return biggestPathDrive;
 };
 
@@ -53,13 +52,14 @@ export const MoveAppDialog: React.FC = () => {
   const { isMoveAppDialogOpen, appInfoArray, isMovingApp } =
     useAppSelector<MoveAppDialogState>(selectMoveAppDialogState);
   const dispatch = useAppDispatch();
+
   const onCloseMoveAppDialog = useCallback(
     () => dispatch(closeMoveAppDialog()),
     [dispatch]
   );
 
   const appDrive = useMemo(
-    () => getAppDrive(appInfoArray?.[0], drives),
+    () => getAppDriveInfo(appInfoArray?.[0], drives),
     [appInfoArray, drives]
   );
 
