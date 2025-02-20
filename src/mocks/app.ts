@@ -40,9 +40,9 @@ const STEAM_DOWNLOAD_STATUS_DONE_MOCK: DownloadProgress = {
 
 const STEAM_INSTALL_CONFIG_MOCK: InstallConfig = {
   version: "1.0.0",
-  install_disk: "C:",
   install_folder: "Program Files",
   install_root: "/test/path1/root",
+  install_disk: "/test/path1",
   disk_size: 100,
   download_size: 100,
   executable: "executable",
