@@ -394,7 +394,7 @@ msgstr ""
 #~ msgid "Installed Games ({totalInstalled})"
 #~ msgstr ""
 
-#: src/components/app-library/game-card.tsx:177
+#: src/components/app-library/game-card.tsx:178
 msgid "Installed on Drive"
 msgstr ""
 
@@ -506,7 +506,7 @@ msgstr ""
 msgid "Mouse Move"
 msgstr ""
 
-#: src/components/app-library/game-card.tsx:119
+#: src/components/app-library/game-card.tsx:120
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:83
 msgid "Move"
 msgstr ""
@@ -830,7 +830,7 @@ msgstr ""
 msgid "Unhandled error: {e}"
 msgstr ""
 
-#: src/components/app-library/game-card.tsx:135
+#: src/components/app-library/game-card.tsx:136
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 msgid "Uninstall"
 msgstr ""

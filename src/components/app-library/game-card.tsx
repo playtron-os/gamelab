@@ -65,7 +65,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   const dispatch = useAppDispatch();
   const [isSelected, setIsSelected] = useState(false);
   const {
-    handlers: { openMoveAppDialog, uninstallApp, handleAppDefaultAction }
+    handlers: { uninstallApp, handleAppDefaultAction, openMoveAppDialog }
   } = useAppLibraryContext();
   const handleSelectGame = () => {
     setIsSelected(!isSelected);
@@ -82,6 +82,7 @@ export const GameCard: React.FC<GameCardProps> = ({
   } else {
     statusLabel = getAppStatusLabel(status);
   }
+
   const handleLaunchParams = useCallback(() => {
     onSelectedIdChange(game.app.id);
     setCurrentApp(game);
