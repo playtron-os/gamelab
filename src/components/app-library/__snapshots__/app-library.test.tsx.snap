@@ -262,7 +262,7 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
                         <span
                           class="font-bold"
                         >
-                          C: 
+                          path1 
                         </span>
                         <span>
                           100B
@@ -376,7 +376,7 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
                         <span
                           class="font-bold"
                         >
-                          C: 
+                          path1 
                         </span>
                         <span>
                           100B
@@ -697,7 +697,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                         <span
                           class="font-bold"
                         >
-                          C: 
+                          path1 
                         </span>
                         <span>
                           100B
@@ -811,7 +811,7 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
                         <span
                           class="font-bold"
                         >
-                          C: 
+                          path1 
                         </span>
                         <span>
                           100B
