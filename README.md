@@ -13,7 +13,7 @@ We provide installers for Linux, Mac and Windows in different formats. Download 
 
 ## Setup
 
-Before you can use GameLAB, you'll need a device running Playtron OS.
+Before you can use GameLAB, you'll need a device running Playtron GameOS.
 Make sure your Playtron device authorizes remote access and note its IP address.
 
 ![Remote access](.github/pictures/enable-remote.png?raw=true)
