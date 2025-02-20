@@ -1,6 +1,6 @@
 [package]
 name = "gamelab"
-version = "0.42.0"
+version = "1.0.0"
 description = "GameLAB testing app for Playtron"
 authors = ["Playtron"]
 license = ""
