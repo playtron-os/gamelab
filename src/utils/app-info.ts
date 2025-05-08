@@ -120,33 +120,35 @@ export function getImage(images: PlaytronImage[]): string {
   if (!images) {
     return "";
   }
-  let gogCandidate = "";
+  let logoCandidate = "";
   let steamCandidate = "";
   let epicGamesCandidate = "";
+  let landscapeCandidate = "";
   for (const image of images) {
-    if (image.source === "steam" && image.image_type === "header") {
+    if (image.image_type === "capsule") {
       steamCandidate = image.url;
     }
-
-    if (
-      image.source === "gog" &&
-      image.url != "https" &&
-      image.image_type === "logo"
-    ) {
-      gogCandidate = image.url.replace("https//", "https://");
+    if (image.image_type === "logo") {
+      logoCandidate = image.url.replace("https//", "https://");
     }
-    if (image.source === "epicgames" && image.image_type === "OfferImageWide") {
+    if (image.image_type === "OfferImageWide") {
       epicGamesCandidate = image.url;
     }
+    if (image.image_type === "landscape") {
+      landscapeCandidate = image.url;
+    }
   }
-  if (gogCandidate) {
-    return gogCandidate;
+  if (steamCandidate) {
+    return steamCandidate;
   }
   if (epicGamesCandidate) {
     return epicGamesCandidate;
   }
-  if (steamCandidate) {
-    return steamCandidate;
+  if (landscapeCandidate) {
+    return landscapeCandidate;
+  }
+  if (logoCandidate) {
+    return logoCandidate;
   }
 
   return images.length.toString();
