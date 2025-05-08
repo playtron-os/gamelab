@@ -52,6 +52,7 @@ jobs:
             libwebkit2gtk-4.0-dev=2.36.0-2ubuntu1 \
             libjavascriptcoregtk-4.0-18=2.36.0-2ubuntu1 \
             libjavascriptcoregtk-4.0-dev=2.36.0-2ubuntu1 \
+            libjavascriptcoregtk-4.1-dev \
             gir1.2-javascriptcoregtk-4.0=2.36.0-2ubuntu1 \
             gir1.2-webkit2-4.0=2.36.0-2ubuntu1;
       - name: install frontend dependencies
