@@ -1,7 +1,7 @@
 {
   "name": "gamelab",
   "productName": "GameLAB",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GameLAB testing app for Playtron",
   "scripts": {
     "start": "tauri dev",
