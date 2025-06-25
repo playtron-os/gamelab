@@ -1,21 +1,13 @@
 import React, { useCallback, useMemo } from "react";
-
-import { usePlayserve } from "@/hooks";
-
 import { SubmissionCard } from "./submission-card";
-import {
-  Submission,
-  SubmissionItemType,
-  getMessage,
-  MessageType
-} from "@/types";
+import { Submission, SubmissionItemType } from "@/types";
+import { useSubmissionsContext } from "@/context/submissions-context";
 
 interface SubmissionsListProps {
   configFilter?: string;
   submissions: Submission[];
   submissionType: SubmissionItemType;
   selectedItemId: string | null;
-  setSelectedItemId: (itemId: string) => void;
   onClose: () => void;
 }
 
@@ -24,34 +16,20 @@ export const SubmissionsList: React.FC<SubmissionsListProps> = ({
   submissionType,
   configFilter,
   selectedItemId,
-  setSelectedItemId,
   onClose
 }) => {
-  const { sendMessage } = usePlayserve();
+  const { setDefaultSubmission } = useSubmissionsContext();
 
-  const setDefaultSubmission = useCallback(
+  const onItemClicked = useCallback(
     (submission: Submission) => {
       try {
-        setSelectedItemId(submission.item_id);
-        const setSelectedSubmissionMessage = getMessage(
-          MessageType.SubmissionSetDefault,
-          {
-            app_id: submission.app_id,
-            item_type: submissionType,
-            item_id: submission.item_id
-          }
-        );
-        sendMessage(setSelectedSubmissionMessage)().then((res) => {
-          if (res.status != 200) {
-            console.log("Error setting default submission: ", res);
-          }
-        });
+        setDefaultSubmission(submission, submissionType);
         onClose();
       } catch (err) {
         console.error("Failed to select a submission", err);
       }
     },
-    [submissions, setSelectedItemId, onClose]
+    [submissions, onClose]
   );
   const filteredSubmissions = useMemo(() => {
     if (!configFilter) {
@@ -72,7 +50,7 @@ export const SubmissionsList: React.FC<SubmissionsListProps> = ({
             key={submission.item_id}
             submission={submission}
             selectedItemId={selectedItemId}
-            setSelectedItemId={() => setDefaultSubmission(submission)}
+            setSelectedItemId={() => onItemClicked(submission)}
           />
         );
       })}

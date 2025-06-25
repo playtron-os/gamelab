@@ -79,7 +79,6 @@ export const LaunchConfigModal: React.FC<InputConfigModalProps> = ({
                     submissions={launchSubmissions.submissions}
                     submissionType={submissionType}
                     selectedItemId={launchSubmissions.selectedItemId}
-                    setSelectedItemId={launchSubmissions.setSelectedItemId}
                     configFilter={configFilter}
                     onClose={onClose}
                   />

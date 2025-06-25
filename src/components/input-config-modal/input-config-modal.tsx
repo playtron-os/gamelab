@@ -193,7 +193,6 @@ export const InputConfigModal: React.FC<InputConfigModalProps> = ({
                     submissions={inputSubmissions.submissions}
                     submissionType={SubmissionType.InputConfig}
                     selectedItemId={inputSubmissions.selectedItemId}
-                    setSelectedItemId={inputSubmissions.setSelectedItemId}
                     configFilter={configFilter}
                     onClose={onClose}
                   />
