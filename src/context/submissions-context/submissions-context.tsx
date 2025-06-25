@@ -55,7 +55,10 @@ export interface SubmissionsContextType {
   toggleResetWinePrefix: () => void;
   setEditLayout: (sub: InputConfig | null) => void;
   setEditLaunchConfig: (sub: LaunchConfig | null) => void;
-
+  setDefaultSubmission: (
+    item: Submission,
+    item_type: SubmissionItemType
+  ) => void;
   saveSubmission: (
     appId: string,
     item_type: SubmissionItemType,
@@ -64,7 +67,7 @@ export interface SubmissionsContextType {
   createSubmission: (
     appId: string,
     item_type: SubmissionItemType
-  ) => Promise<InputConfig | LaunchConfig | null>;
+  ) => Promise<Submission | null>;
   copySubmission: (item: Submission, item_type: SubmissionItemType) => void;
   promoteSubmission: (
     item_id: string,
@@ -217,6 +220,35 @@ export const SubmissionsContextProvider = ({
   const isLoading = inputSubmissions.loading || launchSubmissions.loading;
 
   // Utilities
+  const setDefaultSubmission = useCallback(
+    (item: Submission, itemType: SubmissionItemType) => {
+      try {
+        const setSelectedSubmissionMessage = getMessage(
+          MessageType.SubmissionSetDefault,
+          {
+            app_id: item.app_id,
+            item_type: itemType,
+            item_id: item.item_id
+          }
+        );
+        sendMessage(setSelectedSubmissionMessage)().then((res) => {
+          if (res.status != 200) {
+            console.log("Error setting default submission: ", res);
+          } else {
+            const submissions =
+              itemType === "LaunchConfig"
+                ? launchSubmissions
+                : inputSubmissions;
+            submissions.setSelectedItemId(item.item_id);
+          }
+        });
+      } catch (err) {
+        console.error("Failed to select a submission", err);
+      }
+    },
+    [sendMessage]
+  );
+
   const saveSubmission = useCallback(
     async (
       appId: string,
@@ -263,7 +295,11 @@ export const SubmissionsContextProvider = ({
         warn("Attempt to created unimplemented submission type");
         return null;
       }
-      return await saveSubmission(appId, item_type, item);
+      const submission = await saveSubmission(appId, item_type, item);
+      if (submission) {
+        setDefaultSubmission(submission, item_type);
+      }
+      return submission;
     },
     [saveSubmission]
   );
@@ -422,6 +458,7 @@ export const SubmissionsContextProvider = ({
         setEditLayout,
         editLaunchConfig,
         setEditLaunchConfig,
+        setDefaultSubmission,
         saveSubmission,
         createSubmission,
         copySubmission,
