@@ -208,7 +208,7 @@ msgid "Disconnected from the internet"
 msgstr ""
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:63
-#: src/utils/app-info.ts:170
+#: src/utils/app-info.ts:176
 msgid "Download"
 msgstr ""
 
@@ -446,7 +446,7 @@ msgstr ""
 msgid "Last Updated"
 msgstr ""
 
-#: src/utils/app-info.ts:164
+#: src/utils/app-info.ts:170
 msgid "Launch"
 msgstr ""
 
@@ -478,7 +478,7 @@ msgstr ""
 msgid "Launching"
 msgstr ""
 
-#: src/utils/app-info.ts:180
+#: src/utils/app-info.ts:186
 msgid "Launching..."
 msgstr ""
 
@@ -592,7 +592,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: src/utils/app-info.ts:168
+#: src/utils/app-info.ts:174
 msgid "Pause"
 msgstr ""
 
@@ -622,7 +622,7 @@ msgstr ""
 msgid "Pre-Allocating"
 msgstr ""
 
-#: src/utils/app-info.ts:176
+#: src/utils/app-info.ts:182
 msgid "Prioritize"
 msgstr ""
 
@@ -667,7 +667,7 @@ msgstr ""
 msgid "Reset Wine Prefix"
 msgstr ""
 
-#: src/utils/app-info.ts:174
+#: src/utils/app-info.ts:180
 msgid "Resume"
 msgstr ""
 
@@ -757,7 +757,7 @@ msgstr ""
 #~ msgid "Steam"
 #~ msgstr ""
 
-#: src/utils/app-info.ts:178
+#: src/utils/app-info.ts:184
 msgid "Stop"
 msgstr ""
 
@@ -770,7 +770,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: src/utils/app-info.ts:281
+#: src/utils/app-info.ts:287
 msgid "System Drive"
 msgstr ""
 
@@ -848,7 +848,7 @@ msgstr ""
 msgid "Untitled Layout"
 msgstr ""
 
-#: src/utils/app-info.ts:172
+#: src/utils/app-info.ts:178
 msgid "Update"
 msgstr ""
 

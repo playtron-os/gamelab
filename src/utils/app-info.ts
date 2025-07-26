@@ -120,16 +120,20 @@ export function getImage(images: PlaytronImage[]): string {
   if (!images) {
     return "";
   }
-  let logoCandidate = "";
-  let steamCandidate = "";
+  let productImageCandidate = "";
+  let headerCandidate = "";
+  let capsuleCandidate = "";
   let epicGamesCandidate = "";
   let landscapeCandidate = "";
   for (const image of images) {
-    if (image.image_type === "capsule") {
-      steamCandidate = image.url;
+    if (image.image_type === "header") {
+      headerCandidate = image.url;
     }
-    if (image.image_type === "logo") {
-      logoCandidate = image.url.replace("https//", "https://");
+    if (image.image_type === "capsule") {
+      capsuleCandidate = image.url;
+    }
+    if (image.image_type === "product_630_2x") {
+      productImageCandidate = image.url.replace("https//", "https://");
     }
     if (image.image_type === "OfferImageWide") {
       epicGamesCandidate = image.url;
@@ -138,19 +142,21 @@ export function getImage(images: PlaytronImage[]): string {
       landscapeCandidate = image.url;
     }
   }
-  if (steamCandidate) {
-    return steamCandidate;
+  if (productImageCandidate) {
+    return productImageCandidate;
   }
   if (epicGamesCandidate) {
     return epicGamesCandidate;
   }
+  if (headerCandidate) {
+    return headerCandidate;
+  }
+  if (capsuleCandidate) {
+    return capsuleCandidate;
+  }
   if (landscapeCandidate) {
     return landscapeCandidate;
   }
-  if (logoCandidate) {
-    return logoCandidate;
-  }
-
   return images.length.toString();
 }
 
