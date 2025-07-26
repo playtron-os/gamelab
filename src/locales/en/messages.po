@@ -208,7 +208,7 @@ msgid "Disconnected from the internet"
 msgstr "Disconnected from the internet"
 
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:63
-#: src/utils/app-info.ts:170
+#: src/utils/app-info.ts:176
 msgid "Download"
 msgstr "Download"
 
@@ -446,7 +446,7 @@ msgstr "Last Played"
 msgid "Last Updated"
 msgstr "Last Updated"
 
-#: src/utils/app-info.ts:164
+#: src/utils/app-info.ts:170
 msgid "Launch"
 msgstr "Launch"
 
@@ -478,7 +478,7 @@ msgstr "Launch Config List"
 msgid "Launching"
 msgstr "Launching"
 
-#: src/utils/app-info.ts:180
+#: src/utils/app-info.ts:186
 msgid "Launching..."
 msgstr "Launching..."
 
@@ -592,7 +592,7 @@ msgstr "Override"
 msgid "Password"
 msgstr "Password"
 
-#: src/utils/app-info.ts:168
+#: src/utils/app-info.ts:174
 msgid "Pause"
 msgstr "Pause"
 
@@ -622,7 +622,7 @@ msgstr "Playtron Slug"
 msgid "Pre-Allocating"
 msgstr "Pre-Allocating"
 
-#: src/utils/app-info.ts:176
+#: src/utils/app-info.ts:182
 msgid "Prioritize"
 msgstr "Prioritize"
 
@@ -667,7 +667,7 @@ msgstr "Reset"
 msgid "Reset Wine Prefix"
 msgstr "Reset Wine Prefix"
 
-#: src/utils/app-info.ts:174
+#: src/utils/app-info.ts:180
 msgid "Resume"
 msgstr "Resume"
 
@@ -757,7 +757,7 @@ msgstr "Sort by: Name (Z-A)"
 #~ msgid "Steam"
 #~ msgstr "Steam"
 
-#: src/utils/app-info.ts:178
+#: src/utils/app-info.ts:184
 msgid "Stop"
 msgstr "Stop"
 
@@ -770,7 +770,7 @@ msgstr "Submission promoted"
 msgid "Submit"
 msgstr "Submit"
 
-#: src/utils/app-info.ts:281
+#: src/utils/app-info.ts:287
 msgid "System Drive"
 msgstr "System Drive"
 
@@ -848,7 +848,7 @@ msgstr "Unset"
 msgid "Untitled Layout"
 msgstr "Untitled Layout"
 
-#: src/utils/app-info.ts:172
+#: src/utils/app-info.ts:178
 msgid "Update"
 msgstr "Update"
 
