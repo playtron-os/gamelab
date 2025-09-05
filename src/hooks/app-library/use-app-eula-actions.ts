@@ -2,7 +2,6 @@ import { usePlayserve } from "@/hooks";
 import { MessageType, getMessage } from "@/types/playserve/message";
 import { useCallback } from "react";
 import { useAppDispatch } from "@/redux/store";
-import { useAppDownloadActions } from "./use-app-download-actions";
 import { AppInformation } from "@/types";
 import { flashMessage } from "redux-flash";
 import { AppEulaResponseBody } from "@/types/app";
@@ -18,7 +17,6 @@ export interface UseAppEulaReturn {
 export const useAppEula = (): UseAppEulaReturn => {
   const { sendMessage } = usePlayserve();
   const dispatch = useAppDispatch();
-  const { downloadApp } = useAppDownloadActions();
 
   const getAppEulas = useCallback(
     async (ownedAppId: string) => {
@@ -49,9 +47,6 @@ export const useAppEula = (): UseAppEulaReturn => {
       sendMessage(message)().then((response) => {
         if (response.status !== 200) {
           dispatch(flashMessage("Error accepting EULA"));
-          return;
-        } else {
-          downloadApp(eula.owned_app_id);
         }
       });
     },

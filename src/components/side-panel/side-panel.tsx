@@ -28,6 +28,7 @@ import { TargetControllerType } from "@/types/input-config";
 
 import { usePlayserveSendMessage } from "@/hooks";
 import { setCurrentApp, openProviderSelectionDialog } from "@/redux/modules";
+import { useAppDownloadActions } from "@/hooks/app-library";
 
 export const SidePanel: React.FC = () => {
   const {
@@ -50,6 +51,7 @@ export const SidePanel: React.FC = () => {
     toggleEnhancedDebugging,
     toggleResetWinePrefix
   } = useSubmissionsContext();
+  const { downloadApp } = useAppDownloadActions();
 
   const [isLaunching, setIsLaunching] = useState<boolean>(false);
   const [isInputConfigOpen, setIsInputConfigOpen] = useState<boolean>(false);
@@ -358,6 +360,7 @@ export const SidePanel: React.FC = () => {
           }
           acceptEula(eula);
           setIsEulaOpen(false);
+          downloadApp(currentApp.owned_apps[0].id);
         }}
         onReject={() => {
           if (!eula) {
