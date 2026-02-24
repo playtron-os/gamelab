@@ -25,6 +25,7 @@ import { FilterButton } from "./filter-button";
 import { getAppStatusWithQueue } from "@/utils/app-info";
 import {
   getHighestCompatibility,
+  getCompatibilityRank,
   PlaytronCompatibilityLevel
 } from "@/types/app-library/playtron-app/playtron-compatibility";
 
@@ -88,22 +89,22 @@ export const AppLibrary: React.FC = () => {
       { id: 3, label: t`Game Size`, onClick: () => setSortKey("size") },
       { id: 4, label: t`Game Status`, onClick: () => setSortKey("status") },
       {
-        id: 6,
+        id: 5,
         label: t`Install Date`,
         onClick: () => setSortKey("install_date")
       },
       {
-        id: 8,
+        id: 6,
         label: t`Last Updated`,
         onClick: () => setSortKey("last_updated")
       },
       {
-        id: 9,
+        id: 7,
         label: t`Last Played`,
         onClick: () => setSortKey("last_played")
       },
       {
-        id: 10,
+        id: 8,
         label: t`Compatibility`,
         onClick: () => setSortKey("compatibility")
       }
@@ -189,20 +190,13 @@ export const AppLibrary: React.FC = () => {
             new Date(a.installed_app?.launched_at || "").getTime()
           );
         case "compatibility": {
-          const rankMap: Record<PlaytronCompatibilityLevel, number> = {
-            [PlaytronCompatibilityLevel.Verified]: 0,
-            [PlaytronCompatibilityLevel.Compatible]: 1,
-            [PlaytronCompatibilityLevel.NotWorking]: 2,
-            [PlaytronCompatibilityLevel.Unsupported]: 3,
-            [PlaytronCompatibilityLevel.Unknown]: 4
-          };
           const aLevel = a.app.compatibility
             ? getHighestCompatibility(a.app.compatibility)
             : PlaytronCompatibilityLevel.Unknown;
           const bLevel = b.app.compatibility
             ? getHighestCompatibility(b.app.compatibility)
             : PlaytronCompatibilityLevel.Unknown;
-          return rankMap[aLevel] - rankMap[bLevel];
+          return getCompatibilityRank(aLevel) - getCompatibilityRank(bLevel);
         }
         default:
           return 0;

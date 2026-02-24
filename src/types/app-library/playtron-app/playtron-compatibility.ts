@@ -14,13 +14,20 @@ export interface PlaytronCompatibility {
   percent: number;
 }
 
-const orderedLevels = [
+export const orderedLevels = [
   PlaytronCompatibilityLevel.Verified,
   PlaytronCompatibilityLevel.Compatible,
   PlaytronCompatibilityLevel.NotWorking,
   PlaytronCompatibilityLevel.Unsupported,
   PlaytronCompatibilityLevel.Unknown
 ];
+
+export function getCompatibilityRank(
+  level: PlaytronCompatibilityLevel
+): number {
+  const index = orderedLevels.indexOf(level);
+  return index === -1 ? orderedLevels.length : index;
+}
 
 export function getHighestCompatibility(
   compatibility: PlaytronCompatibility[]
