@@ -23,6 +23,10 @@ import { AppInformation } from "@/types";
 import { GameCard } from "./game-card";
 import { FilterButton } from "./filter-button";
 import { getAppStatusWithQueue } from "@/utils/app-info";
+import {
+  getHighestCompatibility,
+  PlaytronCompatibilityLevel
+} from "@/types/app-library/playtron-app/playtron-compatibility";
 
 export const AppLibrary: React.FC = () => {
   const { apps, loading, appFilters } = useAppSelector(selectAppLibraryState);
@@ -97,6 +101,11 @@ export const AppLibrary: React.FC = () => {
         id: 9,
         label: t`Last Played`,
         onClick: () => setSortKey("last_played")
+      },
+      {
+        id: 10,
+        label: t`Compatibility`,
+        onClick: () => setSortKey("compatibility")
       }
     ],
     []
@@ -117,6 +126,8 @@ export const AppLibrary: React.FC = () => {
         return t`Sort by: Last Updated`;
       case "last_played":
         return t`Sort by: Last Played`;
+      case "compatibility":
+        return t`Sort by: Compatibility`;
       default:
         return t`???`;
     }
@@ -177,6 +188,22 @@ export const AppLibrary: React.FC = () => {
             new Date(b.installed_app?.launched_at || "").getTime() -
             new Date(a.installed_app?.launched_at || "").getTime()
           );
+        case "compatibility": {
+          const rankMap: Record<PlaytronCompatibilityLevel, number> = {
+            [PlaytronCompatibilityLevel.Verified]: 0,
+            [PlaytronCompatibilityLevel.Compatible]: 1,
+            [PlaytronCompatibilityLevel.NotWorking]: 2,
+            [PlaytronCompatibilityLevel.Unsupported]: 3,
+            [PlaytronCompatibilityLevel.Unknown]: 4
+          };
+          const aLevel = a.app.compatibility
+            ? getHighestCompatibility(a.app.compatibility)
+            : PlaytronCompatibilityLevel.Unknown;
+          const bLevel = b.app.compatibility
+            ? getHighestCompatibility(b.app.compatibility)
+            : PlaytronCompatibilityLevel.Unknown;
+          return rankMap[aLevel] - rankMap[bLevel];
+        }
         default:
           return 0;
       }
