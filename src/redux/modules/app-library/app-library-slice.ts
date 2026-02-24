@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AppProvider } from "@/types/platform-auth";
 import { RootState } from "@/redux/store";
 import {
   AppDownloadProgressResponse,
@@ -11,6 +10,7 @@ import {
 } from "@/types";
 import { DriveInfoResponseBody } from "@/types/drive";
 import { invoke } from "@tauri-apps/api/core";
+import { getFromLocalStorage, setInLocalStorage } from "@/utils/local-storage";
 
 export interface AppLibraryState {
   apps: AppInformation[];
@@ -28,17 +28,19 @@ export interface AppLibraryState {
   loadingProgress: { [key: string]: number };
 }
 
+const PROVIDER_FILTERS_KEY = "providerFilters";
+
+const savedProviderFilters = getFromLocalStorage(PROVIDER_FILTERS_KEY) as
+  | { [key: string]: boolean }
+  | undefined;
+
 export const APP_LIBRARY_INITIAL_STATE: AppLibraryState = {
   apps: [],
   currentApp: undefined,
   queue: [],
   drives: [],
   appFilters: {
-    providers: {
-      [AppProvider.Steam]: true,
-      [AppProvider.Gog]: true,
-      [AppProvider.EpicGames]: true
-    },
+    providers: savedProviderFilters ?? {},
     drives: [],
     status: "installed"
   },
@@ -65,9 +67,20 @@ export const appLibrarySlice = createSlice({
       action: PayloadAction<{ provider: string; show: boolean }>
     ) => {
       state.appFilters.providers[action.payload.provider] = action.payload.show;
+      setInLocalStorage(PROVIDER_FILTERS_KEY, {
+        ...state.appFilters.providers
+      });
     },
     setAvailableProviders: (state, action: PayloadAction<string[]>) => {
       state.availableProviders = action.payload;
+      for (const provider of action.payload) {
+        if (!(provider in state.appFilters.providers)) {
+          state.appFilters.providers[provider] = true;
+        }
+      }
+      setInLocalStorage(PROVIDER_FILTERS_KEY, {
+        ...state.appFilters.providers
+      });
     },
     setShowDrives: (
       state,
