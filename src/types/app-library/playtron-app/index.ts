@@ -1,5 +1,6 @@
 export * from "./playtron-age-rating";
 export * from "./playtron-app";
+export * from "./playtron-compatibility";
 export * from "./playtron-rating";
 export * from "./playtron-provider";
 export * from "./playtron-tag";

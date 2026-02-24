@@ -1,5 +1,6 @@
 import { PlaytronAgeRating } from "./playtron-age-rating";
 import { PlaytronAppType } from "./playtron-app-type";
+import { PlaytronCompatibility } from "./playtron-compatibility";
 import { PlaytronCredit } from "./playtron-credit";
 import { PlaytronGameSeries } from "./playtron-game-series";
 import { PlaytronImage } from "./playtron-image";
@@ -34,4 +35,5 @@ export interface PlaytronApp {
   popularity: PlaytronPopularity[];
   ratings: PlaytronRating[];
   sales: PlaytronSale[];
+  compatibility?: PlaytronCompatibility[];
 }
