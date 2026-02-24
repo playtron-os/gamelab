@@ -17,7 +17,7 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:132
+#: src/components/app-library/app-library.tsx:133
 msgid "???"
 msgstr ""
 
@@ -63,7 +63,7 @@ msgstr ""
 msgid "Add New Config"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:189
+#: src/components/side-panel/side-panel.tsx:178
 msgid "Added"
 msgstr ""
 
@@ -71,11 +71,11 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:247
+#: src/components/app-library/app-library.tsx:241
 msgid "All Games"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:278
+#: src/components/app-library/app-library.tsx:272
 msgid "All Games ({filteredGamesCount})"
 msgstr ""
 
@@ -119,7 +119,7 @@ msgstr ""
 #~ msgid "Bulk Actions"
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:222
+#: src/components/side-panel/side-panel.tsx:211
 msgid "Bypass App Update"
 msgstr ""
 
@@ -145,16 +145,16 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:389
+#: src/components/side-panel/side-panel.tsx:355
 msgid "Close Log Window"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:107
-#: src/components/side-panel/side-panel.tsx:311
+#: src/components/app-library/app-library.tsx:108
+#: src/components/side-panel/side-panel.tsx:51
 msgid "Compatibility"
 msgstr ""
 
-#: src/types/app-library/playtron-app/playtron-compatibility.ts:43
+#: src/types/app-library/playtron-app/playtron-compatibility.ts:50
 msgid "Compatible"
 msgstr ""
 
@@ -249,7 +249,7 @@ msgstr ""
 msgid "End User License Agreements for"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:232
+#: src/components/side-panel/side-panel.tsx:221
 msgid "Enhanced Debugging"
 msgstr ""
 
@@ -318,11 +318,11 @@ msgstr ""
 #~ msgid "Game logs will appear here..."
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:88
+#: src/components/app-library/app-library.tsx:89
 msgid "Game Size"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:89
+#: src/components/app-library/app-library.tsx:90
 msgid "Game Status"
 msgstr ""
 
@@ -359,7 +359,7 @@ msgstr ""
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:270
+#: src/components/side-panel/side-panel.tsx:259
 msgid "Input Config"
 msgstr ""
 
@@ -383,19 +383,19 @@ msgstr ""
 msgid "Insert Delimiter"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:92
+#: src/components/app-library/app-library.tsx:93
 msgid "Install Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:348
+#: src/components/side-panel/side-panel.tsx:314
 msgid "Install folder"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:257
+#: src/components/app-library/app-library.tsx:251
 msgid "Installed"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:279
+#: src/components/app-library/app-library.tsx:273
 msgid "Installed Games ({filteredGamesCount})"
 msgstr ""
 
@@ -403,7 +403,7 @@ msgstr ""
 #~ msgid "Installed Games ({totalInstalled})"
 #~ msgstr ""
 
-#: src/components/app-library/game-card.tsx:235
+#: src/components/app-library/game-card.tsx:187
 msgid "Installed on Drive"
 msgstr ""
 
@@ -447,11 +447,11 @@ msgstr ""
 #~ msgid "Last Added"
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:102
+#: src/components/app-library/app-library.tsx:103
 msgid "Last Played"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:97
+#: src/components/app-library/app-library.tsx:98
 msgid "Last Updated"
 msgstr ""
 
@@ -463,7 +463,7 @@ msgstr ""
 msgid "Launch config"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:244
+#: src/components/side-panel/side-panel.tsx:233
 msgid "Launch Config"
 msgstr ""
 
@@ -515,7 +515,7 @@ msgstr ""
 msgid "Mouse Move"
 msgstr ""
 
-#: src/components/app-library/game-card.tsx:177
+#: src/components/app-library/game-card.tsx:129
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:83
 msgid "Move"
 msgstr ""
@@ -536,15 +536,15 @@ msgstr ""
 #~ msgid "Name"
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:86
+#: src/components/app-library/app-library.tsx:87
 msgid "Name (A-Z)"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:87
+#: src/components/app-library/app-library.tsx:88
 msgid "Name (Z-A)"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:205
+#: src/components/side-panel/side-panel.tsx:194
 msgid "Never tested"
 msgstr ""
 
@@ -564,11 +564,11 @@ msgstr ""
 msgid "Not Downloaded"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:194
+#: src/components/side-panel/side-panel.tsx:183
 msgid "Not installed"
 msgstr ""
 
-#: src/types/app-library/playtron-app/playtron-compatibility.ts:45
+#: src/types/app-library/playtron-app/playtron-compatibility.ts:52
 msgid "Not Working"
 msgstr ""
 
@@ -592,7 +592,7 @@ msgstr ""
 msgid "Open Full Log"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:389
+#: src/components/side-panel/side-panel.tsx:355
 msgid "Open Log Window"
 msgstr ""
 
@@ -613,7 +613,7 @@ msgstr ""
 msgid "Paused"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:297
+#: src/components/side-panel/side-panel.tsx:286
 msgid "Playtron App ID"
 msgstr ""
 
@@ -627,7 +627,7 @@ msgstr ""
 #~ msgid "Playtron Labs"
 #~ msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:328
+#: src/components/side-panel/side-panel.tsx:294
 msgid "Playtron Slug"
 msgstr ""
 
@@ -643,11 +643,11 @@ msgstr ""
 msgid "Promote"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:142
+#: src/components/side-panel/side-panel.tsx:131
 msgid "Provider"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:148
+#: src/components/side-panel/side-panel.tsx:137
 msgid "Provider App ID"
 msgstr ""
 
@@ -667,16 +667,16 @@ msgstr ""
 msgid "Ready"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:335
+#: src/components/side-panel/side-panel.tsx:301
 msgid "Release Date"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:255
-#: src/components/side-panel/side-panel.tsx:281
+#: src/components/side-panel/side-panel.tsx:244
+#: src/components/side-panel/side-panel.tsx:270
 msgid "Reset"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:212
+#: src/components/side-panel/side-panel.tsx:201
 msgid "Reset Wine Prefix"
 msgstr ""
 
@@ -693,7 +693,7 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:268
+#: src/components/app-library/app-library.tsx:262
 msgid "Search"
 msgstr ""
 
@@ -729,19 +729,19 @@ msgstr ""
 msgid "Sorry, an unexpected error has occurred."
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:130
+#: src/components/app-library/app-library.tsx:131
 msgid "Sort by: Compatibility"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:120
+#: src/components/app-library/app-library.tsx:121
 msgid "Sort by: Game Size"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:122
+#: src/components/app-library/app-library.tsx:123
 msgid "Sort by: Game Status"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:124
+#: src/components/app-library/app-library.tsx:125
 msgid "Sort by: Install Date"
 msgstr ""
 
@@ -749,19 +749,19 @@ msgstr ""
 #~ msgid "Sort by: Last Added"
 #~ msgstr ""
 
-#: src/components/app-library/app-library.tsx:128
+#: src/components/app-library/app-library.tsx:129
 msgid "Sort by: Last Played"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:126
+#: src/components/app-library/app-library.tsx:127
 msgid "Sort by: Last Updated"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:116
+#: src/components/app-library/app-library.tsx:117
 msgid "Sort by: Name (A-Z)"
 msgstr ""
 
-#: src/components/app-library/app-library.tsx:118
+#: src/components/app-library/app-library.tsx:119
 msgid "Sort by: Name (Z-A)"
 msgstr ""
 
@@ -798,7 +798,7 @@ msgstr ""
 msgid "Test Games on Playtron Device via Local Network"
 msgstr ""
 
-#: src/components/side-panel/side-panel.tsx:200
+#: src/components/side-panel/side-panel.tsx:189
 msgid "Tested on"
 msgstr ""
 
@@ -847,12 +847,12 @@ msgstr ""
 msgid "Unhandled error: {e}"
 msgstr ""
 
-#: src/components/app-library/game-card.tsx:193
+#: src/components/app-library/game-card.tsx:145
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 msgid "Uninstall"
 msgstr ""
 
-#: src/types/app-library/playtron-app/playtron-compatibility.ts:49
+#: src/types/app-library/playtron-app/playtron-compatibility.ts:56
 #: src/utils/app-info.ts:94
 msgid "Unknown"
 msgstr ""
@@ -862,7 +862,7 @@ msgstr ""
 msgid "Unset"
 msgstr ""
 
-#: src/types/app-library/playtron-app/playtron-compatibility.ts:47
+#: src/types/app-library/playtron-app/playtron-compatibility.ts:54
 msgid "Unsupported"
 msgstr ""
 
@@ -891,7 +891,7 @@ msgstr ""
 msgid "Validate JSON"
 msgstr ""
 
-#: src/types/app-library/playtron-app/playtron-compatibility.ts:41
+#: src/types/app-library/playtron-app/playtron-compatibility.ts:48
 msgid "Verified"
 msgstr ""
 

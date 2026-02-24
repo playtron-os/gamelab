@@ -8,11 +8,7 @@ import {
   EpicFill,
   GogFill,
   SteamFill,
-  ErrorWarningFill,
-  CheckCircleFill,
-  CheckboxBlankCircleFill,
-  ForbidFill,
-  QuestionFill
+  ErrorWarningFill
 } from "@playtron/styleguide";
 
 import { AppDownloadStage, AppStatus, PlaytronAppType } from "@/types";
@@ -32,6 +28,7 @@ import {
   getHighestCompatibility,
   getCompatibilityLabel
 } from "@/types/app-library/playtron-app/playtron-compatibility";
+import { getCompatibilityIcon } from "@/utils/compatibility";
 import { AppProvider } from "@/types/platform-auth";
 import { useAppLibraryContext } from "@/context";
 import { useSubmissionsContext } from "@/context/submissions-context";
@@ -66,54 +63,6 @@ export const getProviderIcon = (
   }
 };
 
-const getCompatibilityIcon = (
-  level: PlaytronCompatibilityLevel,
-  size: number = 16
-) => {
-  switch (level) {
-    case PlaytronCompatibilityLevel.Verified:
-      return (
-        <CheckCircleFill
-          fill={styles.variablesDark.feedback["success-primary"]}
-          width={size}
-          height={size}
-        />
-      );
-    case PlaytronCompatibilityLevel.Compatible:
-      return (
-        <CheckboxBlankCircleFill
-          fill={styles.variablesDark.state["default"]}
-          width={size}
-          height={size}
-        />
-      );
-    case PlaytronCompatibilityLevel.NotWorking:
-      return (
-        <ErrorWarningFill
-          fill={styles.variablesDark.feedback["error-primary"]}
-          width={size}
-          height={size}
-        />
-      );
-    case PlaytronCompatibilityLevel.Unsupported:
-      return (
-        <ForbidFill
-          fill={styles.variablesDark.feedback["error-primary"]}
-          width={size}
-          height={size}
-        />
-      );
-    case PlaytronCompatibilityLevel.Unknown:
-      return (
-        <QuestionFill
-          fill={styles.variablesDark.fill.normal}
-          width={size}
-          height={size}
-        />
-      );
-  }
-};
-
 export const GameCard: React.FC<GameCardProps> = ({
   game,
   selectedId,
@@ -133,6 +82,9 @@ export const GameCard: React.FC<GameCardProps> = ({
   const status = useAppStatus(game, game.installed_app?.owned_app.id);
   const drives: DriveInfoResponseBody = useAppSelector(selectDrives);
   const progress = Math.round(getProgress(game.installed_app));
+  const compatibilityLevel = game.app.compatibility
+    ? getHighestCompatibility(game.app.compatibility)
+    : PlaytronCompatibilityLevel.Unknown;
   let statusLabel: string;
   if (progress) {
     statusLabel = `${getAppStatusLabel(status)} (${progress}%)`;
@@ -248,17 +200,9 @@ export const GameCard: React.FC<GameCardProps> = ({
         </div>
         <div
           className="flex-shrink w-[30px] h-full items-center justify-center flex"
-          title={getCompatibilityLabel(
-            game.app.compatibility
-              ? getHighestCompatibility(game.app.compatibility)
-              : PlaytronCompatibilityLevel.Unknown
-          )}
+          title={getCompatibilityLabel(compatibilityLevel)}
         >
-          {getCompatibilityIcon(
-            game.app.compatibility
-              ? getHighestCompatibility(game.app.compatibility)
-              : PlaytronCompatibilityLevel.Unknown
-          )}
+          {getCompatibilityIcon(compatibilityLevel)}
         </div>
         <div className="flex-shrink w-[160px] text-nowrap h-full items-center flex">
           <span className="p-2 text-sm text-[--text-tertiary]">

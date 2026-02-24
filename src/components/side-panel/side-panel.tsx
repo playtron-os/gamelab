@@ -1,18 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { Trans, t } from "@lingui/macro";
 
-import {
-  Button,
-  Divider,
-  Toggle,
-  CloseFill,
-  CheckCircleFill,
-  CheckboxBlankCircleFill,
-  ErrorWarningFill,
-  ForbidFill,
-  QuestionFill,
-  styles
-} from "@playtron/styleguide";
+import { Button, Divider, Toggle, CloseFill } from "@playtron/styleguide";
 
 import { AppStatus, getMessage, MessageType } from "@/types";
 import {
@@ -41,35 +30,35 @@ import { usePlayserveSendMessage } from "@/hooks";
 import { setCurrentApp, openProviderSelectionDialog } from "@/redux/modules";
 import { useAppDownloadActions } from "@/hooks/app-library";
 import {
+  PlaytronCompatibility,
   PlaytronCompatibilityLevel,
   getHighestCompatibility,
   getCompatibilityLabel
 } from "@/types/app-library/playtron-app/playtron-compatibility";
+import { compatibilityConfig } from "@/utils/compatibility";
 
-const compatibilityConfig: Record<
-  PlaytronCompatibilityLevel,
-  { icon: React.FC<React.SVGProps<SVGSVGElement>>; color: string }
-> = {
-  [PlaytronCompatibilityLevel.Verified]: {
-    icon: CheckCircleFill,
-    color: styles.variablesDark.feedback["success-primary"]
-  },
-  [PlaytronCompatibilityLevel.Compatible]: {
-    icon: CheckboxBlankCircleFill,
-    color: styles.variablesDark.state["default"]
-  },
-  [PlaytronCompatibilityLevel.NotWorking]: {
-    icon: ErrorWarningFill,
-    color: styles.variablesDark.feedback["error-primary"]
-  },
-  [PlaytronCompatibilityLevel.Unsupported]: {
-    icon: ForbidFill,
-    color: styles.variablesDark.feedback["error-primary"]
-  },
-  [PlaytronCompatibilityLevel.Unknown]: {
-    icon: QuestionFill,
-    color: styles.variablesDark.fill.normal
-  }
+const CompatibilityInfo: React.FC<{
+  compatibility: PlaytronCompatibility[] | undefined;
+}> = ({ compatibility }) => {
+  const level = compatibility
+    ? getHighestCompatibility(compatibility)
+    : PlaytronCompatibilityLevel.Unknown;
+  const config = compatibilityConfig[level];
+  const Icon = config.icon;
+  return (
+    <p>
+      <span className="text-[--text-tertiary]">
+        <Trans>Compatibility</Trans>
+      </span>
+      <br />
+      <span className="flex items-center gap-2">
+        <Icon fill={config.color} width={16} height={16} />
+        <span style={{ color: config.color }} className="text-sm font-semibold">
+          {getCompatibilityLabel(level)}
+        </span>
+      </span>
+    </p>
+  );
 };
 
 export const SidePanel: React.FC = () => {
@@ -299,30 +288,7 @@ export const SidePanel: React.FC = () => {
             <br />
             <span className="select-all text-xs">{currentApp.app.id}</span>
           </p>
-          {(() => {
-            const level = currentApp.app.compatibility
-              ? getHighestCompatibility(currentApp.app.compatibility)
-              : PlaytronCompatibilityLevel.Unknown;
-            const config = compatibilityConfig[level];
-            const Icon = config.icon;
-            return (
-              <p>
-                <span className="text-[--text-tertiary]">
-                  <Trans>Compatibility</Trans>
-                </span>
-                <br />
-                <span className="flex items-center gap-2">
-                  <Icon fill={config.color} width={16} height={16} />
-                  <span
-                    style={{ color: config.color }}
-                    className="text-sm font-semibold"
-                  >
-                    {getCompatibilityLabel(level)}
-                  </span>
-                </span>
-              </p>
-            );
-          })()}
+          <CompatibilityInfo compatibility={currentApp.app.compatibility} />
           <p>
             <span className="text-[--text-tertiary]">
               <Trans>Playtron Slug</Trans>
