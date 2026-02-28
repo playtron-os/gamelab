@@ -211,9 +211,7 @@ pub async fn autotest_start(
         let var_name = make_var_name(store, &game.name);
         installed_entries.push((var_name, game.game_id.clone(), game.name.clone()));
     }
-    installed_entries.sort_by(|a, b| a.0.cmp(&b.0));
-
-    // Deduplicate variable names (same logic as Python's _fetch_installed_games)
+    // Deduplicate variable names (preserving insertion order = click order)
     let mut seen = std::collections::HashSet::new();
     for entry in &mut installed_entries {
         let base = entry.0.clone();

@@ -78,34 +78,42 @@ const compatibilityConfig: Record<
   }
 };
 
-const autotestLabels: Record<
-  string,
-  { emoji: string; label: string; color: string }
-> = {
-  testing: {
-    emoji: "\u23F3",
-    label: "Testing...",
-    color: styles.variablesDark.fill.normal
-  },
-  queued: {
-    emoji: "\u23F3",
-    label: "Queued",
-    color: styles.variablesDark.fill.normal
-  },
-  pass: {
-    emoji: "\u2705",
-    label: "Passed",
-    color: styles.variablesDark.feedback["success-primary"]
-  },
-  fail: {
-    emoji: "\u274C",
-    label: "Failed",
-    color: styles.variablesDark.feedback["error-primary"]
-  },
-  error: {
-    emoji: "\u26A0\uFE0F",
-    label: "Error",
-    color: styles.variablesDark.feedback["error-primary"]
+const getAutotestLabel = (
+  status: string
+): { emoji: string; label: string; color: string } | null => {
+  switch (status) {
+    case "testing":
+      return {
+        emoji: "\u23F3",
+        label: t`Testing...`,
+        color: styles.variablesDark.fill.normal
+      };
+    case "queued":
+      return {
+        emoji: "\u23F3",
+        label: t`Queued`,
+        color: styles.variablesDark.fill.normal
+      };
+    case "pass":
+      return {
+        emoji: "\u2705",
+        label: t`Passed`,
+        color: styles.variablesDark.feedback["success-primary"]
+      };
+    case "fail":
+      return {
+        emoji: "\u274C",
+        label: t`Failed`,
+        color: styles.variablesDark.feedback["error-primary"]
+      };
+    case "error":
+      return {
+        emoji: "\u26A0\uFE0F",
+        label: t`Error`,
+        color: styles.variablesDark.feedback["error-primary"]
+      };
+    default:
+      return null;
   }
 };
 
@@ -118,7 +126,7 @@ const AutotestStatusInfo: React.FC<{
   const testResult = getGameResult(currentApp);
   if (!testStatus) return null;
 
-  const info = autotestLabels[testStatus];
+  const info = getAutotestLabel(testStatus);
   if (!info) return null;
 
   return (

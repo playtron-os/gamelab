@@ -16,6 +16,66 @@ import { STEAM_APP_INFORMATION_MOCKS } from "@/mocks/app";
 import { DEFAULT_STATE_MOCK } from "@/mocks/default-state";
 import { SubmissionsContextProvider } from "@/context/submissions-context";
 
+jest.mock("@/hooks/use-autotest", () => ({
+  useAutotest: jest.fn().mockReturnValue({
+    state: "idle",
+    results: [],
+    manifest: [],
+    total: 0,
+    completed: 0,
+    currentGameName: null,
+    error: null,
+    startAutotest: jest.fn(),
+    checkExistingRun: jest.fn(),
+    stopAutotest: jest.fn(),
+    reset: jest.fn(),
+    stopPolling: jest.fn()
+  })
+}));
+
+jest.mock("@/context", () => {
+  const actualAppLibrary = jest.requireActual("@/context/app-library-context");
+  const actualConfirmation = jest.requireActual(
+    "@/context/confirmation-pop-up-context"
+  );
+  const actualLoadingSpinner = jest.requireActual(
+    "@/context/loading-spinner-context"
+  );
+  return {
+    ...actualAppLibrary,
+    ...actualConfirmation,
+    ...actualLoadingSpinner,
+    useAppLibraryContext: jest.fn(),
+    useAutotestContext: jest.fn().mockReturnValue({
+      state: "idle",
+      results: [],
+      manifest: [],
+      total: 0,
+      completed: 0,
+      currentGameName: null,
+      error: null,
+      selectMode: false,
+      enterSelectMode: jest.fn(),
+      exitSelectMode: jest.fn(),
+      getGameStatus: jest.fn().mockReturnValue(undefined),
+      getGameResult: jest.fn().mockReturnValue(undefined),
+      isInManifest: jest.fn().mockReturnValue(false),
+      startAutotest: jest.fn(),
+      checkExistingRun: jest.fn(),
+      stopAutotest: jest.fn(),
+      reset: jest.fn(),
+      stopPolling: jest.fn()
+    }),
+    AppLibraryContextProvider: ({ children }: any) => children,
+    LoadingSpinnerContextProvider: ({ children }: any) => children,
+    useLoadingSpinner: jest.fn(() => ({
+      isLoadingSpinnerActive: false,
+      showLoadingSpinner: jest.fn(),
+      hideLoadingSpinner: jest.fn()
+    }))
+  };
+});
+
 const MOCK_BOOLEAN_STATE_MANAGER = [
   false,
   {
@@ -87,22 +147,10 @@ const getMockStore = ({
 
 describe("<AppLibrary />", () => {
   const getBoundingClientRect = window.Element.prototype.getBoundingClientRect;
-
-  jest.mock("@/context", () => ({
-    ...jest.requireActual("@/context"),
-    useAppLibraryContext: jest.fn().mockReturnValue(MOCK_LIBRARY_TABLE_DATA),
-    AppLibraryContextProvider: ({ children }: any) => children,
-    LoadingSpinnerContextProvider: ({ children }: any) => children,
-    useLoadingSpinner: jest.fn(() => {
-      return {
-        isLoadingSpinnerActive: false,
-        showLoadingSpinner: jest.fn(),
-        hideLoadingSpinner: jest.fn()
-      };
-    })
-  }));
+  const { useAppLibraryContext } = jest.requireMock("@/context");
 
   beforeEach(() => {
+    useAppLibraryContext.mockReturnValue(MOCK_LIBRARY_TABLE_DATA);
     window.Element.prototype.getBoundingClientRect = jest
       .fn()
       .mockReturnValue({ height: 1000, width: 1000 });

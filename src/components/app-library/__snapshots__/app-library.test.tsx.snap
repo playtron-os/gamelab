@@ -155,6 +155,30 @@ exports[`<AppLibrary /> error state snapshot 1`] = `
           Installed Games (
         </h2>
         <div
+          class="flex items-center gap-2 pe-2"
+        >
+          <button
+            class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[14px] p-2"
+            type="button"
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <span
+                class="flex-grow"
+              />
+              <span
+                class="flex-shrink"
+              >
+                Autotest
+              </span>
+              <span
+                class="flex-grow"
+              />
+            </div>
+          </button>
+        </div>
+        <div
           class="flex items-center pe-2 w-[250px]"
         >
           <div
@@ -622,6 +646,30 @@ exports[`<AppLibrary /> loaded state snapshot 1`] = `
           Installed Games (
         </h2>
         <div
+          class="flex items-center gap-2 pe-2"
+        >
+          <button
+            class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[14px] p-2"
+            type="button"
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <span
+                class="flex-grow"
+              />
+              <span
+                class="flex-shrink"
+              >
+                Autotest
+              </span>
+              <span
+                class="flex-grow"
+              />
+            </div>
+          </button>
+        </div>
+        <div
           class="flex items-center pe-2 w-[250px]"
         >
           <div
@@ -1088,6 +1136,30 @@ exports[`<AppLibrary /> loading state snapshot 1`] = `
         >
           Installed Games (
         </h2>
+        <div
+          class="flex items-center gap-2 pe-2"
+        >
+          <button
+            class="rounded-lg font-bold focus:outline-2 focus:outline-offset-2 focus:outline-white text-[--text-primary] bg-[--state-default-neutral] hover:bg-[--state-hovered-neutral] border border-[--stroke-subtle] text-[14px] p-2"
+            type="button"
+          >
+            <div
+              class="flex items-center gap-2"
+            >
+              <span
+                class="flex-grow"
+              />
+              <span
+                class="flex-shrink"
+              >
+                Autotest
+              </span>
+              <span
+                class="flex-grow"
+              />
+            </div>
+          </button>
+        </div>
         <div
           class="flex items-center pe-2 w-[250px]"
         >
