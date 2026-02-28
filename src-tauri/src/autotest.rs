@@ -198,9 +198,9 @@ pub async fn autotest_start(
         address
     );
 
-    // Kill any existing runner
+    // Kill any existing runner (process group + PID for thorough cleanup)
     let kill_cmd = format!(
-        "if [ -f {output_dir}/runner.pid ]; then kill $(cat {output_dir}/runner.pid) 2>/dev/null; rm -f {output_dir}/runner.pid; fi"
+        "if [ -f {output_dir}/runner.pid ]; then PID=$(cat {output_dir}/runner.pid); kill -- -$(ps -o pgid= -p $PID | tr -d ' ') 2>/dev/null; kill $PID 2>/dev/null; rm -f {output_dir}/runner.pid; fi"
     );
     let _ = ssh_exec(address, username.clone(), password.clone(), &kill_cmd).await;
 
@@ -229,6 +229,15 @@ pub async fn autotest_start(
             }
         }
         seen.insert(entry.0.clone());
+    }
+
+    // Sanitize game names/IDs to prevent heredoc delimiter injection
+    for entry in &installed_entries {
+        for content in [&entry.0, &entry.1, &entry.2] {
+            if content.contains("GAMELAB_") && content.contains("_EOF") {
+                return Err("Game data contains reserved delimiter sequence".to_string());
+            }
+        }
     }
 
     // Generate Installed.py content
@@ -319,9 +328,28 @@ pub async fn autotest_poll(
     let password = password.unwrap_or_else(|| String::from("playtron"));
     let output_dir = output_dir.unwrap_or_else(|| String::from(DEFAULT_OUTPUT_DIR));
 
-    // Single SSH call that reads all state files with separators
+    // Single SSH call that reads all state files with delimited sections
     let poll_cmd = format!(
-        r#"echo "===RESULTS_START==="; cat {output_dir}/results.tsv 2>/dev/null || true; echo "===RESULTS_END==="; echo "===MANIFEST_START==="; cat {output_dir}/manifest.txt 2>/dev/null || true; echo "===MANIFEST_END==="; echo "===STATUS_START==="; cat {output_dir}/run.status 2>/dev/null || echo "NONE"; echo "===STATUS_END==="; echo "===PID_START==="; if [ -f {output_dir}/runner.pid ]; then if kill -0 $(cat {output_dir}/runner.pid) 2>/dev/null; then echo "ALIVE"; else echo "DEAD"; fi; else echo "NONE"; fi; echo "===PID_END===""#
+        r#"echo "===RESULTS_START==="
+cat {output_dir}/results.tsv 2>/dev/null || true
+echo "===RESULTS_END==="
+echo "===MANIFEST_START==="
+cat {output_dir}/manifest.txt 2>/dev/null || true
+echo "===MANIFEST_END==="
+echo "===STATUS_START==="
+cat {output_dir}/run.status 2>/dev/null || echo "NONE"
+echo "===STATUS_END==="
+echo "===PID_START==="
+if [ -f {output_dir}/runner.pid ]; then
+  if kill -0 $(cat {output_dir}/runner.pid) 2>/dev/null; then
+    echo "ALIVE"
+  else
+    echo "DEAD"
+  fi
+else
+  echo "NONE"
+fi
+echo "===PID_END===""#
     );
 
     let result = ssh_exec(address, username, password, &poll_cmd).await?;
@@ -378,7 +406,7 @@ pub async fn autotest_stop(
     let output_dir = output_dir.unwrap_or_else(|| String::from(DEFAULT_OUTPUT_DIR));
 
     let stop_cmd = format!(
-        r#"if [ -f {output_dir}/runner.pid ]; then kill $(cat {output_dir}/runner.pid) 2>/dev/null; rm -f {output_dir}/runner.pid; fi; echo "STOPPED" > {output_dir}/run.status"#
+        r#"if [ -f {output_dir}/runner.pid ]; then PID=$(cat {output_dir}/runner.pid); kill -- -$(ps -o pgid= -p $PID | tr -d ' ') 2>/dev/null; kill $PID 2>/dev/null; rm -f {output_dir}/runner.pid; fi; echo "STOPPED" > {output_dir}/run.status"#
     );
 
     let result = ssh_exec(address, username, password, &stop_cmd).await?;

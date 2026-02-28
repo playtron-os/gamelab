@@ -13,3 +13,53 @@
     justify-content: space-between;
   }
 }
+
+.autotest-active,
+.autotest-queued {
+  position: relative;
+  overflow: hidden;
+}
+
+.autotest-active {
+  background-color: rgba(59, 130, 246, 0.08);
+}
+
+.autotest-active::before,
+.autotest-queued::before {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.autotest-active::before {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(59, 130, 246, 0.1) 8px,
+    rgba(59, 130, 246, 0.1) 16px
+  );
+  animation: autotest-stripe-scroll 0.8s linear infinite;
+}
+
+.autotest-queued::before {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(255, 255, 255, 0.03) 8px,
+    rgba(255, 255, 255, 0.03) 16px
+  );
+}
+
+@keyframes autotest-stripe-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    // 8√2 ≈ 11.314px — exactly one stripe period along the -45deg gradient axis
+    transform: translate3d(11.314px, 11.314px, 0);
+  }
+}

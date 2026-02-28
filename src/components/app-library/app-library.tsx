@@ -1,16 +1,21 @@
-import React, { useState, useRef, useMemo } from "react";
+import React, { useState, useRef, useMemo, useEffect } from "react";
 import { Trans, t } from "@lingui/macro";
 import "./app-library.scss";
 import { Tabs, Tab } from "@nextui-org/react";
 import { useVirtualizer } from "@tanstack/react-virtual";
 
 import {
+  Button,
   ConfirmationPopUp,
   TextInput,
   Dropdown,
   ProgressSpinner
 } from "@playtron/styleguide";
-import { useConfirmationPopUp, useAppLibraryContext } from "@/context";
+import {
+  useConfirmationPopUp,
+  useAppLibraryContext,
+  useAutotestContext
+} from "@/context";
 import { MoveAppDialog } from "../move-app-dialog";
 import { BulkActionsMenu } from "../bulk-actions-menu/bulk-actions-menu";
 import {
@@ -37,42 +42,66 @@ export const AppLibrary: React.FC = () => {
     selectAppLibraryQueuePositionMapState
   );
   const parentRef = useRef<HTMLDivElement>(null);
-  const { onSelectedIdChange } = useAppLibraryContext();
+  const { onSelectedIdChange, selectedApps, setSelectedApps } =
+    useAppLibraryContext();
   const [nameFilter, setNameFilter] = useState("");
   const [sortKey, setSortKey] = useState("last_played");
+  const autotest = useAutotestContext();
+  const autotestRunning =
+    autotest.state === "running" || autotest.state === "starting";
   const { props: confirmationPopUpProps } = useConfirmationPopUp();
+
+  // Clear checkbox selections when a test run finishes
+  const prevRunning = useRef(autotestRunning);
+  useEffect(() => {
+    if (prevRunning.current && !autotestRunning) {
+      setSelectedApps(new Set());
+    }
+    prevRunning.current = autotestRunning;
+  }, [autotestRunning, setSelectedApps]);
 
   const [selectedGame, setSelectedGame] = useState<AppInformation | null>(null);
 
-  let filteredGames = apps.filter((app) => app.is_owned);
+  const filteredGames = useMemo(() => {
+    let result = apps.filter((app) => app.is_owned);
 
-  const shownProviders = (Object.keys(appFilters.providers) as string[]).filter(
-    (key) => appFilters.providers[key]
-  );
-  if (shownProviders.length < Object.keys(appFilters.providers).length) {
-    filteredGames = filteredGames.filter((app) => {
-      return shownProviders.some((provider) =>
-        app.owned_apps.map((ownedApp) => ownedApp.provider).includes(provider)
-      );
-    });
-  }
-
-  if (appFilters.status === "installed") {
-    if (appFilters.drives.length) {
-      filteredGames = filteredGames.filter((app) => {
-        return appFilters.drives.some(
-          (drive) => app.installed_app?.install_config.install_disk === drive
+    const shownProviders = (
+      Object.keys(appFilters.providers) as string[]
+    ).filter((key) => appFilters.providers[key]);
+    if (shownProviders.length < Object.keys(appFilters.providers).length) {
+      result = result.filter((app) => {
+        return shownProviders.some((provider) =>
+          app.owned_apps.map((ownedApp) => ownedApp.provider).includes(provider)
         );
       });
     }
-    filteredGames = filteredGames.filter((app) => !!app.installed_app);
-  }
 
-  if (nameFilter) {
-    filteredGames = filteredGames.filter((app) =>
-      app.app.name.toLowerCase().includes(nameFilter.toLowerCase())
-    );
-  }
+    if (appFilters.status === "installed") {
+      if (appFilters.drives.length) {
+        result = result.filter((app) => {
+          return appFilters.drives.some(
+            (drive) => app.installed_app?.install_config.install_disk === drive
+          );
+        });
+      }
+      result = result.filter((app) => !!app.installed_app);
+    }
+
+    if (nameFilter) {
+      const lower = nameFilter.toLowerCase();
+      result = result.filter((app) =>
+        app.app.name.toLowerCase().includes(lower)
+      );
+    }
+
+    return result;
+  }, [
+    apps,
+    appFilters.providers,
+    appFilters.status,
+    appFilters.drives,
+    nameFilter
+  ]);
   const virtualizer = useVirtualizer({
     count: filteredGames.length,
     getScrollElement: () => parentRef.current,
@@ -278,6 +307,62 @@ export const AppLibrary: React.FC = () => {
               ? t`All Games (${filteredGamesCount})`
               : t`Installed Games (${filteredGamesCount})`}
           </h2>
+          <div className="flex items-center gap-2 pe-2">
+            {autotestRunning ? (
+              <>
+                <span className="text-sm text-[--text-tertiary]">
+                  {(() => {
+                    if (autotest.state === "starting")
+                      return t`Uploading tests...`;
+                    const completed = autotest.completed;
+                    const total = autotest.total;
+                    return t`Testing ${completed}/${total}...`;
+                  })()}
+                </span>
+                <Button
+                  label={t`Stop Autotest`}
+                  size="small"
+                  onClick={() => autotest.stopAutotest()}
+                />
+              </>
+            ) : autotest.selectMode ? (
+              <>
+                {selectedApps.size > 0 && (
+                  <Button
+                    label={(() => {
+                      const count = selectedApps.size;
+                      return t`Run Autotest (${count})`;
+                    })()}
+                    size="small"
+                    onClick={() => {
+                      const appById = new Map(
+                        apps.map((app) => [app.app.id, app])
+                      );
+                      const selected = [...selectedApps]
+                        .map((id) => appById.get(id))
+                        .filter((app): app is AppInformation => !!app);
+                      autotest.startAutotest(selected);
+                      autotest.exitSelectMode();
+                    }}
+                  />
+                )}
+                <Button
+                  label={t`Cancel`}
+                  size="small"
+                  onClick={() => {
+                    autotest.exitSelectMode();
+                    setSelectedApps(new Set());
+                  }}
+                />
+              </>
+            ) : (
+              <Button
+                label={t`Autotest`}
+                size="small"
+                onClick={() => autotest.enterSelectMode()}
+              />
+            )}
+          </div>
           <div className="flex items-center pe-2 w-[250px]">
             <Dropdown
               triggerElem={<FilterButton label={sortLabel} />}
@@ -325,6 +410,10 @@ export const AppLibrary: React.FC = () => {
                           setSelectedGame(game);
                           onSelectedIdChange(game.app.id);
                         }}
+                        autotestStatus={autotest.getGameStatus(row)}
+                        autotestSelectMode={autotest.selectMode}
+                        autotestRunning={autotestRunning}
+                        autotestInManifest={autotest.isInManifest(row)}
                       />
                     </div>
                   );

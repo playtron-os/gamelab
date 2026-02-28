@@ -28,7 +28,13 @@ import { LogsModal } from "@/components/logs-modal/logs-modal";
 import { ConfigSelect } from "@/components/side-panel/config-select";
 import { EulaModal } from "@/components/eula-modal/eula-modal";
 
-import { useAppLibraryContext } from "@/context";
+import {
+  useAppLibraryContext,
+  useAutotestContext,
+  type AutotestGameStatus
+} from "@/context";
+import { AutotestGameResult } from "@/hooks/use-autotest";
+import { AppInformation } from "@/types/app-library";
 import {
   useSubmissionsContext,
   useSubmissionsType
@@ -72,6 +78,75 @@ const compatibilityConfig: Record<
   }
 };
 
+const autotestLabels: Record<
+  string,
+  { emoji: string; label: string; color: string }
+> = {
+  testing: {
+    emoji: "\u23F3",
+    label: "Testing...",
+    color: styles.variablesDark.fill.normal
+  },
+  queued: {
+    emoji: "\u23F3",
+    label: "Queued",
+    color: styles.variablesDark.fill.normal
+  },
+  pass: {
+    emoji: "\u2705",
+    label: "Passed",
+    color: styles.variablesDark.feedback["success-primary"]
+  },
+  fail: {
+    emoji: "\u274C",
+    label: "Failed",
+    color: styles.variablesDark.feedback["error-primary"]
+  },
+  error: {
+    emoji: "\u26A0\uFE0F",
+    label: "Error",
+    color: styles.variablesDark.feedback["error-primary"]
+  }
+};
+
+const AutotestStatusInfo: React.FC<{
+  currentApp: AppInformation;
+  getGameStatus: (app: AppInformation) => AutotestGameStatus;
+  getGameResult: (app: AppInformation) => AutotestGameResult | undefined;
+}> = ({ currentApp, getGameStatus, getGameResult }) => {
+  const testStatus = getGameStatus(currentApp);
+  const testResult = getGameResult(currentApp);
+  if (!testStatus) return null;
+
+  const info = autotestLabels[testStatus];
+  if (!info) return null;
+
+  return (
+    <p>
+      <span className="text-[--text-tertiary]">
+        <Trans>Autotest</Trans>
+      </span>
+      <br />
+      <span className="flex items-center gap-2">
+        <span>{info.emoji}</span>
+        <span style={{ color: info.color }} className="text-sm font-semibold">
+          {info.label}
+        </span>
+      </span>
+      {testResult?.message && (
+        <span className="text-xs text-[--text-tertiary] block mt-1">
+          {testResult.message}
+        </span>
+      )}
+      {testResult?.elapsedMs != null && testResult.elapsedMs > 0 && (
+        <span className="text-xs text-[--text-tertiary] block">
+          {(testResult.elapsedMs / 1000).toFixed(1)}s
+        </span>
+      )}
+    </p>
+  );
+};
+
 export const SidePanel: React.FC = () => {
   const {
     eula,
@@ -94,6 +169,7 @@ export const SidePanel: React.FC = () => {
     toggleResetWinePrefix
   } = useSubmissionsContext();
   const { downloadApp } = useAppDownloadActions();
+  const { getGameStatus, getGameResult } = useAutotestContext();
 
   const [isLaunching, setIsLaunching] = useState<boolean>(false);
   const [isInputConfigOpen, setIsInputConfigOpen] = useState<boolean>(false);
@@ -323,6 +399,11 @@ export const SidePanel: React.FC = () => {
               </p>
             );
           })()}
+          <AutotestStatusInfo
+            currentApp={currentApp}
+            getGameStatus={getGameStatus}
+            getGameResult={getGameResult}
+          />
           <p>
             <span className="text-[--text-tertiary]">
               <Trans>Playtron Slug</Trans>

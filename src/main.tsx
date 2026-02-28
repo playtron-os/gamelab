@@ -13,7 +13,8 @@ import { I18nProvider } from "@lingui/react";
 import {
   ConfirmationPopUpContextProvider,
   AppLibraryContextProvider,
-  LoadingSpinnerContextProvider
+  LoadingSpinnerContextProvider,
+  AutotestProvider
 } from "./context";
 import { SubmissionsContextProvider } from "@/context/submissions-context";
 import { PersistGate } from "redux-persist/integration/react";
@@ -43,10 +44,12 @@ export const Main = () => {
           <LoadingSpinnerContextProvider>
             <ConfirmationPopUpContextProvider>
               <AppLibraryContextProvider>
-                <SubmissionsContextProvider>
-                  <Routes />
-                  <Notification />
-                </SubmissionsContextProvider>
+                <AutotestProvider>
+                  <SubmissionsContextProvider>
+                    <Routes />
+                    <Notification />
+                  </SubmissionsContextProvider>
+                </AutotestProvider>
               </AppLibraryContextProvider>
             </ConfirmationPopUpContextProvider>
           </LoadingSpinnerContextProvider>

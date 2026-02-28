@@ -1,7 +1,8 @@
-import React, { useState, useCallback } from "react";
+import React, { memo, useState, useCallback } from "react";
 import classNames from "classnames";
 import { t, Trans } from "@lingui/macro";
 import {
+  Checkbox,
   DotsVertical,
   Dropdown,
   styles,
@@ -33,7 +34,7 @@ import {
   getCompatibilityLabel
 } from "@/types/app-library/playtron-app/playtron-compatibility";
 import { AppProvider } from "@/types/platform-auth";
-import { useAppLibraryContext } from "@/context";
+import { useAppLibraryContext, type AutotestGameStatus } from "@/context";
 import { useSubmissionsContext } from "@/context/submissions-context";
 import {
   getImage,
@@ -43,10 +44,28 @@ import {
   getAppStatusLabel,
   getAppActionLabelByStatus
 } from "@/utils/app-info";
+
+const autotestStatusEmoji = (status: string | undefined): string | null => {
+  switch (status) {
+    case "pass":
+      return "\u2705";
+    case "fail":
+      return "\u274C";
+    case "error":
+      return "\u26A0\uFE0F";
+    default:
+      return null;
+  }
+};
+
 export interface GameCardProps {
   game: AppInformation;
   selectedId: string | undefined;
   onSelectGame: (game: AppInformation) => void;
+  autotestStatus: AutotestGameStatus;
+  autotestSelectMode: boolean;
+  autotestRunning: boolean;
+  autotestInManifest: boolean;
 }
 
 export const getProviderIcon = (
@@ -114,21 +133,37 @@ const getCompatibilityIcon = (
   }
 };
 
-export const GameCard: React.FC<GameCardProps> = ({
+const GameCardInner: React.FC<GameCardProps> = ({
   game,
   selectedId,
-  onSelectGame
+  onSelectGame,
+  autotestStatus,
+  autotestSelectMode,
+  autotestRunning,
+  autotestInManifest
 }) => {
   const dispatch = useAppDispatch();
   const [isSelected, setIsSelected] = useState(false);
   const {
-    handlers: { uninstallApp, handleAppDefaultAction, openMoveAppDialog }
+    handlers: { uninstallApp, handleAppDefaultAction, openMoveAppDialog },
+    selectedApps,
+    setSelectedApps
   } = useAppLibraryContext();
   const handleSelectGame = () => {
     setIsSelected(!isSelected);
     onSelectGame(game);
   };
   const { onSelectedIdChange } = useAppLibraryContext();
+
+  const handleCheckboxToggle = () => {
+    const newSelectedApps = new Set(selectedApps);
+    if (selectedApps.has(game.app.id)) {
+      newSelectedApps.delete(game.app.id);
+    } else {
+      newSelectedApps.add(game.app.id);
+    }
+    setSelectedApps(newSelectedApps);
+  };
   const { launchParams } = useSubmissionsContext();
   const status = useAppStatus(game, game.installed_app?.owned_app.id);
   const drives: DriveInfoResponseBody = useAppSelector(selectDrives);
@@ -195,17 +230,38 @@ export const GameCard: React.FC<GameCardProps> = ({
     });
   }
 
+  const testEmoji = autotestStatusEmoji(autotestStatus);
+
   return (
     <div
       className={classNames(
         "flex flex-col w-full h-[60px] rounded-lg cursor-pointer hover:outline-1 hover:outline",
         selectedId === game.app.id
-          ? " outline-2 outline-double bg-[--fill-default]"
-          : "bg-[--fill-subtle]"
+          ? "outline-2 outline-double bg-[--fill-default]"
+          : "bg-[--fill-subtle]",
+        autotestStatus === "testing" && "autotest-active",
+        autotestStatus === "queued" && "autotest-queued"
       )}
       onClick={handleSelectGame}
     >
       <div className="flex items-center">
+        {(autotestSelectMode || autotestRunning) && (
+          <div
+            className="flex items-center justify-center w-[52px] h-[60px] shrink-0 ps-3"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Checkbox
+              checked={
+                autotestRunning
+                  ? autotestInManifest
+                  : selectedApps.has(game.app.id)
+              }
+              onChange={handleCheckboxToggle}
+              size="lg"
+              disabled={!game.installed_app || autotestRunning}
+            />
+          </div>
+        )}
         <div className="h-[60px] w-[120px]">
           <img
             src={getImage(game.app.images)}
@@ -217,6 +273,7 @@ export const GameCard: React.FC<GameCardProps> = ({
 
         <div className="flex-1 overflow-clip text-nowrap h-full items-center p-2">
           <span className="text-nowrap flex-shrink max-w-32 overflow-clip">
+            {testEmoji && <span className="me-1">{testEmoji}</span>}
             {game.app.name}
           </span>
           <div className="flex items-center gap-1">
@@ -281,3 +338,5 @@ export const GameCard: React.FC<GameCardProps> = ({
     </div>
   );
 };
+
+export const GameCard = memo(GameCardInner);

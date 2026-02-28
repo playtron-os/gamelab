@@ -126,6 +126,83 @@ pub async fn initialize_device_connection(
     Ok(local_address.to_string())
 }
 
+pub struct SshExecResult {
+    pub stdout: String,
+    pub stderr: String,
+    pub exit_code: Option<u32>,
+}
+
+pub async fn ssh_exec(
+    address: IpAddr,
+    username: String,
+    password: String,
+    command: &str,
+) -> Result<SshExecResult, String> {
+    let config = client::Config {
+        inactivity_timeout: Some(Duration::from_secs(1800)), // 30 min for long robot runs
+        ..<_>::default()
+    };
+    let config = Arc::new(config);
+    let sh = Client {};
+    let session = tokio::time::timeout(
+        Duration::from_secs(15),
+        client::connect(config, (address, 22), sh),
+    )
+    .await
+    .map_err(|_| "SSH connection timed out".to_string())?
+    .map_err(|err| format!("SSH connection failed: {err:?}"))?;
+    let mut session = session;
+    session
+        .authenticate_password(username, password)
+        .await
+        .map_err(|err| format!("SSH authentication failed: {err:?}"))?;
+
+    let mut channel = session
+        .channel_open_session()
+        .await
+        .map_err(|err| format!("Failed to open SSH channel: {err:?}"))?;
+
+    channel
+        .exec(true, command)
+        .await
+        .map_err(|err| format!("Failed to exec command: {err:?}"))?;
+
+    let mut stdout = Vec::new();
+    let mut stderr = Vec::new();
+    let mut exit_code: Option<u32> = None;
+
+    while let Some(msg) = channel.wait().await {
+        match msg {
+            ChannelMsg::Data { data } => {
+                stdout.extend_from_slice(&data);
+            }
+            ChannelMsg::ExtendedData { data, .. } => {
+                stderr.extend_from_slice(&data);
+            }
+            ChannelMsg::ExitStatus { exit_status } => {
+                exit_code = Some(exit_status);
+            }
+            ChannelMsg::Eof => {}
+            ChannelMsg::Close => {
+                break;
+            }
+            _ => {}
+        }
+    }
+
+    let _ = channel.close().await;
+    session
+        .disconnect(russh::Disconnect::ByApplication, "", "English")
+        .await
+        .map_err(|err| format!("Failed to disconnect: {err:?}"))?;
+
+    Ok(SshExecResult {
+        stdout: String::from_utf8_lossy(&stdout).to_string(),
+        stderr: String::from_utf8_lossy(&stderr).to_string(),
+        exit_code,
+    })
+}
+
 async fn message_loop(
     mut session: Session,
     mut channel: russh::Channel<client::Msg>,

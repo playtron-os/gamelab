@@ -8,10 +8,12 @@ use tauri_plugin_log::{Target, TargetKind};
 use tokio::sync::Mutex;
 
 mod app_logs;
+mod autotest;
 mod eula;
 mod ssh;
 mod validators;
 use app_logs::*;
+use autotest::*;
 use eula::*;
 use ssh::*;
 use validators::*;
@@ -85,6 +87,9 @@ fn main() {
             app_log_show,
             download_eula,
             validate_json,
+            autotest_start,
+            autotest_poll,
+            autotest_stop,
         ])
         .plugin(
             tauri_plugin_log::Builder::new()
