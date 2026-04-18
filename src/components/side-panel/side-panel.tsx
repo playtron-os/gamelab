@@ -242,8 +242,13 @@ export const SidePanel: React.FC = () => {
       <div className="fixed bg-black right-0 top-0 h-screen w-[480px] px-2 py-2 border-gray-800 border-l-2 overflow-scroll select-none cursor-default z-10">
         <div className="pt-4 px-2 mb-28">
           <div className="flex">
-            <h2 className="flex-grow text-xl font-bold justify-between flex pb-2 select-all">
+            <h2 className="flex-grow text-xl font-bold justify-between flex pb-2 select-all items-center">
               {currentApp.app.name}
+              {currentApp.app.id.startsWith("playtronlocal") && (
+                <span className="ms-2 px-1.5 py-0.5 text-[10px] font-semibold uppercase rounded border border-[--stroke-subtle] text-[--text-tertiary]">
+                  <Trans>Local</Trans>
+                </span>
+              )}
             </h2>
             <div>
               <Button

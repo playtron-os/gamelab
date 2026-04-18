@@ -82,8 +82,12 @@ export const AutotestProvider: React.FC<{ children: React.ReactNode }> = ({
     return map;
   }, [autotest.results]);
 
-  const manifestGameIds = useMemo(() => {
-    return new Set(autotest.manifest.map((m) => m.gameId));
+  const manifestIndexByGameId = useMemo(() => {
+    const map = new Map<string, number>();
+    for (let i = 0; i < autotest.manifest.length; i++) {
+      map.set(autotest.manifest[i].gameId, i);
+    }
+    return map;
   }, [autotest.manifest]);
 
   const getGameStatus = useMemo(() => {
@@ -101,8 +105,15 @@ export const AutotestProvider: React.FC<{ children: React.ReactNode }> = ({
         }
       }
 
-      const matchedId = ids.find((id) => manifestGameIds.has(id));
-      if (!matchedId) return undefined;
+      let matchedIdx: number | undefined;
+      for (const id of ids) {
+        const idx = manifestIndexByGameId.get(id);
+        if (idx !== undefined) {
+          matchedIdx = idx;
+          break;
+        }
+      }
+      if (matchedIdx === undefined) return undefined;
 
       // Game is in manifest but no result yet
       if (autotest.state !== "running" && autotest.state !== "starting") {
@@ -110,16 +121,14 @@ export const AutotestProvider: React.FC<{ children: React.ReactNode }> = ({
       }
 
       // It's the currently-testing game if its index matches completed count
-      const idx = autotest.manifest.findIndex((m) => m.gameId === matchedId);
-      if (idx === autotest.completed) return "testing";
-      if (idx > autotest.completed) return "queued";
+      if (matchedIdx === autotest.completed) return "testing";
+      if (matchedIdx > autotest.completed) return "queued";
       return undefined;
     };
   }, [
     resultsByGameId,
-    manifestGameIds,
+    manifestIndexByGameId,
     autotest.state,
-    autotest.manifest,
     autotest.completed
   ]);
 
@@ -137,9 +146,9 @@ export const AutotestProvider: React.FC<{ children: React.ReactNode }> = ({
   const isInManifest = useMemo(() => {
     return (app: AppInformation) => {
       const ids = [app.app.id, ...app.owned_apps.map((o) => o.id)];
-      return ids.some((id) => manifestGameIds.has(id));
+      return ids.some((id) => manifestIndexByGameId.has(id));
     };
-  }, [manifestGameIds]);
+  }, [manifestIndexByGameId]);
 
   const value: AutotestContextValue = useMemo(
     () => ({

@@ -17,7 +17,7 @@ msgstr ""
 #~ msgid "-"
 #~ msgstr "-"
 
-#: src/components/app-library/app-library.tsx:161
+#: src/components/app-library/app-library.tsx:176
 msgid "???"
 msgstr "???"
 
@@ -63,7 +63,7 @@ msgstr "Add Config"
 msgid "Add New Config"
 msgstr "Add New Config"
 
-#: src/components/side-panel/side-panel.tsx:273
+#: src/components/side-panel/side-panel.tsx:278
 msgid "Added"
 msgstr "Added"
 
@@ -71,11 +71,11 @@ msgstr "Added"
 msgid "All"
 msgstr "All"
 
-#: src/components/app-library/app-library.tsx:276
+#: src/components/app-library/app-library.tsx:291
 msgid "All Games"
 msgstr "All Games"
 
-#: src/components/app-library/app-library.tsx:307
+#: src/components/app-library/app-library.tsx:322
 msgid "All Games ({filteredGamesCount})"
 msgstr "All Games ({filteredGamesCount})"
 
@@ -107,7 +107,7 @@ msgstr "Are you sure you want to uninstall the selected apps?"
 #~ msgid "Author"
 #~ msgstr "Author"
 
-#: src/components/app-library/app-library.tsx:360
+#: src/components/app-library/app-library.tsx:375
 #: src/components/side-panel/side-panel.tsx:135
 msgid "Autotest"
 msgstr "Autotest"
@@ -124,11 +124,11 @@ msgstr "Base config"
 #~ msgid "Bulk Actions"
 #~ msgstr "Bulk Actions"
 
-#: src/components/side-panel/side-panel.tsx:306
+#: src/components/side-panel/side-panel.tsx:311
 msgid "Bypass App Update"
 msgstr "Bypass App Update"
 
-#: src/components/app-library/app-library.tsx:350
+#: src/components/app-library/app-library.tsx:365
 #: src/screens/connect-device/connect-device.tsx:156
 msgid "Cancel"
 msgstr "Cancel"
@@ -151,12 +151,12 @@ msgstr "Clear"
 msgid "Close"
 msgstr "Close"
 
-#: src/components/side-panel/side-panel.tsx:478
+#: src/components/side-panel/side-panel.tsx:483
 msgid "Close Log Window"
 msgstr "Close Log Window"
 
-#: src/components/app-library/app-library.tsx:136
-#: src/components/side-panel/side-panel.tsx:395
+#: src/components/app-library/app-library.tsx:151
+#: src/components/side-panel/side-panel.tsx:400
 msgid "Compatibility"
 msgstr "Compatibility"
 
@@ -255,7 +255,7 @@ msgstr "Edit"
 msgid "End User License Agreements for"
 msgstr "End User License Agreements for"
 
-#: src/components/side-panel/side-panel.tsx:316
+#: src/components/side-panel/side-panel.tsx:321
 msgid "Enhanced Debugging"
 msgstr "Enhanced Debugging"
 
@@ -329,11 +329,11 @@ msgstr "Game logs will appear here next time you launch the game"
 #~ msgid "Game logs will appear here..."
 #~ msgstr "Game logs will appear here..."
 
-#: src/components/app-library/app-library.tsx:117
+#: src/components/app-library/app-library.tsx:132
 msgid "Game Size"
 msgstr "Game Size"
 
-#: src/components/app-library/app-library.tsx:118
+#: src/components/app-library/app-library.tsx:133
 msgid "Game Status"
 msgstr "Game Status"
 
@@ -370,7 +370,7 @@ msgstr "Initiate direct testing on a Playtron device within your local network. 
 #~ msgid "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 #~ msgstr "Initiate direct testing on a Playtron device within your local network. Begin by enabling SSH connections: navigate to 'Settings > Developer' on your device."
 
-#: src/components/side-panel/side-panel.tsx:354
+#: src/components/side-panel/side-panel.tsx:359
 msgid "Input Config"
 msgstr "Input Config"
 
@@ -394,19 +394,19 @@ msgstr "INPUT DEVICES"
 msgid "Insert Delimiter"
 msgstr "Insert Delimiter"
 
-#: src/components/app-library/app-library.tsx:121
+#: src/components/app-library/app-library.tsx:136
 msgid "Install Date"
 msgstr "Install Date"
 
-#: src/components/side-panel/side-panel.tsx:437
+#: src/components/side-panel/side-panel.tsx:442
 msgid "Install folder"
 msgstr "Install folder"
 
-#: src/components/app-library/app-library.tsx:286
+#: src/components/app-library/app-library.tsx:301
 msgid "Installed"
 msgstr "Installed"
 
-#: src/components/app-library/app-library.tsx:308
+#: src/components/app-library/app-library.tsx:323
 msgid "Installed Games ({filteredGamesCount})"
 msgstr "Installed Games ({filteredGamesCount})"
 
@@ -414,7 +414,7 @@ msgstr "Installed Games ({filteredGamesCount})"
 #~ msgid "Installed Games ({totalInstalled})"
 #~ msgstr "Installed Games ({totalInstalled})"
 
-#: src/components/app-library/game-card.tsx:292
+#: src/components/app-library/game-card.tsx:289
 msgid "Installed on Drive"
 msgstr "Installed on Drive"
 
@@ -458,11 +458,11 @@ msgstr "Keyboard"
 #~ msgid "Last Added"
 #~ msgstr "Last Added"
 
-#: src/components/app-library/app-library.tsx:131
+#: src/components/app-library/app-library.tsx:146
 msgid "Last Played"
 msgstr "Last Played"
 
-#: src/components/app-library/app-library.tsx:126
+#: src/components/app-library/app-library.tsx:141
 msgid "Last Updated"
 msgstr "Last Updated"
 
@@ -474,7 +474,7 @@ msgstr "Launch"
 msgid "Launch config"
 msgstr "Launch config"
 
-#: src/components/side-panel/side-panel.tsx:328
+#: src/components/side-panel/side-panel.tsx:333
 msgid "Launch Config"
 msgstr "Launch Config"
 
@@ -502,6 +502,11 @@ msgstr "Launching"
 msgid "Launching..."
 msgstr "Launching..."
 
+#: src/components/app-library/game-card.tsx:272
+#: src/components/side-panel/side-panel.tsx:249
+msgid "Local"
+msgstr "Local"
+
 #: src/components/logs-modal/logs-modal.tsx:80
 msgid "Logs"
 msgstr "Logs"
@@ -526,7 +531,7 @@ msgstr "Mouse"
 msgid "Mouse Move"
 msgstr "Mouse Move"
 
-#: src/components/app-library/game-card.tsx:212
+#: src/components/app-library/game-card.tsx:208
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:83
 msgid "Move"
 msgstr "Move"
@@ -547,15 +552,15 @@ msgstr "Move selected apps"
 #~ msgid "Name"
 #~ msgstr "Name"
 
-#: src/components/app-library/app-library.tsx:115
+#: src/components/app-library/app-library.tsx:130
 msgid "Name (A-Z)"
 msgstr "Name (A-Z)"
 
-#: src/components/app-library/app-library.tsx:116
+#: src/components/app-library/app-library.tsx:131
 msgid "Name (Z-A)"
 msgstr "Name (Z-A)"
 
-#: src/components/side-panel/side-panel.tsx:289
+#: src/components/side-panel/side-panel.tsx:294
 msgid "Never tested"
 msgstr "Never tested"
 
@@ -575,7 +580,7 @@ msgstr "No internet"
 msgid "Not Downloaded"
 msgstr "Not Downloaded"
 
-#: src/components/side-panel/side-panel.tsx:278
+#: src/components/side-panel/side-panel.tsx:283
 msgid "Not installed"
 msgstr "Not installed"
 
@@ -603,7 +608,7 @@ msgstr "Oops!"
 msgid "Open Full Log"
 msgstr "Open Full Log"
 
-#: src/components/side-panel/side-panel.tsx:478
+#: src/components/side-panel/side-panel.tsx:483
 msgid "Open Log Window"
 msgstr "Open Log Window"
 
@@ -628,7 +633,7 @@ msgstr "Pause"
 msgid "Paused"
 msgstr "Paused"
 
-#: src/components/side-panel/side-panel.tsx:381
+#: src/components/side-panel/side-panel.tsx:386
 msgid "Playtron App ID"
 msgstr "Playtron App ID"
 
@@ -642,7 +647,7 @@ msgstr "Playtron GameLAB"
 #~ msgid "Playtron Labs"
 #~ msgstr "Playtron Labs"
 
-#: src/components/side-panel/side-panel.tsx:417
+#: src/components/side-panel/side-panel.tsx:422
 msgid "Playtron Slug"
 msgstr "Playtron Slug"
 
@@ -683,16 +688,16 @@ msgstr "Queued"
 msgid "Ready"
 msgstr "Ready"
 
-#: src/components/side-panel/side-panel.tsx:424
+#: src/components/side-panel/side-panel.tsx:429
 msgid "Release Date"
 msgstr "Release Date"
 
-#: src/components/side-panel/side-panel.tsx:339
-#: src/components/side-panel/side-panel.tsx:365
+#: src/components/side-panel/side-panel.tsx:344
+#: src/components/side-panel/side-panel.tsx:370
 msgid "Reset"
 msgstr "Reset"
 
-#: src/components/side-panel/side-panel.tsx:296
+#: src/components/side-panel/side-panel.tsx:301
 msgid "Reset Wine Prefix"
 msgstr "Reset Wine Prefix"
 
@@ -700,7 +705,7 @@ msgstr "Reset Wine Prefix"
 msgid "Resume"
 msgstr "Resume"
 
-#: src/components/app-library/app-library.tsx:334
+#: src/components/app-library/app-library.tsx:349
 msgid "Run Autotest ({count})"
 msgstr "Run Autotest ({count})"
 
@@ -713,7 +718,7 @@ msgstr "Running"
 msgid "Save"
 msgstr "Save"
 
-#: src/components/app-library/app-library.tsx:297
+#: src/components/app-library/app-library.tsx:312
 msgid "Search"
 msgstr "Search"
 
@@ -749,19 +754,19 @@ msgstr "Select Config"
 msgid "Sorry, an unexpected error has occurred."
 msgstr "Sorry, an unexpected error has occurred."
 
-#: src/components/app-library/app-library.tsx:159
+#: src/components/app-library/app-library.tsx:174
 msgid "Sort by: Compatibility"
 msgstr "Sort by: Compatibility"
 
-#: src/components/app-library/app-library.tsx:149
+#: src/components/app-library/app-library.tsx:164
 msgid "Sort by: Game Size"
 msgstr "Sort by: Game Size"
 
-#: src/components/app-library/app-library.tsx:151
+#: src/components/app-library/app-library.tsx:166
 msgid "Sort by: Game Status"
 msgstr "Sort by: Game Status"
 
-#: src/components/app-library/app-library.tsx:153
+#: src/components/app-library/app-library.tsx:168
 msgid "Sort by: Install Date"
 msgstr "Sort by: Install Date"
 
@@ -769,19 +774,19 @@ msgstr "Sort by: Install Date"
 #~ msgid "Sort by: Last Added"
 #~ msgstr "Sort by: Last Added"
 
-#: src/components/app-library/app-library.tsx:157
+#: src/components/app-library/app-library.tsx:172
 msgid "Sort by: Last Played"
 msgstr "Sort by: Last Played"
 
-#: src/components/app-library/app-library.tsx:155
+#: src/components/app-library/app-library.tsx:170
 msgid "Sort by: Last Updated"
 msgstr "Sort by: Last Updated"
 
-#: src/components/app-library/app-library.tsx:145
+#: src/components/app-library/app-library.tsx:160
 msgid "Sort by: Name (A-Z)"
 msgstr "Sort by: Name (A-Z)"
 
-#: src/components/app-library/app-library.tsx:147
+#: src/components/app-library/app-library.tsx:162
 msgid "Sort by: Name (Z-A)"
 msgstr "Sort by: Name (Z-A)"
 
@@ -798,7 +803,7 @@ msgstr "Sort by: Name (Z-A)"
 msgid "Stop"
 msgstr "Stop"
 
-#: src/components/app-library/app-library.tsx:323
+#: src/components/app-library/app-library.tsx:338
 msgid "Stop Autotest"
 msgstr "Stop Autotest"
 
@@ -822,11 +827,11 @@ msgstr "System Drive"
 msgid "Test Games on Playtron Device via Local Network"
 msgstr "Test Games on Playtron Device via Local Network"
 
-#: src/components/side-panel/side-panel.tsx:284
+#: src/components/side-panel/side-panel.tsx:289
 msgid "Tested on"
 msgstr "Tested on"
 
-#: src/components/app-library/app-library.tsx:319
+#: src/components/app-library/app-library.tsx:334
 msgid "Testing {completed}/{total}..."
 msgstr "Testing {completed}/{total}..."
 
@@ -879,7 +884,7 @@ msgstr "Unable to connect with the device: {err}"
 msgid "Unhandled error: {e}"
 msgstr "Unhandled error: {e}"
 
-#: src/components/app-library/game-card.tsx:228
+#: src/components/app-library/game-card.tsx:224
 #: src/components/bulk-actions-menu/bulk-actions-menu.tsx:73
 msgid "Uninstall"
 msgstr "Uninstall"
@@ -910,7 +915,7 @@ msgstr "Update"
 msgid "Update Required"
 msgstr "Update Required"
 
-#: src/components/app-library/app-library.tsx:316
+#: src/components/app-library/app-library.tsx:331
 msgid "Uploading tests..."
 msgstr "Uploading tests..."
 

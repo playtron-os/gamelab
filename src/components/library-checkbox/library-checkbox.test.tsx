@@ -1,6 +1,6 @@
 import React from "react";
 import { LibraryCheckbox } from "@/components";
-import { useAppLibraryContext } from "@/context/app-library-context";
+import { useAppSelectionContext } from "@/context/app-selection-context";
 import { STEAM_APP_INFORMATION_MOCKS } from "@/mocks/app";
 import { CONNECTED_PROVIDER_ACCOUNT_STATE } from "@/mocks/provider-account-state";
 import {
@@ -16,9 +16,9 @@ import { fireEvent } from "@testing-library/react";
 import { DEFAULT_STATE_MOCK } from "@/mocks/default-state";
 const mockAppInfo = STEAM_APP_INFORMATION_MOCKS[0];
 
-jest.mock("@/context/app-library-context", () => ({
-  ...jest.requireActual("@/context/app-library-context"),
-  useAppLibraryContext: jest.fn()
+jest.mock("@/context/app-selection-context", () => ({
+  ...jest.requireActual("@/context/app-selection-context"),
+  useAppSelectionContext: jest.fn()
 }));
 
 const getMockStore = () => {
@@ -67,7 +67,7 @@ const RenderLibraryCheckbox = ({ isHeader }: { isHeader: boolean }) => {
 describe("<LibraryCheckbox />", () => {
   it("should check the checkbox if app is selected", () => {
     const selectedApps = new Set([mockAppInfo.app.id]);
-    (useAppLibraryContext as jest.Mock).mockReturnValue({
+    (useAppSelectionContext as jest.Mock).mockReturnValue({
       selectedApps,
       setSelectedApps: jest.fn()
     });
@@ -82,7 +82,7 @@ describe("<LibraryCheckbox />", () => {
 
   it("should toggle app selection when clicked", () => {
     const setSelectedApps = jest.fn();
-    (useAppLibraryContext as jest.Mock).mockReturnValue({
+    (useAppSelectionContext as jest.Mock).mockReturnValue({
       selectedApps: new Set([]),
       setSelectedApps
     });
@@ -98,7 +98,7 @@ describe("<LibraryCheckbox />", () => {
 
   it("should check the header checkbox if all apps are selected is true", () => {
     const selectedApps = new Set([mockAppInfo.app.id]);
-    (useAppLibraryContext as jest.Mock).mockReturnValue({
+    (useAppSelectionContext as jest.Mock).mockReturnValue({
       selectedApps,
       setSelectedApps: jest.fn()
     });
@@ -113,7 +113,7 @@ describe("<LibraryCheckbox />", () => {
 
   it("should invoke handleHeaderChange when header checkbox is clicked", () => {
     const setSelectedApps = jest.fn();
-    (useAppLibraryContext as jest.Mock).mockReturnValue({
+    (useAppSelectionContext as jest.Mock).mockReturnValue({
       selectedApps: new Set([]),
       setSelectedApps
     });

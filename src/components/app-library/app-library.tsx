@@ -1,4 +1,10 @@
-import React, { useState, useRef, useMemo, useEffect } from "react";
+import React, {
+  useState,
+  useRef,
+  useMemo,
+  useEffect,
+  useCallback
+} from "react";
 import { Trans, t } from "@lingui/macro";
 import "./app-library.scss";
 import { Tabs, Tab } from "@nextui-org/react";
@@ -14,6 +20,7 @@ import {
 import {
   useConfirmationPopUp,
   useAppLibraryContext,
+  useAppSelectionContext,
   useAutotestContext
 } from "@/context";
 import { MoveAppDialog } from "../move-app-dialog";
@@ -42,8 +49,8 @@ export const AppLibrary: React.FC = () => {
     selectAppLibraryQueuePositionMapState
   );
   const parentRef = useRef<HTMLDivElement>(null);
-  const { onSelectedIdChange, selectedApps, setSelectedApps } =
-    useAppLibraryContext();
+  const { onSelectedIdChange } = useAppLibraryContext();
+  const { selectedApps, setSelectedApps, toggleApp } = useAppSelectionContext();
   const [nameFilter, setNameFilter] = useState("");
   const [sortKey, setSortKey] = useState("last_played");
   const autotest = useAutotestContext();
@@ -61,6 +68,14 @@ export const AppLibrary: React.FC = () => {
   }, [autotestRunning, setSelectedApps]);
 
   const [selectedGame, setSelectedGame] = useState<AppInformation | null>(null);
+
+  const handleSelectGame = useCallback(
+    (game: AppInformation) => {
+      setSelectedGame(game);
+      onSelectedIdChange(game.app.id);
+    },
+    [onSelectedIdChange]
+  );
 
   const filteredGames = useMemo(() => {
     let result = apps.filter((app) => app.is_owned);
@@ -406,14 +421,13 @@ export const AppLibrary: React.FC = () => {
                       <GameCard
                         game={row}
                         selectedId={selectedGame?.app.id}
-                        onSelectGame={(game) => {
-                          setSelectedGame(game);
-                          onSelectedIdChange(game.app.id);
-                        }}
+                        onSelectGame={handleSelectGame}
                         autotestStatus={autotest.getGameStatus(row)}
                         autotestSelectMode={autotest.selectMode}
                         autotestRunning={autotestRunning}
                         autotestInManifest={autotest.isInManifest(row)}
+                        checked={selectedApps.has(row.app.id)}
+                        onCheckboxToggle={toggleApp}
                       />
                     </div>
                   );

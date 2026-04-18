@@ -35,6 +35,9 @@ jest.mock("@/hooks/use-autotest", () => ({
 
 jest.mock("@/context", () => {
   const actualAppLibrary = jest.requireActual("@/context/app-library-context");
+  const actualAppSelection = jest.requireActual(
+    "@/context/app-selection-context"
+  );
   const actualConfirmation = jest.requireActual(
     "@/context/confirmation-pop-up-context"
   );
@@ -43,9 +46,15 @@ jest.mock("@/context", () => {
   );
   return {
     ...actualAppLibrary,
+    ...actualAppSelection,
     ...actualConfirmation,
     ...actualLoadingSpinner,
     useAppLibraryContext: jest.fn(),
+    useAppSelectionContext: jest.fn().mockReturnValue({
+      selectedApps: new Set<string>(),
+      setSelectedApps: jest.fn(),
+      toggleApp: jest.fn()
+    }),
     useAutotestContext: jest.fn().mockReturnValue({
       state: "idle",
       results: [],
@@ -102,8 +111,6 @@ const MOCK_LIBRARY_TABLE_DATA: context.AppLibraryContextProps = {
     openMoveAppDialog: jest.fn()
   },
   bulkActionsMenuStateManager: MOCK_BOOLEAN_STATE_MANAGER,
-  selectedApps: new Set([]),
-  setSelectedApps: jest.fn(),
   selectedIds: [],
   onSelectedIdChange: jest.fn(),
   isEulaOpen: false,

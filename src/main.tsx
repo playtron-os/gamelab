@@ -13,6 +13,7 @@ import { I18nProvider } from "@lingui/react";
 import {
   ConfirmationPopUpContextProvider,
   AppLibraryContextProvider,
+  AppSelectionProvider,
   LoadingSpinnerContextProvider,
   AutotestProvider
 } from "./context";
@@ -44,12 +45,14 @@ export const Main = () => {
           <LoadingSpinnerContextProvider>
             <ConfirmationPopUpContextProvider>
               <AppLibraryContextProvider>
-                <AutotestProvider>
-                  <SubmissionsContextProvider>
-                    <Routes />
-                    <Notification />
-                  </SubmissionsContextProvider>
-                </AutotestProvider>
+                <AppSelectionProvider>
+                  <AutotestProvider>
+                    <SubmissionsContextProvider>
+                      <Routes />
+                      <Notification />
+                    </SubmissionsContextProvider>
+                  </AutotestProvider>
+                </AppSelectionProvider>
               </AppLibraryContextProvider>
             </ConfirmationPopUpContextProvider>
           </LoadingSpinnerContextProvider>

@@ -4,7 +4,7 @@ import { Checkbox } from "@playtron/styleguide";
 import { PlaytronAppType, AppInformation } from "@/types/app-library";
 import { useAppSelector } from "@/redux/store";
 import { selectAppLibraryAppsState } from "@/redux/modules";
-import { useAppLibraryContext } from "@/context";
+import { useAppSelectionContext } from "@/context";
 
 export type NullCellContext =
   | HeaderContext<AppInformation, unknown>
@@ -17,7 +17,7 @@ export const LibraryCheckbox: React.FC<NullCellContext> = (info) => {
     appInfo = info?.row?.original;
   }
   const appInfos = useAppSelector(selectAppLibraryAppsState);
-  const { selectedApps, setSelectedApps } = useAppLibraryContext();
+  const { selectedApps, setSelectedApps } = useAppSelectionContext();
   const allAppsSelected = selectedApps.size === appInfos?.length;
 
   const handleAppChange = () => {

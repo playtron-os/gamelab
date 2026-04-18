@@ -13,6 +13,7 @@ import { Store } from "@reduxjs/toolkit";
 import {
   ConfirmationPopUpContextProvider,
   AppLibraryContextProvider,
+  AppSelectionProvider,
   LoadingSpinnerContextProvider
 } from "@/context";
 
@@ -52,7 +53,9 @@ const createAppLibraryContextWrapper = (mockStore?: Store) => {
       <LoadingSpinnerContextProvider>
         <ConfirmationPopUpContextProvider>
           <AppLibraryContextProvider>
-            <MemoryRouter>{children}</MemoryRouter>
+            <AppSelectionProvider>
+              <MemoryRouter>{children}</MemoryRouter>
+            </AppSelectionProvider>
           </AppLibraryContextProvider>
         </ConfirmationPopUpContextProvider>
       </LoadingSpinnerContextProvider>
@@ -67,7 +70,9 @@ const createAllContextWrapper = (mockStore?: Store) => {
       <LoadingSpinnerContextProvider>
         <ConfirmationPopUpContextProvider>
           <AppLibraryContextProvider>
-            <MemoryRouter>{children}</MemoryRouter>
+            <AppSelectionProvider>
+              <MemoryRouter>{children}</MemoryRouter>
+            </AppSelectionProvider>
           </AppLibraryContextProvider>
         </ConfirmationPopUpContextProvider>
       </LoadingSpinnerContextProvider>

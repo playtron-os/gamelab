@@ -66,6 +66,8 @@ export interface GameCardProps {
   autotestSelectMode: boolean;
   autotestRunning: boolean;
   autotestInManifest: boolean;
+  checked: boolean;
+  onCheckboxToggle: (id: string) => void;
 }
 
 export const getProviderIcon = (
@@ -140,29 +142,23 @@ const GameCardInner: React.FC<GameCardProps> = ({
   autotestStatus,
   autotestSelectMode,
   autotestRunning,
-  autotestInManifest
+  autotestInManifest,
+  checked,
+  onCheckboxToggle
 }) => {
   const dispatch = useAppDispatch();
   const [isSelected, setIsSelected] = useState(false);
   const {
     handlers: { uninstallApp, handleAppDefaultAction, openMoveAppDialog },
-    selectedApps,
-    setSelectedApps
+    onSelectedIdChange
   } = useAppLibraryContext();
   const handleSelectGame = () => {
     setIsSelected(!isSelected);
     onSelectGame(game);
   };
-  const { onSelectedIdChange } = useAppLibraryContext();
 
   const handleCheckboxToggle = () => {
-    const newSelectedApps = new Set(selectedApps);
-    if (selectedApps.has(game.app.id)) {
-      newSelectedApps.delete(game.app.id);
-    } else {
-      newSelectedApps.add(game.app.id);
-    }
-    setSelectedApps(newSelectedApps);
+    onCheckboxToggle(game.app.id);
   };
   const { launchParams } = useSubmissionsContext();
   const status = useAppStatus(game, game.installed_app?.owned_app.id);
@@ -251,14 +247,10 @@ const GameCardInner: React.FC<GameCardProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             <Checkbox
-              checked={
-                autotestRunning
-                  ? autotestInManifest
-                  : selectedApps.has(game.app.id)
-              }
+              checked={autotestRunning ? autotestInManifest : checked}
               onChange={handleCheckboxToggle}
               size="lg"
-              disabled={!game.installed_app || autotestRunning}
+              disabled={autotestRunning}
             />
           </div>
         )}
@@ -275,6 +267,11 @@ const GameCardInner: React.FC<GameCardProps> = ({
           <span className="text-nowrap flex-shrink max-w-32 overflow-clip">
             {testEmoji && <span className="me-1">{testEmoji}</span>}
             {game.app.name}
+            {game.app.id.startsWith("playtronlocal") && (
+              <span className="ms-2 px-1.5 py-0.5 text-[10px] font-semibold uppercase rounded border border-[--stroke-subtle] text-[--text-tertiary]">
+                <Trans>Local</Trans>
+              </span>
+            )}
           </span>
           <div className="flex items-center gap-1">
             {game.owned_apps.map((ownedApp: OwnedApp) =>

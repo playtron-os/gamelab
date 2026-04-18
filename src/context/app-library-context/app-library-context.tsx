@@ -45,8 +45,6 @@ export interface AppLibraryContextProps {
     ) => void;
     openMoveAppDialog: (appInfos: AppInformation[]) => void;
   };
-  selectedApps: Set<string>;
-  setSelectedApps: React.Dispatch<React.SetStateAction<Set<string>>>;
   bulkActionsMenuStateManager: ReturnType<typeof useBoolean>;
   eula: AppEulaResponseBody | null;
   isEulaOpen: boolean;
@@ -87,7 +85,6 @@ export const AppLibraryContextProvider: React.FC<
   const { fetchLibraryApps } = useAppLibraryActions();
   const { getAppEulas, acceptEula, rejectEula } = useAppEula();
 
-  const [selectedApps, setSelectedApps] = useState<Set<string>>(new Set());
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
 
   const handleAppDefaultAction = useCallback(
@@ -182,8 +179,6 @@ export const AppLibraryContextProvider: React.FC<
       selectedIds,
       onSelectedIdChange,
       handlers,
-      selectedApps,
-      setSelectedApps,
       bulkActionsMenuStateManager,
       eula,
       isEulaOpen,
@@ -195,8 +190,6 @@ export const AppLibraryContextProvider: React.FC<
       selectedIds,
       onSelectedIdChange,
       handlers,
-      selectedApps,
-      setSelectedApps,
       bulkActionsMenuStateManager,
       eula,
       isEulaOpen,

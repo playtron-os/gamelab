@@ -58,6 +58,40 @@ function savePersisted(data: PersistedAutotest) {
   setInLocalStorage(STORAGE_KEY, data);
 }
 
+function mergeResults(
+  prev: AutotestGameResult[],
+  incoming: AutotestGameResult[]
+): AutotestGameResult[] {
+  const deviceIds = new Set(incoming.map((r) => r.gameId));
+  const kept = prev.filter((r) => !deviceIds.has(r.gameId));
+  const next = [...kept, ...incoming];
+  if (
+    next.length === prev.length &&
+    next.every(
+      (r, i) =>
+        r.gameId === prev[i].gameId &&
+        r.status === prev[i].status &&
+        r.message === prev[i].message
+    )
+  ) {
+    return prev;
+  }
+  return next;
+}
+
+function stableManifest(
+  prev: AutotestManifestEntry[],
+  incoming: AutotestManifestEntry[]
+): AutotestManifestEntry[] {
+  if (
+    incoming.length === prev.length &&
+    incoming.every((m, i) => m.gameId === prev[i].gameId)
+  ) {
+    return prev;
+  }
+  return incoming;
+}
+
 export function useAutotest() {
   const persisted = useRef(loadPersisted());
 
@@ -73,9 +107,28 @@ export function useAutotest() {
   const [error, setError] = useState<string | null>(null);
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Persist whenever state/results/manifest change
+  // Persist on terminal state changes immediately; debounce during active polling
+  const persistTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
-    savePersisted({ state, results, manifest });
+    const isTerminal =
+      state === "done" ||
+      state === "aborted" ||
+      state === "error" ||
+      state === "idle";
+    if (isTerminal) {
+      if (persistTimer.current) clearTimeout(persistTimer.current);
+      persistTimer.current = null;
+      savePersisted({ state, results, manifest });
+    } else {
+      if (persistTimer.current) clearTimeout(persistTimer.current);
+      persistTimer.current = setTimeout(() => {
+        savePersisted({ state, results, manifest });
+        persistTimer.current = null;
+      }, 30000);
+    }
+    return () => {
+      if (persistTimer.current) clearTimeout(persistTimer.current);
+    };
   }, [state, results, manifest]);
 
   // Clean up polling interval on unmount
@@ -117,12 +170,8 @@ export function useAutotest() {
       lastPollJson.current = json;
 
       // Merge device results with retained old results from previous runs
-      setResults((prev) => {
-        const deviceIds = new Set(result.results.map((r) => r.gameId));
-        const kept = prev.filter((r) => !deviceIds.has(r.gameId));
-        return [...kept, ...result.results];
-      });
-      setManifest(result.manifest);
+      setResults((prev) => mergeResults(prev, result.results));
+      setManifest((prev) => stableManifest(prev, result.manifest));
 
       if (result.status === "done") {
         setState("done");
@@ -158,11 +207,13 @@ export function useAutotest() {
         const address = getAddress();
 
         const games = apps
-          .filter((app) => app.installed_app)
-          .map((app) => ({
-            name: app.app.name,
-            gameId: app.installed_app!.owned_app.id
-          }));
+          .map((app) => {
+            const gameId =
+              app.installed_app?.owned_app.id ?? app.owned_apps[0]?.id;
+            if (!gameId) return null;
+            return { name: app.app.name, gameId };
+          })
+          .filter((g): g is { name: string; gameId: string } => g !== null);
 
         // Remove old results only for games being re-tested, keep the rest
         const retestIds = new Set(games.map((g) => g.gameId));
@@ -171,7 +222,7 @@ export function useAutotest() {
 
         if (games.length === 0) {
           setState("error");
-          setError("No installed games selected.");
+          setError("No games selected.");
           return;
         }
 
@@ -193,23 +244,18 @@ export function useAutotest() {
         address
       });
 
-      const mergeResults = (prev: AutotestGameResult[]) => {
-        const deviceIds = new Set(result.results.map((r) => r.gameId));
-        const kept = prev.filter((r) => !deviceIds.has(r.gameId));
-        return [...kept, ...result.results];
-      };
       if (result.status === "running") {
-        setResults(mergeResults);
-        setManifest(result.manifest);
+        setResults((prev) => mergeResults(prev, result.results));
+        setManifest((prev) => stableManifest(prev, result.manifest));
         setState("running");
         startPolling();
       } else if (result.status === "done") {
-        setResults(mergeResults);
-        setManifest(result.manifest);
+        setResults((prev) => mergeResults(prev, result.results));
+        setManifest((prev) => stableManifest(prev, result.manifest));
         setState("done");
       } else if (result.status === "aborted") {
-        setResults(mergeResults);
-        setManifest(result.manifest);
+        setResults((prev) => mergeResults(prev, result.results));
+        setManifest((prev) => stableManifest(prev, result.manifest));
         setState("aborted");
       } else {
         // Device has no run — keep whatever we loaded from localStorage
@@ -227,12 +273,8 @@ export function useAutotest() {
       const result = await invoke<AutotestPollResult>("autotest_poll", {
         address
       });
-      setResults((prev) => {
-        const deviceIds = new Set(result.results.map((r) => r.gameId));
-        const kept = prev.filter((r) => !deviceIds.has(r.gameId));
-        return [...kept, ...result.results];
-      });
-      setManifest(result.manifest);
+      setResults((prev) => mergeResults(prev, result.results));
+      setManifest((prev) => stableManifest(prev, result.manifest));
       setState("aborted");
     } catch (err) {
       setState("error");

@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import "./bulk-actions-menu.scss";
 import { Modal, Button } from "@playtron/styleguide";
 import { t } from "@lingui/macro";
-import { useAppLibraryContext } from "@/context";
+import { useAppLibraryContext, useAppSelectionContext } from "@/context";
 import { useAppDispatch, useAppSelector } from "@/redux/store";
 import {
   openMoveAppDialog as openMoveAppDialogAction,
@@ -19,8 +19,8 @@ export const BulkActionsMenu: React.FC = () => {
       dispatch(openMoveAppDialogAction({ appInfoArray })),
     [dispatch]
   );
-  const { selectedApps, handlers, bulkActionsMenuStateManager } =
-    useAppLibraryContext();
+  const { handlers, bulkActionsMenuStateManager } = useAppLibraryContext();
+  const { selectedApps } = useAppSelectionContext();
   const apps = useAppSelector(selectAppLibraryAppsState);
   const [isOpen, { setFalse: closeBulkActionsMenu }] =
     bulkActionsMenuStateManager;

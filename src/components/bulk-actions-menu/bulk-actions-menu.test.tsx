@@ -1,4 +1,4 @@
-import React, { SetStateAction } from "react";
+import React from "react";
 import { screen, fireEvent } from "@testing-library/react";
 import { BulkActionsMenu } from "./bulk-actions-menu";
 import { renderWithAppLibraryContext } from "@/utils";
@@ -6,7 +6,11 @@ import { configureStore } from "@reduxjs/toolkit";
 import { appLibrarySlice, authSlice, openMoveAppDialog } from "@/redux/modules";
 import { APP_LIBRARY_INITIAL_STATE as APP_LIBRARY_INITIAL_STATE } from "@/redux/modules/app-library";
 import { useBoolean } from "ahooks";
-import { AppLibraryContextProps, useAppLibraryContext } from "@/context";
+import {
+  AppLibraryContextProps,
+  useAppLibraryContext,
+  useAppSelectionContext
+} from "@/context";
 import { STEAM_APP_INFORMATION_MOCKS } from "@/mocks/app";
 import { DEFAULT_STATE_MOCK } from "@/mocks/default-state";
 
@@ -45,10 +49,6 @@ const MOCK_LIBRARY_TABLE: AppLibraryContextProps = {
     openMoveAppDialog: jest.fn()
   },
   bulkActionsMenuStateManager: getMockBooleanState(true),
-  selectedApps,
-  setSelectedApps: function (_value: SetStateAction<Set<string>>): void {
-    throw new Error("Function not implemented.");
-  },
   selectedIds: [],
   onSelectedIdChange: function (_selectedId: string): void {
     throw new Error("Function not implemented.");
@@ -58,6 +58,12 @@ const MOCK_LIBRARY_TABLE: AppLibraryContextProps = {
   setIsEulaOpen: jest.fn(),
   acceptEula: jest.fn(),
   rejectEula: jest.fn()
+};
+
+const MOCK_SELECTION = {
+  selectedApps,
+  setSelectedApps: jest.fn(),
+  toggleApp: jest.fn()
 };
 
 const apps = [STEAM_APP_INFORMATION_MOCKS[0], STEAM_APP_INFORMATION_MOCKS[1]];
@@ -81,7 +87,9 @@ const getMockStore = () => {
 jest.mock("@/context", () => ({
   ...jest.requireActual("@/context"),
   useAppLibraryContext: jest.fn(),
+  useAppSelectionContext: jest.fn(),
   AppLibraryContextProvider: ({ children }: any) => children,
+  AppSelectionProvider: ({ children }: any) => children,
   LoadingSpinnerContextProvider: ({ children }: any) => children,
   useLoadingSpinner: jest.fn(() => {
     return {
@@ -95,6 +103,7 @@ jest.mock("@/context", () => ({
 describe("BulkActionsMenu", () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    (useAppSelectionContext as jest.Mock).mockReturnValue(MOCK_SELECTION);
   });
 
   it("renderWithAppLibraryContexts correctly when isOpen is true", () => {
